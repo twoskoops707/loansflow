@@ -1,0 +1,14 @@
+{
+  "name": "loansflow",
+  "private": true,
+  "version": "1.0.0",
+  "description": "LoansFlow — SBA, commercial, and mortgage calculators",
+  "scripts": {
+    "dev": "npx --yes serve public -p 4173",
+    "start": "npm run dev",
+    "pages:deploy": "npx --yes wrangler pages deploy public --project-name loansflow"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

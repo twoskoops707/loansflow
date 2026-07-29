@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculators — LoansFlow</title>
+  <meta name="description" content="SBA 7(a), SBA 504, commercial DSCR, line of credit, and mortgage calculators — free on LoansFlow.">
+  <link rel="canonical" href="https://loansflow.top/tools/">
+  <meta property="og:title" content="LoansFlow Calculators">
+  <meta property="og:description" content="Free SBA, commercial, and mortgage calculators with live amortization and DSCR.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loansflow.top/tools/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#071018">
+  <link rel="stylesheet" href="/css/tools.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar" aria-label="Calculator navigation">
+      <div class="brand">
+        <a href="/">LoansFlow</a>
+        <span>SBA &amp; Commercial Loan Tools</span>
+      </div>
+      <ul class="steps" id="stepNav"></ul>
+      <div class="sidebar-foot">
+        Figures are estimates for planning purposes only and do not constitute a loan offer. Consult a licensed lender for exact terms.
+      </div>
+    </nav>
+    <main class="main" id="mainContent"></main>
+  </div>
+
+  <div class="ad-anchor" aria-hidden="true">
+    <div class="ad-slot" data-ad-slot="anchor" data-ad-format="horizontal"></div>
+  </div>
+
+  <script>
+    window.LOANSFLOW_ADS = { provider: 'placeholder', adsenseClient: '' };
+    (function () {
+      const step = parseInt(new URLSearchParams(location.search).get('step') || '', 10);
+      if (!isNaN(step) && step >= 0 && step <= 8) window.__LF_INITIAL_STEP = step;
+    })();
+  </script>
+  <script src="/js/app.js"></script>
+  <script src="/js/ads.js" defer></script>
+</body>
+</html>

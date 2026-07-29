@@ -1,0 +1,6 @@
+# LoansFlow ads.txt
+# Replace pub ID after AdSense approval:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# Ezoic (when enrolled) typically asks you to replace/append lines from their dashboard.
+google.com, pub-PLACEHOLDER, DIRECT, f08c47fec0942fa0
