@@ -8,3 +8,12 @@ dist/
 *.log
 .vscode/
 .idea/
+
+docs/automation/.secret*
+**/.secret*
+
+# secrets / local automation
+docs/automation/.secret*
+docs/automation/*.log
+docs/automation/watcher*.log
+tools/browser/node_modules/

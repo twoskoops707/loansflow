@@ -1,0 +1,37 @@
+﻿[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@07b52360cc15066f987c910ab34dfbcd4a8778d2/inspector.html?ws=127.0.0.1:9333/devtools/page/D2A70182AE57C731281FA1E04942919F",
+   "id": "D2A70182AE57C731281FA1E04942919F",
+   "title": "0.0.0.3",
+   "type": "page",
+   "url": "http://0.0.0.3/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/page/D2A70182AE57C731281FA1E04942919F"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@07b52360cc15066f987c910ab34dfbcd4a8778d2/inspector.html?ws=127.0.0.1:9333/devtools/page/B9D676B120EC1058DE0DCAE577BEDC10",
+   "faviconUrl": "https://www.gstatic.com/images/branding/googleg_gradient/1x/googleg_gradient_standard_32dp.png",
+   "id": "B9D676B120EC1058DE0DCAE577BEDC10",
+   "title": "Google AdSense - Earn Money from Your Website with Monetization",
+   "type": "page",
+   "url": "https://adsense.google.com/start/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/page/B9D676B120EC1058DE0DCAE577BEDC10"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@07b52360cc15066f987c910ab34dfbcd4a8778d2/inspector.html?ws=127.0.0.1:9333/devtools/page/5ED15D8C41D93E5D583A9ACCB7D1712E",
+   "faviconUrl": "https://www.gstatic.com/images/branding/googleg_gradient/1x/googleg_gradient_standard_32dp.png",
+   "id": "5ED15D8C41D93E5D583A9ACCB7D1712E",
+   "parentId": "B9D676B120EC1058DE0DCAE577BEDC10",
+   "title": "https://www.youtube.com/embed/JFgKma9leYo?enablejsapi=1&amp;origin=https%3A%2F%2Fadsense.google.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fadsense.google.com%2Fstart%2F&amp;aoriginsup=1&amp;vf=1",
+   "type": "iframe",
+   "url": "https://www.youtube.com/embed/JFgKma9leYo?enablejsapi=1&origin=https%3A%2F%2Fadsense.google.com&widgetid=1&forigin=https%3A%2F%2Fadsense.google.com%2Fstart%2F&aoriginsup=1&vf=1",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/page/5ED15D8C41D93E5D583A9ACCB7D1712E"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@07b52360cc15066f987c910ab34dfbcd4a8778d2/worker_app.html?ws=127.0.0.1:9333/devtools/page/53583FB122313B8A800A95E0E9D8BD1E",
+   "id": "53583FB122313B8A800A95E0E9D8BD1E",
+   "title": "Service Worker chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+   "type": "service_worker",
+   "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf/service_worker.js",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/page/53583FB122313B8A800A95E0E9D8BD1E"
+} ]
+
