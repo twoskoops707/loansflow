@@ -1,13 +1,14 @@
-# Cloudflare Pages via GitHub
+# Cloudflare Pages via GitHub (requires CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID secrets)
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     permissions:
       contents: read
       deployments: write
