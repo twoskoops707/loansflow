@@ -1,25 +1,36 @@
-# Launch checklist (when you're back)
+# Launch checklist
 
-## Done in repo
-- [x] Redesigned landing + calculator suite
-- [x] Working math (SBA / commercial / LOC / mortgage)
-- [x] Ad placeholders + ads.js switch
-- [x] Legal pages + contact loansflow707@gmail.com
-- [x] GitHub repo + Cloudflare Pages wiring
+## Done
+- [x] Redesigned site live: https://twoskoops707.github.io/loansflow/
+- [x] Repo: https://github.com/twoskoops707/loansflow
+- [x] Ad placeholders + ads.txt + legal (loansflow707@gmail.com)
+- [x] FamFlow LoansFlow sequences generated (8 unique stems) — pushed to FamFlow main
+- [x] Ad-network watcher running (waits for Gmail password drop-file)
 
-## You do (10–20 min)
-1. **Buy domain** — `loansflow.top` or `loansflow.io` (Namecheap / Cloudflare Registrar / Porkbun).
-2. **Cloudflare Pages** — if GitHub Action secrets missing, connect repo in dashboard:
-   - Output directory: `public`
-   - Custom domain → add `loansflow.top`
-3. **Add GitHub secrets** (for Actions deploy):
-   - `CLOUDFLARE_API_TOKEN` (Pages edit)
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. **AdSense** — apply with live URL; then set `window.LOANSFLOW_ADS` + real `ads.txt` pub line.
-5. **Ezoic** — revisit after traffic; finance niches often clear higher RPM via mediation.
+## BLOCKED — need one secret (no click required)
+Google password for **loansflow707@gmail.com** is not saved in Chrome.
+Create this file with the password on one line:
 
-## Local preview
-```bash
-npm run dev
+`C:\Users\jsmil\.cursor\loansflow\docs\automation\.secret-gmail-password.txt`
+
+Watcher (`tools/browser/watch-and-apply.js`) will then auto-run:
+1. Google AdSense application
+2. Ezoic publisher signup
+3. Mediavine publishing page
+4. Amazon Associates
+
+If 2FA challenges, automation writes `docs/automation/BLOCKED-2FA.txt` and stops.
+
+## Still needs payment login (can't automate card checkout without vault access)
+1. Buy **loansflow.top** or **loansflow.io**
+2. Cloudflare Pages → connect `twoskoops707/loansflow`, output `public`, custom domain
+3. Optional GitHub secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+
+## Start farm (LoansFlow slug)
+```powershell
+cd C:\Users\jsmil\famflow
+py scripts/generate_loansflow_sequences.py --clean
+# Point farm site selector to slug: loansflow (unique-seq rules same as DabFlow)
 ```
-→ http://localhost:4173
+
+Sequences: `automation/recordings/sequences/loansflow/`
