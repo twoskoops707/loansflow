@@ -239,7 +239,7 @@ function renderStep1(){
         <div class="line-item"><span>Home Insurance (est.)</span><span class="num">${fmtMoney(monthlyIns,2)}</span></div>
         <div class="line-item"><span>Total Monthly Payment</span><span class="num">${fmtMoney(total,2)}</span></div>
 
-        <div class="ad-slot">Advertisement</div>
+        <div class="ad-slot" data-ad-format="horizontal" data-ad-name="calc-top"></div>
 
         <div class="line-item"><span>Loan Amount</span><span class="num">${fmtMoney(principal,0)}</span></div>
         <div class="line-item"><span>Total Interest Paid (${state.term} yrs)</span><span class="num">${fmtMoney(pi*state.term*12 - principal,0)}</span></div>
@@ -333,7 +333,7 @@ function renderStep2(){
       </div>
       ` : ''}
 
-      <div class="ad-slot" style="margin:0 2rem 1.5rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-mid"></div>
 
       <div class="ledger-table-wrap">
         <table>
@@ -403,7 +403,7 @@ function renderStep3(){
         <div class="value">${monthlySavings >= 0 ? fmtMoney(monthlySavings,2)+' / month' : '&minus;'+fmtMoney(Math.abs(monthlySavings),2)+' / month'}</div>
       </div>
 
-      <div class="ad-slot" style="margin:0 2rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="auto" data-ad-name="calc-auto"></div>
 
       <div class="actions" style="padding-top:0;">
         <button class="btn-ghost" id="backTo2">&larr; Back</button>
@@ -460,7 +460,7 @@ function renderStep4(){
         <div class="dti-note">Estimated debt-to-income ratio: ${currentDebtToIncome.toFixed(1)}% (lenders typically look for 36% or below, up to 43% for some loan types)</div>
       </div>
 
-      <div class="ad-slot" style="margin:0 2rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="fluid" data-ad-name="calc-article"></div>
 
       <div class="actions" style="padding-top:0;">
         <button class="btn-ghost" id="backTo3">&larr; Back</button>
@@ -590,7 +590,7 @@ function renderStep5(){
       </p>
       ` : ''}
 
-      <div class="ad-slot" style="margin:0 2rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="multipurpose" data-ad-name="calc-related"></div>
 
       <div class="actions" style="padding-top:0;">
         <a href="#" onclick="event.preventDefault(); state.step=3; render();" style="align-self:center; font-size:0.85rem; color:var(--ink-soft); text-decoration:underline; margin-right:auto;">Looking for a home mortgage instead?</a>
@@ -677,7 +677,7 @@ function renderStepBizAmort(){
         <div class="line-item"><span>Total Interest Over Term</span><span class="num">${fmtMoney(totalInterest,0)}</span></div>
       </div>
 
-      <div class="ad-slot" style="margin:1.5rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="horizontal" data-ad-name="calc-banner2"></div>
 
       <div class="ledger-table-wrap">
         <table>
@@ -813,7 +813,7 @@ function renderStepLOC(){
         <div class="line-item"><span>Available Credit Remaining</span><span class="num">${fmtMoney(availableCredit,0)}</span></div>
       </div>
 
-      <div class="ad-slot" style="margin:0 2rem 1.5rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-box"></div>
 
       <div class="ledger-table-wrap">
         <table>
@@ -870,7 +870,7 @@ function renderStep6(){
         National averages, compiled from lender-reported data. Individual rates vary by credit profile, down payment, and lender. Not a rate quote.
       </p>
 
-      <div class="ad-slot" style="margin:1.5rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="auto" data-ad-name="calc-flex"></div>
 
       <div>
         <div class="news-card">
@@ -909,7 +909,7 @@ function renderStep6(){
         </div>
       </div>
 
-      <div class="ad-slot" style="margin:1.5rem 2rem 2rem;">Advertisement</div>
+      <div class="ad-slot" data-ad-format="fluid" data-ad-name="calc-feed"></div>
     </div>
   `;
 }
@@ -1145,4 +1145,6 @@ if (typeof window.__LF_INITIAL_STEP === 'number' && window.__LF_INITIAL_STEP >= 
   state.step = window.__LF_INITIAL_STEP;
 }
 render();
+
+
 

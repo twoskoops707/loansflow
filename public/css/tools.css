@@ -41,6 +41,12 @@ body {
   min-height: 100vh;
 }
 
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .sidebar {
   background:
     linear-gradient(165deg, #0c1822 0%, #071018 45%, #0a221c 100%);
