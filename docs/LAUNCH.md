@@ -1,13 +1,13 @@
-# Launch checklist
+﻿# Launch checklist
 
 ## Done
 - [x] Redesigned site live: https://twoskoops707.github.io/loansflow/
 - [x] Repo: https://github.com/twoskoops707/loansflow
 - [x] Ad placeholders + ads.txt + legal (loansflow707@gmail.com)
-- [x] FamFlow LoansFlow sequences generated (8 unique stems) — pushed to FamFlow main
+- [x] FamFlow LoansFlow sequences generated (8 unique stems) â€” pushed to FamFlow main
 - [x] Ad-network watcher running (waits for Gmail password drop-file)
 
-## BLOCKED — need one secret (no click required)
+## BLOCKED â€” need one secret (no click required)
 Google password for **loansflow707@gmail.com** is not saved in Chrome.
 Create this file with the password on one line:
 
@@ -22,8 +22,8 @@ Watcher (`tools/browser/watch-and-apply.js`) will then auto-run:
 If 2FA challenges, automation writes `docs/automation/BLOCKED-2FA.txt` and stops.
 
 ## Still needs payment login (can't automate card checkout without vault access)
-1. Buy **loansflow.top** or **loansflow.io**
-2. Cloudflare Pages → connect `twoskoops707/loansflow`, output `public`, custom domain
+1. Buy **loansflows.com** or **loansflow.io**
+2. Cloudflare Pages â†’ connect `twoskoops707/loansflow`, output `public`, custom domain
 3. Optional GitHub secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
 
 ## Start farm (LoansFlow slug)

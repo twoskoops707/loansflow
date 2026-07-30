@@ -1,20 +1,20 @@
-# LoansFlow — Design Spec
+﻿# LoansFlow â€” Design Spec
 
 **Date:** 2026-07-29  
 **Status:** Approved by owner proxy (full decision authority while AFK)  
 **Contact:** loansflow707@gmail.com  
-**Domain target:** loansflow.top (CapitalFlow TLDs unavailable)
+**Domain target:** loansflows.com (CapitalFlow TLDs unavailable)
 
 ## Product
 
-Free SBA / commercial / mortgage calculator suite monetized with display ads (AdSense first → Ezoic at traffic threshold). Brand: **LoansFlow** (Flow product family).
+Free SBA / commercial / mortgage calculator suite monetized with display ads (AdSense first â†’ Ezoic at traffic threshold). Brand: **LoansFlow** (Flow product family).
 
 ## Locked decisions
 
 | Decision | Choice |
 |----------|--------|
 | Brand | LoansFlow |
-| Domain | loansflow.top (buy ASAP); chase .com later |
+| Domain | loansflows.com (buy ASAP); chase .com later |
 | Host | Cloudflare Pages |
 | Repo | GitHub `twoskoops707/loansflow` |
 | Stack | Static multi-page + SPA tools app (no SSR required) |
@@ -23,15 +23,15 @@ Free SBA / commercial / mortgage calculator suite monetized with display ads (Ad
 
 ## Architecture
 
-- `/` — marketing landing (brand-first, curb appeal)
-- `/tools/` — full calculator SPA (ported math from source HTML)
+- `/` â€” marketing landing (brand-first, curb appeal)
+- `/tools/` â€” full calculator SPA (ported math from source HTML)
 - Legal pages: about, contact, privacy, terms, disclaimer
 - `ads.txt`, `robots.txt`, `sitemap.xml`
 - Ad slots: top, in-content, sticky anchor (env-gated publisher IDs)
 
 ## Visual direction
 
-Midnight ink hero + warm brass accent + light “underwriting desk” tool chrome. Display: Syne. Body: Manrope. Mono: IBM Plex Mono. Avoid purple gradients, Inter, cream/terracotta cliché.
+Midnight ink hero + warm brass accent + light â€œunderwriting deskâ€ tool chrome. Display: Syne. Body: Manrope. Mono: IBM Plex Mono. Avoid purple gradients, Inter, cream/terracotta clichÃ©.
 
 ## Day-1 scope
 

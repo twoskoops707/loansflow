@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://loansflow.top/sitemap.xml
+Sitemap: https://loansflows.com/sitemap.xml

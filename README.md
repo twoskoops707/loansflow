@@ -1,8 +1,8 @@
-# LoansFlow
+﻿# LoansFlow
 
-Free **SBA / commercial / mortgage** calculator suite — high-intent finance tools designed to monetize with AdSense → Ezoic.
+Free **SBA / commercial / mortgage** calculator suite â€” high-intent finance tools designed to monetize with AdSense â†’ Ezoic.
 
-**Live target:** [https://loansflow.top](https://loansflow.top)  
+**Live target:** [https://loansflows.com](https://loansflows.com)  
 **Contact:** loansflow707@gmail.com
 
 ## Features
@@ -26,8 +26,8 @@ Open http://localhost:4173
 ## Deploy (Cloudflare Pages)
 
 1. Push to GitHub (`twoskoops707/loansflow`).
-2. Cloudflare Dashboard → Workers & Pages → Create → Connect repo → output directory `public`.
-3. Buy **loansflow.top** (or `.io`) → add domain in Pages → point nameservers / CNAME to Cloudflare.
+2. Cloudflare Dashboard â†’ Workers & Pages â†’ Create â†’ Connect repo â†’ output directory `public`.
+3. Buy **loansflows.com** (or `.io`) â†’ add domain in Pages â†’ point nameservers / CNAME to Cloudflare.
 
 Or CLI (needs `CLOUDFLARE_API_TOKEN`):
 
