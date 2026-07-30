@@ -1,4 +1,4 @@
 ﻿User-agent: *
 Allow: /
 
-Sitemap: https://loansflows.com/sitemap.xml
+Sitemap: https://twoskoops707.github.io/loansflow/sitemap.xml

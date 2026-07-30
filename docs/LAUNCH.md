@@ -1,36 +1,23 @@
 ﻿# Launch checklist
 
+## Live (FREE)
+- Site: https://twoskoops707.github.io/loansflow/
+- Repo: https://github.com/twoskoops707/loansflow
+- Brand: LoansFlow
+- Domain spend: **$0** — buy a cheap TLD later if you want
+
 ## Done
-- [x] Redesigned site live: https://twoskoops707.github.io/loansflow/
-- [x] Repo: https://github.com/twoskoops707/loansflow
-- [x] Ad placeholders + ads.txt + legal (loansflow707@gmail.com)
-- [x] FamFlow LoansFlow sequences generated (8 unique stems) â€” pushed to FamFlow main
-- [x] Ad-network watcher running (waits for Gmail password drop-file)
+- [x] Redesigned calculators + ads placeholders
+- [x] Legal pages (loansflow707@gmail.com)
+- [x] FamFlow sequences generated
+- [x] Ad-apply watcher (needs Gmail password drop-file)
 
-## BLOCKED â€” need one secret (no click required)
-Google password for **loansflow707@gmail.com** is not saved in Chrome.
-Create this file with the password on one line:
+## Optional later (cheap, not required)
+1. Buy ~$1–3 TLD (`loansflows.me` / `.online` / `.site`) when ready — see `docs/DOMAIN.md`
+2. Cloudflare Pages free `*.pages.dev` + attach custom domain someday
+3. Skip the $21 .com/.net bundle
 
-`C:\Users\jsmil\.cursor\loansflow\docs\automation\.secret-gmail-password.txt`
-
-Watcher (`tools/browser/watch-and-apply.js`) will then auto-run:
-1. Google AdSense application
-2. Ezoic publisher signup
-3. Mediavine publishing page
-4. Amazon Associates
-
-If 2FA challenges, automation writes `docs/automation/BLOCKED-2FA.txt` and stops.
-
-## Still needs payment login (can't automate card checkout without vault access)
-1. Buy **loansflows.com** or **loansflow.io**
-2. Cloudflare Pages â†’ connect `twoskoops707/loansflow`, output `public`, custom domain
-3. Optional GitHub secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
-
-## Start farm (LoansFlow slug)
-```powershell
-cd C:\Users\jsmil\famflow
-py scripts/generate_loansflow_sequences.py --clean
-# Point farm site selector to slug: loansflow (unique-seq rules same as DabFlow)
-```
-
-Sequences: `automation/recordings/sequences/loansflow/`
+## Ad networks resume
+Drop password into:
+`docs/automation/.secret-gmail-password.txt`
+(use the free github.io URL on applications)

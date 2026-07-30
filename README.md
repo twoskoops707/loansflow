@@ -2,8 +2,10 @@
 
 Free **SBA / commercial / mortgage** calculator suite â€” high-intent finance tools designed to monetize with AdSense â†’ Ezoic.
 
-**Live target:** [https://loansflows.com](https://loansflows.com)  
+**Live:** [https://twoskoops707.github.io/loansflow/](https://twoskoops707.github.io/loansflow/) (free)  
+**Custom domain later:** optional cheap TLD — see [docs/DOMAIN.md](docs/DOMAIN.md)  
 **Contact:** loansflow707@gmail.com
+
 
 ## Features
 
