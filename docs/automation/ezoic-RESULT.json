@@ -1,0 +1,32 @@
+{
+  "at": "2026-07-30T19:40:28.884Z",
+  "email": "loansflow707@gmail.com",
+  "site": "loansflow.loan",
+  "steps": [
+    {
+      "url": "https://pubdash.ezoic.com/signup",
+      "bodyStart": "REGISTER\nENGLISH\nSIGN IN\n Email:\n Password:\nSIGN IN\n Remember me\nNew user? Register now!\nForgot password? I cannot login\nor\nSign in with Microsoft"
+    },
+    {
+      "filled": "email"
+    },
+    {
+      "filled": "password_from_dropfile"
+    }
+  ],
+  "verdict": "auth_blocked",
+  "urls": [
+    "https://pubdash.ezoic.com/join?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2F404",
+    "https://login.ezoic.com/?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2Fdashboard",
+    "https://login.ezoic.com/?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2F404",
+    "https://login.ezoic.com/?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2Fezoicads%2Fadpositions%2Fadsetup",
+    "https://login.ezoic.com/?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2Fezoicads%2Fadpositions%2Fadsetup"
+  ],
+  "finalSnippet": "https://login.ezoic.com/?redirect_url=https%3A%2F%2Fpubdash.ezoic.com%2Fezoicads%2Fadpositions%2Fadsetup\n\nREGISTER\nENGLISH\nSIGN IN\n Email:\n Password:\nSIGN IN\n Remember me\nNew user? Register now!\nForgot password? I cannot login\nor\nSign in with Microsoft",
+  "policy": {
+    "changedDns": false,
+    "changedAdsTxt": false,
+    "selectedCloudflareIntegration": false,
+    "keptAdSenseSnippets": true
+  }
+}

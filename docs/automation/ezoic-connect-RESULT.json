@@ -1,0 +1,30 @@
+{
+  "at": "2026-07-30T19:49:34.429Z",
+  "steps": [
+    "js_card",
+    "view_instructions",
+    "check_connection_clicked"
+  ],
+  "extracted": {
+    "ids": [],
+    "scripts": [
+      "https://connect.facebook.net/signals/config/557706597717259?v=2.9.366&amp;r=stable&amp;domain=pubdash.ezoic.com&amp;hme=78c3d709c6e52779dc9d6e8b8770857bb5dfd27159797805bacb5f93b9e7568a&amp;ex_m=108%2C210%2C160%2C22%2C73%2C74%2C151%2C69%2C68%2C11%2C169%2C93%2C16%2C143%2C131%2C39%2C76%2C81%2C139%2C165%2C171%2C26%2C27%2C28%2C30%2C48%2C152%2C78%2C116%2C18%2C20%2C44%2C40%2C42%2C41%2C86%2C95%2C99%2C114%2C150%2C153%2C46%2C115%2C24%2C21%2C123%2C70%2C36%2C155%2C154%2C156%2C147%2C145%2C25%2C35%2C59%2C113%2C167%2C71%2C17%2C158%2C118%2C84%2C67%2C19%2C88%2C89%2C120%2C87%2C141%2C140%2C144%2C100%2C166%2C34%2C49%2C117%2C47%2C8%2C4%2C5%2C7%2C6%2C3%2C94%2C105%2C172%2C177%2C224%2C75%2C237%2C236%2C235%2C23%2C33%2C55%2C107%2C61%2C10%2C64%2C101%2C102%2C103%2C109%2C134%2C31%2C29%2C136%2C137%2C138%2C133%2C132%2C161%2C77%2C164%2C162%2C163%2C50%2C60%2C127%2C15%2C168%2C45%2C281%2C282%2C280%2C295%2C313%2C217%2C206%2C62%2C207%2C205%2C316%2C307%2C52%2C218%2C111%2C135%2C83%2C125%2C54%2C124%2C130%2C129%2C58%2C65%2C63%2C157%2C79%2C80%2C119%2C37%2C32%2C53%2C56%2C104%2C170%2C1%2C128%2C14%2C126%2C12%2C2%2C57%2C96%2C66%2C122%2C92%2C91%2C173%2C174%2C97%2C98%2C9%2C106%2C51%2C148%2C90%2C82%2C72%2C121%2C110%2C43%2C149%2C0%2C85%2C142%2C146%2C159%2C38%2C112%2C13%2C175",
+      "https://the.gatekeeperconsent.com/cmp.min.js",
+      "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10808140470/?random=1785440978566&amp;cv=11&amp;fst=1785440978566&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=sign_up&amp;gtm=45be67t0v9165864693za200zb892100744zd892100744xec&amp;gcd=13l3l3l3l5l1&amp;dma=0&amp;tag_exp=115616985~115938466~115938469~118897920~118897930~119317811~119527020~119896802~120222308&amp;u_w=1536&amp;u_h=960&amp;url=https%3A%2F%2Fpubdash.ezoic.com%2Fsetup&amp;rcb=10&amp;frm=0&amp;tiba=Setup&amp;userId=652581&amp;ga_uid=G-2VN51QQMJJ.652581&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=2136054581.1785381924&amp;uaa=arm&amp;uab=64&amp;uafvl=Google%2520Chrome%3B149.0.7827.155%7CChromium%3B149.0.7827.155%7CNot)A%253BBrand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=19.0.0&amp;uaw=0&amp;data=event%3Dsign_up&amp;ept=9&amp;rfmt=3&amp;fmt=4",
+      "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/953845843/?random=1785440978608&amp;cv=11&amp;fst=1785440978608&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=sign_up&amp;gtm=45be67t0v9115944206za200zb892100744zd892100744xec&amp;gcd=13l3l3R3l5l1&amp;dma=0&amp;tag_exp=115938466~115938468~118897920~118897930~119317811~119896802~120222308&amp;u_w=1536&amp;u_h=960&amp;url=https%3A%2F%2Fpubdash.ezoic.com%2Fsetup&amp;rcb=4&amp;frm=0&amp;tiba=Setup&amp;userId=652581&amp;ga_uid=G-2VN51QQMJJ.652581&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=2136054581.1785381924&amp;uaa=arm&amp;uab=64&amp;uafvl=Google%2520Chrome%3B149.0.7827.155%7CChromium%3B149.0.7827.155%7CNot)A%253BBrand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=19.0.0&amp;uaw=0&amp;data=event%3Dsign_up&amp;ept=9&amp;rfmt=3&amp;fmt=4",
+      "https://pubdash.ezoic.com/resources/images/payment/payoneer.png&quot;);",
+      "https://support.ezoic.com/",
+      "https://docs.ezoic.com/docs/ezoicads/getting-started/",
+      "https://www.ezoic.com/",
+      "https://proteus.ezoic.com/widget/index.v3.js",
+      "https://proteus.ezoic.com/favicon-light.png",
+      "https://proteus.ezoic.com",
+      "https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fpubdash.ezoic.com%2Fsetup&amp;title=Setup&amp;referrer=&amp;muid=92cb5ed3-21a5-4ff8-aa2d-00b28022bb3c91a01b&amp;sid=e9c193b3-225a-42f8-8ce2-2cf19babd2c56e6a40&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3"
+    ],
+    "codeBlocks": [],
+    "text": "LOANSFLOW.LOAN\n+ ADD A SITE\nSUPPORT\nENGLISH\nConnect Your Site\n\nIn order to be considered for the Incubator Program you must complete this step.\n\nRecommended\nJavaScript\nAccess Ezoic's technology by connecting via JavaScript.\n more details\nVIEW INSTRUCTIONS\nCHECK CONNECTION\n© 2026 Ezoic Inc.\nAll rights reserved"
+  },
+  "finalUrl": "https://pubdash.ezoic.com/setup",
+  "finalSnippet": "LOANSFLOW.LOAN\n+ ADD A SITE\nSUPPORT\nENGLISH\nConnect Your Site\n\nIn order to be considered for the Incubator Program you must complete this step.\n\n Additional time is needed to detect integration.\nRecommended\nJavaScript\nAccess Ezoic's technology by connecting via JavaScript.\n more details\nVIEW INSTRUCTIONS\nCHECK CONNECTION\n© 2026 Ezoic Inc.\nAll rights reserved",
+  "verdict": "awaiting_script_deploy"
+}

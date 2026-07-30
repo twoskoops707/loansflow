@@ -1,39 +1,32 @@
 # LoansFlow — Autonomous Ops Blocker + Resume
 
-## Hard blocker (needs one secret)
+## AdSense status (2026-07-30, loansflow707@gmail.com)
 
-Google AdSense / Ezoic / most ad networks require sign-in as **loansflow707@gmail.com**.
+Publisher: `ca-pub-7523216981025331`
 
-- Chrome Profile 3 has that account listed, but **no saved password** and **no active Google session**.
-- Automation reached the AdSense password screen and stopped.
+| Site | Ownership | Site review | ads.txt (AdSense column) |
+|------|-----------|-------------|---------------------------|
+| **loansflow.loan** | **Verified** (meta) | **Getting ready** (review requested) | UI may still show Not found (crawl lag; file is live) |
+| **loansflow.pages.dev** / loansflow-live | Attached | — | Live Google ads.txt line |
+| twoskoops707.github.io | Getting ready | — | Not found |
 
-### Resume without clicking
+Evidence: `docs/automation/adsense-apex-SUBMIT-RESULT.json`, `adsense-adstxt-loansflow-loan-RESULT.json`.
 
-Create this file (one line, password only):
+## Live URLs
 
-`C:\Users\jsmil\.cursor\loansflow\docs\automation\.secret-gmail-password.txt`
+- Production: https://loansflow.loan/
+- Pages project: `loansflow-live`
+- ads.txt: `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
 
-Then run:
+## Ezoic (2026-07-30)
 
-```powershell
-cd C:\Users\jsmil\.cursor\loansflow\tools\browser
-node watch-and-apply.js
-```
+**Started** account + `loansflow.loan` + JavaScript connect path for Incubator. **Deferred** Cloudflare/NS takeover, ads.txt rewrite, and AdSense slot replacement.
 
-Or drop the file while the watcher is already running — it will continue AdSense → Ezoic → Mediavine waitlist → Cloudflare domain attach.
+See `docs/automation/EZOIC.md`. Headers: `public/js/ezoic-boot.js`. After deploy → pubdash **CHECK CONNECTION**.
 
-**Do not commit that file.** It is gitignored.
+Traffic: Ezoic wants ~250k MAU (post-2026-02); site is Incubator-only until then.
 
-## Already live
+## Password drop-files (gitignored)
 
-- Site: https://loansflow.pages.dev/
-- Repo: https://github.com/twoskoops707/loansflow
-- Contact: loansflow707@gmail.com
-
-## Networks targeted once password available
-
-1. Google AdSense (primary)
-2. Ezoic (apply early; activate ~10k sessions)
-3. Mediavine / Raptive waitlist (high CPM; traffic gate)
-4. Amazon Associates (mortgage/finance book/tools)
-5. Impact / FlexOffers SBA/lending affiliates (later)
+- Gmail: `docs/automation/.secret-gmail-password.txt`
+- Ezoic: `docs/automation/.secret-ezoic-password.txt`

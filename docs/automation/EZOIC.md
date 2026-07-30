@@ -1,0 +1,49 @@
+# Ezoic — LoansFlow status & checklist
+
+**Verdict (2026-07-30): Started account + site + JS path; deferred Cloud/DNS, ads.txt rewrite, and AdSense strip.**
+
+## Why this split
+
+| Action | Now? | Why |
+|--------|------|-----|
+| Create Ezoic publisher account | **Done** | loansflow707 path; site `loansflow.loan` on pubdash |
+| Complete account setup | **Done** (reached Connect Your Site) | Incubator requires connect step |
+| Choose **JavaScript** integration | **Selected** | Safe for CF Pages; avoids NS move |
+| Cloudflare / Nameserver integration | **Deferred** | Ezoic would manage CF DNS and can overwrite records — breaks Pages custom domain mid AdSense review |
+| Header scripts (`ezoic-boot.js`) | **Shipped** | Needed for Incubator “CHECK CONNECTION” detection; does **not** remove AdSense |
+| Ezoic ad placements replacing AdSense slots | **Deferred** | AdSense site status is **Getting ready** — dual fill risk |
+| ads.txt redirect to Ezoic manager | **Deferred** | Keep Google line authoritative until AdSense crawl shows Authorized |
+| Supplemental Ezoic ads.txt lines | **Later** | Add *in addition to* Google when dashboard gives the list |
+| AdSense Mediation in Ezoic | **Later** | After AdSense serves + Ezoic accepts site; match email/phone/zip |
+
+## Traffic gate (critical)
+
+As of **2026-02-19**, Ezoic requires **~250,000 monthly active users** for normal approval. LoansFlow is far below (farm warming / ~12k sessions/mo theoretical). Path is **Incubator** (20 sites/month, competitive). Account/site must stay on JS integration for detection; growing past 250k can auto-approve later.
+
+## Account / site
+
+- Dashboard: https://pubdash.ezoic.com/setup (Connect Your Site → JavaScript)
+- Domain shown: **LOANSFLOW.LOAN**
+- Email: loansflow707@gmail.com
+- Ezoic password drop-file (gitignored): `docs/automation/.secret-ezoic-password.txt`
+- CHECK CONNECTION previously: *“Additional time is needed to detect integration”* (before headers live)
+
+## Site code policy
+
+- `public/js/ads.js` — keep `provider: 'adsense'` and `ca-pub-7523216981025331`
+- `public/ads.txt` — keep `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
+- `public/js/ezoic-boot.js` — Gatekeeper + `sa.min.js` + analytics only (no placement `showAds`)
+
+## User later
+
+1. After deploy: pubdash → **CHECK CONNECTION** until detected → Incubator **Review In Progress**.
+2. Wait for AdSense **Ready** / filling on loansflow.loan.
+3. In Ezoic Ads.txt app: append seller lines (never drop Google); avoid 301 redirect while AdSense crawler still shows Not found.
+4. Enable **AdSense Mediation** with exact AdSense contact match.
+5. Only then consider Ezoic placements / mediation vs raw AdSense Auto ads.
+6. Do **not** flip to Cloudflare API integration unless you have a documented DNS cutover (Pages CNAMEs + SSL).
+
+## Evidence
+
+- `docs/automation/ezoic-connect-RESULT.json`
+- `docs/automation/ezoic-fill-01.txt` (Connect Your Site / Incubator copy)

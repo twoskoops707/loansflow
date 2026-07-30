@@ -1,0 +1,237 @@
+{
+  "url": "https://pubdash.ezoic.com/setup",
+  "title": "Setup",
+  "body": "LOANSFLOW.LOAN\n+ ADD A SITE\nSUPPORT\nENGLISH\nComplete Account Setup\n Your full name\nYour password\nDo you already have an Ad Manager account?\nYes\nNo\nDo you have an active AdSense account?\nYes\nNo\n\n Need help? Click here\n\nSAVE\n© 2026 Ezoic Inc.\nAll rights reserved",
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "description",
+      "placeholder": "ex. Wordpress Admin Login, Site Login, etc...",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "login_url",
+      "placeholder": "ex. https://your-site.com/wp-login.php",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "username",
+      "placeholder": "Username",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "confirmUsername",
+      "placeholder": "Confirm Username",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "password",
+      "name": "",
+      "id": "password",
+      "placeholder": "Password",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "password",
+      "name": "",
+      "id": "confirmPassword",
+      "placeholder": "Confirm Password",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "",
+      "placeholder": "",
+      "value": "",
+      "visible": false,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "",
+      "placeholder": "Search...",
+      "value": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "firstName",
+      "placeholder": "First Name",
+      "value": "joshua",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "name": "",
+      "id": "lastName",
+      "placeholder": "Last Name",
+      "value": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "password",
+      "name": "",
+      "id": "password",
+      "placeholder": "Password",
+      "value": "",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "name": "",
+      "id": "",
+      "placeholder": "",
+      "value": "1",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "name": "",
+      "id": "",
+      "placeholder": "",
+      "value": "0",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "name": "",
+      "id": "",
+      "placeholder": "",
+      "value": "1",
+      "visible": true,
+      "disabled": false
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "name": "",
+      "id": "",
+      "placeholder": "",
+      "value": "0",
+      "visible": true,
+      "disabled": false
+    }
+  ],
+  "buttons": [
+    {
+      "text": "account details",
+      "disabled": null,
+      "href": "https://pubdash.ezoic.com/#",
+      "classes": "utils__link--green"
+    },
+    {
+      "text": "Close",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button-gray m-0 v-btn v-btn--flat theme--light"
+    },
+    {
+      "text": "payment settings",
+      "disabled": null,
+      "href": "https://pubdash.ezoic.com/account/payments/settings",
+      "classes": "utils__link--green"
+    },
+    {
+      "text": "Close",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button-close v-btn theme--light"
+    },
+    {
+      "text": "Close",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button-close v-btn v-btn--flat theme--light"
+    },
+    {
+      "text": "Submit",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button v-btn v-btn--flat theme--light"
+    },
+    {
+      "text": "Skip",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button-close v-btn v-btn--flat theme--light"
+    },
+    {
+      "text": "Save",
+      "disabled": null,
+      "href": null,
+      "classes": "card-button v-btn v-btn--flat theme--light"
+    },
+    {
+      "text": "SUPPORT",
+      "disabled": null,
+      "href": "https://support.ezoic.com/",
+      "classes": ""
+    },
+    {
+      "text": "Click here",
+      "disabled": null,
+      "href": "https://support.ezoic.com/kb/article/applying-to-google-ad-manager-multiple-customer-management",
+      "classes": "utils__link--green"
+    },
+    {
+      "text": "SAVE",
+      "disabled": true,
+      "href": null,
+      "classes": "card-button m-0 v-btn v-btn--disabled v-btn--flat theme--light"
+    },
+    {
+      "text": "Ezoic Inc.",
+      "disabled": null,
+      "href": "https://www.ezoic.com/",
+      "classes": ""
+    },
+    {
+      "text": "expand_more",
+      "disabled": null,
+      "href": null,
+      "classes": "toggle-ezsc ezsc-close-button"
+    }
+  ]
+}
