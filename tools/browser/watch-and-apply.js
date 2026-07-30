@@ -60,24 +60,41 @@ async function googleLogin(page, password) {
     { waitUntil: 'domcontentloaded', timeout: 90000 }
   );
   await sleep(2000);
+
+  // Account chooser
+  const lf = page.getByText(EMAIL, { exact: false });
+  if (await lf.first().isVisible().catch(() => false)) {
+    await lf.first().click();
+    await sleep(2500);
+  }
+
   const email = page.locator('input[type="email"], input[name="identifier"]');
   if (await email.count()) {
     await email.first().fill(EMAIL);
     await page.getByRole('button', { name: /next/i }).click();
-    await sleep(3000);
+    await sleep(3500);
   }
   const pass = page.locator('input[type="password"], input[name="Passwd"]');
   if (await pass.count()) {
+    await pass.first().fill('');
     await pass.first().fill(password);
     await page.getByRole('button', { name: /next/i }).click();
-    await sleep(5000);
+    await sleep(6000);
   }
   await shot(page, 'apply-01-after-login.png');
-  // 2FA hard-stop
   const body = await page.locator('body').innerText();
-  if (/2-step|verify|authenticator|phone|challenge/i.test(body) && /enter code|verification/i.test(body)) {
+  fs.writeFileSync(path.join(OUT, 'apply-01-after-login.txt'), `${page.url()}\n\n${body.slice(0, 5000)}`);
+
+  if (/wrong password|incorrect password|couldn.?t find your google account/i.test(body)) {
+    throw new Error('WRONG_PASSWORD');
+  }
+  if (/2-step|2.?step|authenticator|verification code|verify it.?s you|enter the code/i.test(body)) {
     fs.writeFileSync(path.join(OUT, 'BLOCKED-2FA.txt'), body.slice(0, 4000));
     throw new Error('2FA required — cannot continue unattended');
+  }
+  // Still on password/identifier page = not logged in
+  if (/enter your password|email or phone/i.test(body) && /sign in|welcome/i.test(body)) {
+    throw new Error('LOGIN_FAILED_STILL_ON_SIGNIN');
   }
 }
 
@@ -170,9 +187,9 @@ async function runOnce(password) {
   await applyMediavine(page);
   console.log('Amazon Associates...');
   await applyAmazonAssociates(page);
-  fs.writeFileSync(path.join(OUT, 'APPLY-COMPLETE.txt'), new Date().toISOString());
+  fs.writeFileSync(path.join(OUT, 'APPLY-COMPLETE.txt'), new Date().toISOString() + '\n');
   console.log('APPLY PASS COMPLETE — review screenshots in docs/automation');
-  // scrub password file after use
+  // scrub password only after successful login + apply pass
   try {
     fs.unlinkSync(SECRET);
   } catch (_) {}
@@ -184,8 +201,25 @@ async function main() {
     const pw = readPassword();
     if (pw) {
       console.log('Password found — starting applications');
-      await runOnce(pw);
-      return;
+      try {
+        await runOnce(pw);
+        return;
+      } catch (e) {
+        console.error('APPLY_FAIL', e.message);
+        fs.writeFileSync(
+          path.join(OUT, 'APPLY-FAIL.txt'),
+          `${new Date().toISOString()}\n${e.message}\n`
+        );
+        if (e.message === 'WRONG_PASSWORD' || e.message === 'LOGIN_FAILED_STILL_ON_SIGNIN') {
+          // Keep file so operator can overwrite with correct password; rename aside
+          try {
+            fs.renameSync(SECRET, SECRET + '.bad');
+          } catch (_) {}
+          console.log('Bad password moved aside — drop a new password file to retry');
+        }
+        await sleep(8000);
+        continue;
+      }
     }
     await sleep(5000);
   }

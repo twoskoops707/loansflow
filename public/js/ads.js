@@ -1,12 +1,12 @@
-/**
+﻿/**
  * LoansFlow ad loader
  * Set window.LOANSFLOW_ADS = { provider: 'adsense'|'ezoic'|'placeholder', adsenseClient: 'ca-pub-XXXX' }
  * before this script, or edit CONFIG below after network approval.
  */
 (function () {
   const CONFIG = window.LOANSFLOW_ADS || {
-    provider: 'placeholder', // 'adsense' | 'ezoic' | 'placeholder'
-    adsenseClient: '', // e.g. 'ca-pub-XXXXXXXXXXXXXXXX'
+    provider: 'adsense', // 'adsense' | 'ezoic' | 'placeholder'
+    adsenseClient: 'ca-pub-7523216981025331', // e.g. 'ca-pub-XXXXXXXXXXXXXXXX'
     ezoicPrivacyId: '',
   };
 
@@ -17,7 +17,7 @@
       el.setAttribute('aria-hidden', 'true');
       if (CONFIG.provider === 'placeholder' || !CONFIG.adsenseClient) {
         el.innerHTML =
-          '<span class="ad-label">Sponsored</span><span class="ad-size">Ad slot · finance CPM inventory</span>';
+          '<span class="ad-label">Sponsored</span><span class="ad-size">Ad slot Â· finance CPM inventory</span>';
         return;
       }
       if (CONFIG.provider === 'adsense') {
@@ -72,3 +72,4 @@
     boot();
   }
 })();
+
