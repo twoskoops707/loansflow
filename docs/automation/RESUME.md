@@ -20,9 +20,9 @@ Evidence: `docs/automation/adsense-apex-SUBMIT-RESULT.json`, `adsense-adstxt-loa
 
 ## Ezoic (2026-07-30)
 
-**Started** account + `loansflow.loan` + JavaScript connect path for Incubator. **Deferred** Cloudflare/NS takeover, ads.txt rewrite, and AdSense slot replacement.
+**JS headers live** on apex (static Gatekeeper + `sa.min.js` + analytics in `<head>`). Publisher userId **652581**; no per-site script ID (domain-bound). **Deferred** Cloudflare/NS takeover, ads.txt rewrite, and AdSense slot replacement.
 
-See `docs/automation/EZOIC.md`. Headers: `public/js/ezoic-boot.js`. After deploy → pubdash **CHECK CONNECTION**.
+See `docs/automation/EZOIC.md` + `ezoic-snippet.txt`. After deploy → pubdash **CHECK CONNECTION**.
 
 Traffic: Ezoic wants ~250k MAU (post-2026-02); site is Incubator-only until then.
 
