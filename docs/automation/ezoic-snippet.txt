@@ -1,0 +1,19 @@
+# Ezoic integration snippet for loansflow.loan
+# Captured/confirmed: 2026-07-30
+# Sources:
+#   - pubdash.ezoic.com/setup → JavaScript → VIEW INSTRUCTIONS → docs.ezoic.com/docs/ezoicads/getting-started/
+#   - Official header: https://docs.ezoic.com/docs/ezoicads/integration/
+# Domain: loansflow.loan
+# Publisher account userId (from pubdash analytics pixels): 652581
+# Site-specific script ID: NONE — standalone JS is domain-bound; dashboard did not show a privacy/site ID in the connect modal.
+# Place at TOP of <head>, before AdSense. Keep Google ads.txt line.
+# Do NOT invent placeholder domain/site IDs.
+
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+<script async src="https://www.ezojs.com/ezoic/sa.min.js"></script>
+<script>
+    window.ezstandalone = window.ezstandalone || {};
+    window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+</script>
+<script src="https://ezoicanalytics.com/analytics.js"></script>

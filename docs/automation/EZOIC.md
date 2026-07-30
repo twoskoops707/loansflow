@@ -10,7 +10,7 @@
 | Complete account setup | **Done** (reached Connect Your Site) | Incubator requires connect step |
 | Choose **JavaScript** integration | **Selected** | Safe for CF Pages; avoids NS move |
 | Cloudflare / Nameserver integration | **Deferred** | Ezoic would manage CF DNS and can overwrite records — breaks Pages custom domain mid AdSense review |
-| Header scripts (`ezoic-boot.js`) | **Shipped** | Needed for Incubator “CHECK CONNECTION” detection; does **not** remove AdSense |
+| Header scripts (static `<head>` tags) | **Shipped** | Gatekeeper + `sa.min.js` + analytics in HTML source for crawler detection; does **not** remove AdSense |
 | Ezoic ad placements replacing AdSense slots | **Deferred** | AdSense site status is **Getting ready** — dual fill risk |
 | ads.txt redirect to Ezoic manager | **Deferred** | Keep Google line authoritative until AdSense crawl shows Authorized |
 | Supplemental Ezoic ads.txt lines | **Later** | Add *in addition to* Google when dashboard gives the list |
@@ -25,14 +25,19 @@ As of **2026-02-19**, Ezoic requires **~250,000 monthly active users** for norma
 - Dashboard: https://pubdash.ezoic.com/setup (Connect Your Site → JavaScript)
 - Domain shown: **LOANSFLOW.LOAN**
 - Email: loansflow707@gmail.com
+- Publisher account **userId**: **652581** (from pubdash conversion pixels; not embedded in JS)
+- Per-site script / privacy ID: **none shown** — standalone JS is domain-bound
 - Ezoic password drop-file (gitignored): `docs/automation/.secret-ezoic-password.txt`
-- CHECK CONNECTION previously: *“Additional time is needed to detect integration”* (before headers live)
+- Snippet file: `docs/automation/ezoic-snippet.txt`
+- CHECK CONNECTION: re-run after static headers deploy
 
 ## Site code policy
 
 - `public/js/ads.js` — keep `provider: 'adsense'` and `ca-pub-7523216981025331`
-- `public/ads.txt` — keep `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
-- `public/js/ezoic-boot.js` — Gatekeeper + `sa.min.js` + analytics only (no placement `showAds`)
+- `public/ads.txt` — keep `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0` (no Ezoic seller lines until dashboard provides them)
+- Static Ezoic tags in every `public/**/*.html` `<head>` (from `ezoic-snippet.txt` — crawlers need `sa.min.js` in source)
+- `public/js/ezoic-boot.js` — same snippet; loaded on all pages; no-op if static tags already present
+- No Ezoic `showAds` / placeholder divs while AdSense is primary
 
 ## User later
 
