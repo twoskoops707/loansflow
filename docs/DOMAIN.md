@@ -1,24 +1,45 @@
-# Domain strategy — FREE FIRST
+# Domain — production
 
-## Live now (cost: $0)
-**https://loansflow.pages.dev/**
+## Live production URL
+**https://loansflow.loan/**
 
-Brand stays **LoansFlow**. No paid domain required to run ads applications, farm sequences, or ship.
+| URL | Role |
+|-----|------|
+| https://loansflow.loan/ | Canonical production |
+| https://www.loansflow.loan/ | www → same site |
+| https://loansflow-live.pages.dev/ | Cloudflare Pages (Foremost Vole account) |
+| https://loansflow.pages.dev/ | Older Pages project on Twskoops account (fallback / legacy) |
 
-## Buy later (cheapest first)
+## Cloudflare layout (important)
 
-When you want a custom domain, pick the lowest first-year price — not prestige:
+- **Registrar + active DNS zone** live under Cloudflare account **Foremost Vole** (`8547be3a…`), nameservers `elisabeth` / `khalid`.
+- **Pages project serving the custom domain:** `loansflow-live` on Foremost Vole.
+- DNS: proxied CNAMEs `@` and `www` → `loansflow-live.pages.dev`.
+- Twskoops account still has Pages project `loansflow` (`loansflow.pages.dev`) and a **pending** zone for `loansflow.loan` (josh/kelly) — do not point the apex there (cross-account CNAME causes Cloudflare **1014**).
 
-| Priority | Domain | Typical 1st year (Porkbun-ish) |
-|----------|--------|--------------------------------|
-| 1 | `loansflows.me` / `loansflows.online` / `loansflows.site` | ~$1–$3 |
-| 2 | `loansflows.com` | ~$11 (was in cart; skip until ready) |
-| 3 | Bundle `.com`+`.net` | ~$21 — **skip** |
+## AdSense
 
-Do **not** buy the COM/NET bundle. `.com` alone later is enough.
+Pub: `ca-pub-7523216981025331` · account `loansflow707@gmail.com`
 
-## Cloudflare free hostname
-Cloudflare Pages project `loansflow` → `loansflow.pages.dev` (live). Custom domain can attach in the Pages dashboard whenever you buy one.
+**ads.txt (must be crawlable at apex):**
+```
+https://loansflow.loan/ads.txt
+```
+Body (exact):
+```
+google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0
+```
 
-## Cart note
-Porkbun may still show `loansflows.com` in a cart — **empty it** if you do not want to pay yet. Free Pages URL is the production site.
+AdSense Sites list also shows `loansflow.pages.dev` and `twoskoops707.github.io` — crawler checks each host’s own `/ads.txt`. Apex status can stay **Not found** for up to ~24h after the file is live; there is no manual “recheck” button in the UI.
+
+Ownership for **loansflow.loan** is verified (meta) and review requested. Public curl on apex/www/live/pages.dev returns 200 `text/plain` with the line above.
+
+## Ops
+
+Deploy from WSL (Vole account):
+
+```bash
+cd ~/loansflow-cf
+rm -rf public && cp -a /mnt/c/Users/jsmil/.cursor/loansflow/public .
+CLOUDFLARE_ACCOUNT_ID=8547be3ab2e2bccea6f0356fe6ba4a9c npx wrangler pages deploy ./public --project-name=loansflow-live --branch=main --commit-dirty=true
+```

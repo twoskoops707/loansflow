@@ -1,6 +1,8 @@
-name = "loansflow"
+name = "loansflow-live"
 compatibility_date = "2026-07-29"
 pages_build_output_dir = "./public"
 
-# Free Cloudflare Pages → https://loansflow.pages.dev
-# Deploy (WSL): npx wrangler pages deploy ./public --project-name=loansflow
+# Production: Foremost Vole → loansflow-live (serves loansflow.loan / www)
+# Deploy (WSL): ~/loansflow-cf + tools/browser/deploy-pages-wsl.sh
+#   npx wrangler pages deploy ./public --project-name=loansflow-live --commit-dirty=true
+# Legacy Twskoops project (do NOT CNAME apex here): loansflow → loansflow.pages.dev

@@ -6,5 +6,10 @@ rm -rf "$DST/public"
 cp -a "$SRC/public" "$DST/public"
 cp "$SRC/wrangler.toml" "$DST/wrangler.toml"
 cd "$DST"
-npx wrangler pages deploy ./public --project-name=loansflow --commit-dirty=true
+# Apex/www CNAME → loansflow-live on Foremost Vole (owns loansflow.loan zone)
+CLOUDFLARE_ACCOUNT_ID=8547be3ab2e2bccea6f0356fe6ba4a9c \
+  npx wrangler pages deploy ./public --project-name=loansflow-live --commit-dirty=true
+# Also keep Twskoops loansflow.pages.dev in sync (do NOT CNAME apex here)
+CLOUDFLARE_ACCOUNT_ID=c8c1c5fd94fa89b259d5559a496e87d7 \
+  npx wrangler pages deploy ./public --project-name=loansflow --commit-dirty=true
 echo DEPLOY_OK
