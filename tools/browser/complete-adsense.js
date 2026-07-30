@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation');
-const SITE = 'https://twoskoops707.github.io/loansflow/';
+const SITE = 'https://loansflow.pages.dev/';
 const EMAIL = 'loansflow707@gmail.com';
 
 async function shot(page, name) {

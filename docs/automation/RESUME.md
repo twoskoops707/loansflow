@@ -26,7 +26,7 @@ Or drop the file while the watcher is already running — it will continue AdSen
 
 ## Already live
 
-- Site: https://twoskoops707.github.io/loansflow/
+- Site: https://loansflow.pages.dev/
 - Repo: https://github.com/twoskoops707/loansflow
 - Contact: loansflow707@gmail.com
 

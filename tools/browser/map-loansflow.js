@@ -5,7 +5,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://twoskoops707.github.io/loansflow';
+const BASE = 'https://loansflow.pages.dev';
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation', 'loansflow_mapping.json');
 
 async function box(page, selector) {

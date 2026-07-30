@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx --yes serve public -p 4173",
     "start": "npm run dev",
-    "pages:deploy": "npx --yes wrangler pages deploy public --project-name loansflow"
+    "deploy": "node -e \"console.error('Deploy from WSL: wsl -d kali-linux -- bash -lc \\\"cd ~/loansflow-cf && rm -rf public && cp -a /mnt/c/Users/jsmil/.cursor/loansflow/public . && cp /mnt/c/Users/jsmil/.cursor/loansflow/wrangler.toml . && npx wrangler pages deploy ./public --project-name=loansflow --branch=main --commit-dirty=true\\\"')\"",
+    "pages:deploy": "npm run deploy"
   },
   "engines": {
     "node": ">=18"

@@ -1,7 +1,7 @@
 # Domain strategy — FREE FIRST
 
 ## Live now (cost: $0)
-**https://twoskoops707.github.io/loansflow/**
+**https://loansflow.pages.dev/**
 
 Brand stays **LoansFlow**. No paid domain required to run ads applications, farm sequences, or ship.
 
@@ -17,8 +17,8 @@ When you want a custom domain, pick the lowest first-year price — not prestige
 
 Do **not** buy the COM/NET bundle. `.com` alone later is enough.
 
-## Cloudflare free hostname (optional)
-Cloudflare Pages also gives a free `*.pages.dev` URL after connecting the repo — still $0, nicer than github.io for some ad networks. Custom domain can attach whenever you buy one.
+## Cloudflare free hostname
+Cloudflare Pages project `loansflow` → `loansflow.pages.dev` (live). Custom domain can attach in the Pages dashboard whenever you buy one.
 
 ## Cart note
-Porkbun may still show `loansflows.com` in a cart — **empty it** if you do not want to pay yet. Free GitHub URL is the production site.
+Porkbun may still show `loansflows.com` in a cart — **empty it** if you do not want to pay yet. Free Pages URL is the production site.

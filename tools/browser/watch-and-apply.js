@@ -11,7 +11,7 @@ const ROOT = path.join(__dirname, '..', '..');
 const SECRET = path.join(ROOT, 'docs', 'automation', '.secret-gmail-password.txt');
 const OUT = path.join(ROOT, 'docs', 'automation');
 const EMAIL = 'loansflow707@gmail.com';
-const SITE = 'https://twoskoops707.github.io/loansflow/'; // free; custom domain later
+const SITE = 'https://loansflow.pages.dev/'; // free; custom domain later
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
