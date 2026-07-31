@@ -1,0 +1,114 @@
+{
+  "time": "2026-07-31T05:03:47.561996+00:00",
+  "email": "loansflow707@gmail.com",
+  "site": "https://loansflow.loan/",
+  "url": "https://publisher.rakutenadvertising.com/register",
+  "steps": [
+    {
+      "step": "load",
+      "url": "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/registrations?client_id=publisher-dashboard&redirect_uri=https%3A%2F%2Fpublisher.rakutenadvertising.com&response_type=code",
+      "title": "Sign in to Rakuten Advertising",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "username",
+          "id": "username",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": false,
+          "value": "",
+          "options": []
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "email",
+          "id": "email",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": true,
+          "value": "",
+          "options": []
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "firstName",
+          "id": "firstName",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": true,
+          "value": "",
+          "options": []
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "lastName",
+          "id": "lastName",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": true,
+          "value": "",
+          "options": []
+        },
+        {
+          "tag": "input",
+          "type": "password",
+          "name": "password",
+          "id": "password-new",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": true,
+          "value": "",
+          "options": []
+        },
+        {
+          "tag": "input",
+          "type": "password",
+          "name": "password-confirm",
+          "id": "password-confirm",
+          "placeholder": "",
+          "aria": "",
+          "label": "",
+          "visible": true,
+          "value": "",
+          "options": []
+        }
+      ],
+      "body_snip": "Email address\nFirst name\nLast name\nPassword\n \n\nAt least 8 characters\n\n\n \n\nIncludes at least one special character\n\n\n \n\nIncludes a capital letter\n\n\n \n\nIncludes a lowercase letter\n\n\n \n\nIncludes a number\n\nConfirm password\n\n\nRegister\nAlready have an account? Login"
+    },
+    {
+      "step": "filled",
+      "filled": {
+        "email": true,
+        "confirm_email": false,
+        "password": true,
+        "first_name": true,
+        "last_name": true,
+        "company": false,
+        "website": false,
+        "phone": false,
+        "confirm_password": true
+      },
+      "url": "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/registrations?client_id=publisher-dashboard&redirect_uri=https%3A%2F%2Fpublisher.rakutenadvertising.com&response_type=code"
+    },
+    {
+      "step": "after_submit",
+      "submitted_click": true,
+      "url": "https://publisher.rakutenadvertising.com/?session_state=%5BREDACTED%5D&iss=https%3A%2F%2Fauth.rakutenmarketing.com%2Fauth%2Frealms%2Frakuten-advertising&code=%5BREDACTED%5D&id_token=%5BREDACTED%5D",
+      "title": "Publisher Dashboard",
+      "body_snip": "Publisher Dashboard",
+      "fields": []
+    }
+  ],
+  "status": "submitted_or_created",
+  "final_url": "https://publisher.rakutenadvertising.com/?session_state=%5BREDACTED%5D&iss=https%3A%2F%2Fauth.rakutenmarketing.com%2Fauth%2Frealms%2Frakuten-advertising&code=%5BREDACTED%5D&id_token=%5BREDACTED%5D",
+  "final_title": "Publisher Dashboard"
+}

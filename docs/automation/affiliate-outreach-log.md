@@ -61,6 +61,24 @@ Evidence: `docs/automation/outreach-shots/verify-sent.png`, `affiliate-outreach-
 | 2026-07-31T03:40:53Z | MaxBounty affiliate | maxbounty.com/affiliate | **page opened** — phone/Skype + traffic details typical |
 | 2026-07-31T03:40:05Z | Nav Partnerships | nav.com/partnerships | **blocked — reCAPTCHA** on form attempt |
 | 2026-07-31T03:40:12Z | QuinStreet contact page | quinstreet.com/contact-us | **no web form** (phone HQ); email already sent |
+| 2026-07-31T05:03:47Z | Rakuten Advertising publisher | http://publisher.rakutenadvertising.com/register | **account created** for loansflow707@gmail.com (LoansFlow Partnerships). Auth registration succeeded → Publisher Dashboard. **Email verification still required** (`/onboarding/verify-email`). “Activate your Rakuten Advertising Login” mail received; activation link opened; after re-login still on verify-email. Site https://loansflow.loan/ not yet attached in onboarding. Password drop-file: `docs/automation/.secret-rakuten-password.txt` (gitignored locally — do not commit). |
+
+---
+
+## Rakuten registration follow-up (2026-07-31 ≈05:03–05:07Z)
+
+Madhu (Case 404091) directed free **publisher** signup (not advertiser). Automation completed account creation:
+
+1. Opened register URL → Keycloak registration form on `auth.rakutenmarketing.com`
+2. Filled email / first / last / password (+ confirm); all password rules green
+3. Clicked **Register** → redirected to `publisher.rakutenadvertising.com` **Publisher Dashboard** (JWT subject created; `email_verified=false` initially)
+4. Onboarding gate: **Verify your email** for `loansflow707@gmail.com` (+ Resend verification)
+5. Gmail: “Activate your Rakuten Advertising Login” from `noreply@rakutenadvertising.com` — Activate Login link opened
+6. Subsequent login works (reCAPTCHA badge present; no hard CAPTCHA wall that blocked submit). Still lands on verify-email until activation fully sticks in headed/manual click if needed
+
+**Status:** Publisher account **exists**; finish email activate + attach https://loansflow.loan/ in onboarding manually if verify link is one-shot / already consumed.
+
+Evidence: `outreach-shots/rakuten-01-start.png` … `rakuten-42-settled.png`, `rakuten-register-RESULT.json`, `rakuten-dashboard-RESULT.json`, `rakuten-login2-RESULT.json`.
 
 ---
 
@@ -90,6 +108,7 @@ Evidence: `docs/automation/outreach-shots/verify-sent.png`, `affiliate-outreach-
 | digidip | Google reCAPTCHA on contact form |
 | Nav | Invisible/hidden reCAPTCHA field blocked autofill submit |
 | FlexOffers | Incomplete signup: email OTP + Cloudflare Turnstile; account exists, finish manually |
+| Rakuten | Account created; stuck on `/onboarding/verify-email` after Activate Login email (link may be one-shot / needs headed confirm). Site not yet added. |
 | Awin / Impact / MaxBounty | Multi-step interactive signup (deposit / KYC / phone) — not fully completable headless |
 | Bright Data MCP | 401 (token/zone not configured in this session) — research used WebSearch/WebFetch |
 
@@ -131,17 +150,19 @@ Under `docs/legal/` (draft — counsel review):
 - `docs/automation/affiliate_outreach_send.py` — Gmail send script  
 - `docs/automation/affiliate_outreach_apply.py` — form/signup attempts  
 - `docs/automation/affiliate_inbox_monitor.py` / `affiliate_send_replies3.py` — inbox monitor + replies  
+- `docs/automation/affiliate_rakuten_register.py` / `affiliate_rakuten_login2.py` — Rakuten publisher register + login  
 - `docs/automation/affiliate-outreach-results.json`  
 - `docs/automation/affiliate-application-results.json`  
 - `docs/automation/affiliate-inbox-monitor.json` / `affiliate-reply-results.json`  
-- `docs/automation/outreach-shots/` — screenshots  
+- `docs/automation/rakuten-*-RESULT.json` — Rakuten signup evidence (tokens redacted)  
+- `docs/automation/outreach-shots/` — screenshots (incl. `rakuten-*.png`)  
 - `docs/legal/` — IO / terms / rate card templates  
 - Chrome profile: `docs/automation/.chrome-gmail-outreach2` (logged-in Gmail session; may re-challenge)
 
 ## Suggested next manual steps
 
 1. Finish FlexOffers OTP in a headed browser (request new passcode → Turnstile → add https://loansflow.loan/ as traffic source). Mark ticket 47332464239 Not Spam if still in Spam.  
-2. Complete Rakuten publisher registration: http://publisher.rakutenadvertising.com/register  
+2. Rakuten: in headed browser, Resend verification / open fresh Activate Login link → confirm past `/onboarding/verify-email` → add https://loansflow.loan/ as media property.  
 3. Solve digidip reCAPTCHA and click Send (form already drafted).  
 4. Complete Awin publisher signup ($1 refundable deposit) and Impact partner registration.  
 5. Find alternate QuinStreet / Bankrate publisher contacts (prior emails bounced).  

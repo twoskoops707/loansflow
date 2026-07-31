@@ -1,0 +1,25 @@
+{
+  "time": "2026-07-31T05:04:44.340692+00:00",
+  "steps": [
+    {
+      "url": "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?redirect_uri=http%3A%2F%2Fpublisher.rakutenadvertising.com%2F&scope=openid&response_mode=query&nonce=PMvoTbSHrl_PF0qepMw_6DRf&response_type=code&code_challenge_method=S256&state=-HLs9JzLxScSCa7G6eyipvGE&code_challenge=pvhwxxo1KvzE69zk1tUrSkSIPVkE0xIjpJI1DvLFpD4&client_id=publisher-dashboard",
+      "title": "Sign in to Rakuten Advertising",
+      "body": "Email address\nPassword\nShow\nForgot your password?\nLogin"
+    },
+    {
+      "step": "login",
+      "url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
+      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification"
+    },
+    {
+      "step": "settled",
+      "url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
+      "title": "Publisher Dashboard",
+      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification"
+    }
+  ],
+  "final_url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
+  "final_title": "Publisher Dashboard",
+  "final_body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification",
+  "status": "ok"
+}

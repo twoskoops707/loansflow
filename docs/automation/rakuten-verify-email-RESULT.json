@@ -1,0 +1,31 @@
+{
+  "time": "2026-07-31T05:05:28.747345+00:00",
+  "steps": [
+    {
+      "step": "search",
+      "url": "https://mail.google.com/mail/u/0/#search/rakuten+OR+from%3Arakuten+newer_than%3A1d",
+      "body": "\nSkip to content\nUsing Gmail with screen readers\n\nSearch\nTry Gemini\nUpgrade\nUpgrade for premium features\nCompose\nLabels\nInbox\n8\nStarred\nSnoozed\nSent\nDrafts\nPurchases\nMore\n\u00a0\nLabels\nLabels\nAny time\nHas attachment\nTo\nIs unread\nAdvanced search\n\u00a0\nMost relevant\n\u00a0\n1\u20132 of 2\nConversations\nRakuten Advertising\nInbox\nActivate your Rakuten Advertising Login\n\u00a0-\u00a0\nA request has been initiated to activate your Rakuten Advertising login. Please click the link below to continue this process: Activate Login\n\u00a0\n10:04\u202fPM\nme, Publisher, Madhu\n4\nInbox\nPublisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners\n\u00a0-\u00a0\nThank you for writing in with questions regarding an affiliate account with Rakuten Advertising. Please note that Publishers, also known as affiliates ...\n\u00a0\n9:58\u202fPM"
+    },
+    {
+      "step": "opened",
+      "row": "Rakuten Advertising\nInbox\nActivate your Rakuten Advertising Login\n\u00a0-\u00a0\nA request has been initiated to activate your Rakuten Advertising login. Please click the link below to continue this process: Act",
+      "body": "Print all\nIn new window\nActivate your Rakuten Advertising Login\nInbox\nSearch for all messages with label Inbox\nRemove label Inbox from this conversation\nRakuten Advertising <noreply@rakutenadvertising.com>\n10:04\u202fPM (1 minute ago)\nAdd reaction\nReply\nMore\nto me\n\nA request has been initiated to activate your Rakuten Advertising login. Please click the link below to continue this process:\n\nActivate Login\n\nThis link will expire in 48 hours.\n\nThank You,\nRakuten Advertising\n\nReply\nForward\nAdd reaction"
+    },
+    {
+      "step": "verify_nav",
+      "url": "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?redirect_uri=http%3A%2F%2Fpublisher.rakutenadvertising.com%2Fonboarding%2Fverify-email&scope=openid&response_mode=query&nonce=9kGtu9E7TOEAE37B559WcUdx&response_type=code&code_challenge_method=S256&state=LMKr8KNaaLf5O742CVDJY3X6&code_challenge=ABIvbUg8YAaOKxEFtGCrMPrNVb59INyQ0Fb8bcv8LWE&client_id=publisher-dashboard",
+      "title": "Sign in to Rakuten Advertising",
+      "body": "Email address\nPassword\nShow\nForgot your password?\nLogin"
+    },
+    {
+      "step": "dash_after",
+      "url": "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/protocol/openid-connect/auth?redirect_uri=http%3A%2F%2Fpublisher.rakutenadvertising.com%2F&scope=openid&response_mode=query&nonce=9kGtu9E7TOEAE37B559WcUdx&response_type=code&code_challenge_method=S256&state=LMKr8KNaaLf5O742CVDJY3X6&code_challenge=ABIvbUg8YAaOKxEFtGCrMPrNVb59INyQ0Fb8bcv8LWE&client_id=publisher-dashboard",
+      "title": "Sign in to Rakuten Advertising",
+      "body": "Email address\nPassword\nShow\nForgot your password?\nLogin"
+    }
+  ],
+  "links": [
+    "https://auth.rakutenmarketing.com/auth/realms/rakuten-advertising/login-actions/action-token?key=%5BREDACTED%5D"
+  ],
+  "status": "verified_or_attempted"
+}

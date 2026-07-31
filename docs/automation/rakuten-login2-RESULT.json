@@ -1,0 +1,24 @@
+{
+  "time": "2026-07-31T05:07:50.254402+00:00",
+  "iframes": [
+    {
+      "src": "https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6LdDNv0oAAAAAK2F9MXaav07rAIlQBKEqhgWdcwm&co=aHR0cHM6Ly9hdXRoLnJha3V0ZW5tYXJrZXRpbmcuY29tOjQ0Mw..&hl=en",
+      "title": "reCAPTCHA",
+      "w": 256,
+      "h": 60
+    },
+    {
+      "src": "",
+      "title": "",
+      "w": 0,
+      "h": 0
+    }
+  ],
+  "url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
+  "title": "Publisher Dashboard",
+  "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification",
+  "status": "account_ok_awaiting_email_verify_or_reverify",
+  "final_url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
+  "final_title": "Publisher Dashboard",
+  "final_body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification"
+}
