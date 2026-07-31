@@ -1,0 +1,39 @@
+{
+  "time": "2026-07-31T04:58:32.340427Z",
+  "actions": [
+    {
+      "what": "session",
+      "status": "ok"
+    },
+    {
+      "what": "flexoffers_not_spam",
+      "status": "not_found"
+    },
+    {
+      "what": "reply_rakuten_madhu",
+      "status": "sent"
+    },
+    {
+      "what": "reply_ascend_695116",
+      "status": "sent"
+    }
+  ],
+  "verify": {
+    "sent_mentions_register": false,
+    "sent_mentions_ascend_checklist": false,
+    "sent_preview": [
+      "Ascend",
+      "Request #695116 has been updated: Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Hello Ascend Support / Zia, Thank you for confirming request #695116. To clarify next steps: LoansFlow (https://loansflow.loan/) would like to join Ascend by Partnerize as a publisher/affiliate. We run",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Hello Madhu, Thank you for the clear guidance and for Case 404091. LoansFlow is seeking to join Rakuten Advertising as a Publisher (affiliate), not as an advertiser. Our property is https://loansflow.",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "ascend.supp.",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners",
+      "Publisher intro \u2014 LoansFlow loan calculators seeking affiliate/ad partners"
+    ]
+  }
+}
