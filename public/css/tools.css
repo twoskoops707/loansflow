@@ -413,27 +413,59 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.04); }
 .ad-slot {
   margin: 1.75rem 0;
   min-height: 90px;
-  padding: 1.1rem;
-  border: 1px dashed rgba(184, 149, 74, 0.45);
+  padding: 0.65rem 0.85rem 0.85rem;
+  border: 1px dashed rgba(184, 149, 74, 0.35);
   border-radius: var(--radius);
   text-align: center;
-  background: linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(232, 213, 163, 0.15));
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(232, 213, 163, 0.12));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
+  transition: min-height 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
 }
 .ad-slot .ad-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brass);
+  align-self: flex-start;
 }
 .ad-slot .ad-size {
   font-size: 0.78rem;
   color: var(--ink-soft);
+}
+.ad-slot .adsbygoogle {
+  width: 100%;
+  max-width: 100%;
+}
+.ad-slot[data-ad-state="empty"] {
+  display: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.ad-slot[data-ad-state="filled"] {
+  border-style: solid;
+  border-color: rgba(184, 149, 74, 0.2);
+  background: rgba(255, 252, 247, 0.65);
+}
+.ad-slot--leaderboard {
+  margin: 1.25rem 1.25rem 0;
+  min-height: 90px;
+}
+.ad-slot--sidebar {
+  margin: 1rem 0;
+  min-height: 250px;
+}
+.ad-slot--incontent {
+  max-width: 336px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 250px;
 }
 
 .article {
@@ -695,6 +727,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.04); }
 }
 
 .ad-anchor {
+  display: none;
   position: fixed;
   left: 0;
   right: 0;
@@ -705,10 +738,14 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.04); }
   padding: 0.35rem 1rem;
   backdrop-filter: blur(8px);
 }
+.ad-anchor[data-ad-state="empty"] {
+  display: none !important;
+}
 .ad-anchor .ad-slot {
   margin: 0.35rem auto;
   max-width: 980px;
-  min-height: 60px;
+  min-height: 50px;
+  padding: 0.35rem 0.5rem;
 }
 
 @keyframes brandIn {
@@ -740,6 +777,9 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.04); }
   }
   .step { min-width: max-content; }
   .sidebar-foot { display: none; }
+  .ad-slot--sidebar { display: none !important; }
+  .ad-anchor { display: block; }
+  .ad-anchor[data-ad-state="empty"] { display: none !important; }
   .main { padding: 1.5rem 1.15rem 5.5rem; }
   .field-grid, .compare-grid { grid-template-columns: 1fr; }
   h1 { font-size: 1.7rem; }

@@ -1,31 +1,95 @@
 ﻿/**
- * LoansFlow ad loader — Auto ads + labeled display slots (reasonable density).
+ * LoansFlow AdSense loader — high-intent finance placements, reasonable density.
  * Client: ca-pub-7523216981025331
+ *
+ * Formats: auto | horizontal | rectangle | fluid (in-article) | infeed | multipurpose
+ * Empty slots collapse so unfilled ads do not leave dashed boxes.
  */
 (function () {
-  const CONFIG = window.LOANSFLOW_ADS || {
-    provider: 'adsense',
-    adsenseClient: 'ca-pub-7523216981025331',
-    ezoicPrivacyId: '',
-  };
+  const CONFIG = Object.assign(
+    {
+      provider: 'adsense',
+      adsenseClient: 'ca-pub-7523216981025331',
+      ezoicPrivacyId: '',
+      emptyCollapseMs: 2800,
+    },
+    window.LOANSFLOW_ADS || {}
+  );
 
   const FORMAT_PRESETS = {
-    auto: { format: 'auto', fullWidth: true },
-    horizontal: { format: 'horizontal', fullWidth: true },
-    rectangle: { format: 'rectangle', fullWidth: false },
-    fluid: { format: 'fluid', fullWidth: true },
-    multipurpose: { format: 'autorelaxed', fullWidth: true },
+    auto: { format: 'auto', fullWidth: true, minHeight: '90px' },
+    horizontal: { format: 'horizontal', fullWidth: true, minHeight: '90px' },
+    rectangle: { format: 'rectangle', fullWidth: false, minHeight: '250px', minWidth: '250px' },
+    fluid: { format: 'fluid', fullWidth: true, minHeight: '100px', layout: 'in-article' },
+    infeed: { format: 'fluid', fullWidth: true, minHeight: '100px', layoutKey: '-fb+5w+4e-db+86' },
+    multipurpose: { format: 'autorelaxed', fullWidth: true, minHeight: '120px' },
   };
 
+  function ensureLabel(el) {
+    if (el.querySelector('.ad-label')) return;
+    const label = document.createElement('span');
+    label.className = 'ad-label';
+    label.textContent = 'Advertisement';
+    el.insertBefore(label, el.firstChild);
+  }
+
+  function markEmpty(el) {
+    el.dataset.adState = 'empty';
+    el.setAttribute('aria-hidden', 'true');
+    const anchor = el.closest('.ad-anchor');
+    if (anchor) {
+      const live = anchor.querySelectorAll('.ad-slot:not([data-ad-state="empty"])');
+      if (!live.length) {
+        anchor.dataset.adState = 'empty';
+        anchor.setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+
+  function markFilled(el) {
+    el.dataset.adState = 'filled';
+    el.removeAttribute('aria-hidden');
+    const anchor = el.closest('.ad-anchor');
+    if (anchor) {
+      anchor.dataset.adState = 'filled';
+      anchor.removeAttribute('aria-hidden');
+    }
+  }
+
+  function watchFill(el, ins) {
+    const deadline = Date.now() + (CONFIG.emptyCollapseMs || 2800);
+    const tick = () => {
+      const status = (ins.getAttribute('data-ad-status') || '').toLowerCase();
+      const hasFrame = !!ins.querySelector('iframe');
+      if (status === 'filled' || hasFrame) {
+        markFilled(el);
+        return;
+      }
+      if (status === 'unfilled') {
+        markEmpty(el);
+        return;
+      }
+      if (Date.now() >= deadline) {
+        if (!hasFrame) markEmpty(el);
+        else markFilled(el);
+        return;
+      }
+      setTimeout(tick, 400);
+    };
+    setTimeout(tick, 600);
+  }
+
   function fillPlaceholders() {
-    document.querySelectorAll('.ad-slot').forEach((el, i) => {
+    document.querySelectorAll('.ad-slot').forEach((el) => {
       if (el.dataset.hydrated) return;
       el.dataset.hydrated = '1';
       el.setAttribute('aria-label', 'Advertisement');
+      el.dataset.adState = 'pending';
 
       if (CONFIG.provider === 'placeholder' || !CONFIG.adsenseClient) {
         el.innerHTML =
-          '<span class="ad-label">Sponsored</span><span class="ad-size">Ad slot</span>';
+          '<span class="ad-label">Advertisement</span><span class="ad-size">Ad slot</span>';
+        el.dataset.adState = 'placeholder';
         return;
       }
 
@@ -33,39 +97,48 @@
 
       const presetKey = (el.dataset.adFormat || 'auto').toLowerCase();
       const preset = FORMAT_PRESETS[presetKey] || FORMAT_PRESETS.auto;
+      const layout = el.dataset.adLayout || preset.layout || '';
 
       el.innerHTML = '';
+      ensureLabel(el);
+
       const ins = document.createElement('ins');
       ins.className = 'adsbygoogle';
       ins.style.display = 'block';
-      if (presetKey === 'rectangle') {
-        ins.style.minWidth = '250px';
-        ins.style.minHeight = '250px';
-      } else if (presetKey === 'horizontal') {
-        ins.style.minHeight = '90px';
-      } else {
-        ins.style.minHeight = '100px';
+      if (layout === 'in-article') {
+        ins.style.textAlign = 'center';
       }
+      if (preset.minHeight) ins.style.minHeight = preset.minHeight;
+      if (preset.minWidth) ins.style.minWidth = preset.minWidth;
+
       ins.setAttribute('data-ad-client', CONFIG.adsenseClient);
-      // Omit fake slot IDs — Auto / responsive units fill by client + format
       if (el.dataset.adUnit) {
         ins.setAttribute('data-ad-slot', el.dataset.adUnit);
       }
       ins.setAttribute('data-ad-format', preset.format);
+      if (layout) {
+        ins.setAttribute('data-ad-layout', layout);
+      }
+      if (preset.layoutKey) {
+        ins.setAttribute('data-ad-layout-key', preset.layoutKey);
+      }
       if (preset.fullWidth) {
         ins.setAttribute('data-full-width-responsive', 'true');
       }
+
       el.appendChild(ins);
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (_) {
         /* script may still be loading */
       }
+      watchFill(el, ins);
     });
   }
 
   function loadAdSense() {
     if (!CONFIG.adsenseClient || CONFIG.provider !== 'adsense') return;
+    if (document.querySelector('script[src*="pagead/js/adsbygoogle.js"]')) return;
     if (document.getElementById('lf-adsense')) return;
     const s = document.createElement('script');
     s.id = 'lf-adsense';

@@ -103,6 +103,21 @@ function fmtMoney(num, decimals=0){
 }
 
 // ---------- RENDER: NAV ----------
+/** Standard in-content unit — after first calculator panel (FamFlow: tools_incontent). */
+function adInContent(){
+  return `<div class="ad-slot ad-slot--incontent" data-ad-format="rectangle" data-ad-name="tools-incontent"></div>`;
+}
+
+/** In-article fluid unit for long-form / news sections. */
+function adInArticle(name){
+  return `<div class="ad-slot ad-slot--article" data-ad-format="fluid" data-ad-layout="in-article" data-ad-name="${name || 'tools-inarticle'}"></div>`;
+}
+
+/** Multiplex / matched-content style unit. */
+function adMultiplex(name){
+  return `<div class="ad-slot ad-slot--multiplex" data-ad-format="multipurpose" data-ad-name="${name || 'tools-multiplex'}"></div>`;
+}
+
 function renderNav(){
   const nav = document.getElementById('stepNav');
   nav.innerHTML = steps.map((s,i)=>`
@@ -159,6 +174,8 @@ function renderStep0(){
         <button class="btn-primary" id="toResults">Calculate Payment &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
 
     <div class="panel" style="margin-top:2rem;">
       <div class="article">
@@ -238,9 +255,6 @@ function renderStep1(){
         <div class="line-item"><span>Property Tax (est.)</span><span class="num">${fmtMoney(monthlyTax,2)}</span></div>
         <div class="line-item"><span>Home Insurance (est.)</span><span class="num">${fmtMoney(monthlyIns,2)}</span></div>
         <div class="line-item"><span>Total Monthly Payment</span><span class="num">${fmtMoney(total,2)}</span></div>
-
-        <div class="ad-slot" data-ad-format="horizontal" data-ad-name="calc-top"></div>
-
         <div class="line-item"><span>Loan Amount</span><span class="num">${fmtMoney(principal,0)}</span></div>
         <div class="line-item"><span>Total Interest Paid (${state.term} yrs)</span><span class="num">${fmtMoney(pi*state.term*12 - principal,0)}</span></div>
       </div>
@@ -249,6 +263,8 @@ function renderStep1(){
         <button class="btn-primary" id="toAmort">View Amortization Ledger &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
   `;
 }
 
@@ -333,8 +349,6 @@ function renderStep2(){
       </div>
       ` : ''}
 
-      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-mid"></div>
-
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -348,6 +362,8 @@ function renderStep2(){
         <button class="btn-primary" id="toRefi">Compare Refinance Options &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
   `;
 }
 
@@ -403,13 +419,13 @@ function renderStep3(){
         <div class="value">${monthlySavings >= 0 ? fmtMoney(monthlySavings,2)+' / month' : '&minus;'+fmtMoney(Math.abs(monthlySavings),2)+' / month'}</div>
       </div>
 
-      <div class="ad-slot" data-ad-format="auto" data-ad-name="calc-auto"></div>
-
       <div class="actions" style="padding-top:0;">
         <button class="btn-ghost" id="backTo2">&larr; Back</button>
         <button class="btn-primary" id="toAfford">Check Affordability &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
   `;
 }
 
@@ -460,13 +476,13 @@ function renderStep4(){
         <div class="dti-note">Estimated debt-to-income ratio: ${currentDebtToIncome.toFixed(1)}% (lenders typically look for 36% or below, up to 43% for some loan types)</div>
       </div>
 
-      <div class="ad-slot" data-ad-format="fluid" data-ad-name="calc-article"></div>
-
       <div class="actions" style="padding-top:0;">
         <button class="btn-ghost" id="backTo3">&larr; Back</button>
         <button class="btn-primary" id="toStart">Start a New Calculation &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
   `;
 }
 
@@ -590,13 +606,13 @@ function renderStep5(){
       </p>
       ` : ''}
 
-      <div class="ad-slot" data-ad-format="multipurpose" data-ad-name="calc-related"></div>
-
       <div class="actions" style="padding-top:0;">
         <a href="#" onclick="event.preventDefault(); state.step=3; render();" style="align-self:center; font-size:0.85rem; color:var(--ink-soft); text-decoration:underline; margin-right:auto;">Looking for a home mortgage instead?</a>
         <button class="btn-primary" id="toBizAmort">View Full Amortization Ledger &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
 
     <div class="panel" style="margin-top:2rem;">
       <div class="article">
@@ -677,8 +693,6 @@ function renderStepBizAmort(){
         <div class="line-item"><span>Total Interest Over Term</span><span class="num">${fmtMoney(totalInterest,0)}</span></div>
       </div>
 
-      <div class="ad-slot" data-ad-format="horizontal" data-ad-name="calc-banner2"></div>
-
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -692,6 +706,8 @@ function renderStepBizAmort(){
         <button class="btn-primary" id="bizToLoc">Line of Credit Calculator &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
   `;
 }
 
@@ -813,8 +829,6 @@ function renderStepLOC(){
         <div class="line-item"><span>Available Credit Remaining</span><span class="num">${fmtMoney(availableCredit,0)}</span></div>
       </div>
 
-      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-box"></div>
-
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -829,6 +843,8 @@ function renderStepLOC(){
         <button class="btn-primary" id="locToNews">View Market News &rarr;</button>
       </div>
     </div>
+
+    ${adInContent()}
 
     <div class="panel" style="margin-top:2rem;">
       <div class="article">
@@ -870,7 +886,7 @@ function renderStep6(){
         National averages, compiled from lender-reported data. Individual rates vary by credit profile, down payment, and lender. Not a rate quote.
       </p>
 
-      <div class="ad-slot" data-ad-format="auto" data-ad-name="calc-flex"></div>
+      ${adInContent()}
 
       <div>
         <div class="news-card">
@@ -909,7 +925,7 @@ function renderStep6(){
         </div>
       </div>
 
-      <div class="ad-slot" data-ad-format="fluid" data-ad-name="calc-feed"></div>
+      ${adInArticle('tools-news-mid')}
     </div>
   `;
 }
