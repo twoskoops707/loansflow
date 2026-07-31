@@ -1,16 +1,18 @@
 # LoansFlow — Autonomous Ops Blocker + Resume
 
-## AdSense status (2026-07-30, loansflow707@gmail.com)
+## AdSense status (2026-07-31, loansflow707@gmail.com)
 
 Publisher: `ca-pub-7523216981025331`
 
 | Site | Ownership | Site review | ads.txt (AdSense column) |
 |------|-----------|-------------|---------------------------|
-| **loansflow.loan** | **Verified** (meta) | **Getting ready** (review requested) | UI may still show Not found (crawl lag; file is live) |
-| **loansflow.pages.dev** / loansflow-live | Attached | — | Live Google ads.txt line |
-| twoskoops707.github.io | Getting ready | — | Not found |
+| **loansflow.loan** | **Verified** (meta) | **Getting ready** | **Authorized** |
+| **loansflow.pages.dev** | Attached | Getting ready | Not found (file is live publicly — crawl lag) |
+| twoskoops707.github.io | Getting ready | — | Not found (file is live publicly — crawl lag) |
 
-Evidence: `docs/automation/adsense-apex-SUBMIT-RESULT.json`, `adsense-adstxt-loansflow-loan-RESULT.json`.
+Payments → Verification: threshold-gated (“once your earnings reach the verification threshold”). No blocking tax form today.
+
+Evidence: `docs/automation/adsense-gapfix-2026-07-31-RESULT.json`, `adsense-verify-2026-07-30-NOTE.md`.
 
 ## Live URLs
 
@@ -18,7 +20,7 @@ Evidence: `docs/automation/adsense-apex-SUBMIT-RESULT.json`, `adsense-adstxt-loa
 - Pages project: `loansflow-live`
 - ads.txt: `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
 
-## Ezoic (2026-07-30)
+## Ezoic (2026-07-31)
 
 **JS headers live** on apex (static Gatekeeper + `sa.min.js` + analytics in `<head>`). Publisher userId **652581**; no per-site script ID (domain-bound). **Deferred** Cloudflare/NS takeover, ads.txt rewrite, and AdSense slot replacement.
 
@@ -30,3 +32,8 @@ Traffic: Ezoic wants ~250k MAU (post-2026-02); site is Incubator-only until then
 
 - Gmail: `docs/automation/.secret-gmail-password.txt`
 - Ezoic: `docs/automation/.secret-ezoic-password.txt`
+- Rakuten: `docs/automation/.secret-rakuten-password.txt`
+
+## Search Console
+
+Not verified yet — see `docs/automation/SEARCH-CONSOLE.md`.

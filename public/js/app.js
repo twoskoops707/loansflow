@@ -131,7 +131,7 @@ function renderNav(){
   });
 }
 
-// ---------- RENDER: STEP 0 â€” LOAN DETAILS ----------
+// ---------- RENDER: STEP 0 — LOAN DETAILS ----------
 function renderStep0(){
   return `
     <div class="eyebrow">Step 04 &middot; Mortgage Tools</div>
@@ -181,25 +181,25 @@ function renderStep0(){
       <div class="article">
         <h2>How a Mortgage Payment Is Actually Calculated</h2>
         <p>Your monthly mortgage payment is usually made up of four parts, often shortened to <strong>PITI</strong>: principal, interest, taxes, and insurance. Principal is the portion that pays down the amount you borrowed. Interest is the lender's charge for lending you the money, calculated each month on whatever balance remains. Property tax and homeowners insurance are collected monthly and held in an escrow account, then paid on your behalf when the bills come due once or twice a year.</p>
-        <p>In the early years of a loan, most of each payment goes toward interest rather than principal, because interest is calculated on a much larger remaining balance. As the balance shrinks, the interest portion shrinks with it and more of each payment starts paying down principal â€” this shift is what the Amortization Ledger step visualizes.</p>
+        <p>In the early years of a loan, most of each payment goes toward interest rather than principal, because interest is calculated on a much larger remaining balance. As the balance shrinks, the interest portion shrinks with it and more of each payment starts paying down principal — this shift is what the Amortization Ledger step visualizes.</p>
 
         <h2>Fixed-Rate vs. Adjustable-Rate Mortgages</h2>
         <p>A <strong>fixed-rate mortgage</strong> locks in the same interest rate for the entire loan term, so the principal-and-interest portion of your payment never changes. This calculator assumes a fixed rate, which is the most common structure for 30-year and 15-year home loans in the U.S.</p>
-        <p>An <strong>adjustable-rate mortgage (ARM)</strong> starts with a lower introductory rate for a set period â€” commonly 5, 7, or 10 years â€” then adjusts periodically based on a market index. ARMs can make sense for buyers who plan to sell or refinance before the adjustment period begins, but they carry more long-term uncertainty than a fixed-rate loan.</p>
+        <p>An <strong>adjustable-rate mortgage (ARM)</strong> starts with a lower introductory rate for a set period — commonly 5, 7, or 10 years — then adjusts periodically based on a market index. ARMs can make sense for buyers who plan to sell or refinance before the adjustment period begins, but they carry more long-term uncertainty than a fixed-rate loan.</p>
 
         <h2>What Affects the Interest Rate You're Offered</h2>
         <ul>
-          <li><strong>Credit score</strong> â€” generally the single largest factor lenders weigh</li>
-          <li><strong>Down payment size</strong> â€” a larger down payment reduces the lender's risk and often earns a better rate</li>
-          <li><strong>Loan term</strong> â€” shorter terms (like 15 years) typically carry lower rates than 30-year loans, since the lender's money is at risk for less time</li>
-          <li><strong>Debt-to-income ratio</strong> â€” how much of your monthly income already goes to existing debt</li>
-          <li><strong>Loan type</strong> â€” conventional, FHA, VA, and USDA loans each have different rate and qualification structures</li>
+          <li><strong>Credit score</strong> — generally the single largest factor lenders weigh</li>
+          <li><strong>Down payment size</strong> — a larger down payment reduces the lender's risk and often earns a better rate</li>
+          <li><strong>Loan term</strong> — shorter terms (like 15 years) typically carry lower rates than 30-year loans, since the lender's money is at risk for less time</li>
+          <li><strong>Debt-to-income ratio</strong> — how much of your monthly income already goes to existing debt</li>
+          <li><strong>Loan type</strong> — conventional, FHA, VA, and USDA loans each have different rate and qualification structures</li>
         </ul>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much down payment do I actually need?<span class="mark">+</span></div>
-          <div class="faq-a">Conventional loans often allow as little as 3â€“5% down, FHA loans allow as little as 3.5%, and VA or USDA loans can allow 0% down for eligible borrowers. Putting down less than 20% on a conventional loan typically means paying private mortgage insurance (PMI) until you build enough equity.</div>
+          <div class="faq-a">Conventional loans often allow as little as 3–5% down, FHA loans allow as little as 3.5%, and VA or USDA loans can allow 0% down for eligible borrowers. Putting down less than 20% on a conventional loan typically means paying private mortgage insurance (PMI) until you build enough equity.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why does my estimated payment differ from what a lender quotes me?<span class="mark">+</span></div>
@@ -211,14 +211,14 @@ function renderStep0(){
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference between a rate and an APR?<span class="mark">+</span></div>
-          <div class="faq-a">The interest rate is what's applied to your loan balance to calculate interest. The APR (Annual Percentage Rate) also factors in certain lender fees and closing costs, spread over the loan term â€” which is why APR is usually slightly higher than the quoted rate, and is meant to help you compare offers between lenders on an apples-to-apples basis.</div>
+          <div class="faq-a">The interest rate is what's applied to your loan balance to calculate interest. The APR (Annual Percentage Rate) also factors in certain lender fees and closing costs, spread over the loan term — which is why APR is usually slightly higher than the quoted rate, and is meant to help you compare offers between lenders on an apples-to-apples basis.</div>
         </div>
       </div>
     </div>
   `;
 }
 
-// ---------- RENDER: STEP 1 â€” RESULTS ----------
+// ---------- RENDER: STEP 1 — RESULTS ----------
 function renderStep1(){
   const principal = state.homePrice - state.downPayment;
   const pi = monthlyPI(principal, state.rate, state.term);
@@ -268,7 +268,7 @@ function renderStep1(){
   `;
 }
 
-// ---------- RENDER: STEP 2 â€” AMORTIZATION ----------
+// ---------- RENDER: STEP 2 — AMORTIZATION ----------
 function renderStep2(){
   const principal = state.homePrice - state.downPayment;
 
@@ -289,7 +289,7 @@ function renderStep2(){
   const monthsSaved = baseMonths - actualMonths;
   const hasExtra = state.extraMonthly > 0 || state.balloonAmount > 0;
 
-  // group by year for the summary strip â€” uses actual (possibly shortened) schedule
+  // group by year for the summary strip — uses actual (possibly shortened) schedule
   const yearsActual = Math.ceil(rows.length/12);
   let yearRows = [];
   for(let y=0; y<yearsActual; y++){
@@ -323,7 +323,7 @@ function renderStep2(){
   return `
     <div class="eyebrow">Step 06 &middot; Mortgage Tools</div>
     <h1>Amortization Ledger</h1>
-    <p class="sub">How each payment splits between principal and interest over the life of the loan â€” and how your remaining balance shrinks year by year.</p>
+    <p class="sub">How each payment splits between principal and interest over the life of the loan — and how your remaining balance shrinks year by year.</p>
 
     <div class="panel">
       <div class="field-grid">
@@ -344,7 +344,7 @@ function renderStep2(){
 
       ${hasExtra ? `
       <div class="savings-callout" style="margin:0 2rem 1.5rem;">
-        <div class="label">Payoff In ${payoffYears} yr${payoffMonthsRem?' '+payoffMonthsRem+' mo':''} â€” vs. ${state.term} yr Original</div>
+        <div class="label">Payoff In ${payoffYears} yr${payoffMonthsRem?' '+payoffMonthsRem+' mo':''} — vs. ${state.term} yr Original</div>
         <div class="value">${fmtMoney(interestSaved,0)} interest saved${monthsSaved>0 ? ' &middot; '+monthsSaved+' months earlier' : ''}</div>
       </div>
       ` : ''}
@@ -367,7 +367,7 @@ function renderStep2(){
   `;
 }
 
-// ---------- RENDER: STEP 3 â€” REFINANCE ----------
+// ---------- RENDER: STEP 3 — REFINANCE ----------
 function renderStep3(){
   const principal = state.homePrice - state.downPayment;
   const currentPI = monthlyPI(principal, state.rate, state.term);
@@ -429,7 +429,7 @@ function renderStep3(){
   `;
 }
 
-// ---------- RENDER: STEP 4 â€” AFFORDABILITY ----------
+// ---------- RENDER: STEP 4 — AFFORDABILITY ----------
 function renderStep4(){
   const monthlyIncome = state.income/12;
   const maxHousingPayment = monthlyIncome * 0.28; // front-end DTI guideline
@@ -503,7 +503,7 @@ function estimateSbaGuarantyFee(loanAmount, guarantyPct){
   return { fee: guaranteedPortion * (feePct/100), feePct, guaranteedPortion };
 }
 
-// ---------- RENDER: STEP 5 â€” SBA & COMMERCIAL LOAN ----------
+// ---------- RENDER: STEP 5 — SBA & COMMERCIAL LOAN ----------
 function renderStep5(){
   const rate = state.bizPrimeRate + state.bizSpread;
   const pi = monthlyPI(state.bizLoanAmount, rate, state.bizAmortYears);
@@ -514,7 +514,7 @@ function renderStep5(){
   const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct) : null;
   const annualServiceFee = isSba ? state.bizLoanAmount*(state.bizGuarantyPct/100)*0.0055 : 0;
 
-  // balloon handling â€” reuse the amortization engine
+  // balloon handling — reuse the amortization engine
   let balloonBalance = null;
   if(state.bizBalloonYears > 0 && state.bizBalloonYears < state.bizAmortYears){
     const fullSchedule = buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears);
@@ -526,8 +526,8 @@ function renderStep5(){
   const dscrNote = dscr >= 1.25
     ? 'Meets the typical 1.25x DSCR threshold most SBA and commercial lenders require.'
     : dscr >= 1.0
-    ? 'Below the typical 1.25x lender threshold â€” approval may require additional collateral or a lower loan amount.'
-    : 'Below 1.0x â€” the business is not generating enough net income to cover this debt service as structured.';
+    ? 'Below the typical 1.25x lender threshold — approval may require additional collateral or a lower loan amount.'
+    : 'Below 1.0x — the business is not generating enough net income to cover this debt service as structured.';
 
   return `
     <div class="eyebrow">Step 01</div>
@@ -591,7 +591,7 @@ function renderStep5(){
 
       ${balloonBalance !== null ? `
       <div class="savings-callout" style="margin:1.5rem 2rem;">
-        <div class="label">Balloon Payment Due â€” Year ${state.bizBalloonYears}</div>
+        <div class="label">Balloon Payment Due — Year ${state.bizBalloonYears}</div>
         <div class="value">${fmtMoney(balloonBalance,0)}</div>
       </div>` : ''}
 
@@ -618,23 +618,23 @@ function renderStep5(){
       <div class="article">
         <h2>SBA 7(a) vs. SBA 504 vs. Conventional Commercial Loans</h2>
         <p>The <strong>SBA 7(a) loan</strong> is the SBA's most flexible and widely used program, usable for working capital, equipment, real estate, refinancing debt, or buying a business, with loans up to $5 million and terms up to 25 years for real estate. Rates are typically variable, set as the prime rate plus a lender spread capped by SBA rules.</p>
-        <p>The <strong>SBA 504 loan</strong> is structured specifically for major fixed assets â€” commercial real estate or heavy equipment â€” and splits financing between a bank (50%), a Certified Development Company backed by the SBA (up to 40%), and the borrower (as little as 10% down). 504 loans typically carry long fixed-rate terms, which can make budgeting more predictable than a variable-rate 7(a) loan.</p>
-        <p>A <strong>conventional commercial loan</strong> comes directly from a bank with no SBA guaranty involved. These loans close faster and skip SBA guaranty fees entirely, but usually require stronger financials, a larger down payment, and often carry a shorter amortization with a balloon payment due mid-term â€” which is why the balloon field in this calculator matters most for conventional deals.</p>
+        <p>The <strong>SBA 504 loan</strong> is structured specifically for major fixed assets — commercial real estate or heavy equipment — and splits financing between a bank (50%), a Certified Development Company backed by the SBA (up to 40%), and the borrower (as little as 10% down). 504 loans typically carry long fixed-rate terms, which can make budgeting more predictable than a variable-rate 7(a) loan.</p>
+        <p>A <strong>conventional commercial loan</strong> comes directly from a bank with no SBA guaranty involved. These loans close faster and skip SBA guaranty fees entirely, but usually require stronger financials, a larger down payment, and often carry a shorter amortization with a balloon payment due mid-term — which is why the balloon field in this calculator matters most for conventional deals.</p>
 
         <h2>Why DSCR Is the Number Lenders Actually Care About</h2>
-        <p>Debt Service Coverage Ratio (DSCR) measures whether a business's cash flow can cover its loan payments. It's calculated as annual net operating income divided by annual debt service (principal plus interest). A DSCR of 1.0 means the business generates exactly enough income to cover its debt payments with nothing left over â€” most SBA and commercial lenders want to see at least <strong>1.25x</strong>, meaning 25% more income than the debt requires, as a cushion against a slow month or unexpected expense.</p>
+        <p>Debt Service Coverage Ratio (DSCR) measures whether a business's cash flow can cover its loan payments. It's calculated as annual net operating income divided by annual debt service (principal plus interest). A DSCR of 1.0 means the business generates exactly enough income to cover its debt payments with nothing left over — most SBA and commercial lenders want to see at least <strong>1.25x</strong>, meaning 25% more income than the debt requires, as a cushion against a slow month or unexpected expense.</p>
 
         <h2>Understanding the SBA Guaranty Fee</h2>
-        <p>Unlike a conventional loan, the SBA doesn't lend money directly â€” it guarantees a portion of the loan a bank makes, which is what allows lenders to approve small businesses they might otherwise consider too risky. In exchange, borrowers pay an upfront guaranty fee calculated as a percentage of the <em>guaranteed</em> portion of the loan (not the full loan amount), on a tiered scale that increases with loan size. There's also an ongoing annual service fee paid by the lender, which is typically built into the loan's overall cost.</p>
+        <p>Unlike a conventional loan, the SBA doesn't lend money directly — it guarantees a portion of the loan a bank makes, which is what allows lenders to approve small businesses they might otherwise consider too risky. In exchange, borrowers pay an upfront guaranty fee calculated as a percentage of the <em>guaranteed</em> portion of the loan (not the full loan amount), on a tiered scale that increases with loan size. There's also an ongoing annual service fee paid by the lender, which is typically built into the loan's overall cost.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use an SBA loan to buy commercial real estate?<span class="mark">+</span></div>
-          <div class="faq-a">Yes â€” both 7(a) and 504 loans can finance owner-occupied commercial real estate, meaning the business itself must occupy at least 51% of an existing building (60% for new construction under 504). Pure investment properties generally don't qualify.</div>
+          <div class="faq-a">Yes — both 7(a) and 504 loans can finance owner-occupied commercial real estate, meaning the business itself must occupy at least 51% of an existing building (60% for new construction under 504). Pure investment properties generally don't qualify.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens when a balloon payment comes due?<span class="mark">+</span></div>
-          <div class="faq-a">The remaining loan balance becomes due in full. Most borrowers refinance into a new loan at that point rather than paying it off in cash â€” which is why it's worth reviewing your balance and market rates well before the balloon date arrives.</div>
+          <div class="faq-a">The remaining loan balance becomes due in full. Most borrowers refinance into a new loan at that point rather than paying it off in cash — which is why it's worth reviewing your balance and market rates well before the balloon date arrives.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do SBA loan fees and rules change every year?<span class="mark">+</span></div>
@@ -645,7 +645,7 @@ function renderStep5(){
   `;
 }
 
-// ---------- RENDER: STEP 2 (index 1) â€” COMMERCIAL AMORTIZATION LEDGER ----------
+// ---------- RENDER: STEP 2 (index 1) — COMMERCIAL AMORTIZATION LEDGER ----------
 function renderStepBizAmort(){
   const rate = state.bizPrimeRate + state.bizSpread;
   const rows = buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears);
@@ -672,7 +672,7 @@ function renderStepBizAmort(){
       <tr style="${isBalloonRow ? 'background:var(--gold-soft);' : ''}">
         <td>
           <span class="yr-strip"><span style="width:${pPct}%; background:var(--principal); float:left;"></span><span style="width:${100-pPct}%; background:var(--interest); float:left;"></span></span>
-          Year ${yr.year}${isBalloonRow ? ' â€” Balloon Due' : ''}
+          Year ${yr.year}${isBalloonRow ? ' — Balloon Due' : ''}
         </td>
         <td>${fmtMoney(yr.yrPrincipal,0)}</td>
         <td>${fmtMoney(yr.yrInterest,0)}</td>
@@ -742,7 +742,7 @@ function buildLocSchedule(limit, annualRate, draws, months, paymentType, minPerc
   return { rows, overLimitFlag };
 }
 
-// ---------- RENDER: STEP 3 (index 2) â€” LINE OF CREDIT ----------
+// ---------- RENDER: STEP 3 (index 2) — LINE OF CREDIT ----------
 function renderStepLOC(){
   const rate = state.locPrimeRate + state.locSpread;
   const { rows, overLimitFlag } = buildLocSchedule(
@@ -765,7 +765,7 @@ function renderStepLOC(){
     <tr>
       <td>Month ${r.month}</td>
       <td>${fmtMoney(r.beginningBalance,0)}</td>
-      <td style="${r.draw > 0 ? 'color:var(--principal);' : r.draw < 0 ? 'color:var(--interest);' : ''}">${r.draw !== 0 ? (r.draw>0?'+':'') + fmtMoney(r.draw,0) : 'â€”'}</td>
+      <td style="${r.draw > 0 ? 'color:var(--principal);' : r.draw < 0 ? 'color:var(--interest);' : ''}">${r.draw !== 0 ? (r.draw>0?'+':'') + fmtMoney(r.draw,0) : '—'}</td>
       <td>${fmtMoney(r.interest,2)}</td>
       <td>${fmtMoney(r.payment,2)}</td>
       <td>${fmtMoney(r.endingBalance,0)}</td>
@@ -821,7 +821,7 @@ function renderStepLOC(){
         <div class="value">${fmtMoney(currentBalance,0)}<small> of ${fmtMoney(state.locLimit,0)} limit</small></div>
       </div>
 
-      ${overLimitFlag ? `<p class="over-limit-flag" style="padding:0 2rem;">One or more months exceeds your credit limit â€” increase the limit or reduce draws.</p>` : ''}
+      ${overLimitFlag ? `<p class="over-limit-flag" style="padding:0 2rem;">One or more months exceeds your credit limit — increase the limit or reduce draws.</p>` : ''}
 
       <div class="breakdown" style="padding-top:1rem;">
         <div class="line-item"><span>Total Drawn</span><span class="num">${fmtMoney(totalDraws,0)}</span></div>
@@ -849,15 +849,15 @@ function renderStepLOC(){
     <div class="panel" style="margin-top:2rem;">
       <div class="article">
         <h2>How a Business Line of Credit Works</h2>
-        <p>Unlike a term loan, a <strong>line of credit</strong> gives a business access to a revolving pool of funds up to an approved limit. You only pay interest on the portion you've actually drawn â€” not the full limit â€” and as you repay, that capacity becomes available to draw again, which is why it's commonly used for working capital, seasonal inventory swings, or covering gaps between receivables.</p>
+        <p>Unlike a term loan, a <strong>line of credit</strong> gives a business access to a revolving pool of funds up to an approved limit. You only pay interest on the portion you've actually drawn — not the full limit — and as you repay, that capacity becomes available to draw again, which is why it's commonly used for working capital, seasonal inventory swings, or covering gaps between receivables.</p>
 
         <h2>Interest-Only vs. Percent-of-Balance Payments</h2>
-        <p>Many revolving lines only require an <strong>interest-only payment</strong> each period, meaning the principal balance doesn't shrink unless you choose to pay it down. Others require a <strong>minimum payment based on a percentage of the outstanding balance</strong> â€” commonly 1â€“3% â€” which gradually reduces principal even if you don't pay extra. This calculator lets you model either structure.</p>
+        <p>Many revolving lines only require an <strong>interest-only payment</strong> each period, meaning the principal balance doesn't shrink unless you choose to pay it down. Others require a <strong>minimum payment based on a percentage of the outstanding balance</strong> — commonly 1–3% — which gradually reduces principal even if you don't pay extra. This calculator lets you model either structure.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is a line of credit's interest rate usually fixed or variable?<span class="mark">+</span></div>
-          <div class="faq-a">Most business lines of credit carry a variable rate tied to prime, similar to an SBA 7(a) loan â€” which is why this calculator uses the same prime-plus-spread structure.</div>
+          <div class="faq-a">Most business lines of credit carry a variable rate tied to prime, similar to an SBA 7(a) loan — which is why this calculator uses the same prime-plus-spread structure.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if I go over my credit limit?<span class="mark">+</span></div>
@@ -868,7 +868,7 @@ function renderStepLOC(){
   `;
 }
 
-// ---------- RENDER: STEP 6 â€” MARKET NEWS & RATES ----------
+// ---------- RENDER: STEP 6 — MARKET NEWS & RATES ----------
 function renderStep6(){
   return `
     <div class="eyebrow">Step 09 &middot; Updated July 29, 2026</div>
@@ -899,28 +899,28 @@ function renderStep6(){
         <div class="news-card">
           <div class="news-meta">Forecast &middot; Forbes Advisor</div>
           <h3>Fed Holds Steady as Forecasters Debate Where Rates Head Next</h3>
-          <p>With the federal funds rate unchanged since the last several meetings, analysts remain split â€” some expect modest relief for borrowers later this year, while others point to persistent inflation keeping rates elevated into 2027.</p>
+          <p>With the federal funds rate unchanged since the last several meetings, analysts remain split — some expect modest relief for borrowers later this year, while others point to persistent inflation keeping rates elevated into 2027.</p>
           <a href="https://www.forbes.com/advisor/mortgages/mortgage-rates-07-29-26/" target="_blank" rel="noopener">Read the full report &rarr;</a>
         </div>
 
         <div class="news-card">
           <div class="news-meta">Housing Market &middot; Bankrate</div>
           <h3>Home Prices Hit a Record High Even as Wage Growth Outpaces Inflation</h3>
-          <p>The median price of an existing home reached an all-time high in June, even as second-quarter wage growth ran ahead of inflation â€” a combination that continues to squeeze affordability for buyers despite modestly easing rates.</p>
+          <p>The median price of an existing home reached an all-time high in June, even as second-quarter wage growth ran ahead of inflation — a combination that continues to squeeze affordability for buyers despite modestly easing rates.</p>
           <a href="https://www.bankrate.com/mortgages/mortgage-rates/" target="_blank" rel="noopener">Read the full report &rarr;</a>
         </div>
 
         <div class="news-card">
           <div class="news-meta">SBA Policy &middot; U.S. Small Business Administration</div>
           <h3>SBA Doubles Combined 7(a) and 504 Loan Limit to $10 Million</h3>
-          <p>Effective July 4, 2026, small businesses can now combine SBA 7(a) and 504 financing for up to $10 million total â€” double the previous cap â€” giving capital-intensive businesses like manufacturers and construction firms significantly more room to pair long-term real estate financing with working capital.</p>
+          <p>Effective July 4, 2026, small businesses can now combine SBA 7(a) and 504 financing for up to $10 million total — double the previous cap — giving capital-intensive businesses like manufacturers and construction firms significantly more room to pair long-term real estate financing with working capital.</p>
           <a href="https://www.sba.gov/article/2026/07/07/small-businesses-now-eligible-10-million-sba-financing" target="_blank" rel="noopener">Read the full report &rarr;</a>
         </div>
 
         <div class="news-card">
           <div class="news-meta">SBA Policy &middot; NerdWallet</div>
           <h3>SBA Waives Guaranty Fees for Small Manufacturers Through FY2026</h3>
-          <p>Manufacturers borrowing under $950,000 through a 7(a) loan â€” or any amount through a 504 loan â€” currently pay zero upfront guaranty fee under a fiscal-year 2026 waiver aimed at supporting domestic production, though standard fees still apply to most other borrowers.</p>
+          <p>Manufacturers borrowing under $950,000 through a 7(a) loan — or any amount through a 504 loan — currently pay zero upfront guaranty fee under a fiscal-year 2026 waiver aimed at supporting domestic production, though standard fees still apply to most other borrowers.</p>
           <a href="https://www.nerdwallet.com/business/loans/learn/sba-loan-rates" target="_blank" rel="noopener">Read the full report &rarr;</a>
         </div>
       </div>
@@ -936,7 +936,7 @@ function renderFooter(){
       <div class="footer-cols">
         <div class="footer-col">
           <h4>LoansFlow</h4>
-          <p>A free set of calculators for home and small business financing â€” built to help you understand your numbers before you talk to a lender. Estimates only; not a loan offer or financial advice.</p>
+          <p>A free set of calculators for home and small business financing — built to help you understand your numbers before you talk to a lender. Estimates only; not a loan offer or financial advice.</p>
         </div>
         <div class="footer-col">
           <h4>Tools</h4>
@@ -972,8 +972,8 @@ function renderFooter(){
 const legalContent = {
   about: {
     title: "About LoansFlow",
-    body: `<p>LoansFlow is a free calculator suite built primarily for small business owners navigating SBA and commercial financing â€” a niche most consumer finance sites underserve. Our core tools cover SBA 7(a), SBA 504, and conventional commercial loans, including debt service coverage ratio (DSCR) estimates, SBA guaranty fee calculations, balloon payment scenarios, and a full year-by-year amortization ledger.</p>
-           <p>Alongside that, we offer a complete set of residential mortgage tools â€” payment breakdowns, amortization schedules with extra and balloon payments, refinance comparisons, and affordability estimates â€” for homebuyers and homeowners who want the same level of detail.</p>
+    body: `<p>LoansFlow is a free calculator suite built primarily for small business owners navigating SBA and commercial financing — a niche most consumer finance sites underserve. Our core tools cover SBA 7(a), SBA 504, and conventional commercial loans, including debt service coverage ratio (DSCR) estimates, SBA guaranty fee calculations, balloon payment scenarios, and a full year-by-year amortization ledger.</p>
+           <p>Alongside that, we offer a complete set of residential mortgage tools — payment breakdowns, amortization schedules with extra and balloon payments, refinance comparisons, and affordability estimates — for homebuyers and homeowners who want the same level of detail.</p>
            <p>Every calculation happens instantly in your browser. We don't collect loan applications, sell leads, or require an account to use any tool on this site.</p>`
   },
   contact: {
@@ -983,14 +983,14 @@ const legalContent = {
   },
   privacy: {
     title: "Privacy Policy",
-    body: `<p>This site does not require an account and does not collect the loan information you enter into any calculator â€” all calculations run locally in your browser and are never transmitted to our servers.</p>
+    body: `<p>This site does not require an account and does not collect the loan information you enter into any calculator — all calculations run locally in your browser and are never transmitted to our servers.</p>
            <p>Like most websites, we use cookies and similar technologies for basic site functionality and to serve advertising. We work with third-party advertising partners, including Google, who may use cookies to serve ads based on your prior visits to this and other websites. You can learn more about how Google uses this data and manage your ad preferences at Google's Ads Settings.</p>
            <p>We do not knowingly collect personal information from children under 13. This policy may be updated periodically; continued use of the site constitutes acceptance of the current policy.</p>`
   },
   disclaimer: {
     title: "Disclaimer",
     body: `<p>The calculators on this site provide estimates for general educational and informational purposes only. They are not a loan offer, pre-approval, or guarantee of terms, and do not constitute financial, legal, or tax advice.</p>
-           <p>Actual loan terms â€” including interest rate, fees, insurance, taxes, and eligibility â€” are determined by individual lenders based on your full financial profile and are subject to change. SBA program rules, fees, and loan limits are set by the U.S. Small Business Administration and may change without notice; always confirm current figures directly with an SBA-approved lender.</p>
+           <p>Actual loan terms — including interest rate, fees, insurance, taxes, and eligibility — are determined by individual lenders based on your full financial profile and are subject to change. SBA program rules, fees, and loan limits are set by the U.S. Small Business Administration and may change without notice; always confirm current figures directly with an SBA-approved lender.</p>
            <p>We are not a lender, mortgage broker, or SBA-approved lender, and using these calculators does not constitute an application for credit.</p>`
   }
 };
@@ -1077,7 +1077,7 @@ function attachHandlers(){
   const locToNews = document.getElementById('locToNews');
   if(locToNews) locToNews.addEventListener('click', ()=>{ state.step = 8; render(); });
 
-  // line of credit â€” field changes
+  // line of credit — field changes
   ['locLimit','locMonths','locPrimeRate','locSpread','locPaymentType','locMinPercent'].forEach(id=>{
     const el = document.getElementById(id);
     if(el) el.addEventListener('change', ()=>{
@@ -1088,7 +1088,7 @@ function attachHandlers(){
     });
   });
 
-  // line of credit â€” draw row month/amount changes
+  // line of credit — draw row month/amount changes
   document.querySelectorAll('.loc-draw-month, .loc-draw-amount').forEach(el=>{
     el.addEventListener('change', ()=>{
       const id = parseInt(el.dataset.id);
@@ -1102,7 +1102,7 @@ function attachHandlers(){
     });
   });
 
-  // line of credit â€” remove a draw row
+  // line of credit — remove a draw row
   document.querySelectorAll('.btn-remove').forEach(el=>{
     el.addEventListener('click', ()=>{
       const id = parseInt(el.dataset.removeId);
@@ -1111,7 +1111,7 @@ function attachHandlers(){
     });
   });
 
-  // line of credit â€” add a draw row
+  // line of credit — add a draw row
   const addDrawRow = document.getElementById('addDrawRow');
   if(addDrawRow) addDrawRow.addEventListener('click', ()=>{
     state.locDraws.push({ id: state.locNextDrawId++, month: 1, amount: 10000 });

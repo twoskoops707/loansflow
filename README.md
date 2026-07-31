@@ -1,11 +1,11 @@
 # LoansFlow
 
-Free **SBA / commercial / mortgage** calculator suite â€” high-intent finance tools designed to monetize with AdSense â†’ Ezoic.
+Free **SBA / commercial / mortgage** calculator suite — high-intent finance tools monetized with AdSense → Ezoic (Incubator), plus affiliate outreach.
 
-**Live:** [https://loansflow.pages.dev/](https://loansflow.pages.dev/) (free)  
-**Custom domain later:** optional cheap TLD — see [docs/DOMAIN.md](docs/DOMAIN.md)  
-**Contact:** loansflow707@gmail.com
-
+**Live:** [https://loansflow.loan/](https://loansflow.loan/)  
+**Pages:** [loansflow-live.pages.dev](https://loansflow-live.pages.dev/) · legacy [loansflow.pages.dev](https://loansflow.pages.dev/)  
+**Contact:** loansflow707@gmail.com  
+**Launch status:** [docs/LAUNCH.md](docs/LAUNCH.md)
 
 ## Features
 
@@ -14,7 +14,7 @@ Free **SBA / commercial / mortgage** calculator suite â€” high-intent finan
 - Business line of credit (draws, interest-only / % balance)
 - Mortgage PITI, amortization, refinance compare, affordability
 - Market news / rates page
-- Ad slots + `ads.txt` ready for Google AdSense / Ezoic
+- Ad slots + `ads.txt` for Google AdSense (Ezoic JS for Incubator detection)
 - Legal: About, Contact, Privacy, Disclaimer, Terms
 
 ## Local
@@ -27,30 +27,29 @@ Open http://localhost:4173
 
 ## Deploy (Cloudflare Pages)
 
-1. Push to GitHub (`twoskoops707/loansflow`).
-2. Cloudflare Dashboard â†’ Workers & Pages â†’ Create â†’ Connect repo â†’ output directory `public`.
-3. Buy **loansflows.com** (or `.io`) â†’ add domain in Pages â†’ point nameservers / CNAME to Cloudflare.
+Primary project: **`loansflow-live`** on Foremost Vole (serves `loansflow.loan`). See [docs/DOMAIN.md](docs/DOMAIN.md).
 
-Or CLI (needs `CLOUDFLARE_API_TOKEN`):
+```bash
+# WSL example
+bash tools/browser/deploy-pages-wsl.sh
+```
+
+Or:
 
 ```bash
 npm run pages:deploy
 ```
 
-## Turn on ads
+## Ads
 
-1. Apply [Google AdSense](https://www.google.com/adsense/) with site URL + `ads.txt`.
-2. Set in page shells / `js/ads.js` config:
+Publisher: `ca-pub-7523216981025331` (configured in page shells + `js/ads.js`).  
+`public/ads.txt` must stay:
 
-```js
-window.LOANSFLOW_ADS = {
-  provider: 'adsense',
-  adsenseClient: 'ca-pub-XXXXXXXXXXXXXXXX'
-};
+```
+google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0
 ```
 
-3. Replace placeholder line in `public/ads.txt` with your real `pub-` ID.
-4. At ~10k sessions/mo, evaluate **Ezoic** mediation (often higher finance RPM).
+Slot map: [docs/ADS.md](docs/ADS.md). Do not rewrite ads.txt to Ezoic until AdSense is Ready — see [docs/automation/EZOIC.md](docs/automation/EZOIC.md).
 
 ## Stack
 

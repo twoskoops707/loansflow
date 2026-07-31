@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://loansflow.loan/sitemap.xml
