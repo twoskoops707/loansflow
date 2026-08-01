@@ -8,7 +8,7 @@
 
 | Role | Legal name | Address | Contact email |
 |---|---|---|---|
-| **Publisher** (“Publisher”) | PLACEHOLDER — LoansFlow operating entity | PLACEHOLDER | loansflow707@gmail.com |
+| **Publisher** (“Publisher”) | PLACEHOLDER — LoansFlow operating entity | PLACEHOLDER | Loans.flow.loan@gmail.com |
 | **Advertiser** (“Advertiser”) | PLACEHOLDER | PLACEHOLDER | PLACEHOLDER |
 
 **Property:** https://loansflow.loan/  

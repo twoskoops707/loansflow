@@ -4,7 +4,7 @@ Free **SBA / commercial / mortgage** calculator suite — high-intent finance to
 
 **Live:** [https://loansflow.loan/](https://loansflow.loan/)  
 **Pages:** [loansflow-live.pages.dev](https://loansflow-live.pages.dev/) · legacy [loansflow.pages.dev](https://loansflow.pages.dev/)  
-**Contact:** loansflow707@gmail.com  
+**Contact:** Loans.flow.loan@gmail.com  
 **Launch status:** [docs/LAUNCH.md](docs/LAUNCH.md)
 
 ## Features

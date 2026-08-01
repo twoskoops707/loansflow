@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-29  
 **Status:** Approved by owner proxy (full decision authority while AFK)  
-**Contact:** loansflow707@gmail.com  
+**Contact:** Loans.flow.loan@gmail.com  
 **Domain target:** loansflows.com (CapitalFlow TLDs unavailable)
 
 ## Product
@@ -19,7 +19,7 @@ Free SBA / commercial / mortgage calculator suite monetized with display ads (Ad
 | Repo | GitHub `twoskoops707/loansflow` |
 | Stack | Static multi-page + SPA tools app (no SSR required) |
 | Ads | Slot components + ads.txt; AdSense primary; Ezoic path documented |
-| Email | loansflow707@gmail.com |
+| Email | Loans.flow.loan@gmail.com |
 
 ## Architecture
 

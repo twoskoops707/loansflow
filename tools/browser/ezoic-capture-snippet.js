@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation');
-const EMAIL = 'loansflow707@gmail.com';
+const EMAIL = 'Loans.flow.loan@gmail.com';
 const PASS =
   (fs.existsSync(path.join(OUT, '.secret-ezoic-password.txt')) &&
     fs.readFileSync(path.join(OUT, '.secret-ezoic-password.txt'), 'utf8').trim()) ||

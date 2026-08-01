@@ -10,7 +10,7 @@ const http = require('http');
 const ROOT = path.join(__dirname, '..', '..');
 const SECRET = path.join(ROOT, 'docs', 'automation', '.secret-gmail-password.txt');
 const OUT = path.join(ROOT, 'docs', 'automation');
-const EMAIL = 'loansflow707@gmail.com';
+const EMAIL = 'Loans.flow.loan@gmail.com';
 const SITE = 'https://loansflow.pages.dev/'; // free; custom domain later
 
 function sleep(ms) {

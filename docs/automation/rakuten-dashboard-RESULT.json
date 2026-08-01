@@ -9,17 +9,17 @@
     {
       "step": "login",
       "url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
-      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification"
+      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address Loans.flow.loan@gmail.com and we\u2019ll get started.\n\nResend verification"
     },
     {
       "step": "settled",
       "url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
       "title": "Publisher Dashboard",
-      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification"
+      "body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address Loans.flow.loan@gmail.com and we\u2019ll get started.\n\nResend verification"
     }
   ],
   "final_url": "https://publisher.rakutenadvertising.com/onboarding/verify-email",
   "final_title": "Publisher Dashboard",
-  "final_body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address loansflow707@gmail.com and we\u2019ll get started.\n\nResend verification",
+  "final_body": "Publisher Dashboard\nVerify your email\n\nPlease go verify your email address Loans.flow.loan@gmail.com and we\u2019ll get started.\n\nResend verification",
   "status": "ok"
 }

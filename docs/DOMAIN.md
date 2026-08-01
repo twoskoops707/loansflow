@@ -19,7 +19,7 @@
 
 ## AdSense
 
-Pub: `ca-pub-7523216981025331` · account `loansflow707@gmail.com`
+Pub: `ca-pub-7523216981025331` · account `Loans.flow.loan@gmail.com`
 
 **ads.txt (must be crawlable at apex):**
 ```

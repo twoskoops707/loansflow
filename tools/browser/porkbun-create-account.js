@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation');
-const EMAIL = 'loansflow707@gmail.com';
+const EMAIL = 'Loans.flow.loan@gmail.com';
 const PW = 'Lf!' + crypto.randomBytes(9).toString('base64url') + '9a';
 
 async function shot(page, name) {

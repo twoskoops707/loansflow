@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 SHOTS = ROOT / "outreach-shots"
 OUT = ROOT / "rakuten-cdp-onboard-RESULT.json"
 PASSWORD = (ROOT / ".secret-rakuten-password.txt").read_text(encoding="utf-8").strip()
-EMAIL = "loansflow707@gmail.com"
+EMAIL = "Loans.flow.loan@gmail.com"
 SITE = "https://loansflow.loan/"
 CDP = "http://127.0.0.1:9333"
 

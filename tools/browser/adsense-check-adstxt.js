@@ -129,7 +129,7 @@ function extractAdsTxtStatus(body) {
   const status = extractAdsTxtStatus(listSnippet + '\n' + body);
 
   const result = {
-    account: 'loansflow707@gmail.com',
+    account: 'Loans.flow.loan@gmail.com',
     pub: 'ca-pub-7523216981025331',
     host: HOST,
     public_ads_txt: curls.map((c) => ({

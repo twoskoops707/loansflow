@@ -1,6 +1,6 @@
 # Affiliate inbox monitor — 2026-07-31T04:49:53.640481Z
 
-Account: loansflow707@gmail.com
+Account: Loans.flow.loan@gmail.com
 
 ## inbox (16 rows seen)
 
@@ -319,7 +319,7 @@ We are launching the calculator suite and seeking affiliate networks and direct 
 If you have loan, mortgage, credit, or small-business finance offers that fit educational calculator contexts, I would welcome a conversation or your preferred publisher application path. We will not make inflated traffic claims — we are early-stage and looking for the right long-term partners.
 
 Site: https://loansflow.loan/
-Contact: loansflow707@gmail.com
+Contact: Loans.flow.loan@gmail.com
 
 Thank you for your time,
 LoansFlow Partnerships
@@ -435,7 +435,7 @@ Preview:
 flexoffers.com
 Your ticket 'Publisher intro — LoansFlow loan calculators seeking affiliate/ad partners' has been received
  - 
-Hi there, Your request has been received and is being reviewed by our support team. We'll get back to you as soon as we can. Request details Contact email: loansflow707@gmail.com Date submitted: 7/
+Hi there, Your request has been received and is being reviewed by our support team. We'll get back to you as soon as we can. Request details Contact email: Loans.flow.loan@gmail.com Date submitted: 7/
  
 8:35 PM
 ```
@@ -463,11 +463,11 @@ Hi there,
 Your request has been received and is being reviewed by our support team. We'll get back to you as soon as we can.
 
 Request details
-Contact email: loansflow707@gmail.com
+Contact email: Loans.flow.loan@gmail.com
 Date submitted: 7/30/26
 Reference number: 47332464239
 Issue: Publisher intro — LoansFlow loan calculators seeking affiliate/ad partners
-Issue description: Hello, I'm reaching out from LoansFlow (https://loansflow.loan/), a new suite of free calculators for SBA, commercial, and mortgage loan modeling. Our visitors are operators and borrowers actively comparing financing scenarios — a high-intent finance audience. We are launching the calculator suite and seeking affiliate networks and direct advertisers open to CPA, CPL, or revenue-share placements (alongside compliant display). Google AdSense is already on the site while traffic warms; we are exploring additional monetization with reputable finance partners. If you have loan, mortgage, credit, or small-business finance offers that fit educational calculator contexts, I would welcome a conversation or your preferred publisher application path. We will not make inflated traffic claims — we are early-stage and looking for the right long-term partners. Site: https://loansflow.loan/ Contact: loansflow707@gmail.com Thank you for your time, LoansFlow Partnerships
+Issue description: Hello, I'm reaching out from LoansFlow (https://loansflow.loan/), a new suite of free calculators for SBA, commercial, and mortgage loan modeling. Our visitors are operators and borrowers actively comparing financing scenarios — a high-intent finance audience. We are launching the calculator suite and seeking affiliate networks and direct advertisers open to CPA, CPL, or revenue-share placements (alongside compliant display). Google AdSense is already on the site while traffic warms; we are exploring additional monetization with reputable finance partners. If you have loan, mortgage, credit, or small-business finance offers that fit educational calculator contexts, I would welcome a conversation or your preferred publisher application path. We will not make inflated traffic claims — we are early-stage and looking for the right long-term partners. Site: https://loansflow.loan/ Contact: Loans.flow.loan@gmail.com Thank you for your time, LoansFlow Partnerships
 
 
 FlexOffers.com, LLC, 1201 North Federal Highway, #7520, Fort Lauderdale, FL 33338, USA, (305) 999-9940

@@ -24,7 +24,7 @@ As of **2026-02-19**, Ezoic requires **~250,000 monthly active users** for norma
 
 - Dashboard: https://pubdash.ezoic.com/setup (Connect Your Site → JavaScript)
 - Domain shown: **LOANSFLOW.LOAN**
-- Email: loansflow707@gmail.com
+- Email: Loans.flow.loan@gmail.com
 - Publisher account **userId**: **652581** (from pubdash conversion pixels; not embedded in JS)
 - Per-site script / privacy ID: **none shown** — standalone JS is domain-bound
 - Ezoic password drop-file (gitignored): `docs/automation/.secret-ezoic-password.txt`

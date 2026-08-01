@@ -979,7 +979,7 @@ const legalContent = {
   contact: {
     title: "Contact",
     body: `<p>Questions, corrections, or feedback about a calculation? Reach out any time.</p>
-           <p><strong>Email:</strong> loansflow707@gmail.com</p>`
+           <p><strong>Email:</strong> Loans.flow.loan@gmail.com</p>`
   },
   privacy: {
     title: "Privacy Policy",

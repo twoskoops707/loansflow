@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation');
-const EMAIL = 'loansflow707@gmail.com';
+const EMAIL = 'Loans.flow.loan@gmail.com';
 const SITE = 'https://loansflow.loan';
 const PASS_FILE = path.join(OUT, '.secret-gmail-password.txt');
 

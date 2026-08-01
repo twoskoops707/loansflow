@@ -14,7 +14,7 @@ PROFILE = ROOT / ".chrome-gmail-outreach2"
 SHOTS = ROOT / "outreach-shots"
 OUT = ROOT / "rakuten-verify2-RESULT.json"
 PASSWORD = (ROOT / ".secret-rakuten-password.txt").read_text(encoding="utf-8").strip()
-EMAIL = "loansflow707@gmail.com"
+EMAIL = "Loans.flow.loan@gmail.com"
 
 
 def shot(page, name: str) -> None:

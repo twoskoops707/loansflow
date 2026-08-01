@@ -215,7 +215,7 @@ async function verifyAndReview(page, host) {
   const listBody = await dump(page, 'adsense-next-FINAL-list.txt');
 
   const summary = {
-    account: 'loansflow707@gmail.com',
+    account: 'Loans.flow.loan@gmail.com',
     pub: 'ca-pub-7523216981025331',
     results,
     list_snippet: listBody.match(/loansflow[\s\S]{0,500}/i)?.[0] || null,

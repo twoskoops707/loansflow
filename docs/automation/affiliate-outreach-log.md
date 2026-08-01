@@ -1,7 +1,7 @@
 # LoansFlow affiliate / ad partner outreach log
 
 **Site:** https://loansflow.loan/  
-**From:** loansflow707@gmail.com  
+**From:** Loans.flow.loan@gmail.com  
 **Campaign date:** 2026-07-30 (PDT) / 2026-07-31 UTC  
 **Positioning:** New calculator suite (SBA / commercial / mortgage); high-intent finance audience; AdSense live while traffic warms; open to CPA / CPL / rev-share and compliant display. No inflated traffic claims.
 
@@ -21,7 +21,7 @@ We are launching the calculator suite and seeking affiliate networks and direct 
 If you have loan, mortgage, credit, or small-business finance offers that fit educational calculator contexts, I would welcome a conversation or your preferred publisher application path. We will not make inflated traffic claims — we are early-stage and looking for the right long-term partners.
 
 Site: https://loansflow.loan/
-Contact: loansflow707@gmail.com
+Contact: Loans.flow.loan@gmail.com
 
 Thank you for your time,
 LoansFlow Partnerships
@@ -54,14 +54,14 @@ Evidence: `docs/automation/outreach-shots/verify-sent.png`, `affiliate-outreach-
 |---|---|---|---|
 | 2026-07-31T03:39:26Z | Credible Partners | https://www.credible.com/partners | **submitted** (“Thank you!” confirmation) — Mortgages interest selected |
 | 2026-07-31T03:38:41Z | digidip contact form | https://digidip.net/contact | **blocked — reCAPTCHA** (form filled + consent checked; Send not completed) |
-| 2026-07-31T03:40:33Z | FlexOffers publisher signup | publisherprobeta.flexoffers.com | **partial** — account created for loansflow707@gmail.com; email passcode verification still incomplete (OTP UI + Cloudflare Turnstile on login). Login resumes at verify step. |
+| 2026-07-31T03:40:33Z | FlexOffers publisher signup | publisherprobeta.flexoffers.com | **partial** — account created for Loans.flow.loan@gmail.com; email passcode verification still incomplete (OTP UI + Cloudflare Turnstile on login). Login resumes at verify step. |
 | 2026-07-31T03:40:21Z | Bankrate Credit Cards | bankratecreditcards.com | **flow opened** (#publishers); email already sent |
 | 2026-07-31T03:40:39Z | Awin publisher signup | ui.awin.com/publisher-signup/us/awin | **page opened** — needs interactive multi-step + refundable deposit |
 | 2026-07-31T03:40:45Z | Impact partner signup | app.impact.com registration/partner | **page opened** — KYC / property verification required |
 | 2026-07-31T03:40:53Z | MaxBounty affiliate | maxbounty.com/affiliate | **page opened** — phone/Skype + traffic details typical |
 | 2026-07-31T03:40:05Z | Nav Partnerships | nav.com/partnerships | **blocked — reCAPTCHA** on form attempt |
 | 2026-07-31T03:40:12Z | QuinStreet contact page | quinstreet.com/contact-us | **no web form** (phone HQ); email already sent |
-| 2026-07-31T05:03:47Z | Rakuten Advertising publisher | http://publisher.rakutenadvertising.com/register | **account created** for loansflow707@gmail.com (LoansFlow Partnerships). Auth registration succeeded → Publisher Dashboard. **Email verification still required** (`/onboarding/verify-email`). “Activate your Rakuten Advertising Login” mail received; activation link opened; after re-login still on verify-email. Site https://loansflow.loan/ not yet attached in onboarding. Password drop-file: `docs/automation/.secret-rakuten-password.txt` (gitignored locally — do not commit). |
+| 2026-07-31T05:03:47Z | Rakuten Advertising publisher | http://publisher.rakutenadvertising.com/register | **account created** for Loans.flow.loan@gmail.com (LoansFlow Partnerships). Auth registration succeeded → Publisher Dashboard. **Email verification still required** (`/onboarding/verify-email`). “Activate your Rakuten Advertising Login” mail received; activation link opened; after re-login still on verify-email. Site https://loansflow.loan/ not yet attached in onboarding. Password drop-file: `docs/automation/.secret-rakuten-password.txt` (gitignored locally — do not commit). |
 
 ---
 
@@ -72,7 +72,7 @@ Madhu (Case 404091) directed free **publisher** signup (not advertiser). Automat
 1. Opened register URL → Keycloak registration form on `auth.rakutenmarketing.com`
 2. Filled email / first / last / password (+ confirm); all password rules green
 3. Clicked **Register** → redirected to `publisher.rakutenadvertising.com` **Publisher Dashboard** (JWT subject created; `email_verified=false` initially)
-4. Onboarding gate: **Verify your email** for `loansflow707@gmail.com` (+ Resend verification)
+4. Onboarding gate: **Verify your email** for `Loans.flow.loan@gmail.com` (+ Resend verification)
 5. Gmail: “Activate your Rakuten Advertising Login” from `noreply@rakutenadvertising.com` — Activate Login link opened
 6. Subsequent login works (reCAPTCHA badge present; no hard CAPTCHA wall that blocked submit). Still lands on verify-email until activation fully sticks in headed/manual click if needed
 
@@ -116,7 +116,7 @@ Evidence: `outreach-shots/rakuten-01-start.png` … `rakuten-42-settled.png`, `r
 
 ## Inbox monitor (2026-07-31 ≈04:49–04:58Z / evening PDT 2026-07-30)
 
-Checked Gmail **Inbox** + **Spam** for `loansflow707@gmail.com` (Chrome profile `.chrome-gmail-outreach2`). Artifacts: `affiliate-inbox-monitor.json`, `affiliate-inbox-monitor.md`, `affiliate-reply-results.json`.
+Checked Gmail **Inbox** + **Spam** for `Loans.flow.loan@gmail.com` (Chrome profile `.chrome-gmail-outreach2`). Artifacts: `affiliate-inbox-monitor.json`, `affiliate-inbox-monitor.md`, `affiliate-reply-results.json`.
 
 ### Partner / delivery responses
 

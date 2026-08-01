@@ -1,6 +1,6 @@
 # LoansFlow — Autonomous Ops Blocker + Resume
 
-## AdSense status (2026-07-31, loansflow707@gmail.com)
+## AdSense status (2026-07-31, Loans.flow.loan@gmail.com)
 
 Publisher: `ca-pub-7523216981025331`
 

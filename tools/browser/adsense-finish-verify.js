@@ -11,7 +11,7 @@ const https = require('https');
 const OUT = path.join(__dirname, '..', '..', 'docs', 'automation');
 const SECRET = path.join(OUT, '.secret-gmail-password.txt');
 const PUB = 'pub-7523216981025331';
-const EMAIL = 'loansflow707@gmail.com';
+const EMAIL = 'Loans.flow.loan@gmail.com';
 const LIST = `https://adsense.google.com/adsense/u/0/${PUB}/sites/list`;
 
 async function sleep(ms) {

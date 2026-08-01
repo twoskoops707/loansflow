@@ -2,7 +2,7 @@
 
 **Canonical:** https://loansflow.loan/  
 **Repo:** https://github.com/twoskoops707/loansflow  
-**Brand:** LoansFlow · Contact: loansflow707@gmail.com  
+**Brand:** LoansFlow · Contact: Loans.flow.loan@gmail.com  
 **Pages project:** `loansflow-live` (Foremost Vole) · legacy `loansflow.pages.dev` still mirrors
 
 Last verified: 2026-07-31 (PDT)
@@ -14,7 +14,7 @@ Last verified: 2026-07-31 (PDT)
 - [x] Calculators + landing redesign live on apex
 - [x] Custom domain **loansflow.loan** (+ www) on Cloudflare Pages
 - [x] Logo D (`public/img/logo.svg`) live in nav/hero
-- [x] Legal pages (About / Contact / Privacy / Disclaimer / Terms) with loansflow707@gmail.com
+- [x] Legal pages (About / Contact / Privacy / Disclaimer / Terms) with Loans.flow.loan@gmail.com
 - [x] AdSense pub `ca-pub-7523216981025331` — ownership **Verified** on loansflow.loan
 - [x] `ads.txt` live (apex / www / pages.dev) — AdSense column **Authorized** on loansflow.loan
 - [x] Ad units shipped (home + tools slots via `js/ads.js`; empty-fill hide)
@@ -33,7 +33,7 @@ Last verified: 2026-07-31 (PDT)
 
 ## Needs you (manual / OTP / CAPTCHA / payment)
 
-1. **FlexOffers (one click)** — https://publisherprobeta.flexoffers.com/login as `loansflow707@gmail.com` → solve Turnstile → request new email OTP → enter code → add https://loansflow.loan/. Mark ticket **47332464239** Not Spam if still in Spam.
+1. **FlexOffers (one click)** — https://publisherprobeta.flexoffers.com/login as `Loans.flow.loan@gmail.com` → solve Turnstile → request new email OTP → enter code → add https://loansflow.loan/. Mark ticket **47332464239** Not Spam if still in Spam.
 2. **Rakuten (one click)** — https://publisher.rakutenadvertising.com/onboarding/start (email already verified) → **Get started** → set country **United States** → finish wizard → attach **https://loansflow.loan/**. Agent automation keeps crashing on the country react-select.
 3. **Awin** — publisher signup (~$1 refundable deposit)
 4. **Impact / MaxBounty** — interactive KYC / phone signup

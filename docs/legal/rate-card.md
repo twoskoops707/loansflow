@@ -3,7 +3,7 @@
 **Status:** Working draft for partner replies — **not** audited traffic.  
 **Site:** https://loansflow.loan/  
 **Updated:** 2026-07-30  
-**Contact:** loansflow707@gmail.com  
+**Contact:** Loans.flow.loan@gmail.com  
 
 > Honesty policy: LoansFlow is early-stage. Do **not** quote fake MAU, pageviews, or email-list sizes. Replace placeholders with real analytics before sending externally. Prefer “traffic warming / limited history” language until numbers are stable.
 

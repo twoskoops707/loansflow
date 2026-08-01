@@ -79,7 +79,7 @@ Address not found Your message wasn't delivered to partners@bankratecreditcards.
 Google
 You shared some Google Account data with Cloudflare Dashboard
  - 
-Keep track of your Google Account data loansflow707@gmail.com You're receiving this email because you used Sign in with Google to sign in to Cloudflare Dashboard on July 30 at 11:03 AM. This email
+Keep track of your Google Account data Loans.flow.loan@gmail.com You're receiving this email because you used Sign in with Google to sign in to Cloudflare Dashboard on July 30 at 11:03 AM. This email
  
 11:20 AM
 Cloudflare
@@ -110,7 +110,7 @@ Google
 2
 Security alert
  - 
-Recovery phone was changed loansflow707@gmail.com The recovery phone for your account was changed. If you didn't change it, you should check what happened. Check activity You can also see security
+Recovery phone was changed Loans.flow.loan@gmail.com The recovery phone for your account was changed. If you didn't change it, you should check what happened. Check activity You can also see security
  
 Jul 29
 Spaceship

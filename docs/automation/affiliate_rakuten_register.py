@@ -16,7 +16,7 @@ OUT = ROOT / "rakuten-register-RESULT.json"
 PW_FILE = ROOT / ".secret-rakuten-password.txt"
 GMAIL_PW = ROOT / ".secret-gmail-password.txt"
 
-EMAIL = "loansflow707@gmail.com"
+EMAIL = "Loans.flow.loan@gmail.com"
 SITE = "https://loansflow.loan/"
 REGISTER_URL = "https://publisher.rakutenadvertising.com/register"
 # Prefer dedicated Rakuten password file; fall back to known partner password.

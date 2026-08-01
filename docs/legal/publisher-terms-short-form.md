@@ -3,7 +3,7 @@
 **TEMPLATE — have counsel review before use. Not legal advice.**  
 **Version:** 2026-07-30  
 **Site:** https://loansflow.loan/  
-**Contact:** loansflow707@gmail.com  
+**Contact:** Loans.flow.loan@gmail.com  
 
 These short-form terms apply when LoansFlow (“**Publisher**”) joins an affiliate network or works with an advertiser/network (“**Partner**”), and when Partner’s own clickwrap is incomplete or silent. **Partner’s network terms apply** to program participation; where silent or conflicting on the topics below regarding Publisher’s property, **these terms supplement**.
 

@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parent
 SHOTS = ROOT / "outreach-shots"
 OUT = ROOT / "flexoffers-cdp-finish-RESULT.json"
-EMAIL = "loansflow707@gmail.com"
+EMAIL = "Loans.flow.loan@gmail.com"
 PASSWORD = "LoansFlow!Partner2026"
 SITE = "https://loansflow.loan/"
 CDP = "http://127.0.0.1:9333"
@@ -71,7 +71,7 @@ def main() -> None:
         if page.locator("iframe[src*='turnstile'], iframe[src*='challenges.cloudflare']").count():
             result["status"] = "blocked_turnstile"
             result["remaining_click"] = (
-                "Open https://publisherprobeta.flexoffers.com/login as loansflow707@gmail.com, "
+                "Open https://publisherprobeta.flexoffers.com/login as Loans.flow.loan@gmail.com, "
                 "solve Turnstile, request new email OTP, paste code, then add https://loansflow.loan/"
             )
             OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
@@ -92,7 +92,7 @@ def main() -> None:
                 result["status"] = "blocked_no_otp"
                 result["remaining_click"] = (
                     "Request a fresh FlexOffers email passcode in headed browser + Turnstile, "
-                    "then enter code for loansflow707@gmail.com"
+                    "then enter code for Loans.flow.loan@gmail.com"
                 )
                 OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
                 print(json.dumps(result, indent=2)[:2000])

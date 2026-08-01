@@ -3,7 +3,7 @@
 **Status:** Draft templates for operational use. **Not legal advice.** Have counsel review before using with real counterparties.
 
 **Publisher / site:** LoansFlow — https://loansflow.loan/  
-**Contact:** loansflow707@gmail.com  
+**Contact:** Loans.flow.loan@gmail.com  
 
 **Governing law note:** AdSense account timezone is Los Angeles (UTC−08:00). Templates default to **State of California, USA**. Change to your entity’s formation state or counsel’s preference (Delaware common for corps). Replace all `PLACEHOLDER` fields.
 

@@ -35,7 +35,7 @@ fs.mkdirSync(OUT, { recursive: true });
   // Enter email if needed
   const emailBox = page.locator('input[type="email"], input[name="identifier"]');
   if (await emailBox.count()) {
-    await emailBox.first().fill('loansflow707@gmail.com');
+    await emailBox.first().fill('Loans.flow.loan@gmail.com');
     await page.getByRole('button', { name: /next/i }).click();
     await page.waitForTimeout(4000);
     await page.screenshot({ path: path.join(OUT, '12-after-email.png'), fullPage: true });
