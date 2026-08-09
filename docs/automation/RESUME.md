@@ -1,39 +1,51 @@
 # LoansFlow — Autonomous Ops Blocker + Resume
 
-## AdSense status (2026-07-31, loansflow707@gmail.com)
+Updated: **2026-08-09** (PDT)
 
-Publisher: `ca-pub-7523216981025331`
+## Where things live
 
-| Site | Ownership | Site review | ads.txt (AdSense column) |
-|------|-----------|-------------|---------------------------|
-| **loansflow.loan** | **Verified** (meta) | **Getting ready** | **Authorized** |
-| **loansflow.pages.dev** | Attached | Getting ready | Not found (file is live publicly — crawl lag) |
-| twoskoops707.github.io | Getting ready | — | Not found (file is live publicly — crawl lag) |
+| Role | Path |
+|------|------|
+| Website + AdSense tooling | `C:\Users\jsmil\.cursor\loansflow` |
+| FamFlow engine / sequences | `C:\Users\jsmil\famflow` |
+| Emulator runtime / ADB / logs | `C:\CPharm` |
+| Operator dash | http://127.0.0.1:8091 |
+| ntfy topic | `twskoops` |
 
-Payments → Verification: threshold-gated (“once your earnings reach the verification threshold”). No blocking tax form today.
+Production URL: **https://loansflow.loan/**  
+Publisher: `ca-pub-7523216981025331` · `loansflow707@gmail.com`
 
-Evidence: `docs/automation/adsense-gapfix-2026-07-31-RESULT.json`, `adsense-verify-2026-07-30-NOTE.md`.
+## Farm (2026-08-09)
 
-## Live URLs
+- Cleared DabFlow sticky / `NO_LOANSFLOW_FARM` / watchdog-disabled flags
+- Set `LOANSFLOW_OPERATOR_HOLD.flag` + `LOANSFLOW_FARM_ENABLED.flag`
+- Patched `ensure_farm_24x7.py` so LoansFlow hold wins over DabFlow money-day sticky
+- Applied site **loansflow** via `/api/site` — visits `120,100,90,80` ads `3,2,2,2`
+- 4 ADB devices online: `10.0.2.125/64/70/26:5555` → vm0/vm4/vm5/vm11
+- Sequences: `C:\CPharm\automation\recordings\sequences\loansflow` (10 JSONs)
 
-- Production: https://loansflow.loan/
-- Pages project: `loansflow-live`
-- ads.txt: `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
+## AdSense (2026-08-09 scrape)
 
-## Ezoic (2026-07-31)
+| Site | Approval | ads.txt (UI) |
+|------|----------|--------------|
+| **loansflow.loan** | Getting ready | Not found (UI) — **public file live + Googlebot OK** |
+| loansflow.pages.dev | Getting ready | Not found |
+| twoskoops707.github.io | Getting ready | Not found |
 
-**JS headers live** on apex (static Gatekeeper + `sa.min.js` + analytics in `<head>`). Publisher userId **652581**; no per-site script ID (domain-bound). **Deferred** Cloudflare/NS takeover, ads.txt rewrite, and AdSense slot replacement.
+Live apex: AdSense script + `google-adsense-account` meta + Ezoic JS headers.  
+`https://loansflow.loan/ads.txt` = `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
 
-See `docs/automation/EZOIC.md` + `ezoic-snippet.txt`. After deploy → pubdash **CHECK CONNECTION**.
+**Blocked now:** Google “Verify it’s you” / reCAPTCHA on AdSense + Gmail automation profiles. Need one human pass in the open Chrome window (loansflow707), then agent can finish payments/auto-ads check + inbox replies.
 
-Traffic: Ezoic wants ~250k MAU (post-2026-02); site is Incubator-only until then.
+## Email
 
-## Password drop-files (gitignored)
+Inbox monitor / full scan hit Google re-auth — **0 rows readable until captcha cleared**. Affiliate replies (Ascend / FlexOffers / etc.) still pending once inbox opens.
 
-- Gmail: `docs/automation/.secret-gmail-password.txt`
-- Ezoic: `docs/automation/.secret-ezoic-password.txt`
-- Rakuten: `docs/automation/.secret-rakuten-password.txt`
+## Earning potential checklist
 
-## Search Console
-
-Not verified yet — see `docs/automation/SEARCH-CONSOLE.md`.
+- [x] Apex live with AdSense + ads.txt
+- [x] Farm on LoansFlow with 4 emulators
+- [ ] AdSense site **Ready** (waiting Google)
+- [ ] Human captcha → reopen AdSense payments / Auto ads
+- [ ] Answer affiliate emails after Gmail unlock
+- [ ] Optional: Search Console verify + sitemap

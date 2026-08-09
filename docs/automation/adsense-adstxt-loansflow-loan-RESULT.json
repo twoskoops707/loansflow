@@ -35,11 +35,12 @@
   "adsense_ads_txt_status": {
     "match": null,
     "flags": [
-      "Not found"
+      "Not found",
+      "Authorized"
     ]
   },
-  "list_snippet": "loansflow.loan | Getting ready | — | Not found | Jul 30, 2026 | 11:57 AM | PDT | delete | twoskoops707.github.io | Getting ready | — | Not found | Jul 29, 2026 | 9:04 PM | PDT | delete | Go to page: | of 1 | Show rows: | 50 | arrow_drop_down | 1 - 3 of 3 | fir",
+  "list_snippet": "loansflow.loan | Getting ready | — | Authorized | Jul 30, 2026 | 11:57 AM | PDT | delete | Go to page: | of 1 | Show rows: | 50 | arrow_drop_down | 1 - 3 of 3 | first_page | chevron_left | chevron_right | last_page",
   "detail_has_not_found": true,
-  "detail_has_authorized": false,
-  "at": "2026-07-30T19:11:41.752Z"
+  "detail_has_authorized": true,
+  "at": "2026-07-31T04:50:43.286Z"
 }
