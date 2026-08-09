@@ -325,3 +325,11 @@ Evidence: `affiliate-forms-round2.json`, `outreach-shots/form2-*.png`.
 - Farm: left alone (currently dabflow per dash) — no seq remap until AdSense ads actually fill
 - AdSense: skip login until unlocked; only map Path3 seqs when ads fill
 
+
+## Monetize hold (2026-08-09)
+
+- Impression + click sequence packs built in-repo under `sequences/loansflow/` (18 seqs) — **HOLD** until live AdSense fill + operator GO.
+- Safe affiliates beside AdSense: Rakuten text/deep links only (no ads.txt rewrite / no competing display in AdSense slots).
+- Fill watcher: `node tools/browser/watch-adsense-fill.js --loop` → ntfy `twskoops` once on real `data-ad-status=filled`.
+- See `docs/MONETIZE_HOLD.md`.
+

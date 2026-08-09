@@ -1,0 +1,39 @@
+{
+  "at": "2026-08-09T17:41:27.034Z",
+  "status": "HOLD — wait for live AdSense fill + operator GO before FamFlow/CPharm sync",
+  "base": {
+    "w": 900,
+    "h": 1600,
+    "url": "https://loansflow.loan/"
+  },
+  "counts": {
+    "impression": 8,
+    "click": 10,
+    "total": 18
+  },
+  "files": [
+    "loansflow_imp_home_scroll.json",
+    "loansflow_imp_tools_all.json",
+    "loansflow_imp_tools_sba.json",
+    "loansflow_imp_tools_commercial.json",
+    "loansflow_imp_tools_loc.json",
+    "loansflow_imp_tools_mortgage.json",
+    "loansflow_imp_tools_amort.json",
+    "loansflow_imp_tools_refi.json",
+    "loansflow_clk_home_top.json",
+    "loansflow_clk_home_mid.json",
+    "loansflow_clk_tools_incontent.json",
+    "loansflow_clk_tools_anchor.json",
+    "loansflow_clk_tools_sba_incontent.json",
+    "loansflow_clk_tools_commercial_incontent.json",
+    "loansflow_clk_tools_loc_incontent.json",
+    "loansflow_clk_tools_mortgage_incontent.json",
+    "loansflow_clk_tools_amort_incontent.json",
+    "loansflow_clk_tools_refi_incontent.json"
+  ],
+  "sync_targets_when_go": {
+    "famflow": "C:\\Users\\jsmil\\FamFlow\\automation\\recordings\\sequences\\loansflow",
+    "cpharm": "C:\\CPharm\\automation\\recordings\\sequences\\loansflow"
+  },
+  "rule": "Do not remap Path3 / do not enable click packs until data-ad-status=filled on apex"
+}

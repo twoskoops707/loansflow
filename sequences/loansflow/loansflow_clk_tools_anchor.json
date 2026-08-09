@@ -1,0 +1,99 @@
+{
+  "name": "loansflow_clk_tools_anchor",
+  "site_slug": "loansflow",
+  "site_adapter": "loansflow",
+  "sequence_version": 4,
+  "author_width": 900,
+  "author_height": 1600,
+  "humanize_preset": "moderate",
+  "requires_fingerprint": true,
+  "runtime_guarantees": {
+    "verified_unique_exit_ip": true,
+    "fresh_android_id": true,
+    "browser_data_wipe": true,
+    "concurrent_unique_sequence": true,
+    "full_hour_start_stagger": true
+  },
+  "path_kind": "click",
+  "hold_until_ads_fill": true,
+  "ad_target": "tools_anchor",
+  "notes": "CLICK path — do not farm until AdSense data-ad-status=filled and operator GO",
+  "steps": [
+    {
+      "action": "rotate_identity",
+      "params": {},
+      "description": "New verified exit IP and browser identity"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.8221273551788764
+      },
+      "description": "Human pause after identity rotation"
+    },
+    {
+      "action": "ensure_fingerprint",
+      "params": {},
+      "description": "Verify spoofed browser fingerprint"
+    },
+    {
+      "action": "clear_cookies",
+      "params": {
+        "package": "org.chromium.chrome"
+      },
+      "description": "Clear browser history, cookies, cache, and site storage"
+    },
+    {
+      "action": "open_url",
+      "params": {
+        "url": "https://loansflow.loan/tools/?step=0",
+        "post_wait_secs": 1.397678732308311
+      },
+      "description": "Open https://loansflow.loan/tools/?step=0"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 1.4145738899035187
+      },
+      "description": "Tools settle"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.7909630845523162
+      },
+      "description": "Before ad tap tools_anchor"
+    },
+    {
+      "action": "tap",
+      "params": {
+        "x": 450,
+        "y": 1528,
+        "jitter": 8
+      },
+      "description": "Tap ad: tools_anchor"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 6.079035531264452
+      },
+      "description": "Human dwell on advertiser"
+    },
+    {
+      "action": "keyevent",
+      "params": {
+        "code": 4
+      },
+      "description": "Back from advertiser"
+    },
+    {
+      "action": "close_app",
+      "params": {
+        "package": "org.chromium.chrome"
+      },
+      "description": "Close org.chromium.chrome"
+    }
+  ]
+}

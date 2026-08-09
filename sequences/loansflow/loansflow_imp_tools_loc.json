@@ -1,0 +1,158 @@
+{
+  "name": "loansflow_imp_tools_loc",
+  "site_slug": "loansflow",
+  "site_adapter": "loansflow",
+  "sequence_version": 4,
+  "author_width": 900,
+  "author_height": 1600,
+  "humanize_preset": "moderate",
+  "requires_fingerprint": true,
+  "runtime_guarantees": {
+    "verified_unique_exit_ip": true,
+    "fresh_android_id": true,
+    "browser_data_wipe": true,
+    "concurrent_unique_sequence": true,
+    "full_hour_start_stagger": true
+  },
+  "path_kind": "impression",
+  "calculator": "loc",
+  "hold_until_ads_fill": false,
+  "notes": "Impression tour: Line of Credit",
+  "steps": [
+    {
+      "action": "rotate_identity",
+      "params": {},
+      "description": "New verified exit IP and browser identity"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.9868717112678398
+      },
+      "description": "Human pause after identity rotation"
+    },
+    {
+      "action": "ensure_fingerprint",
+      "params": {},
+      "description": "Verify spoofed browser fingerprint"
+    },
+    {
+      "action": "clear_cookies",
+      "params": {
+        "package": "org.chromium.chrome"
+      },
+      "description": "Clear browser history, cookies, cache, and site storage"
+    },
+    {
+      "action": "open_url",
+      "params": {
+        "url": "https://loansflow.loan/tools/?step=2",
+        "post_wait_secs": 1.006023038432076
+      },
+      "description": "Open https://loansflow.loan/tools/?step=2"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 2.0695024083934004
+      },
+      "description": "Load Line of Credit"
+    },
+    {
+      "action": "swipe",
+      "params": {
+        "x1": 450,
+        "y1": 1300,
+        "x2": 450,
+        "y2": 500,
+        "duration_ms": 273
+      },
+      "description": "Reveal in-content 1"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.3097206627934515
+      },
+      "description": "Scroll pause"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.6277940111811123
+      },
+      "description": "Settle near ad tools_incontent"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 4.4365090180836875
+      },
+      "description": "Impression dwell: tools_incontent (no tap)"
+    },
+    {
+      "action": "swipe",
+      "params": {
+        "x1": 450,
+        "y1": 1300,
+        "x2": 450,
+        "y2": 500,
+        "duration_ms": 303
+      },
+      "description": "Calc scroll 1"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.3207977225970013
+      },
+      "description": "Scroll pause"
+    },
+    {
+      "action": "swipe",
+      "params": {
+        "x1": 450,
+        "y1": 1300,
+        "x2": 450,
+        "y2": 500,
+        "duration_ms": 279
+      },
+      "description": "Calc scroll 2"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.2846664049342655
+      },
+      "description": "Scroll pause"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 0.5720581718996124
+      },
+      "description": "Settle near ad tools_anchor"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 3.2467016923158183
+      },
+      "description": "Impression dwell: tools_anchor (no tap)"
+    },
+    {
+      "action": "wait",
+      "params": {
+        "seconds": 2.017359715774088
+      },
+      "description": "Calculator read time"
+    },
+    {
+      "action": "close_app",
+      "params": {
+        "package": "org.chromium.chrome"
+      },
+      "description": "Close org.chromium.chrome"
+    }
+  ]
+}
