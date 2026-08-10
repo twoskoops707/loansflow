@@ -1,9 +1,17 @@
-# Cloudflare Pages — manual only until secrets exist
-# Add repo secrets CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID, then run this workflow.
-# Or connect the repo in Cloudflare Dashboard → Workers & Pages (output dir: public).
+# Deploy LoansFlow to Cloudflare Pages (loansflow-live → loansflow.loan)
+# Requires repo secret CLOUDFLARE_API_TOKEN (Pages Edit).
+# Account ID defaults to Foremost Vole; override with CLOUDFLARE_ACCOUNT_ID secret if needed.
+
+name: deploy-pages
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -13,11 +21,34 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+
+      - uses: actions/setup-node@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: loansflow
-          directory: public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '20'
+
+      - name: Check Cloudflare token
+        id: check
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::error::CLOUDFLARE_API_TOKEN repo secret is missing. Add it under Settings → Secrets → Actions."
+            exit 1
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy loansflow-live (production)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || '8547be3ab2e2bccea6f0356fe6ba4a9c' }}
+        run: |
+          npx --yes wrangler@4 pages deploy --project-name=loansflow-live --branch=main --commit-dirty=true
+
+      - name: Deploy legacy loansflow.pages.dev
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID_TWSKOOPS || 'c8c1c5fd94fa89b259d5559a496e87d7' }}
+        run: |
+          npx --yes wrangler@4 pages deploy --project-name=loansflow --branch=main --commit-dirty=true
