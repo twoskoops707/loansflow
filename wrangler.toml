@@ -3,6 +3,7 @@ compatibility_date = "2026-07-29"
 pages_build_output_dir = "./public"
 
 # Production: Foremost Vole → loansflow-live (serves loansflow.loan / www)
-# Deploy (WSL): ~/loansflow-cf + tools/browser/deploy-pages-wsl.sh
-#   npx wrangler pages deploy ./public --project-name=loansflow-live --commit-dirty=true
+# Deploy from repo root so Pages Functions (`functions/api/market-news.js`) ship with the site:
+#   npx wrangler pages deploy --project-name=loansflow-live --commit-dirty=true
+# (uses pages_build_output_dir = ./public; do not deploy only ./public if you need /api/*)
 # Legacy Twskoops project (do NOT CNAME apex here): loansflow → loansflow.pages.dev

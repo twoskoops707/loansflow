@@ -1,0 +1,39 @@
+# Refresh Market News snapshot daily so the static JSON stays current
+# even when the Cloudflare Pages Function is not available (e.g. GitHub Pages).
+
+name: refresh-market-news
+
+on:
+  schedule:
+    # Weekday mornings US (Freddie Mac PMMS typically updates Thu; news daily)
+    - cron: '15 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-market-news
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Refresh market-news.json
+        run: node tools/news/refresh-market-news.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- public/data/market-news.json; then
+            echo "No news changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/market-news.json
+          git commit -m "chore: refresh market news snapshot $(date -u +%Y-%m-%d)"
+          git push

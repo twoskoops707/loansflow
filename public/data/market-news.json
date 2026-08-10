@@ -1,0 +1,92 @@
+{
+  "updatedAt": "2026-08-10T09:20:04.755Z",
+  "rates": {
+    "asOf": "8/6/2026",
+    "source": "Freddie Mac PMMS",
+    "sourceUrl": "https://www.freddiemac.com/pmms",
+    "cells": [
+      {
+        "label": "30-Yr Fixed",
+        "value": "6.69%",
+        "note": "+0.03 pts vs last week"
+      },
+      {
+        "label": "15-Yr Fixed",
+        "value": "6.01%",
+        "note": "-0.03 pts vs last week"
+      },
+      {
+        "label": "30-Yr Refinance",
+        "value": "6.74%",
+        "note": "Approx. vs purchase avg."
+      }
+    ],
+    "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
+  },
+  "articles": [
+    {
+      "category": "Rates",
+      "source": "Freddie Mac",
+      "title": "Mortgage Rates Average 6.69%",
+      "summary": "The 30-year fixed-rate mortgage averaged 6.69% this week. While mortgage rates continue to influence affordability, the housing market is showing signs of adjustment, with listing prices modestly below year-ago levels and for-sale inventory improving from the limited supply seen in recent years.",
+      "url": "https://www.freddiemac.com/pmms",
+      "publishedAt": "2026-08-06T00:00:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
+      "title": "Federal Reserve issues FOMC statement",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "publishedAt": "2026-07-29T18:00:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
+      "title": "Minutes of the Board's discount rate meetings on June 8 and June 17, 2026",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm",
+      "publishedAt": "2026-07-14T18:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Bankrate",
+      "title": "Mortgage Rates Retreat, Still Near One-Year Peak",
+      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16QVNiVDg2TlhkcWFHMVVXYVNVbm5EOXA4TWxNbkJkWUdHQWpLQzZRSEEySHZoQzQ5ZVdZc3A4cXFOSno3aGctLWhpLWViMFdVR2VTTHBHRmpveVViRzN4bmNPTENfc2xPLTQ1bk9CV3NIWlJnWEpUYVZCd21kUQ?oc=5",
+      "publishedAt": "2026-08-05T20:21:06.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "AP News",
+      "title": "Mortgage rates rise for 5th straight week, hitting levels not seen since 2025 for 2nd week in a row",
+      "summary": "AP News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVXZOVUoyVW00QnJvcEI0UWFoZi02TzJTV01XYThTQUFmRTc0WWtqZ3VUREc1NDRRYXhmanB1UHFfekN5WUZMZERSVnJxVXRLREhKVVhwYUNCcjdmQXEyemNkd3d3YkVRbDU2ajh3cHRJZnRVOEZMSjh3bWVDNm51WGVRSHgtd2lLemo3aUhjQWZydGh0LXIxb2RaYmdkZjQ4a0YzMg?oc=5",
+      "publishedAt": "2026-08-06T16:02:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "CNBC",
+      "title": "Mortgage rates hit their highest level in over a year, causing demand to drop below year-ago levels",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOVVXN0VFckE2NGlEbC1oWFJnc1J5WjVrTzc1Z0ZhaEFnZlk4QlhBelVSNGx2azlBZGZZRUJiLWdGdXpXT1Bqb0U1X0JxdDU0UTR1LS1ZWldzeC05Mmg2bmNuY3huRmdmMWpBVmdXMnVYa1JkWXkyMUJFQjN5YjhtYXI0SmlyLWlPbzRpbTR5b25HMnNJ0gGaAUFVX3lxTE9udXhnQnZGT0ZjUXF4anBXMEU5UmthbjVUU3VEWHVnRXNZYTFzU2NCMFp4anNxb19JNjBrRmUyTWpuXzY3UTg5SnpUV2NuNndFeHVrNWk5eloyX0ljNGFZNnViMWF2WG50TTNIZnA5eE1PY3ZmamZzNE5TTmJaVDk2Q2YzZzlfS2hvNVdKaGtjcHVWVWlqcjFPdkE?oc=5",
+      "publishedAt": "2026-08-05T11:00:01.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Forbes",
+      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
+      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
+      "publishedAt": "2026-08-04T12:34:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "finance.yahoo.com",
+      "title": "Mortgage and refinance interest rates today, Friday, August 7, 2026: Rates fall ahead of jobs report",
+      "summary": "finance.yahoo.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxORk9pN3N1bVlreE5VWkRTZnR2WlQtdlUyNnp5UldPLWVtdFQyNTV3dEItTjBUYXJPZERzQXRtQW9PdEpGMFptbFZjM2V1ZDZrV3JhaFdQbklHUnF3UTVPa1RNNEVQVFNHYktTckt1aTg2Nzg4dy1jYzEyY2wtMXJ0bDVtX0I5b3laSWNRMUotT0NJNVhJWUtYazFzaXQ1eUJzdUxnTmx4YjlrZnBOeDhfb3NqVGhSQWZwODVmSlBXVGpuTUFaRkRMX3dCVzNNaDJ5eVZMamJoNmJQcVNBa0NYRkF1QjNYMVlwSW1oTkMxRFRFNFhGUUp5RVJHbEV6LU5LVFE?oc=5",
+      "publishedAt": "2026-08-07T10:00:00.000Z"
+    }
+  ]
+}
