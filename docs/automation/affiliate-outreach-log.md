@@ -333,3 +333,29 @@ Evidence: `affiliate-forms-round2.json`, `outreach-shots/form2-*.png`.
 - Fill watcher: `node tools/browser/watch-adsense-fill.js --loop` → ntfy `twskoops` once on real `data-ad-status=filled`.
 - See `docs/MONETIZE_HOLD.md`.
 
+
+## Email + signup pass (2026-08-09 ~14:35 PDT)
+
+### Gmail
+- Still blocked on **Verify it's you** for loansflow707 (outreach Chrome profile). No partner inbox readable until you complete one human re-auth in Gmail.
+
+### Rakuten (SID **4736231**, site **loansflow.loan**, profile **3/4**)
+- Find Offers works: `/offers`
+- **Cleo US** — already **Pending (applied)** ( Bank Connect)
+- Applied this pass (modal Apply):
+  - **EQ Bank** MID 48166 — Baseline Offer $65 (Offer 1115263)
+  - **Masseys** MID 47388 — $15 per Credit Approval (Offer 1457240)
+  - **Jos. A. Bank** MID 38377 — apparel baseline (less relevant; applied while testing Join flow)
+- My Advertisers still empty until approvals land (pending apps don't list as partnerships yet).
+- Profile banner still **3/4** — finish payment/tax in ACCOUNT for payouts (payment UI thin in automation).
+
+### Other networks
+- **CJ Affiliate** signup form opens; **reCAPTCHA blocks** headless submit. Needs headed/manual captcha.
+- **Impact** partner signup URL 404/login-only — need correct partner registration link after Gmail unlock.
+- FlexOffers / Ascend / etc. — waiting on Gmail unlock for OTPs + replies.
+
+### Next for you
+1. Click through Gmail **Verify it's you** once (loansflow707).
+2. In Rakuten: finish profile 4/4 (payment) + approve/monitor EQ Bank / Masseys / Cleo.
+3. Optional: headed CJ signup captcha.
+
