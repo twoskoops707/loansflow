@@ -12,8 +12,13 @@
 
 ## Cloudflare layout (important)
 
-- **Registrar + active DNS zone** live under Cloudflare account **Foremost Vole** (`8547be3a…`), nameservers `elisabeth` / `khalid`.
-- **Pages project serving the custom domain:** `loansflow-live` on Foremost Vole.
+| | ID |
+|--|----|
+| **Account ID** (Foremost Vole) | `8547be3ab2e2bccea6f0356fe6ba4a9c` |
+| **Zone ID** (`loansflow.loan`) | `1610d82be843c0ecdaa25d9da9af0436` |
+
+- **Registrar + active DNS zone** live under Cloudflare account **Foremost Vole**, nameservers `elisabeth` / `khalid`.
+- **Pages project serving the custom domain:** `loansflow-live` on Foremost Vole (Git-connected to `twoskoops707/loansflow` → auto-deploys on push to `main`).
 - DNS: proxied CNAMEs `@` and `www` → `loansflow-live.pages.dev`.
 - Twskoops account still has Pages project `loansflow` (`loansflow.pages.dev`) and a **pending** zone for `loansflow.loan` (josh/kelly) — do not point the apex there (cross-account CNAME causes Cloudflare **1014**).
 
@@ -36,10 +41,12 @@ Ownership for **loansflow.loan** is verified (meta) and review requested. Public
 
 ## Ops
 
-Deploy from WSL (Vole account):
+**Preferred:** push to `main` — Cloudflare Pages Git integration deploys `loansflow-live` automatically.
+
+Direct Upload (needs `CLOUDFLARE_API_TOKEN` with Pages Edit):
 
 ```bash
-cd ~/loansflow-cf
-rm -rf public && cp -a /mnt/c/Users/jsmil/.cursor/loansflow/public .
-CLOUDFLARE_ACCOUNT_ID=8547be3ab2e2bccea6f0356fe6ba4a9c npx wrangler pages deploy ./public --project-name=loansflow-live --branch=main --commit-dirty=true
+cd ~/loansflow-cf   # or this repo root
+CLOUDFLARE_ACCOUNT_ID=8547be3ab2e2bccea6f0356fe6ba4a9c \
+  npx wrangler pages deploy --project-name=loansflow-live --branch=main --commit-dirty=true
 ```
