@@ -1,6 +1,7 @@
-# Deploy LoansFlow to Cloudflare Pages (loansflow-live → loansflow.loan)
-# Requires repo secret CLOUDFLARE_API_TOKEN (Pages Edit).
-# Account ID defaults to Foremost Vole; override with CLOUDFLARE_ACCOUNT_ID secret if needed.
+# Optional Direct Upload deploy via wrangler (needs CLOUDFLARE_API_TOKEN secret).
+# Preferred: connect this repo to Cloudflare Pages project `loansflow-live`
+# (Dashboard → Workers & Pages → loansflow-live → Settings → Builds → Connect Git).
+# Git-connected projects deploy automatically on push — no token required here.
 
 name: deploy-pages
 
@@ -26,19 +27,21 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Check Cloudflare token
+      - name: Skip if no Cloudflare API token
         id: check
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::error::CLOUDFLARE_API_TOKEN repo secret is missing. Add it under Settings → Secrets → Actions."
-            exit 1
+            echo "::notice::No CLOUDFLARE_API_TOKEN secret. Skipping Direct Upload."
+            echo "If production should auto-update on git push, connect GitHub to Pages project loansflow-live in the Cloudflare dashboard (Settings → Builds)."
+            exit 0
           fi
           echo "present=true" >> "$GITHUB_OUTPUT"
 
       - name: Deploy loansflow-live (production)
+        if: steps.check.outputs.present == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || '8547be3ab2e2bccea6f0356fe6ba4a9c' }}
@@ -46,6 +49,7 @@ jobs:
           npx --yes wrangler@4 pages deploy --project-name=loansflow-live --branch=main --commit-dirty=true
 
       - name: Deploy legacy loansflow.pages.dev
+        if: steps.check.outputs.present == 'true'
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
