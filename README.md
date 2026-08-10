@@ -17,6 +17,20 @@ Free **SBA / commercial / mortgage** calculator suite — high-intent finance to
 - Ad slots + `ads.txt` for Google AdSense (Ezoic JS for Incubator detection)
 - Legal: About, Contact, Privacy, Disclaimer, Terms
 
+## Market news (auto-updating)
+
+The **Market News & Rates** step loads live data from:
+
+1. Cloudflare Pages Function `GET /api/market-news` (Freddie Mac PMMS + Fed/news feeds, edge-cached ~30 min)
+2. Fallback snapshot `public/data/market-news.json`
+
+Refresh the snapshot locally or in CI:
+
+```bash
+npm run news:refresh
+```
+
+A scheduled GitHub Action (`.github/workflows/refresh-market-news.yml`) updates the JSON daily.
 ## Local
 
 ```bash

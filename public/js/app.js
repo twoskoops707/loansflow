@@ -868,61 +868,175 @@ function renderStepLOC(){
   `;
 }
 
-// ---------- RENDER: STEP 6 — MARKET NEWS & RATES ----------
-function renderStep6(){
-  return `
-    <div class="eyebrow">Step 09 &middot; Updated July 29, 2026</div>
-    <h1>Market News &amp; Rates</h1>
-    <p class="sub">A snapshot of today's average rates and the latest developments in home lending and small business financing.</p>
+// ---------- MARKET NEWS (auto-updating) ----------
+const marketNewsState = {
+  status: 'idle', // idle | loading | ready | error
+  data: null,
+  error: null,
+  lastFetchedAt: 0,
+  refreshTimer: null,
+};
 
-    <div class="panel">
-      <div class="rate-strip">
-        <div class="rate-cell"><div class="label">30-Yr Fixed</div><div class="value">6.75%</div></div>
-        <div class="rate-cell"><div class="label">15-Yr Fixed</div><div class="value">5.95%</div></div>
-        <div class="rate-cell"><div class="label">30-Yr Refinance</div><div class="value">6.80%</div></div>
-        <div class="rate-cell"><div class="label">5/1 ARM</div><div class="value">6.46%</div></div>
+const MARKET_NEWS_TTL_MS = 30 * 60 * 1000; // re-fetch at most every 30 minutes in-session
+
+function escapeHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function formatNewsUpdatedLabel(isoOrDate) {
+  try {
+    const d = isoOrDate ? new Date(isoOrDate) : new Date();
+    if (Number.isNaN(d.getTime())) return 'Updated recently';
+    return d.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'America/New_York',
+    });
+  } catch (_) {
+    return 'Updated recently';
+  }
+}
+
+function marketNewsDataUrlCandidates() {
+  // Prefer live edge API (Cloudflare Pages Function), then static snapshot.
+  const bust = Date.now();
+  return [
+    `/api/market-news?fresh=1&t=${bust}`,
+    `/data/market-news.json?t=${bust}`,
+    `../data/market-news.json?t=${bust}`,
+  ];
+}
+
+async function fetchMarketNewsPayload() {
+  const tried = new Set();
+  let lastErr = null;
+  for (const url of marketNewsDataUrlCandidates()) {
+    if (tried.has(url)) continue;
+    tried.add(url);
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (!data || (!data.articles && !data.rates)) throw new Error('Invalid payload');
+      return data;
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr || new Error('Unable to load market news');
+}
+
+function ensureMarketNewsLoaded(force = false) {
+  const stale = Date.now() - marketNewsState.lastFetchedAt > MARKET_NEWS_TTL_MS;
+  if (!force && marketNewsState.data && !stale) return;
+  if (marketNewsState.status === 'loading') return;
+
+  marketNewsState.status = 'loading';
+  fetchMarketNewsPayload()
+    .then((data) => {
+      marketNewsState.data = data;
+      marketNewsState.status = 'ready';
+      marketNewsState.error = null;
+      marketNewsState.lastFetchedAt = Date.now();
+      if (state.step === 8) render();
+    })
+    .catch((err) => {
+      marketNewsState.status = marketNewsState.data ? 'ready' : 'error';
+      marketNewsState.error = err;
+      if (state.step === 8) render();
+    });
+}
+
+function startMarketNewsAutoRefresh() {
+  if (marketNewsState.refreshTimer) return;
+  marketNewsState.refreshTimer = setInterval(() => {
+    if (document.visibilityState === 'hidden') return;
+    ensureMarketNewsLoaded(true);
+  }, MARKET_NEWS_TTL_MS);
+}
+
+function renderRateStrip(rates) {
+  if (!rates?.cells?.length) {
+    return `
+      <div class="rate-strip rate-strip--loading">
+        <div class="rate-cell"><div class="label">Rates</div><div class="value">…</div></div>
       </div>
       <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;">
-        National averages, compiled from lender-reported data. Individual rates vary by credit profile, down payment, and lender. Not a rate quote.
-      </p>
+        Loading the latest Freddie Mac survey averages…
+      </p>`;
+  }
+  const cells = rates.cells
+    .map(
+      (c) => `
+        <div class="rate-cell">
+          <div class="label">${escapeHtml(c.label)}</div>
+          <div class="value">${escapeHtml(c.value)}</div>
+          ${c.note ? `<div class="rate-note">${escapeHtml(c.note)}</div>` : ''}
+        </div>`
+    )
+    .join('');
+  return `
+      <div class="rate-strip">${cells}</div>
+      <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;">
+        ${escapeHtml(rates.disclaimer || 'National averages. Individual rates vary. Not a rate quote.')}
+        ${rates.asOf ? ` As of ${escapeHtml(rates.asOf)} (${escapeHtml(rates.source || 'PMMS')}).` : ''}
+      </p>`;
+}
+
+function renderNewsCards(articles) {
+  if (!articles?.length) {
+    return `
+      <div class="news-card">
+        <div class="news-meta">Updating</div>
+        <h3>Fetching the latest market headlines…</h3>
+        <p>Rate averages and news will appear here automatically. If this takes more than a moment, refresh the page.</p>
+      </div>`;
+  }
+  return articles
+    .map(
+      (a) => `
+        <div class="news-card">
+          <div class="news-meta">${escapeHtml(a.category || 'News')} &middot; ${escapeHtml(a.source || 'Source')}</div>
+          <h3>${escapeHtml(a.title)}</h3>
+          <p>${escapeHtml(a.summary || '')}</p>
+          <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">Read the full report &rarr;</a>
+        </div>`
+    )
+    .join('');
+}
+
+// ---------- RENDER: STEP 6 — MARKET NEWS & RATES ----------
+function renderStep6(){
+  ensureMarketNewsLoaded(false);
+  startMarketNewsAutoRefresh();
+
+  const data = marketNewsState.data;
+  const updatedLabel = formatNewsUpdatedLabel(data?.updatedAt || data?.rates?.asOf);
+  const statusHint =
+    marketNewsState.status === 'loading' && !data
+      ? 'Loading live rates…'
+      : marketNewsState.status === 'error' && !data
+        ? 'Live feed unavailable — try again shortly.'
+        : `Updated ${updatedLabel}`;
+
+  return `
+    <div class="eyebrow">Step 09 &middot; ${escapeHtml(statusHint)}</div>
+    <h1>Market News &amp; Rates</h1>
+    <p class="sub">A live snapshot of national mortgage averages and recent developments in home lending and small business financing. This section refreshes automatically.</p>
+
+    <div class="panel">
+      ${renderRateStrip(data?.rates)}
 
       ${adInContent()}
 
-      <div>
-        <div class="news-card">
-          <div class="news-meta">Rates &middot; U.S. News &amp; World Report</div>
-          <h3>Mortgage Rates Ease Slightly Ahead of the Fed's July Meeting</h3>
-          <p>The average 30-year fixed purchase rate slipped to roughly 6.83% heading into this week's Federal Reserve meeting, after climbing for much of the summer on inflation concerns tied to elevated oil prices.</p>
-          <a href="https://money.usnews.com/loans/mortgages/articles/mortgage-rates-today-july-29-2026" target="_blank" rel="noopener">Read the full report &rarr;</a>
-        </div>
-
-        <div class="news-card">
-          <div class="news-meta">Forecast &middot; Forbes Advisor</div>
-          <h3>Fed Holds Steady as Forecasters Debate Where Rates Head Next</h3>
-          <p>With the federal funds rate unchanged since the last several meetings, analysts remain split — some expect modest relief for borrowers later this year, while others point to persistent inflation keeping rates elevated into 2027.</p>
-          <a href="https://www.forbes.com/advisor/mortgages/mortgage-rates-07-29-26/" target="_blank" rel="noopener">Read the full report &rarr;</a>
-        </div>
-
-        <div class="news-card">
-          <div class="news-meta">Housing Market &middot; Bankrate</div>
-          <h3>Home Prices Hit a Record High Even as Wage Growth Outpaces Inflation</h3>
-          <p>The median price of an existing home reached an all-time high in June, even as second-quarter wage growth ran ahead of inflation — a combination that continues to squeeze affordability for buyers despite modestly easing rates.</p>
-          <a href="https://www.bankrate.com/mortgages/mortgage-rates/" target="_blank" rel="noopener">Read the full report &rarr;</a>
-        </div>
-
-        <div class="news-card">
-          <div class="news-meta">SBA Policy &middot; U.S. Small Business Administration</div>
-          <h3>SBA Doubles Combined 7(a) and 504 Loan Limit to $10 Million</h3>
-          <p>Effective July 4, 2026, small businesses can now combine SBA 7(a) and 504 financing for up to $10 million total — double the previous cap — giving capital-intensive businesses like manufacturers and construction firms significantly more room to pair long-term real estate financing with working capital.</p>
-          <a href="https://www.sba.gov/article/2026/07/07/small-businesses-now-eligible-10-million-sba-financing" target="_blank" rel="noopener">Read the full report &rarr;</a>
-        </div>
-
-        <div class="news-card">
-          <div class="news-meta">SBA Policy &middot; NerdWallet</div>
-          <h3>SBA Waives Guaranty Fees for Small Manufacturers Through FY2026</h3>
-          <p>Manufacturers borrowing under $950,000 through a 7(a) loan — or any amount through a 504 loan — currently pay zero upfront guaranty fee under a fiscal-year 2026 waiver aimed at supporting domestic production, though standard fees still apply to most other borrowers.</p>
-          <a href="https://www.nerdwallet.com/business/loans/learn/sba-loan-rates" target="_blank" rel="noopener">Read the full report &rarr;</a>
-        </div>
+      <div id="marketNewsList">
+        ${renderNewsCards(data?.articles)}
       </div>
 
       ${adInArticle('tools-news-mid')}
@@ -1160,6 +1274,9 @@ function attachHandlers(){
 if (typeof window.__LF_INITIAL_STEP === 'number' && window.__LF_INITIAL_STEP >= 0 && window.__LF_INITIAL_STEP <= 8) {
   state.step = window.__LF_INITIAL_STEP;
 }
+// Warm the news cache so Step 09 is current when opened
+ensureMarketNewsLoaded(false);
+startMarketNewsAutoRefresh();
 render();
 
 
