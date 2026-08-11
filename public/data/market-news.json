@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T15:14:20.756Z",
+  "updatedAt": "2026-08-11T15:14:48.078Z",
   "rates": {
     "asOf": "8/6/2026",
     "source": "Freddie Mac PMMS",
@@ -50,19 +50,19 @@
     },
     {
       "category": "Rates",
-      "source": "Bankrate",
-      "title": "Mortgage retreat, still near one-year high",
-      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16QVNiVDg2TlhkcWFHMVVXYVNVbm5EOXA4TWxNbkJkWUdHQWpLQzZRSEEySHZoQzQ5ZVdZc3A4cXFOSno3aGctLWhpLWViMFdVR2VTTHBHRmpveVViRzN4bmNPTENfc2xPLTQ1bk9CV3NIWlJnWEpUYVZCd21kUQ?oc=5",
-      "publishedAt": "2026-08-05T20:21:06.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "AP News",
       "title": "Mortgage rates rise for 5th straight week, hitting levels not seen since 2025 for 2nd week in a row",
       "summary": "AP News coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVXZOVUoyVW00QnJvcEI0UWFoZi02TzJTV01XYThTQUFmRTc0WWtqZ3VUREc1NDRRYXhmanB1UHFfekN5WUZMZERSVnJxVXRLREhKVVhwYUNCcjdmQXEyemNkd3d3YkVRbDU2ajh3cHRJZnRVOEZMSjh3bWVDNm51WGVRSHgtd2lLemo3aUhjQWZydGh0LXIxb2RaYmdkZjQ4a0YzMg?oc=5",
       "publishedAt": "2026-08-06T16:02:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Bankrate",
+      "title": "Mortgage retreat, still near one-year high",
+      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16QVNiVDg2TlhkcWFHMVVXYVNVbm5EOXA4TWxNbkJkWUdHQWpLQzZRSEEySHZoQzQ5ZVdZc3A4cXFOSno3aGctLWhpLWViMFdVR2VTTHBHRmpveVViRzN4bmNPTENfc2xPLTQ1bk9CV3NIWlJnWEpUYVZCd21kUQ?oc=5",
+      "publishedAt": "2026-08-05T20:21:06.000Z"
     },
     {
       "category": "Rates",
@@ -74,19 +74,19 @@
     },
     {
       "category": "Rates",
-      "source": "Forbes",
-      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
-      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
-      "publishedAt": "2026-08-04T12:34:00.000Z"
+      "source": "Yahoo Finance",
+      "title": "Mortgage rates hit highest levels in over a year: Mortgage and refinance interest rates today, Thursday, August 6, 2026",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPTFdhQXd1eW84X0pYVTJJUGNoNmVEckRXTUpCYWlodFhsSU4zOTA4UkpKdk1yWW9KQ3ZjanJRZlZMbUNhM1RkRVdpZTVjbVUtTHdPQ0Z4WFY4VWZ0Nk9qMDNRaG9ZX2lKem9OcDVZLWtiMU9RQzJFcDBXS0lkRnZwTWd4ODMyVC11bTIzXzdIeHQtb1V1Wl80ajV5RExtZ2NETm9aZW82YkZ3M1VVTkxZSVI4TFlfN1A0dU5KOGJXak1ZekxzOTE1THlmMFJYTTZSbVZrNjF2WWNEbmNoTkE3TE9DRHNsenRPSGRHTy1sNHV3YmM2cVNGNEZkQ3llWmZHbHo5SlN6NkJEcnB0bng1d0NDR2FIelJWUG13?oc=5",
+      "publishedAt": "2026-08-06T16:00:00.000Z"
     },
     {
       "category": "Rates",
-      "source": "finance.yahoo.com",
-      "title": "Mortgage rates hit highest levels in over a year: Mortgage and refinance interest rates today, Thursday, August 6, 2026",
-      "summary": "finance.yahoo.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPTFdhQXd1eW84X0pYVTJJUGNoNmVEckRXTUpCYWlodFhsSU4zOTA4UkpKdk1yWW9KQ3ZjanJRZlZMbUNhM1RkRVdpZTVjbVUtTHdPQ0Z4WFY4VWZ0Nk9qMDNRaG9ZX2lKem9OcDVZLWtiMU9RQzJFcDBXS0lkRnZwTWd4ODMyVC11bTIzXzdIeHQtb1V1Wl80ajV5RExtZ2NETm9aZW82YkZ3M1VVTkxZSVI4TFlfN1A0dU5KOGJXak1ZekxzOTE1THlmMFJYTTZSbVZrNjF2WWNEbmNoTkE3TE9DRHNsenRPSGRHTy1sNHV3YmM2cVNGNEZkQ3llWmZHbHo5SlN6NkJEcnB0bng1d0NDR2FIelJWUG13?oc=5",
-      "publishedAt": "2026-08-06T16:00:00.000Z"
+      "source": "keepingcurrentmatters.com",
+      "title": "Thinking About Waiting for Lower Mortgage Rates? Read This First.",
+      "summary": "keepingcurrentmatters.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdUw4bW9JZGxtRzlhY29MNlZvbDNkT3JfaUdlVUw4RjNSOGRTVmFBbU51ZXR4RjI2cHV0SDRwS2hqa1ZnU2JVRkZIakUxcjlTbmotRmx3cGczbkJ0eUlxcWptaUtVSEdRdk80TzZBaEVQcHpWWGNhZzVRSVBtVzc2dVlLazFVbkFFQ1VoYWVSZFpOeTdJaDFyTHZzQVBvUlFZb0VRYXh1NWpDbjdGQVAzdDVn?oc=5",
+      "publishedAt": "2026-08-06T12:46:27.000Z"
     }
   ]
 }
