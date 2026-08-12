@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T15:14:48.078Z",
+  "updatedAt": "2026-08-12T15:12:17.977Z",
   "rates": {
     "asOf": "8/6/2026",
     "source": "Freddie Mac PMMS",
@@ -50,43 +50,43 @@
     },
     {
       "category": "Rates",
-      "source": "AP News",
+      "source": "apnews.com",
       "title": "Mortgage rates rise for 5th straight week, hitting levels not seen since 2025 for 2nd week in a row",
-      "summary": "AP News coverage of recent rates developments. Open the full report for details.",
+      "summary": "apnews.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVXZOVUoyVW00QnJvcEI0UWFoZi02TzJTV01XYThTQUFmRTc0WWtqZ3VUREc1NDRRYXhmanB1UHFfekN5WUZMZERSVnJxVXRLREhKVVhwYUNCcjdmQXEyemNkd3d3YkVRbDU2ajh3cHRJZnRVOEZMSjh3bWVDNm51WGVRSHgtd2lLemo3aUhjQWZydGh0LXIxb2RaYmdkZjQ4a0YzMg?oc=5",
       "publishedAt": "2026-08-06T16:02:00.000Z"
     },
     {
       "category": "Rates",
       "source": "Bankrate",
-      "title": "Mortgage retreat, still near one-year high",
+      "title": "Mortgage Rates Retreat, Still Near One-Year Peak",
       "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16QVNiVDg2TlhkcWFHMVVXYVNVbm5EOXA4TWxNbkJkWUdHQWpLQzZRSEEySHZoQzQ5ZVdZc3A4cXFOSno3aGctLWhpLWViMFdVR2VTTHBHRmpveVViRzN4bmNPTENfc2xPLTQ1bk9CV3NIWlJnWEpUYVZCd21kUQ?oc=5",
       "publishedAt": "2026-08-05T20:21:06.000Z"
     },
     {
       "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates hit their highest level in over a year, causing demand to drop below year-ago levels",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOVVXN0VFckE2NGlEbC1oWFJnc1J5WjVrTzc1Z0ZhaEFnZlk4QlhBelVSNGx2azlBZGZZRUJiLWdGdXpXT1Bqb0U1X0JxdDU0UTR1LS1ZWldzeC05Mmg2bmNuY3huRmdmMWpBVmdXMnVYa1JkWXkyMUJFQjN5YjhtYXI0SmlyLWlPbzRpbTR5b25HMnNJ0gGaAUFVX3lxTE9udXhnQnZGT0ZjUXF4anBXMEU5UmthbjVUU3VEWHVnRXNZYTFzU2NCMFp4anNxb19JNjBrRmUyTWpuXzY3UTg5SnpUV2NuNndFeHVrNWk5eloyX0ljNGFZNnViMWF2WG50TTNIZnA5eE1PY3ZmamZzNE5TTmJaVDk2Q2YzZzlfS2hvNVdKaGtjcHVWVWlqcjFPdkE?oc=5",
-      "publishedAt": "2026-08-05T11:00:01.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Yahoo Finance",
+      "source": "finance.yahoo.com",
       "title": "Mortgage rates hit highest levels in over a year: Mortgage and refinance interest rates today, Thursday, August 6, 2026",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "summary": "finance.yahoo.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPTFdhQXd1eW84X0pYVTJJUGNoNmVEckRXTUpCYWlodFhsSU4zOTA4UkpKdk1yWW9KQ3ZjanJRZlZMbUNhM1RkRVdpZTVjbVUtTHdPQ0Z4WFY4VWZ0Nk9qMDNRaG9ZX2lKem9OcDVZLWtiMU9RQzJFcDBXS0lkRnZwTWd4ODMyVC11bTIzXzdIeHQtb1V1Wl80ajV5RExtZ2NETm9aZW82YkZ3M1VVTkxZSVI4TFlfN1A0dU5KOGJXak1ZekxzOTE1THlmMFJYTTZSbVZrNjF2WWNEbmNoTkE3TE9DRHNsenRPSGRHTy1sNHV3YmM2cVNGNEZkQ3llWmZHbHo5SlN6NkJEcnB0bng1d0NDR2FIelJWUG13?oc=5",
       "publishedAt": "2026-08-06T16:00:00.000Z"
     },
     {
       "category": "Rates",
-      "source": "keepingcurrentmatters.com",
+      "source": "Keeping Current Matters",
       "title": "Thinking About Waiting for Lower Mortgage Rates? Read This First.",
-      "summary": "keepingcurrentmatters.com coverage of recent rates developments. Open the full report for details.",
+      "summary": "Keeping Current Matters coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdUw4bW9JZGxtRzlhY29MNlZvbDNkT3JfaUdlVUw4RjNSOGRTVmFBbU51ZXR4RjI2cHV0SDRwS2hqa1ZnU2JVRkZIakUxcjlTbmotRmx3cGczbkJ0eUlxcWptaUtVSEdRdk80TzZBaEVQcHpWWGNhZzVRSVBtVzc2dVlLazFVbkFFQ1VoYWVSZFpOeTdJaDFyTHZzQVBvUlFZb0VRYXh1NWpDbjdGQVAzdDVn?oc=5",
       "publishedAt": "2026-08-06T12:46:27.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "cnbc.com",
+      "title": "Mortgage rates finally stop rising, causing demand to trickle back",
+      "summary": "cnbc.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMzlUOUNlQ09ZRTA1bGpjbTJHV292T0NCVkZUeXpfX3VQWkNWYXJzREhzbWVySjhWbzJRSmdiRVdxX25mcllEaTdyOEtSRFg1RWFpSDNnZjBuYjFzQktLN3I4M0F6Q25iSktPSTBNOTlQVndFOF9DR0UwVS1Bd3pLWHpZLTdjSlI4N3dKeFlBajl4Z3NqM1k1ZmItdF9mbGFocDNXRmtn0gGrAUFVX3lxTFBhWktWZW9LRmlhUW5QaS1BdS1Gb09HMDFGWU9JWGhaSUhGLUdET19uZjQ3el8yZUpvYTlyY3lDeWhGdzJSYm5iQXkwVHRkTmVaV3FBaWw5ZExPaUxfZEg4TVJsXzVkRzFlMmVZWHVncWsyZG0yYi1rV1plN1EtYUtPNmo5UHdzM0Uyb3pmeU1WUVZudWdOZ3Nlb3RBSTAtLV9sOVY4MWVobDkwRQ?oc=5",
+      "publishedAt": "2026-08-12T11:00:01.000Z"
     }
   ]
 }
