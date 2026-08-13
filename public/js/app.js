@@ -1050,7 +1050,7 @@ function renderFooter(){
       <div class="footer-cols">
         <div class="footer-col">
           <h4>LoansFlow</h4>
-          <p>A free set of calculators for home and small business financing — built to help you understand your numbers before you talk to a lender. Estimates only; not a loan offer or financial advice.</p>
+          <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender or loan offer.</p>
         </div>
         <div class="footer-col">
           <h4>Tools</h4>
@@ -1086,9 +1086,9 @@ function renderFooter(){
 const legalContent = {
   about: {
     title: "About LoansFlow",
-    body: `<p>LoansFlow is a free calculator suite built primarily for small business owners navigating SBA and commercial financing — a niche most consumer finance sites underserve. Our core tools cover SBA 7(a), SBA 504, and conventional commercial loans, including debt service coverage ratio (DSCR) estimates, SBA guaranty fee calculations, balloon payment scenarios, and a full year-by-year amortization ledger.</p>
-           <p>Alongside that, we offer a complete set of residential mortgage tools — payment breakdowns, amortization schedules with extra and balloon payments, refinance comparisons, and affordability estimates — for homebuyers and homeowners who want the same level of detail.</p>
-           <p>Every calculation happens instantly in your browser. We don't collect loan applications, sell leads, or require an account to use any tool on this site.</p>`
+    body: `<p>LoansFlow is a free calculator suite for small business and home financing.</p>
+           <p>Core tools cover SBA 7(a), SBA 504, and conventional commercial loans — DSCR, guaranty fees, balloons, and amortization — plus mortgage payment, refinance, and affordability calculators.</p>
+           <p>Everything runs in your browser. We do not collect loan applications, sell leads, or require an account.</p>`
   },
   contact: {
     title: "Contact",

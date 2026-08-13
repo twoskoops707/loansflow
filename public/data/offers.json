@@ -1,0 +1,43 @@
+{
+  "company": "LoansFlow",
+  "updated": "2026-08-10",
+  "note": "Only offers with status=live and a non-empty url render on the site. Pending apps stay here until Rakuten/network approval + tracking link.",
+  "offers": [
+    {
+      "id": "cleo-us-bank-connect",
+      "network": "rakuten",
+      "advertiser": "Cleo US",
+      "mid": "49954",
+      "offerId": "2007398",
+      "title": "Bank connect",
+      "blurb": "Compare banking options after you run the numbers.",
+      "url": "",
+      "status": "pending",
+      "surfaces": ["tools-footer", "sba", "loc"]
+    },
+    {
+      "id": "eq-bank-baseline",
+      "network": "rakuten",
+      "advertiser": "EQ Bank",
+      "mid": "48166",
+      "offerId": "1115263",
+      "title": "EQ Bank",
+      "blurb": "High-interest banking — partner link when approved.",
+      "url": "",
+      "status": "pending",
+      "surfaces": ["tools-footer", "sba", "mortgage"]
+    },
+    {
+      "id": "masseys-credit",
+      "network": "rakuten",
+      "advertiser": "Masseys",
+      "mid": "47388",
+      "offerId": "1457240",
+      "title": "Credit options",
+      "blurb": "Credit product offer — live link after approval.",
+      "url": "",
+      "status": "pending",
+      "surfaces": ["tools-footer", "mortgage", "refi"]
+    }
+  ]
+}

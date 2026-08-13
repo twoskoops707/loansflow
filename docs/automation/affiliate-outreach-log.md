@@ -24,7 +24,7 @@ Site: https://loansflow.loan/
 Contact: loansflow707@gmail.com
 
 Thank you for your time,
-LoansFlow Partnerships
+LoansFlow
 ```
 
 ---
