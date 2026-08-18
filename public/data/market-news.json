@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T14:41:34.822Z",
+  "updatedAt": "2026-08-18T14:49:33.820Z",
   "rates": {
     "asOf": "8/13/2026",
     "source": "Freddie Mac PMMS",
@@ -66,27 +66,27 @@
     },
     {
       "category": "Rates",
-      "source": "ABC News - Breaking News, Latest News and Videos",
-      "title": "Mortgage rates fall to lowest level in nearly 4 weeks - ABC News",
-      "summary": "Mortgage rates fall to lowest level in nearly 4 weeks &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
+      "source": "money.com",
+      "title": "Today's Mortgage Rates: August 17, 2026",
+      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
+      "publishedAt": "2026-08-17T12:16:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "wsj.com",
+      "title": "Mortgage Rates Today, August 17, 2026: 30-Year Rates Fall to 6.69%",
+      "summary": "wsj.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ0dsTS1WNGxCMTR0dHFranNWZzlmcWNZRUVuNUY3dmJMQVhZY29NaFJVNFJZci1tWGhsSjR5dlRtVFFtSVlrVXJtU3NEWkhPUDRuSGlOR3pwdl9VV1FTd0EtQkdtcFhEQ1ZBS3JlVnlpTlVlRXhURndFbzdzN0ZfTkFzVWVZUklhbXRDcw?oc=5",
+      "publishedAt": "2026-08-17T13:17:44.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "abcnews.com",
+      "title": "Mortgage rates fall to lowest level in nearly 4 weeks",
+      "summary": "abcnews.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNekU1TkVDemZDMEo1NGFWS1FlNEpyLUYycmMxc05vOWZVVHJGZmkyQ3BTNE1CM2hicl9rMTVTMXRLTDNFRkM4M3JKa3YxcFFEQnhjRW94OEpUZHZZQzU4SDBwRXJ6SmVNcXhIVmx0b2Q2WnZLeTE3WHlKbUM2YmhacGowdGRKVXJKMHl3VlZ3aUV6d9IBlwFBVV95cUxOYzAxOTZxVXhpZ1NoNTJzUURpNkJJN0hJdF90RC13Qjg3eS1sUnc1VnIzem8wc3N2YzZLN2daY0hNdVRoNktGQ0FTMWREUGFreUpUdEdBZHRNbXZ2QzFBVG5OM21HY1VEOGV5WlI4RUl3dFFSOVpoV2VYSG8wY09jNW1WVzQwYUZfbDJjczZ1VlQ3LU5xaWRZ?oc=5",
       "publishedAt": "2026-08-14T16:02:21.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Forbes",
-      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
-      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
-      "publishedAt": "2026-08-12T14:37:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage rates see first drop in six weeks: Mortgage and refinance interest rates today, Thursday, August 13, 2026",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOaVBKd2J3cFRHMkFLSTBweldid09YTTdYR2NNMU1sYmtrWmMwcHRVT2d1Z1B4VHlXN1VZZnZMcnNob2lSUGxlRFB1UU5GSmVhSnRNMlpnZTJIMjB1S0FwTXFkNmRXVmYxNzdyZUQ1ZjBSa0Ricml4WUNCM09HSHh3UlZqLVp3MnJmc3ZDWUUwaFhrNUxLWWxKN3JEOVhUczJDcWZnVzE1SHhLQTRzOVVxUnhFRlkxSng4M2xyeXNVOU42VGtiRVBMaVVSczVwQmIwd005ZEl5REs3VlU3akt2a01aeFROTUhaQlMyeFdqemRMeDd4WHE3empDdlVHTjFjMjVwU1ZtY1U0Z0hBbzZHNDNJXzE?oc=5",
-      "publishedAt": "2026-08-13T16:00:00.000Z"
     }
   ]
 }
