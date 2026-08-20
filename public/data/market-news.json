@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T14:50:30.024Z",
+  "updatedAt": "2026-08-20T14:52:17.557Z",
   "rates": {
     "asOf": "8/13/2026",
     "source": "Freddie Mac PMMS",
@@ -35,18 +35,18 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve issues FOMC statement",
+      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "publishedAt": "2026-07-29T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "publishedAt": "2026-08-19T18:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Minutes of the Board's discount rate meetings on June 8 and June 17, 2026",
+      "title": "Federal Reserve issues FOMC statement",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm",
-      "publishedAt": "2026-07-14T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "publishedAt": "2026-07-29T18:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -59,10 +59,10 @@
     {
       "category": "Rates",
       "source": "money.com",
-      "title": "Today's Mortgage Rates: August 18, 2026",
+      "title": "Today's Mortgage Rates: August 19, 2026",
       "summary": "money.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
-      "publishedAt": "2026-08-18T12:21:00.000Z"
+      "publishedAt": "2026-08-19T12:20:00.000Z"
     },
     {
       "category": "Rates",
@@ -83,10 +83,10 @@
     {
       "category": "Rates",
       "source": "Yahoo Finance",
-      "title": "Mortgage and refinance rates today, Tuesday, August 18, 2026: Generally higher, yet the 30-year holds",
+      "title": "Mortgage and refinance interest rates today, Wednesday, August 19, 2026: Surprisingly calm amid bond market volatility",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNWjhXaXM0ZWt1X1FzY19Hai1ybmVGQ0FhRk91cjNndFJNcW9lVHBoZ1I0NmNRYnVnRnhOS29jaFFsV05NUHJsQU92MFZac0pVbGF3d1p3Z3ByOEw4amJBanN5UGtRV0o4X01nSDBKblhTUUNtLWF5OTJMaVVSNVZzYTNHNXlnamFVX0N1NzVNZERhc19IT3VfNTdDZW9lcWJ2UHVZbUUzOWctSXJxbHh4VTV1czREMWh6T0pGNE1hb3BCZXR5V3UtUTVoODNEMDg1NDZuYWpIYzJnbG5neHFadEltTnFaLTl0MUE5Z1JGVEZSdEp4MU9LTUdRZmpGeThmekE?oc=5",
-      "publishedAt": "2026-08-18T10:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOdEo3UTdKZ3lKV1AxajlCN3c5dmIxWW1SS2hYUUZabDlOSVVjV2pEVl9pWC1nU2Q1clM1dkt1YUZJNXFHR1Vyb2xuUDRvSmVZSHhIWFlKdks2T3Y5dlF1cWFYV1NhUTJ1NXNNV2ppWWx0dndNeDBDejRTWXF2QlpEYUREZ2Rab0dFc2FXZGhPZmhSbnllTG8zOWJhN0swUU9pRmJ0d2Q0MnVWTlJOcDZIbVVQUG1JS2FuZVREbEY0NTRXbXRla1NRa1kwYjJPOUJtZW9ISjU2WGUwQVM0R1BQTjM3aUw4SkdZRXgxemx0WE1XZERUZGpFdm5ZSmVFYjlGbHBqd21kU3U0bGRBcnpNQWVCN2hzeFE0NHc?oc=5",
+      "publishedAt": "2026-08-19T10:00:00.000Z"
     }
   ]
 }
