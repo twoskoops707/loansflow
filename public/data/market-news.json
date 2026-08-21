@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-08-20T14:52:17.557Z",
+  "updatedAt": "2026-08-21T14:51:06.648Z",
   "rates": {
-    "asOf": "8/13/2026",
+    "asOf": "8/20/2026",
     "source": "Freddie Mac PMMS",
     "sourceUrl": "https://www.freddiemac.com/pmms",
     "cells": [
       {
         "label": "30-Yr Fixed",
-        "value": "6.67%",
+        "value": "6.65%",
         "note": "-0.02 pts vs last week"
       },
       {
         "label": "15-Yr Fixed",
-        "value": "5.96%",
-        "note": "-0.05 pts vs last week"
+        "value": "5.95%",
+        "note": "-0.01 pts vs last week"
       },
       {
         "label": "30-Yr Refinance",
-        "value": "6.72%",
+        "value": "6.70%",
         "note": "Approx. vs purchase avg."
       }
     ],
@@ -27,10 +27,10 @@
     {
       "category": "Rates",
       "source": "Freddie Mac",
-      "title": "Mortgage Rates Average 6.67%",
+      "title": "Mortgage Rates Decline for Second Consecutive Week",
       "summary": "Mortgage rates remained relatively stable this week at 6.67%. Housing affordability has improved from a year ago, and recent increases in purchase and refinance applications suggest that borrowers continue to respond to even modest changes in mortgage rates.",
       "url": "https://www.freddiemac.com/pmms",
-      "publishedAt": "2026-08-13T00:00:00.000Z"
+      "publishedAt": "2026-08-20T00:00:00.000Z"
     },
     {
       "category": "Fed Policy",
@@ -50,19 +50,19 @@
     },
     {
       "category": "Rates",
+      "source": "money.com",
+      "title": "Today's Mortgage Rates: August 20, 2026",
+      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
+      "publishedAt": "2026-08-20T12:51:00.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "CNBC",
       "title": "Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPY0RiRExxR2t5ZXExSk41NEpoSjh6OWoyakE1N2ZCTlFPcGlHV0dranFhNG1ZcXhma1d3TmJuOTYxZ3ZYRnMycnNFSDFWT3ZEd2N4TUJVVzhReF9COFFwbFdFeUpHbzh1dk5WWnFyNXplWFdhTUZtTnE5Z0x1SVQxM2h0LXd3MVF0VDl1OERISGHSAZYBQVVfeXFMTmI3RUx1bDhWcUFtVkdET2JJNlA2OEhqUy10NzhZRjlmQXRYSElIVEM5WExKa1h2ODJiWWc0OGVGaFRqb3poczF2M01lcmpCSVdzellJOTRXVTJCNVo1TXpSOXhpMEFUeXNMaUdxY041a0VoTWw5ZjRtc2otck1LMHBxNURpc0c0QVUtUDFyeXNHVElUODBB?oc=5",
       "publishedAt": "2026-08-18T16:58:29.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "money.com",
-      "title": "Today's Mortgage Rates: August 19, 2026",
-      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
-      "publishedAt": "2026-08-19T12:20:00.000Z"
     },
     {
       "category": "Rates",
@@ -82,11 +82,11 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage and refinance interest rates today, Wednesday, August 19, 2026: Surprisingly calm amid bond market volatility",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOdEo3UTdKZ3lKV1AxajlCN3c5dmIxWW1SS2hYUUZabDlOSVVjV2pEVl9pWC1nU2Q1clM1dkt1YUZJNXFHR1Vyb2xuUDRvSmVZSHhIWFlKdks2T3Y5dlF1cWFYV1NhUTJ1NXNNV2ppWWx0dndNeDBDejRTWXF2QlpEYUREZ2Rab0dFc2FXZGhPZmhSbnllTG8zOWJhN0swUU9pRmJ0d2Q0MnVWTlJOcDZIbVVQUG1JS2FuZVREbEY0NTRXbXRla1NRa1kwYjJPOUJtZW9ISjU2WGUwQVM0R1BQTjM3aUw4SkdZRXgxemx0WE1XZERUZGpFdm5ZSmVFYjlGbHBqd21kU3U0bGRBcnpNQWVCN2hzeFE0NHc?oc=5",
-      "publishedAt": "2026-08-19T10:00:00.000Z"
+      "source": "National Association of Home Builders | NAHB",
+      "title": "Housing Affordability Worsens on Higher Mortgage Rates",
+      "summary": "National Association of Home Builders | NAHB coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQS05jNFl0VEdvTHFTaWZoZGd4LTgxcWRWcm1HMTBNNFlpdEE4Yks0amx2NlFvTlVCY2hiTmRUNmJMYkg1UURjejR2aDR5c2xhUjBSNFNIWVRMWHpsTF81a2RKOXhJQUN3M1dIOUdhUExaZU9hLWMya2VtUWdIa21jNGJiN2E3WXloMm1RLUZycnh1U0UwVEpaa0xvZ3RJd0JXZTJxVVhIdTBvRElCMG5NRk5UX3BKbTdB?oc=5",
+      "publishedAt": "2026-08-20T16:05:37.000Z"
     }
   ]
 }
