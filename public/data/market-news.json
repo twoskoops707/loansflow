@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T14:51:06.648Z",
+  "updatedAt": "2026-08-22T14:35:19.750Z",
   "rates": {
     "asOf": "8/20/2026",
     "source": "Freddie Mac PMMS",
@@ -50,11 +50,19 @@
     },
     {
       "category": "Rates",
+      "source": "NerdWallet",
+      "title": "Mortgage Rates Are Lower This Week. Could They Drop Further?",
+      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1SWGYwdTRVWG1lNlowd2RYT19rX3lqWFNPLUZfbDNPbi12blU2cGtNN3FueUJTZFZHNGRqOXVmR0FEd2puaU5Bbl82VDFwZE1KbHJsTkp6ZWp2a3pKZms0eURvaEUwRmNmbThYbGh0T04tUWQzMUlBY0xlcw?oc=5",
+      "publishedAt": "2026-08-20T18:01:15.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "money.com",
-      "title": "Today's Mortgage Rates: August 20, 2026",
+      "title": "Today's Mortgage Rates: August 21, 2026",
       "summary": "money.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
-      "publishedAt": "2026-08-20T12:51:00.000Z"
+      "publishedAt": "2026-08-21T12:28:00.000Z"
     },
     {
       "category": "Rates",
@@ -79,14 +87,6 @@
       "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxY0Q2ejlVTFZzMVJnYlFsWTZEbzFPSTl1US1xVk9aSThvcTdTTXlhUDNVdW0yTjdfX1R0MW5pS1hWWDVDVUw5SDRFb3RFbUZqbGEteEE5Njg5X3dpdTJON0FqNHNFZUwteFgzOEFhdWIzMWtGLWc?oc=5",
       "publishedAt": "2026-08-18T16:01:11.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "National Association of Home Builders | NAHB",
-      "title": "Housing Affordability Worsens on Higher Mortgage Rates",
-      "summary": "National Association of Home Builders | NAHB coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQS05jNFl0VEdvTHFTaWZoZGd4LTgxcWRWcm1HMTBNNFlpdEE4Yks0amx2NlFvTlVCY2hiTmRUNmJMYkg1UURjejR2aDR5c2xhUjBSNFNIWVRMWHpsTF81a2RKOXhJQUN3M1dIOUdhUExaZU9hLWMya2VtUWdIa21jNGJiN2E3WXloMm1RLUZycnh1U0UwVEpaa0xvZ3RJd0JXZTJxVVhIdTBvRElCMG5NRk5UX3BKbTdB?oc=5",
-      "publishedAt": "2026-08-20T16:05:37.000Z"
     }
   ]
 }
