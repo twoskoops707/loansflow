@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T14:35:19.750Z",
+  "updatedAt": "2026-08-23T14:36:21.744Z",
   "rates": {
     "asOf": "8/20/2026",
     "source": "Freddie Mac PMMS",
@@ -82,11 +82,11 @@
     },
     {
       "category": "Rates",
-      "source": "CBS News",
-      "title": "Will mortgage rates drop below 6% in 2026?",
-      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxY0Q2ejlVTFZzMVJnYlFsWTZEbzFPSTl1US1xVk9aSThvcTdTTXlhUDNVdW0yTjdfX1R0MW5pS1hWWDVDVUw5SDRFb3RFbUZqbGEteEE5Njg5X3dpdTJON0FqNHNFZUwteFgzOEFhdWIzMWtGLWc?oc=5",
-      "publishedAt": "2026-08-18T16:01:11.000Z"
+      "source": "Bankrate",
+      "title": "Mortgage rates dip, remain near one-year high",
+      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUzFyNC1UOExZZ1dEeXRFTlJPRWx3SzVvYm1Qa0pxd21yZ2o2WUpKNDhaMDRNNzhxb2hBOW5HWC1iSlA5NGFzMFBwcURyYU9xMDJaVTl6TTFGU0JEYTJfU1ZvQnhjNkVOaXYwM1hvM21jem83QzVtOUpxZnl0SHlOVW9URG1lRmI3dW4yOQ?oc=5",
+      "publishedAt": "2026-08-19T20:05:41.000Z"
     }
   ]
 }
