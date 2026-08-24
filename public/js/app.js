@@ -470,7 +470,7 @@ function renderStep4(){
       </div>
 
       <div class="afford-result">
-        <div class="label" style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:0.4rem;">Estimated Home Price You Could Afford</div>
+        <div class="label" style="font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:400; text-transform:uppercase; letter-spacing:0.12em; color:var(--muted); margin-bottom:0.4rem;">Estimated Home Price You Could Afford</div>
         <div class="value">${fmtMoney(maxHomePrice,0)}</div>
         <div class="dti-bar"><div class="fill" style="width:${Math.min(currentDebtToIncome,100)}%; background:${dtiColor};"></div></div>
         <div class="dti-note">Estimated debt-to-income ratio: ${currentDebtToIncome.toFixed(1)}% (lenders typically look for 36% or below, up to 43% for some loan types)</div>
@@ -601,7 +601,7 @@ function renderStep5(){
         <div class="line-item"><span>Est. Upfront Guaranty Fee (${guarantyInfo.feePct}%)</span><span class="num">${fmtMoney(guarantyInfo.fee,0)}</span></div>
         <div class="line-item"><span>Est. Annual Service Fee (0.55%)</span><span class="num">${fmtMoney(annualServiceFee,0)}</span></div>
       </div>
-      <p style="padding:0 2rem 1.5rem; font-size:0.78rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;">
+      <p style="padding:0 2rem 1.5rem; font-size:0.78rem; color:var(--muted); font-family:'Inter',sans-serif;">
         Guaranty fee shown is an estimate based on published FY tranche schedules for standard, non-manufacturer 7(a) loans over 12 months maturity. Manufacturers and loans under $150k may qualify for reduced or waived fees. Confirm exact figures with your SBA lender.
       </p>
       ` : ''}
@@ -967,7 +967,7 @@ function renderRateStrip(rates) {
       <div class="rate-strip rate-strip--loading">
         <div class="rate-cell"><div class="label">Rates</div><div class="value">…</div></div>
       </div>
-      <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;">
+      <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--muted); font-family:'Inter',sans-serif;">
         Loading the latest Freddie Mac survey averages…
       </p>`;
   }
@@ -983,7 +983,7 @@ function renderRateStrip(rates) {
     .join('');
   return `
       <div class="rate-strip">${cells}</div>
-      <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;">
+      <p style="padding:1rem 2rem 0; font-size:0.75rem; color:var(--muted); font-family:'Inter',sans-serif;">
         ${escapeHtml(rates.disclaimer || 'National averages. Individual rates vary. Not a rate quote.')}
         ${rates.asOf ? ` As of ${escapeHtml(rates.asOf)} (${escapeHtml(rates.source || 'PMMS')}).` : ''}
       </p>`;
