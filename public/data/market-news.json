@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T14:36:21.744Z",
+  "updatedAt": "2026-08-24T14:56:58.258Z",
   "rates": {
     "asOf": "8/20/2026",
     "source": "Freddie Mac PMMS",
@@ -50,14 +50,6 @@
     },
     {
       "category": "Rates",
-      "source": "NerdWallet",
-      "title": "Mortgage Rates Are Lower This Week. Could They Drop Further?",
-      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1SWGYwdTRVWG1lNlowd2RYT19rX3lqWFNPLUZfbDNPbi12blU2cGtNN3FueUJTZFZHNGRqOXVmR0FEd2puaU5Bbl82VDFwZE1KbHJsTkp6ZWp2a3pKZms0eURvaEUwRmNmbThYbGh0T04tUWQzMUlBY0xlcw?oc=5",
-      "publishedAt": "2026-08-20T18:01:15.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "money.com",
       "title": "Today's Mortgage Rates: August 21, 2026",
       "summary": "money.com coverage of recent rates developments. Open the full report for details.",
@@ -79,6 +71,14 @@
       "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTHZQNUJGM3VUNXFfR015bUkzekkyb0V0SmI0VzlDcjNGS3pHeVYzOGotaXNsd3VhTzlOREh0YjlnSUUzWmI1S1N4VVNEZi1qQll4bS1UcVVKOHA5ZGtUTkFha292WGJmcU9BamdHSnJoMklXeVlHc3ZVS0pJZVR5YW9fRlc3azVHY2RBQg?oc=5",
       "publishedAt": "2026-08-18T13:10:33.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "CBS News",
+      "title": "Will mortgage rates drop below 6% in 2026?",
+      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxY0Q2ejlVTFZzMVJnYlFsWTZEbzFPSTl1US1xVk9aSThvcTdTTXlhUDNVdW0yTjdfX1R0MW5pS1hWWDVDVUw5SDRFb3RFbUZqbGEteEE5Njg5X3dpdTJON0FqNHNFZUwteFgzOEFhdWIzMWtGLWc?oc=5",
+      "publishedAt": "2026-08-18T16:01:11.000Z"
     },
     {
       "category": "Rates",
