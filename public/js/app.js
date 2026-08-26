@@ -43,7 +43,8 @@ const state = {
     { id: 2, month: 3, amount: 15000 },
     { id: 3, month: 7, amount: -20000 }
   ],
-  locNextDrawId: 4
+  locNextDrawId: 4,
+  amortChartMode: 'balance'
 };
 
 const steps = [
@@ -100,6 +101,234 @@ function fmt(num, decimals=0){
 }
 function fmtMoney(num, decimals=0){
   return '$' + fmt(num, decimals);
+}
+
+// ---------- WORKFLOW: SNAPSHOT, SHARING & PRINT ----------
+function mortgageMetrics(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const pi = monthlyPI(principal, state.rate, state.term);
+  const tax = (state.homePrice * state.taxRate / 100) / 12;
+  const insurance = state.insurance / 12;
+  return { principal, pi, tax, insurance, total: pi + tax + insurance, interest: pi * state.term * 12 - principal };
+}
+
+function businessMetrics(){
+  const rate = state.bizPrimeRate + state.bizSpread;
+  const payment = monthlyPI(state.bizLoanAmount, rate, state.bizAmortYears);
+  return { rate, payment, annualDebtService: payment * 12, dscr: state.bizNOI / (payment * 12) };
+}
+
+function locMetrics(){
+  const rate = state.locPrimeRate + state.locSpread;
+  const schedule = buildLocSchedule(state.locLimit, rate, state.locDraws, state.locMonths, state.locPaymentType, state.locMinPercent);
+  const last = schedule.rows[schedule.rows.length - 1];
+  return {
+    rate,
+    balance: last ? last.endingBalance : 0,
+    interest: schedule.rows.reduce((sum, row) => sum + row.interest, 0),
+    available: Math.max(0, state.locLimit - (last ? last.endingBalance : 0))
+  };
+}
+
+function snapshotStats(){
+  if (state.step === 2) {
+    const metrics = locMetrics();
+    return [
+      { label: 'Projected balance', value: fmtMoney(metrics.balance, 0) },
+      { label: 'Interest / period', value: fmtMoney(metrics.interest, 0) },
+      { label: 'Available credit', value: fmtMoney(metrics.available, 0) }
+    ];
+  }
+  if (state.step === 0 || state.step === 1) {
+    const metrics = businessMetrics();
+    return [
+      { label: 'Monthly payment', value: fmtMoney(metrics.payment, 0) },
+      { label: 'Total rate', value: metrics.rate.toFixed(2) + '%' },
+      { label: 'DSCR', value: metrics.dscr.toFixed(2) + 'x' }
+    ];
+  }
+  const metrics = mortgageMetrics();
+  return [
+    { label: 'Loan amount', value: fmtMoney(metrics.principal, 0) },
+    { label: 'Monthly PITI', value: fmtMoney(metrics.total, 0) },
+    { label: 'Lifetime interest', value: fmtMoney(metrics.interest, 0) }
+  ];
+}
+
+function renderWorkflowBar(){
+  const stats = snapshotStats();
+  return `
+    <section class="workflow-bar" aria-label="Scenario tools">
+      <div class="workflow-heading">
+        <div>
+          <div class="workflow-kicker">Working scenario</div>
+          <strong>${steps[state.step]}</strong>
+        </div>
+        <span class="workflow-dot" aria-hidden="true"></span>
+      </div>
+      <div class="snapshot-stats">
+        ${stats.map(stat => `<div class="snapshot-stat"><span>${stat.label}</span><strong>${stat.value}</strong></div>`).join('')}
+      </div>
+      <div class="workflow-actions">
+        <button class="btn-utility" id="toggleSnapshot" type="button">Scenario snapshot</button>
+        <button class="btn-utility" id="shareScenario" type="button">Copy share link</button>
+        <button class="btn-utility btn-utility--accent" id="printReport" type="button">Print report</button>
+      </div>
+      <div class="snapshot-panel" id="snapshotPanel" hidden>
+        <div>
+          <div class="workflow-kicker">Ready to share</div>
+          <p>Inputs stay in this browser. Copy a link to reopen this exact scenario on another device or send it to a partner.</p>
+        </div>
+        <div class="snapshot-detail"><span>Section</span><strong>${steps[state.step]}</strong></div>
+        <div class="snapshot-detail"><span>Last action</span><strong id="workflowStatus">No changes yet</strong></div>
+      </div>
+    </section>
+  `;
+}
+
+function renderPaymentMixChart(pi, tax, insurance, total){
+  const values = [pi, tax, insurance];
+  const totalSafe = total || 1;
+  const labels = ['Principal & interest', 'Property tax', 'Home insurance'];
+  const colors = ['#34d59a', '#ffb020', '#7d7d86'];
+  const circumference = 439.82;
+  let offset = 0;
+  const segments = values.map((value, index) => {
+    const percent = total ? value / total : 0;
+    const dash = percent * circumference;
+    const html = `<circle class="chart-segment" data-chart-label="${labels[index]}" data-chart-value="${fmtMoney(value, 2)}" cx="110" cy="110" r="70" fill="none" stroke="${colors[index]}" stroke-width="24" stroke-dasharray="${dash} ${circumference - dash}" stroke-dashoffset="${-offset}" transform="rotate(-90 110 110)"></circle>`;
+    offset += dash;
+    return html;
+  }).join('');
+  return `
+    <div class="chart-card">
+      <div class="chart-card-head"><div><div class="chart-kicker">Interactive view</div><h2>Where the payment goes</h2></div><span class="chart-hint">Hover a segment</span></div>
+      <div class="donut-chart-wrap">
+        <svg class="donut-chart" viewBox="0 0 220 220" role="img" aria-label="Monthly payment composition">${segments}<circle cx="110" cy="110" r="57" fill="var(--surface)"></circle><text x="110" y="105" text-anchor="middle" class="donut-total">${fmtMoney(total, 0)}</text><text x="110" y="124" text-anchor="middle" class="donut-caption">per month</text></svg>
+        <div class="chart-legend">${values.map((value, index) => `<button class="chart-legend-item" type="button" data-chart-target="${labels[index]}"><span class="chart-color" style="background:${colors[index]}"></span><span>${labels[index]}</span><strong>${Math.round((value / totalSafe) * 100)}%</strong></button>`).join('')}</div>
+      </div>
+      <div class="chart-tooltip" id="chartTooltip" role="status"></div>
+    </div>
+  `;
+}
+
+function renderBalanceChart(rows, mode){
+  if (!rows.length) {
+    return `<div class="chart-card chart-card--wide"><div class="chart-card-head"><div><div class="chart-kicker">Interactive view</div><h2>Loan trajectory</h2></div></div><p class="chart-empty">Add a loan amount to see the payoff trajectory.</p></div>`;
+  }
+  const points = [];
+  const width = 620;
+  const height = 240;
+  const padLeft = 42;
+  const padRight = 18;
+  const padTop = 18;
+  const padBottom = 34;
+  const values = rows.map(row => mode === 'balance' ? row.endBalance : mode === 'interest' ? row.yrInterest : row.yrPrincipal);
+  const max = Math.max(...values, 1);
+  const principal = rows[0] ? rows[0].endBalance + rows[0].yrPrincipal : 1;
+  const chartMax = mode === 'balance' ? principal : max;
+  rows.forEach((row, index) => {
+    const x = padLeft + (rows.length === 1 ? 0 : index / (rows.length - 1)) * (width - padLeft - padRight);
+    const y = padTop + (1 - values[index] / chartMax) * (height - padTop - padBottom);
+    points.push({ x, y, value: values[index], label: `Year ${row.year}` });
+  });
+  const path = points.map((point, index) => `${index ? 'L' : 'M'} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(' ');
+  const label = mode === 'balance' ? 'Remaining balance' : mode === 'interest' ? 'Annual interest' : 'Annual principal';
+  return `
+    <div class="chart-card chart-card--wide">
+      <div class="chart-card-head"><div><div class="chart-kicker">Interactive view</div><h2>Loan trajectory</h2></div><div class="chart-tabs"><button type="button" class="chart-tab ${mode === 'balance' ? 'active' : ''}" data-chart-mode="balance">Balance</button><button type="button" class="chart-tab ${mode === 'interest' ? 'active' : ''}" data-chart-mode="interest">Interest</button><button type="button" class="chart-tab ${mode === 'principal' ? 'active' : ''}" data-chart-mode="principal">Principal</button></div></div>
+      <div class="line-chart-wrap"><svg class="line-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${label} by year"><line class="chart-axis" x1="${padLeft}" y1="${padTop}" x2="${padLeft}" y2="${height - padBottom}"></line><line class="chart-axis" x1="${padLeft}" y1="${height - padBottom}" x2="${width - padRight}" y2="${height - padBottom}"></line><path class="chart-area" d="${path} L ${points[points.length - 1].x.toFixed(1)} ${height - padBottom} L ${points[0].x.toFixed(1)} ${height - padBottom} Z"></path><path class="chart-line" d="${path}"></path>${points.map(point => `<circle class="chart-point" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="4" data-chart-label="${point.label}" data-chart-value="${fmtMoney(point.value, 0)}"></circle>`).join('')}<text class="chart-axis-label" x="${padLeft}" y="${height - 10}">Year 1</text><text class="chart-axis-label" text-anchor="end" x="${width - padRight}" y="${height - 10}">Year ${rows[rows.length - 1].year}</text></svg></div>
+      <div class="chart-caption"><span>${label}</span><span>Hover a point for the annual figure</span></div><div class="chart-tooltip" id="chartTooltip" role="status"></div>
+    </div>
+  `;
+}
+
+function renderPrintReport(){
+  const mortgage = mortgageMetrics();
+  const business = businessMetrics();
+  const loc = locMetrics();
+  return `
+    <section class="print-report" aria-label="Printable LoansFlow report">
+      <div class="print-report-header"><div><div class="workflow-kicker">LoansFlow planning brief</div><h1>Scenario report</h1><p>Prepared ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p></div><div class="print-report-mark">LOANS<br><span>FLOW</span></div></div>
+      <div class="print-report-context"><span>Active tool</span><strong>${steps[state.step]}</strong></div>
+      <div class="print-report-grid">
+        <div class="print-report-card"><span>Mortgage PITI / month</span><strong>${fmtMoney(mortgage.total, 2)}</strong><small>${fmtMoney(mortgage.principal, 0)} financed at ${state.rate}% for ${state.term} years</small></div>
+        <div class="print-report-card"><span>Business loan / month</span><strong>${fmtMoney(business.payment, 2)}</strong><small>${business.rate.toFixed(2)}% blended rate · ${business.dscr.toFixed(2)}x DSCR</small></div>
+        <div class="print-report-card"><span>Line of credit balance</span><strong>${fmtMoney(loc.balance, 0)}</strong><small>${fmtMoney(loc.available, 0)} available after ${state.locMonths} months</small></div>
+        <div class="print-report-card"><span>Planning note</span><strong>Estimates only</strong><small>Confirm rates, fees, taxes, insurance, and lender requirements before making a decision.</small></div>
+      </div>
+      <div class="print-report-table"><div><span>Home price</span><strong>${fmtMoney(state.homePrice, 0)}</strong></div><div><span>Down payment</span><strong>${fmtMoney(state.downPayment, 0)}</strong></div><div><span>Monthly property tax</span><strong>${fmtMoney(mortgage.tax, 2)}</strong></div><div><span>Monthly insurance</span><strong>${fmtMoney(mortgage.insurance, 2)}</strong></div><div><span>Business loan amount</span><strong>${fmtMoney(state.bizLoanAmount, 0)}</strong></div><div><span>Annual business NOI</span><strong>${fmtMoney(state.bizNOI, 0)}</strong></div></div>
+      <p class="print-report-foot">LoansFlow is a planning calculator, not a lender, financial adviser, or loan offer. Figures are generated from the inputs shown and may not reflect actual underwriting terms.</p>
+    </section>
+  `;
+}
+
+function shareableUrl(){
+  const url = new URL(window.location.href);
+  url.searchParams.delete('step');
+  url.searchParams.set('lf', JSON.stringify(state));
+  return url.toString();
+}
+
+async function copyShareLink(){
+  const url = shareableUrl();
+  try {
+    await navigator.clipboard.writeText(url);
+  } catch (_) {
+    const input = document.createElement('textarea');
+    input.value = url;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    input.remove();
+  }
+  const status = document.getElementById('workflowStatus');
+  if (status) status.textContent = 'Share link copied';
+}
+
+function loadSharedState(){
+  const raw = new URLSearchParams(window.location.search).get('lf');
+  if (!raw) return;
+  try {
+    const incoming = JSON.parse(raw);
+    Object.keys(state).forEach(key => {
+      if (!(key in incoming)) return;
+      if (key === 'locDraws') {
+        if (Array.isArray(incoming[key])) state[key] = incoming[key].filter(draw => draw && Number.isFinite(Number(draw.month)) && Number.isFinite(Number(draw.amount))).map(draw => ({ id: Number(draw.id), month: Number(draw.month), amount: Number(draw.amount) }));
+      } else if (typeof state[key] === 'number') {
+        if (Number.isFinite(Number(incoming[key]))) state[key] = Number(incoming[key]);
+      } else if (typeof incoming[key] === 'string') {
+        const allowed = {
+          bizLoanType: ['sba7a', 'sba504', 'conventional'],
+          locPaymentType: ['interestOnly', 'percentBalance'],
+          amortChartMode: ['balance', 'interest', 'principal']
+        };
+        if (!allowed[key] || allowed[key].includes(incoming[key])) state[key] = incoming[key];
+      }
+    });
+  } catch (_) {
+    // Ignore malformed shared links and keep the defaults.
+  }
+}
+
+function wireChartInteractions(){
+  document.querySelectorAll('.chart-segment, .chart-point').forEach(el => {
+    const tooltip = el.closest('.chart-card').querySelector('.chart-tooltip');
+    const show = () => { tooltip.textContent = `${el.dataset.chartLabel}: ${el.dataset.chartValue}`; tooltip.classList.add('visible'); el.classList.add('active'); };
+    const hide = () => { tooltip.classList.remove('visible'); el.classList.remove('active'); };
+    el.addEventListener('mouseenter', show);
+    el.addEventListener('mouseleave', hide);
+    el.addEventListener('focus', show);
+    el.addEventListener('blur', hide);
+  });
+  document.querySelectorAll('.chart-legend-item').forEach(button => {
+    button.addEventListener('click', () => {
+      const target = [...document.querySelectorAll('.chart-segment')].find(segment => segment.dataset.chartLabel === button.dataset.chartTarget);
+      if (target) target.dispatchEvent(new Event('mouseenter'));
+    });
+  });
 }
 
 // ---------- RENDER: NAV ----------
@@ -256,8 +485,10 @@ function renderStep1(){
         <div class="line-item"><span>Home Insurance (est.)</span><span class="num">${fmtMoney(monthlyIns,2)}</span></div>
         <div class="line-item"><span>Total Monthly Payment</span><span class="num">${fmtMoney(total,2)}</span></div>
         <div class="line-item"><span>Loan Amount</span><span class="num">${fmtMoney(principal,0)}</span></div>
-        <div class="line-item"><span>Total Interest Paid (${state.term} yrs)</span><span class="num">${fmtMoney(pi*state.term*12 - principal,0)}</span></div>
-      </div>
+        <div class="line-item"><span>Total Interest Paid (${state.term} yrs)</span><span class="num">${fmtMoney(pi*state.term*12 - principal,0)}</span></div>      </div>
+
+      ${renderPaymentMixChart(pi, monthlyTax, monthlyIns, total)}
+
       <div class="actions">
         <button class="btn-ghost" id="backTo0">&larr; Back</button>
         <button class="btn-primary" id="toAmort">View Amortization Ledger &rarr;</button>
@@ -348,6 +579,8 @@ function renderStep2(){
         <div class="value">${fmtMoney(interestSaved,0)} interest saved${monthsSaved>0 ? ' &middot; '+monthsSaved+' months earlier' : ''}</div>
       </div>
       ` : ''}
+
+      ${renderBalanceChart(yearRows, state.amortChartMode)}
 
       <div class="ledger-table-wrap">
         <table>
@@ -1123,8 +1356,9 @@ function render(){
   renderNav();
   const main = document.getElementById('mainContent');
   const renderers = [renderStep5, renderStepBizAmort, renderStepLOC, renderStep0, renderStep1, renderStep2, renderStep3, renderStep4, renderStep6];
-  main.innerHTML = renderers[state.step]() + renderFooter();
+  main.innerHTML = renderWorkflowBar() + renderers[state.step]() + renderFooter();
   attachHandlers();
+  wireChartInteractions();
   main.scrollTop = 0;
   window.scrollTo(0,0);
 }
@@ -1139,6 +1373,41 @@ function readInputs(ids){
 }
 
 function attachHandlers(){
+  const toggleSnapshot = document.getElementById('toggleSnapshot');
+  if (toggleSnapshot) toggleSnapshot.addEventListener('click', () => {
+    const panel = document.getElementById('snapshotPanel');
+    if (!panel) return;
+    panel.hidden = !panel.hidden;
+    toggleSnapshot.textContent = panel.hidden ? 'Scenario snapshot' : 'Hide snapshot';
+  });
+
+  const shareScenario = document.getElementById('shareScenario');
+  if (shareScenario) shareScenario.addEventListener('click', copyShareLink);
+
+  const printReport = document.getElementById('printReport');
+  if (printReport) printReport.addEventListener('click', () => {
+    let mount = document.getElementById('printReportMount');
+    if (!mount) {
+      mount = document.createElement('div');
+      mount.id = 'printReportMount';
+      document.body.appendChild(mount);
+    }
+    mount.innerHTML = renderPrintReport();
+    document.body.classList.add('printing-report');
+    window.setTimeout(() => window.print(), 0);
+    window.onafterprint = () => {
+      document.body.classList.remove('printing-report');
+      mount.innerHTML = '';
+    };
+  });
+
+  document.querySelectorAll('[data-chart-mode]').forEach(button => {
+    button.addEventListener('click', () => {
+      state.amortChartMode = button.dataset.chartMode;
+      render();
+    });
+  });
+
   const b0 = document.getElementById('toResults');
   if(b0) b0.addEventListener('click', ()=>{
     readInputs(['homePrice','downPayment','rate','taxRate','insurance']);
@@ -1271,6 +1540,7 @@ function attachHandlers(){
   });
 }
 
+loadSharedState();
 if (typeof window.__LF_INITIAL_STEP === 'number' && window.__LF_INITIAL_STEP >= 0 && window.__LF_INITIAL_STEP <= 8) {
   state.step = window.__LF_INITIAL_STEP;
 }

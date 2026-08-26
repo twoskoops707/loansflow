@@ -800,6 +800,101 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
   display: none;
 }
 
+/* ---------- Scenario workflow bar ---------- */
+.workflow-bar {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.15rem;
+  background: linear-gradient(135deg, rgba(52, 213, 154, 0.1), rgba(21, 22, 23, 0.92) 42%);
+  border: 1px solid var(--accent-border);
+  display: grid;
+  grid-template-columns: minmax(150px, 1.15fr) 1.5fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+.workflow-heading { display: flex; align-items: center; gap: 0.65rem; min-width: 0; }
+.workflow-heading strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); font-size: 0.9rem; }
+.workflow-kicker, .chart-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent);
+  margin-bottom: 0.28rem;
+}
+.workflow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); flex: 0 0 auto; }
+.snapshot-stats { display: flex; gap: 1rem; min-width: 0; }
+.snapshot-stat { border-left: 1px solid var(--line-strong); padding-left: 0.9rem; min-width: 0; }
+.snapshot-stat span, .snapshot-detail span { display: block; color: var(--muted); font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+.snapshot-stat strong { display: block; margin-top: 0.2rem; color: var(--ink); font-size: 0.96rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.workflow-actions { display: flex; justify-content: flex-end; gap: 0.45rem; flex-wrap: wrap; }
+.btn-utility { background: transparent; border: 1px solid var(--line-strong); color: var(--ink-secondary); border-radius: var(--pill); padding: 0.5rem 0.75rem; font-size: 0.7rem; white-space: nowrap; cursor: pointer; }
+.btn-utility:hover { border-color: var(--accent); color: var(--accent); }
+.btn-utility--accent { background: var(--accent); border-color: var(--accent); color: var(--canvas); }
+.btn-utility--accent:hover { background: var(--ink); border-color: var(--ink); color: var(--canvas); }
+.snapshot-panel { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1rem; border-top: 1px solid var(--line); padding-top: 0.9rem; }
+.snapshot-panel p { max-width: 44ch; color: var(--muted); font-size: 0.76rem; line-height: 1.5; }
+.snapshot-detail { border-left: 1px solid var(--line); padding-left: 0.85rem; }
+.snapshot-detail strong { display: block; margin-top: 0.25rem; color: var(--ink); font-size: 0.8rem; }
+
+/* ---------- Interactive charts ---------- */
+.chart-card { margin: 0 1.75rem 1.75rem; padding: 1.25rem; border: 1px solid var(--line); background: rgba(10, 10, 11, 0.34); }
+.chart-card--wide { margin-top: 1.25rem; }
+.chart-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.chart-card h2 { color: var(--ink); font-size: 1rem; font-weight: 500; }
+.chart-hint, .chart-caption { color: var(--muted); font-size: 0.68rem; }
+.donut-chart-wrap { display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 1.25rem; }
+.donut-chart { width: 200px; height: 200px; overflow: visible; }
+.chart-segment { cursor: pointer; transition: stroke-width 0.2s ease, filter 0.2s ease; }
+.chart-segment:hover, .chart-segment.active, .chart-point:hover { stroke-width: 30px; filter: drop-shadow(0 0 5px var(--accent-glow)); }
+.donut-total { fill: var(--ink); font-size: 20px; font-weight: 600; }
+.donut-caption { fill: var(--muted); font-size: 10px; }
+.chart-legend { display: grid; gap: 0.55rem; }
+.chart-legend-item { display: grid; grid-template-columns: 10px 1fr auto; align-items: center; gap: 0.5rem; border: 0; background: transparent; color: var(--ink-secondary); padding: 0.35rem 0; text-align: left; cursor: pointer; font-size: 0.76rem; }
+.chart-legend-item:hover { color: var(--accent); }
+.chart-legend-item strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.chart-color { width: 9px; height: 9px; display: block; }
+.chart-tooltip { min-height: 1rem; margin-top: 0.6rem; color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; opacity: 0; transition: opacity 0.2s ease; }
+.chart-tooltip.visible { opacity: 1; }
+.chart-tabs { display: flex; gap: 0.2rem; border: 1px solid var(--line); padding: 0.2rem; }
+.chart-tab { border: 0; background: transparent; color: var(--muted); padding: 0.35rem 0.55rem; font-size: 0.68rem; cursor: pointer; }
+.chart-tab.active { background: var(--accent); color: var(--canvas); }
+.line-chart-wrap { width: 100%; overflow-x: auto; }
+.line-chart { display: block; width: 100%; min-width: 520px; height: auto; overflow: visible; }
+.chart-axis { stroke: var(--line-strong); stroke-width: 1; }
+.chart-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.chart-area { fill: rgba(52, 213, 154, 0.1); }
+.chart-point { fill: var(--canvas); stroke: var(--accent); stroke-width: 2; cursor: pointer; }
+.chart-axis-label { fill: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+.chart-caption { display: flex; justify-content: space-between; gap: 1rem; }
+.chart-empty { color: var(--muted); font-size: 0.8rem; padding: 1rem 0; }
+
+/* ---------- Printable report ---------- */
+.print-report { display: none; }
+.print-report-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #111; padding-bottom: 1.25rem; margin-bottom: 1.5rem; }
+.print-report h1 { color: #111; font-size: 2.2rem; margin: 0.25rem 0; }
+.print-report p, .print-report small { color: #555; font-size: 0.78rem; line-height: 1.5; }
+.print-report-mark { color: #111; font-weight: 700; font-size: 1rem; line-height: 0.85; letter-spacing: 0.1em; text-align: right; }
+.print-report-mark span { color: #15966b; }
+.print-report-context { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #ccc; color: #555; font-size: 0.8rem; }
+.print-report-context strong { color: #111; }
+.print-report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1.2rem 0; }
+.print-report-card { border: 1px solid #ccc; padding: 0.9rem; }
+.print-report-card span { display: block; color: #555; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.print-report-card strong { display: block; color: #111; font-size: 1.25rem; margin: 0.25rem 0; }
+.print-report-table { border-top: 1px solid #111; border-bottom: 1px solid #111; }
+.print-report-table div { display: flex; justify-content: space-between; padding: 0.55rem 0; border-bottom: 1px solid #ddd; color: #555; font-size: 0.82rem; }
+.print-report-table div:last-child { border-bottom: 0; }
+.print-report-table strong { color: #111; }
+.print-report-foot { margin-top: 1.5rem; }
+
+@media print {
+  body.printing-report { background: #fff; color: #111; }
+  body.printing-report > *:not(#printReportMount) { display: none !important; }
+  body.printing-report #printReportMount { display: block !important; }
+  body.printing-report .print-report { display: block; padding: 0.25in; font-family: Arial, sans-serif; }
+  @page { margin: 0.35in; size: letter; }
+}
+
 /* ---------- Motion ---------- */
 
 @keyframes brandIn {
@@ -836,6 +931,14 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
   .field-grid, .compare-grid { grid-template-columns: 1fr; }
   h1 { font-size: 1.75rem; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
+  .workflow-bar { grid-template-columns: 1fr; }
+  .snapshot-stats { justify-content: space-between; }
+  .workflow-actions { justify-content: flex-start; }
+  .snapshot-panel { grid-template-columns: 1fr; }
+  .snapshot-detail { border-left: 0; border-top: 1px solid var(--line); padding: 0.75rem 0 0; }
+  .donut-chart-wrap { grid-template-columns: 1fr; justify-items: center; }
+  .chart-card { margin-left: 1rem; margin-right: 1rem; }
+  .chart-caption { flex-direction: column; gap: 0.25rem; }
   .rate-strip { flex-direction: column; }
   .rate-strip .rate-cell {
     border-right: none;
