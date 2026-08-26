@@ -1,32 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ============================================================
-   LoansFlow tools × monopo saigon design system
-   Same discipline as the landing page: sharp 0px corners,
-   full-pill buttons only, hairline borders, zero shadows.
-   Brand palette: ink/paper neutrals, brass/teal accents.
+   LoansFlow tools × Blackout Ledger
+   Deep-black canvas, graphite cards, neon-green accent
+   reserved for results & data. Numbers glow.
    ============================================================ */
 
 :root {
-  --ink: #071018;
-  --ink-soft: #1d2b36;
-  --muted: #6b7884;
-  --fog: #9aa7b2;
-  --paper: #f3f1eb;
-  --paper-raised: #fffcf7;
-  --line: rgba(7, 16, 24, 0.16);
-  --line-dark: rgba(255, 252, 247, 0.16);
-  --brass: #c9a45c;
-  --brass-deep: #9a7a35;
-  --brass-soft: #e8d5a3;
-  --teal: #1a8f7c;
-  --teal-deep: #0a4a40;
-  --principal: #0f6b5c;
-  --interest: #b85a32;
-  --danger: #8c2f2f;
-  --gold: var(--brass);
-  --gold-soft: var(--brass-soft);
-  --sidebar: #071018;
+  --canvas: #0a0a0b;
+  --surface: #151617;
+  --surface-hover: #1c1d1f;
+  --ink: #ffffff;
+  --ink-secondary: #e8e8ec;
+  --muted: #7d7d86;
+  --fog: #9a9aa3;
+  --accent: #34d59a;
+  --accent-glow: rgba(52, 213, 154, 0.4);
+  --accent-border: rgba(52, 213, 154, 0.25);
+  --amber: #ffb020;
+  --danger: #ef4444;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.15);
+  --principal: #34d59a;
+  --interest: #ffb020;
+  --gold: var(--amber);
+  --gold-soft: rgba(255, 176, 32, 0.6);
+  --sidebar: #0c0c0d;
   --pill: 999px;
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --dur: 0.8s;
@@ -37,10 +36,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background:
-    radial-gradient(1000px 480px at 12% -8%, rgba(184, 149, 74, 0.05), transparent 60%),
-    var(--paper);
-  color: var(--ink);
+  background: var(--canvas);
+  color: var(--ink-secondary);
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   min-height: 100vh;
@@ -59,11 +56,11 @@ body {
   min-width: 0;
 }
 
-/* ---------- Sidebar: flat ink band, hairline border ---------- */
+/* ---------- Sidebar: dark surface ---------- */
 
 .sidebar {
-  background: linear-gradient(180deg, #0a1620 0%, #071018 100%);
-  color: var(--paper-raised);
+  background: var(--sidebar);
+  color: var(--ink);
   padding: 2rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -72,13 +69,13 @@ body {
   top: 0;
   height: 100vh;
   overflow-y: auto;
-  border-right: 1px solid var(--line-dark);
+  border-right: 1px solid var(--line);
 }
 
 .brand {
   line-height: 1.1;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line);
   animation: brandIn 0.7s var(--ease) both;
 }
 .brand a {
@@ -95,11 +92,12 @@ body {
 }
 .brand span {
   display: block;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--brass-soft);
+  color: var(--accent);
   margin-top: 0.6rem;
 }
 
@@ -115,19 +113,20 @@ body {
   opacity: 0.55;
 }
 .step:hover {
-  background: rgba(255, 252, 247, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   opacity: 0.85;
   transform: translateX(2px);
 }
 .step.active {
   opacity: 1;
-  background: rgba(184, 149, 74, 0.14);
-  box-shadow: inset 2px 0 0 var(--brass);
+  background: rgba(52, 213, 154, 0.1);
+  box-shadow: inset 2px 0 0 var(--accent);
 }
 .step-no {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 400;
-  color: var(--brass-soft);
+  color: var(--accent);
   min-width: 1.6rem;
   font-variant-numeric: tabular-nums;
 }
@@ -138,8 +137,8 @@ body {
   font-size: 0.66rem;
   font-weight: 400;
   line-height: 1.7;
-  color: rgba(255, 252, 247, 0.42);
-  border-top: 1px solid var(--line-dark);
+  color: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid var(--line);
   padding-top: 1.1rem;
 }
 
@@ -152,21 +151,23 @@ body {
 }
 
 .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--brass-deep);
+  color: var(--accent);
   margin-bottom: 0.65rem;
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: clamp(2rem, 3.4vw, 2.9rem);
   letter-spacing: -0.02em;
   line-height: 1.05;
   margin-bottom: 0.6rem;
+  color: var(--ink);
 }
 
 .sub {
@@ -177,10 +178,10 @@ h1 {
   line-height: 1.6;
 }
 
-/* ---------- Panels: flat, hairline, sharp corners ---------- */
+/* ---------- Panels: dark surface, hairline borders ---------- */
 
 .panel {
-  background: var(--paper-raised);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 0;
   overflow: hidden;
@@ -196,8 +197,9 @@ h1 {
 .field.full { grid-column: 1 / -1; }
 
 label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
@@ -208,14 +210,14 @@ label {
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 0;
-  background: #fff;
+  background: var(--canvas);
   overflow: hidden;
   transition: border-color var(--dur) var(--ease);
 }
-.input-wrap:focus-within { border-color: var(--brass); }
+.input-wrap:focus-within { border-color: var(--accent); }
 .input-wrap span {
   padding: 0.7rem 0.75rem;
-  background: var(--paper);
+  background: var(--surface);
   color: var(--muted);
   font-size: 0.88rem;
   font-weight: 400;
@@ -238,7 +240,8 @@ input, select {
   background: transparent;
   color: var(--ink);
 }
-input:focus, select:focus { background: rgba(232, 213, 163, 0.25); }
+input:focus, select:focus { background: rgba(52, 213, 154, 0.08); }
+select option { background: var(--surface); color: var(--ink); }
 
 .actions {
   padding: 1.25rem 1.75rem 1.75rem;
@@ -263,26 +266,28 @@ button {
 }
 button:hover { transform: translateY(-1px); }
 .btn-primary {
-  background: var(--ink);
-  color: var(--paper-raised);
+  background: var(--accent);
+  color: var(--canvas);
 }
-.btn-primary:hover { background: var(--teal-deep); }
+.btn-primary:hover { background: #2bc48a; }
 .btn-ghost {
   background: transparent;
-  border-color: var(--line);
+  border-color: var(--line-strong);
   color: var(--ink);
 }
-.btn-ghost:hover { border-color: var(--brass); }
-button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* ---------- Results ---------- */
+/* ---------- Results: neon-green headline with glow ---------- */
 
 .headline-figure {
   padding: 2.25rem 1.75rem 1.75rem;
   border-bottom: 1px solid var(--line);
-  background: var(--paper-raised);
+  background: linear-gradient(180deg, #101315, var(--surface));
+  border-left: 1px solid var(--accent-border);
 }
 .headline-figure .label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -291,11 +296,12 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
   margin-bottom: 0.4rem;
 }
 .headline-figure .value {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: clamp(2.6rem, 5vw, 3.6rem);
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--accent);
+  text-shadow: 0 0 30px var(--accent-glow);
   font-variant-numeric: tabular-nums;
   animation: figurePop 0.7s var(--ease) both;
 }
@@ -304,6 +310,7 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
   font-size: 1rem;
   font-weight: 500;
   color: var(--muted);
+  text-shadow: none;
 }
 
 .breakdown { padding: 1.75rem; }
@@ -318,7 +325,7 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 .bar .seg { height: 100%; transition: width 0.6s var(--ease); }
 
 .legend { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.75rem; }
-.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: var(--ink-secondary); }
 .swatch { width: 11px; height: 11px; border-radius: 0; flex-shrink: 0; }
 
 .line-item {
@@ -327,8 +334,9 @@ button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--line);
   font-size: 0.95rem;
+  color: var(--ink-secondary);
 }
-.line-item:last-child { border-bottom: none; font-weight: 600; }
+.line-item:last-child { border-bottom: none; font-weight: 600; color: var(--ink); }
 .line-item .num { font-variant-numeric: tabular-nums; }
 
 .ledger-table-wrap { max-height: 480px; overflow-y: auto; border-top: 1px solid var(--line); }
@@ -341,11 +349,11 @@ table {
 thead th {
   position: sticky;
   top: 0;
-  background: var(--paper-raised);
+  background: var(--surface);
   text-align: right;
   padding: 0.75rem 1rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -353,8 +361,13 @@ thead th {
   border-bottom: 1px solid var(--line);
 }
 thead th:first-child, tbody td:first-child { text-align: left; }
-tbody td { padding: 0.6rem 1rem; text-align: right; border-bottom: 1px solid var(--line); }
-tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
+tbody td {
+  padding: 0.6rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-secondary);
+}
+tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
 .yr-strip {
   display: inline-block;
   width: 60px;
@@ -367,16 +380,17 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 .yr-strip span { display: inline-block; height: 100%; }
 
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding: 1.75rem; }
-.compare-col { padding: 1.35rem; border: 1px solid var(--line); }
+.compare-col { padding: 1.35rem; border: 1px solid var(--line); background: var(--surface); }
 .compare-col.new {
-  background: rgba(232, 213, 163, 0.2);
-  border: 1px solid var(--brass-soft);
+  background: rgba(52, 213, 154, 0.06);
+  border: 1px solid var(--accent-border);
 }
 .compare-col h3 {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  color: var(--ink);
 }
 .compare-row {
   display: flex;
@@ -384,37 +398,43 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   padding: 0.6rem 0;
   font-size: 0.9rem;
   border-bottom: 1px dashed var(--line);
+  color: var(--ink-secondary);
 }
 .compare-row .num { font-variant-numeric: tabular-nums; }
 
 .savings-callout {
   margin: 0 1.75rem 1.75rem;
   padding: 1.6rem 1.75rem;
-  background: linear-gradient(135deg, #071018, #0a4a40);
-  color: var(--paper-raised);
+  background: linear-gradient(135deg, #0c1a16, #0a2e22);
+  color: var(--ink);
   border-radius: 0;
+  border: 1px solid var(--accent-border);
 }
 .savings-callout .label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--brass-soft);
+  color: var(--accent);
   margin-bottom: 0.4rem;
 }
 .savings-callout .value {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 1.85rem;
   font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
 }
 
 .afford-result { padding: 2rem; text-align: center; }
 .afford-result .value {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 2.5rem;
-  color: var(--teal);
+  color: var(--accent);
+  text-shadow: 0 0 25px var(--accent-glow);
   font-variant-numeric: tabular-nums;
 }
 .dti-bar {
@@ -434,10 +454,10 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   margin: 1.75rem 0;
   min-height: 90px;
   padding: 0.65rem 0.85rem 0.85rem;
-  border: 1px dashed rgba(184, 149, 74, 0.45);
+  border: 1px dashed var(--accent-border);
   border-radius: 0;
   text-align: center;
-  background: rgba(255, 252, 247, 0.75);
+  background: var(--surface);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -446,11 +466,12 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   transition: min-height 0.2s ease, padding 0.2s ease, opacity 0.2s ease;
 }
 .ad-slot .ad-label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brass-deep);
+  color: var(--accent);
   align-self: flex-start;
 }
 .ad-slot .ad-size {
@@ -470,8 +491,8 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 }
 .ad-slot[data-ad-state="filled"] {
   border-style: solid;
-  border-color: rgba(184, 149, 74, 0.28);
-  background: rgba(255, 252, 247, 0.6);
+  border-color: var(--accent-border);
+  background: rgba(255, 255, 255, 0.03);
 }
 .ad-slot--leaderboard {
   margin: 1.25rem 1.25rem 0;
@@ -501,6 +522,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   margin-bottom: 0.85rem;
   margin-top: 1.6rem;
   letter-spacing: -0.01em;
+  color: var(--ink);
 }
 .article h2:first-child { margin-top: 0; }
 .article p {
@@ -529,11 +551,12 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--ink);
 }
 .faq-q .mark {
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--brass-deep);
+  color: var(--accent);
   transition: transform 0.4s var(--ease);
 }
 .faq-a {
@@ -562,7 +585,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   width: 36px;
   height: 36px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--canvas);
   border-radius: 0;
   cursor: pointer;
   color: var(--danger);
@@ -590,7 +613,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   width: 100%;
   margin-top: 0.4rem;
 }
-.btn-add-row:hover { border-color: var(--brass); color: var(--ink); }
+.btn-add-row:hover { border-color: var(--accent); color: var(--ink); }
 .draw-hint {
   font-size: 0.75rem;
   color: var(--muted);
@@ -606,11 +629,12 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 }
 .news-card:last-child { border-bottom: none; }
 .news-meta {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--brass-deep);
+  color: var(--accent);
   margin-bottom: 0.4rem;
 }
 .news-card h3 {
@@ -618,6 +642,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   font-weight: 500;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: var(--ink);
 }
 .news-card p {
   color: var(--muted);
@@ -629,7 +654,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 .news-card a {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: none;
   transition: color var(--dur) var(--ease);
 }
@@ -641,6 +666,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   gap: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  background: var(--surface);
 }
 .rate-strip .rate-cell {
   flex: 1;
@@ -650,6 +676,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 }
 .rate-strip .rate-cell:last-child { border-right: none; }
 .rate-cell .label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -658,10 +685,12 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   margin-bottom: 0.3rem;
 }
 .rate-cell .value {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 1.5rem;
   font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  text-shadow: 0 0 15px var(--accent-glow);
 }
 .rate-cell .rate-note {
   margin-top: 0.35rem;
@@ -673,6 +702,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 .rate-strip--loading .value {
   color: var(--muted);
   font-weight: 400;
+  text-shadow: none;
 }
 
 /* ---------- Footer (tools) ---------- */
@@ -690,11 +720,12 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   margin-bottom: 2rem;
 }
 .footer-col h4 {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--brass-deep);
+  color: var(--accent);
   margin-bottom: 0.75rem;
 }
 .footer-col p, .footer-col a {
@@ -724,7 +755,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(7, 16, 24, 0.72);
+  background: rgba(10, 10, 11, 0.85);
   z-index: 50;
   align-items: center;
   justify-content: center;
@@ -733,7 +764,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 }
 .legal-modal.open { display: flex; }
 .legal-modal-inner {
-  background: var(--paper-raised);
+  background: var(--surface);
   max-width: 600px;
   max-height: 80vh;
   overflow-y: auto;
@@ -746,6 +777,7 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
   font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  color: var(--ink);
 }
 .legal-modal-inner p {
   font-size: 0.9rem;
@@ -755,8 +787,8 @@ tbody tr:hover { background: rgba(15, 107, 92, 0.05); }
 }
 .legal-modal-close {
   margin-top: 1rem;
-  background: var(--ink);
-  color: var(--paper-raised);
+  background: var(--accent);
+  color: var(--canvas);
   border: none;
   padding: 0.6rem 1.5rem;
   border-radius: var(--pill);

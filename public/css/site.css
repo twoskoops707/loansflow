@@ -1,36 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ============================================================
-   LoansFlow × monopo saigon design system
-   Radical monochrome discipline in the brand palette:
-   ink/paper neutrals + brass/teal reserved for the one
-   chromatic gesture per page. Sharp 0px corners everywhere
-   except full-pill buttons. Hairline borders, zero shadows.
+   LoansFlow × Blackout Ledger
+   Deep-black canvas, graphite cards, neon-green accent
+   reserved for results & data. Numbers glow.
    ============================================================ */
 
 :root {
-  /* Palette — monopo roles mapped to LoansFlow colors */
-  --ink: #071018;            /* Obsidian: primary text, dark bands */
-  --ink-soft: #1d2b36;       /* Inkstone: secondary headings, footer body */
-  --muted: #6b7884;          /* Felt Gray: muted helper text */
-  --fog: #9aa7b2;            /* Ash Mist: quiet mid-tones */
-  --paper: #f3f1eb;          /* Paper: primary canvas */
-  --paper-raised: #fffcf7;   /* raised surface */
-  --brass: #c9a45c;          /* Iridescent Fade: chromatic accent (media only) */
-  --brass-deep: #9a7a35;     /* brass at text contrast on light */
-  --brass-soft: #e8d5a3;
-  --teal: #1a8f7c;           /* secondary chromatic accent */
-  --teal-deep: #0a4a40;
-
-  /* Hairline borders — the only elevation the system uses */
-  --line: rgba(7, 16, 24, 0.16);         /* light surface */
-  --line-dark: rgba(255, 252, 247, 0.16);/* dark surface */
-
-  /* Geometry */
-  --pill: 999px;             /* full pill — buttons and tags ONLY */
+  --canvas: #0a0a0b;
+  --surface: #151617;
+  --surface-hover: #1c1d1f;
+  --ink: #ffffff;
+  --ink-secondary: #e8e8ec;
+  --muted: #7d7d86;
+  --fog: #9a9aa3;
+  --accent: #34d59a;
+  --accent-glow: rgba(52, 213, 154, 0.4);
+  --accent-border: rgba(52, 213, 154, 0.25);
+  --amber: #ffb020;
+  --danger: #ef4444;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.15);
+  --pill: 999px;
   --container: 1078px;
-
-  /* Motion — patient, gliding */
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --dur: 0.8s;
 }
@@ -42,8 +34,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--ink-secondary);
+  background: var(--canvas);
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -51,7 +43,7 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-/* ---------- Navigation: transparent, 66px, invisible persistence ---------- */
+/* ---------- Navigation ---------- */
 
 .site-nav {
   position: fixed;
@@ -62,7 +54,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   height: 66px;
   padding: 0 clamp(1.25rem, 4vw, 3rem);
-  background: linear-gradient(180deg, rgba(7, 16, 24, 0.72), transparent);
+  background: linear-gradient(180deg, rgba(10, 10, 11, 0.88), transparent);
 }
 
 .nav-brand {
@@ -87,16 +79,16 @@ a { color: inherit; text-decoration: none; }
 .nav-links a { opacity: 0.78; transition: opacity var(--dur) var(--ease); }
 .nav-links a:hover { opacity: 1; }
 .nav-cta {
-  border: 1px solid rgba(255, 252, 247, 0.35);
-  color: var(--paper-raised) !important;
+  border: 1px solid var(--line-strong);
+  color: var(--ink) !important;
   opacity: 1 !important;
   padding: 0.55rem 1.5rem;
   border-radius: var(--pill);
   transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
-.nav-cta:hover { border-color: var(--brass-soft); }
+.nav-cta:hover { border-color: var(--accent); }
 
-/* ---------- Hero: full-viewport, monumental headline over one chromatic gesture ---------- */
+/* ---------- Hero: full-viewport, monumental headline over neon glow ---------- */
 
 .hero {
   position: relative;
@@ -108,8 +100,8 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   padding: clamp(5.5rem, 12vh, 8rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vh, 4.5rem);
   isolation: isolate;
-  color: var(--paper-raised);
-  background: var(--ink);
+  color: var(--ink);
+  background: var(--canvas);
 }
 
 .hero-bg {
@@ -117,9 +109,9 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(ellipse 70% 55% at 72% 32%, rgba(201, 164, 92, 0.22), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 18% 82%, rgba(26, 143, 124, 0.2), transparent 52%),
-    linear-gradient(160deg, #0a1820 0%, #071018 55%, #050b11 100%);
+    radial-gradient(ellipse 70% 55% at 72% 32%, rgba(52, 213, 154, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 18% 82%, rgba(52, 213, 154, 0.08), transparent 52%),
+    linear-gradient(160deg, #0c0c0e 0%, #0a0a0b 55%, #080809 100%);
 }
 
 .hero-bg::after {
@@ -128,8 +120,8 @@ a { color: inherit; text-decoration: none; }
   inset: auto -10% -25% 35%;
   height: 65%;
   background:
-    radial-gradient(circle at 30% 40%, rgba(201, 164, 92, 0.3), transparent 45%),
-    radial-gradient(circle at 70% 60%, rgba(26, 143, 124, 0.28), transparent 40%);
+    radial-gradient(circle at 30% 40%, rgba(52, 213, 154, 0.18), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(52, 213, 154, 0.12), transparent 40%);
   filter: blur(50px);
   animation: glowPulse 9s ease-in-out infinite alternate;
 }
@@ -151,19 +143,20 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero h1 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: clamp(2.6rem, 6.2vw, 5.25rem);
   letter-spacing: -0.02em;
   line-height: 1.02;
   max-width: 18ch;
   margin: 0 auto 1.4rem;
+  color: var(--ink);
 }
 
 .hero p {
   max-width: 46ch;
   margin: 0 auto;
-  color: rgba(255, 252, 247, 0.68);
+  color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.6;
   margin-bottom: 2.25rem;
@@ -177,14 +170,14 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
 }
 
-/* ---------- Buttons: full-pill only, ghost geometry ---------- */
+/* ---------- Buttons: full-pill only ---------- */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
   padding: 0.9rem 2.1rem;
   border-radius: var(--pill);
@@ -193,22 +186,22 @@ a { color: inherit; text-decoration: none; }
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary {
-  background: var(--paper-raised);
+  background: var(--ink);
+  color: var(--canvas);
+}
+.btn-primary:hover { background: var(--accent); color: var(--canvas); }
+.btn-ghost {
+  border-color: var(--line-strong);
   color: var(--ink);
 }
-.btn-primary:hover { background: var(--brass-soft); }
-.btn-ghost {
-  border-color: rgba(255, 252, 247, 0.35);
-  color: var(--paper-raised);
-}
-.btn-ghost:hover { border-color: var(--brass-soft); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ---------- Sections: spacious editorial rhythm, alternating bands ---------- */
+/* ---------- Sections: spacious editorial rhythm, dark bands ---------- */
 
 .section {
   padding: clamp(4rem, 9vw, 6.5rem) clamp(1.25rem, 4vw, 3rem);
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--canvas);
+  color: var(--ink-secondary);
 }
 .section > * {
   max-width: var(--container);
@@ -221,20 +214,22 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 2.75rem;
 }
 .section-head .eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brass-deep);
+  color: var(--accent);
   margin-bottom: 0.9rem;
 }
 .section-head h2 {
   font-family: 'Inter', sans-serif;
-  font-weight: 300; /* whisper weight — never shout */
+  font-weight: 300;
   font-size: clamp(2rem, 4vw, 3.4rem);
   letter-spacing: -0.02em;
   line-height: 1.06;
   margin-bottom: 1rem;
+  color: var(--ink);
 }
 .section-head p {
   color: var(--muted);
@@ -242,7 +237,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 48ch;
 }
 
-/* ---------- Tool cards: no chrome, hairline frame, sharp corners ---------- */
+/* ---------- Tool cards: dark surface, hairline frame, neon accent ---------- */
 
 .tool-grid {
   display: grid;
@@ -255,19 +250,20 @@ a { color: inherit; text-decoration: none; }
   padding: 1.75rem 1.5rem;
   border: 1px solid var(--line);
   border-radius: 0;
-  background: transparent;
+  background: var(--surface);
   transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
   min-height: 170px;
 }
 .tool-link:hover {
   transform: translateY(-2px);
-  border-color: var(--brass);
+  border-color: var(--accent);
 }
 .tool-link .num {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.14em;
-  color: var(--brass-deep);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 .tool-link h3 {
@@ -276,6 +272,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.25rem;
   letter-spacing: -0.01em;
   margin-bottom: 0.55rem;
+  color: var(--ink);
 }
 .tool-link p {
   color: var(--muted);
@@ -283,14 +280,14 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
 }
 
-/* ---------- Dark band: color inversion, hairline dividers ---------- */
+/* ---------- Dark band: monetize / pillars ---------- */
 
 .monetize {
-  background: var(--ink);
-  color: var(--paper-raised);
+  background: var(--surface);
+  color: var(--ink);
 }
-.monetize .section-head .eyebrow { color: var(--brass-soft); }
-.monetize .section-head p { color: rgba(255, 252, 247, 0.66); }
+.monetize .section-head .eyebrow { color: var(--accent); }
+.monetize .section-head p { color: var(--muted); }
 
 .pillars {
   display: grid;
@@ -298,7 +295,7 @@ a { color: inherit; text-decoration: none; }
   gap: 2.75rem;
 }
 .pillar {
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line-strong);
   padding-top: 1.4rem;
 }
 .pillar h3 {
@@ -306,20 +303,21 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   font-size: 1.1rem;
   margin-bottom: 0.6rem;
+  color: var(--ink);
 }
 .pillar p {
-  color: rgba(255, 252, 247, 0.62);
+  color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.6;
 }
 
-/* ---------- Footer: quiet, compact, muted ---------- */
+/* ---------- Footer: deepest black ---------- */
 
 .site-footer {
-  background: #050b11;
-  color: rgba(255, 252, 247, 0.62);
+  background: #080809;
+  color: var(--muted);
   padding: 3rem clamp(1.25rem, 4vw, 3rem) 3.25rem;
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line);
 }
 .site-footer > * {
   max-width: var(--container);
@@ -333,11 +331,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 2.5rem;
 }
 .footer-grid h4 {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brass-soft);
+  color: var(--accent);
   margin-bottom: 0.9rem;
 }
 .footer-grid a, .footer-grid p {
@@ -347,13 +346,13 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
 }
 .footer-grid a { transition: color var(--dur) var(--ease); }
-.footer-grid a:hover { color: var(--paper-raised); }
+.footer-grid a:hover { color: var(--ink); }
 .footer-note {
   font-size: 0.78rem;
   line-height: 1.7;
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line);
   padding-top: 1.4rem;
-  color: rgba(255, 252, 247, 0.5);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* ---------- Ad slots ---------- */
@@ -363,14 +362,14 @@ a { color: inherit; text-decoration: none; }
   max-width: 980px;
   min-height: 90px;
   padding: 0.65rem 0.85rem 0.85rem;
-  border: 1px dashed rgba(201, 164, 92, 0.45);
+  border: 1px dashed var(--accent-border);
   border-radius: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
-  background: rgba(255, 252, 247, 0.5);
+  background: var(--surface);
   transition: min-height 0.2s ease, opacity 0.2s ease;
 }
 .ad-slot .adsbygoogle { width: 100%; max-width: 100%; }
@@ -383,24 +382,25 @@ a { color: inherit; text-decoration: none; }
 }
 .ad-slot[data-ad-state="filled"] {
   border-style: solid;
-  border-color: rgba(201, 164, 92, 0.3);
+  border-color: var(--accent-border);
 }
 .ad-label {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brass-deep);
+  color: var(--accent);
   align-self: flex-start;
 }
 .ad-size { font-size: 0.8rem; color: var(--fog); }
 
 .monetize .ad-slot,
 .site-footer .ad-slot {
-  background: rgba(255, 252, 247, 0.03);
-  border-color: rgba(232, 213, 163, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--accent-border);
 }
-.monetize .ad-slot .ad-label { color: var(--brass-soft); }
+.monetize .ad-slot .ad-label { color: var(--accent); }
 
 /* ---------- Motion ---------- */
 

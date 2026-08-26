@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoansFlow — Design Directions</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #0d0d0f; color: #e8e8ec; padding: 3rem 1.5rem 5rem; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .lab-head { margin-bottom: 3rem; }
+  .lab-head .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7d7d86; margin-bottom: 0.8rem; }
+  .lab-head h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.6rem; color: #fff; }
+  .lab-head p { color: #9a9aa3; max-width: 60ch; line-height: 1.6; font-size: 0.95rem; }
+
+  .theme { margin-bottom: 4.5rem; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+  .theme-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.5rem; background: #17171b; border-bottom: 1px solid rgba(255,255,255,0.07); flex-wrap: wrap; }
+  .theme-bar .t-name { font-weight: 600; font-size: 1rem; color: #fff; }
+  .theme-bar .t-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .theme-bar .tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.65rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); color: #b9b9c2; }
+  .theme-bar .t-desc { flex-basis: 100%; color: #8b8b95; font-size: 0.85rem; line-height: 1.5; }
+
+  /* ---------- shared mockup primitives ---------- */
+  .mock { padding: clamp(1.5rem, 4vw, 2.5rem); }
+  .mock-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.5rem; }
+  .mock-logo { font-weight: 700; letter-spacing: -0.01em; }
+  .mock-navlinks { display: flex; gap: 1.4rem; font-size: 0.85rem; }
+  .mock-navlinks span { opacity: 0.75; }
+  .mock-hero { display: grid; gap: 1.25rem; }
+  .mock-hero .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .mock-hero h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.08; max-width: 18ch; font-weight: 600; }
+  .mock-hero p { opacity: 0.7; max-width: 44ch; line-height: 1.55; font-size: 0.95rem; }
+  .mock-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .mock-btn { font-size: 0.88rem; padding: 0.75rem 1.6rem; border-radius: 999px; font-weight: 600; display: inline-block; }
+  .mock-btn.primary { background: #fff; color: #0d0d0f; }
+  .mock-btn.ghost { border: 1px solid rgba(255,255,255,0.35); color: #fff; }
+  .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .mock-card { padding: 1.35rem; border-radius: 14px; min-height: 130px; display: flex; flex-direction: column; gap: 0.6rem; }
+  .mock-card .num { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.12em; opacity: 0.6; }
+  .mock-card h3 { font-size: 1rem; font-weight: 600; }
+  .mock-card p { font-size: 0.82rem; line-height: 1.5; opacity: 0.65; }
+  .mock-result { margin-top: 2.5rem; border-radius: 16px; padding: 1.6rem; display: grid; gap: 1rem; }
+  .mock-result .r-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
+  .mock-result .r-value { font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 600; letter-spacing: -0.02em; }
+  .mock-result .r-bar { height: 10px; border-radius: 999px; overflow: hidden; display: flex; }
+  .mock-result .r-bar i { display: block; height: 100%; }
+  .mock-result .r-note { font-size: 0.78rem; opacity: 0.6; }
+  .mock-rate { display: flex; gap: 0; margin-top: 2.5rem; border-radius: 14px; overflow: hidden; }
+  .mock-rate div { flex: 1; padding: 1rem 1.2rem; border-right: 1px solid rgba(255,255,255,0.1); }
+  .mock-rate div:last-child { border-right: none; }
+  .mock-rate .lbl { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; margin-bottom: 0.35rem; }
+  .mock-rate .val { font-size: 1.3rem; font-weight: 600; }
+
+  @media (max-width: 720px) { .mock-grid { grid-template-columns: 1fr; } .mock-rate { flex-direction: column; } .mock-rate div { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lab-head">
+    <div class="kicker">Design Lab · 3 directions</div>
+    <h1>LoansFlow — future design directions</h1>
+    <p>Three concepts synthesized from Refero Styles (Neon, Mercury, Structured, Steep, Cosmos) and the consumer-finance leaders (NerdWallet, Bankrate, Zillow, SmartAsset). Each keeps your brand colors in some role. Pick one and I'll build it for real.</p>
+  </div>
+
+  <!-- ============ THEME A ============ -->
+  <section class="theme">
+    <div class="theme-bar">
+      <div class="t-name">A · Blackout Ledger</div>
+      <div class="t-tags"><span class="tag">Dark premium fintech</span><span class="tag">Neon × Mercury</span><span class="tag">Glow accents</span></div>
+      <div class="t-desc">Deep-black canvas, graphite cards, one electric neon-green accent reserved for results &amp; data. Numbers glow. Feels like a trading app — flashy, modern, bookmark-worthy for the live-rates strip.</div>
+    </div>
+    <div class="mock" style="background:#0a0a0b; color:#fff;">
+      <div class="mock-nav">
+        <div class="mock-logo">LoansFlow<span style="color:#34d59a;">.</span></div>
+        <div class="mock-navlinks"><span>Calculators</span><span>Rates</span><span>About</span><span style="opacity:1; border:1px solid rgba(255,255,255,0.3); padding:0.4rem 1.1rem; border-radius:999px;">Open tools</span></div>
+      </div>
+      <div class="mock-hero">
+        <div class="eyebrow" style="color:#34d59a;">SBA · Commercial · Mortgage</div>
+        <h2>Know your payment before the bank does.</h2>
+        <p>Seven calculators, one dark ledger. Live rates, instant results, zero accounts.</p>
+        <div class="mock-btns">
+          <div class="mock-btn primary" style="background:#fff; color:#0a0a0b;">Start calculating</div>
+          <div class="mock-btn ghost">Browse the tools</div>
+        </div>
+      </div>
+      <div class="mock-grid">
+        <div class="mock-card" style="background:#151617; border:1px solid rgba(255,255,255,0.08);"><div class="num">01</div><h3>SBA &amp; Commercial</h3><p>7(a), 504, DSCR, guaranty fees.</p></div>
+        <div class="mock-card" style="background:#151617; border:1px solid rgba(255,255,255,0.08);"><div class="num">02</div><h3>Amortization</h3><p>Year-by-year ledger with balloons.</p></div>
+        <div class="mock-card" style="background:#151617; border:1px solid rgba(255,255,255,0.08);"><div class="num">03</div><h3>Mortgage PITI</h3><p>Payment from price, rate &amp; taxes.</p></div>
+      </div>
+      <div class="mock-rate" style="background:#151617; border:1px solid rgba(255,255,255,0.08);">
+        <div><div class="lbl">30-yr fixed</div><div class="val" style="color:#34d59a;">6.21%</div></div>
+        <div><div class="lbl">15-yr fixed</div><div class="val" style="color:#34d59a;">5.54%</div></div>
+        <div><div class="lbl">SBA 7(a)</div><div class="val" style="color:#34d59a;">8.75%</div></div>
+        <div><div class="lbl">As of</div><div class="val" style="font-size:0.9rem; opacity:0.6;">PMI · daily</div></div>
+      </div>
+      <div class="mock-result" style="background:linear-gradient(180deg, #101315, #0c0e10); border:1px solid rgba(52,213,154,0.25);">
+        <div class="r-label">Monthly payment</div>
+        <div class="r-value" style="color:#34d59a; text-shadow:0 0 30px rgba(52,213,154,0.4);">$2,418</div>
+        <div class="r-bar"><i style="width:62%; background:#34d59a;"></i><i style="width:22%; background:#ffb020;"></i><i style="width:16%; background:#3a3d42;"></i></div>
+        <div class="r-note">Principal 62% · Interest 22% · Escrow 16%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEME B ============ -->
+  <section class="theme">
+    <div class="theme-bar">
+      <div class="t-name">B · Putty Ledger</div>
+      <div class="t-tags"><span class="tag">Editorial serif</span><span class="tag">Structured × Steep</span><span class="tag">Trust &amp; authority</span></div>
+      <div class="t-desc">Warm putty paper, ink-black type, big serif headlines with tight leading. A finance site that reads like a serious publication — the numbers are the story. Hard light/dark cuts, one peach accent moment.</div>
+    </div>
+    <div class="mock" style="background:#dfdcd2; color:#17191c;">
+      <div class="mock-nav">
+        <div class="mock-logo" style="font-family:'Playfair Display',serif; font-weight:500;">LoansFlow</div>
+        <div class="mock-navlinks"><span>Calculators</span><span>Rates</span><span>About</span><span style="opacity:1; border:1px solid #17191c; padding:0.4rem 1.1rem; border-radius:999px;">Open tools</span></div>
+      </div>
+      <div class="mock-hero">
+        <div class="eyebrow" style="color:#5d2a1a;">SBA · Commercial · Mortgage</div>
+        <h2 style="font-family:'Playfair Display',serif; font-weight:500; letter-spacing:-0.01em;">Underwrite the deal before the bank does.</h2>
+        <p style="color:#3d3a34;">Seven calculators, one quiet ledger. Numbers you can trust, formatted like a statement.</p>
+        <div class="mock-btns">
+          <div class="mock-btn primary" style="background:#17191c; color:#f5f2ea;">Start calculating</div>
+          <div class="mock-btn ghost" style="border-color:#17191c; color:#17191c;">Browse the tools</div>
+        </div>
+      </div>
+      <div class="mock-grid">
+        <div class="mock-card" style="background:#e7e4dc; border:1px solid rgba(23,25,28,0.15);"><div class="num" style="color:#5d2a1a;">01</div><h3>SBA &amp; Commercial</h3><p>7(a), 504, DSCR, guaranty fees.</p></div>
+        <div class="mock-card" style="background:#e7e4dc; border:1px solid rgba(23,25,28,0.15);"><div class="num" style="color:#5d2a1a;">02</div><h3>Amortization</h3><p>Year-by-year ledger with balloons.</p></div>
+        <div class="mock-card" style="background:#fbe1d1; border:1px solid rgba(93,42,26,0.2);"><div class="num" style="color:#5d2a1a;">★</div><h3>Mortgage PITI</h3><p>The homebuyer favorite — payment in seconds.</p></div>
+      </div>
+      <div class="mock-rate" style="background:#17191c; color:#fff;">
+        <div><div class="lbl">30-yr fixed</div><div class="val">6.21%</div></div>
+        <div><div class="lbl">15-yr fixed</div><div class="val">5.54%</div></div>
+        <div><div class="lbl">SBA 7(a)</div><div class="val">8.75%</div></div>
+        <div><div class="lbl">As of</div><div class="val" style="font-size:0.9rem; opacity:0.6;">PMI · daily</div></div>
+      </div>
+      <div class="mock-result" style="background:#fff; border:1px solid rgba(23,25,28,0.12);">
+        <div class="r-label" style="color:#5d2a1a;">Monthly payment</div>
+        <div class="r-value" style="font-family:'Playfair Display',serif; font-weight:500; letter-spacing:-0.01em;">$2,418</div>
+        <div class="r-bar" style="border-radius:0;"><i style="width:62%; background:#17191c;"></i><i style="width:22%; background:#b85a32;"></i><i style="width:16%; background:#d8d5cc;"></i></div>
+        <div class="r-note" style="color:#5c5850;">Principal 62% · Interest 22% · Escrow 16%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEME C ============ -->
+  <section class="theme">
+    <div class="theme-bar">
+      <div class="t-name">C · Daylight Modern</div>
+      <div class="t-tags"><span class="tag">Bright consumer fintech</span><span class="tag">Mercury-light × Cosmos</span><span class="tag">Cobalt + friendly cards</span></div>
+      <div class="t-desc">Linen background, pure-white rounded cards, one cobalt-blue action color. Friendly and modern like NerdWallet/Zillow but polished — the approachable everyday calculator app.</div>
+    </div>
+    <div class="mock" style="background:#f7f5f3; color:#0d0d0d;">
+      <div class="mock-nav">
+        <div class="mock-logo">LoansFlow<span style="color:#5266eb;">.</span></div>
+        <div class="mock-navlinks"><span>Calculators</span><span>Rates</span><span>About</span><span style="opacity:1; background:#5266eb; color:#fff; padding:0.4rem 1.1rem; border-radius:999px;">Open tools</span></div>
+      </div>
+      <div class="mock-hero">
+        <div class="eyebrow" style="color:#5266eb;">SBA · Commercial · Mortgage</div>
+        <h2>Know your payment before the bank does.</h2>
+        <p style="color:#6e6a69;">Seven friendly calculators. Instant results, no account, no lead forms.</p>
+        <div class="mock-btns">
+          <div class="mock-btn primary" style="background:#5266eb; color:#fff;">Start calculating</div>
+          <div class="mock-btn ghost" style="border-color:#0d0d0d; color:#0d0d0d;">Browse the tools</div>
+        </div>
+      </div>
+      <div class="mock-grid">
+        <div class="mock-card" style="background:#fff; border:1px solid rgba(13,13,13,0.08);"><div class="num" style="color:#5266eb;">01</div><h3>SBA &amp; Commercial</h3><p>7(a), 504, DSCR, guaranty fees.</p></div>
+        <div class="mock-card" style="background:#fff; border:1px solid rgba(13,13,13,0.08);"><div class="num" style="color:#5266eb;">02</div><h3>Amortization</h3><p>Year-by-year ledger with balloons.</p></div>
+        <div class="mock-card" style="background:#fff; border:1px solid rgba(13,13,13,0.08);"><div class="num" style="color:#5266eb;">03</div><h3>Mortgage PITI</h3><p>Payment from price, rate &amp; taxes.</p></div>
+      </div>
+      <div class="mock-rate" style="background:#fff; border:1px solid rgba(13,13,13,0.08);">
+        <div><div class="lbl" style="color:#6e6a69;">30-yr fixed</div><div class="val">6.21%</div></div>
+        <div><div class="lbl" style="color:#6e6a69;">15-yr fixed</div><div class="val">5.54%</div></div>
+        <div><div class="lbl" style="color:#6e6a69;">SBA 7(a)</div><div class="val">8.75%</div></div>
+        <div><div class="lbl" style="color:#6e6a69;">As of</div><div class="val" style="font-size:0.9rem; color:#6e6a69;">PMI · daily</div></div>
+      </div>
+      <div class="mock-result" style="background:#fff; border:1px solid rgba(13,13,13,0.08);">
+        <div class="r-label" style="color:#5266eb;">Monthly payment</div>
+        <div class="r-value">$2,418</div>
+        <div class="r-bar"><i style="width:62%; background:#5266eb;"></i><i style="width:22%; background:#ffb020;"></i><i style="width:16%; background:#e3e1de;"></i></div>
+        <div class="r-note" style="color:#6e6a69;">Principal 62% · Interest 22% · Escrow 16%</div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

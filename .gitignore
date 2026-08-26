@@ -17,3 +17,6 @@ docs/automation/.secret*
 docs/automation/*.log
 docs/automation/watcher*.log
 tools/browser/node_modules/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
