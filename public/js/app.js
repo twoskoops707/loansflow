@@ -59,6 +59,17 @@ const steps = [
   "Market News & Rates"
 ];
 
+const STATE_ENUMS = {
+  bizLoanType: ['sba7a', 'sba504', 'conventional'],
+  locPaymentType: ['interestOnly', 'percentBalance'],
+  amortChartMode: ['balance', 'interest', 'principal']
+};
+
+// ---------- PINNED SCENARIOS (compare) ----------
+const PIN_STORAGE_KEY = 'lf-pinned-scenarios';
+let pinnedScenarios = loadPinnedScenarios();
+let pinSeq = 0;
+
 // ---------- MATH ----------
 function monthlyPI(principal, annualRatePct, years){
   const r = (annualRatePct/100)/12;
@@ -103,30 +114,74 @@ function fmtMoney(num, decimals=0){
   return '$' + fmt(num, decimals);
 }
 
-// ---------- WORKFLOW: SNAPSHOT, SHARING & PRINT ----------
-function mortgageMetrics(){
-  const principal = Math.max(0, state.homePrice - state.downPayment);
-  const pi = monthlyPI(principal, state.rate, state.term);
-  const tax = (state.homePrice * state.taxRate / 100) / 12;
-  const insurance = state.insurance / 12;
-  return { principal, pi, tax, insurance, total: pi + tax + insurance, interest: pi * state.term * 12 - principal };
+// ---------- CSV EXPORT ----------
+function toCsv(headers, rows){
+  const escapeCell = cell => {
+    const str = String(cell ?? '');
+    return /[",\n]/.test(str) ? '"' + str.replace(/"/g, '""') + '"' : str;
+  };
+  return '\uFEFF' + [headers, ...rows].map(row => row.map(escapeCell).join(',')).join('\r\n');
 }
-
-function businessMetrics(){
+function downloadCsv(filename, csv){
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+function exportBizAmortCsv(){
   const rate = state.bizPrimeRate + state.bizSpread;
-  const payment = monthlyPI(state.bizLoanAmount, rate, state.bizAmortYears);
-  return { rate, payment, annualDebtService: payment * 12, dscr: state.bizNOI / (payment * 12) };
+  const yearRows = amortizationYearRows(buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears));
+  const csv = toCsv(['Year','Principal Paid','Interest Paid','Remaining Balance'],
+    yearRows.map(yr => [yr.year, yr.yrPrincipal.toFixed(2), yr.yrInterest.toFixed(2), yr.endBalance.toFixed(2)]));
+  downloadCsv('loansflow-business-amortization.csv', csv);
+}
+function exportMortgageAmortCsv(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const yearRows = amortizationYearRows(buildAmortization(principal, state.rate, state.term, state.extraMonthly, state.balloonAmount, state.balloonMonth));
+  const csv = toCsv(['Year','Principal Paid','Interest Paid','Remaining Balance'],
+    yearRows.map(yr => [yr.year, yr.yrPrincipal.toFixed(2), yr.yrInterest.toFixed(2), yr.endBalance.toFixed(2)]));
+  downloadCsv('loansflow-mortgage-amortization.csv', csv);
+}
+function exportLocCsv(){
+  const rate = state.locPrimeRate + state.locSpread;
+  const { rows } = buildLocSchedule(state.locLimit, rate, state.locDraws, state.locMonths, state.locPaymentType, state.locMinPercent);
+  const csv = toCsv(['Month','Beginning Balance','Draw / Repayment','Interest','Payment','Ending Balance'],
+    rows.map(r => [r.month, r.beginningBalance.toFixed(2), r.draw.toFixed(2), r.interest.toFixed(2), r.payment.toFixed(2), r.endingBalance.toFixed(2)]));
+  downloadCsv('loansflow-line-of-credit.csv', csv);
 }
 
-function locMetrics(){
-  const rate = state.locPrimeRate + state.locSpread;
-  const schedule = buildLocSchedule(state.locLimit, rate, state.locDraws, state.locMonths, state.locPaymentType, state.locMinPercent);
+// ---------- WORKFLOW: SNAPSHOT, SHARING & PRINT ----------
+function mortgageMetrics(s){
+  s = s || state;
+  const principal = Math.max(0, s.homePrice - s.downPayment);
+  const pi = monthlyPI(principal, s.rate, s.term);
+  const tax = (s.homePrice * s.taxRate / 100) / 12;
+  const insurance = s.insurance / 12;
+  return { principal, pi, tax, insurance, total: pi + tax + insurance, interest: pi * s.term * 12 - principal };
+}
+
+function businessMetrics(s){
+  s = s || state;
+  const rate = s.bizPrimeRate + s.bizSpread;
+  const payment = monthlyPI(s.bizLoanAmount, rate, s.bizAmortYears);
+  return { rate, payment, annualDebtService: payment * 12, dscr: s.bizNOI / (payment * 12) };
+}
+
+function locMetrics(s){
+  s = s || state;
+  const rate = s.locPrimeRate + s.locSpread;
+  const schedule = buildLocSchedule(s.locLimit, rate, s.locDraws, s.locMonths, s.locPaymentType, s.locMinPercent);
   const last = schedule.rows[schedule.rows.length - 1];
   return {
     rate,
     balance: last ? last.endingBalance : 0,
     interest: schedule.rows.reduce((sum, row) => sum + row.interest, 0),
-    available: Math.max(0, state.locLimit - (last ? last.endingBalance : 0))
+    available: Math.max(0, s.locLimit - (last ? last.endingBalance : 0))
   };
 }
 
@@ -172,7 +227,8 @@ function renderWorkflowBar(){
       <div class="workflow-actions">
         <button class="btn-utility" id="toggleSnapshot" type="button">Scenario snapshot</button>
         <button class="btn-utility" id="shareScenario" type="button">Copy share link</button>
-        <button class="btn-utility btn-utility--accent" id="printReport" type="button">Print report</button>
+        <button class="btn-utility" id="compareScenarios" type="button">Compare scenarios${pinnedScenarios.length ? ' &middot; ' + pinnedScenarios.length : ''}</button>
+        <button class="btn-utility btn-utility--accent" id="printReport" type="button">Print / Save PDF</button>
       </div>
       <div class="snapshot-panel" id="snapshotPanel" hidden>
         <div>
@@ -243,24 +299,294 @@ function renderBalanceChart(rows, mode){
   `;
 }
 
-function renderPrintReport(){
-  const mortgage = mortgageMetrics();
-  const business = businessMetrics();
-  const loc = locMetrics();
+// ---------- PRINT: STEP-AWARE REPORT ----------
+function printRow(label, value){
+  return `<div><span>${label}</span><strong>${value}</strong></div>`;
+}
+function printTable(headers, rows){
+  return `
+    <table class="print-report-schedule">
+      <thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table>`;
+}
+function printSectionTitle(title){
+  return `<h2 class="print-report-section">${title}</h2>`;
+}
+function printReportShell(inner){
   return `
     <section class="print-report" aria-label="Printable LoansFlow report">
-      <div class="print-report-header"><div><div class="workflow-kicker">LoansFlow planning brief</div><h1>Scenario report</h1><p>Prepared ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p></div><div class="print-report-mark">LOANS<br><span>FLOW</span></div></div>
-      <div class="print-report-context"><span>Active tool</span><strong>${steps[state.step]}</strong></div>
-      <div class="print-report-grid">
-        <div class="print-report-card"><span>Mortgage PITI / month</span><strong>${fmtMoney(mortgage.total, 2)}</strong><small>${fmtMoney(mortgage.principal, 0)} financed at ${state.rate}% for ${state.term} years</small></div>
-        <div class="print-report-card"><span>Business loan / month</span><strong>${fmtMoney(business.payment, 2)}</strong><small>${business.rate.toFixed(2)}% blended rate · ${business.dscr.toFixed(2)}x DSCR</small></div>
-        <div class="print-report-card"><span>Line of credit balance</span><strong>${fmtMoney(loc.balance, 0)}</strong><small>${fmtMoney(loc.available, 0)} available after ${state.locMonths} months</small></div>
-        <div class="print-report-card"><span>Planning note</span><strong>Estimates only</strong><small>Confirm rates, fees, taxes, insurance, and lender requirements before making a decision.</small></div>
+      <div class="print-report-header">
+        <div>
+          <div class="workflow-kicker">LoansFlow planning brief</div>
+          <h1>${steps[state.step]}</h1>
+          <p>Prepared ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        </div>
+        <div class="print-report-mark">LOANS<br><span>FLOW</span></div>
       </div>
-      <div class="print-report-table"><div><span>Home price</span><strong>${fmtMoney(state.homePrice, 0)}</strong></div><div><span>Down payment</span><strong>${fmtMoney(state.downPayment, 0)}</strong></div><div><span>Monthly property tax</span><strong>${fmtMoney(mortgage.tax, 2)}</strong></div><div><span>Monthly insurance</span><strong>${fmtMoney(mortgage.insurance, 2)}</strong></div><div><span>Business loan amount</span><strong>${fmtMoney(state.bizLoanAmount, 0)}</strong></div><div><span>Annual business NOI</span><strong>${fmtMoney(state.bizNOI, 0)}</strong></div></div>
-      <p class="print-report-foot">LoansFlow is a planning calculator, not a lender, financial adviser, or loan offer. Figures are generated from the inputs shown and may not reflect actual underwriting terms.</p>
+      ${inner}
+      <p class="print-report-foot">LoansFlow is a planning calculator, not a lender, financial adviser, or loan offer. Figures are estimates generated from the inputs shown and may not reflect actual underwriting terms. Confirm rates, fees, taxes, insurance, and lender requirements before making a decision.</p>
     </section>
   `;
+}
+function amortizationYearRows(rows){
+  const yearsTotal = Math.ceil(rows.length/12);
+  const yearRows = [];
+  for(let y=0; y<yearsTotal; y++){
+    const slice = rows.slice(y*12, y*12+12);
+    if(slice.length === 0) continue;
+    const yrPrincipal = slice.reduce((s,r)=>s+r.principalPaid,0);
+    const yrInterest = slice.reduce((s,r)=>s+r.interest,0);
+    const endBalance = slice[slice.length-1].balance;
+    yearRows.push({year:y+1, yrPrincipal, yrInterest, endBalance});
+  }
+  return yearRows;
+}
+
+function printStep0(){
+  const rate = state.bizPrimeRate + state.bizSpread;
+  const pi = monthlyPI(state.bizLoanAmount, rate, state.bizAmortYears);
+  const annualDebtService = pi*12;
+  const dscr = state.bizNOI / annualDebtService;
+  const isSba = state.bizLoanType === 'sba7a' || state.bizLoanType === 'sba504';
+  const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct) : null;
+  const annualServiceFee = isSba ? state.bizLoanAmount*(state.bizGuarantyPct/100)*0.0055 : 0;
+  let balloonBalance = null;
+  if(state.bizBalloonYears > 0 && state.bizBalloonYears < state.bizAmortYears){
+    const fullSchedule = buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears);
+    balloonBalance = fullSchedule[Math.min(state.bizBalloonYears*12 - 1, fullSchedule.length-1)].balance;
+  }
+  const rows = [
+    printRow('Loan type', state.bizLoanType === 'sba7a' ? 'SBA 7(a)' : state.bizLoanType === 'sba504' ? 'SBA 504' : 'Conventional Commercial'),
+    printRow('Loan amount', fmtMoney(state.bizLoanAmount, 0)),
+    printRow('Amortization', state.bizAmortYears + ' years'),
+    printRow('Prime rate', state.bizPrimeRate.toFixed(2) + '%'),
+    printRow('Lender spread', state.bizSpread.toFixed(2) + '%'),
+    printRow('Blended rate', rate.toFixed(2) + '%'),
+    printRow('Monthly payment', fmtMoney(pi, 2)),
+    printRow('Annual debt service', fmtMoney(annualDebtService, 0)),
+    printRow('Annual net operating income', fmtMoney(state.bizNOI, 0)),
+    printRow('Debt service coverage (DSCR)', dscr.toFixed(2) + 'x')
+  ];
+  if(isSba){
+    rows.push(printRow('SBA guaranty', state.bizGuarantyPct + '%'));
+    rows.push(printRow('Est. upfront guaranty fee (' + guarantyInfo.feePct + '%)', fmtMoney(guarantyInfo.fee, 0)));
+    rows.push(printRow('Est. annual service fee (0.55%)', fmtMoney(annualServiceFee, 0)));
+  }
+  if(balloonBalance !== null) rows.push(printRow('Balloon due — year ' + state.bizBalloonYears, fmtMoney(balloonBalance, 0)));
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[0]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Monthly payment</span><strong>${fmtMoney(pi, 2)}</strong><small>${rate.toFixed(2)}% blended rate</small></div>
+      <div class="print-report-card"><span>Debt service coverage</span><strong>${dscr.toFixed(2)}x</strong><small>${fmtMoney(state.bizNOI, 0)} NOI &divide; ${fmtMoney(annualDebtService, 0)} debt service</small></div>
+    </div>
+    ${printSectionTitle('Scenario inputs')}
+    <div class="print-report-table">${rows.join('')}</div>
+  `);
+}
+
+function printStep1(){
+  const rate = state.bizPrimeRate + state.bizSpread;
+  const rows = buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears);
+  const totalInterest = rows.reduce((s,r)=>s+r.interest,0);
+  const yearRows = amortizationYearRows(rows);
+  const table = printTable(
+    ['Year','Principal Paid','Interest Paid','Remaining Balance'],
+    yearRows.map(yr => [yr.year, fmtMoney(yr.yrPrincipal,0), fmtMoney(yr.yrInterest,0), fmtMoney(yr.endBalance,0)])
+  );
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[1]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Loan amount</span><strong>${fmtMoney(state.bizLoanAmount, 0)}</strong><small>${rate.toFixed(2)}% rate &middot; ${state.bizAmortYears} years</small></div>
+      <div class="print-report-card"><span>Total interest over term</span><strong>${fmtMoney(totalInterest, 0)}</strong><small>Paid down over ${rows.length} months</small></div>
+    </div>
+    ${printSectionTitle('Year-by-year schedule')}
+    ${table}
+  `);
+}
+
+function printStep2(){
+  const rate = state.locPrimeRate + state.locSpread;
+  const { rows, overLimitFlag } = buildLocSchedule(state.locLimit, rate, state.locDraws, state.locMonths, state.locPaymentType, state.locMinPercent);
+  const totalInterest = rows.reduce((s,r)=>s+r.interest,0);
+  const totalDraws = rows.reduce((s,r)=>s+Math.max(0,r.draw),0);
+  const currentBalance = rows.length ? rows[rows.length-1].endingBalance : 0;
+  const availableCredit = Math.max(0, state.locLimit - currentBalance);
+  const drawRows = state.locDraws.map(d => printRow('Month ' + d.month + ' draw / repayment', fmtMoney(d.amount, 0)));
+  const table = printTable(
+    ['Month','Beginning Balance','Draw / Repay','Interest','Payment','Ending Balance'],
+    rows.map(r => [r.month, fmtMoney(r.beginningBalance,0), r.draw !== 0 ? fmtMoney(r.draw,0) : '—', fmtMoney(r.interest,2), fmtMoney(r.payment,2), fmtMoney(r.endingBalance,0)])
+  );
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[2]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Projected balance (month ${state.locMonths})</span><strong>${fmtMoney(currentBalance, 0)}</strong><small>of ${fmtMoney(state.locLimit, 0)} limit</small></div>
+      <div class="print-report-card"><span>Interest over period</span><strong>${fmtMoney(totalInterest, 0)}</strong><small>${fmtMoney(totalDraws, 0)} drawn total</small></div>
+      <div class="print-report-card"><span>Available credit</span><strong>${fmtMoney(availableCredit, 0)}</strong><small>${state.locPaymentType === 'percentBalance' ? state.locMinPercent + '% minimum of balance payments' : 'Interest-only payments'}</small></div>
+      ${overLimitFlag ? '<div class="print-report-card"><span>Warning</span><strong>Over limit</strong><small>One or more months exceeds the credit limit.</small></div>' : ''}
+    </div>
+    ${drawRows.length ? printSectionTitle('Draws & repayments') + '<div class="print-report-table">' + drawRows.join('') + '</div>' : ''}
+    ${printSectionTitle('Month-by-month schedule')}
+    ${table}
+  `);
+}
+
+function printStep3(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const pi = monthlyPI(principal, state.rate, state.term);
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[3]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Financed amount</span><strong>${fmtMoney(principal, 0)}</strong><small>${fmtMoney(state.homePrice, 0)} price &minus; ${fmtMoney(state.downPayment, 0)} down</small></div>
+      <div class="print-report-card"><span>Principal &amp; interest</span><strong>${fmtMoney(pi, 2)}</strong><small>${state.rate}% for ${state.term} years</small></div>
+    </div>
+    ${printSectionTitle('Scenario inputs')}
+    <div class="print-report-table">
+      ${printRow('Home price', fmtMoney(state.homePrice, 0))}
+      ${printRow('Down payment', fmtMoney(state.downPayment, 0))}
+      ${printRow('Interest rate', state.rate + '%')}
+      ${printRow('Loan term', state.term + ' years')}
+      ${printRow('Annual property tax', state.taxRate + '% of price')}
+      ${printRow('Annual home insurance', fmtMoney(state.insurance, 0))}
+    </div>
+  `);
+}
+
+function printStep4(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const pi = monthlyPI(principal, state.rate, state.term);
+  const tax = (state.homePrice * state.taxRate / 100) / 12;
+  const insurance = state.insurance / 12;
+  const total = pi + tax + insurance;
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[4]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Total monthly payment</span><strong>${fmtMoney(total, 2)}</strong><small>PITI on ${fmtMoney(principal, 0)} financed</small></div>
+      <div class="print-report-card"><span>Lifetime interest (${state.term} yrs)</span><strong>${fmtMoney(pi*state.term*12 - principal, 0)}</strong><small>${state.rate}% fixed</small></div>
+    </div>
+    ${printSectionTitle('Payment breakdown')}
+    <div class="print-report-table">
+      ${printRow('Principal &amp; interest', fmtMoney(pi, 2))}
+      ${printRow('Property tax (est.)', fmtMoney(tax, 2))}
+      ${printRow('Home insurance (est.)', fmtMoney(insurance, 2))}
+      ${printRow('Total monthly payment', fmtMoney(total, 2))}
+      ${printRow('Loan amount', fmtMoney(principal, 0))}
+      ${printRow('Total interest paid', fmtMoney(pi*state.term*12 - principal, 0))}
+    </div>
+  `);
+}
+
+function printStep5(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const baseRows = buildAmortization(principal, state.rate, state.term);
+  const baseInterest = baseRows.reduce((s,r)=>s+r.interest,0);
+  const baseMonths = baseRows.length;
+  const rows = buildAmortization(principal, state.rate, state.term, state.extraMonthly, state.balloonAmount, state.balloonMonth);
+  const actualInterest = rows.reduce((s,r)=>s+r.interest,0);
+  const actualMonths = rows.length;
+  const interestSaved = baseInterest - actualInterest;
+  const monthsSaved = baseMonths - actualMonths;
+  const hasExtra = state.extraMonthly > 0 || state.balloonAmount > 0;
+  const yearRows = amortizationYearRows(rows);
+  const payoffYears = Math.floor(actualMonths/12);
+  const payoffMonthsRem = actualMonths % 12;
+  const table = printTable(
+    ['Year','Principal Paid','Interest Paid','Remaining Balance'],
+    yearRows.map(yr => [yr.year, fmtMoney(yr.yrPrincipal,0), fmtMoney(yr.yrInterest,0), fmtMoney(yr.endBalance,0)])
+  );
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[5]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Monthly P&amp;I</span><strong>${fmtMoney(monthlyPI(principal, state.rate, state.term), 2)}</strong><small>${fmtMoney(principal, 0)} at ${state.rate}% for ${state.term} years</small></div>
+      <div class="print-report-card"><span>Payoff</span><strong>${payoffYears} yr${payoffMonthsRem ? ' ' + payoffMonthsRem + ' mo' : ''}</strong><small>vs. ${state.term}-year original${hasExtra ? ' &middot; ' + fmtMoney(interestSaved, 0) + ' interest saved' : ''}</small></div>
+      <div class="print-report-card"><span>Extra monthly payment</span><strong>${fmtMoney(state.extraMonthly, 0)}</strong><small>${hasExtra ? monthsSaved + ' months earlier' : 'None applied'}</small></div>
+      <div class="print-report-card"><span>One-time balloon</span><strong>${state.balloonAmount > 0 ? fmtMoney(state.balloonAmount, 0) + ' in mo ' + state.balloonMonth : 'None'}</strong><small>${state.balloonAmount > 0 ? fmtMoney(interestSaved, 0) + ' interest saved' : 'Not applied'}</small></div>
+    </div>
+    ${printSectionTitle('Year-by-year schedule')}
+    ${table}
+  `);
+}
+
+function printStep6(){
+  const principal = Math.max(0, state.homePrice - state.downPayment);
+  const currentPI = monthlyPI(principal, state.rate, state.term);
+  const newPI = monthlyPI(principal, state.newRate, state.newTerm);
+  const monthlySavings = currentPI - newPI;
+  const lifetimeCurrent = currentPI*state.term*12;
+  const lifetimeNew = newPI*state.newTerm*12;
+  const lifetimeSavings = lifetimeCurrent - lifetimeNew;
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[6]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Current monthly P&amp;I</span><strong>${fmtMoney(currentPI, 2)}</strong><small>${state.rate}% &middot; ${state.term} years</small></div>
+      <div class="print-report-card"><span>Refinanced monthly P&amp;I</span><strong>${fmtMoney(newPI, 2)}</strong><small>${state.newRate}% &middot; ${state.newTerm} years</small></div>
+      <div class="print-report-card"><span>Monthly change</span><strong>${monthlySavings >= 0 ? '&minus;' + fmtMoney(monthlySavings, 2) : '+' + fmtMoney(Math.abs(monthlySavings), 2)}</strong><small>${monthlySavings >= 0 ? 'lower payment' : 'higher payment'}</small></div>
+      <div class="print-report-card"><span>Lifetime interest change</span><strong>${lifetimeSavings >= 0 ? '&minus;' + fmtMoney(lifetimeSavings, 0) : '+' + fmtMoney(Math.abs(lifetimeSavings), 0)}</strong><small>${lifetimeSavings >= 0 ? 'saved over the new term' : 'paid over the new term'}</small></div>
+    </div>
+    ${printSectionTitle('Comparison on ' + fmtMoney(principal, 0) + ' financed')}
+    <div class="print-report-table">
+      ${printRow('Current rate', state.rate + '%')}
+      ${printRow('Current term', state.term + ' years')}
+      ${printRow('Current monthly P&amp;I', fmtMoney(currentPI, 2))}
+      ${printRow('Current lifetime interest', fmtMoney(lifetimeCurrent - principal, 0))}
+      ${printRow('New rate', state.newRate + '%')}
+      ${printRow('New term', state.newTerm + ' years')}
+      ${printRow('New monthly P&amp;I', fmtMoney(newPI, 2))}
+      ${printRow('New lifetime interest', fmtMoney(lifetimeNew - principal, 0))}
+    </div>
+  `);
+}
+
+function printStep7(){
+  const monthlyIncome = state.income/12;
+  const maxHousingPayment = monthlyIncome * 0.28;
+  const budgetForPI = Math.min(maxHousingPayment, monthlyIncome*0.36 - state.monthlyDebts);
+  const r = (state.affordRate/100)/12;
+  const n = 30*12;
+  const maxPrincipal = budgetForPI > 0 ? budgetForPI * (Math.pow(1+r,n)-1) / (r*Math.pow(1+r,n)) : 0;
+  const maxHomePrice = Math.max(0, maxPrincipal + state.affordDownPayment);
+  const currentDebtToIncome = ((state.monthlyDebts + budgetForPI) / monthlyIncome) * 100;
+  return printReportShell(`
+    <div class="print-report-context"><span>Active tool</span><strong>${steps[7]}</strong></div>
+    <div class="print-report-grid">
+      <div class="print-report-card"><span>Estimated affordable home price</span><strong>${fmtMoney(maxHomePrice, 0)}</strong><small>${fmtMoney(state.affordDownPayment, 0)} down available</small></div>
+      <div class="print-report-card"><span>Debt-to-income ratio</span><strong>${currentDebtToIncome.toFixed(1)}%</strong><small>Lenders typically target 36% or below</small></div>
+    </div>
+    ${printSectionTitle('Affordability inputs')}
+    <div class="print-report-table">
+      ${printRow('Annual household income', fmtMoney(state.income, 0))}
+      ${printRow('Other monthly debt payments', fmtMoney(state.monthlyDebts, 0))}
+      ${printRow('Available down payment', fmtMoney(state.affordDownPayment, 0))}
+      ${printRow('Assumed interest rate', state.affordRate + '%')}
+      ${printRow('Maximum principal (P&amp;I budget)', fmtMoney(maxPrincipal, 0))}
+    </div>
+  `);
+}
+
+function printStep8(){
+  const data = marketNewsState.data;
+  const rates = data && data.rates;
+  let body;
+  if (rates && rates.cells && rates.cells.length) {
+    body = `
+      <div class="print-report-context"><span>Active tool</span><strong>${steps[8]}</strong></div>
+      <div class="print-report-grid">${rates.cells.map(c => `<div class="print-report-card"><span>${escapeHtml(c.label)}</span><strong>${escapeHtml(c.value)}</strong>${c.note ? '<small>' + escapeHtml(c.note) + '</small>' : ''}</div>`).join('')}</div>
+      ${printSectionTitle('National averages')}
+      <div class="print-report-table">${rates.cells.map(c => printRow(c.label, c.value + (c.note ? ' — ' + c.note : ''))).join('')}</div>
+      <p class="print-report-foot">${escapeHtml(rates.disclaimer || 'National averages. Individual rates vary. Not a rate quote.')}${rates.asOf ? ' As of ' + escapeHtml(rates.asOf) + (rates.source ? ' (' + escapeHtml(rates.source) + ')' : '') + '.' : ''}</p>
+    `;
+  } else {
+    body = `
+      <div class="print-report-context"><span>Active tool</span><strong>${steps[8]}</strong></div>
+      <p>Live rate data has not loaded yet. Reopen Market News and wait for the feed to finish, or print from a calculator step instead.</p>
+    `;
+  }
+  return printReportShell(body);
+}
+
+function renderPrintReport(){
+  const builders = [printStep0, printStep1, printStep2, printStep3, printStep4, printStep5, printStep6, printStep7, printStep8];
+  return builders[state.step]();
 }
 
 function shareableUrl(){
@@ -300,17 +626,169 @@ function loadSharedState(){
       } else if (typeof state[key] === 'number') {
         if (Number.isFinite(Number(incoming[key]))) state[key] = Number(incoming[key]);
       } else if (typeof incoming[key] === 'string') {
-        const allowed = {
-          bizLoanType: ['sba7a', 'sba504', 'conventional'],
-          locPaymentType: ['interestOnly', 'percentBalance'],
-          amortChartMode: ['balance', 'interest', 'principal']
-        };
-        if (!allowed[key] || allowed[key].includes(incoming[key])) state[key] = incoming[key];
+        if (!STATE_ENUMS[key] || STATE_ENUMS[key].includes(incoming[key])) state[key] = incoming[key];
       }
     });
   } catch (_) {
     // Ignore malformed shared links and keep the defaults.
   }
+}
+
+// ---------- SCENARIO PINS: COMPARE ----------
+function loadPinnedScenarios(){
+  try {
+    const raw = localStorage.getItem(PIN_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (_) {
+    return [];
+  }
+}
+function savePinnedScenarios(){
+  try { localStorage.setItem(PIN_STORAGE_KEY, JSON.stringify(pinnedScenarios)); } catch (_) {}
+}
+function pinCurrentScenario(){
+  const snapshot = {};
+  Object.keys(state).forEach(key => {
+    if (key === 'locDraws') snapshot[key] = state[key].map(d => ({ id: Number(d.id), month: Number(d.month), amount: Number(d.amount) }));
+    else snapshot[key] = state[key];
+  });
+  const label = steps[state.step] + ' &middot; ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  pinnedScenarios.unshift({ id: Date.now() + pinSeq++, label, step: state.step, state: snapshot, createdAt: new Date().toISOString() });
+  pinnedScenarios = pinnedScenarios.slice(0, 12);
+  savePinnedScenarios();
+}
+function deletePinnedScenario(id){
+  pinnedScenarios = pinnedScenarios.filter(p => p.id !== id);
+  savePinnedScenarios();
+}
+function clearPinnedScenarios(){
+  pinnedScenarios = [];
+  savePinnedScenarios();
+}
+function loadPinnedScenario(pin){
+  Object.keys(state).forEach(key => {
+    if (!(key in pin.state)) return;
+    if (key === 'locDraws') {
+      if (Array.isArray(pin.state[key])) state[key] = pin.state[key].filter(d => d && Number.isFinite(Number(d.month)) && Number.isFinite(Number(d.amount))).map(d => ({ id: Number(d.id), month: Number(d.month), amount: Number(d.amount) }));
+    } else if (typeof state[key] === 'number') {
+      if (Number.isFinite(Number(pin.state[key]))) state[key] = Number(pin.state[key]);
+    } else if (typeof pin.state[key] === 'string') {
+      if (!STATE_ENUMS[key] || STATE_ENUMS[key].includes(pin.state[key])) state[key] = pin.state[key];
+    }
+  });
+  state.step = (Number.isInteger(pin.step) && pin.step >= 0 && pin.step <= 8) ? pin.step : 0;
+  render();
+}
+function scenarioStats(pin){
+  const s = pin.state;
+  if (pin.step === 0 || pin.step === 1){
+    const m = businessMetrics(s);
+    return [
+      { label: 'Monthly payment', value: fmtMoney(m.payment, 0) },
+      { label: 'Total rate', value: m.rate.toFixed(2) + '%' },
+      { label: 'DSCR', value: m.dscr.toFixed(2) + 'x' }
+    ];
+  }
+  if (pin.step === 2){
+    const m = locMetrics(s);
+    return [
+      { label: 'Projected balance', value: fmtMoney(m.balance, 0) },
+      { label: 'Interest / period', value: fmtMoney(m.interest, 0) },
+      { label: 'Available credit', value: fmtMoney(m.available, 0) }
+    ];
+  }
+  if (pin.step >= 3 && pin.step <= 7){
+    const m = mortgageMetrics(s);
+    return [
+      { label: 'Loan amount', value: fmtMoney(m.principal, 0) },
+      { label: 'Monthly PITI', value: fmtMoney(m.total, 0) },
+      { label: 'Lifetime interest', value: fmtMoney(m.interest, 0) }
+    ];
+  }
+  return [
+    { label: 'Scenario type', value: steps[pin.step] || 'Saved scenario' },
+    { label: 'Status', value: 'View only' }
+  ];
+}
+function renderCompareModal(){
+  const cards = pinnedScenarios.map(p => {
+    const stats = scenarioStats(p).map(stat => `<div class="snapshot-stat"><span>${stat.label}</span><strong>${stat.value}</strong></div>`).join('');
+    return `
+      <div class="compare-card">
+        <div class="compare-card-head">
+          <div>
+            <div class="workflow-kicker">${escapeHtml(p.label)}</div>
+            <strong>${steps[p.step] || 'Saved scenario'}</strong>
+          </div>
+          <div class="compare-card-actions">
+            <button class="btn-utility" type="button" data-load-pin="${p.id}">Load</button>
+            <button class="btn-utility" type="button" data-delete-pin="${p.id}" title="Delete">&times;</button>
+          </div>
+        </div>
+        <div class="snapshot-stats compare-stats">${stats}</div>
+      </div>`;
+  }).join('');
+  const empty = pinnedScenarios.length === 0 ? `
+    <div class="compare-empty">
+      <p>No saved scenarios yet. Pin the current scenario, then tweak the numbers (for example SBA 7(a) vs. 504, or a 30-year vs. 15-year mortgage) and pin those too — then compare them side by side here.</p>
+    </div>` : '';
+  return `
+    <div class="compare-modal" id="compareModal">
+      <div class="compare-modal-inner">
+        <div class="compare-modal-head">
+          <div>
+            <div class="workflow-kicker">Scenario lab</div>
+            <h2>Compare scenarios</h2>
+          </div>
+          <button class="legal-modal-close" type="button" id="compareModalClose">Close</button>
+        </div>
+        <p class="compare-note">Pins are stored in this browser only and are not part of the share link. Load one to bring it back into the calculator, or keep comparing.</p>
+        <div class="compare-actions">
+          <button class="btn-utility btn-utility--accent" type="button" id="pinCurrentScenario">+ Pin current scenario</button>
+          <button class="btn-utility" type="button" id="clearPinnedScenarios">Clear all</button>
+        </div>
+        ${empty}
+        <div class="compare-grid">${cards}</div>
+      </div>
+    </div>`;
+}
+function openCompareModal(){
+  let mount = document.getElementById('compareModalMount');
+  if (!mount) {
+    mount = document.createElement('div');
+    mount.id = 'compareModalMount';
+    document.body.appendChild(mount);
+  }
+  mount.innerHTML = renderCompareModal();
+  wireCompareModal();
+  document.getElementById('compareModal').classList.add('open');
+}
+function wireCompareModal(){
+  const modal = document.getElementById('compareModal');
+  if (!modal) return;
+  const close = () => modal.classList.remove('open');
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  const closeBtn = document.getElementById('compareModalClose');
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  const pinBtn = document.getElementById('pinCurrentScenario');
+  if (pinBtn) pinBtn.addEventListener('click', () => { pinCurrentScenario(); openCompareModal(); });
+  const clearBtn = document.getElementById('clearPinnedScenarios');
+  if (clearBtn) clearBtn.addEventListener('click', () => { clearPinnedScenarios(); openCompareModal(); });
+  document.querySelectorAll('[data-load-pin]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pin = pinnedScenarios.find(p => p.id === Number(btn.dataset.loadPin));
+      if (!pin) return;
+      loadPinnedScenario(pin);
+      modal.classList.remove('open');
+    });
+  });
+  document.querySelectorAll('[data-delete-pin]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      deletePinnedScenario(Number(btn.dataset.deletePin));
+      openCompareModal();
+    });
+  });
 }
 
 function wireChartInteractions(){
@@ -582,6 +1060,10 @@ function renderStep2(){
 
       ${renderBalanceChart(yearRows, state.amortChartMode)}
 
+      <div class="ledger-export">
+        <span>Year-by-year schedule</span>
+        <button class="btn-utility" id="exportCsvAmort" type="button">Export CSV</button>
+      </div>
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -926,6 +1408,10 @@ function renderStepBizAmort(){
         <div class="line-item"><span>Total Interest Over Term</span><span class="num">${fmtMoney(totalInterest,0)}</span></div>
       </div>
 
+      <div class="ledger-export">
+        <span>Year-by-year schedule</span>
+        <button class="btn-utility" id="exportCsvBizAmort" type="button">Export CSV</button>
+      </div>
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -1062,6 +1548,10 @@ function renderStepLOC(){
         <div class="line-item"><span>Available Credit Remaining</span><span class="num">${fmtMoney(availableCredit,0)}</span></div>
       </div>
 
+      <div class="ledger-export">
+        <span>Month-by-month schedule</span>
+        <button class="btn-utility" id="exportCsvLoc" type="button">Export CSV</button>
+      </div>
       <div class="ledger-table-wrap">
         <table>
           <thead>
@@ -1400,6 +1890,16 @@ function attachHandlers(){
       mount.innerHTML = '';
     };
   });
+
+  const compareScenarios = document.getElementById('compareScenarios');
+  if (compareScenarios) compareScenarios.addEventListener('click', openCompareModal);
+
+  const csvBiz = document.getElementById('exportCsvBizAmort');
+  if (csvBiz) csvBiz.addEventListener('click', exportBizAmortCsv);
+  const csvMort = document.getElementById('exportCsvAmort');
+  if (csvMort) csvMort.addEventListener('click', exportMortgageAmortCsv);
+  const csvLoc = document.getElementById('exportCsvLoc');
+  if (csvLoc) csvLoc.addEventListener('click', exportLocCsv);
 
   document.querySelectorAll('[data-chart-mode]').forEach(button => {
     button.addEventListener('click', () => {

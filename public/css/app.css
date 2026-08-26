@@ -340,6 +340,8 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .line-item .num { font-variant-numeric: tabular-nums; }
 
 .ledger-table-wrap { max-height: 480px; overflow-y: auto; border-top: 1px solid var(--line); }
+.ledger-export { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0.25rem 0.75rem 1rem; }
+.ledger-export span { color: var(--muted); font-size: 0.72rem; }
 table {
   width: 100%;
   border-collapse: collapse;
@@ -886,6 +888,12 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
 .print-report-table div:last-child { border-bottom: 0; }
 .print-report-table strong { color: #111; }
 .print-report-foot { margin-top: 1.5rem; }
+.print-report-section { color: #111; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin: 1.4rem 0 0.6rem; }
+.print-report table { width: 100%; border-collapse: collapse; margin: 0.4rem 0 1.2rem; }
+.print-report th { background: #f3f3f4; color: #333; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.45rem 0.6rem; border: 1px solid #ddd; text-align: right; font-weight: 600; }
+.print-report td { color: #111; font-size: 0.72rem; padding: 0.4rem 0.6rem; border: 1px solid #ddd; text-align: right; font-variant-numeric: tabular-nums; }
+.print-report th:first-child, .print-report td:first-child { text-align: left; }
+.print-report tbody tr { break-inside: avoid; }
 
 @media print {
   body.printing-report { background: #fff; color: #111; }
@@ -894,6 +902,24 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
   body.printing-report .print-report { display: block; padding: 0.25in; font-family: Arial, sans-serif; }
   @page { margin: 0.35in; size: letter; }
 }
+
+/* ---------- Scenario compare modal ---------- */
+.compare-modal { display: none; position: fixed; inset: 0; background: rgba(10, 10, 11, 0.85); z-index: 50; align-items: center; justify-content: center; padding: 2rem; backdrop-filter: blur(4px); }
+.compare-modal.open { display: flex; }
+.compare-modal-inner { background: var(--surface); width: min(880px, 94vw); max-height: 84vh; overflow-y: auto; padding: 2.25rem; border: 1px solid var(--line); }
+.compare-modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+.compare-modal-head h2 { color: var(--ink); font-size: 1.4rem; font-weight: 500; margin: 0; }
+.compare-note { color: var(--muted); font-size: 0.8rem; line-height: 1.6; max-width: 62ch; margin: 0; }
+.compare-actions { display: flex; gap: 0.6rem; align-items: center; margin: 1.1rem 0; flex-wrap: wrap; }
+.compare-empty { border: 1px dashed var(--line-strong); padding: 1.4rem; color: var(--muted); font-size: 0.82rem; line-height: 1.6; margin-bottom: 1rem; }
+.compare-empty p { margin: 0; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.9rem; }
+.compare-card { border: 1px solid var(--line); padding: 1rem; background: rgba(10, 10, 11, 0.34); }
+.compare-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
+.compare-card-head strong { color: var(--ink); font-size: 0.82rem; display: block; }
+.compare-card-actions { display: flex; gap: 0.35rem; }
+.compare-stats { flex-direction: column; gap: 0.5rem; }
+.compare-stats .snapshot-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 0.45rem; }
 
 /* ---------- Motion ---------- */
 
