@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T15:01:10.236Z",
+  "updatedAt": "2026-08-26T14:59:56.740Z",
   "rates": {
     "asOf": "8/20/2026",
     "source": "Freddie Mac PMMS",
@@ -35,26 +35,18 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
+      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
-      "publishedAt": "2026-08-19T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
+      "publishedAt": "2026-08-25T18:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve issues FOMC statement",
+      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "publishedAt": "2026-07-29T18:00:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "CBS News",
-      "title": "Will mortgage rates drop below 6% in 2026?",
-      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxY0Q2ejlVTFZzMVJnYlFsWTZEbzFPSTl1US1xVk9aSThvcTdTTXlhUDNVdW0yTjdfX1R0MW5pS1hWWDVDVUw5SDRFb3RFbUZqbGEteEE5Njg5X3dpdTJON0FqNHNFZUwteFgzOEFhdWIzMWtGLWc?oc=5",
-      "publishedAt": "2026-08-18T16:01:11.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "publishedAt": "2026-08-19T18:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -63,14 +55,6 @@
       "summary": "money.com coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
       "publishedAt": "2026-08-25T12:27:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "CNBC",
-      "title": "Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPY0RiRExxR2t5ZXExSk41NEpoSjh6OWoyakE1N2ZCTlFPcGlHV0dranFhNG1ZcXhma1d3TmJuOTYxZ3ZYRnMycnNFSDFWT3ZEd2N4TUJVVzhReF9COFFwbFdFeUpHbzh1dk5WWnFyNXplWFdhTUZtTnE5Z0x1SVQxM2h0LXd3MVF0VDl1OERISGHSAZYBQVVfeXFMTmI3RUx1bDhWcUFtVkdET2JJNlA2OEhqUy10NzhZRjlmQXRYSElIVEM5WExKa1h2ODJiWWc0OGVGaFRqb3poczF2M01lcmpCSVdzellJOTRXVTJCNVo1TXpSOXhpMEFUeXNMaUdxY041a0VoTWw5ZjRtc2otck1LMHBxNURpc0c0QVUtUDFyeXNHVElUODBB?oc=5",
-      "publishedAt": "2026-08-18T16:58:29.000Z"
     },
     {
       "category": "Rates",
@@ -87,6 +71,22 @@
       "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1SWGYwdTRVWG1lNlowd2RYT19rX3lqWFNPLUZfbDNPbi12blU2cGtNN3FueUJTZFZHNGRqOXVmR0FEd2puaU5Bbl82VDFwZE1KbHJsTkp6ZWp2a3pKZms0eURvaEUwRmNmbThYbGh0T04tUWQzMUlBY0xlcw?oc=5",
       "publishedAt": "2026-08-20T18:01:15.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "CBS News",
+      "title": "Will mortgage interest rates improve this September? 3 things to consider now",
+      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSGJ3SFdielNyYS1iSnM4TjQzQm5YSmZ6cnlxZTJWTGt6TGQzcVE1a1JfSExsZk5sTnVEVnFkcEMzcWtqTnFlejFkZGs3ek9tTm9pdXB6TGw1cDBoa3otVV9oUnpUNzVrWlRpUW44OXlRTVVMMTFDR2lidDRrOVFvOVFvbGJjbXRjVURHTHptdnhYNUN1VTdNTkY5d2ZWZkgyc0E?oc=5",
+      "publishedAt": "2026-08-25T19:54:43.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Forbes",
+      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
+      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
+      "publishedAt": "2026-08-20T16:17:00.000Z"
     }
   ]
 }
