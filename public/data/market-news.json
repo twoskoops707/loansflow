@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T17:42:56.569Z",
+  "updatedAt": "2026-08-30T18:03:16.586Z",
   "rates": {
     "asOf": "8/27/2026",
     "source": "Freddie Mac PMMS",
@@ -66,6 +66,14 @@
     },
     {
       "category": "Rates",
+      "source": "CBS News",
+      "title": "Will mortgage interest rates improve this September? 3 things to consider now",
+      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSGJ3SFdielNyYS1iSnM4TjQzQm5YSmZ6cnlxZTJWTGt6TGQzcVE1a1JfSExsZk5sTnVEVnFkcEMzcWtqTnFlejFkZGs3ek9tTm9pdXB6TGw1cDBoa3otVV9oUnpUNzVrWlRpUW44OXlRTVVMMTFDR2lidDRrOVFvOVFvbGJjbXRjVURHTHptdnhYNUN1VTdNTkY5d2ZWZkgyc0E?oc=5",
+      "publishedAt": "2026-08-25T19:54:43.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "Yahoo Finance",
       "title": "Mortgage and refinance interest rates today, Tuesday, August 25, 2026: Rates mixed this morning",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
@@ -79,14 +87,6 @@
       "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdlNqUmphRkt6NUh0V3BLalZkOGRBNnd0STdWTnhzUTRNWm1oOUs2SXhyRjBBdmp4TXFETkRWaXlJU2lSOHphdXM1blBaRklGZENVLVE0WHZBbkpVSHJxQ00tUjBhZWowZWw3MU0wTVc4MWpyWHFNNG5BblVoY1AwMXBjdHUyRTJlTUlzaUNSZDJFUUVqVTlhSmZtbW5lVEw4?oc=5",
       "publishedAt": "2026-08-27T20:15:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Texas Real Estate Research Center",
-      "title": "Is AI Buildout Driving Up Mortgage Rates?",
-      "summary": "Texas Real Estate Research Center coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5uTkpVMC15ZDE0U1hzS3FDZS1TWTRBVXZwZmRRNjVaQUVCdUlfV0FxOFFvSzdXVU5Nb0pMMkVoZnBhckFyMy1mcFJSNTJYOGVNblltRl9faVVnUnZqck00OTFYSlkzVFh2ZXJ6OEV0MXZPZFROa1ptSw?oc=5",
-      "publishedAt": "2026-08-27T19:51:25.000Z"
     }
   ]
 }
