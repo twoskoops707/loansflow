@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T20:00:20.154Z",
+  "updatedAt": "2026-09-01T17:48:07.304Z",
   "rates": {
     "asOf": "8/27/2026",
     "source": "Freddie Mac PMMS",
@@ -51,10 +51,18 @@
     {
       "category": "Rates",
       "source": "CNBC",
-      "title": "Mortgage rates hit highest level in 3 weeks, weakening demand further",
+      "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVXg0QnVnUlpfd1JIM2JfTzVxR0RwNnZjWENWT1hMREFBMEhMeHRnUFV2Q3dtVUZuNFNyVmpBZUhvY1doODN5T2MtX1pwU1pULVZuZ3o1VG02d0k2ZkpkakdkRGJRTG9VRzZXaEIwR3lZRkV0d2hUSWJ2UEVNYkp2bUVtMHZRUWdYVVRXNUQxTHJJcU94RzlXWmdoT1lobU9rQnA1U1RwLUrSAa4BQVVfeXFMTjUzYVV3MmtNSm5rSzcwWmFmc25KTEtlbkZJd3VqV3RKaTNnWEx0MXlOd3Q0LWpVbHBjV0xlMTAwVWdpbW9qNFFxaFZyQTlNeFNwenRObzhrR0xRZnc4em9aMVVlcDVSbDFGM3dtcWI1blJtNFZWSGZlTWx1NEluU2l5U3gyU1NyOVYyYklOMnpYVGI3WUxJMFFQcmt0NWxRMFZob05HNVRJbTk1S0FR?oc=5",
-      "publishedAt": "2026-08-26T11:00:01.000Z"
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWm5Nb2d4V2c1d19xNHFiVjExRFhqMjZxM3FJa3hnblpmdjNwRHBaMHFiSlNUUnkxM3VxcmtOeUxYTThKRTBDa0VlNklQVFVESVhKbmoyd2R5OVZxS2R0VWF0cGQ2TzY2RzhqbnNPdnNnQlpGeTZBUjBGMWpYUzFzNUxsOVJkYzNr0gGOAUFVX3lxTE1RdzlMZzJyR2VUeV9kc2ozRXppdF92a3gtWGJ2ZkZ0QjNwdmgwQzNoYnZsVGx4c1E0cWs2OHg4WHhwLVNMdURfLVE4OFpHVGJFLWUwd1MzU1hpNV9xX2w5ZlQ2aXp5UXBwTC00WTRkQ3RWYzRpOFViZFVDSDF4WmVueTYwY29TeGNmZUNiUGc?oc=5",
+      "publishedAt": "2026-08-31T17:56:01.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "money.com",
+      "title": "Today's Mortgage Rates: September 1, 2026",
+      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
+      "publishedAt": "2026-09-01T12:22:00.000Z"
     },
     {
       "category": "Rates",
@@ -74,19 +82,11 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage and refinance interest rates today, Tuesday, August 25, 2026: Rates mixed this morning",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQdmJBa0xvSWhNa3RkTXZtSkdBVXo4clRBTWtzMXlzMXMxbzd1QmhMQVI3MVg4RWZUTzdWZmU3bkRqRHNiRktCNTAzTXJNYkNyYThzVUJSRDFrRHR4YmpETVJ2M3VfZWg5RXZjQzZMeEx1c1hxWlBhM1BISU1KTzRxc0JTNVRyV2dnVkhlTXpTbzcxTVNYTEZZNkFpT1BHREZvZDBHY2tYVnI3Z0QwU1NndHB2SnlEWkFXQm1mQjJUZE9HMGs4emtCZFhId0hoZVBPNnpHQlNvUnR4a0pHU0t3TXowSllwUVdSSUZBUmJqWkFkemRXS0x2bHJKVQ?oc=5",
-      "publishedAt": "2026-08-25T17:18:41.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "National Association of REALTORS®",
-      "title": "What Buyers May Be Getting Wrong About Mortgage Rates",
-      "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdlNqUmphRkt6NUh0V3BLalZkOGRBNnd0STdWTnhzUTRNWm1oOUs2SXhyRjBBdmp4TXFETkRWaXlJU2lSOHphdXM1blBaRklGZENVLVE0WHZBbkpVSHJxQ00tUjBhZWowZWw3MU0wTVc4MWpyWHFNNG5BblVoY1AwMXBjdHUyRTJlTUlzaUNSZDJFUUVqVTlhSmZtbW5lVEw4?oc=5",
-      "publishedAt": "2026-08-27T20:15:00.000Z"
+      "source": "Forbes",
+      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
+      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
+      "publishedAt": "2026-09-01T12:29:00.000Z"
     }
   ]
 }
