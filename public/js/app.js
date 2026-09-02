@@ -44,8 +44,14 @@ const state = {
     { id: 3, month: 7, amount: -20000 }
   ],
   locNextDrawId: 4,
-  amortChartMode: 'balance'
+  amortChartMode: 'balance',
+
+  // has the visitor answered (or skipped) the "what are you financing" intake?
+  introDone: false
 };
+
+// Transient intake-wizard UI state — not part of shareable/pinned scenarios.
+let introStage = 'start';
 
 const steps = [
   "SBA & Commercial Loan",
@@ -606,7 +612,7 @@ async function copyShareLink(){
 
 function loadSharedState(){
   const raw = new URLSearchParams(window.location.search).get('lf');
-  if (!raw) return;
+  if (!raw) return false;
   try {
     const incoming = JSON.parse(raw);
     Object.keys(state).forEach(key => {
@@ -619,8 +625,10 @@ function loadSharedState(){
         if (!STATE_ENUMS[key] || STATE_ENUMS[key].includes(incoming[key])) state[key] = incoming[key];
       }
     });
+    return true;
   } catch (_) {
     // Ignore malformed shared links and keep the defaults.
+    return false;
   }
 }
 
@@ -818,13 +826,13 @@ function adMultiplex(name){
 function renderNav(){
   const nav = document.getElementById('stepNav');
   nav.innerHTML = steps.map((s,i)=>`
-    <li class="step ${i===state.step?'active':''}" data-idx="${i}">
+    <li class="step ${state.introDone && i===state.step?'active':''}" data-idx="${i}">
       <span class="step-no">${String(i+1).padStart(2,'0')}</span>
       <span class="step-label">${s}</span>
     </li>
   `).join('');
   nav.querySelectorAll('.step').forEach(el=>{
-    el.addEventListener('click', ()=>{ state.step = parseInt(el.dataset.idx); render(); });
+    el.addEventListener('click', ()=>{ state.step = parseInt(el.dataset.idx); state.introDone = true; render(); });
   });
 }
 
@@ -1832,9 +1840,88 @@ function openLegal(key){
   document.getElementById('legalModal').classList.add('open');
 }
 
+// ---------- INTAKE WIZARD: "what are you financing?" ----------
+// A lightweight gate in front of the calculator steps. Skipped entirely
+// when the visitor arrives with an explicit ?step= link or a shared/pinned
+// scenario (state.introDone is set true at boot in that case) — the intake
+// is only for a cold arrival that hasn't told us what it wants yet.
+function introChoice(num, title, note, attrs){
+  return `
+    <button class="intro-choice" type="button" ${attrs}>
+      <span class="intro-choice-num">${num}</span>
+      <span class="intro-choice-body">
+        <strong>${title}</strong>
+        <small>${note}</small>
+      </span>
+    </button>`;
+}
+function renderIntro(){
+  if (introStage === 'business') {
+    return `
+      <div class="eyebrow">Quick start &middot; Business</div>
+      <h1>Which kind of financing?</h1>
+      <p class="sub">Pick the closest match — you can switch tools anytime from the sidebar.</p>
+      <div class="intro-choices">
+        ${introChoice('1', 'SBA 7(a) loan', 'General-purpose financing with a government guaranty', 'data-step="0" data-biz-type="sba7a"')}
+        ${introChoice('2', 'SBA 504 loan', 'Fixed-asset financing — real estate or heavy equipment', 'data-step="0" data-biz-type="sba504"')}
+        ${introChoice('3', 'Conventional commercial loan', 'Bank-direct financing, no SBA guaranty', 'data-step="0" data-biz-type="conventional"')}
+        ${introChoice('4', 'Line of credit', 'Revolving credit for working capital', 'data-step="2"')}
+        ${introChoice('5', 'A loan I already have', 'See the amortization and payoff schedule', 'data-step="1"')}
+      </div>
+      <p class="intro-back"><a href="#" id="introBack">&larr; Back</a></p>`;
+  }
+  if (introStage === 'mortgage') {
+    return `
+      <div class="eyebrow">Quick start &middot; Home</div>
+      <h1>What do you need to know?</h1>
+      <p class="sub">Pick the closest match — you can switch tools anytime from the sidebar.</p>
+      <div class="intro-choices">
+        ${introChoice('1', 'Monthly payment', 'Principal, interest, taxes &amp; insurance', 'data-step="3"')}
+        ${introChoice('2', 'Full amortization schedule', 'Month-by-month payoff ledger', 'data-step="5"')}
+        ${introChoice('3', 'Should I refinance?', 'Compare your current loan to a new rate', 'data-step="6"')}
+        ${introChoice('4', 'What can I afford?', 'Based on income and monthly debts', 'data-step="7"')}
+        ${introChoice('5', "Today's rates", 'Live national mortgage averages', 'data-step="8"')}
+      </div>
+      <p class="intro-back"><a href="#" id="introBack">&larr; Back</a></p>`;
+  }
+  return `
+    <div class="eyebrow">Quick start</div>
+    <h1>What are you financing?</h1>
+    <p class="sub">Answer two quick questions and we'll open the right calculator with sensible defaults already filled in.</p>
+    <div class="intro-choices">
+      ${introChoice('A', 'A business', 'SBA 7(a), SBA 504, conventional commercial, or a line of credit', 'data-audience="business"')}
+      ${introChoice('B', 'A home', "Purchase, refinance, affordability, or today's mortgage rates", 'data-audience="mortgage"')}
+    </div>
+    <p class="intro-skip"><a href="#" id="introSkip">Skip &mdash; I know which calculator I want &rarr;</a></p>`;
+}
+function attachIntroHandlers(){
+  document.querySelectorAll('.intro-choice[data-audience]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ introStage = btn.dataset.audience; render(); });
+  });
+  document.querySelectorAll('.intro-choice[data-step]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if (btn.dataset.bizType) state.bizLoanType = btn.dataset.bizType;
+      state.step = parseInt(btn.dataset.step, 10);
+      state.introDone = true;
+      render();
+    });
+  });
+  const skip = document.getElementById('introSkip');
+  if (skip) skip.addEventListener('click', (e)=>{ e.preventDefault(); state.introDone = true; render(); });
+  const back = document.getElementById('introBack');
+  if (back) back.addEventListener('click', (e)=>{ e.preventDefault(); introStage = 'start'; render(); });
+}
+
 function render(){
   renderNav();
   const main = document.getElementById('mainContent');
+  if (!state.introDone) {
+    main.innerHTML = renderIntro();
+    attachIntroHandlers();
+    main.scrollTop = 0;
+    window.scrollTo(0,0);
+    return;
+  }
   const renderers = [renderStep5, renderStepBizAmort, renderStepLOC, renderStep0, renderStep1, renderStep2, renderStep3, renderStep4, renderStep6];
   main.innerHTML = renderWorkflowBar() + renderers[state.step]() + renderFooter();
   attachHandlers();
@@ -1853,6 +1940,13 @@ function readInputs(ids){
 }
 
 function attachHandlers(){
+  const restartWizard = document.getElementById('restartWizard');
+  if (restartWizard) restartWizard.addEventListener('click', () => {
+    introStage = 'start';
+    state.introDone = false;
+    render();
+  });
+
   const toggleSnapshot = document.getElementById('toggleSnapshot');
   if (toggleSnapshot) toggleSnapshot.addEventListener('click', () => {
     const panel = document.getElementById('snapshotPanel');
@@ -2030,10 +2124,22 @@ function attachHandlers(){
   });
 }
 
-loadSharedState();
+const sharedStateApplied = loadSharedState();
 if (typeof window.__LF_INITIAL_STEP === 'number' && window.__LF_INITIAL_STEP >= 0 && window.__LF_INITIAL_STEP <= 8) {
   state.step = window.__LF_INITIAL_STEP;
+  state.introDone = true;
+} else if (sharedStateApplied) {
+  // A shared/pinned scenario link already tells us exactly what the visitor
+  // wants -- don't make them re-answer the intake questions.
+  state.introDone = true;
 }
+const restartWizardBtn = document.getElementById('restartWizard');
+if (restartWizardBtn) restartWizardBtn.addEventListener('click', () => {
+  introStage = 'start';
+  state.introDone = false;
+  render();
+});
+
 // Warm the news cache so Step 09 is current when opened
 ensureMarketNewsLoaded(false);
 startMarketNewsAutoRefresh();

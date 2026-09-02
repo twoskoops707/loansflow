@@ -181,8 +181,19 @@
     updateEstimate();
   }
 
+  // ---------- tool picker (dropdown) ----------
+  function initToolPicker() {
+    const select = document.getElementById('toolPicker');
+    const go = document.getElementById('toolPickerGo');
+    if (!select || !go) return;
+    const update = function () { go.href = 'tools/?step=' + select.value; };
+    select.addEventListener('change', update);
+    update();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     loadRates();
     initEstimate();
+    initToolPicker();
   });
 })();

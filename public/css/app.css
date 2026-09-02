@@ -101,6 +101,14 @@ body {
   margin-top: 0.6rem;
 }
 
+.sidebar-wizard-btn {
+  width: 100%;
+  text-align: center;
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+.sidebar-wizard-btn:hover { background: var(--accent); color: var(--canvas); }
+
 .steps { list-style: none; display: flex; flex-direction: column; gap: 0.2rem; }
 .step {
   display: flex;
@@ -169,6 +177,50 @@ h1 {
   margin-bottom: 0.6rem;
   color: var(--ink);
 }
+
+/* ---------- Intake wizard: "what are you financing?" ---------- */
+
+.intro-choices {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+.intro-choice {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.1rem 1.35rem;
+  color: var(--ink);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.intro-choice:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+.intro-choice-num {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+.intro-choice-body { display: flex; flex-direction: column; gap: 0.25rem; }
+.intro-choice-body strong { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 1rem; }
+.intro-choice-body small { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+.intro-back, .intro-skip { font-size: 0.88rem; }
+.intro-back a, .intro-skip a { color: var(--muted); text-decoration: underline; }
+.intro-back a:hover, .intro-skip a:hover { color: var(--accent); }
 
 .sub {
   color: var(--muted);
