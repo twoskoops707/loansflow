@@ -54,7 +54,9 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   height: 66px;
   padding: 0 clamp(1.25rem, 4vw, 3rem);
-  background: linear-gradient(180deg, rgba(10, 10, 11, 0.88), transparent);
+  background: rgba(10, 10, 11, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 
 .nav-brand {
@@ -191,7 +193,8 @@ a { color: inherit; text-decoration: none; }
   padding: 1.75rem;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
 }
-.hero-card-head { margin-bottom: 1.4rem; }
+.hero-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.4rem; }
+.hero-card-hint { color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; padding-top: 0.25rem; }
 .hero-card-head .eyebrow {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
@@ -267,8 +270,21 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink);
   margin: 0;
 }
+.rate-band-actions { display: flex; align-items: center; gap: 1.1rem; }
 .rate-band-link { color: var(--accent); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease); }
 .rate-band-link:hover { border-color: var(--accent); }
+.rate-freshness {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--pill);
+  white-space: nowrap;
+}
+.rate-freshness--fresh { color: var(--accent); background: rgba(52, 213, 154, 0.12); }
+.rate-freshness--aging { color: #e0b34d; background: rgba(224, 179, 77, 0.12); }
+.rate-freshness--stale { color: #e0704d; background: rgba(224, 112, 77, 0.12); }
 .rate-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .rate-cell { background: var(--surface); padding: 1.1rem 1.25rem; }
 .rate-label { display: block; color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.45rem; }
@@ -536,8 +552,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 640px) {
-  .tool-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+}
+
+@media (max-width: 480px) {
+  /* Keep the 6-tool grid at 2 columns even on phones — a single-column stack
+     roughly doubles the scroll cost to reach every calculator. */
+  .tool-grid { gap: 0.75rem; }
+  .tool-link { padding: 1.25rem 1rem; min-height: 148px; }
+  .tool-link h3 { font-size: 1.05rem; }
+  .tool-link p { font-size: 0.82rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

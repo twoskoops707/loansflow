@@ -225,15 +225,15 @@ function renderWorkflowBar(){
         ${stats.map(stat => `<div class="snapshot-stat"><span>${stat.label}</span><strong>${stat.value}</strong></div>`).join('')}
       </div>
       <div class="workflow-actions">
-        <button class="btn-utility" id="toggleSnapshot" type="button">Scenario snapshot</button>
-        <button class="btn-utility" id="shareScenario" type="button">Copy share link</button>
-        <button class="btn-utility" id="compareScenarios" type="button">Compare scenarios${pinnedScenarios.length ? ' &middot; ' + pinnedScenarios.length : ''}</button>
-        <button class="btn-utility btn-utility--accent" id="printReport" type="button">Print / Save PDF</button>
+        <button class="btn-utility" id="toggleSnapshot" type="button" title="Show or hide the scenario panel">Scenario snapshot</button>
+        <button class="btn-utility" id="shareScenario" type="button" title="Copy a link that reopens this exact scenario">Copy share link</button>
+        <button class="btn-utility" id="compareScenarios" type="button" title="Pin scenarios and compare them side by side">Compare scenarios${pinnedScenarios.length ? ' &middot; ' + pinnedScenarios.length : ''}</button>
+        <button class="btn-utility btn-utility--accent" id="printReport" type="button" title="Print this tool's report — choose Save as PDF in the dialog to download">Print / Save PDF</button>
       </div>
       <div class="snapshot-panel" id="snapshotPanel" hidden>
         <div>
-          <div class="workflow-kicker">Ready to share</div>
-          <p>Inputs stay in this browser. Copy a link to reopen this exact scenario on another device or send it to a partner.</p>
+          <div class="workflow-kicker">Scenario tools</div>
+          <p>Everything stays in this browser — nothing is uploaded. Copy a link to reopen or send this scenario, pin it to compare side by side, or print this tool as a PDF report.</p>
         </div>
         <div class="snapshot-detail"><span>Section</span><strong>${steps[state.step]}</strong></div>
         <div class="snapshot-detail"><span>Last action</span><strong id="workflowStatus">No changes yet</strong></div>
@@ -375,7 +375,6 @@ function printStep0(){
   }
   if(balloonBalance !== null) rows.push(printRow('Balloon due — year ' + state.bizBalloonYears, fmtMoney(balloonBalance, 0)));
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[0]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Monthly payment</span><strong>${fmtMoney(pi, 2)}</strong><small>${rate.toFixed(2)}% blended rate</small></div>
       <div class="print-report-card"><span>Debt service coverage</span><strong>${dscr.toFixed(2)}x</strong><small>${fmtMoney(state.bizNOI, 0)} NOI &divide; ${fmtMoney(annualDebtService, 0)} debt service</small></div>
@@ -395,7 +394,6 @@ function printStep1(){
     yearRows.map(yr => [yr.year, fmtMoney(yr.yrPrincipal,0), fmtMoney(yr.yrInterest,0), fmtMoney(yr.endBalance,0)])
   );
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[1]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Loan amount</span><strong>${fmtMoney(state.bizLoanAmount, 0)}</strong><small>${rate.toFixed(2)}% rate &middot; ${state.bizAmortYears} years</small></div>
       <div class="print-report-card"><span>Total interest over term</span><strong>${fmtMoney(totalInterest, 0)}</strong><small>Paid down over ${rows.length} months</small></div>
@@ -418,7 +416,6 @@ function printStep2(){
     rows.map(r => [r.month, fmtMoney(r.beginningBalance,0), r.draw !== 0 ? fmtMoney(r.draw,0) : '—', fmtMoney(r.interest,2), fmtMoney(r.payment,2), fmtMoney(r.endingBalance,0)])
   );
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[2]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Projected balance (month ${state.locMonths})</span><strong>${fmtMoney(currentBalance, 0)}</strong><small>of ${fmtMoney(state.locLimit, 0)} limit</small></div>
       <div class="print-report-card"><span>Interest over period</span><strong>${fmtMoney(totalInterest, 0)}</strong><small>${fmtMoney(totalDraws, 0)} drawn total</small></div>
@@ -435,7 +432,6 @@ function printStep3(){
   const principal = Math.max(0, state.homePrice - state.downPayment);
   const pi = monthlyPI(principal, state.rate, state.term);
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[3]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Financed amount</span><strong>${fmtMoney(principal, 0)}</strong><small>${fmtMoney(state.homePrice, 0)} price &minus; ${fmtMoney(state.downPayment, 0)} down</small></div>
       <div class="print-report-card"><span>Principal &amp; interest</span><strong>${fmtMoney(pi, 2)}</strong><small>${state.rate}% for ${state.term} years</small></div>
@@ -459,7 +455,6 @@ function printStep4(){
   const insurance = state.insurance / 12;
   const total = pi + tax + insurance;
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[4]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Total monthly payment</span><strong>${fmtMoney(total, 2)}</strong><small>PITI on ${fmtMoney(principal, 0)} financed</small></div>
       <div class="print-report-card"><span>Lifetime interest (${state.term} yrs)</span><strong>${fmtMoney(pi*state.term*12 - principal, 0)}</strong><small>${state.rate}% fixed</small></div>
@@ -495,7 +490,6 @@ function printStep5(){
     yearRows.map(yr => [yr.year, fmtMoney(yr.yrPrincipal,0), fmtMoney(yr.yrInterest,0), fmtMoney(yr.endBalance,0)])
   );
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[5]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Monthly P&amp;I</span><strong>${fmtMoney(monthlyPI(principal, state.rate, state.term), 2)}</strong><small>${fmtMoney(principal, 0)} at ${state.rate}% for ${state.term} years</small></div>
       <div class="print-report-card"><span>Payoff</span><strong>${payoffYears} yr${payoffMonthsRem ? ' ' + payoffMonthsRem + ' mo' : ''}</strong><small>vs. ${state.term}-year original${hasExtra ? ' &middot; ' + fmtMoney(interestSaved, 0) + ' interest saved' : ''}</small></div>
@@ -516,7 +510,6 @@ function printStep6(){
   const lifetimeNew = newPI*state.newTerm*12;
   const lifetimeSavings = lifetimeCurrent - lifetimeNew;
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[6]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Current monthly P&amp;I</span><strong>${fmtMoney(currentPI, 2)}</strong><small>${state.rate}% &middot; ${state.term} years</small></div>
       <div class="print-report-card"><span>Refinanced monthly P&amp;I</span><strong>${fmtMoney(newPI, 2)}</strong><small>${state.newRate}% &middot; ${state.newTerm} years</small></div>
@@ -547,7 +540,6 @@ function printStep7(){
   const maxHomePrice = Math.max(0, maxPrincipal + state.affordDownPayment);
   const currentDebtToIncome = ((state.monthlyDebts + budgetForPI) / monthlyIncome) * 100;
   return printReportShell(`
-    <div class="print-report-context"><span>Active tool</span><strong>${steps[7]}</strong></div>
     <div class="print-report-grid">
       <div class="print-report-card"><span>Estimated affordable home price</span><strong>${fmtMoney(maxHomePrice, 0)}</strong><small>${fmtMoney(state.affordDownPayment, 0)} down available</small></div>
       <div class="print-report-card"><span>Debt-to-income ratio</span><strong>${currentDebtToIncome.toFixed(1)}%</strong><small>Lenders typically target 36% or below</small></div>
@@ -569,16 +561,14 @@ function printStep8(){
   let body;
   if (rates && rates.cells && rates.cells.length) {
     body = `
-      <div class="print-report-context"><span>Active tool</span><strong>${steps[8]}</strong></div>
-      <div class="print-report-grid">${rates.cells.map(c => `<div class="print-report-card"><span>${escapeHtml(c.label)}</span><strong>${escapeHtml(c.value)}</strong>${c.note ? '<small>' + escapeHtml(c.note) + '</small>' : ''}</div>`).join('')}</div>
+        <div class="print-report-grid">${rates.cells.map(c => `<div class="print-report-card"><span>${escapeHtml(c.label)}</span><strong>${escapeHtml(c.value)}</strong>${c.note ? '<small>' + escapeHtml(c.note) + '</small>' : ''}</div>`).join('')}</div>
       ${printSectionTitle('National averages')}
       <div class="print-report-table">${rates.cells.map(c => printRow(c.label, c.value + (c.note ? ' — ' + c.note : ''))).join('')}</div>
       <p class="print-report-foot">${escapeHtml(rates.disclaimer || 'National averages. Individual rates vary. Not a rate quote.')}${rates.asOf ? ' As of ' + escapeHtml(rates.asOf) + (rates.source ? ' (' + escapeHtml(rates.source) + ')' : '') + '.' : ''}</p>
     `;
   } else {
     body = `
-      <div class="print-report-context"><span>Active tool</span><strong>${steps[8]}</strong></div>
-      <p>Live rate data has not loaded yet. Reopen Market News and wait for the feed to finish, or print from a calculator step instead.</p>
+        <p>Live rate data has not loaded yet. Reopen Market News and wait for the feed to finish, or print from a calculator step instead.</p>
     `;
   }
   return printReportShell(body);
@@ -743,7 +733,7 @@ function renderCompareModal(){
           </div>
           <button class="legal-modal-close" type="button" id="compareModalClose">Close</button>
         </div>
-        <p class="compare-note">Pins are stored in this browser only and are not part of the share link. Load one to bring it back into the calculator, or keep comparing.</p>
+        <p class="compare-note">Pins are stored in this browser only and are not part of the share link. Load one to bring it back into the calculator, or keep comparing. Up to 12 scenarios can be pinned at once.</p>
         <div class="compare-actions">
           <button class="btn-utility btn-utility--accent" type="button" id="pinCurrentScenario">+ Pin current scenario</button>
           <button class="btn-utility" type="button" id="clearPinnedScenarios">Clear all</button>
@@ -1062,7 +1052,7 @@ function renderStep2(){
 
       <div class="ledger-export">
         <span>Year-by-year schedule</span>
-        <button class="btn-utility" id="exportCsvAmort" type="button">Export CSV</button>
+        <button class="btn-utility" id="exportCsvAmort" type="button" title="Download this schedule as a spreadsheet (CSV)">Export CSV</button>
       </div>
       <div class="ledger-table-wrap">
         <table>
@@ -1410,7 +1400,7 @@ function renderStepBizAmort(){
 
       <div class="ledger-export">
         <span>Year-by-year schedule</span>
-        <button class="btn-utility" id="exportCsvBizAmort" type="button">Export CSV</button>
+        <button class="btn-utility" id="exportCsvBizAmort" type="button" title="Download this schedule as a spreadsheet (CSV)">Export CSV</button>
       </div>
       <div class="ledger-table-wrap">
         <table>
@@ -1550,7 +1540,7 @@ function renderStepLOC(){
 
       <div class="ledger-export">
         <span>Month-by-month schedule</span>
-        <button class="btn-utility" id="exportCsvLoc" type="button">Export CSV</button>
+        <button class="btn-utility" id="exportCsvLoc" type="button" title="Download this schedule as a spreadsheet (CSV)">Export CSV</button>
       </div>
       <div class="ledger-table-wrap">
         <table>

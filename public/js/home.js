@@ -36,6 +36,20 @@
   }
 
   // ---------- live rates band ----------
+  // How many days old `asOf` is decides the freshness badge tone. This is a
+  // pure display cue (green/amber/red) so a stale snapshot reads as stale
+  // instead of silently posing as "live".
+  function rateFreshness(asOf) {
+    if (!asOf) return null;
+    const d = new Date(asOf);
+    if (isNaN(d.getTime())) return null;
+    const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+    let tone = 'fresh';
+    if (days > 10) tone = 'stale';
+    else if (days > 3) tone = 'aging';
+    const label = days <= 0 ? 'Updated today' : days === 1 ? 'Updated yesterday' : 'Updated ' + days + ' days ago';
+    return { tone: tone, label: label };
+  }
   function renderRateBand(rates) {
     const band = document.getElementById('homeRateBand');
     if (!band) return;
@@ -54,17 +68,40 @@
     const asOf = rates.asOf
       ? ' As of ' + escapeHtml(rates.asOf) + ' &middot; ' + escapeHtml(rates.source || 'Freddie Mac PMMS') + '.'
       : '';
+    const fresh = rateFreshness(rates.asOf);
+    const freshBadge = fresh
+      ? '<span class="rate-freshness rate-freshness--' + fresh.tone + '">' + escapeHtml(fresh.label) + '</span>'
+      : '';
     band.innerHTML =
       '<div class="rate-band-head">' +
         '<div>' +
           '<div class="eyebrow">Live rates</div>' +
           '<h3>National mortgage averages</h3>' +
         '</div>' +
-        '<a class="rate-band-link" href="tools/?step=8">Full market view &rarr;</a>' +
+        '<div class="rate-band-actions">' +
+          freshBadge +
+          '<a class="rate-band-link" href="tools/?step=8">Full market view &rarr;</a>' +
+        '</div>' +
       '</div>' +
       '<div class="rate-strip">' + cells + '</div>' +
       '<p class="rate-strip-note">' + escapeHtml(rates.disclaimer || 'National averages. Individual rates vary. Not a rate quote.') + asOf + '</p>';
     band.hidden = false;
+  }
+  // Pulls a numeric rate out of the "30-Yr Fixed" cell (falls back to the
+  // first cell) so the hero estimator can sync to it once it's loaded.
+  function firstFixedRatePct(rates) {
+    if (!rates || !rates.cells || !rates.cells.length) return null;
+    const cell = rates.cells.filter(function (c) { return /30.?yr fixed/i.test(c.label || ''); })[0] || rates.cells[0];
+    const m = cell && String(cell.value).match(/[\d.]+/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function syncLiveRate(rates) {
+    if (rateTouchedByUser) return;
+    const pct = firstFixedRatePct(rates);
+    const el = document.getElementById('qeRate');
+    if (pct == null || !el) return;
+    el.value = pct;
+    updateEstimate();
   }
   function loadRates() {
     const band = document.getElementById('homeRateBand');
@@ -81,6 +118,7 @@
         })
         .then(function (data) {
           renderRateBand(data && data.rates);
+          syncLiveRate(data && data.rates);
         })
         .catch(function () {
           attempt();
@@ -89,6 +127,9 @@
   }
 
   // ---------- hero quick estimate ----------
+  // Once the visitor edits the rate field themselves, stop overwriting it
+  // with the live feed value.
+  let rateTouchedByUser = false;
   function readNum(id, fallback) {
     const el = document.getElementById(id);
     const v = parseFloat(el && el.value);
@@ -129,8 +170,12 @@
     ids.forEach(function (id) {
       const el = document.getElementById(id);
       if (el) {
-        el.addEventListener('input', updateEstimate);
-        el.addEventListener('change', updateEstimate);
+        const onEdit = function () {
+          if (id === 'qeRate') rateTouchedByUser = true;
+          updateEstimate();
+        };
+        el.addEventListener('input', onEdit);
+        el.addEventListener('change', onEdit);
       }
     });
     updateEstimate();

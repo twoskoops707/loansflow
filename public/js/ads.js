@@ -11,7 +11,10 @@
       provider: 'adsense',
       adsenseClient: 'ca-pub-7523216981025331',
       ezoicPrivacyId: '',
-      emptyCollapseMs: 2800,
+      // Shorter than AdSense's typical fill time, but keeps the blank-box
+      // flash brief on slow/unfilled slots instead of holding full ad-sized
+      // empty space for ~3s before collapsing.
+      emptyCollapseMs: 1400,
     },
     window.LOANSFLOW_ADS || {}
   );
