@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T17:48:07.304Z",
+  "updatedAt": "2026-09-02T17:52:43.244Z",
   "rates": {
     "asOf": "8/27/2026",
     "source": "Freddie Mac PMMS",
@@ -50,22 +50,6 @@
     },
     {
       "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWm5Nb2d4V2c1d19xNHFiVjExRFhqMjZxM3FJa3hnblpmdjNwRHBaMHFiSlNUUnkxM3VxcmtOeUxYTThKRTBDa0VlNklQVFVESVhKbmoyd2R5OVZxS2R0VWF0cGQ2TzY2RzhqbnNPdnNnQlpGeTZBUjBGMWpYUzFzNUxsOVJkYzNr0gGOAUFVX3lxTE1RdzlMZzJyR2VUeV9kc2ozRXppdF92a3gtWGJ2ZkZ0QjNwdmgwQzNoYnZsVGx4c1E0cWs2OHg4WHhwLVNMdURfLVE4OFpHVGJFLWUwd1MzU1hpNV9xX2w5ZlQ2aXp5UXBwTC00WTRkQ3RWYzRpOFViZFVDSDF4WmVueTYwY29TeGNmZUNiUGc?oc=5",
-      "publishedAt": "2026-08-31T17:56:01.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "money.com",
-      "title": "Today's Mortgage Rates: September 1, 2026",
-      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
-      "publishedAt": "2026-09-01T12:22:00.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "WSJ",
       "title": "Mortgage Rates Today, August 27, 2026: 30-Year Rates Climb to 6.73%",
       "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
@@ -74,19 +58,35 @@
     },
     {
       "category": "Rates",
-      "source": "CBS News",
-      "title": "Will mortgage interest rates improve this September? 3 things to consider now",
-      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSGJ3SFdielNyYS1iSnM4TjQzQm5YSmZ6cnlxZTJWTGt6TGQzcVE1a1JfSExsZk5sTnVEVnFkcEMzcWtqTnFlejFkZGs3ek9tTm9pdXB6TGw1cDBoa3otVV9oUnpUNzVrWlRpUW44OXlRTVVMMTFDR2lidDRrOVFvOVFvbGJjbXRjVURHTHptdnhYNUN1VTdNTkY5d2ZWZkgyc0E?oc=5",
-      "publishedAt": "2026-08-25T19:54:43.000Z"
+      "source": "CNBC",
+      "title": "Mortgage rates are higher than expected but it can still be a good time to buy. These lenders offer affordable loans.",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZENVNVlWaWt0eE5rd3hfN3VZNDBaVG10ak94eDR3NmJFWEFjRkZ5Y1cyZmlMMkRhR0x5SVlEcXZHZHlzTjU2c3hkdUgtdWFMU3A5ZndEdm1OWmVBYVVyQV8xSkpwR0h3TWR5TEtYODdDdGhpX3ZjYU9VY1l6c2E2YVB4R0lrUGdpWlVwUWdyOGxiem12TWfSAZsBQVVfeXFMT29RVVBUTGJ1MVM3OHZna0F0aUdMRnhCVkZiZkFRZmtRX1RFYjVyTGNTMi1ETlJFVzhpd2pLdlJYeEtvRlJOZVhWMEhHbUI4UXBDRlVxRU5vc3dKaVp0MDNWRjNuQ0xsNHZHUVBJRDNIdEUtMzJ4OV9YSV9SSWU3c0tiUGNMS0dDekpBLTJoVlUwREFyX0NRcnJRa0U?oc=5",
+      "publishedAt": "2026-08-28T10:13:13.000Z"
     },
     {
       "category": "Rates",
-      "source": "Forbes",
-      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
-      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
-      "publishedAt": "2026-09-01T12:29:00.000Z"
+      "source": "Yahoo Finance",
+      "title": "Weekly survey of mortgage lenders with the lowest rates: Minor pricing changes",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQX1oyRkJXd19iVUwxY2VKU2xicEc4bHotSjZoTTNGdVdTX3k5QVRETllCSTZESjIzWng0T2ltZnQ1QXFCRXQ2OUt2SUpzbXFxVUZiRGpVazB2Q2pjaDlhSW1SRjQ5XzhUYk80RFJqRUhuWmZROFdzMEk5MkcxY2Y3LXczRmw4Tm9kTEtBbjA0MHZFZUtoNTZxcTR3c2NDTTRNdGx4VGxVZy0yLXQxUDM1dDVGWVQtZnAyR3ZmRlFac19IZXg3Vk45Q01qZ1pUdmlCVzhoWW1iVlNxRkk?oc=5",
+      "publishedAt": "2026-08-31T18:57:18.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "firsttuesday Journal",
+      "title": "Trending mortgage rates",
+      "summary": "firsttuesday Journal coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE02aTU2SUhEbk8xaDREWUk4cGZIRHAzLXZ4Q3Vuak5PZFpoNkF5V0lMR1F1UlJrNUZZMVhWcGxxMjVJLWpUczE3VVBUNm90YTdqbWg3cDdOdVA3bjZSUkhFZkFEZmEyWWZsbEE?oc=5",
+      "publishedAt": "2026-08-28T07:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "PBS",
+      "title": "Warsh raises stakes for Fed's next meeting, and other takeaways from Jackson Hole conference",
+      "summary": "PBS coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQU0VoNFJqVUpidzB5X3h6WXlxcDhZdjlpWEt4UXFsMWlyTjNjVS03VjgtRjZoLVg1UWY5Xy01alNUdVZNN1ZmejlnaVZaMElfSkVyenlwcldkWnlXeW9UZXpLWEZ1M3cyZzd1SDBObEZ4Wm1oVXZqLTVkcXRlTzd3QU1HZ2dRVXBKWExTLXVNeGY0aktpSUhzOE5DU2VSbTQ4N0pYQ0o5VGhEdlZUZ3lvYlBUOGY4bU9HQ084aVd0SGR0Yy0wNUHSAcsBQVVfeXFMTzREZzM3d0IyUDgwNTB1ZW1xY0tWaGQ1QjZocmlnckU0NFE2bTgtMmRUalFGeVRUeEJad05mTllhZVVGTjVWcjRSOVFpV2xqLXViM196X0xOTkhETzNhZXRpc1BzTVBlUUlJNVVrYldxQ05EUXdpNTlLRWNFZ2d1cUNWMGFGWHdia2xpdmxRX2ljbnlJNG5XWndQamt5ZmUxaGlpZGQ1ckpwTEF1TE0wYTlGMGxsS2pGTkJPZzY4RzJjbnU4SjBYckIzNkk?oc=5",
+      "publishedAt": "2026-08-29T15:25:24.000Z"
     }
   ]
 }
