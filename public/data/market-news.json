@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-09-02T17:52:43.244Z",
+  "updatedAt": "2026-09-03T17:49:24.150Z",
   "rates": {
-    "asOf": "8/27/2026",
+    "asOf": "9/3/2026",
     "source": "Freddie Mac PMMS",
     "sourceUrl": "https://www.freddiemac.com/pmms",
     "cells": [
       {
         "label": "30-Yr Fixed",
-        "value": "6.66%",
-        "note": "+0.01 pts vs last week"
+        "value": "6.71%",
+        "note": "+0.05 pts vs last week"
       },
       {
         "label": "15-Yr Fixed",
-        "value": "5.98%",
-        "note": "+0.03 pts vs last week"
+        "value": "6.04%",
+        "note": "+0.06 pts vs last week"
       },
       {
         "label": "30-Yr Refinance",
-        "value": "6.71%",
+        "value": "6.76%",
         "note": "Approx. vs purchase avg."
       }
     ],
@@ -27,10 +27,10 @@
     {
       "category": "Rates",
       "source": "Freddie Mac",
-      "title": "Mortgage Rates Hold Steady",
-      "summary": "Mortgage rates changed little this week averaging 6.66%. The economy remains resilient, demonstrated by steady consumer spending and rising household incomes. More homes coming on the market and slower price growth in many areas are giving buyers better options and helping create a more balanced housing market.",
+      "title": "Mortgage Rates Average 6.71%",
+      "summary": "The 30-year fixed-rate mortgage averaged 6.71% this week. Purchase demand has remained relatively stable indicating steady interest from buyers adapting to evolving market conditions.",
       "url": "https://www.freddiemac.com/pmms",
-      "publishedAt": "2026-08-27T00:00:00.000Z"
+      "publishedAt": "2026-09-03T00:00:00.000Z"
     },
     {
       "category": "Fed Policy",
@@ -49,44 +49,36 @@
       "publishedAt": "2026-08-19T18:00:00.000Z"
     },
     {
-      "category": "Rates",
-      "source": "WSJ",
-      "title": "Mortgage Rates Today, August 27, 2026: 30-Year Rates Climb to 6.73%",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZDBDNTNWdjFwTUpLUF9TRmM4Nm40RUkzR2IwejFYeWk5VmV0ZlYwVDVSLVQybURYVkljZVlNZ0JqOHByQktzbTFxWjd0ZVZzc3ZfS0pqRGozTWlBRGwxSEVOV0NCT1FqUDVHNE5kX3Nvc2tfZkxrTlFKZ09zeVBfV2gzcUFNNmpMd2FGQQ?oc=5",
-      "publishedAt": "2026-08-27T13:03:13.000Z"
+      "category": "SBA Policy",
+      "source": "CLA (CliftonLarsonAllen)",
+      "title": "The SBA Now Requires a Quality of Earnings on Larger Acquisition Loans",
+      "summary": "CLA (CliftonLarsonAllen) coverage of recent sba policy developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbWNXelFORlU5a3Bjc0E4ZXhtblJHYVQ2cXBCWC03UHV3WkRMU2N4Q25sZURJSXpKVzdEdmdfMHNyaUVid3BOV0hmT0lFUjVfSHdUZVl2ZDBqMkE1UXJHMXZ6clhtQXIzMjhPS3Rsek95TGVpREMzdmhzVUJPSk1MZUNvVE9yQ3J4TmplcjRUNU1XcGE4WEZKSnpKcGJCSjFkRmVTbzZRcklOUE5FTnh5TDdXUmt1NG5PQXJGX19sTnA0X1VnTFVjdHZoaw?oc=5",
+      "publishedAt": "2026-08-27T15:43:44.000Z"
     },
     {
-      "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates are higher than expected but it can still be a good time to buy. These lenders offer affordable loans.",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZENVNVlWaWt0eE5rd3hfN3VZNDBaVG10ak94eDR3NmJFWEFjRkZ5Y1cyZmlMMkRhR0x5SVlEcXZHZHlzTjU2c3hkdUgtdWFMU3A5ZndEdm1OWmVBYVVyQV8xSkpwR0h3TWR5TEtYODdDdGhpX3ZjYU9VY1l6c2E2YVB4R0lrUGdpWlVwUWdyOGxiem12TWfSAZsBQVVfeXFMT29RVVBUTGJ1MVM3OHZna0F0aUdMRnhCVkZiZkFRZmtRX1RFYjVyTGNTMi1ETlJFVzhpd2pLdlJYeEtvRlJOZVhWMEhHbUI4UXBDRlVxRU5vc3dKaVp0MDNWRjNuQ0xsNHZHUVBJRDNIdEUtMzJ4OV9YSV9SSWU3c0tiUGNMS0dDekpBLTJoVlUwREFyX0NRcnJRa0U?oc=5",
-      "publishedAt": "2026-08-28T10:13:13.000Z"
+      "category": "SBA Policy",
+      "source": "NerdWallet",
+      "title": "How to Get a Startup Business Loan With No Money",
+      "summary": "NerdWallet coverage of recent sba policy developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPV0NTLW5nYXBLaTN3dlA4WWdZczFSWGdINXJHRFlmemJaaUp6aWc1bElHVFVHeWpPdVhKdzFSVTJOMEZVcjA2V3VqNHdYTHB5SVlUd3dYRUlHRk5NcVZKeURTSHM1Y0J0UTlWVHJaYzQ2bmx1QS00ZzNQZFRpZllHeVBhOGFGN0JMbldDVThJWFVwdw?oc=5",
+      "publishedAt": "2026-08-21T07:00:00.000Z"
     },
     {
-      "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Weekly survey of mortgage lenders with the lowest rates: Minor pricing changes",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQX1oyRkJXd19iVUwxY2VKU2xicEc4bHotSjZoTTNGdVdTX3k5QVRETllCSTZESjIzWng0T2ltZnQ1QXFCRXQ2OUt2SUpzbXFxVUZiRGpVazB2Q2pjaDlhSW1SRjQ5XzhUYk80RFJqRUhuWmZROFdzMEk5MkcxY2Y3LXczRmw4Tm9kTEtBbjA0MHZFZUtoNTZxcTR3c2NDTTRNdGx4VGxVZy0yLXQxUDM1dDVGWVQtZnAyR3ZmRlFac19IZXg3Vk45Q01qZ1pUdmlCVzhoWW1iVlNxRkk?oc=5",
-      "publishedAt": "2026-08-31T18:57:18.000Z"
+      "category": "SBA Policy",
+      "source": "JD Supra",
+      "title": "SBA offers enhanced loan guarantee for small businesses in energy production supply chain",
+      "summary": "JD Supra coverage of recent sba policy developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd1Nvb0FYMVN6VXFTYUdyODFFTVRYS0F6WU1RT1RCR3BXZzBWaEF1UnBZZmZtTlhuc2lYR0diWXVYeENobldnWjdIblNzbllKSDF1WUsyalVIVGJDVDdWMEhkaWl1WS1ET3hDcnlEeXN5dklHdXJsSDRUa3M3TzE5RGhWYmYxb2hL?oc=5",
+      "publishedAt": "2026-08-31T14:40:01.000Z"
     },
     {
-      "category": "Rates",
-      "source": "firsttuesday Journal",
-      "title": "Trending mortgage rates",
-      "summary": "firsttuesday Journal coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE02aTU2SUhEbk8xaDREWUk4cGZIRHAzLXZ4Q3Vuak5PZFpoNkF5V0lMR1F1UlJrNUZZMVhWcGxxMjVJLWpUczE3VVBUNm90YTdqbWg3cDdOdVA3bjZSUkhFZkFEZmEyWWZsbEE?oc=5",
-      "publishedAt": "2026-08-28T07:00:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "PBS",
-      "title": "Warsh raises stakes for Fed's next meeting, and other takeaways from Jackson Hole conference",
-      "summary": "PBS coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQU0VoNFJqVUpidzB5X3h6WXlxcDhZdjlpWEt4UXFsMWlyTjNjVS03VjgtRjZoLVg1UWY5Xy01alNUdVZNN1ZmejlnaVZaMElfSkVyenlwcldkWnlXeW9UZXpLWEZ1M3cyZzd1SDBObEZ4Wm1oVXZqLTVkcXRlTzd3QU1HZ2dRVXBKWExTLXVNeGY0aktpSUhzOE5DU2VSbTQ4N0pYQ0o5VGhEdlZUZ3lvYlBUOGY4bU9HQ084aVd0SGR0Yy0wNUHSAcsBQVVfeXFMTzREZzM3d0IyUDgwNTB1ZW1xY0tWaGQ1QjZocmlnckU0NFE2bTgtMmRUalFGeVRUeEJad05mTllhZVVGTjVWcjRSOVFpV2xqLXViM196X0xOTkhETzNhZXRpc1BzTVBlUUlJNVVrYldxQ05EUXdpNTlLRWNFZ2d1cUNWMGFGWHdia2xpdmxRX2ljbnlJNG5XWndQamt5ZmUxaGlpZGQ1ckpwTEF1TE0wYTlGMGxsS2pGTkJPZzY4RzJjbnU4SjBYckIzNkk?oc=5",
-      "publishedAt": "2026-08-29T15:25:24.000Z"
+      "category": "SBA Policy",
+      "source": "The Business Journals",
+      "title": "SBA's latest overhaul may leave some businesses behind",
+      "summary": "The Business Journals coverage of recent sba policy developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUVVGT21GMjhBclhlMWJReEZkcXh3RzhGSVdFdUw0T3o0R3dHZFZKMURFTnBZVUZ4Z3I0NUJIRmVMQUwwTi1Yd2VwTEl6dkF0RFUzZzc1aWJiTWJKX1dUb0JxZkdKSXNFbi14YkNra2hpMF9qamlIQXZnVFAxOTgxaERRd0RmVENScVRpck91Q3FIMXV5VVJYNjQzcnV4Uk85N1lhUU9n?oc=5",
+      "publishedAt": "2026-08-31T04:26:00.000Z"
     }
   ]
 }
