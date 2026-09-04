@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T17:49:24.150Z",
+  "updatedAt": "2026-09-04T17:34:38.680Z",
   "rates": {
     "asOf": "9/3/2026",
     "source": "Freddie Mac PMMS",
@@ -49,36 +49,44 @@
       "publishedAt": "2026-08-19T18:00:00.000Z"
     },
     {
-      "category": "SBA Policy",
-      "source": "CLA (CliftonLarsonAllen)",
-      "title": "The SBA Now Requires a Quality of Earnings on Larger Acquisition Loans",
-      "summary": "CLA (CliftonLarsonAllen) coverage of recent sba policy developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbWNXelFORlU5a3Bjc0E4ZXhtblJHYVQ2cXBCWC03UHV3WkRMU2N4Q25sZURJSXpKVzdEdmdfMHNyaUVid3BOV0hmT0lFUjVfSHdUZVl2ZDBqMkE1UXJHMXZ6clhtQXIzMjhPS3Rsek95TGVpREMzdmhzVUJPSk1MZUNvVE9yQ3J4TmplcjRUNU1XcGE4WEZKSnpKcGJCSjFkRmVTbzZRcklOUE5FTnh5TDdXUmt1NG5PQXJGX19sTnA0X1VnTFVjdHZoaw?oc=5",
-      "publishedAt": "2026-08-27T15:43:44.000Z"
+      "category": "Rates",
+      "source": "CNN",
+      "title": "Mortgage rates hit a new high for 2026, marching closer to 7%",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA2N2c2OW40SktPMUhscGNzaXNKbURZQnlkeWF1bElzTDJzN3BDVkNEa3pNdXNyODN4c2xYeXZSelF5TkgyWkk2TmppVFZ3Q2RwMlV2aGwyM1NEU2Y3YURlLVBTTVFHS1lQa1JQazdsNXRwR1g1ajVjOUhR?oc=5",
+      "publishedAt": "2026-09-03T16:00:29.000Z"
     },
     {
-      "category": "SBA Policy",
-      "source": "NerdWallet",
-      "title": "How to Get a Startup Business Loan With No Money",
-      "summary": "NerdWallet coverage of recent sba policy developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPV0NTLW5nYXBLaTN3dlA4WWdZczFSWGdINXJHRFlmemJaaUp6aWc1bElHVFVHeWpPdVhKdzFSVTJOMEZVcjA2V3VqNHdYTHB5SVlUd3dYRUlHRk5NcVZKeURTSHM1Y0J0UTlWVHJaYzQ2bmx1QS00ZzNQZFRpZllHeVBhOGFGN0JMbldDVThJWFVwdw?oc=5",
-      "publishedAt": "2026-08-21T07:00:00.000Z"
+      "category": "Rates",
+      "source": "CNBC",
+      "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWm5Nb2d4V2c1d19xNHFiVjExRFhqMjZxM3FJa3hnblpmdjNwRHBaMHFiSlNUUnkxM3VxcmtOeUxYTThKRTBDa0VlNklQVFVESVhKbmoyd2R5OVZxS2R0VWF0cGQ2TzY2RzhqbnNPdnNnQlpGeTZBUjBGMWpYUzFzNUxsOVJkYzNr0gGOAUFVX3lxTE1RdzlMZzJyR2VUeV9kc2ozRXppdF92a3gtWGJ2ZkZ0QjNwdmgwQzNoYnZsVGx4c1E0cWs2OHg4WHhwLVNMdURfLVE4OFpHVGJFLWUwd1MzU1hpNV9xX2w5ZlQ2aXp5UXBwTC00WTRkQ3RWYzRpOFViZFVDSDF4WmVueTYwY29TeGNmZUNiUGc?oc=5",
+      "publishedAt": "2026-08-31T17:56:01.000Z"
     },
     {
-      "category": "SBA Policy",
-      "source": "JD Supra",
-      "title": "SBA offers enhanced loan guarantee for small businesses in energy production supply chain",
-      "summary": "JD Supra coverage of recent sba policy developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd1Nvb0FYMVN6VXFTYUdyODFFTVRYS0F6WU1RT1RCR3BXZzBWaEF1UnBZZmZtTlhuc2lYR0diWXVYeENobldnWjdIblNzbllKSDF1WUsyalVIVGJDVDdWMEhkaWl1WS1ET3hDcnlEeXN5dklHdXJsSDRUa3M3TzE5RGhWYmYxb2hL?oc=5",
-      "publishedAt": "2026-08-31T14:40:01.000Z"
+      "category": "Rates",
+      "source": "The New York Times",
+      "title": "Mortgage Rates Hit 6.71%, Their Highest Level Since July 2025",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5nNmZUbVZQMzJxYlNlVTJTU2w1SHVvLUNKamtqNzZ2bDVrQW1uM2NiOGFBa2FIQmxHakliVG00UjA2djJXcXpUTkhNcUxKcG1aVGRnTkcwWExTbXdaZ2Q1azB2TzQ5cGNHM1g2NnBXVU1kcVR2b2NMQnNvYw?oc=5",
+      "publishedAt": "2026-09-03T20:02:02.000Z"
     },
     {
-      "category": "SBA Policy",
-      "source": "The Business Journals",
-      "title": "SBA's latest overhaul may leave some businesses behind",
-      "summary": "The Business Journals coverage of recent sba policy developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUVVGT21GMjhBclhlMWJReEZkcXh3RzhGSVdFdUw0T3o0R3dHZFZKMURFTnBZVUZ4Z3I0NUJIRmVMQUwwTi1Yd2VwTEl6dkF0RFUzZzc1aWJiTWJKX1dUb0JxZkdKSXNFbi14YkNra2hpMF9qamlIQXZnVFAxOTgxaERRd0RmVENScVRpck91Q3FIMXV5VVJYNjQzcnV4Uk85N1lhUU9n?oc=5",
-      "publishedAt": "2026-08-31T04:26:00.000Z"
+      "category": "Rates",
+      "source": "finance.yahoo.com",
+      "title": "Mortgage rates hit highest level in over a year: Mortgage and refinance interest rates today, Thursday, September 3, 2026",
+      "summary": "finance.yahoo.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxOT2dZWlF3QWhIZUZfMzBZVkMwWV8xbVMxdVpBak5meE8zQ3BuUVBsOTdQSjYwSGRVQzNYTl9yVEVhejJhWTRqcGQtZkpXNUMxaFc0ZDBKNTU3eGZLRF9UalgxZ3J3bGpmU08zWGNEdEdiWXR6MU5Sd2xubzBreHh4OXdJNVdyR2JWRWhuaGFGWTBtNDNlTEN3aWhfcHJfcE9DbHFmM3VocFJxRWlHdTRqMEw5X1Q3ZFlEREFRRFRTbTE3c1NaSzgwMWY1YTN2NVRjemNNRm9Ca05qVWZMTm9BT0RkeHNKODhXajl5TFAtVzRzVElwLThDUVFPLWh6cUZiSU5HbFdKT2RIc3ZlVzVQWGFMZGVLd05NeG5DSGp3?oc=5",
+      "publishedAt": "2026-09-03T16:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Barron's",
+      "title": "3 Reasons Not to Freak Out About 7% Mortgage Rates",
+      "summary": "Barron's coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBzOEFNWXpYU19pQ29CSk1Ra2pZaHZkcnlCRUFjejMwandDUk0xSkcyU1lXaXB6eUlCUlozMlVSbkI5cE5mUG80VUVFX0FCLUJGbU1MZUFxbnNXeDR3Z3lGeTdzNDNEVW00WXVDVUZvb2NmMFIyVTBZTC1mMA?oc=5",
+      "publishedAt": "2026-09-03T16:32:00.000Z"
     }
   ]
 }
