@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T17:34:38.680Z",
+  "updatedAt": "2026-09-05T16:48:40.284Z",
   "rates": {
     "asOf": "9/3/2026",
     "source": "Freddie Mac PMMS",
@@ -50,19 +50,19 @@
     },
     {
       "category": "Rates",
-      "source": "CNN",
-      "title": "Mortgage rates hit a new high for 2026, marching closer to 7%",
-      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA2N2c2OW40SktPMUhscGNzaXNKbURZQnlkeWF1bElzTDJzN3BDVkNEa3pNdXNyODN4c2xYeXZSelF5TkgyWkk2TmppVFZ3Q2RwMlV2aGwyM1NEU2Y3YURlLVBTTVFHS1lQa1JQazdsNXRwR1g1ajVjOUhR?oc=5",
-      "publishedAt": "2026-09-03T16:00:29.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWm5Nb2d4V2c1d19xNHFiVjExRFhqMjZxM3FJa3hnblpmdjNwRHBaMHFiSlNUUnkxM3VxcmtOeUxYTThKRTBDa0VlNklQVFVESVhKbmoyd2R5OVZxS2R0VWF0cGQ2TzY2RzhqbnNPdnNnQlpGeTZBUjBGMWpYUzFzNUxsOVJkYzNr0gGOAUFVX3lxTE1RdzlMZzJyR2VUeV9kc2ozRXppdF92a3gtWGJ2ZkZ0QjNwdmgwQzNoYnZsVGx4c1E0cWs2OHg4WHhwLVNMdURfLVE4OFpHVGJFLWUwd1MzU1hpNV9xX2w5ZlQ2aXp5UXBwTC00WTRkQ3RWYzRpOFViZFVDSDF4WmVueTYwY29TeGNmZUNiUGc?oc=5",
       "publishedAt": "2026-08-31T17:56:01.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "cbsnews.com",
+      "title": "Are mortgage rates heading back above 7%? Here's what experts think.",
+      "summary": "cbsnews.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5UeWRyX3E0SnEzWWlJMkxoUmNibURuQl9EdzhlMHRqWVlxNHdqTm05Y2pFWFBrRzJaYXBwN2hkRDdoT0RtdmFRNHNlQ0RJcmJyYlI5Zmc5enJXcEhmSjVaQkRGUG9CYng5QkR4V3pLOUl0MkgtMy04Wg?oc=5",
+      "publishedAt": "2026-09-04T20:34:00.000Z"
     },
     {
       "category": "Rates",
@@ -74,19 +74,19 @@
     },
     {
       "category": "Rates",
-      "source": "finance.yahoo.com",
-      "title": "Mortgage rates hit highest level in over a year: Mortgage and refinance interest rates today, Thursday, September 3, 2026",
-      "summary": "finance.yahoo.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxOT2dZWlF3QWhIZUZfMzBZVkMwWV8xbVMxdVpBak5meE8zQ3BuUVBsOTdQSjYwSGRVQzNYTl9yVEVhejJhWTRqcGQtZkpXNUMxaFc0ZDBKNTU3eGZLRF9UalgxZ3J3bGpmU08zWGNEdEdiWXR6MU5Sd2xubzBreHh4OXdJNVdyR2JWRWhuaGFGWTBtNDNlTEN3aWhfcHJfcE9DbHFmM3VocFJxRWlHdTRqMEw5X1Q3ZFlEREFRRFRTbTE3c1NaSzgwMWY1YTN2NVRjemNNRm9Ca05qVWZMTm9BT0RkeHNKODhXajl5TFAtVzRzVElwLThDUVFPLWh6cUZiSU5HbFdKT2RIc3ZlVzVQWGFMZGVLd05NeG5DSGp3?oc=5",
-      "publishedAt": "2026-09-03T16:00:00.000Z"
+      "source": "CNN",
+      "title": "Mortgage rates hit a new high for 2026, marching closer to 7% | CNN Business",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA2N2c2OW40SktPMUhscGNzaXNKbURZQnlkeWF1bElzTDJzN3BDVkNEa3pNdXNyODN4c2xYeXZSelF5TkgyWkk2TmppVFZ3Q2RwMlV2aGwyM1NEU2Y3YURlLVBTTVFHS1lQa1JQazdsNXRwR1g1ajVjOUhR?oc=5",
+      "publishedAt": "2026-09-03T16:01:51.000Z"
     },
     {
       "category": "Rates",
-      "source": "Barron's",
-      "title": "3 Reasons Not to Freak Out About 7% Mortgage Rates",
-      "summary": "Barron's coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBzOEFNWXpYU19pQ29CSk1Ra2pZaHZkcnlCRUFjejMwandDUk0xSkcyU1lXaXB6eUlCUlozMlVSbkI5cE5mUG80VUVFX0FCLUJGbU1MZUFxbnNXeDR3Z3lGeTdzNDNEVW00WXVDVUZvb2NmMFIyVTBZTC1mMA?oc=5",
-      "publishedAt": "2026-09-03T16:32:00.000Z"
+      "source": "Yahoo Finance",
+      "title": "Mortgage rates hit highest level in over a year: Mortgage and refinance interest rates today, Thursday, September 3, 2026",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxOT2dZWlF3QWhIZUZfMzBZVkMwWV8xbVMxdVpBak5meE8zQ3BuUVBsOTdQSjYwSGRVQzNYTl9yVEVhejJhWTRqcGQtZkpXNUMxaFc0ZDBKNTU3eGZLRF9UalgxZ3J3bGpmU08zWGNEdEdiWXR6MU5Sd2xubzBreHh4OXdJNVdyR2JWRWhuaGFGWTBtNDNlTEN3aWhfcHJfcE9DbHFmM3VocFJxRWlHdTRqMEw5X1Q3ZFlEREFRRFRTbTE3c1NaSzgwMWY1YTN2NVRjemNNRm9Ca05qVWZMTm9BT0RkeHNKODhXajl5TFAtVzRzVElwLThDUVFPLWh6cUZiSU5HbFdKT2RIc3ZlVzVQWGFMZGVLd05NeG5DSGp3?oc=5",
+      "publishedAt": "2026-09-03T16:00:00.000Z"
     }
   ]
 }
