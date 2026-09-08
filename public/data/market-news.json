@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T18:42:41.447Z",
+  "updatedAt": "2026-09-08T17:54:15.856Z",
   "rates": {
     "asOf": "9/3/2026",
     "source": "Freddie Mac PMMS",
@@ -58,19 +58,19 @@
     },
     {
       "category": "Rates",
+      "source": "CNN",
+      "title": "Mortgage rates hit a new high for 2026, marching closer to 7%",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA2N2c2OW40SktPMUhscGNzaXNKbURZQnlkeWF1bElzTDJzN3BDVkNEa3pNdXNyODN4c2xYeXZSelF5TkgyWkk2TmppVFZ3Q2RwMlV2aGwyM1NEU2Y3YURlLVBTTVFHS1lQa1JQazdsNXRwR1g1ajVjOUhR?oc=5",
+      "publishedAt": "2026-09-03T16:00:29.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "CBS News",
       "title": "Are mortgage rates heading back above 7%? Here's what experts think.",
       "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5UeWRyX3E0SnEzWWlJMkxoUmNibURuQl9EdzhlMHRqWVlxNHdqTm05Y2pFWFBrRzJaYXBwN2hkRDdoT0RtdmFRNHNlQ0RJcmJyYlI5Zmc5enJXcEhmSjVaQkRGUG9CYng5QkR4V3pLOUl0MkgtMy04Wg?oc=5",
       "publishedAt": "2026-09-04T20:34:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "CNN",
-      "title": "Some homeowners have been waiting years for mortgage relief. It keeps slipping away",
-      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdUZrWjNoVDJzV3dFSTVCSUh5dHZyQ1VzM1Q3VFNDaXVRckVzQzJyRGpzQTYwZEJJdC1jMUlpUjd0WDhvT1RkZVNicW9DRDJoaDhzaFNvUTNiWEVyME5kRUQ3Y242Um1IdXVQRVhqQUxvUHp2LVBCYklweVhXcE5KcUZDRXBlek9obW96Qw?oc=5",
-      "publishedAt": "2026-09-05T16:00:29.000Z"
     },
     {
       "category": "Rates",
@@ -82,11 +82,11 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage rates hit highest level in over a year: Mortgage and refinance interest rates today, Thursday, September 3, 2026",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxOT2dZWlF3QWhIZUZfMzBZVkMwWV8xbVMxdVpBak5meE8zQ3BuUVBsOTdQSjYwSGRVQzNYTl9yVEVhejJhWTRqcGQtZkpXNUMxaFc0ZDBKNTU3eGZLRF9UalgxZ3J3bGpmU08zWGNEdEdiWXR6MU5Sd2xubzBreHh4OXdJNVdyR2JWRWhuaGFGWTBtNDNlTEN3aWhfcHJfcE9DbHFmM3VocFJxRWlHdTRqMEw5X1Q3ZFlEREFRRFRTbTE3c1NaSzgwMWY1YTN2NVRjemNNRm9Ca05qVWZMTm9BT0RkeHNKODhXajl5TFAtVzRzVElwLThDUVFPLWh6cUZiSU5HbFdKT2RIc3ZlVzVQWGFMZGVLd05NeG5DSGp3?oc=5",
-      "publishedAt": "2026-09-03T16:00:00.000Z"
+      "source": "WSJ",
+      "title": "Mortgage Rates Today, September 8, 2026: 30-Year Rates Climb to 6.91%",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZ0wtdDBpcHRUNjJ5cGREbGR2NVdLWVVHTFYxVWZDWkJuTEtHTXdiYkptYVdSckRDODFkYzJJbzhCUHQ4dnRfWGFuTEpHRjktc0FIWWxjSTFtS3RKZUZTaWNNZzNnc09haHJnVGFOZ3pZcmNVZVN6RTNqY1MwU2Rwa3N1RDNONnJnQUd3?oc=5",
+      "publishedAt": "2026-09-08T13:05:25.000Z"
     }
   ]
 }
