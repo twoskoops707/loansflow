@@ -15,7 +15,7 @@
   <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0b">
-  <meta name="google-adsense-account" content="ca-pub-7523216981025331">
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <link rel="icon" type="image/svg+xml" href="img/logo.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -31,7 +31,7 @@
   </script>
   <script src="https://ezoicanalytics.com/analytics.js"></script>
   <script src="js/ezoic-boot.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7523216981025331" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -58,8 +58,11 @@
     </div>
     <aside class="hero-card" aria-label="Quick mortgage payment estimate">
       <div class="hero-card-head">
-        <div class="eyebrow">Quick estimate</div>
-        <h2>Monthly mortgage payment</h2>
+        <div>
+          <div class="eyebrow">Quick estimate</div>
+          <h2>Monthly mortgage payment</h2>
+        </div>
+        <span class="hero-card-hint">Updates as you type</span>
       </div>
       <div class="qe-grid">
         <label class="qe-field" for="qeHomePrice"><span>Home price</span><div class="qe-input"><span>$</span><input id="qeHomePrice" type="number" value="425000" step="1000" inputmode="numeric"></div></label>
@@ -91,39 +94,31 @@
       <p>SBA and commercial tools most sites skip — plus the mortgage calculators homebuyers still need.</p>
     </div>
 
-    <div class="ad-slot ad-slot--leaderboard" data-ad-format="horizontal" data-ad-name="home-top"></div>
+    <div class="ad-slot ad-slot--leaderboard" data-ad-format="horizontal" data-ad-name="home-top" data-ad-unit="7525616235"></div>
 
-    <div class="tool-grid">
-      <a class="tool-link" href="tools/?step=0">
-        <div class="num">01</div>
-        <h3>SBA &amp; Commercial</h3>
-        <p>7(a), 504, conventional — payments, guaranty fees, DSCR.</p>
-      </a>
-      <a class="tool-link" href="tools/?step=1">
-        <div class="num">02</div>
-        <h3>Commercial Amortization</h3>
-        <p>Year-by-year ledger with balloon scenarios.</p>
-      </a>
-      <a class="tool-link" href="tools/?step=2">
-        <div class="num">03</div>
-        <h3>Line of Credit</h3>
-        <p>Draws, interest-only vs % of balance, utilization.</p>
-      </a>
-      <a class="tool-link" href="tools/?step=3">
-        <div class="num">04</div>
-        <h3>Mortgage Payment</h3>
-        <p>PITI breakdown from price, rate, tax, and insurance.</p>
-      </a>
-      <a class="tool-link" href="tools/?step=5">
-        <div class="num">05</div>
-        <h3>Amortization Ledger</h3>
-        <p>Extra payments and one-time balloons modeled live.</p>
-      </a>
-      <a class="tool-link" href="tools/?step=6">
-        <div class="num">06</div>
-        <h3>Refinance &amp; Affordability</h3>
-        <p>Side-by-side refi savings and DTI-based buying power.</p>
-      </a>
+    <div class="tool-picker">
+      <label class="tool-picker-label" for="toolPicker">Choose a calculator</label>
+      <div class="tool-picker-row">
+        <select id="toolPicker">
+          <optgroup label="Business &amp; commercial">
+            <option value="0">SBA &amp; Commercial — 7(a), 504, conventional</option>
+            <option value="1">Commercial Amortization</option>
+            <option value="2">Line of Credit</option>
+          </optgroup>
+          <optgroup label="Mortgage">
+            <option value="3">Mortgage Payment (PITI)</option>
+            <option value="4">Payment Breakdown</option>
+            <option value="5">Amortization Ledger</option>
+            <option value="6">Refinance Comparison</option>
+            <option value="7">Affordability</option>
+          </optgroup>
+          <optgroup label="Market">
+            <option value="8">Today's Rates &amp; News</option>
+          </optgroup>
+        </select>
+        <a class="btn btn-primary" id="toolPickerGo" href="tools/?step=0">Open calculator &rarr;</a>
+      </div>
+      <p class="tool-picker-wizard">Not sure which one? <a href="tools/">Take the 60-second guided wizard &rarr;</a></p>
     </div>
 
     <div class="ad-slot ad-slot--incontent" data-ad-format="rectangle" data-ad-name="home-mid" style="margin-top:2rem;"></div>
@@ -184,7 +179,7 @@
   </footer>
 
   <script>
-    window.LOANSFLOW_ADS = { provider: 'adsense', adsenseClient: 'ca-pub-7523216981025331' };
+    window.LOANSFLOW_ADS = { provider: 'adsense', adsenseClient: 'ca-pub-6588738221262894' };
   </script>
   <script src="js/ads.js" defer></script>
   <div class="lf-offers" data-lf-offers="any" hidden style="max-width:980px;margin:0 auto;padding:0 1.25rem 2rem;"></div>
