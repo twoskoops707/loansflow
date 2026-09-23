@@ -15,9 +15,9 @@ Last verified: 2026-07-31 (PDT)
 - [x] Custom domain **loansflow.loan** (+ www) on Cloudflare Pages
 - [x] Logo D (`public/img/logo.svg`) live in nav/hero
 - [x] Legal pages (About / Contact / Privacy / Disclaimer / Terms) with loansflow707@gmail.com
-- [x] AdSense pub `ca-pub-7523216981025331` — ownership **Verified** on loansflow.loan
-- [x] `ads.txt` live (apex / www / pages.dev) — AdSense column **Authorized** on loansflow.loan
-- [x] Ad units shipped (home + tools slots via `js/ads.js`; empty-fill hide)
+- [x] AdSense switched 2026-09-22 to `ca-pub-6588738221262894` (twskoops@gmail.com account) — prior `ca-pub-7523216981025331` (loansflow707@gmail.com) left stuck in "Requires review"; ads.txt + site config repointed
+- [x] `ads.txt` live (apex / www / pages.dev) — re-check AdSense column status on loansflow.loan under the new account
+- [x] Ad units shipped (home + tools slots via `js/ads.js`; empty-fill hide) — `home-top` has a real slot ID (`7525616235`); rest still need creating under the new account, see `docs/ADS.md`
 - [x] Ezoic JS headers live (Gatekeeper + `sa.min.js` + analytics) — Incubator path; AdSense stays primary
 - [x] FamFlow LoansFlow profile + Path1/2/3 sequences + remapped farm coords (`loansflow.loan`)
 - [x] Affiliate outreach emails sent (10 networks) + Credible form submitted

@@ -1,9 +1,14 @@
 # LoansFlow AdSense unit map
 
-Publisher: `ca-pub-7523216981025331`  
+Publisher: `ca-pub-6588738221262894` (twskoops@gmail.com account, switched 2026-09-22 — prior `ca-pub-7523216981025331` under loansflow707@gmail.com sat stuck in "Requires review")  
 Primary loader: `public/js/ads.js` (AdSense). Ezoic JS remains in `<head>` for Incubator only — do not treat Ezoic as primary placements yet.
 
-Slots omit hard-coded `data-ad-slot` IDs until AdSense finishes “Getting ready”; units still request by client + format and collapse when unfilled.
+Named ad units are being created one at a time under the new account and wired in via `data-ad-unit` on each `.ad-slot` div (see table below). Units without a real slot ID still request by client + format and collapse when unfilled — this is a fallback for units not yet created, not the intended end state.
+
+| Name | `data-ad-unit` slot ID |
+|------|------------------------|
+| `home-top` | `7525616235` |
+| everything else | not yet created |
 
 ## Tools (`/tools/`) — highest RPM surface
 
