@@ -24,7 +24,8 @@
 
 ## AdSense
 
-Pub: `ca-pub-7523216981025331` · account `loansflow707@gmail.com`
+Active publisher: `ca-pub-6588738221262894` · account `twskoops@gmail.com` (switched 2026-09-22).  
+Prior `ca-pub-7523216981025331` (loansflow707@gmail.com) is retired — it sat stuck in "Requires review" and served zero ads.
 
 **ads.txt (must be crawlable at apex):**
 ```
@@ -32,7 +33,7 @@ https://loansflow.loan/ads.txt
 ```
 Body (exact):
 ```
-google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0
+google.com, pub-6588738221262894, DIRECT, f08c47fec0942fa0
 ```
 
 AdSense Sites list also shows `loansflow.pages.dev` and `twoskoops707.github.io` — crawler checks each host’s own `/ads.txt`. Apex status can stay **Not found** for up to ~24h after the file is live; there is no manual “recheck” button in the UI.

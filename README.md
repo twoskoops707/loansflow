@@ -56,11 +56,12 @@ npm run pages:deploy
 
 ## Ads
 
-Publisher: `ca-pub-7523216981025331` (configured in page shells + `js/ads.js`).  
+Active AdSense publisher: `ca-pub-6588738221262894` (twskoops@gmail.com account, verified on loansflow.loan).  
+Prior `ca-pub-7523216981025331` (loansflow707@gmail.com) was left stuck in "Requires review" and served nothing — it is retired, do not reintroduce it.  
 `public/ads.txt` must stay:
 
 ```
-google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0
+google.com, pub-6588738221262894, DIRECT, f08c47fec0942fa0
 ```
 
 Slot map: [docs/ADS.md](docs/ADS.md). Do not rewrite ads.txt to Ezoic until AdSense is Ready — see [docs/automation/EZOIC.md](docs/automation/EZOIC.md).

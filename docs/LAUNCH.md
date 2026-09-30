@@ -2,10 +2,10 @@
 
 **Canonical:** https://loansflow.loan/  
 **Repo:** https://github.com/twoskoops707/loansflow  
-**Brand:** LoansFlow · Contact: loansflow707@gmail.com  
+**Brand:** LoansFlow · Contact: use the form at /contact (support email no longer published on the live site)  
 **Pages project:** `loansflow-live` (Foremost Vole) · legacy `loansflow.pages.dev` still mirrors
 
-Last verified: 2026-07-31 (PDT)
+Last verified: 2026-09-30
 
 ---
 
@@ -14,8 +14,8 @@ Last verified: 2026-07-31 (PDT)
 - [x] Calculators + landing redesign live on apex
 - [x] Custom domain **loansflow.loan** (+ www) on Cloudflare Pages
 - [x] Logo D (`public/img/logo.svg`) live in nav/hero
-- [x] Legal pages (About / Contact / Privacy / Disclaimer / Terms) with loansflow707@gmail.com
-- [x] AdSense switched 2026-09-22 to `ca-pub-6588738221262894` (twskoops@gmail.com account) — prior `ca-pub-7523216981025331` (loansflow707@gmail.com) left stuck in "Requires review"; ads.txt + site config repointed
+- [x] Contact form at /contact (functions/api/contact.js → Cloudflare Email Routing). The `loansflow707@gmail.com` address was removed from the live site; about/privacy/terms now link to the form.
+- [x] AdSense switched 2026-09-22 to `ca-pub-6588738221262894` (twskoops@gmail.com account) — prior `ca-pub-7523216981025331` (loansflow707@gmail.com) left stuck in "Requires review"; ads.txt + all page shells + `js/ads.js` repointed
 - [x] `ads.txt` live (apex / www / pages.dev) — re-check AdSense column status on loansflow.loan under the new account
 - [x] Ad units shipped (home + tools slots via `js/ads.js`; empty-fill hide) — `home-top` has a real slot ID (`7525616235`); rest still need creating under the new account, see `docs/ADS.md`
 - [x] Ezoic JS headers live (Gatekeeper + `sa.min.js` + analytics) — Incubator path; AdSense stays primary

@@ -13,7 +13,7 @@ Updated: **2026-08-09** (PDT)
 | ntfy topic | `twskoops` |
 
 Production URL: **https://loansflow.loan/**  
-Publisher: `ca-pub-7523216981025331` · `loansflow707@gmail.com`
+Publisher: `ca-pub-6588738221262894` · account `twskoops@gmail.com` (prior `ca-pub-7523216981025331` / `loansflow707@gmail.com` retired 2026-09-22)
 
 ## Farm (2026-08-09)
 
@@ -33,7 +33,7 @@ Publisher: `ca-pub-7523216981025331` · `loansflow707@gmail.com`
 | twoskoops707.github.io | Getting ready | Not found |
 
 Live apex: AdSense script + `google-adsense-account` meta + Ezoic JS headers.  
-`https://loansflow.loan/ads.txt` = `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0`
+`https://loansflow.loan/ads.txt` = `google.com, pub-6588738221262894, DIRECT, f08c47fec0942fa0`
 
 **Blocked now:** Google “Verify it’s you” / reCAPTCHA on AdSense + Gmail automation profiles. Need one human pass in the open Chrome window (loansflow707), then agent can finish payments/auto-ads check + inbox replies.
 

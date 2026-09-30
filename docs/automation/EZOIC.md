@@ -33,8 +33,8 @@ As of **2026-02-19**, Ezoic requires **~250,000 monthly active users** for norma
 
 ## Site code policy
 
-- `public/js/ads.js` — keep `provider: 'adsense'` and `ca-pub-7523216981025331`
-- `public/ads.txt` — keep `google.com, pub-7523216981025331, DIRECT, f08c47fec0942fa0` (no Ezoic seller lines until dashboard provides them)
+- `public/js/ads.js` — keep `provider: 'adsense'` and `ca-pub-6588738221262894`
+- `public/ads.txt` — keep `google.com, pub-6588738221262894, DIRECT, f08c47fec0942fa0` (no Ezoic seller lines until dashboard provides them)
 - Static Ezoic tags in every `public/**/*.html` `<head>` (from `ezoic-snippet.txt` — crawlers need `sa.min.js` in source)
 - `public/js/ezoic-boot.js` — same snippet; loaded on all pages; no-op if static tags already present
 - No Ezoic `showAds` / placeholder divs while AdSense is primary
