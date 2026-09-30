@@ -1,92 +1,97 @@
 {
-  "updatedAt": "2026-08-26T14:59:56.740Z",
+  "updatedAt": "2026-09-25T20:41:59.274Z",
   "rates": {
-    "asOf": "8/20/2026",
+    "asOf": "9/24/2026",
     "source": "Freddie Mac PMMS",
     "sourceUrl": "https://www.freddiemac.com/pmms",
     "cells": [
       {
         "label": "30-Yr Fixed",
-        "value": "6.65%",
-        "note": "-0.02 pts vs last week"
+        "value": "7.03%",
+        "note": "+0.08 pts vs last week"
       },
       {
         "label": "15-Yr Fixed",
-        "value": "5.95%",
-        "note": "-0.01 pts vs last week"
+        "value": "6.42%",
+        "note": "+0.16 pts vs last week"
       },
       {
         "label": "30-Yr Refinance",
-        "value": "6.70%",
+        "value": "7.08%",
         "note": "Approx. vs purchase avg."
       }
     ],
     "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
   },
+  "prime": {
+    "value": 7,
+    "asOf": "2026-09-21",
+    "source": "FRED (DPRIME)"
+  },
   "articles": [
     {
       "category": "Rates",
       "source": "Freddie Mac",
-      "title": "Mortgage Rates Decline for Second Consecutive Week",
-      "summary": "Mortgage rates remained relatively stable this week at 6.67%. Housing affordability has improved from a year ago, and recent increases in purchase and refinance applications suggest that borrowers continue to respond to even modest changes in mortgage rates.",
+      "title": "Mortgage Rates Average 7.03%",
+      "summary": "The housing market remains supported by a solid labor market and an economy that is growing at a healthy rate.",
       "url": "https://www.freddiemac.com/pmms",
-      "publishedAt": "2026-08-20T00:00:00.000Z"
+      "publishedAt": "2026-09-24T00:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
+      "title": "Federal Reserve issues FOMC statement",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
-      "publishedAt": "2026-08-25T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "publishedAt": "2026-09-16T18:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
-      "publishedAt": "2026-08-19T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
+      "publishedAt": "2026-09-16T18:00:00.000Z"
     },
     {
       "category": "Rates",
-      "source": "money.com",
-      "title": "Today's Mortgage Rates: August 25, 2026",
-      "summary": "money.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5rdmpsVUwtTnZNcjlIbUQ5a0oyZDlUSV9IV1ZYQy0yOHViOEttMVlsTXlfUVEwcXBibVcycFRJZTY2WEhfM2Voby0xbVpIVUtMZ05j?oc=5",
-      "publishedAt": "2026-08-25T12:27:00.000Z"
+      "source": "NPR",
+      "title": "Mortgage rates have just surpassed 7% for the first time in well over a year",
+      "summary": "NPR coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeHZaM3lkMWVvUVAxWktZaVM1ZXZWdV9UWmpWN0xNMHlneDdoVHU4OHNQZHJzeUN2UE9EMlQ1dmxiQTQ3ZS1Bbk9BRzNGVU5fc1gxSF9UaVRUc1lDWS1VRm94UU1aZmZGYzNhN1htbzBXUU5EZ0FvRzhQVjVVV25NXzZsdEsteWhlSFE?oc=5",
+      "publishedAt": "2026-09-24T16:01:44.000Z"
     },
     {
       "category": "Rates",
-      "source": "Bankrate",
-      "title": "Mortgage Rate History: 1970s To 2026",
-      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XMWNxSHJrSVpZUFdhcm1SN0FKbkpaYTR3V195dS1rTWhQY0dCWEhDT1ZlYkNlMi13aG5BdXpEN200UmhsRDZ2WDg1dEZyLTE3YjZuYi1HeWxSV0lvUkswbEM1bXRhN3dCeTBvU1Vn?oc=5",
-      "publishedAt": "2026-08-24T07:00:00.000Z"
+      "source": "Reuters",
+      "title": "US 30-year mortgage rate tops 7%, hits 2-year high",
+      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPV2lEbUMzSXNFWWNnZUNQQ3NoQlkyQU5mZGtvYU10NDRBZXFHcXNjY2wyejZhWjVCSTNIQ2l2UmRGRmdTVW9wM1Z6Q1B6aklCbnUyTzJxTE1pcVhWTjlSeElhWTVma1d2bFNZcVJ5Q2dtZVYyb2l2R2pYNlZrd2NBRU4tT1RMVHF0TWpmYVFvdUtPVzFaUHNUeHNR?oc=5",
+      "publishedAt": "2026-09-23T17:05:36.000Z"
     },
     {
       "category": "Rates",
-      "source": "NerdWallet",
-      "title": "Mortgage Rates Are Lower This Week. Could They Drop Further?",
-      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1SWGYwdTRVWG1lNlowd2RYT19rX3lqWFNPLUZfbDNPbi12blU2cGtNN3FueUJTZFZHNGRqOXVmR0FEd2puaU5Bbl82VDFwZE1KbHJsTkp6ZWp2a3pKZms0eURvaEUwRmNmbThYbGh0T04tUWQzMUlBY0xlcw?oc=5",
-      "publishedAt": "2026-08-20T18:01:15.000Z"
+      "source": "wsj.com",
+      "title": "Mortgage Rates Just Hit 7%. Here’s How the Housing Market Is About to Change.",
+      "summary": "wsj.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWlRpRHZLTUlMX2I2aVIySnNNdEJqOVRlOV9CZTdDR05LYUpPeUk0LTkxTnY1SlloLVV6S29JNlFreEp1UlUwU0QxMDdrQTJBeUMwY0ZSUnN1VXVyV2U4ckxPbkRjRUkwVjVROWRKNE8tdTF3WFdySnU0OEFCcndWLWFzeElWRjkwM1g2dHNDOWtYRVRlekFGeC0xMUJTalpiQ253U0ZwUUVPSXpWZDdiZnpyYXhOSGNYeHc?oc=5",
+      "publishedAt": "2026-09-24T16:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "CNN",
+      "title": "Mortgage rates top 7%, dealing a further blow to the frozen housing market",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBjM1V0OGw4dnBzMm5abDBnbmVpQ2JEa3Z0SVlhUXV5aFVFMDhaTVFyV1pfcXZfRFdRWmI1azdlTVNPYTR0N2JDSkJIVXhFTmNhWThTMkwxMG03OElxVjZjUXFpaXlZemdlQmc2c1ZnMjVNaFJXLUE?oc=5",
+      "publishedAt": "2026-09-24T16:00:29.000Z"
     },
     {
       "category": "Rates",
       "source": "CBS News",
-      "title": "Will mortgage interest rates improve this September? 3 things to consider now",
+      "title": "Mortgage rates top 7% for the first time in more than 2 years",
       "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSGJ3SFdielNyYS1iSnM4TjQzQm5YSmZ6cnlxZTJWTGt6TGQzcVE1a1JfSExsZk5sTnVEVnFkcEMzcWtqTnFlejFkZGs3ek9tTm9pdXB6TGw1cDBoa3otVV9oUnpUNzVrWlRpUW44OXlRTVVMMTFDR2lidDRrOVFvOVFvbGJjbXRjVURHTHptdnhYNUN1VTdNTkY5d2ZWZkgyc0E?oc=5",
-      "publishedAt": "2026-08-25T19:54:43.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Forbes",
-      "title": "Mortgage Rates Forecast For 2026: Experts Predict Whether Interest Rates Will Drop",
-      "summary": "Forbes coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kMlJHRWhRY2owbnpsZWhWOHVVZFR1ZmM3NzhqTUVEVnpHR2xlMHp0QnR2eXFwV2wzQ2FMbXZTN3lTLUJ5OHgxdnk0S3Z2Q3hEQ2pEYW9xcWhrRktVS3B0RXB0NkdnM0hPMzBReG5neWZ1TTdvVWs4bWgxdWFNUkk?oc=5",
-      "publishedAt": "2026-08-20T16:17:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9rcGdTM1Q4ZGtVMkN6VkF5VmdWbFJQRC1sckdIbXQydTNoQWFnc3dfVWRkUVJvekJwQjJkazJlNWdNdUJEUGstM3lLMnFNQ0lBaHdWNTQ0TFlVXzhTTWZUVmpodDNod1RvZGhfTzBaYw?oc=5",
+      "publishedAt": "2026-09-23T14:10:00.000Z"
     }
   ]
 }

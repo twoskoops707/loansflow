@@ -1,6 +1,6 @@
 ﻿/**
  * LoansFlow AdSense loader — high-intent finance placements, reasonable density.
- * Client: ca-pub-7523216981025331
+ * Client: ca-pub-6588738221262894
  *
  * Formats: auto | horizontal | rectangle | fluid (in-article) | infeed | multipurpose
  * Empty slots collapse so unfilled ads do not leave dashed boxes.
@@ -9,7 +9,7 @@
   const CONFIG = Object.assign(
     {
       provider: 'adsense',
-      adsenseClient: 'ca-pub-7523216981025331',
+      adsenseClient: 'ca-pub-6588738221262894',
       ezoicPrivacyId: '',
       // Shorter than AdSense's typical fill time, but keeps the blank-box
       // flash brief on slow/unfilled slots instead of holding full ad-sized
@@ -63,8 +63,12 @@
     const deadline = Date.now() + (CONFIG.emptyCollapseMs || 2800);
     const tick = () => {
       const status = (ins.getAttribute('data-ad-status') || '').toLowerCase();
-      const hasFrame = !!ins.querySelector('iframe');
-      if (status === 'filled' || hasFrame) {
+      // Trust AdSense's own status attribute, not iframe presence: a
+      // full-width-responsive unit creates its iframe shell to reserve
+      // layout space *before* Google decides fill, so "has an iframe" is
+      // not proof of a rendered ad — it was locking slots into "filled"
+      // (never collapsing) even when nothing ever rendered inside them.
+      if (status === 'filled') {
         markFilled(el);
         return;
       }
@@ -73,8 +77,9 @@
         return;
       }
       if (Date.now() >= deadline) {
-        if (!hasFrame) markEmpty(el);
-        else markFilled(el);
+        // No definitive status in time — collapse rather than risk holding
+        // a large reserved-but-blank box on screen.
+        markEmpty(el);
         return;
       }
       setTimeout(tick, 400);

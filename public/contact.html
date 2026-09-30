@@ -20,8 +20,24 @@
     .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
     .legal-page p { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
     .legal-page a { color: var(--accent); }
+    .contact-form { max-width: 640px; display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .contact-form label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--ink); }
+    .contact-form label b { color: var(--accent); font-weight: 400; }
+    .contact-form label small { color: var(--muted); font-weight: 400; }
+    .contact-form input, .contact-form textarea { font: inherit; font-size: 1rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); padding: 0.75rem 0.85rem; border-radius: 4px; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .contact-form [aria-invalid="true"] { border-color: #e5484d; }
+    .contact-form textarea { resize: vertical; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .cf-status { min-height: 1.2em; margin: 0 !important; color: #e5484d !important; font-size: 0.85rem; }
+    .cf-send { justify-self: start; font: inherit; font-weight: 600; background: var(--accent); color: var(--canvas); border: 0; border-radius: 999px; padding: 0.8rem 1.6rem; cursor: pointer; }
+    .cf-send:disabled { opacity: 0.6; cursor: wait; }
+    .cf-thanks { max-width: 640px; margin-top: 1.5rem; padding: 1.5rem; border: 1px solid var(--line); background: var(--surface); outline: none; }
+    .cf-thanks h2 { margin-bottom: 0.5rem; }
+    @media (max-width: 560px) { .cf-row { grid-template-columns: 1fr; } }
   </style>
-  <meta name="google-adsense-account" content="ca-pub-7523216981025331">
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <!-- Ezoic JS integration (Incubator detection). Official header from docs.ezoic.com/docs/ezoicads/integration ? domain-bound, no per-site script ID. Publisher userId 652581. AdSense stays primary. -->
   <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
   <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
@@ -32,7 +48,7 @@
   </script>
   <script src="https://ezoicanalytics.com/analytics.js"></script>
   <script src="js/ezoic-boot.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7523216981025331" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="site-nav">
@@ -40,9 +56,66 @@
     <nav class="nav-links"><a class="nav-cta" href="tools/">Open tools</a></nav>
   </header>
   <main class="legal-page">
-    <h1>Contact</h1>
-    <p>Questions, corrections, or feedback about a calculation? Reach out any time.</p>
-    <p><a href="mailto:loansflow707@gmail.com">loansflow707@gmail.com</a></p>
+    <h1>Contact us</h1>
+    <p>Questions, corrections, or feedback about a calculation? Write us a message and we'll get back to you.</p>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="cf-row">
+        <label><span>Full name <b aria-hidden="true">*</b></span><input name="name" autocomplete="name" maxlength="100" required></label>
+        <label><span>Phone <small>(optional)</small></span><input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+      </div>
+      <label><span>Email <b aria-hidden="true">*</b></span><input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label><span>Subject <b aria-hidden="true">*</b></span><input name="subject" maxlength="150" required></label>
+      <label><span>Message <b aria-hidden="true">*</b></span><textarea name="message" rows="7" maxlength="5000" required></textarea></label>
+      <label class="cf-hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+      <button type="submit" class="cf-send">Send message</button>
+    </form>
+    <div class="cf-thanks" id="cfThanks" hidden tabindex="-1">
+      <h2>Thank you!</h2>
+      <p>We've received your message and will be getting back to you shortly. A confirmation has been sent to your email.</p>
+      <p><a href="tools/">Back to the calculators &rarr;</a></p>
+    </div>
+    <script>
+      (function () {
+        var form = document.getElementById('contactForm');
+        var status = document.getElementById('cfStatus');
+        var startedAt = Date.now();
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+          if (!form.checkValidity()) {
+            var bad = form.querySelector(':invalid');
+            bad.setAttribute('aria-invalid', 'true');
+            status.textContent = 'Please fill in your name, a valid email, a subject, and your message.';
+            bad.focus();
+            return;
+          }
+          var data = Object.fromEntries(new FormData(form));
+          data.startedAt = startedAt;
+          var btn = form.querySelector('button');
+          btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = '';
+          fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) })
+            .then(function (r) { return r.json().catch(function () { return {}; }); })
+            .then(function (res) {
+              if (res.ok) {
+                form.hidden = true;
+                var t = document.getElementById('cfThanks'); t.hidden = false; t.focus();
+                return;
+              }
+              if (res.errors) {
+                var first = Object.keys(res.errors)[0];
+                var el = form.elements[first];
+                if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); }
+                status.textContent = res.errors[first];
+              } else {
+                status.textContent = res.error || "Sorry, we couldn't send your message. Please try again later.";
+              }
+            })
+            .catch(function () { status.textContent = "Sorry, we couldn't send your message. Please try again later."; })
+            .finally(function () { btn.disabled = false; btn.textContent = 'Send message'; });
+        });
+      })();
+    </script>
   </main>
 </body>
 </html>

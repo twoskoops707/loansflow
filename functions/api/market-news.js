@@ -213,6 +213,18 @@ async function buildPayload() {
     errors.push(`pmms: ${err.message}`);
   }
 
+  let prime = null;
+  try {
+    // WSJ/bank prime rate, daily, via FRED (keyless CSV). Drives SBA + LOC defaults.
+    const rows = (await fetchText('https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME'))
+      .trim().split(/\r?\n/).slice(1).map((l) => l.split(','))
+      .filter(([, v]) => !Number.isNaN(parseFloat(v)));
+    const [asOf, v] = rows[rows.length - 1];
+    prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+  } catch (err) {
+    errors.push(`prime: ${err.message}`);
+  }
+
   try {
     const html = await fetchText('https://www.freddiemac.com/pmms');
     freddieStory = parseFreddieSummary(html);
@@ -265,6 +277,7 @@ async function buildPayload() {
   return {
     updatedAt: new Date().toISOString(),
     rates,
+    prime,
     articles: articles.slice(0, 8),
     errors: errors.length ? errors : undefined,
   };
