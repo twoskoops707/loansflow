@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-09-25T20:41:59.274Z",
+  "updatedAt": "2026-10-01T19:30:18.195Z",
   "rates": {
-    "asOf": "9/24/2026",
+    "asOf": "10/1/2026",
     "source": "Freddie Mac PMMS",
     "sourceUrl": "https://www.freddiemac.com/pmms",
     "cells": [
       {
         "label": "30-Yr Fixed",
-        "value": "7.03%",
-        "note": "+0.08 pts vs last week"
+        "value": "7.28%",
+        "note": "+0.25 pts vs last week"
       },
       {
         "label": "15-Yr Fixed",
-        "value": "6.42%",
-        "note": "+0.16 pts vs last week"
+        "value": "6.60%",
+        "note": "+0.18 pts vs last week"
       },
       {
         "label": "30-Yr Refinance",
-        "value": "7.08%",
+        "value": "7.33%",
         "note": "Approx. vs purchase avg."
       }
     ],
@@ -25,17 +25,17 @@
   },
   "prime": {
     "value": 7,
-    "asOf": "2026-09-21",
+    "asOf": "2026-09-28",
     "source": "FRED (DPRIME)"
   },
   "articles": [
     {
       "category": "Rates",
       "source": "Freddie Mac",
-      "title": "Mortgage Rates Average 7.03%",
-      "summary": "The housing market remains supported by a solid labor market and an economy that is growing at a healthy rate.",
+      "title": "Mortgage Rates Average 7.28%",
+      "summary": "With mortgage rates on their current trajectory, the housing market continues to be supported by favorable economic conditions.",
       "url": "https://www.freddiemac.com/pmms",
-      "publishedAt": "2026-09-24T00:00:00.000Z"
+      "publishedAt": "2026-10-01T00:00:00.000Z"
     },
     {
       "category": "Fed Policy",
@@ -55,43 +55,43 @@
     },
     {
       "category": "Rates",
-      "source": "NPR",
-      "title": "Mortgage rates have just surpassed 7% for the first time in well over a year",
-      "summary": "NPR coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeHZaM3lkMWVvUVAxWktZaVM1ZXZWdV9UWmpWN0xNMHlneDdoVHU4OHNQZHJzeUN2UE9EMlQ1dmxiQTQ3ZS1Bbk9BRzNGVU5fc1gxSF9UaVRUc1lDWS1VRm94UU1aZmZGYzNhN1htbzBXUU5EZ0FvRzhQVjVVV25NXzZsdEsteWhlSFE?oc=5",
-      "publishedAt": "2026-09-24T16:01:44.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Reuters",
-      "title": "US 30-year mortgage rate tops 7%, hits 2-year high",
-      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPV2lEbUMzSXNFWWNnZUNQQ3NoQlkyQU5mZGtvYU10NDRBZXFHcXNjY2wyejZhWjVCSTNIQ2l2UmRGRmdTVW9wM1Z6Q1B6aklCbnUyTzJxTE1pcVhWTjlSeElhYTVma1d2bFNZcVJ5Q2dtZVYyb2l2R2pYNlZrd2NBRU4tT1RMVHF0TWpmYVFvdUtPVzFaUHNUeXNR?oc=5",
-      "publishedAt": "2026-09-23T17:05:36.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "wsj.com",
-      "title": "Mortgage Rates Just Hit 7%. Here’s How the Housing Market Is About to Change.",
-      "summary": "wsj.com coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWlRpRHZLTUlMX2I2aVIySnNNdEJqOVRlOV9CZTdDR05LYUpPeUk0LTkxTnY1SlloLVV6S29JNlFreEp1UlUwU0QxMDdrQTJBeUMwY0ZSUnN1VXVyV2U4ckxPbkRjRUkwVjVROWRKNE8tdTF3WFdySnU0OEFCcndWLWFzeElWRjkwM1g2dHNDOWtYRVRlekFGeC0xMUJTalpiQ253U0ZwUUVPSXpWZDdiZnpyYXhOSGNYeHc?oc=5",
-      "publishedAt": "2026-09-24T16:00:00.000Z"
+      "source": "pbs.org",
+      "title": "High mortgage rates compound housing affordability challenges",
+      "summary": "pbs.org coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNa1JSSXJEWlZYbjdBTGVTemxfblMxTUZTY2RZeVNJcVhDbmp3bjlac1pWM21KX2V5UWZhOUpFX0l0U3MwNk9QNVZ2WUVJLWIteXd1TDl3aHNQd3NLdEJaZUFSSFdkc1dLT3dRX0lrcFVsLUJ4Y3RVN01nT3dyRHdVaXdTWVFreGp5OWNrU3FXSlhVY3d2bUhMX2dLWQ?oc=5",
+      "publishedAt": "2026-09-28T22:40:32.000Z"
     },
     {
       "category": "Rates",
       "source": "CNN",
-      "title": "Mortgage rates top 7%, dealing a further blow to the frozen housing market",
+      "title": "Mortgage rates just hit 7.28%. But there are ways to get a lower rate",
       "summary": "CNN coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBjM1V0OGw4dnBzMm5abDBnbmVpQ2JEa3Z0SVlhUXV5aFVFMDhaTVFyV1pfcXZfRFdRWmI1azdlTVNPYTR0N2BDSkJIVXhFTmNhWThTMkwxMG03OElxVjZjUXFpaXlZemdlQmc2c1ZnMjVNaFJXLUE?oc=5",
-      "publishedAt": "2026-09-24T16:00:29.000Z"
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RNjZoZzB6Wm1pc0htZmxQMVJObnlpRnNNeWxMc1ZJTnJwRU83Sjg3MUhNdEEteFh1SmhmSnR2bjN0TWRNZ3M3Q1dsWGh0bnlRSXpfWFJPeG5CQXowcEoxeURtRWstdGdmUS1iaWZnaFVOWXJOeGQ5U0RUSQ?oc=5",
+      "publishedAt": "2026-10-01T16:00:29.000Z"
     },
     {
       "category": "Rates",
-      "source": "CBS News",
-      "title": "Mortgage rates top 7% for the first time in more than 2 years",
-      "summary": "CBS News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9rcGdTM1Q4ZGtVMkN6VkF5VmdWbFJQRC1sckdIbXQydTNoQWFnc3dfVWRkUVJvekJwQjJkazJlNWdNdUJEUGstM3lLMnFNQ0lBaHdWNTQ0TFlVUzhTTWZUVmpodDNod1RvZGhfTzBaYw?oc=5",
-      "publishedAt": "2026-09-23T14:10:00.000Z"
+      "source": "CNBC",
+      "title": "Mortgage rates jump for the sixth straight week, hitting both refinance and homebuyer demand hard",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNajRyd2FoYjR1NnJwdUNicWRfMXhlcGZjclhpMkJjRS0wMU53Y0VUeERaSkw0RGVZRnVKVEljb1BfZXJrNDdBY3BPcktud19GMF9vUi1TQm1uME4tTjJXLVBEUXdNaWpXc25HZG9PMTVRMFczUEVqVDIzQkFOaHd1QjYyQkp2SngwczdmamQ3VEJ1R1ZJc0VjNWJ3QXdsSzBELUHSAacBQVVfeXFMUEJQMWJWcE9Wd0dvb2ppYlN6S21NSUt1dmNwNUw1b2RLMUNqR2d6UzZaTnV1REc1ZExzUGhGckFrWUNpNWozMFhMQzdCRVBub0kzZEVyeW1KcXVKUnpfeEs4YmloMTExZ3dncEdkRnhBRlJYTjZieGFxcmthMGRyOWdRbFJLdnlxRUhNaEIyU2Fic3FqTm1HVXVnMmNwLTZaLTJvZV9QSjA?oc=5",
+      "publishedAt": "2026-09-30T11:00:01.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "nytimes.com",
+      "title": "As Mortgage Rates Hit Highest Level Since 2023, Buyers Look at ARMs",
+      "summary": "nytimes.com coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9pb05VYi1JdWZESjd2NzhhWTJuYWZmQlYtVVpaamxuQnh4a0ZxWFFLU05oNXFyUDR5bnRvRzRGOC1uU3BRZUxmbHhyRXFVeER4M3VHVWNISlZvYTRkZTBmWE9QTWxISjNwcmlNX2pQeXBYcHZiNlk4OG5rTlBSV3M?oc=5",
+      "publishedAt": "2026-10-01T18:18:36.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "NPR",
+      "title": "Mortgage rates break past 7% as bond yields surge, deepening U.S. housing gridlock",
+      "summary": "NPR coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeFZxblhxOU5kcW00OHd4cW9mMjV2Q2RxUHNVMnllS1FzRUh2ckZ0OUNGYUJjUkZRWnBocVNfLU5lcGNXV0ZoUHR6QV9sM0ZSNERSSTRPSFdWRnBSa3RDNTFqdmVhMnJGYkYwME4zWUlnV0VJakdGYzlxUUsxYUVNZ3QwMHI3MS1GeE1WQXlzcEU0S2NyRnlnWXplT0xUd3BXMC1uYnZJVjNzck5nSDg5VHVxTU44cnctNzBVc2VFYUs0UQ?oc=5",
+      "publishedAt": "2026-09-26T11:37:58.000Z"
     }
   ]
 }
