@@ -16,7 +16,7 @@
 | Channel | Status |
 |---------|--------|
 | **AdSense** `ca-pub-6588738221262894` | Code live and verified end-to-end (all ad requests succeed); **all slots report `unfilled`** — site approval state is the blocker, see [ADS.md](ADS.md) |
-| **Ezoic** | Incubator JS only — do not replace AdSense / ads.txt yet. It is the single biggest perf drag (see Performance) and injects `height:auto!important` into our ad containers |
+| **Ezoic** | **Removed 2026-10-02** — all Ezoic JS/CMP/analytics stripped from every page, `ezoic-boot.js` deleted. It cost ~3.2s of main-thread time per load, injected `height:auto!important` into ad containers, and had never been connected in Incubator. AdSense is now the only ad stack |
 | **Rakuten** SID 4736231 | Live; site loansflow.loan; profile **3/4**; Keycloak `family_name=Partnerships` still drives “Hey LoansFlow Partnerships” (public site is clean) |
 | Rakuten offers applied | EQ Bank + Masseys applied; Cleo pending earlier — **My Advertisers empty / no Links yet** |
 | CJ / FlexOffers / Impact | Blocked on captcha / Gmail verify |

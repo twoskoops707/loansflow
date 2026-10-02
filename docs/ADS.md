@@ -1,7 +1,7 @@
 # LoansFlow AdSense unit map
 
 Publisher: `ca-pub-6588738221262894` (twskoops@gmail.com account, switched 2026-09-22 — prior `ca-pub-7523216981025331` under loansflow707@gmail.com sat stuck in "Requires review")  
-Primary loader: `public/js/ads.js` (AdSense). Ezoic JS remains in `<head>` for Incubator only — do not treat Ezoic as primary placements yet.
+Primary loader: `public/js/ads.js` (AdSense) — the only ad stack on the site. Ezoic's JS, CMP and analytics were removed on 2026-10-02: they were blocking the main thread ~3.2s per page load (vs AdSense's 0.48s), injecting styles into our ad containers, and adding third-party cookies while producing no revenue (Incubator never connected). `public/js/ezoic-boot.js` is deleted. If Ezoic is ever re-enabled, its CMP is what provides EEA consent signalling for AdSense — reinstate both together, not one.
 
 Named ad units are being created one at a time under the new account and wired in via `data-ad-unit` on each `.ad-slot` div (see table below). Units without a real slot ID still request by client + format and collapse when unfilled — this is a fallback for units not yet created, not the intended end state.
 

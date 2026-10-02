@@ -18,7 +18,7 @@ Last verified: 2026-09-30
 - [x] AdSense switched 2026-09-22 to `ca-pub-6588738221262894` (twskoops@gmail.com account) — prior `ca-pub-7523216981025331` (loansflow707@gmail.com) left stuck in "Requires review"; ads.txt + all page shells + `js/ads.js` repointed
 - [x] `ads.txt` live (apex / www / pages.dev) — re-check AdSense column status on loansflow.loan under the new account
 - [x] Ad units shipped (home + tools slots via `js/ads.js`; empty-fill hide) — `home-top` has a real slot ID (`7525616235`); rest still need creating under the new account, see `docs/ADS.md`
-- [x] Ezoic JS headers live (Gatekeeper + `sa.min.js` + analytics) — Incubator path; AdSense stays primary
+- [x] Ezoic JS headers **removed 2026-10-02** (Gatekeeper + `sa.min.js` + analytics) — Incubator never connected and cost ~3.2s of main-thread time per load; AdSense is the only ad stack, see `docs/automation/EZOIC.md`
 - [x] FamFlow LoansFlow profile + Path1/2/3 sequences + remapped farm coords (`loansflow.loan`)
 - [x] Affiliate outreach emails sent (10 networks) + Credible form submitted
 - [x] Contract templates in `docs/legal/` (draft — counsel review)

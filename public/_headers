@@ -5,20 +5,18 @@
   Permissions-Policy: interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-# Static assets: cache for a day, then serve stale for a week while
-# revalidating in the background (filenames are not hashed, so a long
-# immutable TTL would pin visitors to a stale app.js after a deploy).
+# Static assets: revalidate hourly, then serve stale for a day while the
+# origin revalidates in the background. Filenames are not hashed, so this is
+# a freshness/repeat-view trade — a deploy reaches returning visitors within
+# the hour instead of after a multi-day immutable TTL.
 /css/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /js/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 /img/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
-
-/fonts/*
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
 # AdSense crawler: plain ads.txt at apex/www (no HTML soft-404)
 /ads.txt

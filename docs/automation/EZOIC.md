@@ -1,5 +1,7 @@
 # Ezoic — LoansFlow status & checklist
 
+**Status: dropped from the site 2026-10-02.** All Ezoic JS, Gatekeeper CMP and analytics were removed from every page and `public/js/ezoic-boot.js` deleted. Incubator was never connected, so it earned nothing while costing ~3.2s of main-thread time per load, injecting styles into our ad containers, and adding third-party cookies. This checklist is kept for history only — do not reinstate it without re-measuring the performance cost. AdSense is the sole ad stack.
+
 **Verdict (2026-07-30): Started account + site + JS path; deferred Cloud/DNS, ads.txt rewrite, and AdSense strip.**
 
 ## Why this split

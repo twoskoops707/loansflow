@@ -10,7 +10,6 @@
     {
       provider: 'adsense',
       adsenseClient: 'ca-pub-6588738221262894',
-      ezoicPrivacyId: '',
       // How long an unfilled slot keeps its reserved height before it is
       // collapsed away. Short enough to avoid holding full ad-sized blank
       // space, long enough that a normal ad request resolves first.
