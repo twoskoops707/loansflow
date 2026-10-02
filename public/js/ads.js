@@ -11,10 +11,15 @@
       provider: 'adsense',
       adsenseClient: 'ca-pub-6588738221262894',
       ezoicPrivacyId: '',
-      // Shorter than AdSense's typical fill time, but keeps the blank-box
-      // flash brief on slow/unfilled slots instead of holding full ad-sized
-      // empty space for ~3s before collapsing.
-      emptyCollapseMs: 1400,
+      // How long an unfilled slot keeps its reserved height before it is
+      // collapsed away. Short enough to avoid holding full ad-sized blank
+      // space, long enough that a normal ad request resolves first.
+      emptyCollapseMs: 2500,
+      // Keep watching after the collapse: AdSense can report "filled" well
+      // after the collapse deadline (CMP handshake, slow network, cold
+      // cache). A collapsed slot that later fills is un-hidden again, so a
+      // real ad can never stay invisible because it arrived late.
+      lateFillWatchMs: 90000,
     },
     window.LOANSFLOW_ADS || {}
   );
@@ -60,7 +65,9 @@
   }
 
   function watchFill(el, ins) {
-    const deadline = Date.now() + (CONFIG.emptyCollapseMs || 2800);
+    const collapseAt = Date.now() + (CONFIG.emptyCollapseMs || 2800);
+    const watchUntil = Date.now() + (CONFIG.lateFillWatchMs || 90000);
+    let collapsed = false;
     const tick = () => {
       const status = (ins.getAttribute('data-ad-status') || '').toLowerCase();
       // Trust AdSense's own status attribute, not iframe presence: a
@@ -72,17 +79,22 @@
         markFilled(el);
         return;
       }
-      if (status === 'unfilled') {
+      // unfilled = Google answered, nothing to show; blocked (an extension or
+      // a network policy ate the request) and error = this request is done.
+      // All three are final, so stop polling.
+      if (status === 'unfilled' || status === 'blocked' || status === 'error') {
         markEmpty(el);
         return;
       }
-      if (Date.now() >= deadline) {
-        // No definitive status in time — collapse rather than risk holding
-        // a large reserved-but-blank box on screen.
-        markEmpty(el);
+      if (Date.now() >= watchUntil) {
+        if (!collapsed) markEmpty(el);
         return;
       }
-      setTimeout(tick, 400);
+      if (!collapsed && Date.now() >= collapseAt) {
+        collapsed = true;
+        markEmpty(el);
+      }
+      setTimeout(tick, collapsed ? 1500 : 400);
     };
     setTimeout(tick, 600);
   }
@@ -122,6 +134,9 @@
       ins.setAttribute('data-ad-client', CONFIG.adsenseClient);
       if (el.dataset.adUnit) {
         ins.setAttribute('data-ad-slot', el.dataset.adUnit);
+        el.dataset.adUnitState = 'wired';
+      } else {
+        el.dataset.adUnitState = 'client-only';
       }
       ins.setAttribute('data-ad-format', preset.format);
       if (layout) {

@@ -36,6 +36,20 @@ Named ad units are being created one at a time under the new account and wired i
 - `ads.js` labels each unit “Advertisement”, pushes AdSense, then watches `data-ad-status` / iframe presence.
 - Unfilled units get `data-ad-state="empty"` and are hidden (no dashed placeholder left behind).
 - Empty mobile anchors hide the whole `.ad-anchor` bar.
+- A slot is only collapsed once: if AdSense reports `unfilled`, `blocked`, or `error` it is final and the watcher stops.
+- If no status arrives within `emptyCollapseMs` (2.5s) the slot collapses early so no blank ad-sized box is held on screen, but the watcher keeps polling for `lateFillWatchMs` (90s). A slot that collapses and *then* reports `filled` is un-hidden again — before 2026-10-02 it stayed `display:none` forever, so any ad that rendered late was in the page but never visible.
+- Slots render `data-ad-unit-state="wired"` when they have a real slot ID and `"client-only"` when they only send `data-ad-client`; DevTools → any `.ad-slot`.
+
+## Verify a fill (2026-10-02, headless Chromium against the live site)
+
+```bash
+node /tmp/kilo/ads-probe.js https://loansflow.loan/   # per-slot state, status, network
+```
+
+Result: every request completes (no blocked/failed requests, no console errors) and **all four home slots report `data-ad-status="unfilled"`** — including `home-top`, which does have a slot ID. Nothing in the code blocks ads; AdSense is simply not filling. Two account-side items must clear:
+
+1. Site approval state — docs recorded “Getting ready” / “Requires review”. Google serves no ads until the site is Ready.
+2. Unit IDs — six of seven slots have no `data-ad-unit`. Confirm `7525616235` belongs to `ca-pub-6588738221262894` (units are account-scoped; an ID from the retired `ca-pub-7523216981025331` account will never fill) and create units for the rest, then paste the IDs into the `data-ad-unit` attributes.
 
 ## FamFlow note
 

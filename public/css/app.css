@@ -12,7 +12,7 @@
   --surface-hover: #1c1d1f;
   --ink: #ffffff;
   --ink-secondary: #e8e8ec;
-  --muted: #7d7d86;
+  --muted: #8a8a95;
   --fog: #9a9aa3;
   --accent: #34d59a;
   --accent-glow: rgba(52, 213, 154, 0.4);
@@ -118,7 +118,7 @@ body {
   cursor: pointer;
   border-radius: 0;
   transition: background var(--dur) var(--ease), transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
-  opacity: 0.55;
+  opacity: 0.72;
 }
 .step:hover {
   background: rgba(255, 255, 255, 0.04);

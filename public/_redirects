@@ -1,0 +1,4 @@
+# Canonical host is the apex. https://www.loansflow.loan/ was serving a
+# byte-identical copy of the apex (no redirect), so every page was reachable
+# on two hosts.
+https://www.loansflow.loan/* https://loansflow.loan/:splat 301

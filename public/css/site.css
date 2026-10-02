@@ -12,7 +12,7 @@
   --surface-hover: #1c1d1f;
   --ink: #ffffff;
   --ink-secondary: #e8e8ec;
-  --muted: #7d7d86;
+  --muted: #8a8a95;
   --fog: #9a9aa3;
   --accent: #34d59a;
   --accent-glow: rgba(52, 213, 154, 0.4);
@@ -501,7 +501,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.7;
   border-top: 1px solid var(--line);
   padding-top: 1.4rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* ---------- Ad slots ---------- */
