@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T19:30:18.195Z",
+  "updatedAt": "2026-10-02T19:15:11.302Z",
   "rates": {
     "asOf": "10/1/2026",
     "source": "Freddie Mac PMMS",
@@ -25,7 +25,7 @@
   },
   "prime": {
     "value": 7,
-    "asOf": "2026-09-28",
+    "asOf": "2026-09-30",
     "source": "FRED (DPRIME)"
   },
   "articles": [
@@ -55,9 +55,9 @@
     },
     {
       "category": "Rates",
-      "source": "pbs.org",
+      "source": "PBS",
       "title": "High mortgage rates compound housing affordability challenges",
-      "summary": "pbs.org coverage of recent rates developments. Open the full report for details.",
+      "summary": "PBS coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNa1JSSXJEWlZYbjdBTGVTemxfblMxTUZTY2RZeVNJcVhDbmp3bjlac1pWM21KX2V5UWZhOUpFX0l0U3MwNk9QNVZ2WUVJLWIteXd1TDl3aHNQd3NLdEJaZUFSSFdkc1dLT3dRX0lrcFVsLUJ4Y3RVN01nT3dyRHdVaXdTWVFreGp5OWNrU3FXSlhVY3d2bUhMX2dLWQ?oc=5",
       "publishedAt": "2026-09-28T22:40:32.000Z"
     },
@@ -79,19 +79,19 @@
     },
     {
       "category": "Rates",
-      "source": "nytimes.com",
+      "source": "The New York Times",
       "title": "As Mortgage Rates Hit Highest Level Since 2023, Buyers Look at ARMs",
-      "summary": "nytimes.com coverage of recent rates developments. Open the full report for details.",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9pb05VYi1JdWZESjd2NzhhWTJuYWZmQlYtVVpaamxuQnh4a0ZxWFFLU05oNXFyUDR5bnRvRzRGOC1uU3BRZUxmbHhyRXFVeER4M3VHVWNISlZvYTRkZTBmWE9QTWxISjNwcmlNX2pQeXBYcHZiNlk4OG5rTlBSV3M?oc=5",
-      "publishedAt": "2026-10-01T18:18:36.000Z"
+      "publishedAt": "2026-10-01T16:02:58.000Z"
     },
     {
       "category": "Rates",
-      "source": "NPR",
-      "title": "Mortgage rates break past 7% as bond yields surge, deepening U.S. housing gridlock",
-      "summary": "NPR coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNeFZxblhxOU5kcW00OHd4cW9mMjV2Q2RxUHNVMnllS1FzRUh2ckZ0OUNGYUJjUkZRWnBocVNfLU5lcGNXV0ZoUHR6QV9sM0ZSNERSSTRPSFdWRnBSa3RDNTFqdmVhMnJGYkYwME4zWUlnV0VJakdGYzlxUUsxYUVNZ3QwMHI3MS1GeE1WQXlzcEU0S2NyRnlnWXplT0xUd3BXMC1uYnZJVjNzck5nSDg5VHVxTU44cnctNzBVc2VFYUs0UQ?oc=5",
-      "publishedAt": "2026-09-26T11:37:58.000Z"
+      "source": "NBC News",
+      "title": "Mortgage rates hit highest point since 2023 as Treasury yields rise",
+      "summary": "NBC News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS3hheWVhTmFnc0wyTktlOHZaMWE0NmZBQmRPSExOUnVKSHkxSUdmemh2STA4YWF3QUpJNDlpSHhqRWJ5RXFOYV9IUW9GdlUyWTdpZFFxdDF2Vi0zWUFwNGFwUGpweVFEZTJmdXV1WTdIZ1AwWWMwUjV4TUpHaVk3SjlkdWlvVzFtMkhFVmJRRWpuVk96?oc=5",
+      "publishedAt": "2026-10-01T20:41:13.000Z"
     }
   ]
 }
