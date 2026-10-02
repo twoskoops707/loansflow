@@ -31,6 +31,8 @@ const FEEDS = [
   },
 ];
 
+const UPSTREAM_TIMEOUT_MS = 6000;
+
 async function fetchText(url) {
   const res = await fetch(url, {
     headers: {
@@ -38,6 +40,7 @@ async function fetchText(url) {
       Accept: 'application/xml,text/xml,text/csv,text/html,*/*',
     },
     redirect: 'follow',
+    signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   return res.text();
@@ -171,44 +174,61 @@ function articleFromItem(item, category, fallbackSource) {
 
 async function buildPayload() {
   const errors = [];
+
+  // Every upstream is requested at once. Sequential awaits made the response
+  // time the *sum* of six feeds, so a single stalling source held the API open
+  // for 20s+ and dragged the calculator page's LCP out with it.
+  const grab = (label, promise) =>
+    promise.then((value) => value).catch((err) => {
+      errors.push(`${label}: ${err.message}`);
+      return null;
+    });
+
+  const pmmsReq = grab('pmms', fetchText('https://www.freddiemac.com/pmms/docs/PMMS_history.csv'));
+  const primeReq = grab('prime', fetchText('https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME'));
+  const freddieReq = grab('freddie-html', fetchText('https://www.freddiemac.com/pmms'));
+  const feedReqs = FEEDS.map((feed) => grab(feed.id, fetchText(feed.url)));
+
   let rates = null;
   let freddieStory = null;
 
   try {
-    const csv = await fetchText('https://www.freddiemac.com/pmms/docs/PMMS_history.csv');
-    const { latest, prev } = parsePmmsCsv(csv);
-    rates = {
-      asOf: latest.date,
-      source: 'Freddie Mac PMMS',
-      sourceUrl: 'https://www.freddiemac.com/pmms',
-      cells: [
-        {
-          label: '30-Yr Fixed',
-          value: fmtPct(latest.fixed30),
-          note: deltaLabel(latest.fixed30, prev?.fixed30),
-        },
-        {
-          label: '15-Yr Fixed',
-          value: fmtPct(latest.fixed15),
-          note: deltaLabel(latest.fixed15, prev?.fixed15),
-        },
-        {
-          label: '30-Yr Refinance',
-          value: latest.fixed30 != null ? fmtPct(latest.fixed30 + 0.05) : null,
-          note: 'Approx. vs purchase avg.',
-        },
-        {
-          label: '5/1 ARM',
-          value: fmtPct(latest.arm51),
-          note:
-            latest.arm51 == null
-              ? 'Not published this week'
-              : deltaLabel(latest.arm51, prev?.arm51),
-        },
-      ].filter((c) => c.value != null),
-      disclaimer:
-        'National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote.',
-    };
+    const csv = await pmmsReq;
+    if (csv) {
+      const { latest, prev } = parsePmmsCsv(csv);
+      rates = {
+        asOf: latest.date,
+        source: 'Freddie Mac PMMS',
+        sourceUrl: 'https://www.freddiemac.com/pmms',
+        cells: [
+          {
+            label: '30-Yr Fixed',
+            value: fmtPct(latest.fixed30),
+            note: deltaLabel(latest.fixed30, prev?.fixed30),
+          },
+          {
+            label: '15-Yr Fixed',
+            value: fmtPct(latest.fixed15),
+            note: deltaLabel(latest.fixed15, prev?.fixed15),
+          },
+          {
+            label: '30-Yr Refinance',
+            value: latest.fixed30 != null ? fmtPct(latest.fixed30 + 0.05) : null,
+            note: 'Approx. vs purchase avg.',
+          },
+          {
+            label: '5/1 ARM',
+            value: fmtPct(latest.arm51),
+            note:
+              latest.arm51 == null
+                ? 'Not published this week'
+                : deltaLabel(latest.arm51, prev?.arm51),
+          },
+        ].filter((c) => c.value != null),
+        disclaimer:
+          'National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote.',
+      };
+    }
   } catch (err) {
     errors.push(`pmms: ${err.message}`);
   }
@@ -216,18 +236,24 @@ async function buildPayload() {
   let prime = null;
   try {
     // WSJ/bank prime rate, daily, via FRED (keyless CSV). Drives SBA + LOC defaults.
-    const rows = (await fetchText('https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME'))
-      .trim().split(/\r?\n/).slice(1).map((l) => l.split(','))
-      .filter(([, v]) => !Number.isNaN(parseFloat(v)));
-    const [asOf, v] = rows[rows.length - 1];
-    prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+    const csv = await primeReq;
+    if (csv) {
+      const rows = csv
+        .trim()
+        .split(/\r?\n/)
+        .slice(1)
+        .map((l) => l.split(','))
+        .filter(([, v]) => !Number.isNaN(parseFloat(v)));
+      const [asOf, v] = rows[rows.length - 1];
+      prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+    }
   } catch (err) {
     errors.push(`prime: ${err.message}`);
   }
 
   try {
-    const html = await fetchText('https://www.freddiemac.com/pmms');
-    freddieStory = parseFreddieSummary(html);
+    const html = await freddieReq;
+    if (html) freddieStory = parseFreddieSummary(html);
   } catch (err) {
     errors.push(`freddie-html: ${err.message}`);
   }
@@ -247,23 +273,26 @@ async function buildPayload() {
   }
 
   const seen = new Set(articles.map((a) => a.title.toLowerCase()));
-  for (const feed of FEEDS) {
+  for (let i = 0; i < FEEDS.length; i++) {
+    const feed = FEEDS[i];
     try {
-      const xml = await fetchText(feed.url);
-      const items = parseRssItems(xml).slice(0, feed.limit);
-      for (const item of items) {
-        const article = articleFromItem(item, feed.category, feed.source);
-        const key = article.title.toLowerCase();
-        if (seen.has(key)) continue;
-        if (
-          /australia|westpac|canada|uk\b|britain/i.test(article.title) &&
-          feed.id !== 'fed-monetary'
-        ) {
-          continue;
+      const xml = await feedReqs[i];
+      if (xml) {
+        const items = parseRssItems(xml).slice(0, feed.limit);
+        for (const item of items) {
+          const article = articleFromItem(item, feed.category, feed.source);
+          const key = article.title.toLowerCase();
+          if (seen.has(key)) continue;
+          if (
+            /australia|westpac|canada|uk\b|britain/i.test(article.title) &&
+            feed.id !== 'fed-monetary'
+          ) {
+            continue;
+          }
+          if (isLowSignalHeadline(article.title)) continue;
+          seen.add(key);
+          articles.push(article);
         }
-        if (isLowSignalHeadline(article.title)) continue;
-        seen.add(key);
-        articles.push(article);
       }
     } catch (err) {
       errors.push(`${feed.id}: ${err.message}`);

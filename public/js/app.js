@@ -1813,24 +1813,30 @@ function formatNewsUpdatedLabel(isoOrDate) {
   }
 }
 
-function marketNewsDataUrlCandidates() {
-  // Prefer live edge API (Cloudflare Pages Function), then static snapshot.
+function marketNewsDataUrlCandidates(force = false) {
+  // The cacheable URL must come first on a normal page load: the Pages
+  // Function aggregates six upstream feeds and edge-caches the result for
+  // 30 minutes, so hitting it with ?fresh=1 on every visit made every
+  // visitor pay the full rebuild (20s+ whenever an upstream feed stalls).
   const bust = Date.now();
-  return [
-    `/api/market-news?fresh=1&t=${bust}`,
-    `/data/market-news.json?t=${bust}`,
-    `../data/market-news.json?t=${bust}`,
+  const fresh = { url: `/api/market-news?fresh=1&t=${bust}`, cache: 'no-store' };
+  const cached = { url: '/api/market-news', cache: 'default' };
+  const snapshot = [
+    { url: `/data/market-news.json?t=${bust}`, cache: 'no-store' },
+    { url: `../data/market-news.json?t=${bust}`, cache: 'no-store' },
   ];
+  return force ? [fresh, cached, ...snapshot] : [cached, fresh, ...snapshot];
 }
 
-async function fetchMarketNewsPayload() {
+async function fetchMarketNewsPayload(force = false) {
   const tried = new Set();
   let lastErr = null;
-  for (const url of marketNewsDataUrlCandidates()) {
+  for (const candidate of marketNewsDataUrlCandidates(force)) {
+    const { url, cache } = candidate;
     if (tried.has(url)) continue;
     tried.add(url);
     try {
-      const res = await fetch(url, { cache: 'no-store' });
+      const res = await fetch(url, { cache });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       if (!data || (!data.articles && !data.rates)) throw new Error('Invalid payload');
@@ -1868,7 +1874,7 @@ function ensureMarketNewsLoaded(force = false) {
   if (marketNewsState.status === 'loading') return;
 
   marketNewsState.status = 'loading';
-  fetchMarketNewsPayload()
+  fetchMarketNewsPayload(force)
     .then((data) => {
       marketNewsState.data = data;
       marketNewsState.status = 'ready';

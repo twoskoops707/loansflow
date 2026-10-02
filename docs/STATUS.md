@@ -29,8 +29,9 @@
 | `/tools/` | 19 | 95 | 79 | 100 | 6.5s | 3070ms | 0.41 | 968 KiB |
 
 - Cause is third-party JS, not our code: Ezoic blocks the main thread ~3.2s (ezojs 2.36s + ezodn 0.61s + CMP 0.14s + analytics 0.11s) vs AdSense 0.48s. Deferring/removing Ezoic is the single biggest lever.
-- Fixed on this pass: HSTS, day-long `stale-while-revalidate` caching for `/css /js /img`, `www` → apex 301, ad slot late-fill visibility, WCAG AA contrast for `--muted` and the dimmed wizard steps.
-- Cloudflare Pages serves assets at `max-age=14400, must-revalidate` by default — the `_headers` rules raise that.
+- Fixed on this pass: HSTS, day-long `stale-while-revalidate` caching for `/css /js /img`, ad slot late-fill visibility, WCAG AA contrast for `--muted` and the dimmed wizard steps.
+- Cloudflare Pages serves assets at `max-age=14400, must-revalidate` by default — the `_headers` rules raise that (verified live).
+- `public/_redirects` carries the `www` → apex 301 but Pages did not apply it (still 200 after deploy). Until a Cloudflare zone rule is added (Bulk Redirect / Page Rule on `www.loansflow.loan/*`), the two hosts serve identical bytes; canonical tags point at the apex so SEO damage is minimal.
 
 ## Email
 - Gmail still **Verify it’s you** (outreach + default profiles) — cannot read approval emails until you re-auth once in a real browser
