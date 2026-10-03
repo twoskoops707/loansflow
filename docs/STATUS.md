@@ -23,14 +23,21 @@
 
 ## Performance (Lighthouse 12.x, mobile emulation, live site, 2026-10-02)
 
-| Page | Perf | A11y | Best practices | SEO | LCP | TBT | CLS | Weight |
-|------|------|------|----------------|-----|-----|-----|-----|--------|
-| `/` | 32 | 96 | 79 | 100 | 6.6s | 4340ms | 0.12 | 966 KiB |
-| `/tools/` | 19 | 95 | 79 | 100 | 6.5s | 3070ms | 0.41 | 968 KiB |
+| Page | Perf | A11y | BP | SEO | LCP | TBT | CLS | Weight |
+|------|------|------|----|-----|-----|-----|-----|--------|
+| `/` before | 32 | 96 | 79 | 100 | 6.6s | 4340ms | 0.117 | 966 KiB |
+| `/` after | **55** | **100** | 79 | 100 | **4.0s** | **1310ms** | **0.079** | **366 KiB** |
+| `/tools/` before | 19 | 95 | 79 | 100 | 6.5s (spiked to 12–20s) | 3070ms | 0.405 | 968 KiB |
+| `/tools/` after | **66** | **100** | 75 | 100 | **3.1s** | **890ms** | **0.142** | **411 KiB** |
 
-- Cause is third-party JS, not our code: Ezoic blocks the main thread ~3.2s (ezojs 2.36s + ezodn 0.61s + CMP 0.14s + analytics 0.11s) vs AdSense 0.48s. Deferring/removing Ezoic is the single biggest lever.
-- Fixed on this pass: HSTS, day-long `stale-while-revalidate` caching for `/css /js /img`, ad slot late-fill visibility, WCAG AA contrast for `--muted` and the dimmed wizard steps.
-- Cloudflare Pages serves assets at `max-age=14400, must-revalidate` by default — the `_headers` rules raise that (verified live).
+What moved the numbers:
+
+- **Ezoic removed** — ~3.2s of main-thread blocking per load, gone (its CMP was also the only third-party cookie source besides Google's `test_cookie`, which is what the remaining BP finding is).
+- **Market-news API** — the client requested `?fresh=1&t=<now>`, bypassing the Function's 30-minute edge cache and rebuilding six upstream feeds per visitor (measured 20.8s). Now the cacheable URL is used first, the Function fetches all sources in parallel, and each upstream is capped at 6s. That request time *was* the /tools/ LCP.
+- **Ad slot late-fill** — a slot that filled after 1.4s stayed `display:none` forever; it now un-hides.
+- **Sticky mobile ad bar** — kept its box from first paint (`.main` already pads for it), removing 0.247 of CLS on /tools/.
+- **Contrast to WCAG AA** (`--muted`, dimmed wizard steps, footer note) — accessibility 96/95 → 100/100.
+- **HSTS** added. Asset caching: Pages normalizes `/css /js /img` to `max-age=14400` + our `stale-while-revalidate=86400` (verified live) — so a deploy's CSS/JS can sit behind the CDN for up to ~4h. HTML is always `max-age=0`.
 - `public/_redirects` carries the `www` → apex 301 but Pages did not apply it (still 200 after deploy). Until a Cloudflare zone rule is added (Bulk Redirect / Page Rule on `www.loansflow.loan/*`), the two hosts serve identical bytes; canonical tags point at the apex so SEO damage is minimal.
 
 ## Email
