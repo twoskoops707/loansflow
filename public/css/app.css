@@ -571,8 +571,17 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
   border: none;
   padding: 0;
 }
+/* The sticky mobile bar reserves its box before any ad exists (.main already
+   pads for it), so keeping the slot invisible until a real creative fills it
+   removes the collapse-then-appear layout shift. */
+.ad-anchor .ad-slot--anchor {
+  visibility: hidden;
+}
+.ad-anchor[data-ad-state="filled"] .ad-slot--anchor {
+  visibility: visible;
+}
 .ad-anchor[data-ad-state="empty"] {
-  display: none !important;
+  display: none;
 }
 
 /* ---------- Article / legal content ---------- */
@@ -1050,9 +1059,22 @@ tbody tr:hover { background: rgba(52, 213, 154, 0.04); }
     right: 0;
     bottom: 0;
     z-index: 40;
-    background: var(--surface);
-    border-top: 1px solid var(--line);
+    background: transparent;
+    border-top: 1px solid transparent;
     padding: 0.35rem 0.6rem calc(0.35rem + env(safe-area-inset-bottom));
+  }
+  .ad-anchor[data-ad-state="filled"] {
+    background: var(--surface);
+    border-top-color: var(--line);
+  }
+  /* Keep the fixed box mounted when the slot collapses: .main already pads
+     for it, so the strip stays empty instead of the page reflowing. */
+  .ad-anchor[data-ad-state="empty"] {
+    display: block;
+  }
+  .ad-anchor .ad-slot--anchor[data-ad-state="empty"] {
+    display: block !important;
+    min-height: 50px;
   }
   .field-grid, .compare-grid { grid-template-columns: 1fr; }
   h1 { font-size: 1.75rem; }
