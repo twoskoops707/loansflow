@@ -14,13 +14,14 @@
 
 ## Content expansion — 2026-10-05 (AdSense "low value content" response)
 
-AdSense rejected the site for low value content; the response is a substantial, original content layer (deploy pending):
+AdSense rejected the site for low value content; the response is a substantial, original content layer — **deployed to `main` (commit 507d773) and live on loansflow.loan, verified 2026-10-05**:
 
 - **Guides** (`/guides/`): SBA 7(a) 10-step playbook, SBA 504 explainer, loan documents by loan type, interactive 40-item checklist (localStorage + downloadable `.txt`/`.md`), choosing a lender, 45+ term glossary, calculator help for all 9 tools
 - **Directory** (`/directory/`): searchable national directory — 67 SBA district offices, 9 SBA national contacts, 6 resource partners, 18 marketplaces/brokerages (`public/data/directory.json`); broker verification via NMLS Consumer Access noted
 - Homepage: nav links (Guides, Directory) + "Resource library" section + footer links; `about` expanded (what we offer, editorial standards, what we are not); `sitemap.xml` lists every new URL
 - All program facts verified against SBA.gov (guarantee 85%/75%, $5M 7(a) max, WCP rate caps, 504 50/40/10 structure and $5.5M max, forms 1919/912/413/159); pages stamped "Updated October 5, 2026"
-- Next step: deploy, spot-check new pages, then request AdSense re-review
+- Live checks passed 2026-10-05: /guides/ hub, homepage Resource library, /directory/ (all 56 state/territory filters), /downloads/loan-document-checklist.txt, /sitemap.xml (16 URLs)
+- Next step: request AdSense re-review in the AdSense dashboard (only the account holder can do this)
 
 ## Ads
 | Channel | Status |
