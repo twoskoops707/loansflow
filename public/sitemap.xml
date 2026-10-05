@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://loansflow.loan/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://loansflow.loan/tools/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://loansflow.loan/guides/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://loansflow.loan/directory/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://loansflow.loan/guides/sba-7a-step-by-step.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loansflow.loan/guides/sba-504.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loansflow.loan/guides/loan-documents.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loansflow.loan/guides/checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loansflow.loan/guides/choosing-lender.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://loansflow.loan/guides/glossary.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://loansflow.loan/guides/calculator-help.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://loansflow.loan/about</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://loansflow.loan/contact</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://loansflow.loan/privacy</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>

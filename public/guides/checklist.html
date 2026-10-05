@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The loan document checklist — LoansFlow</title>
+  <meta name="description" content="Interactive loan document checklist — check items off as you collect them, track your progress, and download a personalized list.">
+  <link rel="canonical" href="https://loansflow.loan/guides/checklist.html">
+  <meta property="og:title" content="The loan document checklist — LoansFlow">
+  <meta property="og:description" content="Interactive loan document checklist — check items off as you collect them, track your progress, and download a personalized list.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loansflow.loan/guides/checklist.html">
+  <meta property="og:image" content="https://loansflow.loan/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-180.png">
+  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    .site-nav { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); backdrop-filter: none; }
+    .site-nav .nav-cta { border-color: var(--ink); color: var(--ink) !important; }
+    .legal-page { min-height: 100vh; background: var(--canvas); color: var(--ink); padding: 7rem clamp(1.25rem,4vw,3rem) 4rem; }
+    .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
+    .legal-page h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 0.85rem; }
+    .legal-page h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem; color: var(--ink); }
+    .legal-page p { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
+    .legal-page ul { max-width: 65ch; margin: 0 0 1.25rem; padding-left: 1.15rem; }
+    .legal-page li { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 0.4rem; }
+    .legal-page li strong { color: var(--ink-secondary); font-weight: 600; }
+    .legal-page a { color: var(--accent); }
+    .legal-page .updated { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .check-group { border: 1px solid var(--line); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1.1rem 0; background: var(--surface); }
+    .check-group h3 { margin: 0 0 0.6rem; font-size: 1rem; color: var(--ink-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+    .check-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.35rem 0; }
+    .check-item input[type="checkbox"] { margin-top: 0.25rem; width: 1.1rem; height: 1.1rem; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+    .check-item label { cursor: pointer; line-height: 1.5; color: var(--ink); }
+    .check-item .hint { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
+    .progress-wrap { margin: 1.25rem 0; }
+    .progress-bar { height: 0.85rem; background: var(--line); border-radius: 999px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.3s ease; border-radius: 999px; }
+    .progress-text { font-size: 0.95rem; color: var(--muted); margin-top: 0.35rem; }
+    .checklist-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.25rem 0; }
+    .checklist-actions button { background: var(--surface); border: 1px solid var(--line); color: var(--ink); padding: 0.55rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
+    .checklist-actions button:hover { background: var(--line); }
+    .dl-row { margin: 1rem 0; }
+    .dl-row a { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--surface); border: 1px solid var(--line); color: var(--ink); padding: 0.55rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; }
+    .dl-row a:hover { background: var(--line); }
+    .doc-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.95rem; max-width: 90ch; }
+    .doc-table caption { text-align: left; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink-secondary); }
+    .doc-table th { background: var(--surface); border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: left; font-weight: 600; color: var(--ink-secondary); }
+    .doc-table td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; color: var(--muted); vertical-align: top; }
+    @media print {
+      .site-nav, .ad-slot, .legal-page .ad-slot, .checklist-actions, .dl-row, .no-print { display: none !important; }
+      .legal-page { padding: 2rem; }
+      .check-group { border: 1px solid #ccc; background: #fff; break-inside: avoid; }
+      .check-item { padding: 0.2rem 0; }
+      body { color: #000; background: #fff; }
+    }
+  </style>
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://loansflow.loan/#organization",
+        "name": "LoansFlow",
+        "url": "https://loansflow.loan/",
+        "logo": "https://loansflow.loan/img/logo.png",
+        "description": "Free SBA 7(a), SBA 504, and commercial loan calculators with DSCR and guaranty fee estimates — plus mortgage payment, amortization, refinance, and affordability tools."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://loansflow.loan/guides/checklist.html#webpage",
+        "url": "https://loansflow.loan/guides/checklist.html",
+        "name": "The loan document checklist",
+        "isPartOf": { "@id": "https://loansflow.loan/#website" },
+        "about": { "@id": "https://loansflow.loan/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://loansflow.loan/guides/checklist.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
+          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://loansflow.loan/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "Loan document checklist" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <a class="nav-brand" href="../"><img src="../img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../guides/">Guides</a>
+      <a href="../tools/">Calculators</a>
+      <a class="nav-cta" href="../tools/">Open tools</a>
+    </nav>
+  </header>
+
+  <main class="legal-page">
+    <p class="updated">Updated October 5, 2026</p>
+    <h1>The loan document checklist</h1>
+    <p>Everything lenders typically ask for, in one printable list. Check items off as you collect them — your progress stays in this browser — then download your personalized checklist.</p>
+
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="checklist-hero" style="margin-top:1rem;"></div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="lfProgress" aria-label="Checklist progress"><div class="progress-bar-fill" id="lfProgressFill"></div></div>
+      <div class="progress-text" id="lfCounts">0 of 0 items</div>
+    </div>
+
+    <div class="checklist-actions">
+      <button id="lfDownload" type="button">Download my checklist (.txt)</button>
+      <button id="lfPrint" type="button">Print / save as PDF</button>
+      <button id="lfReset" type="button">Reset</button>
+    </div>
+
+    <div id="lfChecklist"></div>
+
+    <div class="dl-row no-print">
+      <p><strong>Static downloads:</strong></p>
+      <a href="../downloads/loan-document-checklist.txt" download>Plain text (.txt)</a>
+      <a href="../downloads/loan-document-checklist.md" download>Markdown (.md)</a>
+    </div>
+
+    <h2>What lenders actually look at</h2>
+
+    <p>The documents above are the what. The why is simpler: lenders score every file against the five C's of credit. Character is your track record — credit history, resumes, and time in business. Capacity is your ability to repay, measured through DSCR and cash flow; many lenders look for a DSCR of 1.25x or better as a planning guideline, but each lender sets its own overlays. Capital is the equity you have in the deal — your down payment and retained earnings. Collateral is the asset backing the loan. Conditions cover the purpose of the proceeds and the outlook for your industry. Strong documents in one C can offset moderate weakness in another, but gaps across multiple C's raise red flags early.</p>
+
+    <p>Credit scores matter, but the threshold moves by lender and loan type. Many conventional commercial lenders look for a personal FICO of 650 or above; SBA lenders often overlay additional criteria on top of the SBA's credit thresholds. Time in business is another fast filter: most business lenders want two to three years of operating history, while startup programs accept less if the management team has deep industry experience. If you want to model the capacity side yourself, try the <a href="../tools/">SBA and commercial calculators</a> or read <a href="../methodology.html">how the numbers work</a>.</p>
+
+    <h2>Where to get each document</h2>
+
+    <p>This condensed table tells you where to obtain the most commonly requested documents.</p>
+
+    <table class="doc-table">
+      <caption>Common documents and where to get them</caption>
+      <thead>
+        <tr><th>Document</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>IRS tax transcript or return copy</td><td>IRS.gov/individuals/get-transcript or your CPA</td></tr>
+        <tr><td>EIN confirmation letter (CP 575 / 147C)</td><td>IRS.gov or the IRS business helpline</td></tr>
+        <tr><td>Articles of incorporation / organization</td><td>Your state secretary of state office</td></tr>
+        <tr><td>Bylaws / operating agreement</td><td>Your corporate records or attorney</td></tr>
+        <tr><td>Business licenses and permits</td><td>City, county, or state licensing agency</td></tr>
+        <tr><td>DBA / fictitious name registration</td><td>County clerk or state filing office</td></tr>
+        <tr><td>Personal and business tax returns</td><td>Your CPA, enrolled agent, or your own records</td></tr>
+        <tr><td>Profit and loss / balance sheet</td><td>Your accounting software or CPA</td></tr>
+        <tr><td>Bank statements</td><td>Your business or personal online banking portal</td></tr>
+        <tr><td>Real estate appraisal</td><td>Ordered by the lender; you provide access</td></tr>
+        <tr><td>Environmental Phase I report</td><td>Ordered by the lender or CD company</td></tr>
+        <tr><td>Credit report</td><td>Annualcreditreport.com or directly from bureaus</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Disclaimer</h2>
+
+    <p>This checklist covers what lenders typically request. Your lender's list controls — always ask for their exact requirements.</p>
+
+    <div class="ad-slot" data-ad-format="multipurpose" data-ad-name="checklist-footer" style="margin-top:2rem;"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>LoansFlow</h4>
+        <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="../tools/">All calculators</a>
+        <a href="../tools/?step=8">Market news</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../directory/">Directory</a>
+        <a href="../guides/checklist.html">Checklist</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      &copy; 2026 LoansFlow.
+      All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.
+    </div>
+  </footer>
+
+  <script>
+    window.LOANSFLOW_ADS = { provider: 'adsense', adsenseClient: 'ca-pub-6588738221262894' };
+  </script>
+  <script src="../js/ads.js" defer></script>
+  <div class="lf-offers" data-lf-offers="any" hidden style="max-width:980px;margin:0 auto;padding:0 1.25rem 2rem;"></div>
+  <script src="../js/offers.js" defer></script>
+  <script src="../js/checklist.js" defer></script>
+</body>
+</html>

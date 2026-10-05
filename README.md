@@ -14,7 +14,9 @@ Free **SBA / commercial / mortgage** calculator suite — high-intent finance to
 - Business line of credit (draws, interest-only / % balance)
 - Mortgage PITI, amortization, refinance compare, affordability
 - Market news / rates page
-- Ad slots + `ads.txt` for Google AdSense (Ezoic JS for Incubator detection)
+- **Guides** (`/guides/`): SBA 7(a) 10-step playbook, SBA 504 explainer, loan documents by loan type, interactive + downloadable checklist, choosing a lender, glossary, calculator help
+- **Directory** (`/directory/`): searchable national directory — 67 SBA district offices, SBA national contacts, resource partners, 18 lender marketplaces
+- Ad slots + `ads.txt` for Google AdSense
 - Legal: About, Contact, Privacy, Disclaimer, Terms
 
 ## Market news (auto-updating)

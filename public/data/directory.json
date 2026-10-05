@@ -1,0 +1,1644 @@
+{
+  "updated": "2026-10-05",
+  "sourceNote": "SBA office data verified against sba.gov district pages; brokerage data from each company's own published site. Listings are informational, not endorsements.",
+  "national": [
+    {
+      "name": "U.S. Small Business Administration HQ",
+      "category": "national",
+      "address": "409 3rd St., SW, Washington, DC 20416",
+      "phone": "800-827-5722",
+      "url": "https://www.sba.gov",
+      "hours": "Monday\u2013Friday, 9:00 a.m.\u20136:00 p.m. ET. Closed on federal holidays."
+    },
+    {
+      "name": "SBA Answer Desk",
+      "category": "national",
+      "phone": "1-800-827-5722",
+      "email": "answerdesk@sba.gov",
+      "url": "https://www.sba.gov",
+      "hours": "Monday\u2013Friday, 9:00 a.m.\u20136:00 p.m. ET. Closed on federal holidays."
+    },
+    {
+      "name": "Disaster Assistance Customer Service",
+      "category": "national",
+      "phone": "800-659-2955",
+      "email": "DCS@sba.gov",
+      "url": "https://www.sba.gov",
+      "hours": "Monday\u2013Friday, 8:00 a.m.\u20138:00 p.m. ET. Closed on federal holidays."
+    },
+    {
+      "name": "SBA Certifications Call Center",
+      "category": "national",
+      "phone": "866-722-4357",
+      "email": "certifications@sba.gov",
+      "url": "https://www.sba.gov",
+      "hours": "Monday\u2013Friday, 9:00 a.m.\u20136:00 p.m. ET. Closed on federal holidays."
+    },
+    {
+      "name": "SBA Loan Portal Customer Service",
+      "category": "national",
+      "email": "cls@sba.gov",
+      "url": "https://www.sba.gov",
+      "note": "Loan status and statements for PPP, disaster, 7(a), and 504 loans."
+    },
+    {
+      "name": "SBA Secure Payment Portal",
+      "category": "national",
+      "phone": "833-853-5638",
+      "url": "https://www.sba.gov"
+    },
+    {
+      "name": "Lender Match Technical Issues",
+      "category": "national",
+      "email": "lendermatch@sba.gov",
+      "url": "https://www.sba.gov/loans/lender-match/"
+    },
+    {
+      "name": "SBA Lender Match",
+      "category": "national",
+      "url": "https://www.sba.gov/loans/lender-match/",
+      "note": "Free matching with SBA-approved lenders."
+    },
+    {
+      "name": "Local Assistance Finder",
+      "category": "national",
+      "url": "https://www.sba.gov/local-assistance",
+      "note": "ZIP-code search for SBDCs, SCORE, WBCs, and VBOCs near you."
+    }
+  ],
+  "offices": [
+    {
+      "name": "Alabama District",
+      "category": "sba-district",
+      "states": [
+        "AL"
+      ],
+      "url": "https://www.sba.gov/district/alabama",
+      "director": "Jonel Hein (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Birmingham",
+          "address": "2 N. 20th St., Suite 325, Birmingham, AL 35203",
+          "phone": "205-290-7101",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "AL"
+        }
+      ]
+    },
+    {
+      "name": "Alaska District",
+      "category": "sba-district",
+      "states": [
+        "AK"
+      ],
+      "url": "https://www.sba.gov/district/alaska",
+      "director": "Erica C. Rivera (Deputy District Director)",
+      "locations": [
+        {
+          "location": "Anchorage",
+          "address": "222 West 8th Ave., Suite A21 (mail: 222 W. 7th Ave., Stop 67), Anchorage, AK 99513-7502",
+          "phone": "907-308-5741",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves all 19 organized boroughs and 11 census areas.",
+          "state": "AK"
+        }
+      ]
+    },
+    {
+      "name": "Arizona District",
+      "category": "sba-district",
+      "states": [
+        "AZ"
+      ],
+      "url": "https://www.sba.gov/district/arizona",
+      "director": "Corey Wunderlich (District Director)",
+      "locations": [
+        {
+          "location": "Phoenix",
+          "address": "4041 N. Central Avenue, Suite 1000 Phoenix, AZ 85012",
+          "phone": "602-745-7200",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "AZ"
+        },
+        {
+          "location": "Tucson",
+          "address": "300 W. Congress St., Suite 7N Tucson, AZ 85701",
+          "phone": "602-745-7200",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "AZ"
+        }
+      ]
+    },
+    {
+      "name": "Arkansas District",
+      "category": "sba-district",
+      "states": [
+        "AR"
+      ],
+      "url": "https://www.sba.gov/district/arkansas",
+      "director": "Adriene Brown (District Director)",
+      "locations": [
+        {
+          "location": "Little Rock",
+          "address": "2120 Riverfront Dr., Suite 1000, Little Rock, AR 72202",
+          "phone": "501-324-7379",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; all 75 counties.",
+          "state": "AR"
+        }
+      ]
+    },
+    {
+      "name": "Fresno District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/fresno",
+      "director": "Dawn Golik (District Director)",
+      "locations": [
+        {
+          "location": "Fresno",
+          "address": "801 R St., Suite 201 Fresno, CA 93721",
+          "phone": "559-487-5791",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/los-angeles",
+      "director": "Benjamin Kallin (District Director)",
+      "locations": [
+        {
+          "location": "Los Angeles",
+          "address": "312 N. Spring St. Los Angeles, CA 90012",
+          "phone": "213-634-3855",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "Orange County / Inland Empire District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/orange-county-inland-empire",
+      "director": "Christapher Bess (District Director)",
+      "locations": [
+        {
+          "location": "Santa Ana",
+          "address": "5 Hutton Centre Dr., Suite 900 Santa Ana, CA 92707",
+          "phone": "714-550-7420",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        },
+        {
+          "location": "Palm Desert",
+          "address": "73733 Fred Waring Dr., Suite 211 Palm Desert, CA 92260",
+          "phone": "714-550-7420",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "Sacramento District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/sacramento",
+      "director": "Heather Luzzi (District Director)",
+      "locations": [
+        {
+          "location": "Citrus Heights",
+          "address": "6501 Sylvan Avenue, Citrus Heights, CA 95610",
+          "phone": "916-735-1700",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves 21 counties in northeastern California.",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "San Diego District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/san-diego",
+      "director": "Katherine Clark (District Director)",
+      "locations": [
+        {
+          "location": "San Diego",
+          "address": "550 West C St., Suite 550 San Diego, CA 92101",
+          "phone": "619-557-7250",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "San Francisco District",
+      "category": "sba-district",
+      "states": [
+        "CA"
+      ],
+      "url": "https://www.sba.gov/district/san-francisco",
+      "director": "Heather Luzzi (District Director (Acting))",
+      "locations": [
+        {
+          "location": "San Francisco",
+          "address": "455 Market St. San Francisco, CA 94105",
+          "phone": "415-744-6820",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CA"
+        }
+      ]
+    },
+    {
+      "name": "Colorado District",
+      "category": "sba-district",
+      "states": [
+        "CO"
+      ],
+      "url": "https://www.sba.gov/district/colorado",
+      "director": "Frances Padilla (District Director)",
+      "locations": [
+        {
+          "location": "Denver",
+          "address": "721 19th St., Suite 426 Denver, CO 80202",
+          "phone": "303-844-2607",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CO"
+        }
+      ]
+    },
+    {
+      "name": "Connecticut District",
+      "category": "sba-district",
+      "states": [
+        "CT"
+      ],
+      "url": "https://www.sba.gov/district/connecticut",
+      "director": "Moraima Gutierrez (Deputy District Director)",
+      "locations": [
+        {
+          "location": "Hartford",
+          "address": "280 Trumbull St., Second Floor Hartford, CT 06103",
+          "phone": "860-240-4700",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CT"
+        },
+        {
+          "location": "Bridgeport",
+          "address": "915 Lafayette Blvd., Room 307 Bridgeport, CT 06604",
+          "phone": "203-335-0427",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "CT"
+        }
+      ]
+    },
+    {
+      "name": "Delaware District",
+      "category": "sba-district",
+      "states": [
+        "DE"
+      ],
+      "url": "https://www.sba.gov/district/delaware",
+      "director": "Austen Colledge (District Director)",
+      "locations": [
+        {
+          "location": "Wilmington",
+          "address": "1105 Market St., Suite 401 Wilmington, DE 19801",
+          "phone": "302-573-6294",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20135:00 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "DE"
+        }
+      ]
+    },
+    {
+      "name": "Washington Metropolitan Area District",
+      "category": "sba-district",
+      "states": [
+        "DC",
+        "MD",
+        "VA"
+      ],
+      "url": "https://www.sba.gov/district/washington-metropolitan",
+      "director": "Larry G. Webb (District Director)",
+      "locations": [
+        {
+          "location": "Herndon",
+          "address": "13221 Woodland Park Rd Herndon, VA 20171",
+          "phone": "202-205-8800",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "VA"
+        }
+      ]
+    },
+    {
+      "name": "North Florida District",
+      "category": "sba-district",
+      "states": [
+        "FL"
+      ],
+      "url": "https://www.sba.gov/district/north-florida",
+      "director": "Jonel Hein (District Director)",
+      "locations": [
+        {
+          "location": "Jacksonville",
+          "address": "7825 Baymeadows Way, Suite 100B Jacksonville, FL 32256",
+          "phone": "904-443-1900",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "FL"
+        }
+      ]
+    },
+    {
+      "name": "South Florida District",
+      "category": "sba-district",
+      "states": [
+        "FL"
+      ],
+      "url": "https://www.sba.gov/district/south-florida",
+      "director": "Malcolm Richards (District Director)",
+      "locations": [
+        {
+          "location": "Miami",
+          "address": "51 SW 1st Ave., Suite 201 Miami, FL 33130",
+          "phone": "305-536-5521",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "FL"
+        }
+      ]
+    },
+    {
+      "name": "Georgia District",
+      "category": "sba-district",
+      "states": [
+        "GA"
+      ],
+      "url": "https://www.sba.gov/district/georgia",
+      "director": "Kevin C. Cooke (District Director)",
+      "locations": [
+        {
+          "location": "Atlanta",
+          "address": "233 Peachtree St. NE. Atlanta, GA 30303",
+          "phone": "404-331-0100",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "GA"
+        }
+      ]
+    },
+    {
+      "name": "Hawaii District",
+      "category": "sba-district",
+      "states": [
+        "HI",
+        "GU"
+      ],
+      "url": "https://www.sba.gov/district/hawaii",
+      "director": "Dennis Kwak (District Director)",
+      "locations": [
+        {
+          "location": "Honolulu",
+          "address": "500 Ala Moana Blvd., Suite 1-306 Honolulu, HI 96813",
+          "phone": "808-541-2990",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "HI"
+        },
+        {
+          "location": "Guam",
+          "address": "400 Route 8, Suite 302 Maite, GU 96910",
+          "phone": "671-472-7277",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "GU"
+        }
+      ]
+    },
+    {
+      "name": "Boise District",
+      "category": "sba-district",
+      "states": [
+        "ID",
+        "OR"
+      ],
+      "url": "https://www.sba.gov/district/boise",
+      "director": "Shannon Madsen (District Director)",
+      "locations": [
+        {
+          "location": "Boise",
+          "address": "380 E. Parkcenter Blvd., Suite 330, Boise, ID 83706",
+          "phone": "208-334-9004",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves 34 counties in southern Idaho and 6 counties in eastern Oregon (northern 10 ID counties are served by the Seattle District).",
+          "state": "ID"
+        }
+      ]
+    },
+    {
+      "name": "Illinois District",
+      "category": "sba-district",
+      "states": [
+        "IL"
+      ],
+      "url": "https://www.sba.gov/district/illinois",
+      "director": "Willette LeGrant (District Director)",
+      "locations": [
+        {
+          "location": "Chicago",
+          "address": "332 S. Michigan Avenue, Suite 600, Chicago, IL 60604",
+          "phone": "312-353-4528",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; all 102 counties.",
+          "state": "IL"
+        }
+      ]
+    },
+    {
+      "name": "Indiana District",
+      "category": "sba-district",
+      "states": [
+        "IN"
+      ],
+      "url": "https://www.sba.gov/district/indiana",
+      "director": "Stacey Poynter (District Director)",
+      "locations": [
+        {
+          "location": "Indianapolis",
+          "address": "5726 Professional Cir. Indianapolis, IN 46241",
+          "phone": "317-226-7272",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "IN"
+        }
+      ]
+    },
+    {
+      "name": "Iowa District",
+      "category": "sba-district",
+      "states": [
+        "IA"
+      ],
+      "url": "https://www.sba.gov/district/iowa",
+      "director": "Ryan Lincoln (District Director)",
+      "locations": [
+        {
+          "location": "Des Moines",
+          "address": "210 Walnut St., Room 749 Des Moines, IA 50309",
+          "phone": "515-284-4422",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "IA"
+        }
+      ]
+    },
+    {
+      "name": "Wichita District",
+      "category": "sba-district",
+      "states": [
+        "KS"
+      ],
+      "url": "https://www.sba.gov/district/wichita",
+      "director": "Wayne E. Bell (District Director)",
+      "locations": [
+        {
+          "location": "Wichita",
+          "address": "220 W. Douglas Ave., Suite 450 Wichita, KS 67202",
+          "phone": "316-269-6616",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "KS"
+        }
+      ]
+    },
+    {
+      "name": "Kansas City District",
+      "category": "sba-district",
+      "states": [
+        "MO",
+        "KS"
+      ],
+      "url": "https://www.sba.gov/district/kansas-city",
+      "director": "Melissa Tedesco (District Director)",
+      "locations": [
+        {
+          "location": "Kansas City",
+          "address": "1000 Walnut St., Suite 500 Kansas City, MO 64106",
+          "phone": "816-426-4900",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MO"
+        },
+        {
+          "location": "Springfield",
+          "address": "901 E. Saint Louis St., Suite 704 Springfield, MO 65806",
+          "phone": "417-501-0542",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MO"
+        }
+      ]
+    },
+    {
+      "name": "Kentucky District",
+      "category": "sba-district",
+      "states": [
+        "KY"
+      ],
+      "url": "https://www.sba.gov/district/kentucky",
+      "director": "Robert Coffey (District Director)",
+      "locations": [
+        {
+          "location": "Louisville",
+          "address": "600 Dr. Martin Luther King Jr. Place, Suite 188 Louisville, KY 40202",
+          "phone": "502-582-5971",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "KY"
+        }
+      ]
+    },
+    {
+      "name": "Louisiana District",
+      "category": "sba-district",
+      "states": [
+        "LA"
+      ],
+      "url": "https://www.sba.gov/district/louisiana",
+      "director": "Rachel Milam (District Director)",
+      "locations": [
+        {
+          "location": "New Orleans",
+          "address": "500 Poydras St., Suite 828 New Orleans, LA 70130",
+          "phone": "504-589-6685",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "LA"
+        }
+      ]
+    },
+    {
+      "name": "Maine District",
+      "category": "sba-district",
+      "states": [
+        "ME"
+      ],
+      "url": "https://www.sba.gov/district/maine",
+      "director": "Diane Sturgeon (District Director)",
+      "locations": [
+        {
+          "location": "Augusta",
+          "address": "68 Sewall St., Room 512 Augusta, ME 04330",
+          "phone": "207-622-8551",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "ME"
+        },
+        {
+          "location": "Portland",
+          "address": "312 Fore St., Suite 104 Portland, ME 04101",
+          "phone": "207-622-8551",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "ME"
+        }
+      ]
+    },
+    {
+      "name": "Baltimore District",
+      "category": "sba-district",
+      "states": [
+        "MD"
+      ],
+      "url": "https://www.sba.gov/district/baltimore",
+      "director": "Bryce Besaw (District Director)",
+      "locations": [
+        {
+          "location": "Baltimore",
+          "address": "100 S. Charles St. Baltimore, MD 21201",
+          "phone": "410-962-6195",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MD"
+        }
+      ]
+    },
+    {
+      "name": "Massachusetts District",
+      "category": "sba-district",
+      "states": [
+        "MA"
+      ],
+      "url": "https://www.sba.gov/district/massachusetts",
+      "director": "Keegan Shepardson (District Director)",
+      "locations": [
+        {
+          "location": "Boston",
+          "address": "10 Causeway St., Room 265 Boston, MA 02222",
+          "phone": "617-565-5590",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MA"
+        }
+      ]
+    },
+    {
+      "name": "Michigan District",
+      "category": "sba-district",
+      "states": [
+        "MI"
+      ],
+      "url": "https://www.sba.gov/district/michigan",
+      "director": "Laketa Henderson (District Director)",
+      "locations": [
+        {
+          "location": "Detroit",
+          "address": "477 Michigan Ave., Suite 1819 Detroit, MI 48226",
+          "phone": "313-226-6075",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MI"
+        }
+      ]
+    },
+    {
+      "name": "Minnesota District",
+      "category": "sba-district",
+      "states": [
+        "MN"
+      ],
+      "url": "https://www.sba.gov/district/minnesota",
+      "director": "Timothy Green (District Director)",
+      "locations": [
+        {
+          "location": "Minneapolis",
+          "address": "330 2nd Ave. South, Suite 430, Minneapolis, MN 55401",
+          "phone": "612-370-2324",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; all 87 counties.",
+          "state": "MN"
+        }
+      ]
+    },
+    {
+      "name": "Mississippi District",
+      "category": "sba-district",
+      "states": [
+        "MS"
+      ],
+      "url": "https://www.sba.gov/district/mississippi",
+      "director": "Robert Coffey (District Director)",
+      "locations": [
+        {
+          "location": "Jackson",
+          "address": "210 E. Capitol St., Suite 900 Jackson, MS 39201",
+          "phone": "601-965-4378",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MS"
+        }
+      ]
+    },
+    {
+      "name": "St. Louis District",
+      "category": "sba-district",
+      "states": [
+        "MO"
+      ],
+      "url": "https://www.sba.gov/district/st-louis",
+      "director": "Christian Jansson (District Director)",
+      "locations": [
+        {
+          "location": "St. Louis",
+          "address": "1222 Spruce St. St. Louis, MO 63103",
+          "phone": "314-539-6600",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MO"
+        }
+      ]
+    },
+    {
+      "name": "Montana District",
+      "category": "sba-district",
+      "states": [
+        "MT"
+      ],
+      "url": "https://www.sba.gov/district/montana",
+      "director": "Brent Donnelly (District Director)",
+      "locations": [
+        {
+          "location": "Helena",
+          "address": "10 W. 15th St., Suite 1100 Helena, MT 59626",
+          "phone": "406-441-1081",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "MT"
+        }
+      ]
+    },
+    {
+      "name": "Nebraska District",
+      "category": "sba-district",
+      "states": [
+        "NE"
+      ],
+      "url": "https://www.sba.gov/district/nebraska",
+      "director": "Timothy R Mittan (District Director)",
+      "locations": [
+        {
+          "location": "Omaha",
+          "address": "10675 Bedford Ave., Suite 100 Omaha, NE 68134",
+          "phone": "402-221-4691",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NE"
+        }
+      ]
+    },
+    {
+      "name": "Nevada District",
+      "category": "sba-district",
+      "states": [
+        "NV"
+      ],
+      "url": "https://www.sba.gov/district/nevada",
+      "director": "Saul Ramos (District Director)",
+      "locations": [
+        {
+          "location": "Las Vegas",
+          "address": "300 S. 4th St., Suite 400, Las Vegas, NV 89101",
+          "phone": "702-388-6611",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves Clark, Lincoln, Nye, and Esmeralda counties.",
+          "state": "NV"
+        },
+        {
+          "location": "Carson City",
+          "address": "705 N. Plaza St., Suite 107, Carson City, NV 89701",
+          "phone": "702-388-6611",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves the rest of the state.",
+          "state": "NV"
+        }
+      ]
+    },
+    {
+      "name": "New Hampshire District",
+      "category": "sba-district",
+      "states": [
+        "NH"
+      ],
+      "url": "https://www.sba.gov/district/new-hampshire",
+      "director": "Diane L. Sturgeon (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Concord",
+          "address": "55 Pleasant St., Suite 3101, Concord, NH 03301",
+          "phone": "603-225-1400",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; all 10 counties.",
+          "state": "NH"
+        }
+      ]
+    },
+    {
+      "name": "New Jersey District",
+      "category": "sba-district",
+      "states": [
+        "NJ"
+      ],
+      "url": "https://www.sba.gov/district/new-jersey",
+      "director": "Lyndsay Kilpatrick (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Newark",
+          "address": "2 Gateway Center, Suite 1002 Newark, NJ 07102",
+          "phone": "973-645-2434",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NJ"
+        }
+      ]
+    },
+    {
+      "name": "New Mexico District",
+      "category": "sba-district",
+      "states": [
+        "NM"
+      ],
+      "url": "https://www.sba.gov/district/new-mexico",
+      "director": "Angela Burton (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Albuquerque",
+          "address": "500 Gold Ave SW, Suite 11301 Albuquerque, NM 87102",
+          "phone": "505-248-8225",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NM"
+        }
+      ]
+    },
+    {
+      "name": "Buffalo District",
+      "category": "sba-district",
+      "states": [
+        "NY"
+      ],
+      "url": "https://www.sba.gov/district/buffalo",
+      "director": "Victoria Reynolds (District Director)",
+      "locations": [
+        {
+          "location": "Buffalo",
+          "address": "130 S. Elmwood Ave., Suite 540 Buffalo, NY 14202",
+          "phone": "716-551-4301",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NY"
+        },
+        {
+          "location": "Rochester",
+          "address": "100 State St., Room 410 Rochester, NY 14614",
+          "phone": "585-263-6700",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NY"
+        }
+      ]
+    },
+    {
+      "name": "Metro New York District",
+      "category": "sba-district",
+      "states": [
+        "NY"
+      ],
+      "url": "https://www.sba.gov/district/metro-new-york",
+      "director": "John Mallano (District Director)",
+      "locations": [
+        {
+          "location": "New York City",
+          "address": "26 Federal Pl., Suite 3100 New York, NY 10278",
+          "phone": "212-264-4354",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NY"
+        },
+        {
+          "location": "Hauppauge",
+          "address": "350 Motor Pkwy., Suite 109 Hauppauge, NY 11788",
+          "phone": "631-454-0750",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NY"
+        }
+      ]
+    },
+    {
+      "name": "Syracuse District",
+      "category": "sba-district",
+      "states": [
+        "NY"
+      ],
+      "url": "https://www.sba.gov/district/upstate-new-york",
+      "director": "Daniel Rickman (District Director)",
+      "locations": [
+        {
+          "location": "Syracuse",
+          "address": "224 Harrison St., Suite 506 Syracuse, NY 13202",
+          "phone": "315-471-9393",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "NY"
+        }
+      ]
+    },
+    {
+      "name": "North Carolina District",
+      "category": "sba-district",
+      "states": [
+        "NC"
+      ],
+      "url": "https://www.sba.gov/district/north-carolina",
+      "director": "Aregnaz Mooradian (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Charlotte",
+          "address": "6302 Fairview Road, Suite 300, Charlotte, NC 28210",
+          "phone": "704-344-6563",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves statewide except Wilmington and surrounding counties.",
+          "state": "NC"
+        },
+        {
+          "location": "Wilmington",
+          "address": "402 North Front Street, CFBB Building G, Wilmington, NC 28401",
+          "phone": "704-344-6409",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves the southeastern counties.",
+          "state": "NC"
+        }
+      ]
+    },
+    {
+      "name": "North Dakota District",
+      "category": "sba-district",
+      "states": [
+        "ND"
+      ],
+      "url": "https://www.sba.gov/district/north-dakota",
+      "director": "Alan J. Haut (District Director)",
+      "locations": [
+        {
+          "location": "Fargo",
+          "address": "657 2nd Ave. N. Fargo, ND 58108",
+          "phone": "701-239-5131",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "ND"
+        }
+      ]
+    },
+    {
+      "name": "Ohio District",
+      "category": "sba-district",
+      "states": [
+        "OH"
+      ],
+      "url": "https://www.sba.gov/district/ohio",
+      "director": "Terry A. Bolden (District Director)",
+      "locations": [
+        {
+          "location": "Columbus",
+          "address": "65 E. State St., Suite 1350 Columbus, OH 43215",
+          "phone": "614-427-0407",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "OH"
+        },
+        {
+          "location": "Cleveland",
+          "address": "1350 Euclid Ave., Suite 211 Cleveland, OH 44115",
+          "phone": "216-522-4180",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "",
+          "state": "OH"
+        },
+        {
+          "location": "Cincinnati",
+          "address": "Potter Stewart U.S. Courthouse Cincinnati, OH 45202",
+          "phone": "513-384-9411",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "OH"
+        }
+      ]
+    },
+    {
+      "name": "Oklahoma District",
+      "category": "sba-district",
+      "states": [
+        "OK"
+      ],
+      "url": "https://www.sba.gov/district/oklahoma",
+      "director": "Fernanda Pedraza-Schmitt (District Director)",
+      "locations": [
+        {
+          "location": "Oklahoma City",
+          "address": "301 NW 6th St. Oklahoma City, OK 73102",
+          "phone": "405-609-8000",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "OK"
+        }
+      ]
+    },
+    {
+      "name": "Portland District",
+      "category": "sba-district",
+      "states": [
+        "OR",
+        "WA"
+      ],
+      "url": "https://www.sba.gov/district/portland",
+      "director": "Bryan Zulko (District Director)",
+      "locations": [
+        {
+          "location": "Portland",
+          "address": "419 SW 11th Avenue, Suite 310, Portland, OR 97205",
+          "phone": "503-326-2682",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only. Do not mail loan payments to this office. Serves 30 counties in Oregon and 4 counties in southwestern Washington.",
+          "state": "OR"
+        }
+      ]
+    },
+    {
+      "name": "Philadelphia District",
+      "category": "sba-district",
+      "states": [
+        "PA"
+      ],
+      "url": "https://www.sba.gov/district/eastern-pennsylvania",
+      "director": "Steven R. Dixel (District Director)",
+      "locations": [
+        {
+          "location": "King of Prussia",
+          "address": "660 American Ave., Suite 301 King of Prussia, PA 19406",
+          "phone": "610-382-3062",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "PA"
+        }
+      ]
+    },
+    {
+      "name": "Pittsburgh District",
+      "category": "sba-district",
+      "states": [
+        "PA"
+      ],
+      "url": "https://www.sba.gov/district/western-pennsylvania",
+      "director": "Kelly Hunt (District Director)",
+      "locations": [
+        {
+          "location": "Pittsburgh",
+          "address": "3 Parkway Center Dr S, Suite 375 Pittsburgh, PA 15220",
+          "phone": "412-395-6560",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "PA"
+        }
+      ]
+    },
+    {
+      "name": "Puerto Rico and U.S. Virgin Islands District",
+      "category": "sba-district",
+      "states": [
+        "PR",
+        "VI"
+      ],
+      "url": "https://www.sba.gov/district/puerto-rico-us-virgin-islands",
+      "director": "Ricardo Mart\u00ednez (District Director (Acting))",
+      "locations": [
+        {
+          "location": "San Juan, PR",
+          "address": "273 Ponce de Le\u00f3n Ave., Suite 510 San Juan, PR 00917",
+          "phone": "787-766-5572",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "PR"
+        }
+      ]
+    },
+    {
+      "name": "Rhode Island District",
+      "category": "sba-district",
+      "states": [
+        "RI"
+      ],
+      "url": "https://www.sba.gov/district/rhode-island",
+      "director": "Robert Piechota (District Director)",
+      "locations": [
+        {
+          "location": "Providence",
+          "address": "380 Westminster St., Room 511 Providence, RI 02903",
+          "phone": "401-528-4561",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "RI"
+        }
+      ]
+    },
+    {
+      "name": "South Carolina District",
+      "category": "sba-district",
+      "states": [
+        "SC"
+      ],
+      "url": "https://www.sba.gov/district/south-carolina",
+      "director": "Melissa L. Lindler (District Director)",
+      "locations": [
+        {
+          "location": "Columbia",
+          "address": "1835 Assembly St., Suite 1425, Columbia, SC 29201",
+          "phone": "803-765-5377",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves central and northern counties.",
+          "state": "SC"
+        },
+        {
+          "location": "Charleston",
+          "phone": "803-765-5377",
+          "hours": "Virtual office.",
+          "note": "Virtual office; serves the coastal counties.",
+          "state": "SC"
+        },
+        {
+          "location": "Spartanburg",
+          "address": "1875 E. Main St., Duncan, SC 29334",
+          "phone": "803-253-3123",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves the upstate counties.",
+          "state": "SC"
+        }
+      ]
+    },
+    {
+      "name": "South Dakota District",
+      "category": "sba-district",
+      "states": [
+        "SD"
+      ],
+      "url": "https://www.sba.gov/district/south-dakota",
+      "director": "Bryson Patterson (District Director)",
+      "locations": [
+        {
+          "location": "Sioux Falls",
+          "address": "200 N. Phillips Ave,. Suite L101 Sioux Falls, SD 57104",
+          "phone": "605-330-4243",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "SD"
+        }
+      ]
+    },
+    {
+      "name": "Tennessee District",
+      "category": "sba-district",
+      "states": [
+        "TN"
+      ],
+      "url": "https://www.sba.gov/district/tennessee",
+      "director": "David Glasgow (District Director)",
+      "locations": [
+        {
+          "location": "Nashville",
+          "address": "2 International Plaza Dr., Suite 500, Nashville, TN 37217",
+          "phone": "615-736-5881",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves the state except the Memphis area.",
+          "state": "TN"
+        },
+        {
+          "location": "Memphis",
+          "phone": "901-494-6906",
+          "hours": "Virtual office.",
+          "note": "Virtual office; serves Carroll, Crockett, Dyer, Fayette, Hardeman, Haywood, Lauderdale, Madison, Shelby, and Tipton counties.",
+          "state": "TN"
+        }
+      ]
+    },
+    {
+      "name": "Dallas / Fort Worth District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/dallas-fort-worth",
+      "director": "Matthew Jock (District Director)",
+      "locations": [
+        {
+          "location": "Dallas / Fort Worth",
+          "address": "150 Westpark Way, Suite 130 Euless, TX 76040",
+          "phone": "817-684-5500",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "El Paso District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/el-paso",
+      "director": "Dante Acosta (District Director)",
+      "locations": [
+        {
+          "location": "El Paso",
+          "address": "211 N. Florence St., Suite 201 El Paso, TX 79901",
+          "phone": "915-834-4600",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "Houston District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/houston",
+      "director": "Mark Winchester (District Director)",
+      "locations": [
+        {
+          "location": "Houston",
+          "address": "8701 S. Gessner Dr. Houston, TX 77074",
+          "phone": "713-773-6500",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "Lower Rio Grande Valley District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/lower-rio-grande-valley",
+      "director": "Angela R. Burton (District Director)",
+      "locations": [
+        {
+          "location": "Harlingen",
+          "address": "2422 E. Tyler Ave., Suite E Harlingen, TX 78550",
+          "phone": "956-427-8533",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "San Antonio District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/san-antonio",
+      "director": "David L. Elizondo (District Director)",
+      "locations": [
+        {
+          "location": "San Antonio",
+          "address": "615 E. Houston St., Suite 298 San Antonio, TX 78205",
+          "phone": "210-403-5900",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "West Texas District",
+      "category": "sba-district",
+      "states": [
+        "TX"
+      ],
+      "url": "https://www.sba.gov/district/west-texas",
+      "director": "Rey Lops (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Lubbock",
+          "address": "1205 Texas Ave., Room 408 Lubbock, TX 79401",
+          "phone": "806-472-7462",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "TX"
+        }
+      ]
+    },
+    {
+      "name": "Utah District",
+      "category": "sba-district",
+      "states": [
+        "UT"
+      ],
+      "url": "https://www.sba.gov/district/utah",
+      "director": "Marla Trollan (District Director)",
+      "locations": [
+        {
+          "location": "Salt Lake City",
+          "address": "125 S. State St., Suite 2227 Salt Lake City, UT 84138",
+          "phone": "801-524-3209",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "UT"
+        }
+      ]
+    },
+    {
+      "name": "Vermont District",
+      "category": "sba-district",
+      "states": [
+        "VT"
+      ],
+      "url": "https://www.sba.gov/district/vermont",
+      "director": "Adam Locklin (District Director)",
+      "locations": [
+        {
+          "location": "Williston",
+          "address": "400 Cornerstone Drive, Suite 240 Williston, VT 05495",
+          "phone": "802-828-4422",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "VT"
+        }
+      ]
+    },
+    {
+      "name": "Virginia District",
+      "category": "sba-district",
+      "states": [
+        "VA"
+      ],
+      "url": "https://www.sba.gov/district/virginia",
+      "director": "Austen Colledge (District Director (Acting))",
+      "locations": [
+        {
+          "location": "Richmond",
+          "address": "400 N. 8th St., Suite 1150 Richmond, VA 23219",
+          "phone": "804-771-2400",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "VA"
+        }
+      ]
+    },
+    {
+      "name": "Seattle District",
+      "category": "sba-district",
+      "states": [
+        "WA",
+        "ID"
+      ],
+      "url": "https://www.sba.gov/district/seattle",
+      "director": "Melanie Norton (District Director)",
+      "locations": [
+        {
+          "location": "Seattle",
+          "address": "2401 4th Ave., Suite 450, Seattle, WA 98121",
+          "phone": "206-553-7310",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves 21 Washington counties.",
+          "state": "WA"
+        },
+        {
+          "location": "Spokane",
+          "address": "801 W. Riverside Ave., Suite 444, Spokane, WA 99201",
+          "phone": "509-353-2800",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m., by appointment only. Closed on federal holidays.",
+          "note": "Appointment only; serves 11 eastern Washington counties and the 10 northernmost Idaho counties.",
+          "state": "WA"
+        }
+      ]
+    },
+    {
+      "name": "West Virginia District",
+      "category": "sba-district",
+      "states": [
+        "WV"
+      ],
+      "url": "https://www.sba.gov/district/west-virginia",
+      "director": "Karen Friel (District Director)",
+      "locations": [
+        {
+          "location": "Clarksburg",
+          "address": "320 W. Pike St., Suite 330 Clarksburg, WV 26301",
+          "phone": "304-623-5631",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "WV"
+        }
+      ]
+    },
+    {
+      "name": "Wisconsin District",
+      "category": "sba-district",
+      "states": [
+        "WI"
+      ],
+      "url": "https://www.sba.gov/district/wisconsin",
+      "director": "Frank Demarest, Jr. (District Director)",
+      "locations": [
+        {
+          "location": "Milwaukee",
+          "address": "310 W. Wisconsin Ave., Suite 580W Milwaukee, WI 53203",
+          "phone": "414-297-3941",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "WI"
+        }
+      ]
+    },
+    {
+      "name": "Wyoming District",
+      "category": "sba-district",
+      "states": [
+        "WY"
+      ],
+      "url": "https://www.sba.gov/district/wyoming",
+      "director": "Amy Lea (District Director)",
+      "locations": [
+        {
+          "location": "Casper",
+          "address": "150 E. B St., Room 1011 Casper, WY 82601",
+          "phone": "307-261-6500",
+          "hours": "Mon\u2013Fri, 8:00 a.m.\u20134:30 p.m. Closed on federal holidays.",
+          "note": "",
+          "state": "WY"
+        }
+      ]
+    }
+  ],
+  "partners": [
+    {
+      "name": "SCORE",
+      "category": "resource-partner",
+      "url": "https://www.score.org",
+      "note": "Free business mentoring and workshops. 300+ local chapters across the U.S."
+    },
+    {
+      "name": "America's SBDC",
+      "category": "resource-partner",
+      "url": "https://americassbdc.org",
+      "note": "Network of Small Business Development Centers offering free consulting and low-cost training. Find your local center through the SBA local-assistance page."
+    },
+    {
+      "name": "Women's Business Centers",
+      "category": "resource-partner",
+      "url": "https://www.sba.gov/counseling/local-assistance/",
+      "note": "Free and low-cost training and counseling for women entrepreneurs."
+    },
+    {
+      "name": "Veterans Business Outreach Centers",
+      "category": "resource-partner",
+      "url": "https://www.sba.gov/veterans/",
+      "note": "Training and counseling for veteran-owned businesses."
+    },
+    {
+      "name": "Certified Development Companies (504 lenders)",
+      "category": "resource-partner",
+      "url": "https://www.sba.gov/loans/504-loans/list-of-certified-development-companies/",
+      "note": "Official SBA list of CDC 504 lenders."
+    },
+    {
+      "name": "SBA Microlenders",
+      "category": "resource-partner",
+      "url": "https://www.sba.gov/loans/microloans/list-of-microlenders/",
+      "note": "Official SBA list of SBA-approved microloan intermediaries."
+    }
+  ],
+  "lenders": [
+    {
+      "name": "SBA Lender Match",
+      "category": "marketplace",
+      "url": "https://www.sba.gov/loans/lender-match/",
+      "products": "SBA 7(a), 504, microloans \u2014 official SBA matching service",
+      "details": "Free, no-obligation matching with SBA-approved lenders."
+    },
+    {
+      "name": "Lendio",
+      "category": "marketplace",
+      "url": "https://www.lendio.com",
+      "products": "SBA 7(a), term loans, lines of credit, equipment, revenue-based financing, invoice factoring, commercial mortgages, startup loans",
+      "details": "Free to apply. States applying does not affect your personal credit score. Assigns a dedicated funding expert. Paid by lenders (may affect placement)."
+    },
+    {
+      "name": "Fundera by NerdWallet",
+      "category": "marketplace",
+      "url": "https://www.fundera.com",
+      "products": "SBA, term loans, lines of credit, equipment, invoice financing, merchant cash advances, commercial real estate",
+      "details": "Free to compare. Funding Advisor available. Earns a percentage from the provider once funded."
+    },
+    {
+      "name": "Nav",
+      "category": "marketplace",
+      "url": "https://www.nav.com",
+      "products": "Business credit monitoring plus funding matches",
+      "details": "Free plan available. Nav Prime plans $39.99\u2013$74.99/month. Uses soft pulls for credit monitoring."
+    },
+    {
+      "name": "LendingTree",
+      "category": "marketplace",
+      "url": "https://www.lendingtree.com",
+      "products": "Business loans among multiple products",
+      "details": "Arranges multiple conditional offers from non-affiliated lenders. Paid by providers."
+    },
+    {
+      "name": "Rapid Finance",
+      "category": "marketplace",
+      "url": "https://www.rapidfinance.com",
+      "products": "Small business financing",
+      "details": "Lender-matching marketplace packaging applications for partner review."
+    },
+    {
+      "name": "National Funding",
+      "category": "marketplace",
+      "url": "https://www.nationalfunding.com",
+      "products": "Term loans, lines of credit, SBA loans",
+      "details": "Marketplace and lender-ready application packaging across financing routes."
+    },
+    {
+      "name": "SmartBiz",
+      "category": "marketplace",
+      "url": "https://www.smartbiz.com",
+      "products": "SBA and non-SBA small business loans",
+      "details": "SBA-focused marketplace packaging SBA and non-SBA submissions."
+    },
+    {
+      "name": "BlueVine",
+      "category": "direct-lender",
+      "url": "https://www.bluevine.com",
+      "products": "Invoice financing, business lines of credit",
+      "details": "Direct lender built around business receivables."
+    },
+    {
+      "name": "Fundbox",
+      "category": "direct-lender",
+      "url": "https://www.fundbox.com",
+      "products": "Invoice financing, lines of credit, term loans",
+      "details": "Direct lender; also offers embedded financing for platforms."
+    },
+    {
+      "name": "OnDeck",
+      "category": "direct-lender",
+      "url": "https://www.ondeck.com",
+      "products": "Term loans, lines of credit",
+      "details": "Direct online lender for small businesses."
+    },
+    {
+      "name": "Fora Financial",
+      "category": "direct-lender",
+      "url": "https://www.forafinancial.com",
+      "products": "Revenue-based financing, term financing",
+      "details": "Up to $1.5M. Published factor rates 1.05\u20131.5. Typical minimums: 6+ months in business, $240K+ annual revenue, 570+ credit score."
+    },
+    {
+      "name": "Credibly",
+      "category": "direct-lender",
+      "url": "https://www.credibly.com",
+      "products": "Receivables-driven funding",
+      "details": "Direct lender focused on receivables-driven funding."
+    },
+    {
+      "name": "Biz2Credit",
+      "category": "direct-lender",
+      "url": "https://www.biz2credit.com",
+      "products": "Term loans",
+      "details": "Term loans made by Itria Ventures LLC or Cross River Bank. Published minimums: FICO 650 and $100,000 revenue."
+    },
+    {
+      "name": "StreetShares",
+      "category": "direct-lender",
+      "url": "https://www.streetshares.com",
+      "products": "Small business loans, lines of credit",
+      "details": "Veteran-focused lender."
+    },
+    {
+      "name": "Live Oak Bank",
+      "category": "bank",
+      "url": "https://www.liveoakbank.com",
+      "products": "SBA 7(a), 504, and other SBA-preferred products",
+      "details": "SBA-preferred direct lender (chartered bank)."
+    },
+    {
+      "name": "NewtekOne",
+      "category": "bank",
+      "url": "https://www.newtekone.com",
+      "products": "SBA 7(a) loans",
+      "details": "SBA 7(a) direct lender (chartered bank)."
+    },
+    {
+      "name": "Kabbage",
+      "category": "direct-lender",
+      "url": "https://www.kabbage.com",
+      "products": "Small business lines of credit",
+      "details": "American Express company. Small business credit and lines of credit."
+    }
+  ]
+}
