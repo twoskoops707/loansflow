@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T21:28:03.410Z",
+  "updatedAt": "2026-10-06T19:30:04.716Z",
   "rates": {
     "asOf": "10/1/2026",
     "source": "Freddie Mac PMMS",
@@ -55,14 +55,6 @@
     },
     {
       "category": "Rates",
-      "source": "PBS",
-      "title": "High mortgage rates compound housing affordability challenges",
-      "summary": "PBS coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNa1JSSXJEWlZYbjdBTGVTemxfblMxTUZTY2RZeVNJcVhDbmp3bjlac1pWM21KX2V5UWZhOUpFX0l0U3MwNk9QNVZ2WUVJLWIteXd1TDl3aHNQd3NLdEJaZUFSSFdkc1dLT3dRX0lrcFVsLUJ4Y3RVN01nT3dyRHdVaXdTWVFreGp5OWNrU3FXSlhVY3d2bUhMX2dLWQ?oc=5",
-      "publishedAt": "2026-09-28T22:40:32.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNN",
       "title": "Mortgage rates just hit 7.28%. But there are ways to get a lower rate",
       "summary": "CNN coverage of recent rates developments. Open the full report for details.",
@@ -79,11 +71,19 @@
     },
     {
       "category": "Rates",
-      "source": "nytimes.com",
+      "source": "The New York Times",
       "title": "Mortgage Rates Keep Climbing, Leading Some Buyers to Riskier Loans",
-      "summary": "nytimes.com coverage of recent rates developments. Open the full report for details.",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9pb05VYi1JdWZESjd2NzhhWTJuYWZmQlYtVVpaamxuQnh4a0ZxWFFLU05oNXFyUDR5bnRvRzRGOC1uU3BRZUxmbHhyRXFVeER4M3VHVWNISlZvYTRkZTBmWE9QTWxISjNwcmlNX2pQeXBYcHZiNlk4OG5rTlBSV3M?oc=5",
       "publishedAt": "2026-10-01T16:02:58.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "NBC News",
+      "title": "Mortgage rates hit highest point since 2023 as Treasury yields rise",
+      "summary": "NBC News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS3hheWVhTmFnc0wyTktlOHZaMWE0NmZBQmRPSExOUnVKSHkxSUdmemh2STA4YWF3QUpJNDlpSHhqRWJ5RXFOYV9IUW9GdlUyWTdpZFFxdDF2Vi0zWUFwNGFwUGpweVFEZTJmdXV1WTdIZ1AwWWMwUjV4TUpHaVk3SjlkdWlvVzFtMkhFVmJRRWpuVk96?oc=5",
+      "publishedAt": "2026-10-01T20:41:13.000Z"
     },
     {
       "category": "Rates",
