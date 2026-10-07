@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T19:30:04.716Z",
+  "updatedAt": "2026-10-07T19:57:27.272Z",
   "rates": {
     "asOf": "10/1/2026",
     "source": "Freddie Mac PMMS",
@@ -40,18 +40,26 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "publishedAt": "2026-10-07T18:00:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
       "title": "Federal Reserve issues FOMC statement",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
       "publishedAt": "2026-09-16T18:00:00.000Z"
     },
     {
-      "category": "Fed Policy",
-      "source": "Federal Reserve",
-      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
-      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
-      "publishedAt": "2026-09-16T18:00:00.000Z"
+      "category": "Rates",
+      "source": "Reuters",
+      "title": "US mortgage rates jump by most in 4 years in latest week",
+      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWlhBcmpBS2FHRFJJWk5QenJlWnQxWGI2a1FDNmxRa1ZXLW1yMkwzdVg4QVNDUnBzc0RNaGdid0lmV0JWZEdQZlhJQmx6X0tPbXJ2aHBDM1JpUU40dExEN1Rud0JCMVEtOFRBQ01qSWg0MThJRkpNTm1LN0FmaU1UcW5HWFJXVnFCMGVBbklmNVNxdVdYY1NVQjVXbw?oc=5",
+      "publishedAt": "2026-10-01T18:52:09.000Z"
     },
     {
       "category": "Rates",
@@ -63,14 +71,6 @@
     },
     {
       "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates jump for the sixth straight week, hitting both refinance and homebuyer demand hard",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNajRyd2FoYjR1NnJwdUNicWRfMXhlcGZjclhpMkJjRS0wMU53Y0VUeERaSkw0RGVZRnVKVEljb1BfZXJrNDdBY3BPcktud19GMF9vUi1TQm1uME4tTjJXLVBEUXdNaWpXc25HZG9PMTVRMFczUEVqVDIzQkFOaHd1QjYyQkp2SngwczdmamQ3VEJ1R1ZJc0VjNWJ3QXdsSzBELUHSAacBQVVfeXFMUEJQMWJWcE9Wd0dvb2ppYlN6S21NSUt1dmNwNUw1b2RLMUNqR2d6UzZaTnV1REc1ZExzUGhGckFrWUNpNWozMFhMQzdCRVBub0kzZEVyeW1KcXVKUnpfeEs4YmloMTExZ3dncEdkRnhBRlJYTjZieGFxcmthMGRyOWdRbFJLdnlxRUhNaEIyU2Fic3FqTm1HVXVnMmNwLTZaLTJvZV9QSjA?oc=5",
-      "publishedAt": "2026-09-30T11:00:01.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "The New York Times",
       "title": "Mortgage Rates Keep Climbing, Leading Some Buyers to Riskier Loans",
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
@@ -79,19 +79,19 @@
     },
     {
       "category": "Rates",
-      "source": "NBC News",
-      "title": "Mortgage rates hit highest point since 2023 as Treasury yields rise",
-      "summary": "NBC News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS3hheWVhTmFnc0wyTktlOHZaMWE0NmZBQmRPSExOUnVKSHkxSUdmemh2STA4YWF3QUpJNDlpSHhqRWJ5RXFOYV9IUW9GdlUyWTdpZFFxdDF2Vi0zWUFwNGFwUGpweVFEZTJmdXV1WTdIZ1AwWWMwUjV4TUpHaVk3SjlkdWlvVzFtMkhFVmJRRWpuVk96?oc=5",
-      "publishedAt": "2026-10-01T20:41:13.000Z"
+      "source": "CNBC",
+      "title": "High mortgage rates are trapping homeowners in place, and making renovations harder to afford",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPclk3LW4xT1ZHMGFvODV6TUpoNnRVOFlRRUdWN240VXowdVpLREJPQVh0WGRNWGY4UzA1MURTX3JvbE94blFWS2ZsZGYyc2kzNmxvSndyOW9nR2E5Y2dCYW5yU0pKQUJWZEVIbnVCcDBlWFJscVRfUDFXc3E3UXIzXzU5bWQtdjDSAYwBQVVfeXFMTzZEWHdIWENkRl95M29MRGhvcHhsTUE3MFZNMUExWlAwQ0UzZnZhZXpuNGZ3cGc0M1ozQnRvQ3hyRllRRlE5a3lzSldOZDduTDl6V0Q1SGhpdGlDUmxZUDNMMjRJYUl1bXhtaThrSEFmZnA4VE4wYVJsbmNSOFFFeUVMTmpxa3QzOUQwb1U?oc=5",
+      "publishedAt": "2026-10-03T13:11:37.000Z"
     },
     {
       "category": "Rates",
-      "source": "Reuters",
-      "title": "US mortgage rates jump by most in 4 years in latest week",
-      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWlhBcmpBS2FHRFJJWk5QenJlWnQxWGI2a1FDNmxRa1ZXLW1yMkwzdVg4QVNDUnBzc0RNaGdid0lmV0JWZEdQZlhJQmx6X0tPbXJ2aHBDM1JpUU40dExEN1Rud0JCMVEtOFRBQ01qSWg0MThJRkpNTm1LN0FmaU1UcW5HWFJXVnFCMGVBbklmNVNxdVdYY1NVQjVXbw?oc=5",
-      "publishedAt": "2026-10-01T18:52:09.000Z"
+      "source": "WSJ",
+      "title": "How 7% Mortgages Are Wrecking the Home-Buyer Playbook",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQT015Q1hQamNXemNoUWpxZ1E2cGhEOHQtN0VrTTczU1QxbjVjNGlpRkpqRUl6TmlCazF6QTR3SWgxTGpCMHpkdG9iSmd2LU9YZkxod3ZHaTdCUUpfc0dMTGp1LTNMTzA1SWpkQm9HM2ozeGl6MVhBenpBRnpvVWhwaEYwQzNjdm56MDdRRWtNUlhab0tGaGhVOW5LS0pQTVR2dkljM1lua3NVSzU0eXJmRlBsQkJXVUQ3SmZMR0E4S1Q0bDVh?oc=5",
+      "publishedAt": "2026-10-01T09:30:00.000Z"
     }
   ]
 }
