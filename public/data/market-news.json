@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T18:31:51.757Z",
+  "updatedAt": "2026-10-11T18:50:20.153Z",
   "rates": {
     "asOf": "10/8/2026",
     "source": "Freddie Mac PMMS",
@@ -71,19 +71,19 @@
     },
     {
       "category": "Rates",
+      "source": "Morningstar",
+      "title": "‘Disastrous News for Borrowers’: What 6% Mortgage Rates Mean for You",
+      "summary": "Morningstar coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQOGxLd0F5ZHBlUDRCcVdvVGVza09ndkk2VVF1eXNLVW8zVlJTR2VvZ256NDFuOV9tSUJEN2FfWUVfanhGRGlaX1lDWkRUNkJyQzVDanJkZGlwR05INUFBWmJSMlk3YUZ1cTVTQ3hSaXZnclp2NnJPZ2JQRFl3VTJrLXd2ZnptLUduV2s1a2VKNWdyQm1obUNBT2FYSmgtdjVxT1g3Umk1cndURVNsU0pz?oc=5",
+      "publishedAt": "2026-10-09T11:11:08.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "The New York Times",
       "title": "Highest Mortgage Rates in 3 Years Chills the Housing Market",
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdWdGdXZlUEhMOW9raDR2Y0p4TExiUlpqdmRQQm5mbFJXS3VwaUgzMFNzcUZ4ZTVfS1gybmJUenZOQW9DWlJySU9RZ1BCcFJQbUlOa2FaWWtlTFF5VEg0SmtxZnlMekhEakxUdVA0RF9hQWhKOTRGQXRCQXlEa3dLVURRMXo?oc=5",
       "publishedAt": "2026-10-08T16:00:04.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Bankrate",
-      "title": "Mortgage rates jump to three-year high, blow past 7.5%",
-      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE12N1pGWHhYUU5ad1J6TGRtVjVZTVBBQm5DZEV2akc2OTJRRmVnZkZhT1k5ZlZBUHR3NVdTU3BwVWhKZTk0MEFBUkZUVnRuellhWHZRRFl2d1FXWFJmTm1SYW85Ynp5MjE5Yk8tLWZCLXpTOG0yblhnR2ZJOVdsWTQ?oc=5",
-      "publishedAt": "2026-10-07T20:16:41.000Z"
     },
     {
       "category": "Rates",
