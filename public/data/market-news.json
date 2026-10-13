@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T22:07:14.573Z",
+  "updatedAt": "2026-10-13T20:14:06.520Z",
   "rates": {
     "asOf": "10/8/2026",
     "source": "Freddie Mac PMMS",
@@ -40,18 +40,18 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
-      "publishedAt": "2026-10-07T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "publishedAt": "2026-10-13T18:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve issues FOMC statement",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "publishedAt": "2026-09-16T18:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "publishedAt": "2026-10-07T18:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -71,6 +71,14 @@
     },
     {
       "category": "Rates",
+      "source": "WSJ",
+      "title": "If You’re Rushing to Lock In a Mortgage Rate, Here’s What You Need to Know",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBmaFB1V056NUVGVlU2V2RBcVVwY0lNa0Q4QVVwZzBDamlCbnFBdVExaFRjTi1aSUMwc2Z4Uk1WanVwdFdGWWxWd01fNlFDdXlkdWUzR0NwTVRNbXEtNFpMc1RhcllSTk5NY1ozdnBOOFJHUQ?oc=5",
+      "publishedAt": "2026-10-09T09:30:00.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "Morningstar",
       "title": "‘Disastrous News for Borrowers’: What 6% Mortgage Rates Mean for You",
       "summary": "Morningstar coverage of recent rates developments. Open the full report for details.",
@@ -84,14 +92,6 @@
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdWdGdXZlUEhMOW9raDR2Y0p4TExiUlpqdmRQQm5mbFJXS3VwaUgzMFNzcUZ4ZTVfS1gybmJUenZOQW9DWlJySU9RZ1BCcFJQbUlOa2FaWWtlTFF5VEg0SmtxZnlMekhEakxUdVA0RF9hQWhKOTRGQXRCQXlEa3dLVURRMXo?oc=5",
       "publishedAt": "2026-10-08T16:00:04.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "WSJ",
-      "title": "How Families Can Beat 7% Mortgage Rates and Lower Their Tax Bills",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPWnZDREkzMnFLdWkxdGZQNjVGUFVDWHlYbEo3WFZ0ZlU3aWZkYzM1SkhyOWFlQk1KMjU2a0lkbElzcnRfc3pqeTZSMnBzUE56VUNjek1XX08zQzVXVEJRVjczZHE3QlVPWGxLdy15R2tVSkU1S09hNnA4Tmd1dDNpWlNfVmNOOHpXR0N0aUYyN3RucnZwUGpCaThPOGNaSUUzOUd4UTZ0d2FISF9HOGgtY2w1QlpXekk?oc=5",
-      "publishedAt": "2026-10-08T09:30:00.000Z"
     }
   ]
 }
