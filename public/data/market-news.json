@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T20:14:06.520Z",
+  "updatedAt": "2026-10-14T18:33:35.004Z",
   "rates": {
     "asOf": "10/8/2026",
     "source": "Freddie Mac PMMS",
@@ -63,11 +63,11 @@
     },
     {
       "category": "Rates",
-      "source": "NPR",
-      "title": "Here's the latest sticker shock: Borrowing for a mortgage — or a car",
-      "summary": "NPR coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOU2xMWmVQRnl3dnBYTWEzaXhvcFJUazRvUGMzdjJGQWJVU0NkRjRnOXotMmR1WkFjWU5MUzNrUU5RSlljaUNxSzkxRUt1MF9XZklVU2MxUnJOTW9wbW1vaG0wZndxOGh6V2xtUVlqUWZiMTBLNTZpMnJPc0w5N3ZVenhmcDRHQWpSbU9J?oc=5",
-      "publishedAt": "2026-10-07T09:00:00.000Z"
+      "source": "Morningstar",
+      "title": "‘Disastrous News for Borrowers’: What 6% Mortgage Rates Mean for You",
+      "summary": "Morningstar coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQOGxLd0F5ZHBlUDRCcVdvVGVza09ndkk2VVF1eXNLVW8zVlJTR2VvZ256NDFuOV9tSUJEN2FfWUVfanhGRGlaX1lDWkRUNkJyQzVDanJkZGlwR05INUFBWmJSMlk3YUZ1cTVTQ3hSaXZnclp2NnJPZ2JQRFl3VTJrLXd2ZnptLUduV2s1a2VKNWdyQm1obUNBT2FYSmgtdjVxT1g3Umk1cndURVNsU0pz?oc=5",
+      "publishedAt": "2026-10-09T11:11:08.000Z"
     },
     {
       "category": "Rates",
@@ -79,19 +79,19 @@
     },
     {
       "category": "Rates",
-      "source": "Morningstar",
-      "title": "‘Disastrous News for Borrowers’: What 6% Mortgage Rates Mean for You",
-      "summary": "Morningstar coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQOGxLd0F5ZHBlUDRCcVdvVGVza09ndkk2VVF1eXNLVW8zVlJTR2VvZ256NDFuOV9tSUJEN2FfWUVfanhGRGlaX1lDWkRUNkJyQzVDanJkZGlwR05INUFBWmJSMlk3YUZ1cTVTQ3hSaXZnclp2NnJPZ2JQRFl3VTJrLXd2ZnptLUduV2s1a2VKNWdyQm1obUNBT2FYSmgtdjVxT1g3Umk1cndURVNsU0pz?oc=5",
-      "publishedAt": "2026-10-09T11:11:08.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "The New York Times",
       "title": "Highest Mortgage Rates in 3 Years Chills the Housing Market",
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdWdGdXZlUEhMOW9raDR2Y0p4TExiUlpqdmRQQm5mbFJXS3VwaUgzMFNzcUZ4ZTVfS1gybmJUenZOQW9DWlJySU9RZ1BCcFJQbUlOa2FaWWtlTFF5VEg0SmtxZnlMekhEakxUdVA0RF9hQWhKOTRGQXRCQXlEa3dLVURRMXo?oc=5",
       "publishedAt": "2026-10-08T16:00:04.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "AP News",
+      "title": "Average long-term US mortgage rate at highest level in nearly 3 years after 7th weekly rise in a row",
+      "summary": "AP News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSnRTQzFRZUhWaEJsREl2N09GUlZDcXdMVXpMY29qQVg2SHB1NmREZmJYMEV6cGRfU3oyZl96UUY4aURCSmpZNWdRelhWb3Z2RHBNODk0M0FDc1BoOXJnTGVuQmxsTldnUDJ0LW1ObEljMkFyYUVUQjdxZnJCbFU2ZlFlLW9lWmFxcG5ac3VEbS01dGpaV3JCUzN5dUI5Vk9kem53?oc=5",
+      "publishedAt": "2026-10-09T15:43:00.000Z"
     }
   ]
 }
