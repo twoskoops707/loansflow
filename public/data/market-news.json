@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T18:14:53.281Z",
+  "updatedAt": "2026-10-16T18:00:16.350Z",
   "rates": {
     "asOf": "10/15/2026",
     "source": "Freddie Mac PMMS",
@@ -55,27 +55,27 @@
     },
     {
       "category": "Rates",
-      "source": "AP News",
-      "title": "Average long-term US mortgage rate at highest level in nearly 3 years after 7th weekly rise in a row",
-      "summary": "AP News coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSnRTQzFRZUhWaEJsREl2N09GUlZDcXdMVXpMY29qQVg2SHB1NmREZmJYMEV6cGRfU3oyZl96UUY4aURCSmpZNWdRelhWb3Z2RHBNODk0M0FDc1BoOXJnTGVuQmxsTldnUDJ0LW1ObEljMkFyYUVUQjdxZnJCbFU2ZlFlLW9lWmFxcG5ac3VEbS01dGpaV3JCUzN5dUI5Vk9kem53?oc=5",
-      "publishedAt": "2026-10-09T15:43:00.000Z"
+      "source": "CNBC",
+      "title": "Fannie Mae sharply raises mortgage rate forecast for 2027",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRXJvZlctSFZwdjZHNEt2UGRnOS1KNUtULUNmaVdsYzZsdUVqN1BBLWd3VmVYQ0daRDN4X0pxQTM5bkcwNUcwZjRKaUtGRkJxMURfekNlNU5hTWowR0g0NTNWMEpYbHZhVFdmRHljS1FfX2tTZnRvSTA3Q0dqUmJVT2xNcXY0UVpIdmkya0dwdGdjTHp2aDNqb1lKd9IBoAFBVV95cUxNenFDaFF4UXlNRUpqemhlUFBKV0k0TG1wM1E4cms0ck5KTFBVeW1HNUV0S3hKZmdKcklQYWRBZ0NucUd6elFhdnJuSzVrOTFreUl6cHllcEh4Z2djYmZrREFaZnBkY0dtb1JYUWNnWnpCcjNSejNWa2ZTbWZneEtlLTJ2QWpaNkpJWjFtbURGeEEwcllia3BtTTdwa3VLXzJv?oc=5",
+      "publishedAt": "2026-10-14T15:20:53.000Z"
     },
     {
       "category": "Rates",
-      "source": "Morningstar",
-      "title": "‘Disastrous News for Borrowers’: What 6% Mortgage Rates Mean for You",
-      "summary": "Morningstar coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQOGxLd0F5ZHBlUDRCcVdvVGVza09ndkk2VVF1eXNLVW8zVlJTR2VvZ256NDFuOV9tSUJEN2FfWUVfanhGRGlaX1lDWkRUNkJyQzVDanJkZGlwR05INUFBWmJSMlk3YUZ1cTVTQ3hSaXZnclp2NnJPZ2JQRFl3VTJrLXd2ZnptLUduV2s1a2VKNWdyQm1obUNBT2FYSmgtdjVxT1g3Umk1cndURVNsU0pz?oc=5",
-      "publishedAt": "2026-10-09T11:11:08.000Z"
+      "source": "CNN",
+      "title": "High mortgage rates are deepening a ‘K-shaped’ housing market",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOek9VME52YmtjMDNjaGU1MmltT3NHWUhCNFZ3Q3UydGZER2EyX1IzTTdNU1JNcHlTVlhTNm9FS2d1NWZaREdiME93djFpZmVNLWktZmNxOU9ZbWhrNFVHNGxPYUFGRnhEUi1jZDNwMWo1MFpVSzlmNm5kZ2ZyZDZkRTBtSQ?oc=5",
+      "publishedAt": "2026-10-15T16:07:52.000Z"
     },
     {
       "category": "Rates",
-      "source": "WSJ",
-      "title": "If You’re Rushing to Lock In a Mortgage Rate, Here’s What You Need to Know",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBmaFB1V056NUVGVlU2V2RBcVVwY0lNa0Q4QVVwZzBDamlCbnFBdVExaFRjTi1aSUMwc2Z4Uk1WanVwdFdGWWxWd01fNlFDdXlkdWUzR0NwTVRNbXEtNFpMc1RhcllSTk5NY1ozdnBOOFJHUQ?oc=5",
-      "publishedAt": "2026-10-09T09:30:00.000Z"
+      "source": "Yahoo Finance",
+      "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPYWpVemRtc0ZWUjhPR2N6S2UxRlZrZlVFekJFNkt2QXRBQ2JRTzFKQTYwN3RVTmRlbk42VXVPTHZ4MjdkOFFsNVphRjFmUWdEVE1oeUVDX1dVdWtDS0VEQ0NJYkc2M1c3UlhXOEpnaEVKY001amZLQnFvclJ3bHE5RC1SN1NaSHZxM3lSZDVvRlhqdzh4SEZqNC1lYWpabW5xUXRYUHVzaXFBY29tclBXZ3RlVVpTZ0RNcF9aNUk3a0hXRUZkeDhPNzBtLVZ6R0cxMFpUb2tRQ3dRSXdCWEJTRFZ4bTAzUk0ydjJ0TXM1U1ZjTlJ4U05hWEhia1JhTV9SWHg1am1vLTAwT1VWdVgzS3kwMjlWQQ?oc=5",
+      "publishedAt": "2026-10-15T20:45:34.000Z"
     },
     {
       "category": "Rates",
@@ -91,7 +91,7 @@
       "title": "Homeownership Drifts Further Out of Reach as Mortgage Rates Rise",
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQckNhODNDbTI0bkRDeGJiX1ZXSnpiWFpEV05IMkI4d20waXF1eUhmb3J2WXJOMUhWNVE4NUNvbjZuVzZKTW9OVTIxNl9JY1NibzF1alFhb1BPYl9ZV3lHZ29SMXZKUkdvS016aGhXT05BcXFJV09ibHhXLUpSeURVVTJ2aG1sbzlxSEJ0LTFuOA?oc=5",
-      "publishedAt": "2026-10-15T16:05:43.000Z"
+      "publishedAt": "2026-10-15T18:12:19.000Z"
     }
   ]
 }
