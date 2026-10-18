@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T17:06:38.154Z",
+  "updatedAt": "2026-10-18T17:19:11.659Z",
   "rates": {
     "asOf": "10/15/2026",
     "source": "Freddie Mac PMMS",
@@ -55,22 +55,6 @@
     },
     {
       "category": "Rates",
-      "source": "Reuters",
-      "title": "US existing home sales rise in September; higher mortgage rates dim outlook",
-      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSTd6ZlFyT3BzT2ZINW5WY1c2X3E4cGF0YlZWT3JVWVh1ZjUzNHpNNHVwbDliOXk0V2J0a0x1VXo4dGdZOTBaTlZ5Z0JTLUJrVEk2SjMtX1pzUU1odjZMODV3SnZUTjZlVV9mM1NiNWxEX1BmZ0Jlc0MwTW9PZHcwNkFBZlJEWDNIWE1jVk9CMlN2cmdtY193Rzcyd1NtSk9IMnJIT2tWZ1FTcnlVdmhfUTZqcEVXTmc?oc=5",
-      "publishedAt": "2026-10-13T16:15:14.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "CNN",
-      "title": "High mortgage rates are deepening a ‘K-shaped’ housing market",
-      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOek9VME52YmtjMDNjaGU1MmltT3NHWUhCNFZ3Q3UydGZER2EyX1IzTTdNU1JNcHlTVlhTNm9FS2d1NWZaREdiME93djFpZmVNLWktZmNxOU9ZbWhrNFVHNGxPYUFGRnhEUi1jZDNwMWo1MFpVSzlmNm5kZ2ZyZDZkRTBtSQ?oc=5",
-      "publishedAt": "2026-10-15T16:07:52.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Fannie Mae sharply raises mortgage rate forecast for 2027",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
@@ -79,19 +63,35 @@
     },
     {
       "category": "Rates",
+      "source": "Yahoo Finance",
+      "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPYWpVemRtc0ZWUjhPR2N6S2UxRlZrZlVFekJFNkt2QXRBQ2JRTzFKQTYwN3RVTmRlbk42VXVPTHZ4MjdkOFFsNVphRjFmUWdEVE1oeUVDX1dVdWtDS0VEQ0NJYkc2M1c3UlhXOEpnaEVKY001amZLQnFvclJ3bHE5RC1SN1NaSHZxM3lSZDVvRlhqdzh4SEZqNC1lYWpabW5xUXRYUHVzaXFBY29tclBXZ3RlVVpTZ0RNcF9aNUk3a0hXRUZkeDhPNzBtLVZ6R0cxMFpUb2tRQ3dRSXdCWEJTRFZ4bTAzUk0ydjJ0TXM1U1ZjTlJ4U05hWEhia1JhTV9SWHg1am1vLTAwT1VWdVgzS3kwMjlWQQ?oc=5",
+      "publishedAt": "2026-10-15T20:45:34.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "The New York Times",
-      "title": "Homeownership Drifts Further Out of Reach as Mortgage Rates Rise",
+      "title": "Rising Mortgage Rates Risk Plunging Housing Further Into Crisis",
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQckNhODNDbTI0bkRDeGJiX1ZXSnpiWFpEV05IMkI4d20waXF1eUhmb3J2WXJOMUhWNVE4NUNvbjZuVzZKTW9OVTIxNl9JY1NibzF1alFhb1BPYl9ZV3lHZ29SMXZKUkdvS016aGhXT05BcXFJV09ibHhXLUpSeURVVTJ2aG1sbzlxSEJ0LTFuOA?oc=5",
       "publishedAt": "2026-10-15T15:05:35.000Z"
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPYWpVemRtc0ZWUjhPR2N6S2UxRlZrZlVFekJFNkt2QXRBQ2JRTzFKQTYwN3RVTmRlbk42VXVPTHZ4MjdkOFFsNVphRjFmUWdEVE1oeUVDX1dVdWtDS0VEQ0NJYkc2M1c3UlhXOEpnaEVKY001amZLQnFvclJ3bHE5RC1SN1NaSHZxM3lSZDVvRlhqdzh4SEZqNC1lYWpabW5xUXRYUHVzaXFBY29tclBXZ3RlVVpTZ0RNcF9aNUk3a0hXRUZkeDhPNzBtLVZ6R0cxMFpUb2tRQ3dRSXdCWEJTRFZ4bTAzUk0ydjJ0TXM1U1ZjTlJ4U05hWEhia1JhTV9SWHg1am1vLTAwT1VWdVgzS3kwMjlWQQ?oc=5",
-      "publishedAt": "2026-10-15T20:45:34.000Z"
+      "source": "Reuters",
+      "title": "US existing home sales rise in September; higher mortgage rates dim outlook",
+      "summary": "Reuters coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSTd6ZlFyT3BzT2ZINW5WY1c2X3E4cGF0YlZWT3JVWVh1ZjUzNHpNNHVwbDliOXk0V2J0a0x1VXo4dGdZOTBaTlZ5Z0JTLUJrVEk2SjMtX1pzUU1odjZMODV3SnZUTjZlVV9mM1NiNWxEX1BmZ0Jlc0MwTW9PZHcwNkFBZlJEWDNIWE1jVk9CMlN2cmdtY193Rzcyd1NtSk9IMnJIT2tWZ1FTcnlVdmhfUTZqcEVXTmc?oc=5",
+      "publishedAt": "2026-10-13T16:15:14.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "WSJ",
+      "title": "Mortgage Rates Today, October 16, 2026: 30-Year Rates fall to 7.46%",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObUgwYUdrYzYweW5TWWZ1bVFiWG1aaUFZblVkbS1OakpENW1YNC1tZHFQMGxMVkNDNlhkc08yZVRFQnFXTTgyc1FDbEd1cVJ0TEZzOUdwZGxQY2NwbHlSUl9XNHQ2WEVIbDhoUTN0S0dnSDFBa1BVYnkyUUp0U2xHRlhack4yMHEwd2QwOUdR?oc=5",
+      "publishedAt": "2026-10-16T13:08:55.000Z"
     }
   ]
 }
