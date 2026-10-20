@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T19:52:42.903Z",
+  "updatedAt": "2026-10-20T18:26:50.217Z",
   "rates": {
     "asOf": "10/15/2026",
     "source": "Freddie Mac PMMS",
@@ -79,19 +79,19 @@
     },
     {
       "category": "Rates",
-      "source": "The New York Times",
-      "title": "Rising Mortgage Rates Risk Plunging Housing Further Into Crisis",
-      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQckNhODNDbTI0bkRDeGJiX1ZXSnpiWFpEV05IMkI4d20waXF1eUhmb3J2WXJOMUhWNVE4NUNvbjZuVzZKTW9OVTIxNl9JY1NibzF1alFhb1BPYl9ZV3lHZ29SMXZKUkdvS016aGhXT05BcXFJV09ibHhXLUpSeURVVTJ2aG1sbzlxSEJ0LTFuOA?oc=5",
-      "publishedAt": "2026-10-15T15:05:35.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "Yahoo Finance",
       "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPYWpVemRtc0ZWUjhPR2N6S2UxRlZrZlVFekJFNkt2QXRBQ2JRTzFKQTYwN3RVTmRlbk42VXVPTHZ4MjdkOFFsNVphRjFmUWdEVE1oeUVDX1dVdWtDS0VEQ0NJYkc2M1c3UlhXOEpnaEVKY001amZLQnFvclJ3bHE5RC1SN1NaSHZxM3lSZDVvRlhqdzh4SEZqNC1lYWpabW5xUXRYUHVzaXFBY29tclBXZ3RlVVpTZ0RNcF9aNUk3a0hXRUZkeDhPNzBtLVZ6R0cxMFpUb2tRQ3dRSXdCWEJTRFZ4bTAzUk0ydjJ0TXM1U1ZjTlJ4U05hWEhia1JhTV9SWHg1am1vLTAwT1VWdVgzS3kwMjlWQQ?oc=5",
       "publishedAt": "2026-10-15T20:45:34.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "The New York Times",
+      "title": "Rising Mortgage Rates Risk Plunging Housing Further Into Crisis",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQckNhODNDbTI0bkRDeGJiX1ZXSnpiWFpEV05IMkI4d20waXF1eUhmb3J2WXJOMUhWNVE4NUNvbjZuVzZKTW9OVTIxNl9JY1NibzF1alFhb1BPYl9ZV3lHZ29SMXZKUkdvS016aGhXT05BcXFJV09ibHhXLUpSeURVVTJ2aG1sbzlxSEJ0LTFuOA?oc=5",
+      "publishedAt": "2026-10-15T15:05:35.000Z"
     }
   ]
 }
