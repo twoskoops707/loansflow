@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T18:26:50.217Z",
+  "updatedAt": "2026-10-21T18:34:38.880Z",
   "rates": {
     "asOf": "10/15/2026",
     "source": "Freddie Mac PMMS",
@@ -24,8 +24,8 @@
     "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
   },
   "prime": {
-    "value": 7,
-    "asOf": "2026-10-13",
+    "value": 400,
+    "asOf": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
     "source": "FRED (DPRIME)"
   },
   "articles": [
@@ -55,27 +55,19 @@
     },
     {
       "category": "Rates",
-      "source": "CNN",
-      "title": "High mortgage rates are deepening a ‘K-shaped’ housing market",
-      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOek9VME52YmtjMDNjaGU1MmltT3NHWUhCNFZ3Q3UydGZER2EyX1IzTTdNU1JNcHlTVlhTNm9FS2d1NWZaREdiME93djFpZmVNLWktZmNxOU9ZbWhrNFVHNGxPYUFGRnhEUi1jZDNwMWo1MFpVSzlmNm5kZ2ZyZDZkRTBtSQ?oc=5",
-      "publishedAt": "2026-10-15T16:07:52.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
-      "title": "Fannie Mae sharply raises mortgage rate forecast for 2027",
+      "title": "Mortgage rates drop for the first time in 2 months, but demand still falls further",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRXJvZlctSFZwdjZHNEt2UGRnOS1KNUtULUNmaVdsYzZsdUVqN1BBLWd3VmVYQ0daRDN4X0pxQTM5bkcwNUcwZjRKaUtGRkJxMURfekNlNU5hTWowR0g0NTNWMEpYbHZhVFdmRHljS1FfX2tTZnRvSTA3Q0dqUmJVT2xNcXY0UVpIdmkya0dwdGdjTHp2aDNqb1lKd9IBoAFBVV95cUxNenFDaFF4UXlNRUpqemhlUFBKV0k0TG1wM1E4cms0ck5KTFBVeW1HNUV0S3hKZmdKcklQYWRBZ0NucUd6elFhdnJuSzVrOTFreUl6cHllcEh4Z2djYmZrREFaZnBkY0dtb1JYUWNnWnpCcjNSejNWa2ZTbWZneEtlLTJ2QWpaNkpJWjFtbURGeEEwcllia3BtTTdwa3VLXzJv?oc=5",
-      "publishedAt": "2026-10-14T15:20:53.000Z"
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRjJOZ3JIVUl3eXpCNGRlWE1ZZnI5VjhHaGdTLWl2ajBjVXIwVWttVnJ5dGN4ZlQ3c0pENFdtZVp4VzBINmxRTjJFRVhqSm1NVW40VURnbUxqNDF6NXowM3VFWUVBX0ItYVlOOFdYc1BWX1FzYkFVb2lOaEprWk5kTmlQQ1d0YmE0YmdKOXhmMU80MlZjQnRDVUt0c2I4T190U1MxUE95Y9IBrAFBVV95cUxNazlWMTRaaGFRVmg2SU9Gd1pUNzJTblpGMklsaTVmSXlsZF9PVjI1RF9YWUFmWjRReE93dG94S1d1NEFfdlpZY2dIWFp6R2k4bkk1eWpMMHJoSmt6WWpoYktmbC1XcmJsMk9BZ2FoQ2wzVjRmQ2lEWUhOYVluazBZZUcxeWJ4bXJZUDUxUTAwc2lKdVVBVG42S3ZzZFl6ZVBTaURzRm5YanlLb0FP?oc=5",
+      "publishedAt": "2026-10-21T11:00:01.000Z"
     },
     {
       "category": "Rates",
       "source": "WSJ",
-      "title": "Mortgage Rates Today, October 16, 2026: 30-Year Rates fall to 7.46%",
+      "title": "Mortgage Rates Today, October 20, 2026: 30-Year Rates Climb to 7.47%",
       "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObUgwYUdrYzYweW5TWWZ1bVFiWG1aaUFZblVkbS1OakpENW1YNC1tZHFQMGxMVkNDNlhkc08yZVRFQnFXTTgyc1FDbEd1cVJ0TEZzOUdwZGxQY2NwbHlSUl9XNHQ2WEVIbDhoUTN0S0dnSDFBa1BVYnkyUUp0U2xHRlhack4yMHEwd2QwOUdR?oc=5",
-      "publishedAt": "2026-10-16T13:08:55.000Z"
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTW9qRXV2eDhrNTBlUzdkQkhoNlYwbHJ6eW1wT3JMVk9qWFlaYnBqWmZjNUJxSjBjSnkwZ1RxX1lER0tiZUhJTTBRdlB3cjNvZ3BqdVVIbFZDTE8tVFF1UUFoaHNuOHRGWHFzcnBsSVVLM0Z2d00xOXlxSUwzS1NuajBZWDBybzlYbGIyaDhn?oc=5",
+      "publishedAt": "2026-10-20T13:09:42.000Z"
     },
     {
       "category": "Rates",
@@ -92,6 +84,14 @@
       "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQckNhODNDbTI0bkRDeGJiX1ZXSnpiWFpEV05IMkI4d20waXF1eUhmb3J2WXJOMUhWNVE4NUNvbjZuVzZKTW9OVTIxNl9JY1NibzF1alFhb1BPYl9ZV3lHZ29SMXZKUkdvS016aGhXT05BcXFJV09ibHhXLUpSeURVVTJ2aG1sbzlxSEJ0LTFuOA?oc=5",
       "publishedAt": "2026-10-15T15:05:35.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "The Washington Post",
+      "title": "Why buying a house feels so painful now — and your parents may not understand",
+      "summary": "The Washington Post coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb2d1bFhWdzVOVzJ1Nk1yNXFQOGFrRTBiNWdiaWRXX3dGb0lMUWlsQmk3cENVa0x6alNIR2gxUHVjZ0p0dkc4NmxnWUd0N1B4ZTRtWVJodHJSWko5ZFBFNklzdnp3ejNwRmV2dXZYQTFBa3FXcWVuNmcyckI2dVhaUTVLaUtGSE9XQWJWUmFUX3N4NEhpek5MVEFZRjR1MFd1ZDJZOTRBclFyRkJqcm1jTmJDYmNxY2ZCdnc?oc=5",
+      "publishedAt": "2026-10-18T16:00:00.000Z"
     }
   ]
 }
