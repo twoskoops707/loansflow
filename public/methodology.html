@@ -3,149 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How our numbers work — LoansFlow</title>
-  <meta name="description" content="The exact formulas behind the LoansFlow SBA, commercial, line of credit, mortgage, refinance, and affordability calculators — written out so you can check the arithmetic yourself.">
+  <title>How Our Numbers Work: Formulas, Fees and Data Sources | LoansFlow</title>
+  <meta name="description" content="The formulas, SBA fee schedules, equipment-rate model and data sources behind every LoansFlow calculator.">
   <link rel="canonical" href="https://loansflow.loan/methodology.html">
-  <meta property="og:title" content="How our numbers work — LoansFlow">
-  <meta property="og:description" content="The exact formulas behind the LoansFlow SBA, commercial, line of credit, mortgage, refinance, and affordability calculators — written out so you can check the arithmetic yourself.">
+  <meta property="og:title" content="How Our Numbers Work: Formulas, Fees and Data Sources | LoansFlow">
+  <meta property="og:description" content="The formulas, SBA fee schedules, equipment-rate model and data sources behind every LoansFlow calculator.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://loansflow.loan/methodology.html">
   <meta property="og:image" content="https://loansflow.loan/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0b">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-  <link rel="shortcut icon" href="/favicon.ico">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-180.png">
-  <link rel="stylesheet" href="css/site.css">
-  <style>
-    .site-nav { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); backdrop-filter: none; }
-    .site-nav .nav-cta { border-color: var(--ink); color: var(--ink) !important; }
-    .legal-page { min-height: 100vh; background: var(--canvas); color: var(--ink); padding: 7rem clamp(1.25rem,4vw,3rem) 4rem; }
-    .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
-    .legal-page h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 0.85rem; }
-    .legal-page h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem; color: var(--ink); }
-    .legal-page p { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
-    .legal-page ul { max-width: 65ch; margin: 0 0 1.25rem; padding-left: 1.15rem; }
-    .legal-page li { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 0.4rem; }
-    .legal-page li strong { color: var(--ink-secondary); font-weight: 600; }
-    .legal-page a { color: var(--accent); }
-    .legal-page .formula { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--ink-secondary); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0.75rem 0.9rem; margin: 0 0 1rem; max-width: 65ch; }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/loans.css">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebPage", "@id": "https://loansflow.loan/methodology.html#webpage", "url": "https://loansflow.loan/methodology.html", "name": "How Our Numbers Work: Formulas, Fees and Data Sources | LoansFlow", "inLanguage": "en" },
+      { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
+          { "@type": "ListItem", "position": 2, "name": "How our numbers work" }
+      ] }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="./"><img src="img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links"><a class="nav-cta" href="tools/">Open tools</a></nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
-  <main class="legal-page">
-    <h1>How our numbers work</h1>
-    <p>Every figure these calculators produce comes from a formula printed below. You can check the arithmetic yourself instead of trusting us. Everything runs in your browser, and every input is yours to change.</p>
-    <p>These are estimates for planning. They are not a loan offer, a pre-approval, a rate quote, or an APR, and they do not include lender fees or closing costs unless a section says so.</p>
-    <p>One note before you start: each field opens holding a sample value so the form is not empty. Those starting values are placeholders, not market rates. Replace them with figures from a lender before you rely on any result.</p>
+<main class="lf-page"><div class="lf-wrap">
+    <p class="lf-crumbs"><a href="/">Home</a> / How our numbers work</p>
+    <p class="lf-eyebrow">Methodology</p><h1>How our numbers work</h1>
+    <p class="lf-lede">Every figure on the calculators comes from a formula or a published schedule listed here. If something does not match your own arithmetic, tell us and we will correct it.</p>
+    <p class="updated" style="color:var(--muted);font-size:.9rem">Updated October 22, 2026</p>
+    <div class="lf-layout"><article class="lf-main">
+    <h2 id="payment">Loan payments</h2>
+    <p>For a fully amortizing loan, the monthly payment is <code>P &times; r &divide; (1 &minus; (1 + r)<sup>&minus;n</sup>)</code>, where P is the amount borrowed, r is the annual rate divided by 12, and n is the number of monthly payments. Total interest is the payment times n, minus P. At a rate of zero the payment is P divided by n.</p>
+    <h2 id="dscr">Debt service coverage ratio (DSCR)</h2>
+    <p>DSCR equals annual net operating income divided by annual debt service (twelve monthly payments). The 1.25x level we mention is a common lender benchmark, not a rule; each lender sets its own.</p>
+    <h2 id="sba">SBA fees and rules</h2>
+    <p>The SBA calculators follow SBA's published fee notices for fiscal year 2027, which cover loans approved October 1, 2026 through September 30, 2027: Information Notice 5000-881797 for 7(a) and 5000-881796 for 504. SBA revises these every fiscal year, and the tool says so wherever it shows a fee.</p>
+    <ul><li><strong>7(a) upfront fee.</strong> The tier is chosen by the gross loan amount and the percentage applies to the guaranteed portion: 2% for loans of $150,000 or less, 3% for $150,001 to $700,000, and for larger loans 3.5% of the guaranteed portion up to $1,000,000 plus 3.75% of the portion above $1,000,000. Manufacturers, listed food-supply-chain businesses and rural businesses pay 0% on loans of $700,000 or less.</li>
+    <li><strong>Guarantee.</strong> 85% up to $150,000 and 75% above for standard loans; 50% for SBA Express.</li>
+    <li><strong>Annual service fee.</strong> 0.55% of the guaranteed balance for 7(a). SBA charges it to the lender and does not allow it to be passed to the borrower, so we show it for information only.</li>
+    <li><strong>Maximum spread.</strong> For variable-rate 7(a) loans: base rate plus 6.5% up to $50,000, 6.0% to $250,000, 4.5% to $350,000, and 3.0% above $350,000.</li>
+    <li><strong>504 structure and fees.</strong> The bank holds about 50%, the CDC up to 40% and the borrower 10%, with 5 more points of equity for a new business and 5 more for a special-purpose property (which lowers the CDC share). Fees are 0.50% upfront and 0.203% annually on the SBA-backed debenture. The tool assumes the bank and CDC portions share one term and that the debenture is the CDC share of the project.</li></ul>
+    <p>The tool does not model the 0.25% fee on loans of 12 months or less, the rule that combines loans approved within 90 days of each other, the $0 fee on SBA Express loans to veteran-owned businesses, CDC processing fees, or lender fees.</p>
+    <h2 id="loc">Line of credit</h2>
+    <p>Monthly interest equals the average drawn balance times the annual rate divided by 12. The result adds any annual fee you enter. It does not simulate individual draws and repayments.</p>
+    <h2 id="equipment">Equipment financing estimates</h2>
+    <p>The equipment rate is a planning model, not a lender quote. We start from a base rate for each credit profile (excellent 7.5%, good 10%, fair 14%, weak 20%, poor 28%), add an adjustment for the equipment type (from &minus;0.25 points for agricultural to +2.0 points for IT), add 1.5 points for used equipment, subtract half a point for a down payment of 20% or more, and add a point for a down payment under 5%. The result is kept near the range lenders and rate guides publish for that credit profile. Real offers also depend on time in business, cash flow, collateral and the lender.</p>
+    <h2 id="mortgage">Mortgage, affordability and refinance</h2>
+    <ul><li><strong>Mortgage.</strong> Principal and interest by the payment formula, plus property tax (home price times the tax rate, divided by 12) and insurance (annual premium divided by 12). It excludes PMI and HOA dues.</li>
+    <li><strong>Affordability.</strong> The housing budget is the smaller of 28% of gross monthly income and 36% of gross monthly income minus other debts. We subtract insurance, then solve for the price at which principal and interest on the loan plus property tax equals what is left, assuming a 30-year loan.</li>
+    <li><strong>Refinance.</strong> Balance today is computed from your original loan, rate, term and years paid. We compare the monthly payment and remaining interest on the current loan with a new loan on that balance. Break-even in months is closing costs divided by monthly savings.</li></ul>
+    <h2 id="data">Where the reference data comes from</h2>
+    <p>Only the rate strip and the News page load live reference data, from a file refreshed daily: the weekly 30-year, 15-year and refinance averages from Freddie Mac's Primary Mortgage Market Survey (these are survey averages, not quotes), the prime rate from the St. Louis Fed's DPRIME series, and headlines from the Federal Reserve, the Consumer Financial Protection Bureau and news searches on mortgage rates, small business lending, equipment finance and commercial real estate. We reject any prime-rate value that is not a plausible rate, so a failed download can never become a number in a calculator.</p>
+    <h2 id="privacy">What we send, and what we do not</h2>
+    <ul><li>There is no account or sign-in. The calculators make no network request with your numbers.</li>
+    <li>The grants search sends the keywords and filters you choose to the public Grants.gov service so it can return results. Nothing else is sent.</li>
+    <li>Instagram posts, if any are shown on the News page, load only after you click, because Instagram's embed code sets its own cookies.</li>
+    <li>We are not a lender and cannot quote, pre-approve or take an application. Nothing on this site invents a rate or fee for a specific lender.</li>
+    <li>This site shows Google AdSense ads. Partner links appear only when they are approved, are labeled as sponsored, and are never placed in ad slots.</li></ul>
+    <p>Read the <a href="/disclaimer.html">disclaimer</a> for what an estimate is not, and the <a href="/privacy.html">privacy policy</a> for what advertising cookies do.</p>
+    <h2 id="corrections">Corrections</h2>
+    <p>If a figure does not match your own arithmetic, or a formula here has drifted from what the tools do, <a href="/contact.html">send us a message</a> with the page, the calculator and the inputs you used.</p>
+    </article><aside class="lf-side"><div class="lf-box"><h3>On this page</h3><ul>
+      <li><a href="#payment">Loan payments</a></li><li><a href="#dscr">DSCR</a></li><li><a href="#sba">SBA fees and rules</a></li><li><a href="#loc">Line of credit</a></li><li><a href="#equipment">Equipment estimates</a></li><li><a href="#mortgage">Mortgage and refinance</a></li><li><a href="#data">Reference data</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#corrections">Corrections</a></li></ul></div></aside></div>
+  </div></main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
+      <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
+    </div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+  </footer>
+  <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
+  <script src="/js/ads.js" defer></script>
+  <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 
-    <h2>The math we use</h2>
-
-    <h3>Monthly payment</h3>
-    <p>One formula produces the payment in every level-payment tool on this site — SBA, commercial, mortgage, refinance, and affordability. The line of credit runs on a different loop, described further down.</p>
-    <p class="formula">monthly payment = P &times; r(1 + r)<sup>n</sup> &divide; ((1 + r)<sup>n</sup> &minus; 1)<br>r = annual rate &divide; 100 &divide; 12<br>n = term in years &times; 12<br>if r is 0, the payment is simply P &divide; n</p>
-    <p><strong>What it needs:</strong> the amount borrowed, an annual rate as a percentage, and a term in years.</p>
-    <p><strong>What it leaves out:</strong> fees, points, closing costs, and any APR calculation. The rate is used as a flat fixed rate for the whole term. Adjustable-rate loans are not modelled.</p>
-
-    <h3>Amortization schedules</h3>
-    <p>The monthly payment above is only the headline. The ledgers walk the loan month by month using this loop, once for each loan in the tool:</p>
-    <ul>
-      <li>Interest for the month = opening balance &times; r.</li>
-      <li>Scheduled principal = base monthly payment &minus; that month's interest.</li>
-      <li>Any extra principal you enter is added on top, every month.</li>
-      <li>A one-time balloon, if you set one, is added in the month number you choose.</li>
-      <li>Principal paid in a month is capped at the remaining balance, so the schedule never goes below zero.</li>
-      <li>The schedule stops early once the balance is paid off.</li>
-    </ul>
-    <p><strong>User-editable:</strong> the mortgage ledger adds an extra monthly payment, a balloon amount, and the month that balloon applies in.</p>
-    <p><strong>What it leaves out:</strong> rate changes, fees, and prepayment penalties.</p>
-    <p>You can view the same schedule as an annual summary, a quarterly summary, every single payment, or 30 days of daily interest. Daily interest is simple interest on the opening balance for the next 30 days: balance &times; rate &divide; day count. The day count is 365 for mortgages and 360 for commercial and SBA loans. The year-by-year CSV exports and the PDF report are generated from the same schedule rather than retyped.</p>
-    <p>In the mortgage ledger, when you add an extra or balloon payment the tool runs the same schedule a second time with none of them, then reports the difference as interest saved and months saved.</p>
-
-    <h3>SBA 7(a), SBA 504, and conventional commercial loans</h3>
-    <p class="formula">rate = prime field + spread field<br>monthly payment = the monthly payment formula above<br>annual debt service = monthly payment &times; 12<br>DSCR = annual net operating income &divide; annual debt service</p>
-    <p><strong>User-editable:</strong> loan type, loan amount, amortization in years, the prime rate field, the lender spread field, the SBA guaranty percentage (0&ndash;90), the balloon year, and your annual net operating income.</p>
-    <p><strong>What it leaves out:</strong> origination fees, lender fees, any other expense of the loan, and the interest that would accrue on a floating rate after it resets. The rate is held flat for the whole amortization.</p>
-    <p><strong>DSCR and the 1.25x figure.</strong> The tool marks the result in its top band at 1.25x or above, a middle band between 1.00x and 1.25x, and the bottom band below 1.00x, and picks a caption to match. Those thresholds are display choices inside the calculator, not underwriting rules and not a lender's requirement.</p>
-    <p><strong>Balloon payments.</strong> When you enter a balloon year shorter than the amortization term, the tool runs the full schedule and reports the balance still outstanding at the end of that balloon year. Your monthly payment is not recalculated to retire that balance, and no balloon is shown if the balloon year equals or exceeds the amortization term.</p>
-    <p><strong>Loan type.</strong> The payment and DSCR math is identical for all three types. The guaranty fee lines below appear only when the type is SBA 7(a) or SBA 504; a conventional commercial loan shows none, because no guaranty is involved.</p>
-
-    <h3>SBA guaranty fee and annual service fee</h3>
-    <p>These figures are hardcoded schedules inside the tool, not a live lookup. They follow SBA's published fee notices for fiscal year 2027 (loans approved October 1, 2026 through September 30, 2027): Information Notice 5000-881797 for 7(a) and 5000-881796 for 504. SBA revises the schedules every fiscal year, so confirm the exact figure with an SBA-approved lender.</p>
-    <p><strong>7(a) upfront fee.</strong> The tier is chosen by the gross loan amount, and the percentage is applied to the guaranteed portion.</p>
-    <p class="formula">guaranteed portion = loan amount &times; guaranty % &divide; 100<br>loan $150,000 or less: 2% of the guaranteed portion<br>loan $150,001 to $700,000: 3% of the guaranteed portion<br>loan $700,001 to $5,000,000: 3.5% of the guaranteed portion up to $1,000,000, plus 3.75% of the guaranteed portion above $1,000,000</p>
-    <p><strong>7(a) annual service fee.</strong> 0.55% of the outstanding guaranteed balance. SBA charges it to the lender and does not allow the lender to pass it on to the borrower, so the tool shows it for information only. The upfront fee may be passed on to the borrower.</p>
-    <p><strong>504 fees.</strong> 0.50% upfront and 0.203% annually on the SBA-backed debenture, which the tool takes to be 40% of the project.</p>
-    <p><strong>What this leaves out:</strong> the tool does not model the 0% upfront fee that applies to manufacturers, certain food-supply-chain businesses and rural businesses on 7(a) loans of $700,000 or less, the $0 fee for SBA Express loans to veteran-owned businesses, the 0.25% fee on loans with maturities of 12 months or less, the 90-day rule that combines loans made close together, CDC processing fees, or lender fees.</p>
-
-    <h3>Commercial amortization ledger</h3>
-    <p>The commercial ledger reuses the amortization loop and the monthly payment formula above, then groups the schedule into years: principal paid and interest paid are the sums of that year's months, and the remaining balance is the last row of the year. Total interest over the term is the sum of every month's interest. Its daily interest view uses a 360-day year. You can export the year rows as CSV or take them into the PDF report.</p>
-
-    <h3>Line of credit</h3>
-    <p>This one is a revolving projection rather than a level-payment loan, so it has its own loop. Each month the tool adds up every draw you entered for that month, where a negative amount is a repayment, and then:</p>
-    <ul>
-      <li>Balance after the month's draws = opening balance + net draws.</li>
-      <li>Interest = balance after draws &times; annual rate &divide; 100 &divide; 12. A draw taken in month 1 therefore accrues a full month of interest.</li>
-      <li>Interest-only payment: the payment equals the interest and no principal is repaid.</li>
-      <li>Minimum percent of balance: the payment is the larger of the interest and your minimum percentage of the balance. Principal repaid = payment &minus; interest, capped at the balance.</li>
-      <li>The balance never goes below zero.</li>
-    </ul>
-    <p><strong>User-editable:</strong> credit limit, projection length in months, the prime rate field, the spread field, payment type, the minimum payment percentage, and every draw row &mdash; you can add and remove rows as needed.</p>
-    <p><strong>What it reports:</strong> the balance at the end of the projection, the total of your positive draws, total interest over the period, and available credit = limit minus the ending balance.</p>
-    <p><strong>What it leaves out:</strong> commitment and facility fees, unused-line fees, over-limit fees, draw fees, and any rate change mid-projection. If a month takes the balance over your limit, the tool warns you but still runs the numbers rather than capping the draw. The CSV export gives you every month of the projection.</p>
-
-    <h3>Mortgage payment</h3>
-    <p class="formula">loan amount = home price &minus; down payment<br>principal &amp; interest = the monthly payment formula above<br>monthly property tax = home price &times; tax rate % &divide; 12<br>monthly insurance = annual insurance &divide; 12<br>total monthly payment = P&amp;I + tax + insurance<br>total interest = P&amp;I &times; term in months &minus; loan amount</p>
-    <p><strong>User-editable:</strong> home price, down payment, interest rate, term (30, 20, 15, or 10 years), an annual property tax rate entered as a percentage of the home price, and an annual insurance figure.</p>
-    <p><strong>What it leaves out:</strong> mortgage insurance, HOA dues, closing costs, points, prepaid escrow, and utilities. There is no field for any of them, so they are not in the total. Property tax and insurance are treated as flat figures you supply &mdash; the tool does not look up an assessment for an address.</p>
-    <p>The homepage quick estimate uses the same monthly payment formula on price, down payment, rate, and term only. It shows principal and interest, not the full payment.</p>
-
-    <h3>Refinance comparison</h3>
-    <p class="formula">current P&amp;I = the monthly payment formula at your current rate and term<br>new P&amp;I = the same formula at your new rate and new term<br>monthly difference = current P&amp;I &minus; new P&amp;I<br>lifetime interest on each side = P&amp;I &times; months &minus; loan amount</p>
-    <p><strong>User-editable:</strong> the new rate and the new term (30, 20, or 15 years). The current rate and term come from the mortgage steps.</p>
-    <p><strong>What it leaves out:</strong> closing costs, points, lender fees, rate-lock and extension fees, cash-out, and any change to the balance. The comparison assumes the same loan amount throughout and changes only the rate and the term, so read the monthly saving as interest and principal only.</p>
-
-    <h3>Affordability</h3>
-    <p class="formula">monthly income = annual income &divide; 12<br>housing guideline = monthly income &times; 28%<br>debt guideline = monthly income &times; 36% &minus; your other monthly debts<br>P&amp;I budget = the lower of those two<br>loan amount = the P&amp;I budget run backwards through the monthly payment formula<br>home price = that loan amount + the down payment you enter<br>reported DTI = (other monthly debts + P&amp;I budget) &divide; monthly income</p>
-    <p><strong>User-editable:</strong> annual income, other monthly debt payments, the down payment available, and the rate you want to assume.</p>
-    <p><strong>How it is limited.</strong> The 28% and 36% figures are planning guidelines hardcoded in the calculator, not lender rules. This step assumes a 30-year term, and it does not subtract property tax or insurance from your budget &mdash; the entire budget goes to principal and interest. It also does not check credit, reserves, or down payment minimums.</p>
-
-    <h2>Where our reference data comes from</h2>
-    <p>Only two parts of the site pull live reference data: the Market News &amp; Rates step and the rate band on the homepage. Both read one feed, served by our own endpoint at <code>/api/market-news</code>. When that endpoint rebuilds, it collects:</p>
-    <ul>
-      <li>The Freddie Mac Primary Mortgage Market Survey history file (its published PMMS history CSV), for the weekly 30-year fixed, 15-year fixed, and 5/1 ARM averages, plus the change from the previous week's row.</li>
-      <li>The prime rate, from the Federal Reserve Bank of St. Louis series DPRIME. This seeds the prime fields in the SBA and line of credit tools.</li>
-      <li>Federal Reserve monetary policy press releases, up to two items.</li>
-      <li>Google News searches for mortgage rate coverage from the last 7 days, up to 8 items, and for SBA, 7(a), and 504 loan coverage from the last 14 days, up to 4 items.</li>
-      <li>The headline and summary from the Freddie Mac PMMS page, shown as the lead card.</li>
-    </ul>
-    <p>Two things worth knowing about that feed. The "30-Yr Refinance" cell is not a separately published series: our code takes the 30-year fixed average and adds 0.05 percentage points to it, and labels it an approximation against the purchase average. And the news list is filtered before you see it &mdash; we cap it at 8 items, drop duplicate headlines, and drop obvious non-US and generic "rates today" headlines.</p>
-    <p><strong>Values can lag.</strong> The PMMS figures are weekly survey averages, not quotes, and the feed can only be as current as its sources. The endpoint is cached at the edge for 30 minutes, the browser re-fetches at most every 30 minutes and stops refreshing while the tab is hidden, and if the feed cannot be reached the tools fall back to a stored snapshot that is regenerated by a daily job on our repository. The rate views show the as-of date of the data behind them.</p>
-    <p><strong>How those rates reach the forms.</strong> Once per page load, the 30-year fixed average is copied into the mortgage and affordability rate fields, the refinance figure into the refinance rate field, and the prime rate into the SBA and line of credit prime fields. That happens only if you have not already changed the field yourself, and not at all if you arrived through a share link &mdash; your numbers win either way. None of this is a rate for you. Your rate depends on your credit, your down payment, and the lender, and the calculator is built so you can type in whatever you are actually quoted.</p>
-
-    <h2>What we don't do</h2>
-    <ul>
-      <li><strong>No account, no sign-in.</strong> There is nothing to register for, and the calculators store nothing about you on a server.</li>
-      <li><strong>No lead forms, no applications.</strong> Nothing you type into a calculator is sent to us or to anyone else. The calculators make no network request with your numbers &mdash; the only data they fetch is the market news feed described above. Pinned scenarios are saved in your own browser's local storage, and a share link encodes your numbers in the link itself. The PDF report and the CSV files are generated in your browser.</li>
-      <li><strong>Nothing is sold and nothing is submitted.</strong> We are not a lender and there is no connection to one. We cannot quote you, pre-approve you, or submit an application, and there is no button anywhere on this site that does. The only form on this site is the contact form, which sends what you choose to write so we can reply to you.</li>
-      <li><strong>No invented rates or fees.</strong> Nothing on this site quotes a lender, and every rate and fee is an input you control or a schedule hardcoded in the tool and described above.</li>
-      <li><strong>Advertising and partner links.</strong> This page includes Google's AdSense script, and ad units appear in the calculator pages. Our partner list only renders entries that are marked live and carry an approved tracking link; entries still awaiting approval are never shown, and anything that does appear is labelled as sponsored. There are no partner links in this page.</li>
-    </ul>
-    <p>Read the <a href="disclaimer.html">disclaimer</a> for what an estimate is not, and the <a href="privacy.html">privacy policy</a> for what advertising cookies do.</p>
-
-    <h2>Corrections</h2>
-    <p>If a figure here does not match your own arithmetic, or if a formula has drifted from what the tools actually do, tell us and we will correct it. Include the page, the tool, and the inputs you used if you can &mdash; that makes the fix quick.</p>
-    <p>Corrections: <a href="contact.html">send us a message</a></p>
-  </main>
 </body>
 </html>

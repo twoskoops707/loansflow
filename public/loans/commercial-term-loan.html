@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a balloon payment?","acceptedAnswer":{"@type":"Answer","text":"The remaining balance due all at once at the end of the term, because the payments were set on a longer schedule."}},{"@type":"Question","name":"Why do lenders ask for personal guarantees?","acceptedAnswer":{"@type":"Answer","text":"They give the lender a claim on the owners if the business cannot pay."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / Commercial Term Loan</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>Commercial Term Loan</h1>
     <p class="lf-lede">A conventional bank loan for property, expansion or acquisitions, with no SBA guarantee.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Loan size</dt><dd>Set by the lender; no SBA cap</dd></div><div><dt>Term</dt><dd>Commonly 3 to 10 years, often amortized over 20 to 25 for real estate with a balloon at the end</dd></div><div><dt>Down payment</dt><dd>Commonly 20% to 30% on commercial real estate</dd></div><div><dt>Rate</dt><dd>Fixed or variable; priced to credit and collateral</dd></div><div><dt>Prepayment</dt><dd>Penalties are common; read the note</dd></div><div><dt>Best for</dt><dd>Strong borrowers, larger deals, speed</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>A conventional commercial term loan comes from a bank or credit union with no government guarantee. Because the lender carries all the risk, it usually wants stronger credit, more cash flow cushion, and a bigger down payment than an SBA loan. In return, the process can be faster and less paperwork-heavy, and the loan can be any size the lender is willing to carry.</p>
     <p>Many commercial real-estate loans are written with a 5- to 10-year term but a 20- to 25-year amortization, so the payment is based on the longer schedule and a balloon payment comes due at the end. Plan how you will refinance or pay it off before you sign.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,44 +69,50 @@
       <cite>Benjamin Graham (paraphrased), The Intelligent Investor (1949) develops the &quot;margin of safety&quot; idea<span class="lf-badge">Commonly attributed</span></cite>
       <p>This is the same idea as a debt service coverage ratio. Lenders want income well above the payment so one bad month does not break the loan.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Strong credit and cash flow</li><li>Larger loans than the SBA programs allow</li><li>Borrowers who want to close quickly</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Businesses that need lower down payments or longer terms</li><li>Startups with limited history</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>Historical cash flow that supports a debt service coverage ratio of around 1.25x or more</li><li>Personal guarantees</li><li>Collateral, usually the property or equipment financed</li><li>Tax returns, financial statements and a debt schedule</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="commercial-term-loan-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="payment" data-amount="750000" data-rate="7.5" data-years="20" data-noi="150000" data-title="Commercial loan payment and DSCR"></div>
     <div data-calc="dscr" ></div>
     
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="commercial-term-loan-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Know your numbers</strong>Calculate your DSCR and loan-to-value before you call a lender.</li><li><strong>Shop several lenders</strong>Banks, credit unions and nonbank lenders price differently. Ask for a term sheet from each.</li><li><strong>Compare more than the rate</strong>Look at the balloon date, prepayment penalty, covenants and reporting requirements.</li><li><strong>Underwriting and appraisal</strong>The lender orders an appraisal and may require environmental and title work for real estate.</li><li><strong>Close</strong>Review the loan documents with your attorney.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>What is a balloon payment?</summary><p>The remaining balance due all at once at the end of the term, because the payments were set on a longer schedule.</p></details><details><summary>Why do lenders ask for personal guarantees?</summary><p>They give the lender a claim on the owners if the business cannot pay.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/choosing-lender.html">How to choose a lender</a></li><li><a href="/guides/dscr-explained.html">Debt Service Coverage Ratio (DSCR) Explained, With Examples</a></li><li><a href="/guides/refinance-break-even.html">Is Refinancing Worth It? How to Calculate Your Break-Even Point</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.consumerfinance.gov/consumer-tools/" target="_blank" rel="noopener noreferrer">CFPB: Consumer tools</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-7a.html">SBA 7(a) Loan</a></li><li><a href="/loans/sba-504.html">SBA 504 Loan</a></li><li><a href="/loans/sba-express.html">SBA Express Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/equipment-financing.html">Equipment Financing</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="commercial-term-loan-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

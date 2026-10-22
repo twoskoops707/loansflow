@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is an SBA loan from the government?","acceptedAnswer":{"@type":"Answer","text":"No. The lender makes the loan; the SBA guarantees part of it to reduce the lender's risk."}},{"@type":"Question","name":"Who pays the SBA fee?","acceptedAnswer":{"@type":"Answer","text":"The lender pays the upfront guaranty fee to the SBA and may pass it on to the borrower. The lender's annual service fee cannot be passed on. Manufacturers, certain food supply chain businesses and rural businesses can pay 0% upfront on loans of $700,000 or less."}},{"@type":"Question","name":"Is there a prepayment penalty?","acceptedAnswer":{"@type":"Answer","text":"For loans with maturities of 15 years or more, paying off 25% or more of the balance in the first three years carries a fee of 5%, 3% and 1% of the amount prepaid in years one, two and three."}},{"@type":"Question","name":"Fixed or variable rate?","acceptedAnswer":{"@type":"Answer","text":"Either. Variable-rate loans are priced off a base rate such as prime plus a spread that cannot exceed the SBA maximum for the loan size."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / SBA 7(a) Loan</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>SBA 7(a) Loan</h1>
     <p class="lf-lede">The most flexible SBA loan, for almost any business purpose.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Loan size</dt><dd>Up to $5 million</dd></div><div><dt>Term</dt><dd>Up to 10 years; up to 25 years for real estate</dd></div><div><dt>SBA guarantee</dt><dd>85% up to $150,000; 75% above that</dd></div><div><dt>Rate</dt><dd>Negotiated, capped by SBA (variable: base rate + 3% to 6.5% depending on size)</dd></div><div><dt>Upfront fee</dt><dd>2% to 3.75% of the guaranteed portion (FY 2027)</dd></div><div><dt>Best for</dt><dd>Buying a business, working capital, equipment, real estate, refinancing</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>The SBA 7(a) is the Small Business Administration's workhorse loan. A bank or other approved lender makes the loan, and the SBA guarantees a large share of it. That guarantee is what lets lenders say yes to businesses that might not qualify for a conventional loan, usually with longer terms and smaller down payments.</p>
     <p>Because one program covers so many uses (working capital, equipment, real estate, buying a business, and refinancing certain business debt), it is the first loan most small business owners should price out, even if they end up choosing another product.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,44 +69,50 @@
       <cite>J. P. Morgan, Testimony to the Pujo Committee, U.S. House of Representatives, 1912<span class="lf-badge lf-badge--doc">Documented</span></cite>
       <p>Asked whether credit is based on money or property, the banker said it is based on character. It is still the first of the &quot;Five Cs&quot; lenders use.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Buying or starting a business</li><li>Longer repayment terms that keep monthly payments lower</li><li>Businesses that fall just short of conventional lending standards</li><li>Mixed-use needs in one loan: equipment, working capital and real estate</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Very small amounts, where a microloan or credit line may be simpler</li><li>Borrowers who need money in days, not weeks</li><li>Passive real-estate investing or other ineligible business types</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>For-profit business operating in the U.S. that meets SBA size standards</li><li>Owners with 20% or more typically sign a personal guarantee</li><li>Owner equity in the business and a clear repayment story (see DSCR)</li><li>Unable to get credit on reasonable terms elsewhere (the &quot;credit elsewhere&quot; test)</li><li>Current on taxes and any federal debt</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-7a-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="sba7a" ></div>
     <div data-calc="dscr" ></div>
     
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-7a-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Check eligibility</strong>Confirm your business type, size standard and owner requirements before spending time on paperwork.</li><li><strong>Find a lender</strong>Start with your own bank, then use SBA Lender Match or a Preferred Lender, which can approve without sending the file to the SBA.</li><li><strong>Gather documents</strong>Plan on SBA Form 1919, a personal financial statement (Form 413), 3 years of business and personal tax returns, current financial statements, a debt schedule and a business plan or projections for new ventures.</li><li><strong>Submit and underwrite</strong>The lender reviews credit, cash flow and collateral and may ask follow-up questions. Fast responses keep the file moving.</li><li><strong>Approval</strong>Standard 7(a) loans over $350,000 are reviewed by the SBA in about 5 to 10 business days unless the lender has delegated authority; smaller loans move faster.</li><li><strong>Close and fund</strong>Review the final terms, sign, and fund. Expect the closing to take a few weeks end to end.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>Is an SBA loan from the government?</summary><p>No. The lender makes the loan; the SBA guarantees part of it to reduce the lender's risk.</p></details><details><summary>Who pays the SBA fee?</summary><p>The lender pays the upfront guaranty fee to the SBA and may pass it on to the borrower. The lender's annual service fee cannot be passed on. Manufacturers, certain food supply chain businesses and rural businesses can pay 0% upfront on loans of $700,000 or less.</p></details><details><summary>Is there a prepayment penalty?</summary><p>For loans with maturities of 15 years or more, paying off 25% or more of the balance in the first three years carries a fee of 5%, 3% and 1% of the amount prepaid in years one, two and three.</p></details><details><summary>Fixed or variable rate?</summary><p>Either. Variable-rate loans are priced off a base rate such as prime plus a spread that cannot exceed the SBA maximum for the loan size.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/sba-7a-step-by-step.html">SBA 7(a): a 10-step playbook</a></li><li><a href="/guides/sba-loan-eligibility.html">SBA Loan Eligibility: Who Qualifies and Who Does Not</a></li><li><a href="/guides/loan-documents.html">Documents lenders ask for</a></li><li><a href="/guides/checklist.html">Interactive loan checklist</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.sba.gov/partners/lenders/7a-loan-program/terms-conditions-eligibility" target="_blank" rel="noopener noreferrer">SBA: 7(a) program terms and conditions</a></li><li><a href="https://www.sba.gov/funding-programs/loans/7a-loans" target="_blank" rel="noopener noreferrer">SBA: 7(a) loans</a></li><li><a href="https://www.sba.gov/document/information-notice-5000-881797-fy-2027-7a-program-fees" target="_blank" rel="noopener noreferrer">SBA Information Notice 5000-881797: 7(a) fees for FY 2027</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-504.html">SBA 504 Loan</a></li><li><a href="/loans/sba-express.html">SBA Express Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/commercial-term-loan.html">Commercial Term Loan</a></li><li><a href="/loans/equipment-financing.html">Equipment Financing</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-7a-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

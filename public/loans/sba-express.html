@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is Express different from a regular 7(a)?","acceptedAnswer":{"@type":"Answer","text":"Lower guarantee (50%), a $500,000 maximum, and the lender uses its own procedures instead of the standard SBA ones."}},{"@type":"Question","name":"Do veterans get fee relief?","acceptedAnswer":{"@type":"Answer","text":"For FY 2027, SBA Express loans to businesses owned and controlled by a veteran or the spouse of a veteran carry a $0 upfront fee."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / SBA Express Loan</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>SBA Express Loan</h1>
     <p class="lf-lede">A faster, lender-processed SBA loan up to $500,000, including lines of credit.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Loan size</dt><dd>Up to $500,000</dd></div><div><dt>SBA guarantee</dt><dd>50%</dd></div><div><dt>Term</dt><dd>Revolving lines up to 10 years</dd></div><div><dt>Process</dt><dd>Lender uses its own forms and procedures, plus SBA Form 1919</dd></div><div><dt>Collateral</dt><dd>Not required up to $50,000; lender policy above that</dd></div><div><dt>Best for</dt><dd>Faster decisions on moderate amounts</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>SBA Express is a version of the 7(a) built for speed. Approved lenders use much of their own process instead of the full SBA package, and in exchange the SBA guarantees less (50%). It can be a term loan or a revolving line of credit, which the standard 7(a) cannot be.</p>
     <p>Because the lender carries more risk, Express works best when you already have a banking relationship and a solid file.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,43 +69,49 @@
       <cite>Warren Buffett, Berkshire Hathaway shareholder letter (2008)<span class="lf-badge lf-badge--doc">Documented</span></cite>
       <p>Works for loans too: the cheapest rate is not the best deal if the terms, fees or flexibility are worse.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Amounts up to $500,000 where speed matters</li><li>A revolving SBA-backed line of credit</li><li>Borrowers with an existing relationship at an Express lender</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Loans larger than $500,000</li><li>Weak collateral or cash flow, since the guarantee is only 50%</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>Same core eligibility as the 7(a): for-profit, size standard, owner equity, credit-elsewhere test</li><li>Personal guarantees from 20% owners</li><li>Lender must hold Express authority</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-express-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="sba7a" data-variant="express" data-amount="150000"></div>
     
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-express-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Ask your bank</strong>Not every SBA lender offers Express. Ask whether yours has Express authority.</li><li><strong>Prepare the file</strong>Expect the lender's own application plus SBA Form 1919, financial statements and tax returns.</li><li><strong>Underwrite and approve</strong>The lender decides, without waiting for SBA review.</li><li><strong>Close and fund</strong>Once approved, closing moves like a conventional loan.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>How is Express different from a regular 7(a)?</summary><p>Lower guarantee (50%), a $500,000 maximum, and the lender uses its own procedures instead of the standard SBA ones.</p></details><details><summary>Do veterans get fee relief?</summary><p>For FY 2027, SBA Express loans to businesses owned and controlled by a veteran or the spouse of a veteran carry a $0 upfront fee.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/sba-express-microloans-caplines.html">SBA Express, Microloans, and CAPLines: The Smaller SBA Options</a></li><li><a href="/guides/sba-loan-eligibility.html">SBA Loan Eligibility: Who Qualifies and Who Does Not</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.sba.gov/partners/lenders/7a-loan-program/terms-conditions-eligibility" target="_blank" rel="noopener noreferrer">SBA: 7(a) program terms and conditions</a></li><li><a href="https://www.sba.gov/document/information-notice-5000-881797-fy-2027-7a-program-fees" target="_blank" rel="noopener noreferrer">SBA Information Notice 5000-881797: 7(a) fees for FY 2027</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-7a.html">SBA 7(a) Loan</a></li><li><a href="/loans/sba-504.html">SBA 504 Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/commercial-term-loan.html">Commercial Term Loan</a></li><li><a href="/loans/equipment-financing.html">Equipment Financing</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-express-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

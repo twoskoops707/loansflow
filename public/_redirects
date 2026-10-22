@@ -2,3 +2,8 @@
 # byte-identical copy of the apex (no redirect), so every page was reachable
 # on two hosts.
 https://www.loansflow.loan/* https://loansflow.loan/:splat 301
+# The old multi-step calculator wizard was replaced by per-loan calculators.
+/tools /loans/ 301
+/tools/ /loans/ 301
+/tools/* /loans/ 301
+/calculators /loans/ 301

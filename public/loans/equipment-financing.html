@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Loan or lease?","acceptedAnswer":{"@type":"Answer","text":"With a loan you own the equipment and can depreciate it. A lease usually has lower payments and may offer a fair-market-value or fixed buyout at the end. Which is cheaper depends on the buyout and your tax situation."}},{"@type":"Question","name":"Is there a tax benefit?","acceptedAnswer":{"@type":"Answer","text":"The tax code lets many businesses deduct the cost of qualifying equipment in the year it is placed in service, subject to annual limits that change. Ask your tax professional what applies to you."}},{"@type":"Question","name":"Can the SBA finance equipment?","acceptedAnswer":{"@type":"Answer","text":"Yes. 7(a) loans and 504 loans (for long-life equipment) can both finance equipment, often with longer terms."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / Equipment Financing</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>Equipment Financing</h1>
     <p class="lf-lede">Loans and leases for machinery, vehicles and technology, secured by the equipment itself.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Collateral</dt><dd>The equipment itself (usually a lien filed under the UCC)</dd></div><div><dt>Term</dt><dd>Matched to useful life: about 3 years for IT to 7 years for heavy equipment</dd></div><div><dt>Down payment</dt><dd>Often 0% to 20%</dd></div><div><dt>Rate</dt><dd>Roughly 6% for strong credit to 30%+ for weak credit; see the table below</dd></div><div><dt>Speed</dt><dd>Often days for smaller deals</dd></div><div><dt>Best for</dt><dd>Machinery, trucks, medical, restaurant and tech equipment</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>Equipment financing lets you buy machinery, vehicles or technology and pay for it over time, with the equipment as the collateral. Because the lender can repossess and resell the asset, equipment loans are often easier to qualify for than unsecured loans, and approval can be quick. What it costs depends on three things: your credit, what you are buying, and how long you borrow.</p>
     <p>Credit sets the starting rate. The equipment type adjusts it: construction and manufacturing equipment hold their value and get the best pricing, while computers and office furniture lose value quickly, so lenders charge more and shorten the term. Used equipment and small down payments also raise the rate.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,13 +69,12 @@
       <cite>Robert Burton, The Anatomy of Melancholy (1621)<span class="lf-badge lf-badge--doc">Documented</span></cite>
       <p>Saving a little on the rate while ignoring fees, prepayment penalties or a bad term is exactly this mistake.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Buying a specific machine, vehicle or system</li><li>Preserving cash and credit lines for operations</li><li>Matching the payment term to the equipment's useful life</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Working capital or general expenses</li><li>Buying equipment that will be obsolete before the loan ends</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>An invoice or quote for the equipment</li><li>Time-in-business and bank statements; startups may need a larger down payment</li><li>Credit review of the business and owners</li><li>Proof of insurance on the equipment</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="equipment-financing-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="equipment" ></div>
@@ -78,32 +83,39 @@
     <div style="overflow-x:auto"><table class="lf-table"><caption>LoansFlow planning estimates (not offers)</caption><thead><tr><th>Credit profile</th><th>Construction and earth-moving</th><th>Trucks, trailers and fleet vehicles</th><th>Manufacturing and CNC machinery</th><th>Agricultural equipment</th><th>Medical and dental equipment</th><th>Restaurant and food service</th><th>Office furniture and fixtures</th><th>Computers, IT and software-heavy gear</th></tr></thead><tbody><tr><td><strong>Excellent (750+)</strong></td><td>7.50%</td><td>8.00%</td><td>7.50%</td><td>7.25%</td><td>8.00%</td><td>8.50%</td><td>8.50%</td><td>9.50%</td></tr><tr><td><strong>Good (700-749)</strong></td><td>10.00%</td><td>10.50%</td><td>10.00%</td><td>9.75%</td><td>10.50%</td><td>11.00%</td><td>11.00%</td><td>12.00%</td></tr><tr><td><strong>Fair (650-699)</strong></td><td>14.00%</td><td>14.50%</td><td>14.00%</td><td>13.75%</td><td>14.50%</td><td>15.00%</td><td>15.00%</td><td>16.00%</td></tr><tr><td><strong>Weak (600-649)</strong></td><td>20.00%</td><td>20.50%</td><td>20.00%</td><td>19.75%</td><td>20.50%</td><td>21.00%</td><td>21.00%</td><td>22.00%</td></tr><tr><td><strong>Poor (below 600)</strong></td><td>28.00%</td><td>28.50%</td><td>28.00%</td><td>27.75%</td><td>28.50%</td><td>29.00%</td><td>29.00%</td><td>30.00%</td></tr></tbody></table></div>
     <h3>Why the equipment type changes the rate</h3>
     <div style="overflow-x:auto"><table class="lf-table"><thead><tr><th>Equipment type</th><th>Rate adjustment</th><th>Typical useful life</th><th>Usual maximum term</th></tr></thead><tbody><tr><td>Construction and earth-moving</td><td>+0.00 pts</td><td>10-15 years</td><td>Up to 7 years</td></tr><tr><td>Trucks, trailers and fleet vehicles</td><td>+0.50 pts</td><td>7-12 years</td><td>Up to 6 years</td></tr><tr><td>Manufacturing and CNC machinery</td><td>+0.00 pts</td><td>10-20 years</td><td>Up to 7 years</td></tr><tr><td>Agricultural equipment</td><td>-0.25 pts</td><td>10-20 years</td><td>Up to 7 years</td></tr><tr><td>Medical and dental equipment</td><td>+0.50 pts</td><td>7-10 years</td><td>Up to 7 years</td></tr><tr><td>Restaurant and food service</td><td>+1.00 pts</td><td>5-10 years</td><td>Up to 5 years</td></tr><tr><td>Office furniture and fixtures</td><td>+1.00 pts</td><td>5-10 years</td><td>Up to 5 years</td></tr><tr><td>Computers, IT and software-heavy gear</td><td>+2.00 pts</td><td>3-5 years</td><td>Up to 3 years</td></tr></tbody></table></div>
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="equipment-financing-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Get a quote</strong>A written quote from the vendor tells the lender exactly what is being financed.</li><li><strong>Decide: loan or lease</strong>A loan builds ownership. A lease may lower payments and can include an end-of-term buyout; compare total cost.</li><li><strong>Check your credit</strong>Review your personal and business credit reports. Fix errors before applying.</li><li><strong>Compare offers</strong>Get offers from your bank, the equipment vendor's financing arm and an online lender. Compare APR and total cost.</li><li><strong>Close and take delivery</strong>The lender usually pays the vendor directly and files a lien on the equipment.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>Loan or lease?</summary><p>With a loan you own the equipment and can depreciate it. A lease usually has lower payments and may offer a fair-market-value or fixed buyout at the end. Which is cheaper depends on the buyout and your tax situation.</p></details><details><summary>Is there a tax benefit?</summary><p>The tax code lets many businesses deduct the cost of qualifying equipment in the year it is placed in service, subject to annual limits that change. Ask your tax professional what applies to you.</p></details><details><summary>Can the SBA finance equipment?</summary><p>Yes. 7(a) loans and 504 loans (for long-life equipment) can both finance equipment, often with longer terms.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/term-loan-vs-line-of-credit.html">Term Loan vs. Business Line of Credit: How to Choose</a></li><li><a href="/guides/choosing-lender.html">How to choose a lender</a></li><li><a href="/guides/dscr-explained.html">Debt Service Coverage Ratio (DSCR) Explained, With Examples</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.crestmontcapital.com/blog/equipment-loan-rates-2026" target="_blank" rel="noopener noreferrer">Crestmont Capital: Equipment loan rates 2026</a></li><li><a href="https://smallbiztrends.com/equipment-loan-rates-today/" target="_blank" rel="noopener noreferrer">Small Business Trends: Equipment loan rates</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-7a.html">SBA 7(a) Loan</a></li><li><a href="/loans/sba-504.html">SBA 504 Loan</a></li><li><a href="/loans/sba-express.html">SBA Express Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/commercial-term-loan.html">Commercial Term Loan</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="equipment-financing-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

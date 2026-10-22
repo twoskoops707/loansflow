@@ -21,8 +21,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-180.png">
   <link rel="stylesheet" href="../css/site.css">
   <style>
-    .site-nav { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); backdrop-filter: none; }
-    .site-nav .nav-cta { border-color: var(--ink); color: var(--ink) !important; }
     .legal-page { min-height: 100vh; background: var(--canvas); color: var(--ink); padding: 7rem clamp(1.25rem,4vw,3rem) 4rem; }
     .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
     .legal-page h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 0.85rem; }
@@ -89,15 +87,21 @@
   </script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="../"><img src="../img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="../">Home</a>
-      <a href="/loans/">Loan types</a>
-      <a href="../guides/" aria-current="page">Guides</a>
-      <a href="../tools/">Calculators</a>
-      <a class="nav-cta" href="../tools/">Open tools</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/" aria-current="page">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
   <main class="legal-page">
     <p class="updated">Updated October 22, 2026 &middot; By the LoansFlow Editorial Team</p>
@@ -160,7 +164,7 @@
       <li><a href="sba-express-microloans-caplines.html">SBA Express, Microloans, and CAPLines</a></li>
       <li><a href="sba-504.html">SBA 504 Loans Explained</a></li>
       <li><a href="loan-documents.html">Loan Documents: What Lenders Ask For</a></li>
-      <li><a href="../tools/">Run the numbers in our free calculators</a></li>
+      <li><a href="/loans/">Run the numbers in our free calculators</a></li>
     </ul>
 
     <div class="disclaimer">
@@ -169,42 +173,19 @@
   </main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div>
-        <h4>LoansFlow</h4>
-        <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <a href="../tools/">All calculators</a>
-        <a href="../tools/?step=8">Market news</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="../guides/">Guides</a>
-        <a href="../directory/">Directory</a>
-        <a href="../guides/checklist.html">Checklist</a>
-      </div>
-      <div>
-        <h4>Site</h4>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="../privacy.html">Privacy</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../terms.html">Terms</a>
-      </div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
+      <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note">
-      &copy; 2026 LoansFlow.
-      All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.
-    </div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>
     window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };
   </script>
   <script src="../js/ads.js" defer></script>
   <script src="../js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 </body>
 </html>

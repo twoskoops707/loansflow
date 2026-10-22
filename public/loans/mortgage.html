@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is PMI?","acceptedAnswer":{"@type":"Answer","text":"Private mortgage insurance protects the lender if you put down less than 20% on a conventional loan. It usually ends when you build enough equity."}},{"@type":"Question","name":"How many lenders should I compare?","acceptedAnswer":{"@type":"Answer","text":"At least three. Request Loan Estimates the same day so rates and fees are comparable."}},{"@type":"Question","name":"Fixed or adjustable?","acceptedAnswer":{"@type":"Answer","text":"A fixed rate stays the same. An adjustable-rate mortgage starts lower and can change after an initial period, so it carries more risk."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / Mortgage</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>Mortgage</h1>
     <p class="lf-lede">Home purchase and refinance loans, with payment, affordability and refinance tools.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Loan types</dt><dd>Conventional, FHA, VA, USDA</dd></div><div><dt>Typical term</dt><dd>15 or 30 years</dd></div><div><dt>Down payment</dt><dd>Conventional: as low as 3% on some programs; FHA: 3.5% with a 580+ score; VA and USDA: 0% for eligible borrowers</dd></div><div><dt>Mortgage insurance</dt><dd>Usually required on conventional loans with under 20% down</dd></div><div><dt>Key forms</dt><dd>Loan Estimate, then Closing Disclosure at least 3 business days before closing</dd></div><div><dt>Best for</dt><dd>Buying or refinancing a home</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>A mortgage is a long-term loan secured by the home. The payment you actually make is usually principal and interest plus property taxes and homeowner's insurance (PITI), and sometimes mortgage insurance. Knowing what you can afford before you shop keeps you from falling in love with a house you cannot carry.</p>
     <p>Refinancing replaces your mortgage with a new one, usually to lower the rate, change the term or take out equity. It is not free: closing costs mean a refinance only pays off if you keep the loan longer than the break-even point.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,45 +69,51 @@
       <cite>Benjamin Franklin, Poor Richard / &quot;The Way to Wealth&quot; (1758)<span class="lf-badge lf-badge--doc">Documented</span></cite>
       <p>Which is why every loan has paperwork, due dates and a credit report behind it.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Buying a primary residence</li><li>Lowering the rate or payment through a refinance</li><li>Borrowers who want predictable payments (fixed rate)</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Business purchases (use a business loan)</li><li>Moving soon, in which case closing costs may not be recovered</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>Verifiable income, employment history and credit</li><li>Debt-to-income generally around 36% for total debt (some programs allow more)</li><li>Down payment and closing costs, plus reserves</li><li>An appraisal and title work on the property</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="mortgage-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="mortgage" ></div>
     <div data-calc="afford" ></div>
     <div data-calc="refi" ></div>
     
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="mortgage-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Check your budget and credit</strong>Use the affordability calculator and review your credit reports.</li><li><strong>Get pre-approved</strong>A lender verifies income and credit so sellers take your offer seriously.</li><li><strong>Shop for the loan</strong>Request Loan Estimates from several lenders on the same day and compare the rate, fees and APR.</li><li><strong>Underwriting</strong>The lender verifies documents and orders an appraisal.</li><li><strong>Review the Closing Disclosure</strong>You must receive it at least three business days before closing. Compare it to your Loan Estimate.</li><li><strong>Close</strong>Sign, pay closing costs, and get the keys.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>What is PMI?</summary><p>Private mortgage insurance protects the lender if you put down less than 20% on a conventional loan. It usually ends when you build enough equity.</p></details><details><summary>How many lenders should I compare?</summary><p>At least three. Request Loan Estimates the same day so rates and fees are comparable.</p></details><details><summary>Fixed or adjustable?</summary><p>A fixed rate stays the same. An adjustable-rate mortgage starts lower and can change after an initial period, so it carries more risk.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/mortgage-closing-costs.html">Mortgage Closing Costs Explained: What You Will Pay and When</a></li><li><a href="/guides/refinance-break-even.html">Is Refinancing Worth It? How to Calculate Your Break-Even Point</a></li><li><a href="/guides/glossary.html">Loan glossary</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">CFPB: Owning a home</a></li><li><a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/" target="_blank" rel="noopener noreferrer">CFPB: Loan Estimate</a></li><li><a href="https://www.freddiemac.com/pmms" target="_blank" rel="noopener noreferrer">Freddie Mac: Mortgage rates</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-7a.html">SBA 7(a) Loan</a></li><li><a href="/loans/sba-504.html">SBA 504 Loan</a></li><li><a href="/loans/sba-express.html">SBA Express Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/commercial-term-loan.html">Commercial Term Loan</a></li><li><a href="/loans/equipment-financing.html">Equipment Financing</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="mortgage-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

@@ -1,6 +1,6 @@
 # LoansFlow
 
-Free **SBA / commercial / mortgage** calculator suite — high-intent finance tools monetized with AdSense → Ezoic (Incubator), plus affiliate outreach.
+Loan-type guides and free calculators for **SBA, commercial, equipment and mortgage** loans, monetized with AdSense plus affiliate links.
 
 **Live:** [https://loansflow.loan/](https://loansflow.loan/)  
 **Pages:** [loansflow-live.pages.dev](https://loansflow-live.pages.dev/) · legacy [loansflow.pages.dev](https://loansflow.pages.dev/)  
@@ -9,12 +9,10 @@ Free **SBA / commercial / mortgage** calculator suite — high-intent finance to
 
 ## Features
 
-- SBA 7(a), SBA 504, conventional commercial (payment, guaranty fee, DSCR)
-- Commercial amortization + balloon
-- Business line of credit (draws, interest-only / % balance)
-- Mortgage PITI, amortization, refinance compare, affordability
-- Market news / rates page
-- **Guides** (`/guides/`): SBA 7(a) 10-step playbook, SBA 504 explainer, loan documents by loan type, interactive + downloadable checklist, choosing a lender, glossary, calculator help
+- **Loan-type pages** (`/loans/`): SBA 7(a), SBA 504, SBA Express, SBA Microloan, business line of credit, commercial term loan, equipment financing (rates by credit tier and equipment type), and mortgage. Each has facts, requirements, how to apply, FAQ, sources and its own calculators (payment, SBA fees, 504 structure, DSCR, line-of-credit cost, equipment estimates, PITI, affordability, refinance break-even)
+- **Home page** is a loan finder
+- **Funding ideas**: live federal grants search (Grants.gov API), uncommon ways to finance, news and rates, and an old-timer's guide of sayings and rules of thumb
+- **Guides** (`/guides/`): SBA 7(a) 10-step playbook, SBA 504 explainer, loan documents by loan type, interactive + downloadable checklist, choosing a lender, glossary, calculator help, how our numbers work
 - **Directory** (`/directory/`): searchable national directory — 67 SBA district offices, SBA national contacts, resource partners, 18 lender marketplaces
 - Ad slots + `ads.txt` for Google AdSense
 - Legal: About, Contact, Privacy, Disclaimer, Terms

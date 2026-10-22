@@ -37,25 +37,31 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is the CDC rate fixed?","acceptedAnswer":{"@type":"Answer","text":"The CDC portion is funded through a debenture sold to investors, so its rate is set from market yields at funding and then stays the same."}},{"@type":"Question","name":"Can 504 refinance existing debt?","acceptedAnswer":{"@type":"Answer","text":"Yes, under specific refinance options. Ask a CDC which apply to your situation."}},{"@type":"Question","name":"What happens to the bank loan rate?","acceptedAnswer":{"@type":"Answer","text":"The bank sets its own terms. Many banks offer fixed rates for several years and then adjust; compare offers."}}]}</script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/" aria-current="page">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/" aria-current="page">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <main class="lf-page"><div class="lf-wrap">
     <p class="lf-crumbs"><a href="/">Home</a> / <a href="/loans/">Loan types</a> / SBA 504 Loan</p>
     <p class="lf-eyebrow">Loan type</p>
     <h1>SBA 504 Loan</h1>
     <p class="lf-lede">Long-term, fixed-rate financing for buildings and heavy equipment.</p>
-    <p><a class="lf-btn" href="#calculators">Jump to the calculators</a> <a class="lf-btn lf-btn--ghost" href="#apply">How to apply</a></p>
     <dl class="lf-facts-table"><div><dt>Structure</dt><dd>About 50% bank, up to 40% CDC (SBA-backed), 10% or more from you</dd></div><div><dt>SBA debenture</dt><dd>Generally up to $5 million; up to $5.5 million for qualifying manufacturers and energy projects (minimum $25,000)</dd></div><div><dt>Term</dt><dd>10 years (equipment); 20 or 25 years (real estate)</dd></div><div><dt>Rate</dt><dd>Fixed on the CDC portion; bank portion set by the lender</dd></div><div><dt>Fees</dt><dd>0.50% upfront and 0.203% annual on the debenture (FY 2027)</dd></div><div><dt>Best for</dt><dd>Owner-occupied buildings, construction and long-life equipment</dd></div></dl>
-    <h2>What it is</h2>
+    <div class="lf-layout">
+    <article class="lf-main">
+    <h2 id="what">What it is</h2>
     <p>The 504 program finances major fixed assets: land, buildings and long-life machinery. It uses a three-party structure. A bank lends about half the project, a Certified Development Company (CDC) backed by the SBA lends up to 40%, and you put in at least 10%. The CDC portion carries a fixed rate for the full term, which is the main reason owners choose 504 over a conventional commercial mortgage.</p>
     <p>The trade-off is paperwork and purpose. 504 money cannot be used for working capital or inventory, and the project should create jobs or meet a public-policy goal your CDC can explain.</p>
     <aside class="lf-tidbit" aria-label="Old-timer's wisdom">
@@ -63,44 +69,50 @@
       <cite>Warren Buffett, Widely quoted in interviews and profiles<span class="lf-badge">Commonly attributed</span></cite>
       <p>A fair description of what a long-term loan for a building or machine is supposed to be.</p>
     </aside>
-    <div class="lf-two">
+    <div class="lf-two" id="fit">
       <div class="lf-box"><h3>A good fit if you want</h3><ul><li>Buying or building a building you will occupy</li><li>Heavy equipment with a long useful life</li><li>Locking in a fixed rate for 20 to 25 years</li><li>Keeping your down payment lower than a conventional commercial loan</li></ul></div>
       <div class="lf-box"><h3>Probably not the right tool if</h3><ul><li>Working capital, inventory or day-to-day expenses</li><li>Investment real estate you will not use in the business</li><li>Projects that need to close in a couple of weeks</li></ul></div>
     </div>
-    <h2>Typical requirements</h2>
+    <h2 id="requirements">Typical requirements</h2>
     <ul><li>Owner-occupy at least 51% of an existing building (more for new construction)</li><li>Eligible small business with a tangible-net-worth and income profile that meets SBA limits</li><li>Borrower equity of 10%; 5% more for a new business and 5% more for special-purpose property</li><li>Job creation or another public-policy goal, which your CDC will help document</li></ul>
-    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-504-top" style="margin:2rem 0;"></div>
     <h2 id="calculators">Run the numbers</h2>
     <p>These calculators run in your browser and are estimates, not offers. Change any number to see the effect.</p>
     <div data-calc="sba504" ></div>
     <div data-calc="dscr" ></div>
     
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-504-mid" style="margin:2rem 0;"></div>
     <h2 id="apply">How to apply</h2>
     <ol class="lf-apply"><li><strong>Talk to a CDC</strong>Certified Development Companies package and service 504 loans. Find one through the SBA or our directory.</li><li><strong>Line up the bank loan</strong>Your bank provides the first lien (about 50%). Some banks work with CDCs often; ask.</li><li><strong>Assemble the project budget</strong>Land, building, equipment, soft costs and closing costs. The sources and uses must match.</li><li><strong>Submit the package</strong>The CDC reviews and sends the loan to the SBA for authorization.</li><li><strong>Close</strong>The bank and CDC close together. The CDC portion is funded later through a debenture sale, with the rate fixed at that time.</li></ol>
     <p>Need a lender, an SBA district office or a free counselor? Use the <a href="/directory/">national directory</a>.</p>
-    <h2>Common questions</h2>
+    <h2 id="faq">Common questions</h2>
     <div class="lf-faq"><details><summary>Why is the CDC rate fixed?</summary><p>The CDC portion is funded through a debenture sold to investors, so its rate is set from market yields at funding and then stays the same.</p></details><details><summary>Can 504 refinance existing debt?</summary><p>Yes, under specific refinance options. Ask a CDC which apply to your situation.</p></details><details><summary>What happens to the bank loan rate?</summary><p>The bank sets its own terms. Many banks offer fixed rates for several years and then adjust; compare offers.</p></details></div>
-    <h2>Keep reading</h2>
+    <h2 id="more">Keep reading</h2>
     <ul><li><a href="/guides/sba-504.html">SBA 504 loans explained</a></li><li><a href="/guides/sba-loan-eligibility.html">SBA Loan Eligibility: Who Qualifies and Who Does Not</a></li><li><a href="/guides/business-plan-for-a-loan.html">The Business Plan and Financial Projections Lenders Want to See</a></li><li><a href="/alternative-financing/">Uncommon ways to finance</a></li><li><a href="/grants/">Search federal grants</a></li></ul>
     <h2>Sources</h2>
     <ul><li><a href="https://www.sba.gov/partners/lenders/7a-loan-program/terms-conditions-eligibility" target="_blank" rel="noopener noreferrer">SBA: 7(a) program terms and conditions</a></li><li><a href="https://www.sba.gov/document/information-notice-5000-881796-fy-2027-504-program-fees" target="_blank" rel="noopener noreferrer">SBA Information Notice 5000-881796: 504 fees for FY 2027</a></li></ul>
     <p class="lf-disclaimer">General information, not financial, tax or legal advice. LoansFlow is not a lender and this is not an offer of credit. Program rules, limits, fees and rates change; confirm current terms with your lender and the issuing agency. SBA figures reflect SBA.gov and the fiscal year 2027 fee notices (effective October 1, 2026).</p>
+    </article>
+    <aside class="lf-side" aria-label="Page navigation">
+      <div class="lf-box"><h3>On this page</h3><ul><li><a href="#what">What it is</a></li><li><a href="#fit">Is it a fit?</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#calculators">Calculators</a></li><li><a href="#apply">How to apply</a></li><li><a href="#faq">Questions</a></li><li><a href="#more">Keep reading</a></li></ul></div>
+      <div class="lf-box"><h3>Other loan types</h3><ul><li><a href="/loans/sba-7a.html">SBA 7(a) Loan</a></li><li><a href="/loans/sba-express.html">SBA Express Loan</a></li><li><a href="/loans/sba-microloan.html">SBA Microloan</a></li><li><a href="/loans/line-of-credit.html">Business Line of Credit</a></li><li><a href="/loans/commercial-term-loan.html">Commercial Term Loan</a></li><li><a href="/loans/equipment-financing.html">Equipment Financing</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-504-side"></div>
+    </aside>
+    </div>
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script src="/js/lf-math.js"></script>
   <script src="/js/lf-calc.js" defer></script>
 </body>

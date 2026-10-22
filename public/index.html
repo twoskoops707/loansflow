@@ -34,29 +34,42 @@
   </script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/loans/">Loan types</a>
-      <a href="/tools/">Calculators</a>
-      <a href="/guides/">Guides</a>
-      <a href="/news/">News</a>
-      <a href="/wisdom/">Old-timer's guide</a>
-      <a class="nav-cta" href="/loans/">Find your loan</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
 <section class="lf-hero"><div class="lf-wrap">
-    <p class="lf-eyebrow"><q style="quotes:'\201C' '\201D'">Chance favors only the prepared mind.</q> &mdash; Louis Pasteur</p>
-    <h1>Find the right loan. Then run the numbers.</h1>
-    <p class="lf-lede">Prepare first. Then borrow. LoansFlow explains each type of business and home loan in plain English, with free calculators, application steps and the official rules.</p>
-    <div class="lf-finder" role="group" aria-label="Loan finder">
-      <div><label for="f-purpose">What are you financing?</label><select id="f-purpose"><option value="">Choose one&hellip;</option>
-        <option value="start-buy">Starting or buying a business</option><option value="buy-property">Buying or building a commercial building</option><option value="equipment">Equipment or vehicles</option>
-        <option value="cash-flow">Cash flow or working capital</option><option value="refi">Refinancing business debt</option><option value="home">Buying a home</option><option value="refi-home">Refinancing my home</option></select></div>
-      <div><label for="f-amount">About how much?</label><select id="f-amount"><option value="u50">Under $50,000</option><option value="mid" selected>$50,000 to $500,000</option><option value="large">$500,000 to $5 million</option><option value="xl">Over $5 million</option></select></div>
+    <div class="lf-hero-grid">
+      <div>
+        <p class="lf-eyebrow"><q style="quotes:'\201C' '\201D'">Chance favors only the prepared mind.</q> &mdash; Louis Pasteur</p>
+        <h1>Find the right loan. Then run the numbers.</h1>
+        <p class="lf-lede">Prepare first. Then borrow. LoansFlow explains each type of business and home loan in plain English, with free calculators, application steps and the official rules.</p>
+        <div class="lf-rates" id="lf-rates" aria-live="polite"></div>
+      </div>
+      <div class="lf-hero-card" role="group" aria-label="Loan finder">
+        <h2>Which loan fits?</h2>
+        <div class="lf-finder">
+          <div><label for="f-purpose">What are you financing?</label><select id="f-purpose"><option value="">Choose one&hellip;</option>
+            <option value="start-buy">Starting or buying a business</option><option value="buy-property">Buying or building a commercial building</option><option value="equipment">Equipment or vehicles</option>
+            <option value="cash-flow">Cash flow or working capital</option><option value="refi">Refinancing business debt</option><option value="home">Buying a home</option><option value="refi-home">Refinancing my home</option></select></div>
+          <div><label for="f-amount">About how much?</label><select id="f-amount"><option value="u50">Under $50,000</option><option value="mid" selected>$50,000 to $500,000</option><option value="large">$500,000 to $5 million</option><option value="xl">Over $5 million</option></select></div>
+        </div>
+        <p class="lf-hint">Two quick choices. We will point you to the loan types worth a look.</p>
+      </div>
     </div>
     <div class="lf-picks" id="lf-picks" hidden></div>
-    <div class="lf-rates" id="lf-rates" aria-live="polite"></div>
   </div></section>
   <main class="lf-page" style="padding-top:2rem"><div class="lf-wrap">
     <h2 style="margin-top:0">Browse by loan type</h2>
@@ -78,19 +91,18 @@
   </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
-      <div><h4>Loan types</h4>
-        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
-        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
-      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
-      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
       <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
   <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
   <script src="/js/ads.js" defer></script>
   <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
 <script>window.LF_LOANS = [{"slug":"sba-7a","name":"SBA 7(a) Loan","short":"The most flexible SBA loan, for almost any business purpose.","purposes":["start-buy","cash-flow","equipment","buy-property","refi"],"min":30000,"max":5000000,"chips":["Up to $5M","10 to 25 years","SBA-guaranteed"]},{"slug":"sba-504","name":"SBA 504 Loan","short":"Long-term, fixed-rate financing for buildings and heavy equipment.","purposes":["buy-property","equipment"],"min":125000,"max":20000000,"chips":["Fixed rate","10 to 25 years","Real estate and equipment"]},{"slug":"sba-express","name":"SBA Express Loan","short":"A faster, lender-processed SBA loan up to $500,000, including lines of credit.","purposes":["cash-flow","equipment","start-buy"],"min":25000,"max":500000,"chips":["Up to $500K","50% guarantee","Revolving lines allowed"]},{"slug":"sba-microloan","name":"SBA Microloan","short":"Small loans up to $50,000 from nonprofit lenders, with help for newer businesses.","purposes":["start-buy","cash-flow","equipment"],"min":500,"max":50000,"chips":["Up to $50K","Up to 6 years","Nonprofit lenders"]},{"slug":"line-of-credit","name":"Business Line of Credit","short":"A revolving credit limit you draw on, repay, and draw on again.","purposes":["cash-flow"],"min":5000,"max":5000000,"chips":["Pay interest on what you use","Revolving","SBA CAPLines option"]},{"slug":"commercial-term-loan","name":"Commercial Term Loan","short":"A conventional bank loan for property, expansion or acquisitions, with no SBA guarantee.","purposes":["buy-property","start-buy","refi","cash-flow"],"min":100000,"max":50000000,"chips":["Conventional","Fixed or variable","Larger deals"]},{"slug":"equipment-financing","name":"Equipment Financing","short":"Loans and leases for machinery, vehicles and technology, secured by the equipment itself.","purposes":["equipment"],"min":5000,"max":5000000,"chips":["Equipment is the collateral","Rate varies by credit and type","Loan or lease"]},{"slug":"mortgage","name":"Mortgage","short":"Home purchase and refinance loans, with payment, affordability and refinance tools.","purposes":["home","refi-home"],"min":50000,"max":3000000,"chips":["Conventional, FHA, VA, USDA","15 or 30 years","Payment, refi and affordability tools"]}];</script>
   <script src="/js/picker.js" defer></script>
 </body>

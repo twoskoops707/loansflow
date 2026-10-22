@@ -126,9 +126,68 @@
 .lf-social { border: 1px dashed var(--line-strong); padding: 1.3rem; margin-top: 1.4rem; max-width: 72ch; }
 .lf-social blockquote { margin: 1rem 0; }
 
+/* ============================================================
+   Desktop-first layout. Phones get the single-column rules at the bottom.
+   ============================================================ */
+.lf-page { padding: 6.25rem 2rem 5rem; }
+.lf-wrap { max-width: 1240px; }
+.lf-page p, .lf-page li { font-size: 1.02rem; }
+.lf-lede { font-size: 1.18rem; max-width: 70ch; }
+
+/* Home hero: copy on the left, finder card on the right */
+.lf-hero { padding: 8rem 2rem 3.5rem; }
+.lf-hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr); gap: 4rem; align-items: center; }
+.lf-hero h1 { max-width: 14ch; font-size: clamp(2.6rem, 5vw, 4.4rem); }
+.lf-hero-card { background: var(--surface); border: 1px solid var(--line-strong); border-top: 2px solid var(--accent); padding: 1.8rem; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
+.lf-hero-card h2 { margin: 0 0 1.1rem; font-size: 1.15rem; }
+.lf-hero-card .lf-finder { margin: 0; padding: 0; background: none; border: 0; grid-template-columns: 1fr; gap: 1.1rem; }
+.lf-hero-card .lf-finder select { padding: 0.9rem; }
+.lf-hero-card .lf-hint { margin: 1rem 0 0; font-size: 0.82rem; }
+.lf-grid-cards { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+.lf-picks { margin-top: 2rem; }
+
+/* Loan and content pages: article plus sticky sidebar */
+.lf-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 3.5rem; align-items: start; margin-top: 2rem; }
+.lf-main { container-type: inline-size; min-width: 0; }
+.lf-main > h2:first-child { margin-top: 0; }
+.lf-side { position: sticky; top: 96px; display: grid; gap: 1.25rem; }
+.lf-side .lf-box { padding: 1.1rem 1.2rem; }
+.lf-side h3 { margin: 0 0 0.6rem; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-weight: 400; }
+.lf-side ul { list-style: none; padding: 0; margin: 0; }
+.lf-side li { margin: 0; }
+.lf-side li a { display: block; padding: 0.4rem 0; font-size: 0.93rem; color: var(--fog); border-bottom: 1px solid var(--line); }
+.lf-side li:last-child a { border-bottom: 0; }
+.lf-side li a:hover, .lf-side li a.is-current { color: var(--accent); }
+.lf-side .ad-slot { min-height: 250px; margin: 0; max-width: none; }
+
+/* Calculators: inputs on the left, live result on the right when there is room */
+@container (min-width: 700px) {
+  .lf-calc { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); }
+  .lf-title { grid-column: 1 / -1; }
+  .lf-calc .lf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; }
+  .lf-calc .lf-result { border-top: 0; border-left: 1px solid var(--line); }
+}
+
+.lf-hero-grid + .lf-picks .lf-grid-cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.lf-news { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.lf-wisdom-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.lf-wisdom-grid > div { padding: 1.5rem; }
+
+@media (max-width: 1100px) {
+  .lf-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .lf-side { position: static; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .lf-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+  .lf-hero h1 { max-width: 18ch; }
+}
+
 @media (max-width: 640px) {
-  .nav-links { gap: 0.9rem; font-size: 0.78rem; }
-  .nav-links .nav-cta { padding: 0.45rem 0.9rem; }
-  .lf-rows > div { flex-direction: column; gap: 0.1rem; }
-  .lf-rows dd { text-align: left; }
+  .lf-page { padding: 5.2rem 1.1rem 3.5rem; }
+  .lf-hero { padding: 6rem 1.1rem 2rem; }
+  .lf-hero-card { padding: 1.2rem; }
+  .lf-lede { font-size: 1.05rem; }
+  .lf-grid-cards, .lf-news, .lf-wisdom-grid { grid-template-columns: 1fr; }
+  .lf-facts-table { grid-template-columns: 1fr 1fr; }
+  .lf-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .lf-side { grid-template-columns: 1fr; }
+  .lf-btn { display: block; text-align: center; margin-bottom: 0.6rem; }
 }

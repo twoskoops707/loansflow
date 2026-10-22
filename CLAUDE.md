@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-LoansFlow — a static Cloudflare Pages site: free SBA 7(a)/504, commercial, and mortgage calculators, monetized via AdSense/Ezoic display ads and affiliate offers. Calculator logic was ported from an earlier standalone HTML suite (`docs/source-mortgage-calculator.html` is the original reference). No build step, no bundler, no framework — plain HTML/CSS/vanilla JS served as-is.
+LoansFlow — a static Cloudflare Pages site organized by loan type (SBA, commercial, equipment, mortgage), with free calculators, guides and funding research, monetized via AdSense and affiliate offers. No build step, no bundler, no framework — plain HTML/CSS/vanilla JS served as-is.
 
 Live at https://loansflow.loan/ (Cloudflare Pages project `loansflow-live`). Repo indexed by [graft](graft/INDEX.md) — prefer `graft ask` / `graft grep` / `graft callers` over grepping source for anything beyond a one-line lookup.
 
@@ -22,23 +22,17 @@ There is no lint or test suite configured — verify changes by running `npm run
 
 ## Architecture
 
-### Two separate front ends share one origin
-- **`public/index.html`** — marketing homepage. Loads `css/site.css` + `js/home.js` (small, self-contained: a hero "quick-estimate" mortgage calculator and a live rate band). `js/home.js` duplicates a few math/format helpers (`fmtMoney`, `monthlyPI`, …) rather than importing them from `app.js` — the two are intentionally decoupled so the homepage stays light.
-- **`public/tools/index.html`** — the actual multi-step calculator wizard. Loads `css/app.css` + `js/app.js` (~2000 lines, the real engine).
+### Loan-type site (replaced the old calculator wizard)
+The site is organized by loan type. `public/index.html` is a loan finder; `public/loans/<type>.html` (sba-7a, sba-504, sba-express, sba-microloan, line-of-credit, commercial-term-loan, equipment-financing, mortgage) each hold a description, requirements, how to apply, FAQ and the calculators for that loan. Supporting pages: `guides/`, `alternative-financing/`, `grants/` (live Grants.gov search), `news/`, `wisdom/` (old-timer's guide), `directory/`, `methodology.html`. The old multi-step wizard (`tools/`, `js/app.js`, `css/app.css`, `js/home.js`) is gone; `tools/index.html` is only a redirect stub and `_redirects` sends `/tools/*` to `/loans/`.
 
-Both pages also load `js/ads.js` (AdSense slot loader/collapse logic) and `js/offers.js` (renders `public/data/offers.json` entries where `status:"live"`), plus `js/ezoic-boot.js` for Ezoic's Incubator detection script.
-
-### `public/js/app.js` — the wizard
-Single mutable global `state` object holds every calculator's inputs at once (mortgage, SBA/commercial, line-of-credit, refinance, affordability — see the `state` block at the top of the file). `state.step` (0-8) selects which screen renders.
-
-**Non-obvious trap:** the `renderers` array inside `render()` maps `state.step` → render function, and its order does **not** match either the `steps[]` label array or the `renderStepN` function names' numeric order (steps were inserted after the fact — e.g. `renderStep5` is index 0, `renderStepBizAmort` is index 1). When adding/reordering a step, update `state.step` call sites, the `steps[]` labels, and the `renderers` array together — matching them by function name order will point at the wrong screen.
-
-Each step has a paired `printStepN()` function (used by `renderPrintReport()`) that must be kept in sync with its `renderStepN()` counterpart's fields when a step's inputs change — the print/PDF report and the on-screen step are two independent render paths over the same `state`.
-
-Other independent subsystems living in the same file: CSV export (`exportBizAmortCsv`/`exportMortgageAmortCsv`/`exportLocCsv`), scenario pin/compare (`localStorage`-backed, key `lf-pinned-scenarios`), shareable-URL state encoding (`shareableUrl`/`loadSharedState`), and the Market News & Rates step (`fetchMarketNewsPayload` → tries `/api/market-news` first, falls back to the static `data/market-news.json` snapshot — see below).
+- **Calculators:** `public/js/lf-math.js` is pure math (no DOM, loadable in Node: `require('./public/js/lf-math.js')`). `public/js/lf-calc.js` renders any calculator from `<div data-calc="sba7a|sba504|loc|equipment|mortgage|refi|afford|dscr|payment" data-...>`. Add a calculator by adding a function to `CALCS` in lf-calc.js and its math to lf-math.js. SBA fee rules live in `lf-math.js` (`sba7aFee`, `sba504Fee`, ...) and follow SBA's fiscal-year fee notices; update them every October 1 and update `methodology.html` to match.
+- **Shared chrome:** every page uses the same header and footer (mega-menu header, `js/nav.js` for the mobile toggle). Styles: `css/site.css` (tokens, header, footer, ad slots) and `css/loans.css` (page layouts, calculators). Desktop-first with phone breakpoints at 1100px, 980px and 640px.
+- **Scripts per page:** `js/picker.js` (home finder, rates strip, rotating quote), `js/news.js` (headlines, filters, opt-in Instagram embeds from `data/social.json`), `js/grants.js` (Grants.gov search2 API, no key, CORS enabled), `js/ads.js`, `js/offers.js`, `js/checklist.js`.
+- **Generated pages:** the loan, home, news, wisdom, alternative-financing and grants pages were produced by a build script that is not stored in this repo; edit the HTML directly or recreate the script. Keep each loan page's section ids (`what`, `fit`, `requirements`, `calculators`, `apply`, `faq`, `more`) because the sidebar links to them.
+- **Equipment rates** in `lf-math.js` (`CREDIT_TIERS`, `EQUIPMENT_TYPES`) are an illustrative planning model, labeled as such on the site. They are not lender quotes.
 
 ### Market News: live API with static fallback
-`functions/api/market-news.js` is a Cloudflare Pages Function (`GET /api/market-news`) that pulls Freddie Mac PMMS + Fed/news RSS feeds, edge-caches ~30 min, and degrades gracefully per-feed on failure. It only runs on Cloudflare's infra. `public/data/market-news.json` is the static fallback both `app.js` and `home.js` read when the Function isn't reachable (e.g. GitHub Pages mirror, or local `npm run dev`); it's regenerated by `tools/news/refresh-market-news.mjs` (`npm run news:refresh`), which the `refresh-market-news.yml` workflow also runs daily and auto-commits.
+`functions/api/market-news.js` is a Cloudflare Pages Function (`GET /api/market-news`) that pulls Freddie Mac PMMS + Fed/news RSS feeds, edge-caches ~30 min, and degrades gracefully per-feed on failure. It only runs on Cloudflare's infra. `public/data/market-news.json` is the file `js/picker.js`, `js/news.js` and `js/lf-calc.js` read for rates, prime and headlines (the Function is an optional live source on Cloudflare); it's regenerated by `tools/news/refresh-market-news.mjs` (`npm run news:refresh`), which the `refresh-market-news.yml` workflow also runs daily and auto-commits.
 
 ### `tools/browser/`, `sequences/`, and `docs/automation/`
 These hold Playwright-style browser-automation scripts and generated artifacts for account/domain provisioning (AdSense/Ezoic signup, affiliate network onboarding, domain purchase) — operator tooling, not part of the deployed site.

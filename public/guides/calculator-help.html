@@ -3,234 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator Help: Using Every LoansFlow Tool — LoansFlow</title>
-  <meta name="description" content="A step-by-step walkthrough of every LoansFlow calculator — what it computes, which inputs you need, and how to use the results.">
+  <title>Calculator Help: What Each Input Means | LoansFlow</title>
+  <meta name="description" content="What to enter in each LoansFlow calculator, how to read the results, and why your lender's numbers may differ.">
   <link rel="canonical" href="https://loansflow.loan/guides/calculator-help.html">
-  <meta property="og:title" content="Calculator Help: Using Every LoansFlow Tool — LoansFlow">
-  <meta property="og:description" content="A step-by-step walkthrough of every LoansFlow calculator — what it computes, which inputs you need, and how to use the results.">
+  <meta property="og:title" content="Calculator Help: What Each Input Means | LoansFlow">
+  <meta property="og:description" content="What to enter in each LoansFlow calculator, how to read the results, and why your lender's numbers may differ.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://loansflow.loan/guides/calculator-help.html">
   <meta property="og:image" content="https://loansflow.loan/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0b">
-  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-180.png">
-  <link rel="stylesheet" href="../css/site.css">
-  <style>
-    .site-nav { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); backdrop-filter: none; }
-    .site-nav .nav-cta { border-color: var(--ink); color: var(--ink) !important; }
-    .legal-page { min-height: 100vh; background: var(--canvas); color: var(--ink); padding: 7rem clamp(1.25rem,4vw,3rem) 4rem; }
-    .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
-    .legal-page h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 0.85rem; }
-    .legal-page h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem; color: var(--ink); }
-    .legal-page p { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
-    .legal-page ul { max-width: 65ch; margin: 0 0 1.25rem; padding-left: 1.15rem; }
-    .legal-page li { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 0.4rem; }
-    .legal-page li strong { color: var(--ink-secondary); font-weight: 600; }
-    .legal-page a { color: var(--accent); }
-    .legal-page .updated { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; display: block; }
-    .help-card { border: 1px solid var(--line); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 1rem 0; background: var(--surface); }
-    .help-card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; color: var(--ink); }
-    .help-card .step-link { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block; }
-    .help-card p, .help-card li { color: var(--muted); }
-    .help-card ul { padding-left: 1.15rem; }
-    .disclaimer { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.25rem; margin: 2rem 0; max-width: 65ch; }
-    .disclaimer p { color: var(--muted); margin: 0; font-size: 0.95rem; }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/loans.css">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://loansflow.loan/#organization",
-        "name": "LoansFlow",
-        "url": "https://loansflow.loan/",
-        "logo": "https://loansflow.loan/img/logo.png",
-        "description": "Free SBA 7(a), SBA 504, and commercial loan calculators with DSCR and guaranty fee estimates — plus mortgage payment, amortization, refinance, and affordability tools."
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://loansflow.loan/guides/calculator-help.html#webpage",
-        "url": "https://loansflow.loan/guides/calculator-help.html",
-        "name": "Calculator Help: Using Every LoansFlow Tool — LoansFlow",
-        "isPartOf": { "@id": "https://loansflow.loan/#website" },
-        "breadcrumb": { "@id": "https://loansflow.loan/guides/calculator-help.html#breadcrumb" },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://loansflow.loan/guides/calculator-help.html#breadcrumb",
-        "itemListElement": [
+      { "@type": "WebPage", "@id": "https://loansflow.loan/guides/calculator-help.html#webpage", "url": "https://loansflow.loan/guides/calculator-help.html", "name": "Calculator Help: What Each Input Means | LoansFlow", "inLanguage": "en" },
+      { "@type": "BreadcrumbList", "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
           { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://loansflow.loan/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "Calculator Help: Using Every LoansFlow Tool" }
-        ]
-      }
+          { "@type": "ListItem", "position": 3, "name": "Calculator help" }
+      ] }
     ]
   }
   </script>
 </head>
 <body>
-  <header class="site-nav">
-    <a class="nav-brand" href="../"><img src="../img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="../">Home</a>
-      <a href="/loans/">Loan types</a>
-      <a href="../guides/" aria-current="page">Guides</a>
-      <a href="../tools/">Calculators</a>
-      <a class="nav-cta" href="../tools/">Open tools</a>
-    </nav>
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <div class="nav-item has-menu has-mega"><a class="nav-top" href="/loans/">Loan types</a>
+          <div class="nav-menu mega"><div class="mega-col"><h4>Business loans</h4><a href="/loans/sba-7a.html"><strong>SBA 7(a)</strong><span>Flexible loans up to $5M</span></a><a href="/loans/sba-504.html"><strong>SBA 504</strong><span>Buildings and heavy equipment</span></a><a href="/loans/sba-express.html"><strong>SBA Express</strong><span>Faster, up to $500K</span></a><a href="/loans/sba-microloan.html"><strong>SBA Microloan</strong><span>Small loans, up to $50K</span></a></div><div class="mega-col"><h4>Credit and purchases</h4><a href="/loans/line-of-credit.html"><strong>Line of credit</strong><span>Borrow and repay as needed</span></a><a href="/loans/commercial-term-loan.html"><strong>Commercial term loan</strong><span>Conventional bank financing</span></a><a href="/loans/equipment-financing.html"><strong>Equipment financing</strong><span>Rates by credit and equipment type</span></a></div><div class="mega-col"><h4>Home</h4><a href="/loans/mortgage.html"><strong>Mortgage</strong><span>Buy, refinance, affordability</span></a></div><a class="mega-all" href="/loans/">Compare all loan types &rarr;</a></div></div>
+        <a class="nav-top" href="/guides/" aria-current="page">Guides</a>
+        <div class="nav-item has-menu"><a class="nav-top" href="/alternative-financing/">Funding ideas</a>
+          <div class="nav-menu"><a href="/alternative-financing/"><strong>Uncommon ways to finance</strong><span>CDFIs, 0% loans, crowdfunding and more</span></a><a href="/grants/"><strong>Search federal grants</strong><span>Live Grants.gov search</span></a><a href="/directory/"><strong>Lender and SBA office directory</strong><span>Find help near you</span></a></div></div>
+        <a class="nav-top" href="/news/">News &amp; rates</a>
+        <a class="nav-top" href="/wisdom/">Old-timer's guide</a>
+        <a class="nav-cta" href="/loans/">Find your loan</a>
+      </nav>
+    </div>
   </header>
-  <main class="legal-page">
-    <p class="updated">Updated October 5, 2026</p>
-    <h1>Calculator Help: Using Every LoansFlow Tool</h1>
-    <p>LoansFlow has nine calculator steps covering SBA and commercial loans, mortgage tools, and live market data. Each section below explains what the step computes, which inputs you need, and when to use it. See the <a href="../guides/glossary.html">loan glossary</a> for term definitions, and the <a href="../directory/">directory</a> to find lenders.</p>
-
-    <h2>Step 0 — SBA &amp; Commercial Loan</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=0">Open calculator &rarr;</a>
-      <h3>SBA &amp; Commercial Loan</h3>
-      <p><strong>What it computes:</strong> Monthly payment, total rate, annual debt service, DSCR, and estimated SBA guaranty fees for 7(a), 504, and conventional commercial loans.</p>
-      <p><strong>Inputs:</strong> Loan type, loan amount, amortization years, prime rate, lender spread, SBA guaranty percentage, balloon year (optional), and annual net operating income.</p>
-      <p><strong>Outputs:</strong> Rate (prime plus spread), monthly principal and interest payment, annual debt service, DSCR, balloon balance if applicable, and estimated upfront guaranty fee and annual service fee for SBA loans.</p>
-      <p><strong>When to use it:</strong> To estimate a business loan payment, check whether your cash flow supports the debt, or compare SBA 7(a), 504, and conventional structures.</p>
-    </div>
-
-    <h2>Step 1 — Commercial Amortization</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=1">Open calculator &rarr;</a>
-      <h3>Commercial Amortization</h3>
-      <p><strong>What it computes:</strong> A year-by-year amortization schedule for your SBA or commercial loan, including a balloon payment row if one applies.</p>
-      <p><strong>Inputs:</strong> The same loan details as Step 0 (loan amount, rate, amortization, balloon year).</p>
-      <p><strong>Outputs:</strong> Yearly principal paid, interest paid, and remaining balance. A chart shows balance over time. You can also export the schedule as a CSV or include it in a PDF report.</p>
-      <p><strong>When to use it:</strong> To see how much principal you will have paid by a certain year, where a balloon payment falls, or how much total interest the loan will generate.</p>
-    </div>
-
-    <h2>Step 2 — Line of Credit</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=2">Open calculator &rarr;</a>
-      <h3>Line of Credit</h3>
-      <p><strong>What it computes:</strong> A month-by-month projection of draws, interest, payments, and ending balance on a revolving line of credit.</p>
-      <p><strong>Inputs:</strong> Credit limit, projection length in months, prime rate, lender spread, payment type (interest-only or minimum percent of balance), minimum payment percentage, and individual draw or repayment rows with month and amount.</p>
-      <p><strong>Outputs:</strong> Projected balance at the end of the period, total interest paid, total drawn, available credit, and a full month-by-month schedule showing beginning balance, draw or repayment, interest, payment, and ending balance.</p>
-      <p><strong>When to use it:</strong> To model a business line of credit, seasonal draws, or a construction draw schedule. Negative amounts in draw rows represent repayments.</p>
-    </div>
-
-    <h2>Step 3 — Mortgage: Loan Details</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=3">Open calculator &rarr;</a>
-      <h3>Mortgage: Loan Details</h3>
-      <p><strong>What it computes:</strong> Monthly principal and interest payment, monthly tax, monthly insurance, and total monthly PITI payment.</p>
-      <p><strong>Inputs:</strong> Home price, down payment, interest rate, loan term (10, 15, 20, or 30 years), annual property tax rate (percentage of home price), and annual homeowners insurance.</p>
-      <p><strong>Outputs:</strong> Loan amount, monthly P&amp;I, monthly tax, monthly insurance, total monthly payment, and lifetime interest estimate.</p>
-      <p><strong>When to use it:</strong> When entering or refining core numbers for a mortgage scenario before moving to the breakdown, amortization, refinance, or affordability steps.</p>
-    </div>
-
-    <h2>Step 4 — Mortgage: Payment Breakdown</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=4">Open calculator &rarr;</a>
-      <h3>Mortgage: Payment Breakdown</h3>
-      <p><strong>What it computes:</strong> A visual breakdown of the total monthly mortgage payment into principal and interest, property tax, and homeowners insurance.</p>
-      <p><strong>Inputs:</strong> The same mortgage inputs from Step 3 (home price, down payment, rate, term, tax rate, insurance).</p>
-      <p><strong>Outputs:</strong> Estimated monthly payment, payment composition by percentage, line-item totals for each component, loan amount, and total interest over the loan term. An interactive chart shows where each dollar goes.</p>
-      <p><strong>When to use it:</strong> To see how much of your monthly payment builds equity versus covers taxes and insurance, or to compare different rate or term combinations.</p>
-    </div>
-
-    <h2>Step 5 — Mortgage: Amortization Ledger</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=5">Open calculator &rarr;</a>
-      <h3>Mortgage: Amortization Ledger</h3>
-      <p><strong>What it computes:</strong> A year-by-year and month-by-month amortization schedule, with optional extra monthly and one-time balloon payments.</p>
-      <p><strong>Inputs:</strong> Extra monthly payment amount, balloon payment amount, and the month number in which the balloon applies.</p>
-      <p><strong>Outputs:</strong> Yearly principal paid, interest paid, and remaining balance. The tool reports interest saved and months saved if extra or balloon payments shorten the schedule. You can view every payment or export to CSV or PDF.</p>
-      <p><strong>When to use it:</strong> To understand how quickly you will pay off the loan, how much equity you will have in a given year, or how an extra payment strategy changes the timeline.</p>
-    </div>
-
-    <h2>Step 6 — Mortgage: Refinance Comparison</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=6">Open calculator &rarr;</a>
-      <h3>Mortgage: Refinance Comparison</h3>
-      <p><strong>What it computes:</strong> A side-by-side comparison of your current loan versus a refinanced loan at a new rate and term.</p>
-      <p><strong>Inputs:</strong> New interest rate and new loan term (30, 20, or 15 years). Current rate and term come from the mortgage steps.</p>
-      <p><strong>Outputs:</strong> Current monthly P&amp;I, new monthly P&amp;I, estimated monthly savings or cost increase, and lifetime interest on each loan.</p>
-      <p><strong>When to use it:</strong> When deciding whether to refinance. The comparison assumes the same loan amount and does not include closing costs, points, or rate-lock fees.</p>
-    </div>
-
-    <h2>Step 7 — Mortgage: Affordability</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=7">Open calculator &rarr;</a>
-      <h3>Mortgage: Affordability</h3>
-      <p><strong>What it computes:</strong> An estimate of how much home you can afford based on your income, existing debts, down payment, and an assumed interest rate.</p>
-      <p><strong>Inputs:</strong> Annual household income, other monthly debt payments, available down payment, and assumed interest rate.</p>
-      <p><strong>Outputs:</strong> Maximum home price estimate, estimated P&amp;I budget, and estimated debt-to-income ratio.</p>
-      <p><strong>When to use it:</strong> When shopping for a home and want a quick price-range sense before talking to a lender. The tool uses 28% and 36% DTI guidelines as planning figures, not lender requirements. It assumes a 30-year term and does not subtract tax or insurance from your budget.</p>
-    </div>
-
-    <h2>Step 8 — Market News &amp; Rates</h2>
-    <div class="help-card">
-      <a class="step-link" href="../tools/?step=8">Open calculator &rarr;</a>
-      <h3>Market News &amp; Rates</h3>
-      <p><strong>What it computes:</strong> A live snapshot of national mortgage rate averages and recent news headlines in home lending and small business financing.</p>
-      <p><strong>Inputs:</strong> None — this step pulls from a live feed.</p>
-      <p><strong>Outputs:</strong> The Freddie Mac Primary Mortgage Market Survey 30-year fixed, 15-year fixed, and 5/1 ARM averages, the prime rate, and up to ten recent news articles.</p>
-      <p><strong>When to use it:</strong> To see current rate averages before entering a mortgage or SBA scenario. Values are weekly survey averages, not personalized quotes, and the feed refreshes automatically while the tab is open.</p>
-    </div>
-
-    <h2>How the Steps Connect</h2>
-    <p>Each mortgage step builds on the previous one. Start with <a href="../tools/?step=3">Step 3</a> to enter home price, down payment, rate, and term. Step 4 shows how that payment breaks down. Step 5 adds the amortization schedule. Step 6 compares a refinance rate and term. Step 7 turns your income and debts into a price range.</p>
-    <p>For business financing, <a href="../tools/?step=0">Step 0</a> is the starting point. Step 1 expands it into a full amortization ledger, and <a href="../tools/?step=2">Step 2</a> models a separate revolving line of credit. Step 8 sits at the end of both flows and gives you live rate context.</p>
-
-    <div class="ad-slot" data-ad-format="horizontal" data-ad-name="calc-help-footer" style="margin-top:2rem;"></div>
-
-    <div class="disclaimer">
-      <p>This guide is for educational purposes only. It is not an offer or guarantee of credit, and it does not constitute financial, legal, or tax advice. Calculator outputs are estimates based on the inputs you provide. Always confirm rates, fees, and eligibility with a licensed lender before making a borrowing decision.</p>
-    </div>
-  </main>
+<main class="lf-page"><div class="lf-wrap">
+    <p class="lf-crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Calculator help</p>
+    <p class="lf-eyebrow">Guide</p><h1>Calculator Help: What Each Input Means</h1>
+    <p class="lf-lede">Every loan page has the calculators that fit that loan. This guide explains what to type into each one and how to read the answer.</p>
+    <div class="lf-layout"><article class="lf-main">
+    <h2>The basics, once</h2>
+    <ul><li><strong>Everything runs in your browser.</strong> The numbers you type are not sent to us or anyone else.</li>
+    <li><strong>Defaults are examples.</strong> Replace every number with your own. The rate fields start with typical figures, and the prime rate starts from the latest published value.</li>
+    <li><strong>Results are estimates.</strong> A lender's quote will include fees, insurance and underwriting details these tools cannot know.</li>
+    <li><strong>Numbers sit on the right</strong> of each box, next to their unit (%, years, $).</li></ul>
+    <h2>Calculator by calculator</h2>
+    <div class="lf-box" style="margin-bottom:1.2rem"><h3>SBA 7(a) and SBA Express</h3><p><strong>You enter:</strong> Loan amount, use of proceeds, base (prime) rate, lender spread, term, SBA guarantee, fee-waiver status, annual net operating income.</p><p><strong>You get:</strong> Monthly payment, interest rate, guaranteed portion, upfront guaranty fee, total interest, annual debt service and DSCR. Warns if the spread is above SBA's cap for the loan size or the term is longer than typical for the use.</p><p><strong>Tip:</strong> Leave the guarantee at 0 for the standard 85% (up to $150,000) or 75% (above). Express loans use 50%. The upfront fee may be passed on to you; the lender's annual service fee is shown in the notes for information only because the lender cannot charge it to you.</p><p><a href="/loans/sba-7a.html">Open the SBA 7(a) and SBA Express calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>SBA 504</h3><p><strong>You enter:</strong> Total project cost, bank rate, CDC debenture rate, term, new-business and special-purpose flags, fee-waiver status, annual net operating income.</p><p><strong>You get:</strong> The 50% bank, CDC and borrower-equity split, each piece's monthly payment, the combined payment, blended rate, SBA fees and DSCR.</p><p><strong>Tip:</strong> The CDC rate is fixed when the debenture is funded; ask a CDC for today's figure. New businesses and special-purpose properties each add 5 points of required equity, which reduces the CDC share.</p><p><a href="/loans/sba-504.html">Open the SBA 504 calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Payment calculator (Microloan, commercial term loan)</h3><p><strong>You enter:</strong> Loan amount, rate, term, optional annual net operating income.</p><p><strong>You get:</strong> Monthly payment, total interest, total repaid, and DSCR if you enter income.</p><p><strong>Tip:</strong> It assumes a fully amortizing loan. If your loan has a balloon payment, the real payment schedule will differ.</p><p><a href="/loans/commercial-term-loan.html">Open the Payment calculator (Microloan, commercial term loan) calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Business line of credit</h3><p><strong>You enter:</strong> Credit limit, base rate, lender spread, average share of the limit drawn, months of use, annual fee.</p><p><strong>You get:</strong> Monthly interest on the average drawn balance, interest and fees over the period, and the credit still available.</p><p><strong>Tip:</strong> It uses an average balance rather than a draw-by-draw schedule, so treat it as a planning estimate.</p><p><a href="/loans/line-of-credit.html">Open the Business line of credit calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Equipment financing</h3><p><strong>You enter:</strong> Equipment price, down payment, credit profile, equipment type, new or used, term.</p><p><strong>You get:</strong> Estimated rate, monthly payment, total interest, and a table of estimated rates for every credit profile.</p><p><strong>Tip:</strong> These are planning estimates from a model, not offers. See below for how the model works.</p><p><a href="/loans/equipment-financing.html">Open the Equipment financing calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Mortgage payment</h3><p><strong>You enter:</strong> Home price, down payment, rate, term, property tax rate, homeowner's insurance.</p><p><strong>You get:</strong> Principal and interest, tax, insurance, total monthly payment (PITI) and total interest.</p><p><strong>Tip:</strong> Mortgage insurance (PMI) and HOA dues are not included. With under 20% down, expect PMI on most conventional loans.</p><p><a href="/loans/mortgage.html">Open the Mortgage payment calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Home affordability</h3><p><strong>You enter:</strong> Household income, other monthly debts, down payment, rate, tax and insurance.</p><p><strong>You get:</strong> The home price that fits the 28% and 36% guidelines on a 30-year loan.</p><p><strong>Tip:</strong> Lenders can allow more or less than the guidelines.</p><p><a href="/loans/mortgage.html">Open the Home affordability calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>Refinance break-even</h3><p><strong>You enter:</strong> Original loan, current rate and term, years already paid, new rate and term, closing costs.</p><p><strong>You get:</strong> Balance today, monthly savings, break-even in months, interest saved or added, and the net result after closing costs.</p><p><strong>Tip:</strong> A longer new term can lower the payment while adding interest, so read both the break-even and the interest lines.</p><p><a href="/loans/mortgage.html">Open the Refinance break-even calculator &rarr;</a></p></div><div class="lf-box" style="margin-bottom:1.2rem"><h3>DSCR</h3><p><strong>You enter:</strong> Annual net operating income, loan amount, rate and term.</p><p><strong>You get:</strong> Debt service coverage ratio, the income needed to reach 1.25x, and your cushion.</p><p><strong>Tip:</strong> Lenders may adjust your income (add-backs) before calculating their own DSCR.</p><p><a href="/loans/sba-7a.html">Open the DSCR calculator &rarr;</a></p></div>
+    <h2>Reading DSCR</h2>
+    <p>The debt service coverage ratio is annual net operating income divided by annual loan payments. At 1.00 the business exactly covers the payments. Many lenders look for 1.25 or better. See <a href="/guides/dscr-explained.html">DSCR explained</a> for a worked example.</p>
+    <h2>When your number does not match a lender's</h2>
+    <p>The usual reasons are fees folded into the loan, a different term or amortization, a rate that changes over time, insurance or escrow, and the lender counting your income differently. Ask for the Loan Estimate or term sheet and compare line by line. If one of our figures looks wrong, <a href="/contact.html">tell us</a> and include the inputs you used.</p>
+    </article><aside class="lf-side"><div class="lf-box"><h3>Jump to a loan</h3><ul>
+      <li><a href="/loans/sba-7a.html">SBA 7(a)</a></li><li><a href="/loans/sba-504.html">SBA 504</a></li><li><a href="/loans/equipment-financing.html">Equipment financing</a></li><li><a href="/loans/line-of-credit.html">Line of credit</a></li><li><a href="/loans/mortgage.html">Mortgage</a></li><li><a href="/methodology.html">How our numbers work</a></li></ul></div>
+      <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-help-side"></div></aside></div>
+  </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div>
-        <h4>LoansFlow</h4>
-        <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <a href="../tools/">All calculators</a>
-        <a href="../tools/?step=8">Market news</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="../guides/">Guides</a>
-        <a href="../directory/">Directory</a>
-        <a href="../guides/checklist.html">Checklist</a>
-      </div>
-      <div>
-        <h4>Site</h4>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="../privacy.html">Privacy</a>
-        <a href="../disclaimer.html">Disclaimer</a>
-        <a href="../terms.html">Terms</a>
-      </div>
+      <div><h4>LoansFlow</h4><p>Plain-English guides and free calculators for business and home loans. Estimates only. We are not a lender.</p><p class="footer-motto"><em>Scientia potentia est.</em></p></div>
+      <div><h4>Loan types</h4><a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a><a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/alternative-financing/">Uncommon ways to finance</a><a href="/grants/">Search grants</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a></div>
+      <div><h4>Site</h4><a href="/directory/">Directory</a><a href="/about.html">About</a><a href="/methodology.html">How our numbers work</a><a href="/contact.html">Contact</a></div>
+      <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note">
-      &copy; 2026 LoansFlow.
-      All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.
-    </div>
+    <div class="footer-note">&copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
-  <script>
-    window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };
-  </script>
-  <script src="../js/ads.js" defer></script>
-  <script src="../js/offers.js" defer></script>
+  <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
+  <script src="/js/ads.js" defer></script>
+  <script src="/js/offers.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+
 </body>
 </html>

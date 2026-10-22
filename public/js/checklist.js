@@ -78,7 +78,7 @@ const CHECKLIST_DATA = [
   {
     group: "G. Before you submit",
     items: [
-      { id: "g1", label: "Run the payment and DSCR numbers", hint: "Use the SBA and commercial calculators at /tools/." },
+      { id: "g1", label: "Run the payment and DSCR numbers", hint: "Use the calculators on the loan-type pages at /loans/." },
       { id: "g2", label: "Verify broker licensing", hint: "Check NMLS at nmlsconsumeraccess.org." },
       { id: "g3", label: "Confirm no upfront fees", hint: "Reputable lenders do not collect fees before a commitment." },
       { id: "g4", label: "Read the fee disclosure (Form 159)", hint: "Understand what you are paying and to whom." },
