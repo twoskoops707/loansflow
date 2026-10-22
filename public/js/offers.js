@@ -15,7 +15,7 @@
     }
     el.hidden = false;
     el.innerHTML =
-      '<div class="lf-offers-head">Related options</div><ul class="lf-offers-list">' +
+      '<div class="lf-offers-head">Sponsored partner options</div><ul class="lf-offers-list">' +
       live
         .map(
           (o) =>
@@ -24,7 +24,7 @@
             '</li>'
         )
         .join('') +
-      '</ul>';
+      '</ul><p class="lf-offers-note">We may earn a commission if you apply through these links. It does not change how we describe any loan.</p>';
   }
 
   function ensureStyle() {
@@ -32,10 +32,10 @@
     const s = document.createElement('style');
     s.id = 'lf-offers-style';
     s.textContent =
-      '.lf-offers{margin:1.5rem 0;padding:1rem 0;border-top:1px solid rgba(0,0,0,.08)}' +
+      '.lf-offers{margin:1.5rem 0;padding:1rem 0;border-top:1px solid rgba(255,255,255,.14)}.lf-offers-note{font-size:.78rem;opacity:.65;margin:.8rem 0 0}.lf-offers[hidden]{display:none}' +
       '.lf-offers-head{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem}' +
       '.lf-offers-list{list-style:none;padding:0;margin:0;display:grid;gap:.65rem}' +
-      '.lf-offers-list a{font-weight:700;color:inherit}' +
+      '.lf-offers-list a{font-weight:700;color:var(--accent,#34d59a)}' +
       '.lf-offers-list span{display:block;font-size:.9rem;opacity:.75;margin-top:.15rem}';
     document.head.appendChild(s);
   }

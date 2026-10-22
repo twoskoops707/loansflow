@@ -5,31 +5,26 @@ Primary loader: `public/js/ads.js` (AdSense) — the only ad stack on the site. 
 
 Named ad units are being created one at a time under the new account and wired in via `data-ad-unit` on each `.ad-slot` div (see table below). Units without a real slot ID still request by client + format and collapse when unfilled — this is a fallback for units not yet created, not the intended end state.
 
-| Name | `data-ad-unit` slot ID |
-|------|------------------------|
-| `home-top` | `7525616235` |
+Slot IDs now live in one place: the `units` map at the top of `public/js/ads.js` (`units: { 'slot-name': 'slot ID' }`). A slot looks up its `data-ad-name` there unless the element carries its own `data-ad-unit`. Create each unit in AdSense (Ads > By ad unit > Display ads), paste the ID into the map, deploy. Auto Ads stay ON for the domain and serve regardless.
+
+| Name | Slot ID |
+|------|---------|
+| `home-top` | `7525616235` (no longer placed on the page; the home page is intentionally ad-free) |
 | everything else | not yet created |
 
-## Tools (`/tools/`) — highest RPM surface
-
-| Name | Format | Where | Viewport |
-|------|--------|-------|----------|
-| `tools-top` | horizontal / responsive leaderboard | Above calculator main | All |
-| `tools-sidebar` | rectangle (~300×250) | Left nav under step list | Desktop ≥901px only |
-| `tools-incontent` | rectangle | After first calculator panel (every step) | All |
-| `tools-anchor` | horizontal sticky | Fixed bottom bar | Mobile ≤900px only |
-| `tools-news-mid` | fluid in-article | After news cards (Market News step only) | All |
-
-**Typical visible density:** desktop = top + sidebar + in-content (3); mobile = top + in-content + sticky anchor (3).
-
-## Home (`/`)
+## Where the slots are
 
 | Name | Format | Where |
 |------|--------|-------|
-| `home-top` | horizontal leaderboard | Above tool grid |
-| `home-mid` | rectangle | After tool grid |
-| `home-related` | multiplex (`autorelaxed`) | Monetize section |
-| `home-prefooter` | horizontal | Above footer |
+| `<loan>-mid` | rectangle | Loan pages: after the calculators and figures, before "How to apply" |
+| `<loan>-side` | rectangle (300x250) | Loan pages: bottom of the sticky sidebar (desktop; stacks below on tablets and phones) |
+| `loans-index`, `news-mid`, `wisdom-mid`, `alt-mid`, `grants-mid` | rectangle | Mid-page on the matching page |
+| `calc-help-side` | rectangle | Calculator Help sidebar |
+| guides | rectangle | One slot near the top of each guide (existing pages) |
+
+`<loan>` is one of `sba-7a`, `sba-504`, `sba-express`, `sba-microloan`, `line-of-credit`, `commercial-term-loan`, `equipment-financing`, `mortgage`.
+
+Placement rules: keep ads away from inputs and buttons (accidental clicks violate AdSense policy), never click your own ads, and never put affiliate links inside an ad slot. Affiliate and partner links go in the `lf-offers` block (see `public/data/offers.json`), which is labeled "Sponsored partner options" and only renders offers marked `live`.
 
 ## Empty-fill behavior
 

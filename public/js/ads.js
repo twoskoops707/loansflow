@@ -19,6 +19,16 @@
       // cache). A collapsed slot that later fills is un-hidden again, so a
       // real ad can never stay invisible because it arrived late.
       lateFillWatchMs: 90000,
+      // Named ad units. Create each unit in AdSense (Ads > By ad unit), then paste its slot ID here.
+      // A slot whose name is not listed (or is empty) still requests by client + format.
+      units: {
+        'home-top': '7525616235',
+        // 'loans-index': '', 'news-mid': '', 'wisdom-mid': '', 'alt-mid': '', 'grants-mid': '', 'calc-help-side': '',
+        // per loan page: 'sba-7a-mid', 'sba-7a-side', 'sba-504-mid', 'sba-504-side', 'sba-express-mid', 'sba-express-side',
+        // 'sba-microloan-mid', 'sba-microloan-side', 'line-of-credit-mid', 'line-of-credit-side',
+        // 'commercial-term-loan-mid', 'commercial-term-loan-side', 'equipment-financing-mid', 'equipment-financing-side',
+        // 'mortgage-mid', 'mortgage-side'
+      },
     },
     window.LOANSFLOW_ADS || {}
   );
@@ -131,8 +141,9 @@
       if (preset.minWidth) ins.style.minWidth = preset.minWidth;
 
       ins.setAttribute('data-ad-client', CONFIG.adsenseClient);
-      if (el.dataset.adUnit) {
-        ins.setAttribute('data-ad-slot', el.dataset.adUnit);
+      const unitId = el.dataset.adUnit || (CONFIG.units || {})[el.dataset.adName || ''] || '';
+      if (unitId) {
+        ins.setAttribute('data-ad-slot', unitId);
         el.dataset.adUnitState = 'wired';
       } else {
         el.dataset.adUnitState = 'client-only';
