@@ -225,9 +225,11 @@ async function buildPayload() {
   let prime = null;
   try {
     // WSJ/bank prime rate, daily, via FRED (keyless CSV). Drives SBA + LOC defaults.
+    // Accept only real CSV rows (YYYY-MM-DD,value) with a plausible rate; an HTML error page must never parse as data.
     const rows = (await fetchText('https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME'))
-      .trim().split(/\r?\n/).slice(1).map((l) => l.split(','))
-      .filter(([, v]) => !Number.isNaN(parseFloat(v)));
+      .trim().split(/\r?\n/).filter((l) => /^\d{4}-\d{2}-\d{2},/.test(l)).map((l) => l.split(','))
+      .filter(([, v]) => { const n = parseFloat(v); return n > 0 && n < 30; });
+    if (!rows.length) throw new Error('no valid DPRIME rows');
     const [asOf, v] = rows[rows.length - 1];
     prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
   } catch (err) {

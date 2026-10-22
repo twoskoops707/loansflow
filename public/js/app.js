@@ -1922,7 +1922,7 @@ function applyLiveRates(data) {
   const pct = (re) => { const c = cells.find(c => re.test(c.label || '')); const n = c && parseFloat(c.value); return Number.isFinite(n) ? n : null; };
   const fixed30 = pct(/30.?yr fixed/i);
   const refi = pct(/refinance/i) ?? fixed30;
-  const prime = data && data.prime && Number.isFinite(data.prime.value) ? data.prime.value : null;
+  const prime = data && data.prime && Number.isFinite(data.prime.value) && data.prime.value > 0 && data.prime.value < 30 ? data.prime.value : null;
   const live = { rate: fixed30, affordRate: fixed30, newRate: refi, bizPrimeRate: prime, locPrimeRate: prime };
   let changed = false;
   for (const k in live) {

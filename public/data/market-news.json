@@ -21,13 +21,9 @@
         "note": "Approx. vs purchase avg."
       }
     ],
-    "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
+    "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey\u00ae. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
   },
-  "prime": {
-    "value": 400,
-    "asOf": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
-    "source": "FRED (DPRIME)"
-  },
+  "prime": null,
   "articles": [
     {
       "category": "Rates",
@@ -88,7 +84,7 @@
     {
       "category": "Rates",
       "source": "The Washington Post",
-      "title": "Why buying a house feels so painful now — and your parents may not understand",
+      "title": "Why buying a house feels so painful now \u2014 and your parents may not understand",
       "summary": "The Washington Post coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb2d1bFhWdzVOVzJ1Nk1yNXFQOGFrRTBiNWdiaWRXX3dGb0lMUWlsQmk3cENVa0x6alNIR2gxUHVjZ0p0dkc4NmxnWUd0N1B4ZTRtWVJodHJSWko5ZFBFNklzdnp3ejNwRmV2dXZYQTFBa3FXcWVuNmcyckI2dVhaUTVLaUtGSE9XQWJWUmFUX3N4NEhpek5MVEFZRjR1MFd1ZDJZOTRBclFyRkJqcm1jTmJDYmNxY2ZCdnc?oc=5",
       "publishedAt": "2026-10-18T16:00:00.000Z"

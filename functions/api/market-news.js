@@ -241,11 +241,13 @@ async function buildPayload() {
       const rows = csv
         .trim()
         .split(/\r?\n/)
-        .slice(1)
+        .filter((l) => /^\d{4}-\d{2}-\d{2},/.test(l))
         .map((l) => l.split(','))
-        .filter(([, v]) => !Number.isNaN(parseFloat(v)));
-      const [asOf, v] = rows[rows.length - 1];
-      prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+        .filter(([, v]) => { const n = parseFloat(v); return n > 0 && n < 30; });
+      if (rows.length) {
+        const [asOf, v] = rows[rows.length - 1];
+        prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+      }
     }
   } catch (err) {
     errors.push(`prime: ${err.message}`);
