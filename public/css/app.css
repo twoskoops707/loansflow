@@ -1169,3 +1169,12 @@ dd.sba-ok { color: var(--accent); } dd.sba-warn { color: #ffb020; } dd.sba-no { 
 .report-opt input { width: auto; flex: 0 0 auto; padding: 0; }
 .report-opts { gap: 0.4rem; }
 .report-opt { padding: 0.55rem 0.8rem; }
+
+/* Numbers sit on the right, next to their unit (%, years, $ suffix), in every calculator input. */
+.input-wrap input[type="number"],
+.intro-input input[type="number"] { text-align: right; }
+.input-wrap input[type="number"]::-webkit-outer-spin-button,
+.input-wrap input[type="number"]::-webkit-inner-spin-button,
+.intro-input input[type="number"]::-webkit-outer-spin-button,
+.intro-input input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.input-wrap input[type="number"], .intro-input input[type="number"] { -moz-appearance: textfield; appearance: textfield; }

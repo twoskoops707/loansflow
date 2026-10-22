@@ -15,6 +15,8 @@ const state = {
   // refinance
   newRate: 5.9,
   newTerm: 30,
+  refiYearsPaid: 2,     // years of payments already made on the current loan
+  refiClosingCosts: 5000,
   // affordability
   income: 95000,
   monthlyDebts: 450,
@@ -170,6 +172,49 @@ function mortgageMetrics(s){
   const tax = (s.homePrice * s.taxRate / 100) / 12;
   const insurance = s.insurance / 12;
   return { principal, pi, tax, insurance, total: pi + tax + insurance, interest: pi * s.term * 12 - principal };
+}
+
+// Affordability: the 28% front-end limit covers the WHOLE housing payment (principal, interest, taxes, insurance),
+// and the 36% back-end limit covers housing plus other debts. Taxes and insurance reduce what is left for principal and interest.
+function affordMetrics(s){
+  s = s || state;
+  const monthlyIncome = s.income/12;
+  const maxHousingPayment = monthlyIncome * 0.28;
+  const backEndRoom = monthlyIncome * 0.36 - s.monthlyDebts;
+  const budgetPITI = Math.max(0, Math.min(maxHousingPayment, backEndRoom));
+  const f = monthlyPI(1, s.affordRate, 30);          // monthly P&I per $1 borrowed (30-year)
+  const t = (s.taxRate/100)/12;                      // monthly tax per $1 of price
+  const ins = s.insurance/12;
+  const room = budgetPITI - ins;
+  let maxHomePrice = 0;
+  if(room > 0){
+    maxHomePrice = Math.max(0, (room + s.affordDownPayment*f) / (f + t));
+  }
+  const maxPrincipal = Math.max(0, maxHomePrice - s.affordDownPayment);
+  const pi = maxPrincipal * f;
+  const tax = maxHomePrice * t;
+  const backEndDti = ((s.monthlyDebts + budgetPITI) / monthlyIncome) * 100;
+  return { monthlyIncome, maxHousingPayment, budgetPITI, maxPrincipal, maxHomePrice, pi, tax, ins, backEndDti };
+}
+
+// Refinance: the current loan is partly paid down, so compare what is left of it against a new loan on that balance.
+function refiMetrics(s){
+  s = s || state;
+  const principal = Math.max(0, s.homePrice - s.downPayment);
+  const n = s.term*12;
+  const paid = Math.min(Math.max(0, Math.round(s.refiYearsPaid*12)), n - 1);
+  const r = (s.rate/100)/12;
+  const currentPI = monthlyPI(principal, s.rate, s.term);
+  const balance = r === 0 ? principal*(1 - paid/n) : principal * (Math.pow(1+r,n) - Math.pow(1+r,paid)) / (Math.pow(1+r,n) - 1);
+  const remainingMonths = n - paid;
+  const newPI = monthlyPI(balance, s.newRate, s.newTerm);
+  const remainingInterestCurrent = currentPI*remainingMonths - balance;
+  const newInterest = newPI*s.newTerm*12 - balance;
+  const monthlySavings = currentPI - newPI;
+  const interestChange = remainingInterestCurrent - newInterest;      // positive = interest saved
+  const totalCostChange = interestChange - s.refiClosingCosts;        // after closing costs
+  const breakEvenMonths = monthlySavings > 0 ? s.refiClosingCosts / monthlySavings : null;
+  return { principal, paid, balance, remainingMonths, currentPI, newPI, monthlySavings, remainingInterestCurrent, newInterest, interestChange, totalCostChange, breakEvenMonths };
 }
 
 function businessMetrics(s){
@@ -441,8 +486,8 @@ function printStep0(){
   const annualDebtService = pi*12;
   const dscr = state.bizNOI / annualDebtService;
   const isSba = state.bizLoanType === 'sba7a' || state.bizLoanType === 'sba504';
-  const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct) : null;
-  const annualServiceFee = isSba ? state.bizLoanAmount*(state.bizGuarantyPct/100)*0.0055 : 0;
+  const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct, state.bizLoanType) : null;
+  const annualServiceFee = isSba ? guarantyInfo.annualFee : 0;
   let balloonBalance = null;
   if(state.bizBalloonYears > 0 && state.bizBalloonYears < state.bizAmortYears){
     const fullSchedule = buildAmortization(state.bizLoanAmount, rate, state.bizAmortYears);
@@ -461,9 +506,9 @@ function printStep0(){
     printRow('Debt service coverage (DSCR)', dscr.toFixed(2) + 'x')
   ];
   if(isSba){
-    rows.push(printRow('SBA guaranty', state.bizGuarantyPct + '%'));
+    rows.push(printRow(guarantyInfo.kind === '504' ? 'SBA-backed debenture (40%)' : 'SBA guaranty', guarantyInfo.kind === '504' ? fmtMoney(guarantyInfo.guaranteedPortion, 0) : state.bizGuarantyPct + '%'));
     rows.push(printRow('Est. upfront guaranty fee (' + guarantyInfo.feePct + '%)', fmtMoney(guarantyInfo.fee, 0)));
-    rows.push(printRow('Est. annual service fee (0.55%)', fmtMoney(annualServiceFee, 0)));
+    rows.push(printRow('SBA annual service fee (' + guarantyInfo.annualPct + '%, lender-paid)', fmtMoney(annualServiceFee, 0)));
   }
   if(balloonBalance !== null) rows.push(printRow('Balloon due — year ' + state.bizBalloonYears, fmtMoney(balloonBalance, 0)));
   return printReportShell(`
@@ -635,43 +680,36 @@ function printStep5(){
 }
 
 function printStep6(){
-  const principal = Math.max(0, state.homePrice - state.downPayment);
-  const currentPI = monthlyPI(principal, state.rate, state.term);
-  const newPI = monthlyPI(principal, state.newRate, state.newTerm);
-  const monthlySavings = currentPI - newPI;
-  const lifetimeCurrent = currentPI*state.term*12;
-  const lifetimeNew = newPI*state.newTerm*12;
-  const lifetimeSavings = lifetimeCurrent - lifetimeNew;
+  const rm = refiMetrics(state);
+  const { principal, balance, currentPI, newPI, monthlySavings } = rm;
   return printReportShell(`
     <div class="print-report-grid">
-      <div class="print-report-card"><span>Current monthly P&amp;I</span><strong>${fmtMoney(currentPI, 2)}</strong><small>${state.rate}% &middot; ${state.term} years</small></div>
+      <div class="print-report-card"><span>Current monthly P&amp;I</span><strong>${fmtMoney(currentPI, 2)}</strong><small>${state.rate}% &middot; ${fmt(rm.remainingMonths/12, 1)} years left</small></div>
       <div class="print-report-card"><span>Refinanced monthly P&amp;I</span><strong>${fmtMoney(newPI, 2)}</strong><small>${state.newRate}% &middot; ${state.newTerm} years</small></div>
       <div class="print-report-card"><span>Monthly change</span><strong>${monthlySavings >= 0 ? '&minus;' + fmtMoney(monthlySavings, 2) : '+' + fmtMoney(Math.abs(monthlySavings), 2)}</strong><small>${monthlySavings >= 0 ? 'lower payment' : 'higher payment'}</small></div>
-      <div class="print-report-card"><span>Lifetime interest change</span><strong>${lifetimeSavings >= 0 ? '&minus;' + fmtMoney(lifetimeSavings, 0) : '+' + fmtMoney(Math.abs(lifetimeSavings), 0)}</strong><small>${lifetimeSavings >= 0 ? 'saved over the new term' : 'paid over the new term'}</small></div>
+      <div class="print-report-card"><span>Break-even</span><strong>${rm.breakEvenMonths === null ? 'n/a' : fmt(rm.breakEvenMonths, 1) + ' mo'}</strong><small>on ${fmtMoney(state.refiClosingCosts, 0)} closing costs</small></div>
     </div>
-    ${printSectionTitle('Comparison on ' + fmtMoney(principal, 0) + ' financed')}
+    ${printSectionTitle('Comparison on a ' + fmtMoney(balance, 0) + ' balance')}
     <div class="print-report-table">
+      ${printRow('Original loan amount', fmtMoney(principal, 0))}
+      ${printRow('Years already paid', state.refiYearsPaid + ' years')}
+      ${printRow('Balance today', fmtMoney(balance, 0))}
       ${printRow('Current rate', state.rate + '%')}
-      ${printRow('Current term', state.term + ' years')}
-      ${printRow('Current monthly P&amp;I', fmtMoney(currentPI, 2))}
-      ${printRow('Current lifetime interest', fmtMoney(lifetimeCurrent - principal, 0))}
+      ${printRow('Interest still to pay on current loan', fmtMoney(rm.remainingInterestCurrent, 0))}
       ${printRow('New rate', state.newRate + '%')}
       ${printRow('New term', state.newTerm + ' years')}
       ${printRow('New monthly P&amp;I', fmtMoney(newPI, 2))}
-      ${printRow('New lifetime interest', fmtMoney(lifetimeNew - principal, 0))}
+      ${printRow('Interest over new term', fmtMoney(rm.newInterest, 0))}
+      ${printRow('Closing costs', fmtMoney(state.refiClosingCosts, 0))}
+      ${printRow('Net ' + (rm.totalCostChange >= 0 ? 'saving' : 'cost') + ' after closing costs', fmtMoney(Math.abs(rm.totalCostChange), 0))}
     </div>
   `);
 }
 
 function printStep7(){
-  const monthlyIncome = state.income/12;
-  const maxHousingPayment = monthlyIncome * 0.28;
-  const budgetForPI = Math.min(maxHousingPayment, monthlyIncome*0.36 - state.monthlyDebts);
-  const r = (state.affordRate/100)/12;
-  const n = 30*12;
-  const maxPrincipal = budgetForPI > 0 ? budgetForPI * (Math.pow(1+r,n)-1) / (r*Math.pow(1+r,n)) : 0;
-  const maxHomePrice = Math.max(0, maxPrincipal + state.affordDownPayment);
-  const currentDebtToIncome = ((state.monthlyDebts + budgetForPI) / monthlyIncome) * 100;
+  const am = affordMetrics(state);
+  const { monthlyIncome, maxHousingPayment, budgetPITI: budgetForPI, maxPrincipal, maxHomePrice } = am;
+  const currentDebtToIncome = am.backEndDti;
   return printReportShell(`
     <div class="print-report-grid">
       <div class="print-report-card"><span>Estimated affordable home price</span><strong>${fmtMoney(maxHomePrice, 0)}</strong><small>${fmtMoney(state.affordDownPayment, 0)} down available</small></div>
@@ -685,7 +723,7 @@ function printStep7(){
       ${printRow('Assumed interest rate', state.affordRate + '%')}
       ${printRow('Monthly income', fmtMoney(monthlyIncome, 0))}
       ${printRow('Max housing payment (28% rule)', fmtMoney(maxHousingPayment, 0))}
-      ${printRow('Monthly P&amp;I budget (28/36 rule)', fmtMoney(Math.max(0, budgetForPI), 0))}
+      ${printRow('Housing payment budget incl. tax &amp; insurance (28/36 rule)', fmtMoney(Math.max(0, budgetForPI), 0))}
       ${printRow('Maximum loan amount (30-yr)', fmtMoney(maxPrincipal, 0))}
       ${printRow('Estimated affordable home price', fmtMoney(maxHomePrice, 0))}
     </div>
@@ -1282,14 +1320,8 @@ function renderStep2(){
 
 // ---------- RENDER: STEP 3 — REFINANCE ----------
 function renderStep3(){
-  const principal = state.homePrice - state.downPayment;
-  const currentPI = monthlyPI(principal, state.rate, state.term);
-  const newPI = monthlyPI(principal, state.newRate, state.newTerm);
-  const monthlySavings = currentPI - newPI;
-  const lifetimeCurrent = currentPI*state.term*12;
-  const lifetimeNew = newPI*state.newTerm*12;
-  const lifetimeSavings = lifetimeCurrent - lifetimeNew;
-
+  const rm = refiMetrics(state);
+  const { principal, balance, currentPI, newPI, monthlySavings } = rm;
   return `
     <div class="eyebrow">Step 07 &middot; Mortgage Tools</div>
     <h1>Refinance Comparison</h1>
@@ -1310,20 +1342,33 @@ function renderStep3(){
         </div>
       </div>
 
+      <div class="field-grid" style="padding-top:0; padding-bottom:0;">
+        <div class="field">
+          <label for="refiYearsPaid">Years Already Paid</label>
+          <div class="input-wrap"><input id="refiYearsPaid" type="number" value="${state.refiYearsPaid}" min="0" max="${state.term-1}" step="1"><span>years</span></div>
+        </div>
+        <div class="field">
+          <label for="refiClosingCosts">Refinance Closing Costs</label>
+          <div class="input-wrap"><span>$</span><input id="refiClosingCosts" type="number" value="${state.refiClosingCosts}" min="0" step="250"></div>
+        </div>
+      </div>
+
       <div class="compare-grid">
         <div class="compare-col">
-          <h3>Current Loan</h3>
+          <h3>Current Loan (remaining)</h3>
           <div class="compare-row"><span>Rate</span><span class="num">${state.rate}%</span></div>
-          <div class="compare-row"><span>Term</span><span class="num">${state.term} yrs</span></div>
+          <div class="compare-row"><span>Time left</span><span class="num">${fmt(rm.remainingMonths/12,1)} yrs</span></div>
+          <div class="compare-row"><span>Balance today</span><span class="num">${fmtMoney(balance,0)}</span></div>
           <div class="compare-row"><span>Monthly P&amp;I</span><span class="num">${fmtMoney(currentPI,2)}</span></div>
-          <div class="compare-row"><span>Lifetime Interest</span><span class="num">${fmtMoney(lifetimeCurrent-principal,0)}</span></div>
+          <div class="compare-row"><span>Interest still to pay</span><span class="num">${fmtMoney(rm.remainingInterestCurrent,0)}</span></div>
         </div>
         <div class="compare-col new">
           <h3>Refinanced Loan</h3>
           <div class="compare-row"><span>Rate</span><span class="num">${state.newRate}%</span></div>
           <div class="compare-row"><span>Term</span><span class="num">${state.newTerm} yrs</span></div>
+          <div class="compare-row"><span>New loan amount</span><span class="num">${fmtMoney(balance,0)}</span></div>
           <div class="compare-row"><span>Monthly P&amp;I</span><span class="num">${fmtMoney(newPI,2)}</span></div>
-          <div class="compare-row"><span>Lifetime Interest</span><span class="num">${fmtMoney(lifetimeNew-principal,0)}</span></div>
+          <div class="compare-row"><span>Interest over new term</span><span class="num">${fmtMoney(rm.newInterest,0)}</span></div>
         </div>
       </div>
 
@@ -1331,6 +1376,14 @@ function renderStep3(){
         <div class="label">Estimated Monthly Savings</div>
         <div class="value">${monthlySavings >= 0 ? fmtMoney(monthlySavings,2)+' / month' : '&minus;'+fmtMoney(Math.abs(monthlySavings),2)+' / month'}</div>
       </div>
+      <div class="breakdown" style="padding-top:0;">
+        <div class="line-item"><span>Break-even on closing costs</span><span class="num">${rm.breakEvenMonths === null ? 'No monthly savings' : fmt(rm.breakEvenMonths,1)+' months'}</span></div>
+        <div class="line-item"><span>Interest ${rm.interestChange >= 0 ? 'saved' : 'added'} (before closing costs)</span><span class="num">${fmtMoney(Math.abs(rm.interestChange),0)}</span></div>
+        <div class="line-item"><span>Net ${rm.totalCostChange >= 0 ? 'saving' : 'cost'} after closing costs</span><span class="num">${fmtMoney(Math.abs(rm.totalCostChange),0)}</span></div>
+      </div>
+      <p style="padding:0 2rem 1.5rem; font-size:0.78rem; color:var(--muted); font-family:'Inter',sans-serif;">
+        Compares what you still owe on the current loan with a new loan for that balance, paying the closing costs out of pocket. A longer new term can lower the payment while adding interest, so check both the break-even and the interest figures.
+      </p>
 
       <div class="actions" style="padding-top:0;">
         <button class="btn-ghost" id="backTo2">&larr; Back</button>
@@ -1344,18 +1397,9 @@ function renderStep3(){
 
 // ---------- RENDER: STEP 4 — AFFORDABILITY ----------
 function renderStep4(){
-  const monthlyIncome = state.income/12;
-  const maxHousingPayment = monthlyIncome * 0.28; // front-end DTI guideline
-  const maxTotalDebtPayment = monthlyIncome * 0.36 - state.monthlyDebts; // back-end
-  const maxPayment = Math.max(0, Math.min(maxHousingPayment, maxTotalDebtPayment + maxHousingPayment*0));
-  // solve for max principal given maxHousingPayment as P&I budget (roughly, ignoring tax/ins split for simplicity here)
-  const r = (state.affordRate/100)/12;
-  const n = 30*12;
-  const budgetForPI = Math.min(maxHousingPayment, monthlyIncome*0.36 - state.monthlyDebts);
-  const maxPrincipal = budgetForPI * (Math.pow(1+r,n)-1) / (r*Math.pow(1+r,n));
-  const maxHomePrice = Math.max(0, maxPrincipal + state.affordDownPayment);
-
-  const currentDebtToIncome = ((state.monthlyDebts + budgetForPI) / monthlyIncome) * 100;
+  const am = affordMetrics(state);
+  const { monthlyIncome, maxHousingPayment, budgetPITI: budgetForPI, maxPrincipal, maxHomePrice } = am;
+  const currentDebtToIncome = am.backEndDti;
   const dtiColor = currentDebtToIncome > 43 ? 'var(--danger)' : currentDebtToIncome > 36 ? 'var(--gold)' : 'var(--principal)';
 
   return `
@@ -1387,6 +1431,7 @@ function renderStep4(){
         <div class="value">${fmtMoney(maxHomePrice,0)}</div>
         <div class="dti-bar"><div class="fill" style="width:${Math.min(currentDebtToIncome,100)}%; background:${dtiColor};"></div></div>
         <div class="dti-note">Estimated debt-to-income ratio: ${currentDebtToIncome.toFixed(1)}% (lenders typically look for 36% or below, up to 43% for some loan types)</div>
+        <div class="dti-note" style="margin-top:0.5rem;">Assumes a 30-year loan, property tax of ${state.taxRate}% of price and homeowner's insurance of ${fmtMoney(state.insurance,0)}/year (edit these in Mortgage Details). Housing payment budget: ${fmtMoney(budgetForPI,0)}/month. Mortgage insurance and HOA dues are not included.</div>
       </div>
 
       <div class="actions" style="padding-top:0;">
@@ -1399,21 +1444,35 @@ function renderStep4(){
   `;
 }
 
-function estimateSbaGuarantyFee(loanAmount, guarantyPct){
-  const guaranteedPortion = loanAmount * (guarantyPct/100);
-  // Illustrative FY tranche schedule for 7(a) loans w/ maturity > 12 months
-  // (standard, non-manufacturer, non-veteran). Confirm exact figure with lender.
-  let feePct;
-  if(guaranteedPortion <= 150000){
-    feePct = 2.0;
-  } else if(guaranteedPortion <= 700000){
-    feePct = 3.0;
-  } else if(guaranteedPortion <= 1000000){
-    feePct = 3.5;
-  } else {
-    feePct = 3.75;
+// Official FY 2027 SBA fee rules (effective Oct 1, 2026): Information Notice 5000-881797 (7(a)) and 5000-881796 (504).
+// 7(a): the tier comes from the GROSS loan amount; the percentage applies to the guaranteed portion.
+//   <= $150,000: 2%   |   $150,001-$700,000: 3%   |   $700,001-$5M: 3.5% of the guaranteed portion up to $1M + 3.75% above $1M.
+//   The lender's annual service fee (0.55% of the guaranteed balance) is paid by the lender and cannot be billed to the borrower.
+//   Manufacturers, food supply chain and rural businesses pay 0% on loans of $700,000 or less.
+// 504: upfront 0.50% and annual 0.203% of the SBA-backed debenture (about 40% of the project); waived for manufacturers/rural/food supply.
+function estimateSbaGuarantyFee(loanAmount, guarantyPct, loanType){
+  if(loanType === 'sba504'){
+    const debenture = loanAmount * 0.40;
+    return { kind:'504', guaranteedPortion: debenture, fee: debenture*0.005, feePct: 0.5, annualFee: debenture*0.00203, annualPct: 0.203 };
   }
-  return { fee: guaranteedPortion * (feePct/100), feePct, guaranteedPortion };
+  const guaranteed = loanAmount * (guarantyPct/100);
+  let fee;
+  if(loanAmount <= 150000){
+    fee = guaranteed * 0.02;
+  } else if(loanAmount <= 700000){
+    fee = guaranteed * 0.03;
+  } else {
+    fee = Math.min(guaranteed, 1000000) * 0.035 + Math.max(0, guaranteed - 1000000) * 0.0375;
+  }
+  return { kind:'7a', guaranteedPortion: guaranteed, fee, feePct: guaranteed > 0 ? Math.round(fee/guaranteed*10000)/100 : 0, annualFee: guaranteed*0.0055, annualPct: 0.55 };
+}
+
+// SBA maximum rate over base rate for variable-rate 7(a) loans (sba.gov, 7(a) program terms).
+function sba7aMaxSpread(loanAmount){
+  if(loanAmount <= 50000) return 6.5;
+  if(loanAmount <= 250000) return 6.0;
+  if(loanAmount <= 350000) return 4.5;
+  return 3.0;
 }
 
 // ---------- RENDER: STEP 5 — SBA & COMMERCIAL LOAN ----------
@@ -1424,8 +1483,8 @@ function renderStep5(){
   const dscr = state.bizNOI / annualDebtService;
 
   const isSba = state.bizLoanType === 'sba7a' || state.bizLoanType === 'sba504';
-  const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct) : null;
-  const annualServiceFee = isSba ? state.bizLoanAmount*(state.bizGuarantyPct/100)*0.0055 : 0;
+  const guarantyInfo = isSba ? estimateSbaGuarantyFee(state.bizLoanAmount, state.bizGuarantyPct, state.bizLoanType) : null;
+  const annualServiceFee = isSba ? guarantyInfo.annualFee : 0;
 
   // balloon handling — reuse the amortization engine
   let balloonBalance = null;
@@ -1435,6 +1494,9 @@ function renderStep5(){
     balloonBalance = fullSchedule[Math.min(idx, fullSchedule.length-1)].balance;
   }
 
+  const maxSpread = sba7aMaxSpread(state.bizLoanAmount);
+  const spreadWarn = (state.bizLoanType === 'sba7a' && state.bizSpread > maxSpread)
+    ? `<p style="padding:0 2rem 1rem; font-size:0.8rem; color:var(--danger); font-family:'Inter',sans-serif;">SBA caps the spread on variable-rate 7(a) loans of ${fmtMoney(state.bizLoanAmount,0)} at base rate + ${maxSpread}%. A ${state.bizSpread}% spread is above that cap.</p>` : '';
   const dscrColor = dscr >= 1.25 ? 'var(--principal)' : dscr >= 1.0 ? 'var(--gold)' : 'var(--danger)';
   const dscrNote = dscr >= 1.25
     ? 'Meets the typical 1.25x DSCR threshold most SBA and commercial lenders require.'
@@ -1492,6 +1554,7 @@ function renderStep5(){
         <div class="value">${fmtMoney(pi,0)}<small> / month</small></div>
       </div>
 
+      ${spreadWarn}
       <div class="breakdown">
         <div class="line-item"><span>Annual Debt Service</span><span class="num">${fmtMoney(annualDebtService,0)}</span></div>
         <div class="line-item"><span>Annual Net Operating Income</span><span class="num">${fmtMoney(state.bizNOI,0)}</span></div>
@@ -1510,12 +1573,12 @@ function renderStep5(){
 
       ${isSba ? `
       <div class="breakdown" style="padding-top:0;">
-        <div class="line-item"><span>Guaranteed Portion (${state.bizGuarantyPct}%)</span><span class="num">${fmtMoney(guarantyInfo.guaranteedPortion,0)}</span></div>
+        <div class="line-item"><span>${guarantyInfo.kind === '504' ? 'SBA-Backed Debenture (about 40% of project)' : 'Guaranteed Portion (' + state.bizGuarantyPct + '%)'}</span><span class="num">${fmtMoney(guarantyInfo.guaranteedPortion,0)}</span></div>
         <div class="line-item"><span>Est. Upfront Guaranty Fee (${guarantyInfo.feePct}%)</span><span class="num">${fmtMoney(guarantyInfo.fee,0)}</span></div>
-        <div class="line-item"><span>Est. Annual Service Fee (0.55%)</span><span class="num">${fmtMoney(annualServiceFee,0)}</span></div>
+        <div class="line-item"><span>SBA Annual Service Fee (${guarantyInfo.annualPct}%) &middot; paid by the lender, not billed to you</span><span class="num">${fmtMoney(annualServiceFee,0)}</span></div>
       </div>
       <p style="padding:0 2rem 1.5rem; font-size:0.78rem; color:var(--muted); font-family:'Inter',sans-serif;">
-        Guaranty fee shown is an estimate based on published FY tranche schedules for standard, non-manufacturer 7(a) loans over 12 months maturity. Manufacturers and loans under $150k may qualify for reduced or waived fees. Confirm exact figures with your SBA lender.
+        Fees follow SBA's FY 2027 schedules (effective Oct 1, 2026). ${guarantyInfo.kind === '504' ? '504 fees are 0.50% upfront and 0.203% annually on the SBA-backed debenture.' : '7(a) upfront fees are 2% (loans up to $150,000), 3% ($150,001 to $700,000), or 3.5% on the first $1M of the guaranteed portion plus 3.75% above it (over $700,000), applied to the guaranteed portion.'} Manufacturers, food supply chain businesses and rural businesses may pay 0% upfront on loans of $700,000 or less. The lender may pass the upfront fee on to you; confirm the exact figures with your lender.
       </p>
       ` : ''}
 
@@ -2488,7 +2551,7 @@ function attachHandlers(){
 
   const toAfford = document.getElementById('toAfford');
   if(toAfford) toAfford.addEventListener('click', ()=>{
-    readInputs(['newRate']);
+    readInputs(['newRate','refiYearsPaid','refiClosingCosts']);
     const newTermEl = document.getElementById('newTerm');
     if(newTermEl) state.newTerm = parseInt(newTermEl.value);
     state.step = 7; render();
@@ -2577,10 +2640,10 @@ function attachHandlers(){
   });
 
   // live-recalc on refi/afford field changes
-  ['newRate','newTerm'].forEach(id=>{
+  ['newRate','newTerm','refiYearsPaid','refiClosingCosts'].forEach(id=>{
     const el = document.getElementById(id);
     if(el) el.addEventListener('change', ()=>{
-      readInputs(['newRate']);
+      readInputs(['newRate','refiYearsPaid','refiClosingCosts']);
       const t = document.getElementById('newTerm');
       if(t) state.newTerm = parseInt(t.value);
       render();

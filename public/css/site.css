@@ -599,3 +599,6 @@ a { color: inherit; text-decoration: none; }
     transition: none !important;
   }
 }
+
+/* Right-align numbers in the homepage quick-estimate inputs too. */
+.qe-input input[type="number"] { text-align: right; }
