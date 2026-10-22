@@ -54,9 +54,6 @@ What moved the numbers:
 ## Email
 - Gmail still **Verify it’s you** (outreach + default profiles) — cannot read approval emails until you re-auth once in a real browser
 
-## Farm sequences
-- Held in `sequences/loansflow/` until AdSense fills + your GO
-
 ## When an offer is approved
 1. Paste tracking URL into `public/data/offers.json` (`url` + `"status": "live"`)
 2. Deploy Pages

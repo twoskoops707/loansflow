@@ -1,6 +1,6 @@
 # Monetize hold — AdSense first, affiliates beside (not over)
 
-**Rule:** Wait for live AdSense **fill** (`data-ad-status=filled`). Tell you. You say **GO**. Then sync sequences + turn on click packs.
+**Rule:** Wait for live AdSense **fill** (`data-ad-status=filled`) before adding affiliate placements beside the ads.
 
 ## AdSense (primary display)
 - Keep `ads.txt` Google line only until Authorized in AdSense UI.
@@ -17,12 +17,3 @@ Safe: text/deep links, result CTAs, “related lender” rows — **not** replac
 | Credible / Bankrate / QuinStreet | Direct finance | Offer widgets only if they are link-outs, not competing iframes in ad slots |
 
 **Avoid until AdSense Ready:** Ezoic ads.txt takeover, second display network in the same slots, CF NS flip for Ezoic.
-
-## Sequences (in repo, held)
-See `sequences/loansflow/HOLD_UNTIL_ADS_FILL.md`.
-
-- Impression packs: warm views / scroll / dwell.
-- Click packs: separate files; enable only after GO.
-- Per-calculator + all-calculators variants.
-
-Rebuild: `node tools/sequences/build-loansflow-money-seqs.js`
