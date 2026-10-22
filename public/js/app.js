@@ -1601,7 +1601,7 @@ function renderStep5(){
         <p>Debt Service Coverage Ratio (DSCR) measures whether a business's cash flow can cover its loan payments. It's calculated as annual net operating income divided by annual debt service (principal plus interest). A DSCR of 1.0 means the business generates exactly enough income to cover its debt payments with nothing left over — most SBA and commercial lenders want to see at least <strong>1.25x</strong>, meaning 25% more income than the debt requires, as a cushion against a slow month or unexpected expense.</p>
 
         <h2>Understanding the SBA Guaranty Fee</h2>
-        <p>Unlike a conventional loan, the SBA doesn't lend money directly — it guarantees a portion of the loan a bank makes, which is what allows lenders to approve small businesses they might otherwise consider too risky. In exchange, borrowers pay an upfront guaranty fee calculated as a percentage of the <em>guaranteed</em> portion of the loan (not the full loan amount), on a tiered scale that increases with loan size. There's also an ongoing annual service fee paid by the lender, which is typically built into the loan's overall cost.</p>
+        <p>Unlike a conventional loan, the SBA doesn't lend money directly — it guarantees a portion of the loan a bank makes, which is what allows lenders to approve small businesses they might otherwise consider too risky. In exchange, borrowers pay an upfront guaranty fee calculated as a percentage of the <em>guaranteed</em> portion of the loan (not the full loan amount), on a tiered scale chosen by the total loan size. There's also an ongoing annual service fee paid by the lender, which is typically built into the loan's overall cost.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
@@ -1998,6 +1998,7 @@ function renderNewsCards(articles) {
       </div>`;
   }
   return articles
+    .slice(0, 8)
     .map(
       (a) => `
         <div class="news-card">

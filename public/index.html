@@ -3,279 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LoansFlow — SBA, Commercial & Mortgage Calculators</title>
-  <meta name="description" content="Free SBA 7(a), 504, and commercial loan calculators, step-by-step SBA guides, a national SBA office directory, and a downloadable loan document checklist.">
+  <title>Find the Right Loan, Then Run the Numbers | LoansFlow</title>
+  <meta name="description" content="Pick a loan type, compare SBA, commercial, equipment and mortgage options, and use free calculators and guides to prepare before you borrow.">
   <link rel="canonical" href="https://loansflow.loan/">
-  <meta property="og:title" content="LoansFlow — SBA & Commercial Loan Calculators">
-  <meta property="og:description" content="Free SBA 7(a), 504, and commercial loan calculators, step-by-step SBA guides, a national SBA office directory, and a downloadable loan document checklist.">
+  <meta property="og:title" content="Find the Right Loan, Then Run the Numbers | LoansFlow">
+  <meta property="og:description" content="Pick a loan type, compare SBA, commercial, equipment and mortgage options, and use free calculators and guides to prepare before you borrow.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://loansflow.loan/">
   <meta property="og:image" content="https://loansflow.loan/img/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/loans.css">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-  <link rel="shortcut icon" href="/favicon.ico">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-180.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/site.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://loansflow.loan/#organization",
-        "name": "LoansFlow",
-        "url": "https://loansflow.loan/",
-        "logo": "https://loansflow.loan/img/logo.png",
-        "description": "Free SBA 7(a), 504, and commercial loan calculators, step-by-step SBA guides, a national SBA office directory, and a downloadable loan document checklist."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://loansflow.loan/#website",
-        "url": "https://loansflow.loan/",
-        "name": "LoansFlow",
-        "description": "Free SBA 7(a), 504, and commercial loan calculators, step-by-step SBA guides, a national SBA office directory, and a downloadable loan document checklist.",
-        "publisher": { "@id": "https://loansflow.loan/#organization" }
-      }
+      { "@type": "WebPage", "@id": "https://loansflow.loan/#webpage", "url": "https://loansflow.loan/", "name": "Find the Right Loan, Then Run the Numbers | LoansFlow", "inLanguage": "en" },
+      { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" }
+      ] }
     ]
   }
   </script>
 </head>
 <body>
   <header class="site-nav">
-    <a class="nav-brand" href="./"><img src="img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="tools/">Calculators</a>
-      <a href="guides/">Guides</a>
-      <a href="directory/">Directory</a>
-      <a href="about">About</a>
-      <a href="contact">Contact</a>
-      <a class="nav-cta" href="tools/">Open tools</a>
+      <a href="/loans/">Loan types</a>
+      <a href="/tools/">Calculators</a>
+      <a href="/guides/">Guides</a>
+      <a href="/news/">News</a>
+      <a href="/wisdom/">Old-timer's guide</a>
+      <a class="nav-cta" href="/loans/">Find your loan</a>
     </nav>
   </header>
-
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-copy">
-      <div class="hero-brand"><img src="img/logo.svg" alt="LoansFlow" width="420" height="120" decoding="async"></div>
-      <h1>Underwrite the deal before the bank does.</h1>
-      <p>SBA 7(a), 504, commercial DSCR, lines of credit, and mortgage math — free in your browser, with guides and a national SBA directory.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tools/">Open calculators</a>
-        <a class="btn btn-ghost" href="#tools">See the tools</a>
-      </div>
+<section class="lf-hero"><div class="lf-wrap">
+    <p class="lf-eyebrow"><q style="quotes:'\201C' '\201D'">Chance favors only the prepared mind.</q> &mdash; Louis Pasteur</p>
+    <h1>Find the right loan. Then run the numbers.</h1>
+    <p class="lf-lede">Prepare first. Then borrow. LoansFlow explains each type of business and home loan in plain English, with free calculators, application steps and the official rules.</p>
+    <div class="lf-finder" role="group" aria-label="Loan finder">
+      <div><label for="f-purpose">What are you financing?</label><select id="f-purpose"><option value="">Choose one&hellip;</option>
+        <option value="start-buy">Starting or buying a business</option><option value="buy-property">Buying or building a commercial building</option><option value="equipment">Equipment or vehicles</option>
+        <option value="cash-flow">Cash flow or working capital</option><option value="refi">Refinancing business debt</option><option value="home">Buying a home</option><option value="refi-home">Refinancing my home</option></select></div>
+      <div><label for="f-amount">About how much?</label><select id="f-amount"><option value="u50">Under $50,000</option><option value="mid" selected>$50,000 to $500,000</option><option value="large">$500,000 to $5 million</option><option value="xl">Over $5 million</option></select></div>
     </div>
-    <aside class="hero-card" aria-label="Quick mortgage payment estimate">
-      <div class="hero-card-head">
-        <div>
-          <div class="eyebrow">Quick estimate</div>
-          <h2>Monthly mortgage payment</h2>
-        </div>
-        <span class="hero-card-hint">Updates as you type</span>
-      </div>
-      <div class="qe-grid">
-        <label class="qe-field" for="qeHomePrice"><span>Home price</span><div class="qe-input"><span>$</span><input id="qeHomePrice" type="number" value="425000" step="1000" inputmode="numeric"></div></label>
-        <label class="qe-field" for="qeDownPayment"><span>Down payment</span><div class="qe-input"><span>$</span><input id="qeDownPayment" type="number" value="85000" step="1000" inputmode="numeric"></div></label>
-        <label class="qe-field" for="qeRate"><span>Interest rate</span><div class="qe-input"><input id="qeRate" type="number" value="6.75" step="0.01" inputmode="decimal"><span>%</span></div></label>
-        <label class="qe-field" for="qeTerm"><span>Loan term</span><select id="qeTerm">
-          <option value="30" selected>30 years</option>
-          <option value="20">20 years</option>
-          <option value="15">15 years</option>
-          <option value="10">10 years</option>
-        </select></label>
-      </div>
-      <div class="qe-result">
-        <div class="qe-result-label">Estimated monthly payment</div>
-        <div class="qe-result-value" id="qeResult">$0</div>
-        <div class="qe-result-sub" id="qeResultSub"></div>
-      </div>
-      <a class="btn btn-primary qe-open" id="qeOpen" href="tools/?step=3">Open full calculator &rarr;</a>
-      <p class="qe-note">Principal &amp; interest estimate only — the full tool adds taxes, insurance, amortization, refinance, and affordability.</p>
-    </aside>
-  </section>
-
-  <div class="rate-band" id="homeRateBand" hidden></div>
-
-  <section class="section" id="tools">
-    <div class="section-head">
-      <div class="eyebrow">Calculator suite</div>
-      <h2>Commercial first. Mortgage ready.</h2>
-      <p>SBA and commercial tools most sites skip — plus the mortgage calculators homebuyers still need.</p>
+    <div class="lf-picks" id="lf-picks" hidden></div>
+    <div class="lf-rates" id="lf-rates" aria-live="polite"></div>
+  </div></section>
+  <main class="lf-page" style="padding-top:2rem"><div class="lf-wrap">
+    <h2 style="margin-top:0">Browse by loan type</h2>
+    <div class="lf-grid-cards"><a class="lf-card" href="/loans/sba-7a.html"><h3>SBA 7(a) Loan</h3><p class="lf-for">The most flexible SBA loan, for almost any business purpose.</p><div class="lf-facts"><span class="lf-chip">Up to $5M</span><span class="lf-chip">10 to 25 years</span><span class="lf-chip">SBA-guaranteed</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/sba-504.html"><h3>SBA 504 Loan</h3><p class="lf-for">Long-term, fixed-rate financing for buildings and heavy equipment.</p><div class="lf-facts"><span class="lf-chip">Fixed rate</span><span class="lf-chip">10 to 25 years</span><span class="lf-chip">Real estate and equipment</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/sba-express.html"><h3>SBA Express Loan</h3><p class="lf-for">A faster, lender-processed SBA loan up to $500,000, including lines of credit.</p><div class="lf-facts"><span class="lf-chip">Up to $500K</span><span class="lf-chip">50% guarantee</span><span class="lf-chip">Revolving lines allowed</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/sba-microloan.html"><h3>SBA Microloan</h3><p class="lf-for">Small loans up to $50,000 from nonprofit lenders, with help for newer businesses.</p><div class="lf-facts"><span class="lf-chip">Up to $50K</span><span class="lf-chip">Up to 6 years</span><span class="lf-chip">Nonprofit lenders</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/line-of-credit.html"><h3>Business Line of Credit</h3><p class="lf-for">A revolving credit limit you draw on, repay, and draw on again.</p><div class="lf-facts"><span class="lf-chip">Pay interest on what you use</span><span class="lf-chip">Revolving</span><span class="lf-chip">SBA CAPLines option</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/commercial-term-loan.html"><h3>Commercial Term Loan</h3><p class="lf-for">A conventional bank loan for property, expansion or acquisitions, with no SBA guarantee.</p><div class="lf-facts"><span class="lf-chip">Conventional</span><span class="lf-chip">Fixed or variable</span><span class="lf-chip">Larger deals</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/equipment-financing.html"><h3>Equipment Financing</h3><p class="lf-for">Loans and leases for machinery, vehicles and technology, secured by the equipment itself.</p><div class="lf-facts"><span class="lf-chip">Equipment is the collateral</span><span class="lf-chip">Rate varies by credit and type</span><span class="lf-chip">Loan or lease</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a><a class="lf-card" href="/loans/mortgage.html"><h3>Mortgage</h3><p class="lf-for">Home purchase and refinance loans, with payment, affordability and refinance tools.</p><div class="lf-facts"><span class="lf-chip">Conventional, FHA, VA, USDA</span><span class="lf-chip">15 or 30 years</span><span class="lf-chip">Payment, refi and affordability tools</span></div><span class="lf-go">Learn, calculate and apply &rarr;</span></a></div>
+    <aside class="lf-tidbit" aria-label="Old-timer's wisdom"><span id="lf-rot"><q>Neither a borrower nor a lender be; for loan oft loses both itself and friend.</q><cite>William Shakespeare, Hamlet</cite></span><p><a href="/wisdom/">More from the old-timer's guide &rarr;</a></p></aside>
+    <h2>How it works</h2>
+    <div class="lf-steps"><div><h3>Pick the loan type</h3><p>Use the finder or browse. Each page says who the loan fits and who it does not.</p></div><div><h3>Run the numbers</h3><p>Every loan page has its own calculators for payments, fees, coverage ratios and more.</p></div><div><h3>Apply with confidence</h3><p>Follow the step-by-step list, gather the documents, and find a lender or free counselor.</p></div></div>
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="home-mid" style="margin:2rem 0;"></div>
+    <h2>Beyond the usual loans</h2>
+    <div class="lf-grid-cards">
+      <a class="lf-card" href="/alternative-financing/"><h3>Uncommon ways to finance</h3><p class="lf-for">CDFIs, 0% microloans, crowdfunding, receivables, homebuyer credits and more, with honest warnings about the risky ones.</p><span class="lf-go">Explore &rarr;</span></a>
+      <a class="lf-card" href="/grants/"><h3>Search federal grants</h3><p class="lf-for">A live search of Grants.gov, plus a reality check on what grants can and cannot do for a business.</p><span class="lf-go">Search &rarr;</span></a>
+      <a class="lf-card" href="/news/"><h3>News and rates</h3><p class="lf-for">Fresh headlines from the Fed, CFPB and the lending press, explained for borrowers.</p><span class="lf-go">Read &rarr;</span></a>
+      <a class="lf-card" href="/wisdom/"><h3>The old-timer's guide</h3><p class="lf-for">Old sayings, analogies, rules of thumb and quotes that make money concepts click.</p><span class="lf-go">Read &rarr;</span></a>
     </div>
-
-    <div class="ad-slot ad-slot--leaderboard" data-ad-format="horizontal" data-ad-name="home-top" data-ad-unit="7525616235"></div>
-
-    <div class="tool-picker">
-      <label class="tool-picker-label" for="toolPicker">Choose a calculator</label>
-      <div class="tool-picker-row">
-        <select id="toolPicker">
-          <optgroup label="Business &amp; commercial">
-            <option value="0">SBA &amp; Commercial — 7(a), 504, conventional</option>
-            <option value="1">Commercial Amortization</option>
-            <option value="2">Line of Credit</option>
-          </optgroup>
-          <optgroup label="Mortgage">
-            <option value="3">Mortgage Payment (PITI)</option>
-            <option value="4">Payment Breakdown</option>
-            <option value="5">Amortization Ledger</option>
-            <option value="6">Refinance Comparison</option>
-            <option value="7">Affordability</option>
-          </optgroup>
-          <optgroup label="Market">
-            <option value="8">Today's Rates &amp; News</option>
-          </optgroup>
-        </select>
-        <a class="btn btn-primary" id="toolPickerGo" href="tools/?step=0">Open calculator &rarr;</a>
-      </div>
-      <p class="tool-picker-wizard">Not sure which one? <a href="tools/">Take the 60-second guided wizard &rarr;</a></p>
-    </div>
-
-      <div class="ad-slot ad-slot--incontent" data-ad-format="rectangle" data-ad-name="home-mid" style="margin-top:2rem;"></div>
-    </section>
-
-  <section class="section" id="resources">
-    <div class="section-head">
-      <div class="eyebrow">Resource library</div>
-      <h2>Guides, directory, and checklists.</h2>
-      <p>Plain-language instructions for the process behind the numbers — from the first SBA form to closing.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <h3><a href="guides/sba-7a-step-by-step.html">SBA 7(a), step by step</a></h3>
-        <p>A 10-step playbook: eligibility, loan variants, finding a lender, SBA forms 1919/912/413, underwriting, and closing.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/sba-504.html">SBA 504 explained</a></h3>
-        <p>The 50/40/10 capital stack, debenture terms, eligible fixed assets, and how 504 compares with 7(a).</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/loan-documents.html">Documents you'll need</a></h3>
-        <p>The document matrix by loan type — tax returns, financial statements, collateral detail, and SBA forms.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/checklist.html">Interactive checklist</a></h3>
-        <p>Track 40 required items in your browser, then <a href="downloads/loan-document-checklist.txt">download the checklist</a> as text or Markdown.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/choosing-lender.html">Choose a lender</a></h3>
-        <p>Banks vs. credit unions vs. brokers, red flags, and the questions worth asking before you sign anything.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/glossary.html">Loan glossary</a></h3>
-        <p>45+ terms — DSCR, debentures, guaranty fees, PITI — defined in plain language with a quick filter.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/calculator-help.html">Calculator help</a></h3>
-        <p>A walkthrough of every LoansFlow tool, from SBA &amp; commercial math to mortgage affordability.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="directory/">SBA office directory</a></h3>
-        <p>Search all 67 SBA district offices plus national contacts, resource partners, and lender marketplaces.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/sba-loan-eligibility.html">Who qualifies for SBA loans</a></h3>
-        <p>Business type, size standards, owner equity, and personal guarantees, with a quick self-check.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/dscr-explained.html">DSCR explained</a></h3>
-        <p>How lenders measure cash flow, what ratio they want, and a worked example.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/term-loan-vs-line-of-credit.html">Term loan vs. line of credit</a></h3>
-        <p>Which structure fits equipment, expansion, or seasonal cash-flow gaps, with cost examples.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/refinance-break-even.html">Is refinancing worth it?</a></h3>
-        <p>The break-even formula and what a simple calculation misses.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/mortgage-closing-costs.html">Mortgage closing costs</a></h3>
-        <p>Every fee category, the Loan Estimate and Closing Disclosure, and ways to lower the total.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/business-plan-for-a-loan.html">Business plan for a loan</a></h3>
-        <p>The sections and projections lenders expect to see.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/sba-express-microloans-caplines.html">SBA Express, Microloans, CAPLines</a></h3>
-        <p>Smaller and faster SBA options compared.</p>
-      </div>
-      <div class="pillar">
-        <h3><a href="guides/">All guides</a></h3>
-        <p>The full library index — reviewed and updated October 22, 2026.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section monetize">
-    <div class="section-head">
-      <div class="eyebrow">How it works</div>
-      <h2>Run the numbers. Keep the deal clear.</h2>
-      <p>No account. No lead forms. Estimates you can check before you call a lender.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <h3>SBA &amp; commercial</h3>
-        <p>7(a), 504, DSCR, guaranty fees, balloons, and lines of credit in one place.</p>
-      </div>
-      <div class="pillar">
-        <h3>Mortgage math</h3>
-        <p>Payment, amortization, refinance, and affordability — updated as you type.</p>
-      </div>
-      <div class="pillar">
-        <h3>Private by default</h3>
-        <p>Calculations stay in your browser. We do not take applications or sell your inputs.</p>
-      </div>
-    </div>
-    <div class="ad-slot" data-ad-format="multipurpose" data-ad-name="home-related" style="margin-top:2rem;"></div>
-  </section>
-
-  <div class="ad-slot ad-slot--leaderboard" data-ad-format="horizontal" data-ad-name="home-prefooter" style="max-width:980px;margin:0 auto 1.5rem;padding:0 1.25rem;"></div>
-
+    <h2>Latest guides</h2>
+    <ul><li><a href="/guides/sba-loan-eligibility.html">SBA Loan Eligibility: Who Qualifies and Who Does Not</a></li><li><a href="/guides/dscr-explained.html">Debt Service Coverage Ratio (DSCR) Explained, With Examples</a></li><li><a href="/guides/term-loan-vs-line-of-credit.html">Term Loan vs. Business Line of Credit: How to Choose</a></li><li><a href="/guides/refinance-break-even.html">Is Refinancing Worth It? How to Calculate Your Break-Even Point</a></li><li><a href="/guides/mortgage-closing-costs.html">Mortgage Closing Costs Explained: What You Will Pay and When</a></li><li><a href="/guides/business-plan-for-a-loan.html">The Business Plan and Financial Projections Lenders Want to See</a></li><li><a href="/guides/">All guides</a></li></ul>
+    <p class="lf-disclaimer">LoansFlow is an educational resource, not a lender or broker. Calculators give estimates only. Program rules and rates change; confirm details with a lender.</p>
+  </div></main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div>
-        <h4>LoansFlow</h4>
-        <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <a href="tools/">All calculators</a>
-        <a href="tools/?step=8">Market news</a>
-      </div>
-      <div>
-        <h4>Site</h4>
-        <a href="guides/">Guides</a>
-        <a href="directory/">Directory</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="privacy">Privacy</a>
-        <a href="disclaimer">Disclaimer</a>
-        <a href="terms">Terms</a>
-      </div>
+      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
+      <div><h4>Loan types</h4>
+        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
+        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
+      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
     </div>
-    <div class="footer-note">
-      © 2026 LoansFlow.
-      All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.
-    </div>
+    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
   </footer>
-
-  <script>
-    window.LOANSFLOW_ADS = { provider: 'adsense', adsenseClient: 'ca-pub-6588738221262894' };
-  </script>
-  <script src="js/ads.js" defer></script>
-  <div class="lf-offers" data-lf-offers="any" hidden style="max-width:980px;margin:0 auto;padding:0 1.25rem 2rem;"></div>
-  <script src="js/offers.js" defer></script>
-  <script src="js/home.js" defer></script>
+  <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
+  <script src="/js/ads.js" defer></script>
+  <script src="/js/offers.js" defer></script>
+<script>window.LF_LOANS = [{"slug":"sba-7a","name":"SBA 7(a) Loan","short":"The most flexible SBA loan, for almost any business purpose.","purposes":["start-buy","cash-flow","equipment","buy-property","refi"],"min":30000,"max":5000000,"chips":["Up to $5M","10 to 25 years","SBA-guaranteed"]},{"slug":"sba-504","name":"SBA 504 Loan","short":"Long-term, fixed-rate financing for buildings and heavy equipment.","purposes":["buy-property","equipment"],"min":125000,"max":20000000,"chips":["Fixed rate","10 to 25 years","Real estate and equipment"]},{"slug":"sba-express","name":"SBA Express Loan","short":"A faster, lender-processed SBA loan up to $500,000, including lines of credit.","purposes":["cash-flow","equipment","start-buy"],"min":25000,"max":500000,"chips":["Up to $500K","50% guarantee","Revolving lines allowed"]},{"slug":"sba-microloan","name":"SBA Microloan","short":"Small loans up to $50,000 from nonprofit lenders, with help for newer businesses.","purposes":["start-buy","cash-flow","equipment"],"min":500,"max":50000,"chips":["Up to $50K","Up to 6 years","Nonprofit lenders"]},{"slug":"line-of-credit","name":"Business Line of Credit","short":"A revolving credit limit you draw on, repay, and draw on again.","purposes":["cash-flow"],"min":5000,"max":5000000,"chips":["Pay interest on what you use","Revolving","SBA CAPLines option"]},{"slug":"commercial-term-loan","name":"Commercial Term Loan","short":"A conventional bank loan for property, expansion or acquisitions, with no SBA guarantee.","purposes":["buy-property","start-buy","refi","cash-flow"],"min":100000,"max":50000000,"chips":["Conventional","Fixed or variable","Larger deals"]},{"slug":"equipment-financing","name":"Equipment Financing","short":"Loans and leases for machinery, vehicles and technology, secured by the equipment itself.","purposes":["equipment"],"min":5000,"max":5000000,"chips":["Equipment is the collateral","Rate varies by credit and type","Loan or lease"]},{"slug":"mortgage","name":"Mortgage","short":"Home purchase and refinance loans, with payment, affordability and refinance tools.","purposes":["home","refi-home"],"min":50000,"max":3000000,"chips":["Conventional, FHA, VA, USDA","15 or 30 years","Payment, refi and affordability tools"]}];</script>
+  <script src="/js/picker.js" defer></script>
 </body>
 </html>
-

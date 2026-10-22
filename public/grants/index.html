@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Federal Grants (Live Grants.gov Search) | LoansFlow</title>
+  <meta name="description" content="Search live federal grant opportunities from Grants.gov by keyword, who is eligible and category, with an honest look at what grants can and cannot do for a small business.">
+  <link rel="canonical" href="https://loansflow.loan/grants/">
+  <meta property="og:title" content="Search Federal Grants (Live Grants.gov Search) | LoansFlow">
+  <meta property="og:description" content="Search live federal grant opportunities from Grants.gov by keyword, who is eligible and category, with an honest look at what grants can and cannot do for a small business.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loansflow.loan/grants/">
+  <meta property="og:image" content="https://loansflow.loan/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/loans.css">
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebPage", "@id": "https://loansflow.loan/grants/#webpage", "url": "https://loansflow.loan/grants/", "name": "Search Federal Grants (Live Grants.gov Search) | LoansFlow", "inLanguage": "en" },
+      { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
+          { "@type": "ListItem", "position": 2, "name": "Search grants" }
+      ] }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <a class="nav-brand" href="/"><img src="/img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/loans/" aria-current="page">Loan types</a>
+      <a href="/tools/">Calculators</a>
+      <a href="/guides/">Guides</a>
+      <a href="/news/">News</a>
+      <a href="/wisdom/">Old-timer's guide</a>
+      <a class="nav-cta" href="/loans/">Find your loan</a>
+    </nav>
+  </header>
+<main class="lf-page"><div class="lf-wrap">
+    <p class="lf-eyebrow">Free to search, free to apply</p><h1>Search federal grants</h1>
+    <p class="lf-lede">This searches the official Grants.gov database live. Nothing here is a loan, and there is never a fee to apply.</p>
+    <div class="lf-box" style="max-width:72ch"><h3>Reality check before you search</h3>
+      <p>SBA states that it does <strong>not</strong> provide grants to start or expand a business. Its grants go to nonprofits, universities and resource partners for counseling and training, plus narrow programs for research, manufacturing and exporting. Most federal money for businesses is in the form of loans.</p>
+      <p id="g-stats">Checking the live numbers&hellip;</p>
+      <p>That is why the best use of this page is finding grants that match a specific mission: research, agriculture, energy, rural development, community or nonprofit work. For general business funding, see the <a href="/loans/">loan types</a> and <a href="/alternative-financing/">uncommon ways to finance</a>.</p></div>
+    <form id="g-form" class="lf-finder" style="margin-top:1.5rem">
+      <div><label for="g-keyword">Keyword</label><input id="g-keyword" type="search" placeholder="for example: rural, manufacturing, energy" style="width:100%;padding:.75rem;background:var(--canvas);border:1px solid var(--line-strong);color:var(--ink);font:inherit"></div>
+      <div><label for="g-elig">Who is eligible?</label><select id="g-elig"><option value="23">Small businesses</option><option value="21">Individuals</option><option value="12">Nonprofits (501(c)(3))</option><option value="22">For-profit organizations other than small businesses</option><option value="99">Unrestricted (open to any entity)</option><option value="">Anyone (no filter)</option></select></div>
+      <div><label for="g-cat">Category</label><select id="g-cat"><option value="">Any category</option><option value="BC">Business and Commerce</option><option value="AG">Agriculture</option><option value="ST">Science and Technology / R&amp;D</option><option value="EN">Energy</option><option value="ENV">Environment</option><option value="HO">Housing</option><option value="CD">Community Development</option><option value="ELT">Employment, Labor and Training</option><option value="ED">Education</option><option value="HL">Health</option><option value="AR">Arts</option><option value="DPR">Disaster Prevention and Relief</option><option value="OZ">Opportunity Zone Benefits</option></select></div>
+      <div><label for="g-status">Status</label><select id="g-status"><option value="posted">Open now</option><option value="forecasted">Coming soon</option><option value="both">Open and coming soon</option></select></div>
+      <div><button class="lf-btn" type="submit">Search</button></div>
+    </form>
+    <p id="g-count" style="margin-top:1rem" aria-live="polite"></p>
+    <div class="lf-news" id="g-results"></div>
+    <p><button class="lf-btn lf-btn--ghost" id="g-more" type="button" hidden>Show more</button></p>
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="grants-mid" style="margin:2rem 0;"></div>
+    <h2>How to read a grant listing</h2>
+    <ul><li><strong>Eligibility matters most.</strong> Read the full listing on Grants.gov to confirm your type of organization qualifies.</li><li><strong>Many grants reimburse costs</strong> after you spend the money, or require matching funds.</li><li><strong>Deadlines are firm.</strong> Registration (including SAM.gov for most federal awards) can take weeks, so start early.</li><li><strong>Ask for help.</strong> Your local <a href="/directory/">SBDC</a> or a university research office can review an application at no cost.</li></ul>
+    <h2>Avoid grant scams</h2>
+    <ul><li>Anyone who calls, texts or messages you to say you won or are guaranteed a &quot;government grant&quot; is running a scam. Agencies do not cold-call people with grants.</li><li>You never pay a fee to apply on Grants.gov or to receive an award. Be wary of &quot;grant coaching&quot; that charges thousands of dollars for public information.</li><li>SBA says it communicates only from email addresses ending in @sba.gov.</li><li>Be cautious of upfront fees for a loan, &quot;guaranteed approval,&quot; and pressure to sign today.</li></ul>
+    <p class="lf-disclaimer">Search results come directly from the Grants.gov API and are not endorsed or verified by LoansFlow. Always confirm details on Grants.gov or with the awarding agency.</p>
+  </div></main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h4>LoansFlow</h4><p>Loan guides and free calculators for business and home borrowers. Estimates only. We are not a lender.</p></div>
+      <div><h4>Loan types</h4>
+        <a href="/loans/sba-7a.html">SBA 7(a)</a><a href="/loans/sba-504.html">SBA 504</a><a href="/loans/sba-express.html">SBA Express</a><a href="/loans/sba-microloan.html">SBA Microloan</a>
+        <a href="/loans/line-of-credit.html">Line of credit</a><a href="/loans/commercial-term-loan.html">Commercial term loan</a><a href="/loans/equipment-financing.html">Equipment financing</a><a href="/loans/mortgage.html">Mortgage</a></div>
+      <div><h4>Learn</h4><a href="/guides/">Guides</a><a href="/news/">News and rates</a><a href="/wisdom/">Old-timer's guide</a><a href="/guides/glossary.html">Glossary</a><a href="/directory/">Directory</a><a href="/tools/">All calculators</a></div>
+      <div><h4>Site</h4><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div><h4>Legal</h4><a href="/privacy.html">Privacy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms</a></div>
+    </div>
+    <div class="footer-note"><em>Scientia potentia est.</em> Knowledge is power. &copy; 2026 LoansFlow. All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.</div>
+  </footer>
+  <script>window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };</script>
+  <script src="/js/ads.js" defer></script>
+  <script src="/js/offers.js" defer></script>
+<script src="/js/grants.js" defer></script>
+</body>
+</html>

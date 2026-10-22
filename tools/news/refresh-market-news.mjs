@@ -29,6 +29,41 @@ const FEEDS = [
     limit: 8,
   },
   {
+    id: 'cfpb-newsroom',
+    category: 'Consumer Protection',
+    source: 'Consumer Financial Protection Bureau',
+    url: 'https://www.consumerfinance.gov/about-us/newsroom/feed/',
+    limit: 3,
+  },
+  {
+    id: 'fed-press',
+    category: 'Fed Policy',
+    source: 'Federal Reserve',
+    url: 'https://www.federalreserve.gov/feeds/press_all.xml',
+    limit: 2,
+  },
+  {
+    id: 'smallbiz-lending-news',
+    category: 'Small Business',
+    source: null,
+    url: 'https://news.google.com/rss/search?q=%22small+business%22+loans+OR+lending+when:7d&hl=en-US&gl=US&ceid=US:en',
+    limit: 5,
+  },
+  {
+    id: 'equipment-finance-news',
+    category: 'Equipment Finance',
+    source: null,
+    url: 'https://news.google.com/rss/search?q=%22equipment+finance%22+OR+%22equipment+financing%22+when:14d&hl=en-US&gl=US&ceid=US:en',
+    limit: 3,
+  },
+  {
+    id: 'cre-lending-news',
+    category: 'Commercial Real Estate',
+    source: null,
+    url: 'https://news.google.com/rss/search?q=%22commercial+real+estate%22+lending+OR+%22commercial+mortgage%22+when:14d&hl=en-US&gl=US&ceid=US:en',
+    limit: 3,
+  },
+  {
     id: 'sba-news',
     category: 'SBA Policy',
     source: null,
@@ -287,7 +322,7 @@ async function buildPayload() {
     updatedAt: new Date().toISOString(),
     rates,
     prime,
-    articles: articles.slice(0, 8),
+    articles: articles.slice(0, 24),
     errors: errors.length ? errors : undefined,
   };
 }

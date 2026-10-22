@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T18:34:38.880Z",
+  "updatedAt": "2026-10-22T04:55:18.351Z",
   "rates": {
     "asOf": "10/15/2026",
     "source": "Freddie Mac PMMS",
@@ -21,9 +21,13 @@
         "note": "Approx. vs purchase avg."
       }
     ],
-    "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey\u00ae. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
+    "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
   },
-  "prime": null,
+  "prime": {
+    "value": 7,
+    "asOf": "2026-10-13",
+    "source": "FRED (DPRIME)"
+  },
   "articles": [
     {
       "category": "Rates",
@@ -67,6 +71,14 @@
     },
     {
       "category": "Rates",
+      "source": "National Association of Home Builders",
+      "title": "Builder Sentiment Falls on Rising Rates",
+      "summary": "National Association of Home Builders coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNNm5PUU9DaTJqenZVUC15TnZndmlVYWg3Y0ZhaHhPVll0UXBPQ04yOU42ZXVUUUt0eDc2cE5qOUdnVnpvXy1YVzdydnREbHUyQlUtNlVNa0pBMHBXZ2g2Nmk2YXB4VXFQVGZTeUhtYnRaSVNCbEpBaHl2YUZCcEgzM01RMHBQOF9wY0IyMmZ3YUdUZ3dIXzZFVFFUNUVqclB5TDFCeA?oc=5",
+      "publishedAt": "2026-10-19T14:04:53.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "Yahoo Finance",
       "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
@@ -84,10 +96,130 @@
     {
       "category": "Rates",
       "source": "The Washington Post",
-      "title": "Why buying a house feels so painful now \u2014 and your parents may not understand",
+      "title": "Why buying a house feels so painful now — and your parents may not understand",
       "summary": "The Washington Post coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb2d1bFhWdzVOVzJ1Nk1yNXFQOGFrRTBiNWdiaWRXX3dGb0lMUWlsQmk3cENVa0x6alNIR2gxUHVjZ0p0dkc4NmxnWUd0N1B4ZTRtWVJodHJSWko5ZFBFNklzdnp3ejNwRmV2dXZYQTFBa3FXcWVuNmcyckI2dVhaUTVLaUtGSE9XQWJWUmFUX3N4NEhpek5MVEFZRjR1MFd1ZDJZOTRBclFyRkJqcm1jTmJDYmNxY2ZCdnc?oc=5",
       "publishedAt": "2026-10-18T16:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "CNN",
+      "title": "High mortgage rates are deepening a ‘K-shaped’ housing market | CNN Business",
+      "summary": "CNN coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOek9VME52YmtjMDNjaGU1MmltT3NHWUhCNFZ3Q3UydGZER2EyX1IzTTdNU1JNcHlTVlhTNm9FS2d1NWZaREdiME93djFpZmVNLWktZmNxOU9ZbWhrNFVHNGxPYUFGRnhEUi1jZDNwMWo1MFpVSzlmNm5kZ2ZyZDZkRTBtSQ?oc=5",
+      "publishedAt": "2026-10-15T16:08:23.000Z"
+    },
+    {
+      "category": "Consumer Protection",
+      "source": "Consumer Financial Protection Bureau",
+      "title": "CFPB Announces New Initiative to Address OCC-Uncovered Debanking by Large Banks",
+      "summary": "Today, the Consumer Financial Protection Bureau (CFPB) announced the next step in its work to advance President Trump’s fight against the debanking of businesses and individuals on the basis of their constitutionally protected rights",
+      "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-announces-new-initiative-to-address-occ-uncovered-debanking-by-large-banks/",
+      "publishedAt": "2026-10-14T04:00:00.000Z"
+    },
+    {
+      "category": "Consumer Protection",
+      "source": "Consumer Financial Protection Bureau",
+      "title": "CFPB Proud to Support the National Strategy for Financial Literacy",
+      "summary": "The CFPB is proud to support the new National Strategy for Financial Literacy to guide nationwide actions on building youth financial competency, developing good saving and investing habits, improving Americans’ knowledge of digital financial literacy, and learning how to…",
+      "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-proud-to-support-the-national-strategy-for-financial-literacy/",
+      "publishedAt": "2026-10-02T04:00:00.000Z"
+    },
+    {
+      "category": "Consumer Protection",
+      "source": "Consumer Financial Protection Bureau",
+      "title": "The CFPB to Cease Discretionary Publication of Complaint Narratives and Visualizations",
+      "summary": "Consumer Financial Protection Bureau coverage of recent consumer protection developments. Open the full report for details.",
+      "url": "https://www.consumerfinance.gov/about-us/newsroom/the-cfpb-to-cease-discretionary-publication-of-complaint-narratives-and-visualizations/",
+      "publishedAt": "2026-08-14T04:00:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
+      "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+      "publishedAt": "2026-10-16T15:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Forbes",
+      "title": "Best Small Business Loans Of 2026",
+      "summary": "Forbes coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vaDJXSjZzVGNQbTZCc3FQaEcxc1FsemdKMjkwb1NYSTFvMl8zdVdBVFJIOEt4d2lYYUJ5blZ1QkFIS0I1MDhKc04yd05SWlNTMFpsd0NyYmlvQnB2U2tVLWRoYUdUSTFta1JmZklRdy0xOXRYTk8w?oc=5",
+      "publishedAt": "2026-10-15T14:49:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "U.S. Chamber of Commerce",
+      "title": "Free Grants and Programs for Small Business",
+      "summary": "U.S. Chamber of Commerce coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPd1JjTnpZT2h6QW9CVUR3R2hwUWdpSS1yZ3FNcDVxckl3em8tM0hBSHFqLVdlSVgyRVNRRGludWt4MzRZdHRPd0N2Uk9kNWIxcTdQaS1vT1J1TEpyTWcyMFFxaHNuQVQwTEdrQ0t6TVBxMlRsaWFDYzRoQ3lLZE1jS0ExQ1Y2OUNocXQzLVhnMA?oc=5",
+      "publishedAt": "2026-10-15T07:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Osage News",
+      "title": "Osage Nation’s Place to Borrow Money offering small business loans to help borrowers reach goals",
+      "summary": "Osage News coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZERpazlkVUR6VF84a0dwTGM4dGhuc1Foc3ZKcWhHQW03Y3gwSUdqUzZXSjhKbk5JZGJURHFNRXZYZGFtSThfd0EwbDByTDkwMVNYWmZyQnZxTGJ0SWp5V0pIclpyMUVFa0tWSFMyTlhrOGFRSHB1WXdNd3ZTcVRGWnhfMU0zSUhzTDZvZHBpOXNwZVpTWHBIbFYyWmMzMDg5cU1fMXk2eUgzUmVGUTBuVktQanVsNEhRYVHSAboBQVVfeXFMT2REaWs5ZFVEelRfOGtHcExjOHRobnNRaHN2SnFoR0FtN2N4MElHalM2V0o4Sm5OSWRiVERxTUV2WGRhbUk4X3dBMGwwckw5MDFTWFpmckJ2cUxidElqeVdKSHJacjFFRWtLVkhTMk5YazhhUUhwdVl3TXd2U3FURlp4XzFNM0lIc0w2b2RwaTlzcGVaU1hwSGxWMlpjMzA4OXFNXzF5NnlIM1JlRlEwblZLUGp1bDRIUWFR?oc=5",
+      "publishedAt": "2026-10-16T17:46:57.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "NerdWallet",
+      "title": "SBA Franchise Loans: How to Get One",
+      "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1faFlWT19CUmRJNnA2bWhMYmRNRUNmWHl0QVR3TEduQkFIb3duU3FCQmk0SkVjTkgtSXJYZ0NhUHFUVk5IanhfdFNKM3NkZFZxeUtralV3V2hvQzZkMVUwY1BEY2hrT0FuVjU5Y2NLUnZyZUwwTlE?oc=5",
+      "publishedAt": "2026-10-15T07:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Oswego County Business Magazine",
+      "title": "M&T Bank Ranks No. 1 in SBA 7(a) Lending Across Its Footprint, Achieves Record Small Business Loan Growth",
+      "summary": "Oswego County Business Magazine coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOTVdERnZjanV2WnpQRzhobU9jelVBVjktMUtaVEhDTkVZVDdDNFAxNXU2MjY3V0o0aEphbmFZdnZ3SV9hUDU0aEVXdExwcDY0NlVlNmhIUDJEUkl1bXhkMFFSQ1dqUEs0ZzMweXh1WVliSmZ2QXhWNDU0a0NlWjJZRnAxaGl1dHF1bV9RQzBIS3VGNnNiVGVtZmxDZklWNFJ2RG5GZV9CVnFhaEZjS0V5WkQxMmRiT0xlanBCTVBZV25ZLV8zMU5WaXdaak8wNlU?oc=5",
+      "publishedAt": "2026-10-15T18:15:35.000Z"
+    },
+    {
+      "category": "Equipment Finance",
+      "source": "Quarles & Brady",
+      "title": "Brittany Ogden Named to 2026 “Most Influential People in Equipment Finance” by Monitor",
+      "summary": "Quarles & Brady coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYlVLSUFkazFCS21hY2xCVUFjUHNpNmlQX3poa0hnNGdzbGRkN2pIYWVJZGRuMEs0Vkd2RHpMVGo5R3ZIYU5ndUVMbHZjRjZJamJUNVVaNnJLTnIxT0FWVFFRZjdqbXFWZEhlQkYwRjJhcEttdVdVOWlWUTg0VUI3T0thcnhEczF1QzduSXFPV1pfRHk5VFB4c2FsUklJeUJiYjFDZmo2S1RBTVgxN056RlJXdVhhQW5iMVRFZFhHMA?oc=5",
+      "publishedAt": "2026-10-13T07:00:00.000Z"
+    },
+    {
+      "category": "Equipment Finance",
+      "source": "ABF Journal",
+      "title": "Post Road Equipment Finance Provides $40MM Capital Lease Facility to Frozen Food Producer",
+      "summary": "ABF Journal coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNNWRtUU1iVGdiWkxuMWtSRGVBT0FJOVdxQmlsc2ZWRXk5Zm83dXhwR3RRV2RBMmRpWFU3V3QzTUxVYTQ1SDYtSmtIY2JaZmFfelRhWnBNa3NJcDZxRzZNZTJxX0hvTklPZ0Nsd3EzdUU0MWdUbUJSNWtNcmhlY1JNamVSZWh4eUZTVExzZGZnYmh6U2JLTUVlMG1mTDBaYTdBTWRoa3MzOGlGSVRVY0E0MkZQZXpqWHc?oc=5",
+      "publishedAt": "2026-10-13T06:26:18.000Z"
+    },
+    {
+      "category": "Equipment Finance",
+      "source": "Equipment Finance News",
+      "title": "Small-ticket equipment finance processing costs up 14% in 2025",
+      "summary": "Equipment Finance News coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTVo5aUotNjRhZ3JUQ3ZiYVlHdlc4S3BXbWF3dl9GbGphXzNvUjBLbXozdVpNRFFlTnBwbzB0cEFVZzlNSlFFU2RYT0dtXzNTVDFsUTVtbU9jeG8yT2tUVUgyUnBVR3ZxNHJzMkhQV1dmanFfeEoyUndBcHgxQWpCcE5XMFhkVUxteVJsYmR0Um00MVhBanZXaW4wSG55UDJrWWp4a3AycllnclZIR3ZiQXZXa3ZVN1JTdHc?oc=5",
+      "publishedAt": "2026-10-12T07:00:00.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
+      "source": "Business Wire",
+      "title": "CarbonAI Raises $12M to Bring AI Agents to Commercial Real Estate Lending",
+      "summary": "Business Wire coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORFhEbDZqZkptTU5BeUM2U1lKSU9UWjVfUWNjdWlDLU9pdnA1SFBna3BXQjRZYVNwU3J2ajlCdmJpbHY1al9oSld3WHdoOHowZFBiV0c5ZFpSeV9NNlg3dlViZEpXMHhHMFUwLV93ZjZGaDJ6M0hzVTVHQW1rRXpzR2VoeS1rRWJEb0VrZGl5QWE2a003N2xmajRHWjFMRGFEQ2NBY0gtWUEtU0xCNFkwbWpaWWJRS205dUhqZmtNNEdEM2R2amZjNkpsNGM?oc=5",
+      "publishedAt": "2026-10-15T13:00:00.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
+      "source": "CoStar",
+      "title": "News | Bank of America steps up commercial real estate lending",
+      "summary": "CoStar coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOa1haY3Y1eFNHUGVscUNuaFlIMjJlMU1SVzJ4ZG9oY1FTM2lwVFZPWk9VZUk2ZzBnQnh2Zy1CUjdxWnJaTFByTWZwUXNhVGZVZUQxMUxNN3Q2dXZ6RjF1c1RyakxTMV9HQ1NSeWZhRkxVSGhJa3dMU1A0NzNnZnBQWEptLUNPUkkxbjVoUnVQak1XdXhSREZKVWhLVFMtZw?oc=5",
+      "publishedAt": "2026-10-14T20:06:16.000Z"
     }
   ]
 }

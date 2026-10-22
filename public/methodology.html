@@ -81,15 +81,12 @@
     <p><strong>Loan type.</strong> The payment and DSCR math is identical for all three types. The guaranty fee lines below appear only when the type is SBA 7(a) or SBA 504; a conventional commercial loan shows none, because no guaranty is involved.</p>
 
     <h3>SBA guaranty fee and annual service fee</h3>
-    <p>Both figures are hardcoded schedules inside the tool, not a live lookup. We have deliberately not built a fee table we cannot verify; the numbers below are what the calculator uses, the tool labels them as estimates, and SBA revises these schedules, so confirm the exact figure with an SBA-approved lender.</p>
-    <p class="formula">guaranteed portion = loan amount &times; guaranty % &divide; 100<br>fee % comes from the tier below, applied to the guaranteed portion<br>guaranty fee = guaranteed portion &times; fee %<br>annual service fee = loan amount &times; guaranty % &divide; 100 &times; 0.55%</p>
-    <ul>
-      <li>Guaranteed portion up to $150,000: fee is 2.0%.</li>
-      <li>Up to $700,000: 3.0%.</li>
-      <li>Up to $1,000,000: 3.5%.</li>
-      <li>Above $1,000,000: 3.75%.</li>
-    </ul>
-    <p><strong>What this leaves out:</strong> the tiers in the tool cover the standard schedule only. It does not model the reduced or waived fees some programs allow for small loans, or the separate schedules that apply to manufacturer or veteran loans, and SBA revises its schedule, so confirm the exact figure with an SBA-approved lender.</p>
+    <p>These figures are hardcoded schedules inside the tool, not a live lookup. They follow SBA's published fee notices for fiscal year 2027 (loans approved October 1, 2026 through September 30, 2027): Information Notice 5000-881797 for 7(a) and 5000-881796 for 504. SBA revises the schedules every fiscal year, so confirm the exact figure with an SBA-approved lender.</p>
+    <p><strong>7(a) upfront fee.</strong> The tier is chosen by the gross loan amount, and the percentage is applied to the guaranteed portion.</p>
+    <p class="formula">guaranteed portion = loan amount &times; guaranty % &divide; 100<br>loan $150,000 or less: 2% of the guaranteed portion<br>loan $150,001 to $700,000: 3% of the guaranteed portion<br>loan $700,001 to $5,000,000: 3.5% of the guaranteed portion up to $1,000,000, plus 3.75% of the guaranteed portion above $1,000,000</p>
+    <p><strong>7(a) annual service fee.</strong> 0.55% of the outstanding guaranteed balance. SBA charges it to the lender and does not allow the lender to pass it on to the borrower, so the tool shows it for information only. The upfront fee may be passed on to the borrower.</p>
+    <p><strong>504 fees.</strong> 0.50% upfront and 0.203% annually on the SBA-backed debenture, which the tool takes to be 40% of the project.</p>
+    <p><strong>What this leaves out:</strong> the tool does not model the 0% upfront fee that applies to manufacturers, certain food-supply-chain businesses and rural businesses on 7(a) loans of $700,000 or less, the $0 fee for SBA Express loans to veteran-owned businesses, the 0.25% fee on loans with maturities of 12 months or less, the 90-day rule that combines loans made close together, CDC processing fees, or lender fees.</p>
 
     <h3>Commercial amortization ledger</h3>
     <p>The commercial ledger reuses the amortization loop and the monthly payment formula above, then groups the schedule into years: principal paid and interest paid are the sums of that year's months, and the remaining balance is the last row of the year. Total interest over the term is the sum of every month's interest. Its daily interest view uses a 360-day year. You can export the year rows as CSV or take them into the PDF report.</p>
