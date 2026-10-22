@@ -306,3 +306,5 @@
 
 .home-logo { display: block; height: 64px; width: auto; margin: 0 auto 1.6rem; }
 @media (max-width: 640px) { .home-logo { height: 48px; } }
+.home-about { max-width: 46rem; margin: 2rem auto 0; text-align: center; font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+.home-about a { color: var(--accent); }
