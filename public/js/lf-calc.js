@@ -1,7 +1,7 @@
 /* LoansFlow embeddable calculators. Usage: <div data-calc="sba7a" data-title="..."></div>. Math lives in lf-math.js. */
 (function () {
   'use strict';
-  var LF = window.LF;
+  var LF = window.LF, CH = window.LFChart;
   var money = function (n, d) { return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
   var num = function (n, d) { return n.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
   var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
@@ -30,7 +30,8 @@
           }
           if (+d.maxAmount && v.amount > +d.maxAmount) notes.push('This program caps loans at ' + money(+d.maxAmount) + '.');
           if (+d.maxYears && v.years > +d.maxYears) notes.push('This program caps terms at ' + d.maxYears + ' years.');
-          return { head: ['Monthly payment', money(t.payment, 2)], rows: rows, notes: notes };
+          return { head: ['Monthly payment', money(t.payment, 2)], rows: rows, notes: notes,
+            charts: [CH.stack('Where your money goes over the loan', [{ label: 'Principal', value: v.amount }, { label: 'Interest', value: t.interest }]), v.noi > 0 ? CH.gauge('Debt service coverage', c) : ''] };
         }
       };
     },
@@ -63,7 +64,8 @@
             head: ['Monthly payment', money(pay, 2)],
             rows: [['Interest rate', num(rate, 2) + '%'], ['SBA-guaranteed portion (' + guar + '%)', money(fee.guaranteed)], ['Upfront guaranty fee (may be passed to you)', money(fee.fee)],
               ['Total interest over the term', money(pay * v.years * 12 - v.amount)], ['Annual debt service', money(ds)], ['DSCR', num(c, 2) + 'x']],
-            notes: notes
+            notes: notes,
+            charts: [CH.stack('Who carries the risk', [{ label: 'SBA guarantees', value: fee.guaranteed }, { label: 'Lender carries', value: Math.max(0, v.amount - fee.guaranteed) }]), CH.gauge('Debt service coverage', c)]
           };
         }
       };
@@ -92,7 +94,8 @@
               ['Your equity (' + s.equityPct + '%)', money(s.equity)], ['Blended rate on financed amount', num(blended, 2) + '%'],
               ['Upfront SBA guaranty fee (0.50%)', money(fee.upfront)], ['Annual SBA service fee (0.203%)', money(fee.annual) + ' in year 1'], ['DSCR', num(c, 2) + 'x']],
             notes: ['Structure: bank first lien 50%, CDC second lien up to 40%, borrower at least 10%. Extra equity is required for new businesses and special-purpose property.',
-              'CDC processing fees, bank fees and closing costs are additional and vary by lender.', c >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.']
+              'CDC processing fees, bank fees and closing costs are additional and vary by lender.', c >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.'],
+            charts: [CH.stack('Where the project money comes from', [{ label: 'Bank loan', value: s.bank }, { label: 'CDC debenture', value: s.cdc }, { label: 'Your equity', value: s.equity }]), CH.gauge('Debt service coverage', c)]
           };
         }
       };
@@ -114,7 +117,8 @@
           return {
             head: ['Interest per month', money(r.monthly, 2)],
             rows: [['Rate', num(rate, 2) + '%'], ['Average balance', money(r.avg)], ['Interest over ' + v.months + ' months', money(r.total)], ['Fees over the period', money(fees)], ['All-in cost', money(r.total + fees)], ['Still available to draw', money(r.available)]],
-            notes: ['Interest is charged only on the amount you have drawn. Rates on most lines are variable and move with prime.']
+            notes: ['Interest is charged only on the amount you have drawn. Rates on most lines are variable and move with prime.'],
+            charts: [CH.stack('Your line of credit', [{ label: 'Average drawn', value: r.avg }, { label: 'Still available', value: r.available }])]
           };
         }
       };
@@ -137,15 +141,11 @@
           if (v.years > est.type.maxTerm) notes.push('Lenders usually keep ' + est.type.label.toLowerCase() + ' terms to ' + est.type.maxTerm + ' years or less (typical useful life ' + est.type.life + ').');
           notes.push(est.type.note);
           notes.push('Planning estimate only, not an offer. Real rates also depend on time in business, cash flow, collateral and the lender.');
-          var table = '<table class="lf-table"><caption>Estimated rate for ' + esc(est.type.label.toLowerCase()) + ' by credit profile</caption><thead><tr><th>Credit profile</th><th>Planning rate</th><th>Typical lender range</th></tr></thead><tbody>' +
-            LF.CREDIT_TIERS.map(function (c) {
-              var r = LF.equipmentRate(c.id, v.type, used, downPct).rate;
-              return '<tr' + (c.id === v.tier ? ' class="is-selected"' : '') + '><td>' + esc(c.label) + '</td><td>' + num(r, 2) + '%</td><td>' + c.low + '% - ' + c.high + '%</td></tr>';
-            }).join('') + '</tbody></table>';
           return {
             head: ['Monthly payment', money(t.payment, 2)],
             rows: [['Estimated rate', num(est.rate, 2) + '%'], ['Amount financed', money(fin)], ['Down payment', num(downPct, 1) + '% of price'], ['Total interest', money(t.interest)], ['Total cost of equipment', money(t.total + v.down)]],
-            notes: notes, extra: table
+            notes: notes,
+            charts: [CH.hbars('Estimated rate by credit profile', LF.CREDIT_TIERS.map(function (c) { var q = LF.equipmentRate(c.id, v.type, used, downPct).rate; return { label: c.label, value: q, text: num(q, 2) + '%', note: 'lenders: ' + c.low + '% to ' + c.high + '%', on: c.id === v.tier }; }), { max: 35 })]
           };
         }
       };
@@ -163,7 +163,8 @@
           var m = LF.mortgage(v.price, v.down, v.rate, v.years, v.tax, v.ins), notes = [];
           if (m.downPct < 20) notes.push('With under 20% down, most conventional loans add private mortgage insurance (PMI), which is not included here.');
           notes.push('Excludes HOA dues and PMI. Rates vary with credit, down payment and lender.');
-          return { head: ['Monthly payment (PITI)', money(m.total, 2)], rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes };
+          return { head: ['Monthly payment (PITI)', money(m.total, 2)], rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes,
+            charts: [CH.donut('Your monthly payment', [{ label: 'Principal and interest', value: m.pi }, { label: 'Property tax', value: m.tax }, { label: 'Insurance', value: m.ins }], [money(m.total), 'per month'], function (n) { return money(n) + '/mo'; })] };
         }
       };
     },
@@ -182,7 +183,8 @@
             head: ['Monthly savings', r.savings >= 0 ? money(r.savings, 2) : '-' + money(-r.savings, 2)],
             rows: [['Balance today', money(r.balance)], ['Break-even on closing costs', r.breakEvenMonths === null ? 'No monthly savings' : num(r.breakEvenMonths, 1) + ' months'],
               ['Interest ' + (r.interestChange >= 0 ? 'saved' : 'added'), money(Math.abs(r.interestChange))], ['Net ' + (r.net >= 0 ? 'saving' : 'cost') + ' after closing costs', money(Math.abs(r.net))]],
-            notes: ['Compares what you still owe with a new loan on that balance, paying closing costs out of pocket. A longer new term can lower the payment while adding interest.']
+            notes: ['Compares what you still owe with a new loan on that balance, paying closing costs out of pocket. A longer new term can lower the payment while adding interest.'],
+            charts: [CH.breakeven('When the refinance pays for itself', r.savings, v.cost, r.breakEvenMonths)]
           };
         }
       };
@@ -199,7 +201,8 @@
         run: function (v) {
           var a = LF.afford(v.income, v.debts, v.down, v.rate, v.tax, v.ins);
           return { head: ['Estimated home price', money(a.price)], rows: [['Monthly housing budget (incl. tax and insurance)', money(a.budget)], ['Loan amount', money(a.loan)], ['Debt-to-income at that budget', num(a.backEndDti, 1) + '%']],
-            notes: ['Uses the 28% housing and 36% total-debt guidelines on a 30-year loan. Lenders may allow more or less; PMI and HOA dues are not included.'] };
+            notes: ['Uses the 28% housing and 36% total-debt guidelines on a 30-year loan. Lenders may allow more or less; PMI and HOA dues are not included.'],
+            charts: [CH.donut('Where your monthly income goes at this budget', [{ label: 'Housing', value: a.budget }, { label: 'Other debts', value: v.debts }, { label: 'The rest', value: Math.max(0, v.income / 12 - a.budget - v.debts) }], [money(v.income / 12), 'per month'], function (n) { return money(n) + '/mo'; })] };
         }
       };
     },
@@ -215,7 +218,8 @@
           var ds = LF.pmt(v.amount, v.rate, v.years) * 12, c = LF.dscr(v.noi, ds);
           var max = LF.dscr(1, 1) && v.noi / 1.25;
           return { head: ['DSCR', num(c, 2) + 'x'], rows: [['Annual debt service', money(ds)], ['Income needed for 1.25x', money(ds * 1.25)], ['Cushion above debt service', money(v.noi - ds)]],
-            notes: [c >= 1.25 ? 'Meets the 1.25x level many lenders look for.' : c >= 1 ? 'Covers the payment but with less cushion than many lenders want.' : 'Income does not cover the payment as structured.', max ? '' : ''].filter(Boolean) };
+            notes: [c >= 1.25 ? 'Meets the 1.25x level many lenders look for.' : c >= 1 ? 'Covers the payment but with less cushion than many lenders want.' : 'Income does not cover the payment as structured.', max ? '' : ''].filter(Boolean),
+            charts: [CH.gauge('Debt service coverage', c)] };
         }
       };
     }
@@ -253,8 +257,9 @@
     function draw() {
       var r = spec.run(read());
       out.innerHTML = '<div class="lf-head"><span>' + esc(r.head[0]) + '</span><strong>' + esc(r.head[1]) + '</strong></div>' +
+        (r.charts && r.charts.filter(Boolean).length ? '<div class="lf-charts">' + r.charts.join('') + '</div>' : '') +
         '<dl class="lf-rows">' + r.rows.map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('') + '</dl>' +
-        (r.extra || '') + (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '');
+        (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '');
     }
     el.addEventListener('input', function (e) { if (e.target.dataset && e.target.dataset.f) touched[e.target.dataset.f] = true; draw(); });
     el.addEventListener('change', draw);

@@ -196,3 +196,37 @@ html { scroll-padding-top: 90px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* art:start */
+.art{width:100%;height:auto;display:block;overflow:visible}
+.art .ln,.art .ln2,.art .dim,.art .ring{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.art .ln{stroke:var(--accent);stroke-width:2}
+.art .ln2{stroke:var(--amber);stroke-width:2}
+.art .dim{stroke:rgba(255,255,255,.22);stroke-width:1.2}
+.art .soft{opacity:.55}.art .soft2{opacity:.28}
+.art .ring{stroke:var(--accent);stroke-width:7;opacity:.85}
+.art .fg{fill:rgba(52,213,154,.13)}.art .fa{fill:rgba(255,176,32,.16)}.art .fw{fill:rgba(255,255,255,.07)}
+.art .dot{fill:var(--amber);opacity:.85}
+.art .lbl{font:600 13px Inter,system-ui,sans-serif;fill:#fff;stroke:none}
+.art .dash{stroke-dasharray:4 5}
+.art .seg{stroke:none}.art .s1{fill:#34d59a}.art .s2{fill:#7fd66b}.art .s3{fill:#ffb020}.art .s4{fill:#ff8a3d}.art .s5{fill:#ef4444}
+.ico{width:100%;height:100%;display:block}
+.ico .ln,.ico .ln2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.4}
+.ico .ln{stroke:var(--accent)}.ico .ln2{stroke:var(--amber)}
+.ico .fg{fill:rgba(52,213,154,.14)}.ico .fa{fill:rgba(255,176,32,.18)}
+.art-flow{position:absolute;inset:0;width:100%;height:100%}
+.art-flow .fl{fill:none;opacity:.55}
+.art-flow .node{fill:var(--accent)}.art-flow .nodea{fill:var(--amber)}
+.art-flow .halo{fill:none;stroke:var(--accent);stroke-width:1;opacity:.35}.art-flow .halo.nodea{stroke:var(--amber)}
+@media (prefers-reduced-motion:no-preference){
+  .art-flow .fl{stroke-dasharray:8 16;animation:flowdash 26s linear infinite}
+  .art-flow .fl2{animation-duration:36s}.art-flow .fl3{animation-duration:44s}.art-flow .fl4{animation-duration:32s}.art-flow .fl5{animation-duration:40s}.art-flow .fl6{animation-duration:30s}
+}
+@keyframes flowdash{to{stroke-dashoffset:-400}}
+
+.nav-menu a { display: grid; grid-template-columns: 36px 1fr; gap: 0.85rem; align-items: center; }
+.mi { display: block; width: 36px; height: 36px; }
+.nav-menu b { display: block; font-weight: 400; }
+.mega-col a { padding: 0.55rem 0.7rem; }
+.mega-col a span { font-size: 0.78rem; }
+/* art:end */
