@@ -114,13 +114,62 @@
     return { rate: Math.round(rate * 100) / 100, tier: tier, type: type };
   };
 
+
+  /** Commercial real estate: payment on the amortization schedule, balloon at the end of the term, LTV and DSCR. */
+  LF.cre = function (price, downPct, ratePct, amortYears, termYears, noi) {
+    const loan = price * (1 - downPct / 100);
+    const pmt = LF.pmt(loan, ratePct, amortYears);
+    const t = Math.min(termYears, amortYears);
+    const balloon = LF.balanceAfter(loan, ratePct, amortYears, t * 12);
+    return { loan, pmt, annual: pmt * 12, balloon, paidDown: loan - balloon, ltv: 100 - downPct, dscr: LF.dscr(noi, pmt * 12), down: price - loan, interestOverTerm: pmt * t * 12 - (loan - balloon) };
+  };
+
+  /*
+   * SBA equity injection (down payment). Planning figures:
+   * 7(a) startup or change of ownership: SBA requires at least 10% of the project cost as equity injection.
+   * 7(a) expansion of an existing business: set by the lender.
+   * 504: borrower equity 10%, plus 5% for a new business and 5% for a special-purpose property.
+   */
+  LF.equityInjection = function (cost, mode) {
+    const m = {
+      startup: { pct: 10, rule: 'SBA minimum for a 7(a) startup' },
+      acquire: { pct: 10, rule: 'SBA minimum for buying a business (change of ownership)' },
+      expand: { pct: 10, rule: 'Lender decides; 10% shown as a planning figure' },
+      '504': { pct: 10, rule: 'Standard 504 borrower equity' },
+      '504new': { pct: 15, rule: '504: 10% plus 5% for a new business' },
+      '504special': { pct: 15, rule: '504: 10% plus 5% for a special-purpose property' },
+      '504both': { pct: 20, rule: '504: 10% plus 5% new business plus 5% special-purpose property' }
+    }[mode] || { pct: 10, rule: '' };
+    return { pct: m.pct, rule: m.rule, equity: cost * m.pct / 100, loan: cost - cost * m.pct / 100 };
+  };
+
+  /*
+   * Equipment lease versus loan, on financing cost only (no tax effects).
+   * Lease payment amortizes (price minus the present value of the residual) at the lease rate.
+   * Net cost = cash paid minus the value of equipment you still own at the end.
+   */
+  LF.leaseVsLoan = function (price, down, years, loanRatePct, leaseRatePct, residualPct) {
+    const n = years * 12, i = leaseRatePct / 100 / 12, R = price * residualPct / 100;
+    const loanPay = LF.pmt(Math.max(0, price - down), loanRatePct, years);
+    const leasePay = i === 0 ? (price - R) / n : (price - R / Math.pow(1 + i, n)) * i / (1 - Math.pow(1 + i, -n));
+    const loanCash = down + loanPay * n, leaseCash = down + leasePay * n;
+    return { loanPay, leasePay, loanCash, leaseCash, residual: R, loanNet: loanCash - R, leaseNet: leaseCash, leaseBuyCash: leaseCash + R };
+  };
+
+  /** Equipment: monthly payment and interest for each term, same estimated rate. */
+  LF.equipmentTerms = function (financed, ratePct, terms) {
+    return terms.map(function (y) { const t = LF.termLoan(financed, ratePct, y); return { years: y, payment: t.payment, interest: t.interest, total: t.total }; });
+  };
+
   /** Mortgage payment with tax and insurance. */
-  LF.mortgage = function (price, down, ratePct, years, taxPct, insuranceYear) {
+  LF.mortgage = function (price, down, ratePct, years, taxPct, insuranceYear, pmiPct) {
     const loan = Math.max(0, price - down);
     const pi = LF.pmt(loan, ratePct, years);
     const tax = price * taxPct / 100 / 12;
     const ins = insuranceYear / 12;
-    return { loan, pi, tax, ins, total: pi + tax + ins, interest: pi * years * 12 - loan, downPct: price > 0 ? down / price * 100 : 0 };
+    const downPct = price > 0 ? down / price * 100 : 0;
+    const pmi = downPct < 20 && pmiPct > 0 ? loan * pmiPct / 100 / 12 : 0;   // private mortgage insurance, typical on conventional loans under 20% down
+    return { loan, pi, tax, ins, pmi, total: pi + tax + ins + pmi, interest: pi * years * 12 - loan, downPct };
   };
 
   /** Affordability: 28% of income for the whole housing payment, 36% for housing plus other debts. */

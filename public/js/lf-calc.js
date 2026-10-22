@@ -12,6 +12,91 @@
   var YN = [['no', 'No'], ['yes', 'Yes']];
 
   var CALCS = {
+    cre: function (d) {
+      return {
+        title: d.title || 'Commercial real estate loan calculator',
+        fields: [
+          f('price', 'Property price', 1500000, { prefix: '$', step: 25000 }), f('down', 'Down payment', 30, { suffix: '% of price', step: 1 }),
+          f('rate', 'Interest rate', 7.25, { suffix: '%', step: 0.05 }), f('amort', 'Amortization', 25, { suffix: 'years', step: 1 }),
+          f('term', 'Loan term', 10, { suffix: 'years', step: 1, hint: 'When the balance comes due' }), f('noi', 'Annual net operating income', 140000, { prefix: '$', step: 1000 })
+        ],
+        run: function (v) {
+          var c = LF.cre(v.price, Math.min(v.down, 100), v.rate, v.amort, v.term, v.noi), notes = [];
+          if (c.ltv > 80) notes.push('Loan-to-value above 80% is rare on commercial property; many lenders stop at 65% to 80%.');
+          notes.push(c.dscr >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.');
+          if (v.term < v.amort) notes.push('A balloon of ' + money(c.balloon) + ' comes due at the end of the term. Plan how you will refinance or repay it.');
+          return {
+            head: ['Monthly payment', money(c.pmt, 2)],
+            rows: [['Loan amount', money(c.loan)], ['Down payment', money(c.down)], ['Loan-to-value', num(c.ltv, 0) + '%'], ['Annual debt service', money(c.annual)], ['DSCR', num(c.dscr, 2) + 'x'], ['Balance due at the end of the term', money(c.balloon)]],
+            notes: notes,
+            charts: [CH.stack('At the end of a ' + v.term + '-year term', [{ label: 'Paid down', value: c.paidDown }, { label: 'Balloon still owed', value: c.balloon }]), CH.gauge('Debt service coverage', c.dscr)]
+          };
+        }
+      };
+    },
+
+    equity: function (d) {
+      return {
+        title: d.title || 'SBA down payment (equity injection) calculator',
+        fields: [
+          f('cost', 'Total project cost', 600000, { prefix: '$', step: 10000 }),
+          sel('mode', 'What are you doing?', 'acquire', [['startup', 'Starting a business (7(a))'], ['acquire', 'Buying a business (7(a))'], ['expand', 'Expanding an existing business (7(a))'], ['504', 'Buying property or equipment (504)'], ['504new', '504 for a new business'], ['504special', '504 for a special-purpose property'], ['504both', '504: new business and special-purpose']])
+        ],
+        run: function (v) {
+          var e = LF.equityInjection(v.cost, v.mode);
+          return {
+            head: ['Down payment needed', money(e.equity)],
+            rows: [['Share of the project', num(e.pct, 0) + '%'], ['Left to borrow', money(e.loan)], ['Rule behind the number', e.rule]],
+            notes: ['Lenders can require more than the SBA minimum. Ask which sources your lender counts toward the down payment, since seller notes and other funds follow specific rules.'],
+            charts: [CH.stack('Funding the project', [{ label: 'Your equity', value: e.equity }, { label: 'Loan', value: e.loan }])]
+          };
+        }
+      };
+    },
+
+    equipterms: function (d) {
+      return {
+        title: d.title || 'Equipment financing payment by term',
+        fields: [
+          f('price', 'Equipment price', 120000, { prefix: '$', step: 1000 }), f('down', 'Down payment', 12000, { prefix: '$', step: 500 }),
+          sel('tier', 'Credit profile', d.tier || 'good', LF.CREDIT_TIERS.map(function (t) { return [t.id, t.label]; })),
+          sel('type', 'Equipment type', d.type || 'construction', LF.EQUIPMENT_TYPES.map(function (t) { return [t.id, t.label]; })),
+          sel('used', 'Condition', d.used || 'new', [['new', 'New'], ['used', 'Used']])
+        ],
+        run: function (v) {
+          var downPct = v.price > 0 ? v.down / v.price * 100 : 0, est = LF.equipmentRate(v.tier, v.type, v.used === 'used', downPct), fin = Math.max(0, v.price - v.down);
+          var rows = LF.equipmentTerms(fin, est.rate, [2, 3, 4, 5, 6, 7]), max = rows[rows.length - 1].payment === 0 ? 1 : rows[0].payment;
+          return {
+            head: ['Estimated rate', num(est.rate, 2) + '%'],
+            rows: [['Amount financed', money(fin)], ['Down payment', num(downPct, 1) + '% of price'], ['Usual maximum term for this type', est.type.maxTerm + ' years']],
+            notes: ['Same estimated rate at every term. In practice lenders often charge more for longer terms.', est.type.note, 'Planning estimate only, not an offer.'],
+            charts: [CH.hbars('Monthly payment by term', rows.map(function (r) { return { label: r.years + ' years' + (r.years > est.type.maxTerm ? ' (long for this type)' : ''), value: r.payment, text: money(r.payment) + '/mo', note: 'interest ' + money(r.interest) }; }), { max: max })]
+          };
+        }
+      };
+    },
+
+    leaseloan: function (d) {
+      return {
+        title: d.title || 'Equipment lease versus loan',
+        fields: [
+          f('price', 'Equipment price', 120000, { prefix: '$', step: 1000 }), f('down', 'Cash due at the start', 12000, { prefix: '$', step: 500 }),
+          f('years', 'Term', 5, { suffix: 'years', step: 1 }), f('loanRate', 'Loan rate', 9.5, { suffix: '%', step: 0.05 }),
+          f('leaseRate', 'Lease rate', 11, { suffix: '%', step: 0.05, hint: 'Leases often carry a higher effective rate' }), f('resid', 'Value of the equipment at the end', 20, { suffix: '% of price', step: 1 })
+        ],
+        run: function (v) {
+          var r = LF.leaseVsLoan(v.price, v.down, v.years, v.loanRate, v.leaseRate, v.resid), cheaper = r.loanNet <= r.leaseNet ? 'Loan' : 'Lease', diff = Math.abs(r.loanNet - r.leaseNet);
+          return {
+            head: ['Lower net cost', cheaper + ' by ' + money(diff)],
+            rows: [['Loan payment', money(r.loanPay, 2) + '/mo'], ['Lease payment (return at end)', money(r.leasePay, 2) + '/mo'], ['Cash paid, loan', money(r.loanCash)], ['Cash paid, lease', money(r.leaseCash)],
+              ['Equipment value at the end', money(r.residual)], ['Net cost, loan (after keeping the equipment)', money(r.loanNet)], ['Net cost, lease', money(r.leaseNet)], ['Extra to buy the equipment at lease end', money(r.residual)]],
+            notes: ['Compares financing cost only. Tax treatment, maintenance, usage limits and end-of-lease fees can change the answer, so ask your tax professional.', 'The result depends heavily on the end value you assume. Try a lower figure to see how sensitive it is.'],
+            charts: [CH.hbars('Net cost over the term', [{ label: 'Loan', value: r.loanNet, text: money(r.loanNet), on: cheaper === 'Loan' }, { label: 'Lease', value: r.leaseNet, text: money(r.leaseNet), on: cheaper === 'Lease' }], { max: Math.max(r.loanNet, r.leaseNet) })]
+          };
+        }
+      };
+    },
+
     payment: function (d) {
       return {
         title: 'Loan payment calculator',
@@ -124,15 +209,15 @@
       };
     },
 
-    equipment: function () {
+    equipment: function (d) {
       return {
         title: 'Equipment financing estimator',
         fields: [
-          f('price', 'Equipment price', 120000, { prefix: '$', step: 1000 }),
-          f('down', 'Down payment', 12000, { prefix: '$', step: 500 }),
-          sel('tier', 'Credit profile', 'good', LF.CREDIT_TIERS.map(function (t) { return [t.id, t.label]; })),
-          sel('type', 'Equipment type', 'construction', LF.EQUIPMENT_TYPES.map(function (t) { return [t.id, t.label]; })),
-          sel('used', 'Condition', 'new', [['new', 'New'], ['used', 'Used']]),
+          f('price', 'Equipment price', +d.price || 120000, { prefix: '$', step: 1000 }),
+          f('down', 'Down payment', d.down !== undefined ? +d.down : 12000, { prefix: '$', step: 500 }),
+          sel('tier', 'Credit profile', d.tier || 'good', LF.CREDIT_TIERS.map(function (t) { return [t.id, t.label]; })),
+          sel('type', 'Equipment type', d.type || 'construction', LF.EQUIPMENT_TYPES.map(function (t) { return [t.id, t.label]; })),
+          sel('used', 'Condition', d.used || 'new', [['new', 'New'], ['used', 'Used']]),
           f('years', 'Term', 5, { suffix: 'years', step: 1 })
         ],
         run: function (v) {
@@ -157,14 +242,15 @@
         fields: [
           f('price', 'Home price', 425000, { prefix: '$', step: 5000 }), f('down', 'Down payment', 85000, { prefix: '$', step: 1000 }),
           f('rate', 'Interest rate', 7.0, { suffix: '%', step: 0.05 }), f('years', 'Term', 30, { suffix: 'years', step: 5 }),
-          f('tax', 'Property tax', 1.1, { suffix: '% of price', step: 0.05 }), f('ins', 'Homeowner\'s insurance', 1400, { prefix: '$', suffix: '/yr', step: 50 })
+          f('tax', 'Property tax', 1.1, { suffix: '% of price', step: 0.05 }), f('ins', 'Homeowner\'s insurance', 1400, { prefix: '$', suffix: '/yr', step: 50 }),
+          f('pmi', 'PMI rate (used when under 20% down)', 0.7, { suffix: '% of loan/yr', step: 0.05, hint: 'Typically 0.3% to 1.5% depending on credit and down payment' })
         ],
         run: function (v) {
-          var m = LF.mortgage(v.price, v.down, v.rate, v.years, v.tax, v.ins), notes = [];
-          if (m.downPct < 20) notes.push('With under 20% down, most conventional loans add private mortgage insurance (PMI), which is not included here.');
-          notes.push('Excludes HOA dues and PMI. Rates vary with credit, down payment and lender.');
-          return { head: ['Monthly payment (PITI)', money(m.total, 2)], rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes,
-            charts: [CH.donut('Your monthly payment', [{ label: 'Principal and interest', value: m.pi }, { label: 'Property tax', value: m.tax }, { label: 'Insurance', value: m.ins }], [money(m.total), 'per month'], function (n) { return money(n) + '/mo'; })] };
+          var m = LF.mortgage(v.price, v.down, v.rate, v.years, v.tax, v.ins, v.pmi), notes = [];
+          if (m.pmi > 0) notes.push('Includes an estimated ' + money(m.pmi, 2) + ' a month of PMI because the down payment is under 20%. It usually ends once you build enough equity.');
+          notes.push('Excludes HOA dues. Rates vary with credit, down payment and lender.');
+          return { head: ['Monthly payment (PITI)', money(m.total, 2)], rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Mortgage insurance (PMI)', money(m.pmi, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes,
+            charts: [CH.donut('Your monthly payment', [{ label: 'Principal and interest', value: m.pi }, { label: 'Property tax', value: m.tax }, { label: 'Insurance', value: m.ins }, { label: 'PMI', value: m.pmi }].filter(function (x) { return x.value > 0; }), [money(m.total), 'per month'], function (n) { return money(n) + '/mo'; })] };
         }
       };
     },
