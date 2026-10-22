@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Service Coverage Ratio (DSCR) Explained, With Examples — LoansFlow</title>
+  <meta name="description" content="What DSCR is, how lenders calculate it, what a good ratio looks like, a worked example with real loan math, and practical ways to improve your ratio before applying.">
+  <link rel="canonical" href="https://loansflow.loan/guides/dscr-explained.html">
+  <meta property="og:title" content="Debt Service Coverage Ratio (DSCR) Explained, With Examples — LoansFlow">
+  <meta property="og:description" content="What DSCR is, how lenders calculate it, what a good ratio looks like, a worked example with real loan math, and practical ways to improve your ratio before applying.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loansflow.loan/guides/dscr-explained.html">
+  <meta property="og:image" content="https://loansflow.loan/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://loansflow.loan/img/logo.png">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-180.png">
+  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    .site-nav { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); backdrop-filter: none; }
+    .site-nav .nav-cta { border-color: var(--ink); color: var(--ink) !important; }
+    .legal-page { min-height: 100vh; background: var(--canvas); color: var(--ink); padding: 7rem clamp(1.25rem,4vw,3rem) 4rem; }
+    .legal-page h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 1.25rem; }
+    .legal-page h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 0.85rem; }
+    .legal-page h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.3; margin: 1.75rem 0 0.5rem; color: var(--ink); }
+    .legal-page p { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 1rem; }
+    .legal-page ul { max-width: 65ch; margin: 0 0 1.25rem; padding-left: 1.15rem; }
+    .legal-page li { max-width: 65ch; line-height: 1.7; color: var(--muted); margin-bottom: 0.4rem; }
+    .legal-page li strong { color: var(--ink-secondary); font-weight: 600; }
+    .legal-page a { color: var(--accent); }
+    .legal-page .updated { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; display: block; }
+    .legal-page table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.95rem; max-width: 1078px; }
+    .legal-page th { background: var(--surface); border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: left; font-weight: 600; color: var(--ink-secondary); }
+    .legal-page td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; color: var(--muted); vertical-align: top; }
+    .legal-page caption { text-align: left; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink-secondary); }
+    .legal-page .disclaimer { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.25rem; margin: 2rem 0; max-width: 65ch; }
+    .legal-page .disclaimer p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+    .legal-page .red-flag { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+    .legal-page .red-flag p { color: var(--ink-secondary); margin: 0; }
+  </style>
+  <meta name="google-adsense-account" content="ca-pub-6588738221262894">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://loansflow.loan/#organization",
+        "name": "LoansFlow",
+        "url": "https://loansflow.loan/",
+        "logo": "https://loansflow.loan/img/logo.png",
+        "description": "Free SBA 7(a), SBA 504, and commercial loan calculators with DSCR and guaranty fee estimates — plus mortgage payment, amortization, refinance, and affordability tools."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://loansflow.loan/guides/dscr-explained.html#webpage",
+        "url": "https://loansflow.loan/guides/dscr-explained.html",
+        "name": "Debt Service Coverage Ratio (DSCR) Explained, With Examples — LoansFlow",
+        "isPartOf": { "@id": "https://loansflow.loan/#website" },
+        "breadcrumb": { "@id": "https://loansflow.loan/guides/dscr-explained.html#breadcrumb" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://loansflow.loan/guides/dscr-explained.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
+          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://loansflow.loan/guides/" },
+          { "@type": "ListItem", "position": 3, "name": "Debt Service Coverage Ratio (DSCR) Explained, With Examples" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Debt Service Coverage Ratio (DSCR) Explained, With Examples",
+        "description": "What DSCR is, how lenders calculate it, what a good ratio looks like, a worked example with real loan math, and practical ways to improve your ratio before applying.",
+        "datePublished": "2026-10-22",
+        "dateModified": "2026-10-22",
+        "publisher": { "@id": "https://loansflow.loan/#organization" },
+        "mainEntityOfPage": "https://loansflow.loan/guides/dscr-explained.html",
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <a class="nav-brand" href="../"><img src="../img/logo.svg" alt="LoansFlow" width="140" height="40" decoding="async"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../">Home</a>
+      <a href="../guides/" aria-current="page">Guides</a>
+      <a href="../tools/">Calculators</a>
+      <a class="nav-cta" href="../tools/">Open tools</a>
+    </nav>
+  </header>
+  <main class="legal-page">
+    <p class="updated">Updated October 22, 2026 &middot; By the LoansFlow Editorial Team</p>
+    <h1>Debt Service Coverage Ratio (DSCR) Explained, With Examples</h1>
+    
+    <p>If you ask a commercial lender what they look at first, the answer is almost always <strong>cash flow</strong>, and the number that expresses it is the debt service coverage ratio, or DSCR. It is the single most useful figure to understand before you borrow, because it tells you in one number whether the business can carry the payment.</p>
+
+    <h2>The formula</h2>
+    <p><strong>DSCR = Net operating income ÷ Total annual debt service</strong></p>
+    <ul>
+      <li><strong>Net operating income (NOI)</strong> is the cash the business generates from operations before debt payments. Lenders usually start with net profit and add back interest, depreciation, amortization, and other non-cash or one-time items.</li>
+      <li><strong>Debt service</strong> is the total of principal and interest payments due in a year on all of the business's debt, including the new loan.</li>
+    </ul>
+    <p>A DSCR of 1.00 means the business makes exactly enough to pay its debts with nothing left over. Above 1.00 there is a cushion. Below 1.00, the business does not generate enough to cover the payments.</p>
+
+    <h2>What lenders want to see</h2>
+    <p>Minimums vary by lender, loan type, and risk. A common benchmark for commercial loans is <strong>1.25</strong>, meaning the business earns 25 percent more than it owes in debt payments. Some SBA lenders will approve files with a somewhat lower ratio when other factors are strong, and some conventional lenders or riskier industries require more. Treat 1.25 as a planning target, and ask each lender for its own minimum.</p>
+
+    <h2>A worked example</h2>
+    <p>Suppose a business wants a $1,000,000 loan at 9.75 percent over 25 years. The monthly payment on that loan is about <strong>$8,911</strong>, which is <strong>$106,936</strong> a year. The business has no other debt, and its adjusted net operating income is $140,000.</p>
+    <p>DSCR = 140,000 ÷ 106,936 = <strong>1.31</strong>. That clears a 1.25 test with some room.</p>
+    <p>Now stress it. If revenue dips and NOI falls 15 percent to $119,000, the ratio becomes 119,000 ÷ 106,936 = <strong>1.11</strong>. The payment is still covered, but the margin is thin, and many lenders would be uncomfortable. This is why lenders also run sensitivity tests, and why you should too. Use our <a href="../tools/">SBA and commercial calculators</a>, which estimate DSCR alongside the payment, to try different loan sizes and terms.</p>
+
+    <h2>Global DSCR</h2>
+    <p>Small business loans often depend on the owners personally, so lenders frequently compute a <strong>global DSCR</strong>. It combines the business's cash flow with the owners' personal income, then compares that total to the business's debt plus the owners' personal debt payments such as the mortgage and car loans. If the business is thin but the owners have strong outside income, the global figure can carry the file, and the reverse is also true. Be ready with personal tax returns and a personal financial statement.</p>
+
+    <h2>How to improve your DSCR before applying</h2>
+    <ol>
+      <li><strong>Lower the debt service.</strong> A longer term, a smaller loan, or a lower rate all reduce the annual payment. Compare terms in the <a href="choosing-lender.html">lender comparison guide</a>.</li>
+      <li><strong>Raise documented income.</strong> Lenders count what appears on your tax returns and financial statements, not what you expect to earn. Clean up bookkeeping and reconcile your books to your returns.</li>
+      <li><strong>Document add-backs.</strong> One-time expenses, owner perks, and non-cash charges can legitimately raise NOI. Keep support for each.</li>
+      <li><strong>Pay down or consolidate other debt.</strong> Existing payments count against you, so retiring a small high-payment loan can help.</li>
+      <li><strong>Bring more equity.</strong> A larger down payment shrinks the new loan.</li>
+    </ol>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Using projected revenue instead of historical NOI. Lenders weigh history heavily, and projections only matter for startups or major changes.</li>
+      <li>Forgetting existing debt such as equipment loans, credit lines, and credit cards in total debt service.</li>
+      <li>Ignoring seasonality. A strong annual average can hide months when the payment is not covered.</li>
+      <li>Treating DSCR as the only test. Credit, collateral, industry, and management all count too.</li>
+    </ul>
+
+    <h2>Related terms</h2>
+    <p>DSCR is closely related to <em>debt yield</em> and <em>loan-to-value</em>, which come up in real estate loans. Definitions for these and other lending terms are in the <a href="glossary.html">glossary</a>.</p>
+
+    <div class="ad-slot" data-ad-format="rectangle" data-ad-name="dscr-explained-mid" style="margin-top:2rem;"></div>
+
+    <h2>Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer">SBA: Loans</a></li>
+      <li><a href="https://www.consumerfinance.gov/ask-cfpb/" target="_blank" rel="noopener noreferrer">CFPB: Ask CFPB</a></li>
+      <li><a href="https://www.score.org/" target="_blank" rel="noopener noreferrer">SCORE: Free mentoring</a></li>
+    </ul>
+
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="sba-7a-step-by-step.html">SBA 7(a) Loan: A 10-Step Playbook</a></li>
+      <li><a href="loan-documents.html">Loan Documents: What Lenders Ask For</a></li>
+      <li><a href="business-plan-for-a-loan.html">Business Plan for a Loan</a></li>
+      <li><a href="glossary.html">Loan Glossary</a></li>
+      <li><a href="../tools/">Run the numbers in our free calculators</a></li>
+    </ul>
+
+    <div class="disclaimer">
+      <p>This guide is general information, not financial, tax, or legal advice, and LoansFlow is not a lender. Program rules, limits, and rates change; confirm current terms with your lender and the issuing agency before you act. Examples use round, illustrative numbers.</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>LoansFlow</h4>
+        <p>Free SBA, commercial, and mortgage calculators. Estimates only — not a lender.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="../tools/">All calculators</a>
+        <a href="../tools/?step=8">Market news</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../directory/">Directory</a>
+        <a href="../guides/checklist.html">Checklist</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      &copy; 2026 LoansFlow.
+      All figures are estimates for informational purposes only and do not constitute financial, tax, or legal advice.
+    </div>
+  </footer>
+  <script>
+    window.LOANSFLOW_ADS = { provider: "adsense", adsenseClient: "ca-pub-6588738221262894" };
+  </script>
+  <script src="../js/ads.js" defer></script>
+  <script src="../js/offers.js" defer></script>
+</body>
+</html>
