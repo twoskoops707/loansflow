@@ -109,7 +109,6 @@ a { color: inherit; text-decoration: none; }
 .footer-grid a, .footer-grid p { display: block; font-size: 0.88rem; margin-bottom: 0.5rem; line-height: 1.55; }
 .footer-grid a { transition: color 0.2s; }
 .footer-grid a:hover { color: var(--ink); }
-.footer-motto { color: var(--fog); }
 .footer-note { font-size: 0.8rem; line-height: 1.6; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1.5rem; }
 
 /* ---------- Ad slots ---------- */
@@ -215,15 +214,6 @@ html { scroll-padding-top: 90px; }
 .ico .ln,.ico .ln2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.4}
 .ico .ln{stroke:var(--accent)}.ico .ln2{stroke:var(--amber)}
 .ico .fg{fill:rgba(52,213,154,.14)}.ico .fa{fill:rgba(255,176,32,.18)}
-.art-flow{position:absolute;inset:0;width:100%;height:100%}
-.art-flow .fl{fill:none;opacity:.55}
-.art-flow .node{fill:var(--accent)}.art-flow .nodea{fill:var(--amber)}
-.art-flow .halo{fill:none;stroke:var(--accent);stroke-width:1;opacity:.35}.art-flow .halo.nodea{stroke:var(--amber)}
-@media (prefers-reduced-motion:no-preference){
-  .art-flow .fl{stroke-dasharray:8 16;animation:flowdash 26s linear infinite}
-  .art-flow .fl2{animation-duration:36s}.art-flow .fl3{animation-duration:44s}.art-flow .fl4{animation-duration:32s}.art-flow .fl5{animation-duration:40s}.art-flow .fl6{animation-duration:30s}
-}
-@keyframes flowdash{to{stroke-dashoffset:-400}}
 
 .nav-menu a { display: grid; grid-template-columns: 36px 1fr; gap: 0.85rem; align-items: center; }
 .mi { display: block; width: 36px; height: 36px; }
