@@ -311,6 +311,16 @@
     }
   };
 
+  /* Thousands separators: "1234567.5" -> "1,234,567.5" (digits and one decimal point only). */
+  function commas(v) {
+    var t = String(v).replace(/[^0-9.]/g, ''), i = t.indexOf('.');
+    if (i >= 0) t = t.slice(0, i + 1) + t.slice(i + 1).replace(/\./g, '');
+    var parts = t.split('.');
+    parts[0] = parts[0].replace(/^0+(?=\d)/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  }
+  function parseNum(str) { return parseFloat(String(str).replace(/,/g, '')); }
+
   function fieldHtml(fd, uid) {
     var id = uid + '-' + fd.id, inner;
     if (fd.type === 'select') {
@@ -318,7 +328,7 @@
       return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input lf-select">' + inner + '</div></div>';
     }
     inner = (fd.prefix ? '<span class="lf-affix">' + esc(fd.prefix) + '</span>' : '') +
-      '<input id="' + id + '" data-f="' + fd.id + '" type="number" inputmode="decimal" min="0"' + (fd.max ? ' max="' + fd.max + '"' : '') + ' step="' + fd.step + '" value="' + fd.value + '">' +
+      '<input id="' + id + '" data-f="' + fd.id + '" type="text" inputmode="decimal" autocomplete="off" data-max="' + (fd.max || '') + '" value="' + commas(fd.value) + '">' +
       (fd.suffix ? '<span class="lf-affix">' + esc(fd.suffix) + '</span>' : '');
     return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input">' + inner + '</div>' + (fd.hint ? '<small>' + esc(fd.hint) + '</small>' : '') + '</div>';
   }
@@ -336,7 +346,7 @@
       var v = {};
       spec.fields.forEach(function (fd) {
         var node = el.querySelector('[data-f="' + fd.id + '"]');
-        v[fd.id] = fd.type === 'select' ? node.value : (isFinite(parseFloat(node.value)) ? Math.max(0, parseFloat(node.value)) : 0);
+        v[fd.id] = fd.type === 'select' ? node.value : (isFinite(parseNum(node.value)) ? Math.min(Math.max(0, parseNum(node.value)), +node.dataset.max || Infinity) : 0);
       });
       return v;
     }
@@ -347,12 +357,26 @@
         '<dl class="lf-rows">' + r.rows.map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('') + '</dl>' +
         (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '');
     }
-    el.addEventListener('input', function (e) { if (e.target.dataset && e.target.dataset.f) touched[e.target.dataset.f] = true; draw(); });
+    el.addEventListener('input', function (e) {
+      var t = e.target;
+      if (t.dataset && t.dataset.f) {
+        touched[t.dataset.f] = true;
+        if (t.tagName === 'INPUT') {
+          var pos = t.selectionStart, before = t.value.slice(0, pos).replace(/[^0-9.]/g, '').length, f = commas(t.value);
+          if (f !== t.value) {
+            t.value = f;
+            for (pos = 0; pos < f.length && before > 0; pos++) if (/[0-9.]/.test(f[pos])) before--;
+            if (t.setSelectionRange) t.setSelectionRange(pos, pos);
+          }
+        }
+      }
+      draw();
+    });
     el.addEventListener('change', draw);
     draw();
     el._lfSyncPrime = function () {
       spec.fields.forEach(function (fd) {
-        if (fd.live && livePrime && !touched[fd.id]) el.querySelector('[data-f="' + fd.id + '"]').value = livePrime;
+        if (fd.live && livePrime && !touched[fd.id]) el.querySelector('[data-f="' + fd.id + '"]').value = commas(livePrime);
       });
       draw();
     };

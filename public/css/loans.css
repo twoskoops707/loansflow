@@ -84,7 +84,7 @@
 .lf-input .lf-affix:first-child { border-right: 1px solid var(--line); }
 .lf-input .lf-affix:last-child { border-left: 1px solid var(--line); }
 .lf-input input, .lf-input select { flex: 1; min-width: 0; width: 100%; padding: 0.7rem 0.8rem; background: transparent; border: 0; outline: 0; color: var(--ink); font: inherit; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
-.lf-input input[type="number"] { text-align: right; -moz-appearance: textfield; appearance: textfield; }
+.lf-input input[type="text"] { text-align: right; -moz-appearance: textfield; appearance: textfield; }
 .lf-input input::-webkit-outer-spin-button, .lf-input input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .lf-select select option { background: var(--surface); color: var(--ink); }
 .lf-result { border-top: 1px solid var(--line); padding: 1.3rem 1.4rem 1.4rem; background: rgba(52, 213, 154, 0.03); }
