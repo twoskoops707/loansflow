@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T18:29:53.573Z",
+  "updatedAt": "2026-10-23T18:16:39.156Z",
   "rates": {
     "asOf": "10/22/2026",
     "source": "Freddie Mac PMMS",
@@ -25,7 +25,7 @@
   },
   "prime": {
     "value": 7,
-    "asOf": "2026-10-13",
+    "asOf": "2026-10-21",
     "source": "FRED (DPRIME)"
   },
   "articles": [
@@ -55,14 +55,6 @@
     },
     {
       "category": "Rates",
-      "source": "WSJ",
-      "title": "Mortgage Rates Today, October 20, 2026: 30-Year Rates Climb to 7.47%",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTW9qRXV2eDhrNTBlUzdkQkhoNlYwbHJ6eW1wT3JMVk9qWFlaYnBqWmZjNUJxSjBjSnkwZ1RxX1lER0tiZUhJTTBRdlB3cjNvZ3BqdVVIbFZDTE8tVFF1UUFoaHNuOHRGWHFzcnBsSVVLM0Z2d00xOXlxSUwzS1NuajBZWDBybzlYbGIyaDhn?oc=5",
-      "publishedAt": "2026-10-20T13:09:42.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates drop for the first time in 2 months, but demand still falls further",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
@@ -71,11 +63,19 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage rates held steady this week at 7.4%: Mortgage and refinance interest rates today, Thursday, October 15, 2026",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPYWpVemRtc0ZWUjhPR2N6S2UxRlZrZlVFekJFNkt2QXRBQ2JRTzFKQTYwN3RVTmRlbk42VXVPTHZ4MjdkOFFsNVphRjFmUWdEVE1oeUVDX1dVdWtDS0VEQ0NJYkc2M1c3UlhXOEpnaEVKY001amZLQnFvclJ3bHE5RC1SN1NaSHZxM3lSZDVvRlhqdzh4SEZqNC1lYWpabW5xUXRYUHVzaXFBY29tclBXZ3RlVVpTZ0RNcF9aNUk3a0hXRUZkeDhPNzBtLVZ6R0cxMFpUb2tRQ3dRSXdCWEJTRFZ4bTAzUk0ydjJ0TXM1U1ZjTlJ4U05hWEhia1JhTV9SWHg1am1vLTAwT1VWdVgzS3kwMjlWQQ?oc=5",
-      "publishedAt": "2026-10-15T20:45:34.000Z"
+      "source": "WSJ",
+      "title": "Mortgage Rates Today, October 20, 2026: 30-Year Rates Climb to 7.47%",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQTW9qRXV2eDhrNTBlUzdkQkhoNlYwbHJ6eW1wT3JMVk9qWFlaYnBqWmZjNUJxSjBjSnkwZ1RxX1lER0tiZUhJTTBRdlB3cjNvZ3BqdVVIbFZDTE8tVFF1UUFoaHNuOHRGWHFzcnBsSVVLM0Z2d00xOXlxSUwzS1NuajBZWDBybzlYbGIyaDhn?oc=5",
+      "publishedAt": "2026-10-20T13:09:42.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "National Association of REALTORS®",
+      "title": "Pending Home Sales Decreased 7.3% in September",
+      "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOGRZU0s5WkNrSlFHNlUwVUlFZWc3amt3a3QwQmhQM1B6MnJBcU9tUHJqSlBQek9ubkhUTE1fb2R2bENtTS1TdFc5M1k0QW10cmpHbzBTbHBTYlk5WUZVQWxvT0ZOM1IwQy01MThKS2MyUG8zclVUelQ0NlVmSzctQmZ2UHFKOVhNTUxHSzZ5bw?oc=5",
+      "publishedAt": "2026-10-20T14:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -87,27 +87,35 @@
     },
     {
       "category": "Rates",
-      "source": "National Association of REALTORS®",
-      "title": "Fewer Buyers Go Under Contract as Mortgage Rates Remain High",
-      "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQ21qTE9YdmprelNDOUxjbVA5VDkzY0VCbGdXTVBEcWJTakh3YXE4djR6UE0zNVBFTGctdzVYdnh5eHhhQlZ4R0Vzd0RySW9peXB1M0JaMHJFbHRpYzVMckFfT1hfbExpX0YxTmM3YWg2LXdxYTN1Q1FrWU9ual9lV2Y0YTJTVEpFLUl3RUpfcW9Ta1RXVW94T1dFajNWNDV4YTFEWWtzWGh0TmVZUTIxWXp2TkM?oc=5",
-      "publishedAt": "2026-10-20T14:01:00.000Z"
+      "source": "The New York Times",
+      "title": "Mortgage Rates Remain Above 7%, Pushing Home Prices Lower in Some Areas",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbk1TSEw5RHNPZmVFSW5vaWM4YlB4U1VQY1FXVWNRdmlIeWRWblctTzN4Zm1DSkpheUNCV0h6WVRMZGVKdXFwSlRlT2R3UW8ydkVXdWVHUWhzYmpiOW0wd1NyQWt1ZXZaeWREMzZhamVYdjVpLTJOd20tWUhzWnUza3FxWQ?oc=5",
+      "publishedAt": "2026-10-22T19:18:58.000Z"
     },
     {
       "category": "Rates",
-      "source": "Bankrate",
-      "title": "Mortgage rates fall well below 7.5%",
-      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQamVrZlcwaFRjY0NDSVZld1p3NFNNMEhQZUIySDVlSThrTXh5ZGNQdUotcTJ4TTVUb1ZhOTBsdmc4SThIR3l6YUsyOGJkakdINTB1ZU5IY0lxUmVMRzQ2SlRobF93d2Q0Y29PTGhPLXhGUlF0WlpGYWFQdkZZeDVxag?oc=5",
-      "publishedAt": "2026-10-21T20:25:31.000Z"
+      "source": "Yahoo Finance",
+      "title": "Mortgage and refinance interest rates today, Wednesday, October 21, 2026: Mortgage rates edge lower",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNYUNvNzNCcFNSRzdWbDVhRVRZaGVBN0N1OUJRZTFXUjFIN1JCMVNUNDNxZTBucE96TmVlSkRnWUc2S01xSHVDTDhNY2ItNEw5Ui1sY3M3MFBBZ3N2cGJKS3ZaWTB3UEh3MjFvcHROTjRKN2UteU1keUIxTktuc1RZSF9oUmFqLWRXaFktcnpCMFh5OGt3UGlqNExJOXBVTnB4d2kzUGJUR3pERk8tSXk5Yl9zRjE1dDBTU1I3SDhMSkJzOHMyVmhXR0dHdWZ5N3hURUtGcFJMeDB3WXVhZkhNMG10XzBpcFRWUDQ5WjExOWZKZFNJeDQ2cWtoZEw4cWZE?oc=5",
+      "publishedAt": "2026-10-21T10:00:00.000Z"
     },
     {
       "category": "Rates",
-      "source": "U.S. News - Money",
-      "title": "Mortgage Rates Are Going Up. Here's When to Expect Home Prices to Come Down - U.S. News",
-      "summary": "Mortgage Rates Are Going Up. Here's When to Expect Home Prices to Come Down &nbsp;&nbsp; U.S. News - Money",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaUs5YUUxODRtbU1HYXZlVEEydTRNclV2UHdEa2tBTDZHWGFKQk5QSE1Ta2hnaUlZZU03N1pZZzhqMmVaLXkxR3p1dDhwWk9TeW5fZEhVelY1dHpXRWVrUEcwaXQxTjRxOUd5dDRjSVhGQTRYR0kxMDVONmo3VHA0ZTV3SzB4VkxoTEQ1cm9hUTRhdFJqbnpFMWlTN1NhX0Y5d1VaWXJuNUtHem1iemlTLTZZUWVEeG5zX2hkc0xCVkk?oc=5",
-      "publishedAt": "2026-10-21T18:53:00.000Z"
+      "source": "National Mortgage Professional",
+      "title": "Trump Targets Mortgage Insurance, Refi Costs In Sweeping Housing Order",
+      "summary": "National Mortgage Professional coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeWxLUWdZWlEtc1gwYkowRXYza2JaSVl0QU5wbWRNNVBZWW5ueGNqNVlrNHJDRUd2NnQ5UndLb0h5S0x5QUpIM2hjYmhtS2JRS1NROHQ5TDhlV1ZtcG9PdzNRUEhCUk5QMmhNVTcyalhheXJwUmhTMUU3M0NSZnotczAwbXlBY1FGTlR4LVVqdkdnVmp3bVNUWDlLSGhaZ2thVFdXazU2b2JoUEhPOEdCNW9B?oc=5",
+      "publishedAt": "2026-10-23T13:40:41.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "| Florida Realtors",
+      "title": "Mortgage rates ease after weeks of increases",
+      "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZlBtTkpYc1AwR0xzWGk2ZC04STZSMkhQdHIzWVJUdk5sUkQ4VktPaHdJNlg0SFVkaWJMRjlpZ0dHN2x4SDlrLS1DaDhtWVV0QUZlRkRRUUdqckRWVnBJYXJrWFRPcHlFaEU3U2RzZ28tLVloZlJ5b1pOV0dGd09teGU2T25INjBjOTEwZktfYmFoUFVVOFFOS2QwR2ExLVdCeEJxYlhTY092dw?oc=5",
+      "publishedAt": "2026-10-22T12:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -143,19 +151,19 @@
     },
     {
       "category": "Small Business",
-      "source": "Osage News",
-      "title": "Osage Nation’s Place to Borrow Money offering small business loans to help borrowers reach goals",
-      "summary": "Osage News coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZERpazlkVUR6VF84a0dwTGM4dGhuc1Foc3ZKcWhHQW03Y3gwSUdqUzZXSjhKbk5JZGJURHFNRXZYZGFtSThfd0EwbDByTDkwMVNYWmZyQnZxTGJ0SWp5V0pIclpyMUVFa0tWSFMyTlhrOGFRSHB1WXdNd3ZTcVRGWnhfMU0zSUhzTDZvZHBpOXNwZVpTWHBIbFYyWmMzMDg5cU1fMXk2eUgzUmVGUTBuVktQanVsNEhRYVHSAboBQVVfeXFMT2REaWs5ZFVEelRfOGtHcExjOHRobnNRaHN2SnFoR0FtN2N4MElHalM2V0o4Sm5OSWRiVERxTUV2WGRhbUk4X3dBMGwwckw5MDFTWFpmckJ2cUxidElqeVdKSHJacjFFRWtLVkhTMk5YazhhUUhwdVl3TXd2U3FURlp4XzFNM0lIc0w2b2RwaTlzcGVaU1hwSGxWMlpjMzA4OXFNXzF5NnlIM1JlRlEwblZLUGp1bDRIUWFR?oc=5",
-      "publishedAt": "2026-10-16T17:46:57.000Z"
+      "source": "Forbes",
+      "title": "Best Small Business Loans Of 2026",
+      "summary": "Forbes coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vaDJXSjZzVGNQbTZCc3FQaEcxc1FsemdKMjkwb1NYSTFvMl8zdVdBVFJIOEt4d2lYYUJ5blZ1QkFIS0I1MDhKc04yd05SWlNTMFpsd0NyYmlvQnB2U2tVLWRoYUdUSTFta1JmZklRdy0xOXRYTk8w?oc=5",
+      "publishedAt": "2026-10-22T14:27:00.000Z"
     },
     {
       "category": "Small Business",
-      "source": "KKTV",
-      "title": "Small Business Administration offering loans to small businesses and nonprofits impacted by the Aspen Acres Fire",
-      "summary": "KKTV coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbm5MSFU3amxtYl9QRHVTSUUtRVd3enBVUlBZalp6bUhHelVWaENFTlItQ0NmZWk0cWlLMmdUeV94aTZIRXhCSHg0X0lxcjRUaGxJUF9VRGZvc3dxLWdiMWdITV9iMXN5MHdaMGlGQmtkVzRqNGxMQzBCQlZJZ25BTVRwZzlSdlJUOTY5TWNTNnpGbFRURWdqMG0za0doc0JVaHU5TXFwdjk1dEtZNDdQelp4VnJERVNCMmpSaDU4ZTFVOWVaMElReWVQS0s2SEHSAeMBQVVfeXFMT1h4YnRHVkV6MmdjSk1QZkFmeUlOclkxcnlGc2plWC13VmZ0aWM2MnFhbVJlYVNXMjlJczVndGxKUTJkWThJQXJDeTlsbVNUS0ZLbi1aYUI3R0diTHVtUmpidnBISlY2ZjkyZWhKQm5UN0N4LTFfUHBxaXFLb1R4REduOE5FVVQwVE80YWRMZElDa3ZRd0pVTTZQTHBwSlFJWDRFRGpyQ3VxanRWMHQxcWFZSkZjcDE3a1RtQVZLQThQVGJjaHZlSmFjdnVCSTNQdnNNZV90MVBnVlU1YWFtVXZoNzg?oc=5",
-      "publishedAt": "2026-10-15T23:07:00.000Z"
+      "source": "Rochester Business Journal",
+      "title": "M&T leads Rochester small business lenders as national ranking rises",
+      "summary": "Rochester Business Journal coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRFdMeEY4N01ZNHZjRW0yTVE0cUNZdzhsZEVLNGRvTDJJVmNLbXpXRUg2LXNHTzlRLXJXd1c3R1dzSGJpWGprbDZOdkFvak1wN2pwSHVVT0Z0M3pQR3gzYzJGYm5YUlFuaEZEN1pSZm1Kcm1KaFpENUxIYzN5N2ZzSDJVVzlFbVk?oc=5",
+      "publishedAt": "2026-10-22T15:50:03.000Z"
     },
     {
       "category": "Small Business",
@@ -167,11 +175,19 @@
     },
     {
       "category": "Small Business",
-      "source": "Rochester Business Journal",
-      "title": "M&T leads Rochester small business lenders as national ranking rises",
-      "summary": "Rochester Business Journal coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRFdMeEY4N01ZNHZjRW0yTVE0cUNZdzhsZEVLNGRvTDJJVmNLbXpXRUg2LXNHTzlRLXJXd1c3R1dzSGJpWGprbDZOdkFvak1wN2pwSHVVT0Z0M3pQR3gzYzJGYm5YUlFuaEZEN1pSZm1Kcm1KaFpENUxIYzN5N2ZzSDJVVzlFbVk?oc=5",
-      "publishedAt": "2026-10-22T15:50:03.000Z"
+      "source": "The Business Journals",
+      "title": "SBA clarifies its loan programs for influencers",
+      "summary": "The Business Journals coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNT29uMkZSY3kyM3pHcS03eThsRmRvTTZZUERXN2tlc1Y2T0RhandIblpQZl9WbEJodzQ1V3hSVWRuWnlIVkw4VURCbEEzQjJlZmlSNXhPZ0VRc1dCT25kbXF2Z0M5elY4SWdZVmhNUmFWWlRYbWJnYmtPdVFVVVBsa1pmTkxuM0NHN1VDdlRydGNhMTFUb1FN?oc=5",
+      "publishedAt": "2026-10-22T18:08:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Yahoo Finance",
+      "title": "SBA Issues New Guidance On Small Business Loans For Content Creators",
+      "summary": "Yahoo Finance coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNd0pOTE5YM3RlLUdlRm9nemFOSUU0VDVFREQ1My1yVjNJQndWa3hFdHl3YkJtdGNNM2lMX1pxbFMxMnNVUmlPeGRWcVNuX29jT0JZdnQ2OXRHYUFEMDhJSzhYUlhkSVlVM1dfRmlBemROQmt3OVc0TDZnVThKQWx0LVg0VC16V3d5aVh1LWdSd0FEUjM2WlRqSWxMYXpMTUZnVlliUHZ3?oc=5",
+      "publishedAt": "2026-10-23T15:57:38.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -192,10 +208,10 @@
     {
       "category": "Equipment Finance",
       "source": "Equipment Finance News",
-      "title": "Small-ticket equipment finance processing costs up 14% in 2025",
+      "title": "M&T Bank SBA approvals rise 10% as guarantees support equipment financing",
       "summary": "Equipment Finance News coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTVo5aUotNjRhZ3JUQ3ZiYVlHdlc4S3BXbWF3dl9GbGphXzNvUjBLbXozdVpNRFFlTnBwbzB0cEFVZzlNSlFFU2RYT0dtXzNTVDFsUTVtbU9jeG8yT2tUVUgyUnBVR3ZxNHJzMkhQV1dmanFfeEoyUndBcHgxQWpCcE5XMFhkVUxteVJsYmR0Um00MVhBanZXaW4wSG55UDJrWWp4a3AycllnclZIR3ZiQXZXa3ZVN1JTdHc?oc=5",
-      "publishedAt": "2026-10-12T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdUl5b0lvU0IwX3pZOFlGQlFVMVdBYmNMaUVsaUZfdm1pVTUzT0FGd1duOTVFc2xnNkxMU3k2MXFTZ092NlV0QUlINmc5YklOTk9pUUp1NW5BTWtOaUZZVlhZMFNyY1RsVFpoSGdQSHQ0Y2JYZ283ZzRrYXhJYVNzR2pRM2gxTENTQk1DNVo0ZUE5ZUVsU3pEdlBONXBNQ1BjMTJ0Vl9KUG0wQUJSUHh6OWlvZnhrV1BrSkxnSnBLZ3g5N3BFZUtR?oc=5",
+      "publishedAt": "2026-10-20T20:59:01.000Z"
     },
     {
       "category": "Commercial Real Estate",
@@ -204,22 +220,6 @@
       "summary": "CoStar coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOa1haY3Y1eFNHUGVscUNuaFlIMjJlMU1SVzJ4ZG9oY1FTM2lwVFZPWk9VZUk2ZzBnQnh2Zy1CUjdxWnJaTFByTWZwUXNhVGZVZUQxMUxNN3Q2dXZ6RjF1c1RyakxTMV9HQ1NSeWZhRkxVSGhJa3dMU1A0NzNnZnBQWEptLUNPUkkxbjVoUnVQak1XdXhSREZKVWhLVFMtZw?oc=5",
       "publishedAt": "2026-10-14T20:06:16.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "Yahoo Finance",
-      "title": "CarbonAI Raises $12M to Bring AI Agents to Commercial Real Estate Lending",
-      "summary": "Yahoo Finance coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQeGMtNTBoWlYxOVlPYjMwRmJmaWtaQkFBc1ZhWnlJbVlUazhJV0kwRjZBaExBdGhJSmdFejNScXFJclBTaExBbndsbllJblZuT0Nmb2NkbXhQbklLa0xLY254aUFiSE1QRmJRRUp5c3YtLXBGd1FzMXJ1RHdNaks5VWhKTlNiZElSV0Y2UkRUS2VsQ1hp?oc=5",
-      "publishedAt": "2026-10-15T13:00:00.000Z"
-    },
-    {
-      "category": "SBA Policy",
-      "source": "U.S. Bank",
-      "title": "U.S. Bank boosts SBA lending to a record $943 million in 7(a) loans",
-      "summary": "U.S. Bank coverage of recent sba policy developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaU8zdDUwb09GRTRDNWR0T1g3ck0xNXlGaW1HdVI3c2ZKZzY4UmVtSEswOTVvNEFuaEU5OXptX0lnTDlxNXdtd0JlSHNPenhFVTh5R3RMVnJqYzh2RFlxamZyQkxJWkY2ZDlrdEVOSHl6aGxkUDc3MWkyemY0VkxzcldOaUNCOXZ6eno3RWpqWExwcXpiYmxDNFdJYUFRSS05b1BGX2ZCQm5BOXVrRHBUb0NLSnZfWXdPVXZrREVfdWxnZnJwdUNYekdabEF0bkl6U0Zj?oc=5",
-      "publishedAt": "2026-10-20T14:38:23.000Z"
     }
   ]
 }
