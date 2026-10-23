@@ -6,4 +6,3 @@ https://www.loansflow.loan/* https://loansflow.loan/:splat 301
 /tools /loans/ 301
 /tools/ /loans/ 301
 /tools/* /loans/ 301
-/calculators /loans/ 301
