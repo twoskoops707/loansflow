@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:16:39.156Z",
+  "updatedAt": "2026-10-24T17:24:25.107Z",
   "rates": {
     "asOf": "10/22/2026",
     "source": "Freddie Mac PMMS",
@@ -71,35 +71,11 @@
     },
     {
       "category": "Rates",
-      "source": "National Association of REALTORS®",
-      "title": "Pending Home Sales Decreased 7.3% in September",
-      "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOGRZU0s5WkNrSlFHNlUwVUlFZWc3amt3a3QwQmhQM1B6MnJBcU9tUHJqSlBQek9ubkhUTE1fb2R2bENtTS1TdFc5M1k0QW10cmpHbzBTbHBTYlk5WUZVQWxvT0ZOM1IwQy01MThKS2MyUG8zclVUelQ0NlVmSzctQmZ2UHFKOVhNTUxHSzZ5bw?oc=5",
-      "publishedAt": "2026-10-20T14:00:00.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "The Washington Post",
       "title": "Why buying a house feels so painful now — and your parents may not understand",
       "summary": "The Washington Post coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNb2d1bFhWdzVOVzJ1Nk1yNXFQOGFrRTBiNWdiaWRXX3dGb0lMUWlsQmk3cENVa0x6alNIR2gxUHVjZ0p0dkc4NmxnWUd0N1B4ZTRtWVJodHJSWko5ZFBFNklzdnp3ejNwRmV2dXZYQTFBa3FXcWVuNmcyckI2dVhaUTVLaUtGSE9XQWJWUmFUX3N4NEhpek5MVEFZRjR1MFd1ZDJZOTRBclFyRkJqcm1jTmJDYmNxY2ZCdnc?oc=5",
       "publishedAt": "2026-10-18T16:00:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "The New York Times",
-      "title": "Mortgage Rates Remain Above 7%, Pushing Home Prices Lower in Some Areas",
-      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbk1TSEw5RHNPZmVFSW5vaWM4YlB4U1VQY1FXVWNRdmlIeWRWblctTzN4Zm1DSkpheUNCV0h6WVRMZGVKdXFwSlRlT2R3UW8ydkVXdWVHUWhzYmpiOW0wd1NyQWt1ZXZaeWREMzZhamVYdjVpLTJOd20tWUhzWnUza3FxWQ?oc=5",
-      "publishedAt": "2026-10-22T19:18:58.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage and refinance interest rates today, Wednesday, October 21, 2026: Mortgage rates edge lower",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNYUNvNzNCcFNSRzdWbDVhRVRZaGVBN0N1OUJRZTFXUjFIN1JCMVNUNDNxZTBucE96TmVlSkRnWUc2S01xSHVDTDhNY2ItNEw5Ui1sY3M3MFBBZ3N2cGJKS3ZaWTB3UEh3MjFvcHROTjRKN2UteU1keUIxTktuc1RZSF9oUmFqLWRXaFktcnpCMFh5OGt3UGlqNExJOXBVTnB4d2kzUGJUR3pERk8tSXk5Yl9zRjE1dDBTU1I3SDhMSkJzOHMyVmhXR0dHdWZ5N3hURUtGcFJMeDB3WXVhZkhNMG10XzBpcFRWUDQ5WjExOWZKZFNJeDQ2cWtoZEw4cWZE?oc=5",
-      "publishedAt": "2026-10-21T10:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -111,11 +87,27 @@
     },
     {
       "category": "Rates",
-      "source": "| Florida Realtors",
-      "title": "Mortgage rates ease after weeks of increases",
-      "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZlBtTkpYc1AwR0xzWGk2ZC04STZSMkhQdHIzWVJUdk5sUkQ4VktPaHdJNlg0SFVkaWJMRjlpZ0dHN2x4SDlrLS1DaDhtWVV0QUZlRkRRUUdqckRWVnBJYXJrWFRPcHlFaEU3U2RzZ28tLVloZlJ5b1pOV0dGd09teGU2T25INjBjOTEwZktfYmFoUFVVOFFOS2QwR2ExLVdCeEJxYlhTY092dw?oc=5",
-      "publishedAt": "2026-10-22T12:00:00.000Z"
+      "source": "National Association of REALTORS®",
+      "title": "Fewer Buyers Go Under Contract as Mortgage Rates Remain High",
+      "summary": "National Association of REALTORS® coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQ21qTE9YdmprelNDOUxjbVA5VDkzY0VCbGdXTVBEcWJTakh3YXE4djR6UE0zNVBFTGctdzVYdnh5eHhhQlZ4R0Vzd0RySW9peXB1M0JaMHJFbHRpYzVMckFfT1hfbExpX0YxTmM3YWg2LXdxYTN1Q1FrWU9ual9lV2Y0YTJTVEpFLUl3RUpfcW9Ta1RXVW94T1dFajNWNDV4YTFEWWtzWGh0TmVZUTIxWXp2TkM?oc=5",
+      "publishedAt": "2026-10-20T14:01:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "The New York Times",
+      "title": "Home Prices Are Starting to Fall in Some Pockets of the U.S.",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbk1TSEw5RHNPZmVFSW5vaWM4YlB4U1VQY1FXVWNRdmlIeWRWblctTzN4Zm1DSkpheUNCV0h6WVRMZGVKdXFwSlRlT2R3UW8ydkVXdWVHUWhzYmpiOW0wd1NyQWt1ZXZaeWREMzZhamVYdjVpLTJOd20tWUhzWnUza3FxWQ?oc=5",
+      "publishedAt": "2026-10-22T16:03:29.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Yahoo Finance",
+      "title": "Mortgage and refinance interest rates today, Wednesday, October 21, 2026: Mortgage rates edge lower",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNYUNvNzNCcFNSRzdWbDVhRVRZaGVBN0N1OUJRZTFXUjFIN1JCMVNUNDNxZTBucE96TmVlSkRnWUc2S01xSHVDTDhNY2ItNEw5Ui1sY3M3MFBBZ3N2cGJKS3ZaWTB3UEh3MjFvcHROTjRKN2UteU1keUIxTktuc1RZSF9oUmFqLWRXaFktcnpCMFh5OGt3UGlqNExJOXBVTnB4d2kzUGJUR3pERk8tSXk5Yl9zRjE1dDBTU1I3SDhMSkJzOHMyVmhXR0dHdWZ5N3hURUtGcFJMeDB3WXVhZkhNMG10XzBpcFRWUDQ5WjExOWZKZFNJeDQ2cWtoZEw4cWZE?oc=5",
+      "publishedAt": "2026-10-21T10:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -191,9 +183,9 @@
     },
     {
       "category": "Equipment Finance",
-      "source": "Quarles & Brady",
+      "source": "Quarles",
       "title": "Brittany Ogden Named to 2026 “Most Influential People in Equipment Finance” by Monitor",
-      "summary": "Quarles & Brady coverage of recent equipment finance developments. Open the full report for details.",
+      "summary": "Quarles coverage of recent equipment finance developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYlVLSUFkazFCS21hY2xCVUFjUHNpNmlQX3poa0hnNGdzbGRkN2pIYWVJZGRuMEs0Vkd2RHpMVGo5R3ZIYU5ndUVMbHZjRjZJamJUNVVaNnJLTnIxT0FWVFFRZjdqbXFWZEhlQkYwRjJhcEttdVdVOWlWUTg0VUI3T0thcnhEczF1QzduSXFPV1pfRHk5VFB4c2FsUklJeUJiYjFDZmo2S1RBTVgxN056RlJXdVhhQW5iMVRFZFhHMA?oc=5",
       "publishedAt": "2026-10-13T07:00:00.000Z"
     },
@@ -219,7 +211,15 @@
       "title": "News | Bank of America steps up commercial real estate lending",
       "summary": "CoStar coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOa1haY3Y1eFNHUGVscUNuaFlIMjJlMU1SVzJ4ZG9oY1FTM2lwVFZPWk9VZUk2ZzBnQnh2Zy1CUjdxWnJaTFByTWZwUXNhVGZVZUQxMUxNN3Q2dXZ6RjF1c1RyakxTMV9HQ1NSeWZhRkxVSGhJa3dMU1A0NzNnZnBQWEptLUNPUkkxbjVoUnVQak1XdXhSREZKVWhLVFMtZw?oc=5",
-      "publishedAt": "2026-10-14T20:06:16.000Z"
+      "publishedAt": "2026-10-14T07:00:00.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
+      "source": "Yahoo Finance",
+      "title": "CarbonAI Raises $12M to Bring AI Agents to Commercial Real Estate Lending",
+      "summary": "Yahoo Finance coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQeGMtNTBoWlYxOVlPYjMwRmJmaWtaQkFBc1ZhWnlJbVlUazhJV0kwRjZBaExBdGhJSmdFejNScXFJclBTaExBbndsbllJblZuT0Nmb2NkbXhQbklLa0xLY254aUFiSE1QRmJRRUp5c3YtLXBGd1FzMXJ1RHdNaks5VWhKTlNiZElSV0Y2UkRUS2VsQ1hp?oc=5",
+      "publishedAt": "2026-10-15T13:00:00.000Z"
     }
   ]
 }
