@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T18:29:27.507Z",
+  "updatedAt": "2026-11-01T18:53:47.095Z",
   "rates": {
     "asOf": "10/29/2026",
     "source": "Freddie Mac PMMS",
@@ -55,14 +55,6 @@
     },
     {
       "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates fell for the second straight week, but more borrowers still sought savings in riskier loans",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNY25jeU5DZ0pBeUdkaHpoZFBLejRwanFmSW1HbWRmUkQxdXMzMURVREM4X25xUkVNZGdiT2xEd1hNQzRraVJvV1liMkhSSjNqS2d0QmMtNENWMzFsWnM2ck0tN2VxSFFiVklnSHdBUkhLNWZDU2VhLW9BYTFuODFuNGFBTmk0bGxwaklkOHlB0gGTAUFVX3lxTE9iUzR0Q3d5RkxzLThMUGFtNEhpWWtOcXBqdTNJU0hVMlRCUFdUNGRzMGllZU5tSDZMTThMc3lJdng3OUFuZGR0M2diVmIyNzhqN0MzUHZyZ3JILU9MUGdGVkIzbk80TWU3V0JNMFZ1M3ROZ0k1VDNZdnhHSXU0M2toaXlCeWtDTnlySkFpdGtEWTlKdw?oc=5",
-      "publishedAt": "2026-10-28T11:00:01.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "Goldman Sachs",
       "title": "The Outlook for US Housing in 2027 amid Rising Mortgage Rates",
       "summary": "Goldman Sachs coverage of recent rates developments. Open the full report for details.",
@@ -71,11 +63,19 @@
     },
     {
       "category": "Rates",
+      "source": "CNBC",
+      "title": "Mortgage rates fell for the second straight week, but more borrowers still sought savings in riskier loans",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNY25jeU5DZ0pBeUdkaHpoZFBLejRwanFmSW1HbWRmUkQxdXMzMURVREM4X25xUkVNZGdiT2xEd1hNQzRraVJvV1liMkhSSjNqS2d0QmMtNENWMzFsWnM2ck0tN2VxSFFiVklnSHdBUkhLNWZDU2VhLW9BYTFuODFuNGFBTmk0bGxwaklkOHlB0gGTAUFVX3lxTE9iUzR0Q3d5RkxzLThMUGFtNEhpWWtOcXBqdTNJU0hVMlRCUFdUNGRzMGllZU5tSDZMTThMc3lJdng3OUFuZGR0M2diVmIyNzhqN0MzUHZyZ3JILU9MUGdGVkIzbk80TWU3V0JNMFZ1M3ROZ0k1VDNZdnhHSXU0M2toaXlCeWtDTnlySkFpdGtEWTlKdw?oc=5",
+      "publishedAt": "2026-10-28T11:00:01.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "WSJ",
-      "title": "Current Mortgage Rates for October 2026",
+      "title": "Mortgage Rates Today, October 26, 2026: 30-Year Rates Rise to 7.36%",
       "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9PUU1pOElGVWFpdC04R2lYSE5IQVRMVzVBMEtjc0RIZWtFQi1wU1VZX3RaeExoeUVvRTlrakpYTWVGWkJ5aktXc0Ntb3FyV21fOHVYb0ZsV1ctbnZvNzFqLXp4b1dQMENuX2w3SlR4V2hlT1VRQ05j?oc=5",
-      "publishedAt": "2026-10-28T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcHcyLWgyLTFQbkVqYUsyRXcyVHVfZnZGUkdZRWJUT0x2YlNJTG9MMUlEc2cxaXU1M2FaTklSY3RneWlFR1hsVDZ0Njl6N1RlQ1dnWnVHalZHZFVFbWlVT0Ftc2Zna2tGQWFCOTlKeThmUEN1ZGwtMGxyVDA2anNVVFBjQXhWZF9SWTZjVmJ3?oc=5",
+      "publishedAt": "2026-10-26T13:08:32.000Z"
     },
     {
       "category": "Rates",
@@ -84,6 +84,14 @@
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQUGhZREkxYkxrRE9TN1hoVG1jazZ3OFpLQTFQT082Wkp0RTJ4NlNzZi1UbHVvOVFTM0NiSkFrbmE4VHZQbU5SRFZtUERvTlFBU2NRWlJRNWwweWhHZXlOTTlxQjAwR3VLZFl2dnpDdXUyUGhBTHlPMlkxSTRtWVQ2Y0NGdlE3Y0poQVh0S0RaX2xQT0lOY2tMT2JZMUYzLTdrMVBaSjloTTZQdWJFbG9KczVEQmYzS1FpVWxINXVlQzhfTEdfMlhtb3huNmpHZW8xYzN4NEJOWl9tWC1pYUhXYXQzS3lvRE1VNndLc055UFJxYlYzTEVyTlZRYzJ2cnJ5SGZhai1PbUc0N0g3X09zbWE5YW9CVTQ?oc=5",
       "publishedAt": "2026-10-30T10:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "ABC News - Breaking News, Latest News and Videos",
+      "title": "Mortgage rates hit highest level in 20 months - ABC News",
+      "summary": "Mortgage rates hit highest level in 20 months &nbsp;&nbsp; ABC News - Breaking News, Latest News and Videos",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNaGlaUEo5dHhaTmdhc3NhS1Z3UHo2SjRsTWhIQmFlRGdxaG5NRWhWRkxOcG1xWDdXUHRRNlNpS21NN25nbm9RX1FWRjJCeThQRVVSVmpodERyVElldXhpQ1p1SGVIa0xiZnF0WmFLY3paUWZYU2hWZmJ6TUtpVk5ZQXBDUW9EdndiSHdkWXJvUzFWYkZl0gGaAUFVX3lxTE9sbVpPaFF1UkhDRGljeTQzbTRrSHdwMWNUZlo1aDZ1dDV6c0lNVkVVTV9FOGFPbUlreFZXTjVqSHE1V1RGUFFqcTEzUmhXUzQ2UzhLQ29sUERyQTJPa1d1VDM3Z0VwbW9VSjBBbEhUTTF1dlUzN3J1U2ZwTmlYOEFMNWt4SW5vYk5mcV9JdDRYWHl0Y0w3T3NiTVE?oc=5",
+      "publishedAt": "2026-10-31T04:37:26.000Z"
     },
     {
       "category": "Rates",
@@ -96,10 +104,18 @@
     {
       "category": "Rates",
       "source": "NerdWallet",
-      "title": "How the Federal Reserve Affects Mortgage Rates",
+      "title": "Mortgage Rates Today, Wednesday, October 28: Noticeably Lower",
       "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9XaHZGOHY1N1dNVzhCdUd6MFcwWG53UVB2SXlPVkdOZ3lCUWtpM0ZWY3pGRFloZ2RxeHg0dmRBcUNPZUJ5VGFnZ2g2UHZZUURtV0VWZ3FiSmM3endoVmVoNHNpN0MwWm5MV2dIRS1R?oc=5",
-      "publishedAt": "2026-10-28T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSVFLcXNjLThCNjJ2RlNocUNpd1ZxWkg0ZnpkWExBcEJEXzVsWVlTaVFtMnUybUN1bjAxbWUwamhLNzFDbV9odjlWTUk0VHdLempVQTNlWC13NDJkNEFPVGhPNnRZYmV1S2VNQlkzYm1jQWhTVTk5cUZSVHlvaDBHeVZtVzV4VWFLcTUyNVFIb2Q2QQ?oc=5",
+      "publishedAt": "2026-10-28T14:15:41.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Fortune",
+      "title": "Mortgage rates Thursday, Oct. 29, 2026",
+      "summary": "Fortune coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5MYjYwQnNTYnZrdzF2aW5EYnV2OWpOc0QzMExuSU9NYVZVNm9mOXhhQTRkaU11YjNiMGFRTHNYUjVzNklWNzllc0FFME1FOFBsMzNHYkhMLUNJUVR1Z1ExNmZvR25hTTY5T3Y3NEN1bw?oc=5",
+      "publishedAt": "2026-10-29T08:01:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -143,6 +159,22 @@
     },
     {
       "category": "Small Business",
+      "source": "LendingTree",
+      "title": "Working Capital Loans: Rates, Requirements, and the Best Lenders Compared (October 2026)",
+      "summary": "LendingTree coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1WTE4wcVNCMnpwSF9rY092VG16R3UwYUhCdk9vQjZzWktTT1BaaFpOQ3FZcE5qd0RWeklkR2ZjUVJWNkNuT2ItTGRoNnVsSW9zTGlfbFBVVHV3WjlTdGxrbXJZTQ?oc=5",
+      "publishedAt": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "U.S. Chamber of Commerce",
+      "title": "Free Grants and Programs for Small Business",
+      "summary": "U.S. Chamber of Commerce coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPd1JjTnpZT2h6QW9CVUR3R2hwUWdpSS1yZ3FNcDVxckl3em8tM0hBSHFqLVdlSVgyRVNRRGludWt4MzRZdHRPd0N2Uk9kNWIxcTdQaS1vT1J1TEpyTWcyMFFxaHNuQVQwTEdrQ0t6TVBxMlRsaWFDYzRoQ3lLZE1jS0ExQ1Y2OUNocXQzLVhnMA?oc=5",
+      "publishedAt": "2026-10-29T07:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
       "source": "HousingWire",
       "title": "Figure hits $500M per year in small-business loans as entrepreneurs turn to home equity",
       "summary": "HousingWire coverage of recent small business developments. Open the full report for details.",
@@ -151,27 +183,11 @@
     },
     {
       "category": "Small Business",
-      "source": "Pinnacle Financial Partners",
-      "title": "A Veteran’s Introduction to SBA 7(a) Business Loans",
-      "summary": "Pinnacle Financial Partners coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTmkzdUZOaVNNek5fQzNnS2ZobjBVYmYzZUtGTUNhTEY3OUd3Q3JuYlpIQU9oMGwwcS1ZZDYwZUY0NS1DaXhiZFJkWTVsSXJlSHpqU1pscUNablc2UGpLZzE3SnZXajRmdVZGNzI0X0pnUFZkbGJrdlJYaWZoRm1kSVpCTHh3VzBHMENoRi1GS2ZSaXRWWktvdXpoRHV0MTZHemJLTzVIRGtIdkR2ajd2UHRXMV95NjFXaGxzakNuQm1ZTTVoM2hMMXVTaHJ1S1BlaWtTMjBKRWU?oc=5",
-      "publishedAt": "2026-10-30T21:31:26.000Z"
-    },
-    {
-      "category": "Small Business",
       "source": "WSJ",
-      "title": "The Easy Money Offers That Disguise a Deathtrap for Small Businesses",
+      "title": "Best Same-Day Business Loans in October 2026",
       "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbFdJd3ZYeFMyWnNIMzJrU2s5NUs5b3dldi0xRC13dWlEWDl2alUxS20tZ1pfQjk2bXpWSnhWSzBvNFpWZ2gtWVFaWmM3bXNXY0Y5SUJuQzd2TjRwZ1FXYmhOUUpkYXFPbHJ3T1d1aFZsRm9QT0lKT2p3bVU4Tno0ck40bnU1MUQyWkZVMW4waWw5YlJUbTRRUA?oc=5",
-      "publishedAt": "2026-10-30T02:00:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "Marketplace.org",
-      "title": "As interest rates rise, lending gets more fraught for businesses and banks",
-      "summary": "Marketplace.org coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQaTdsbWtCQ3JDUThiUVNWYy1sZ1NoVmNJOVdVaGJkWDJ5bXM1eHdUQ1p0dUp0WDZkZElTeEwxWnRPS2hna1VhS3BDZzlRY0R4emxFdXpUNXJHeTlNTHY5bGZvN0J4VWdPWFFCLTBxU3BMSGhNYnpRa21nai16U2JQb1A2S0QyN3l3bk04N1VsV2tDYXEwYy04UjZHVmNWZjhSZmotYUxKb0M2VFk?oc=5",
-      "publishedAt": "2026-10-28T21:00:31.000Z"
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMF9vWUM4MDQ2S3RZT2d4dlJ4cU5jTk9RaUxlV0dNZFotQXNHQ0ViVEp6c2xySTRXM3gyWnBrd2U0bzMzc0RSdnpzWklBck5DVzBQR0FRLXBjZ19zREpPeU9mZWduT0U2SnhwSlRHc2VZNzJIMEF2Z3VmMUJvenZRUm9rY0lWZEY3bnZF?oc=5",
+      "publishedAt": "2026-10-29T07:00:00.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -204,22 +220,6 @@
       "summary": "BusinessWest coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbnVNQ1JoNnh2azVVLV90dTVIZW1kU01SNU12ZnptQUxRc1ZLVzJkY056WUhZc0N4OURVT2o2V01lZ3FZUy13ZUpoSHZ2ekZwNTQ2NFJ0T3AxZG00UTgwVG8tOHhDd2NzdTlmZV80TmlTRExpSHZLaTBmblRhQUF6SXM3YV9NLVFtMWZMTlhBLUhSOGh1QlZBWDRSNA?oc=5",
       "publishedAt": "2026-10-26T09:51:56.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "Winston Taylor",
-      "title": "Commercial lending rises 29% in H1 driven by interest rate fears, says Bayes",
-      "summary": "Winston Taylor coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRkRqZTE4NlZDbVpmcFdyTjh6WjZkclczYlFmOXhYZnlLY19vZW5Qcld2TVpJZXRyem9xOXZRR1pMQ0REY0Z0MXBhUVdXLXRzUjlHRHU2d2xxaGFYbnhtMDhWUkY0T0owT3QwN2VDYUptT2c5Mnl4UDg3Z1pEOXlPT2hKNkhaUjU0YTZsbjlnMVJ1b3M2M1JiQzlLX2FVSTh5N2pBWmlhZWZMMWZpTU9LR2ZhSQ?oc=5",
-      "publishedAt": "2026-10-31T00:04:29.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "Yahoo Finance",
-      "title": "Lender Environmental Diligence Launches New Parametric Insurance Product to Transform Commercial Real Estate Lending",
-      "summary": "Yahoo Finance coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYUVZbUh2RDRNaXRUbnpNS3VfUTdyakpaVXctcjFFNF9UN0REVlo3cjFnR29JU3hxRFVPODBOZnFTMEFWcjhoTXlfUlVhQy1EMzkxYVlRWnJjNEpXbXdxTlB1YkNIWmpJWVg1VTl4ZEFJU3ZlaUluWklXZWt2WFlNWXViTmpSZERfUHRTbXp1MHpnOFFfcTZpYVVXdWpMYkxTakZlQkx2anVsellQSnpOekxn?oc=5",
-      "publishedAt": "2026-10-26T13:00:00.000Z"
     }
   ]
 }
