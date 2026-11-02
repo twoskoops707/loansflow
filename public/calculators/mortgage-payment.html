@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png?v=3">
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <link rel="stylesheet" href="/css/loans.css?v=4">
+  <link rel="stylesheet" href="/css/loans.css?v=5">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -50,6 +50,15 @@
     <p class="lf-lede">Estimate a full monthly housing payment with principal, interest, property tax, insurance and PMI.</p>
     <div data-calc="mortgage"></div>
     <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-mortgage-payment" style="margin:2rem 0;"></div>
+    <p class="lf-figcap">Updated November 2, 2026. Math reviewed against our <a href="/methodology.html">methodology</a>.</p>
+    <h2>How to use it</h2>
+    <p>Enter the home price, down payment, rate, term, property tax rate, insurance and PMI rate. You get the full monthly payment (principal, interest, taxes and insurance), plus a donut chart and an amortization schedule.</p>
+    <h2>How it is calculated</h2>
+    <p>Principal and interest use the amortization formula on the loan amount. Property tax is price &times; tax rate &divide; 12. Insurance is the yearly premium &divide; 12. Private mortgage insurance (PMI) is added only when the down payment is under 20%, at your chosen annual rate on the loan amount.</p>
+    <h2>Worked example</h2>
+    <p>A $425,000 home with $85,000 down (20%) at 7% over 30 years has a loan of $340,000 and principal and interest of $2,262.03. Adding $389.58 of tax and $116.67 of insurance gives $2,768.28 a month. Total interest over the loan is $474,330. With less than 20% down, PMI would be added. These are the calculator&rsquo;s starting values, so you can reproduce them above.</p>
+    <h2>Common questions</h2>
+    <div class="lf-faq"><details><summary>Does this include HOA dues?</summary><p>No. Add them separately.</p></details><details><summary>When does PMI end?</summary><p>Usually once you reach about 20% equity, but the rules depend on the loan type, so ask your servicer.</p></details></div>
     <h2>About this calculator</h2>
     <p>This tool runs entirely in your browser; nothing you type is sent anywhere. Results are estimates, not offers or quotes, and your lender&rsquo;s numbers will differ. See <a href="/methodology.html">how our numbers work</a> for the formulas and assumptions.</p>
     <p>Want the full picture on the loan itself? Read the <a href="/loans/mortgage.html">Mortgage</a> page for requirements, typical terms and how to apply.</p>
@@ -71,8 +80,8 @@
   <script src="/js/offers.js" defer></script>
   <script src="/js/nav.js" defer></script>
 
-<script src="/js/lf-math.js"></script>
+<script src="/js/lf-math.js?v=2"></script>
   <script src="/js/lf-charts.js"></script>
-  <script src="/js/lf-calc.js?v=2" defer></script>
+  <script src="/js/lf-calc.js?v=3" defer></script>
 </body>
 </html>

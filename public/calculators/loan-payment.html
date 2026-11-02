@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png?v=3">
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <link rel="stylesheet" href="/css/loans.css?v=4">
+  <link rel="stylesheet" href="/css/loans.css?v=5">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -50,6 +50,15 @@
     <p class="lf-lede">Enter an amount, rate and term to see the monthly payment, total interest and a payoff chart for any fixed-rate loan.</p>
     <div data-calc="payment"></div>
     <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-loan-payment" style="margin:2rem 0;"></div>
+    <p class="lf-figcap">Updated November 2, 2026. Math reviewed against our <a href="/methodology.html">methodology</a>.</p>
+    <h2>How to use it</h2>
+    <p>Enter the amount you want to borrow, the yearly interest rate and the term in years. The monthly payment appears at the top, with total interest and total repaid below. Open the amortization schedule under the results to see how each payment splits between principal and interest, year by year or month by month. Type an amount in the optional extra monthly payment field to see how much interest and time it saves.</p>
+    <h2>How it is calculated</h2>
+    <p>Payment = P &times; r &divide; (1 &minus; (1 + r)<sup>&minus;n</sup>), where P is the amount borrowed, r is the interest rate divided by 12 and n is the number of monthly payments. Each month, interest is the current balance times r and the rest of the payment reduces the balance. Extra payments go straight to principal.</p>
+    <h2>Worked example</h2>
+    <p>A $100,000 loan at 9% for 10 years has a payment of $1,266.76. Over 120 payments you repay $152,011, of which $52,011 is interest. Adding $200 a month pays the loan off in 96 months instead of 120 and cuts interest to about $40,566. These are the calculator&rsquo;s starting values, so you can reproduce them above.</p>
+    <h2>Common questions</h2>
+    <div class="lf-faq"><details><summary>Why is so much of my early payment interest?</summary><p>Interest is charged on the balance. The balance is largest at the start, so the interest share is largest then and shrinks every month.</p></details><details><summary>Does this include fees?</summary><p>No. Origination, packaging and closing fees are separate. Ask any lender for the annual percentage rate (APR) to compare offers that include fees.</p></details></div>
     <h2>About this calculator</h2>
     <p>This tool runs entirely in your browser; nothing you type is sent anywhere. Results are estimates, not offers or quotes, and your lender&rsquo;s numbers will differ. See <a href="/methodology.html">how our numbers work</a> for the formulas and assumptions.</p>
     <p>Want the full picture on the loan itself? Read the <a href="/loans/commercial-term-loan.html">Commercial Term Loan</a> page for requirements, typical terms and how to apply.</p>
@@ -71,8 +80,8 @@
   <script src="/js/offers.js" defer></script>
   <script src="/js/nav.js" defer></script>
 
-<script src="/js/lf-math.js"></script>
+<script src="/js/lf-math.js?v=2"></script>
   <script src="/js/lf-charts.js"></script>
-  <script src="/js/lf-calc.js?v=2" defer></script>
+  <script src="/js/lf-calc.js?v=3" defer></script>
 </body>
 </html>

@@ -332,3 +332,12 @@
 @media (max-width: 980px) { .lf-ccgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .lf-ccgrid { grid-template-columns: 1fr; } .lf-cc-tag { position: static; } }
 /* calc-index:end */
+
+/* amortization schedule */
+.lf-sched { margin: 1rem 0 0; border-top: 1px solid var(--line, #d9dee3); padding-top: .75rem; }
+.lf-sched > summary, .lf-sched-m > summary { cursor: pointer; font-weight: 600; }
+.lf-sched-wrap { max-height: 22rem; overflow: auto; margin: .5rem 0; }
+.lf-sched-t { margin: 0; font-variant-numeric: tabular-nums; }
+.lf-sched-t th, .lf-sched-t td { text-align: right; padding: .3rem .5rem; white-space: nowrap; }
+.lf-sched-t th:first-child, .lf-sched-t td:first-child { text-align: left; }
+.lf-sched-t thead th { position: sticky; top: 0; background: var(--surface, #fff); }

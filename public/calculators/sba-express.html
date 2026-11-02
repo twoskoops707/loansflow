@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png?v=3">
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <link rel="stylesheet" href="/css/loans.css?v=4">
+  <link rel="stylesheet" href="/css/loans.css?v=5">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -50,6 +50,15 @@
     <p class="lf-lede">Model an SBA Express loan, which is capped at $500,000, with its payment, fee and total interest.</p>
     <div data-calc="sba7a" data-variant="express" data-amount="150000"></div>
     <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-sba-express" style="margin:2rem 0;"></div>
+    <p class="lf-figcap">Updated November 2, 2026. Math reviewed against our <a href="/methodology.html">methodology</a>.</p>
+    <h2>How to use it</h2>
+    <p>This version starts at a $150,000 loan with the 50% Express guarantee. Change the amount, rate and term to match the offer you are considering and compare the payment with the standard 7(a) calculator.</p>
+    <h2>How it is calculated</h2>
+    <p>Same math as the SBA 7(a) calculator: rate = base + spread, payment from the amortization formula, upfront fee on the guaranteed portion. The difference is the lower guarantee (50% for Express) and a $500,000 maximum loan size.</p>
+    <h2>Worked example</h2>
+    <p>A $150,000 Express loan at 10.00% for 10 years has a payment of $1,982.26 and $87,871 in total interest. The guaranteed portion is $75,000, and the 2% upfront fee on loans of $150,000 or less is $1,500. These are the calculator&rsquo;s starting values, so you can reproduce them above.</p>
+    <h2>Common questions</h2>
+    <div class="lf-faq"><details><summary>Why would a lender offer Express?</summary><p>Express loans trade a smaller guarantee for a faster lender-driven process, so they suit smaller amounts and faster decisions.</p></details><details><summary>Is a line of credit possible?</summary><p>Yes. Express can be a term loan or a line of credit. This calculator models a term loan.</p></details></div>
     <h2>About this calculator</h2>
     <p>This tool runs entirely in your browser; nothing you type is sent anywhere. Results are estimates, not offers or quotes, and your lender&rsquo;s numbers will differ. See <a href="/methodology.html">how our numbers work</a> for the formulas and assumptions.</p>
     <p>Want the full picture on the loan itself? Read the <a href="/loans/sba-express.html">SBA Express Loan</a> page for requirements, typical terms and how to apply.</p>
@@ -71,8 +80,8 @@
   <script src="/js/offers.js" defer></script>
   <script src="/js/nav.js" defer></script>
 
-<script src="/js/lf-math.js"></script>
+<script src="/js/lf-math.js?v=2"></script>
   <script src="/js/lf-charts.js"></script>
-  <script src="/js/lf-calc.js?v=2" defer></script>
+  <script src="/js/lf-calc.js?v=3" defer></script>
 </body>
 </html>

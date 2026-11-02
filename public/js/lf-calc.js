@@ -27,6 +27,7 @@
           if (v.term < v.amort) notes.push('A balloon of ' + money(c.balloon) + ' comes due at the end of the term. Plan how you will refinance or repay it.');
           return {
             head: ['Monthly payment', money(c.pmt, 2)],
+            sched: { amount: c.loan, rate: v.rate, years: v.amort, balloonYears: v.term },
             rows: [['Loan amount', money(c.loan)], ['Down payment', money(c.down)], ['Loan-to-value', num(c.ltv, 0) + '%'], ['Annual debt service', money(c.annual)], ['DSCR', num(c.dscr, 2) + 'x'], ['Balance due at the end of the term', money(c.balloon)]],
             notes: notes,
             charts: [CH.stack('At the end of a ' + v.term + '-year term', [{ label: 'Paid down', value: c.paidDown }, { label: 'Balloon still owed', value: c.balloon }]), CH.gauge('Debt service coverage', c.dscr)]
@@ -104,7 +105,8 @@
           f('amount', 'Loan amount', +d.amount || 100000, { prefix: '$', step: 1000, max: +d.maxAmount || 0 }),
           f('rate', 'Interest rate', +d.rate || 9, { suffix: '%', step: 0.05 }),
           f('years', 'Term', +d.years || 10, { suffix: 'years', step: 1, max: +d.maxYears || 40 }),
-          f('noi', 'Annual net operating income (optional)', +d.noi || 0, { prefix: '$', step: 1000 })
+          f('noi', 'Annual net operating income (optional)', +d.noi || 0, { prefix: '$', step: 1000 }),
+          f('extra', 'Extra monthly payment (optional)', 0, { prefix: '$', step: 50, hint: 'See how much interest and time it saves' })
         ],
         run: function (v) {
           var t = LF.termLoan(v.amount, v.rate, v.years), rows = [['Total interest', money(t.interest)], ['Total repaid', money(t.total)]], notes = [];
@@ -113,9 +115,10 @@
             rows.push(['Annual debt service', money(ds)], ['Debt service coverage (DSCR)', num(c, 2) + 'x']);
             notes.push(c >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.');
           }
+          if (v.extra > 0) { var sx = LF.schedule(v.amount, v.rate, v.years, v.extra); rows.push(['Interest with extra payments', money(sx.totalInterest)], ['Interest saved', money(t.interest - sx.totalInterest)], ['Paid off in', num(sx.payoffMonths / 12, 1) + ' years (' + sx.payoffMonths + ' months)']); }
           if (+d.maxAmount && v.amount > +d.maxAmount) notes.push('This program caps loans at ' + money(+d.maxAmount) + '.');
           if (+d.maxYears && v.years > +d.maxYears) notes.push('This program caps terms at ' + d.maxYears + ' years.');
-          return { head: ['Monthly payment', money(t.payment, 2)], rows: rows, notes: notes,
+          return { head: ['Monthly payment', money(t.payment, 2)], rows: rows, notes: notes, sched: { amount: v.amount, rate: v.rate, years: v.years, extra: v.extra },
             charts: [CH.stack('Where your money goes over the loan', [{ label: 'Principal', value: v.amount }, { label: 'Interest', value: t.interest }]), v.noi > 0 ? CH.gauge('Debt service coverage', c) : ''] };
         }
       };
@@ -147,6 +150,7 @@
           notes.push('Fees follow SBA\'s FY 2027 schedule (effective Oct 1, 2026). The lender\'s ' + money(fee.annualLenderFee) + ' first-year service fee is paid by the lender, not billed to you.');
           return {
             head: ['Monthly payment', money(pay, 2)],
+            sched: { amount: v.amount, rate: rate, years: v.years },
             rows: [['Interest rate', num(rate, 2) + '%'], ['SBA-guaranteed portion (' + guar + '%)', money(fee.guaranteed)], ['Upfront guaranty fee (may be passed to you)', money(fee.fee)],
               ['Total interest over the term', money(pay * v.years * 12 - v.amount)], ['Annual debt service', money(ds)], ['DSCR', num(c, 2) + 'x']],
             notes: notes,
@@ -228,6 +232,7 @@
           notes.push('Planning estimate only, not an offer. Real rates also depend on time in business, cash flow, collateral and the lender.');
           return {
             head: ['Monthly payment', money(t.payment, 2)],
+            sched: { amount: fin, rate: est.rate, years: v.years },
             rows: [['Estimated rate', num(est.rate, 2) + '%'], ['Amount financed', money(fin)], ['Down payment', num(downPct, 1) + '% of price'], ['Total interest', money(t.interest)], ['Total cost of equipment', money(t.total + v.down)]],
             notes: notes,
             charts: [CH.hbars('Estimated rate by credit profile', LF.CREDIT_TIERS.map(function (c) { var q = LF.equipmentRate(c.id, v.type, used, downPct).rate; return { label: c.label, value: q, text: num(q, 2) + '%', note: 'lenders: ' + c.low + '% to ' + c.high + '%', on: c.id === v.tier }; }), { max: 35 })]
@@ -249,7 +254,7 @@
           var m = LF.mortgage(v.price, v.down, v.rate, v.years, v.tax, v.ins, v.pmi), notes = [];
           if (m.pmi > 0) notes.push('Includes an estimated ' + money(m.pmi, 2) + ' a month of PMI because the down payment is under 20%. It usually ends once you build enough equity.');
           notes.push('Excludes HOA dues. Rates vary with credit, down payment and lender.');
-          return { head: ['Monthly payment (PITI)', money(m.total, 2)], rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Mortgage insurance (PMI)', money(m.pmi, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes,
+          return { head: ['Monthly payment (PITI)', money(m.total, 2)], sched: { amount: m.loan, rate: v.rate, years: v.years }, rows: [['Principal and interest', money(m.pi, 2)], ['Property tax', money(m.tax, 2)], ['Insurance', money(m.ins, 2)], ['Mortgage insurance (PMI)', money(m.pmi, 2)], ['Loan amount', money(m.loan)], ['Down payment', num(m.downPct, 1) + '%'], ['Total interest over the loan', money(m.interest)]], notes: notes,
             charts: [CH.donut('Your monthly payment', [{ label: 'Principal and interest', value: m.pi }, { label: 'Property tax', value: m.tax }, { label: 'Insurance', value: m.ins }, { label: 'PMI', value: m.pmi }].filter(function (x) { return x.value > 0; }), [money(m.total), 'per month'], function (n) { return money(n) + '/mo'; })] };
         }
       };
@@ -334,6 +339,19 @@
   }
 
   var seq = 0;
+  function schedHtml(o) {
+    if (!(o.amount > 0) || !(o.years > 0)) return '';
+    var s = LF.schedule(o.amount, o.rate, o.years, o.extra, o.balloonYears);
+    var head = '<thead><tr><th>#</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>';
+    var row = function (a, label) { return '<tr><td>' + label + '</td><td>' + money(a.payment) + '</td><td>' + money(a.principal) + '</td><td>' + money(a.interest) + '</td><td>' + money(a.balance) + '</td></tr>'; };
+    var yr = s.yearly.map(function (a) { return row(a, a.year); }).join('');
+    var mo = s.months.map(function (a) { return row(a, a.m); }).join('');
+    var foot = s.balloon > 0 ? '<p class="lf-figcap">Balloon: ' + money(s.balloon) + ' is still owed when the ' + o.balloonYears + '-year term ends.</p>' : '';
+    return '<details class="lf-sched"><summary>Amortization schedule (year by year)</summary><div class="lf-sched-wrap"><table class="lf-table lf-sched-t">' +
+      '<caption>Year totals. Interest over the schedule: ' + money(s.totalInterest) + '</caption>' + head.replace('<th>#', '<th>Year') + '<tbody>' + yr + '</tbody></table></div>' + foot +
+      '<details class="lf-sched-m"><summary>Month by month</summary><div class="lf-sched-wrap"><table class="lf-table lf-sched-t">' + head.replace('<th>#', '<th>Month') + '<tbody>' + mo + '</tbody></table></div></details></details>';
+  }
+
   function mount(el) {
     var kind = el.getAttribute('data-calc'), make = CALCS[kind];
     if (!make) return;
@@ -355,7 +373,8 @@
       out.innerHTML = '<div class="lf-head"><span>' + esc(r.head[0]) + '</span><strong>' + esc(r.head[1]) + '</strong></div>' +
         (r.charts && r.charts.filter(Boolean).length ? '<div class="lf-charts">' + r.charts.join('') + '</div>' : '') +
         '<dl class="lf-rows">' + r.rows.map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('') + '</dl>' +
-        (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '');
+        (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
+        (r.sched ? schedHtml(r.sched) : '');
     }
     el.addEventListener('input', function (e) {
       var t = e.target;

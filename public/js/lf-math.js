@@ -20,6 +20,29 @@
     return principal * (Math.pow(1 + r, n) - Math.pow(1 + r, paid)) / (Math.pow(1 + r, n) - 1);
   };
 
+  /**
+   * Month-by-month amortization. `extra` is an additional monthly payment; `balloonYears` stops the schedule
+   * at that many years and reports the remaining balance as a balloon. Returns months, yearly totals and totals.
+   */
+  LF.schedule = function (principal, ratePct, years, extra, balloonYears) {
+    const n = Math.round(years * 12), r = ratePct / 100 / 12, base = LF.pmt(principal, ratePct, years), add = Math.max(0, extra || 0);
+    const limit = balloonYears > 0 && balloonYears < years ? Math.round(balloonYears * 12) : n;
+    const months = [], yearly = [];
+    let bal = principal, totalInterest = 0, y = null;
+    for (let m = 1; m <= limit && bal > 0.005; m++) {
+      const interest = bal * r;
+      let pay = base + add;
+      let prin = pay - interest;
+      if (prin > bal || m === n) { prin = bal; pay = prin + interest; }
+      bal = Math.max(0, bal - prin);
+      totalInterest += interest;
+      months.push({ m, payment: pay, interest, principal: prin, balance: bal });
+      if (!y || y.year !== Math.ceil(m / 12)) { y = { year: Math.ceil(m / 12), payment: 0, interest: 0, principal: 0, balance: 0 }; yearly.push(y); }
+      y.payment += pay; y.interest += interest; y.principal += prin; y.balance = bal;
+    }
+    return { months, yearly, totalInterest, payoffMonths: months.length, balloon: limit < n ? bal : 0, payment: base };
+  };
+
   /** Generic term loan summary. */
   LF.termLoan = function (amount, ratePct, years) {
     const payment = LF.pmt(amount, ratePct, years);

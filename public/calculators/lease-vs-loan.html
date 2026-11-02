@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-180.png?v=3">
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <link rel="stylesheet" href="/css/loans.css?v=4">
+  <link rel="stylesheet" href="/css/loans.css?v=5">
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
@@ -50,6 +50,15 @@
     <p class="lf-lede">Compare leasing with borrowing for the same equipment, including what you own at the end.</p>
     <div data-calc="leaseloan"></div>
     <div class="ad-slot" data-ad-format="rectangle" data-ad-name="calc-lease-vs-loan" style="margin:2rem 0;"></div>
+    <p class="lf-figcap">Updated November 2, 2026. Math reviewed against our <a href="/methodology.html">methodology</a>.</p>
+    <h2>How to use it</h2>
+    <p>Enter the equipment price, down payment, term, the loan rate, the lease rate and the expected value of the equipment at the end (residual). The calculator compares the net cost of buying with a loan to the cost of leasing.</p>
+    <h2>How it is calculated</h2>
+    <p>The loan payment uses the amortization formula. The lease payment is calculated on the price minus the present value of the residual, because you only pay for the part of the equipment's value you use. Net cost of buying = total cash paid minus the value of the equipment you still own. The comparison covers financing cost only and ignores tax effects.</p>
+    <h2>Worked example</h2>
+    <p>For $120,000 of equipment over 5 years with $12,000 down, a 9.5% loan and an 11% lease with a 20% residual, the loan payment is $2,268.20 and the lease payment is $2,307.27. After keeping the $24,000 equipment, buying costs $124,092 net and leasing costs $150,436, so the loan is cheaper by $26,344. These are the calculator&rsquo;s starting values, so you can reproduce them above.</p>
+    <h2>Common questions</h2>
+    <div class="lf-faq"><details><summary>Does this include tax benefits?</summary><p>No. Depreciation and lease deductions can change the answer, so check with your accountant.</p></details><details><summary>When does leasing win?</summary><p>When you will not keep the equipment, when it loses value quickly, or when you cannot make the down payment.</p></details></div>
     <h2>About this calculator</h2>
     <p>This tool runs entirely in your browser; nothing you type is sent anywhere. Results are estimates, not offers or quotes, and your lender&rsquo;s numbers will differ. See <a href="/methodology.html">how our numbers work</a> for the formulas and assumptions.</p>
     <p>Want the full picture on the loan itself? Read the <a href="/loans/equipment-financing.html">Equipment Financing</a> page for requirements, typical terms and how to apply.</p>
@@ -71,8 +80,8 @@
   <script src="/js/offers.js" defer></script>
   <script src="/js/nav.js" defer></script>
 
-<script src="/js/lf-math.js"></script>
+<script src="/js/lf-math.js?v=2"></script>
   <script src="/js/lf-charts.js"></script>
-  <script src="/js/lf-calc.js?v=2" defer></script>
+  <script src="/js/lf-calc.js?v=3" defer></script>
 </body>
 </html>
