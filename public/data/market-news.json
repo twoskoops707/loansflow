@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T20:25:47.496Z",
+  "updatedAt": "2026-11-07T18:43:42.049Z",
   "rates": {
     "asOf": "11/5/2026",
     "source": "Freddie Mac PMMS",
@@ -55,14 +55,6 @@
     },
     {
       "category": "Rates",
-      "source": "WSJ",
-      "title": "Current Mortgage Rates for November 2026",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9PUU1pOElGVWFpdC04R2lYSE5IQVRMVzVBMEtjc0RIZWtFQi1wU1VZX3RaeExoeUVvRTlrakpYTWVGWkJ5aktXc0Ntb3FyV21fOHVYb0ZsV1ctbnZvNzFqLXp4b1dQMENuX2w3SlR4V2hlT1VRQ05j?oc=5",
-      "publishedAt": "2026-11-02T08:00:00.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates drop for the third straight week, but homebuyers are still leaving the market",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
@@ -79,14 +71,6 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "When will mortgage rates go down? They're down for the third week in a row",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNYWJ3eE1lUmhOVWw2VFhsTDdCem9JRXgyQnBrQVdVampVTXZ5UEg2VXpxYld6bUZ2aVdxZXhncmkxMU9sWnpzSTlES08tSHBRM3B2bFFqQ09yTVN6SHY2SWZacE1LYUlESm5MdHppS2U2UEloQmZleDdkS2dvVHllcGM5Nl9PV3pyRHlkUFNONzJJcHppaW1XYVgxYlJKZWl2bnNQNk9JQ1hSZTV5Q3JSVzhiX1VWWk1DRGIzUjNNQUo1bHNBM1hDVW9GUmQ4WTVBWHozVFdzRl9oc3Qxb01SOE13?oc=5",
-      "publishedAt": "2026-11-05T21:05:47.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "NerdWallet",
       "title": "What Does a ‘Blue Wave’ Mean for Mortgage Rates?",
       "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
@@ -100,6 +84,14 @@
       "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRUV3Tmp0WnJiUmVRRVJHMlYwV0d6MW1xdmszbWE2RkVQbXo2bVZWV2NNRlp3MnliQy1iMHpBRmZKUmxqQldieVhfeG9UNFJoT0FiX2lfZmFpeDgyWUx6b25TbmZtV1VRU1M1NTM1cVRqU2dRcXhBWUpWalpSNlRXVU13TVJ5dGJXNUxFTXlMSlI5dDBpVnJZdmVYMkJVbExVV2d6MUt3WQ?oc=5",
       "publishedAt": "2026-11-05T12:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Yahoo Finance",
+      "title": "Mortgage and refinance interest rates today, Thursday, November 5, 2026: Rates still lower than a week ago",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPazY5RExqVVhXbEwxdlVLZDMtRVFFSFBvWjdiV3BWWU5WUWZ4MEQ2bndQNFFFSUxudmRzeUlHakxmbHNTNVNzVkp1Z01xZEowYVNQWFhqcnFpZ0JIRndzN0IzbnJJbnE2aDU2endWaDZ1Yk04S2lqQWRsa0lsLTM0OTB0amIzRnlKaTIwT2hMSlJpb2ZzelQxQkZYQWdSUk5vZWZuS1VMRGVGZFZfSXZpcHBXZ0VQNGR0b0V3LWQ2WE5LdG11MzJDWDZkZUFDNUtQbnB0SkRGdnZlTUw5clVWVUdrNEx6aUQzVThCOWlERmFvMFRXRW5rNDN2Q3hzRjBRUFl4b3JKdVQzZw?oc=5",
+      "publishedAt": "2026-11-05T11:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -207,19 +199,27 @@
     },
     {
       "category": "Commercial Real Estate",
+      "source": "AlleyWatch",
+      "title": "CarbonAI Raises $12M to Help CRE Lenders Cut Underwriting Time by Up to 90%",
+      "summary": "AlleyWatch coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNVEhHdHNsNnNxd2dEc051cUNQa0h6bVA2VE5OcjQyRDY0bGdCNGRCbkpZTDRDdlNyd1V6R0Q4OEFJYVlVeDZEdFNOd3FFNTdwOG5FWHdubXR3T0hRMUJ3dEFYV3hxc2lHSVgzZFJfb2RlV0xtZVJnaElPWXh3SVplWnNzaU1CMjl3MFlObnZWM3N1Uy1jY242RHdONXROeXdSQkVtYnpQWTBvLWtYODVlVHNDMWJRR1dQQTdaMXR5SjhRdWpfbnNPSFlCS0V3WjNyd24yY1dDNy1pRE1nYmsyOFFsdFB6cTA1UjdsRlBRd3ZNU1d5?oc=5",
+      "publishedAt": "2026-10-26T17:32:51.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
       "source": "BusinessWest",
       "title": "Why Litigation Searches Matter in Commercial Real Estate Lending",
       "summary": "BusinessWest coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbnVNQ1JoNnh2azVVLV90dTVIZW1kU01SNU12ZnptQUxRc1ZLVzJkY056WUhZc0N4OURVT2o2V01lZ3FZUy13ZUpoSHZ2ekZwNTQ2NFJ0T3AxZG00UTgwVG8tOHhDd2NzdTlmZV80TmlTRExpSHZLaTBmblRhQUF6SXM3YV9NLVFtMWZMTlhBLUhSOGh1QlZBWDRSNA?oc=5",
-      "publishedAt": "2026-10-26T09:51:56.000Z"
+      "publishedAt": "2026-10-26T07:00:00.000Z"
     },
     {
-      "category": "Commercial Real Estate",
-      "source": "Yahoo Finance",
-      "title": "Lender Environmental Diligence Launches New Parametric Insurance Product to Transform Commercial Real Estate Lending",
-      "summary": "Yahoo Finance coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYUVZbUh2RDRNaXRUbnpNS3VfUTdyakpaVXctcjFFNF9UN0REVlo3cjFnR29JU3hxRFVPODBOZnFTMEFWcjhoTXlfUlVhQy1EMzkxYVlRWnJjNEpXbXdxTlB1YkNIWmpJWVg1VTl4ZEFJU3ZlaUluWklXZWt2WFlNWXViTmpSZERfUHRTbXp1MHpnOFFfcTZpYVVXdWpMYkxTakZlQkx2anVsellQSnpOekxn?oc=5",
-      "publishedAt": "2026-10-26T07:00:00.000Z"
+      "category": "SBA Policy",
+      "source": "Nav",
+      "title": "Current SBA Loan Rates in 2026",
+      "summary": "Nav coverage of recent sba policy developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1mZkhnZEExc3YySWd6R2tUTHVEZlM4QnlGdEdCVndSd2tOcnRDT0ZSSUJyRktwdUs0cDB1dDE2dGJ1czdHNnhLTHhLREFmRURIMWV0RUxyVHdNQQ?oc=5",
+      "publishedAt": "2026-10-29T07:00:00.000Z"
     }
   ]
 }
