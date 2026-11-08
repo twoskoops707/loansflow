@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T18:43:42.049Z",
+  "updatedAt": "2026-11-08T18:48:34.259Z",
   "rates": {
     "asOf": "11/5/2026",
     "source": "Freddie Mac PMMS",
@@ -71,14 +71,6 @@
     },
     {
       "category": "Rates",
-      "source": "NerdWallet",
-      "title": "What Does a ‘Blue Wave’ Mean for Mortgage Rates?",
-      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5VV0tIQXFaQU9CY2xsMlprbldWTG0zZV9QMF9EWEItanJ0THdQX2VrOGhuR1lUWVdfZW83N3BjNWUtSGtkZUNETkdHc0pPRGZQdmlSU1pNVzJtVThCOUhoLTJ4eDRENm5PWFp5Q001aVZBTlFXclFobnh4cw?oc=5",
-      "publishedAt": "2026-11-05T17:09:33.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "| Florida Realtors",
       "title": "Mortgage rates fall for third straight week",
       "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
@@ -88,10 +80,18 @@
     {
       "category": "Rates",
       "source": "Yahoo Finance",
-      "title": "Mortgage and refinance interest rates today, Thursday, November 5, 2026: Rates still lower than a week ago",
+      "title": "Mortgage and refinance interest rates today, Friday, November 6, 2026: 30-year rates drop below 7% for the first time since September",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPazY5RExqVVhXbEwxdlVLZDMtRVFFSFBvWjdiV3BWWU5WUWZ4MEQ2bndQNFFFSUxudmRzeUlHakxmbHNTNVNzVkp1Z01xZEowYVNQWFhqcnFpZ0JIRndzN0IzbnJJbnE2aDU2endWaDZ1Yk04S2lqQWRsa0lsLTM0OTB0amIzRnlKaTIwT2hMSlJpb2ZzelQxQkZYQWdSUk5vZWZuS1VMRGVGZFZfSXZpcHBXZ0VQNGR0b0V3LWQ2WE5LdG11MzJDWDZkZUFDNUtQbnB0SkRGdnZlTUw5clVWVUdrNEx6aUQzVThCOWlERmFvMFRXRW5rNDN2Q3hzRjBRUFl4b3JKdVQzZw?oc=5",
-      "publishedAt": "2026-11-05T11:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxPTVczX3UzbHNINTE4NHl2Vi1HUVdodk1mY3R2VnJhdkJmYWxjbURyalk0TF83eDRLSVMzSGJEb0l0bC1ZZ1poMXdtRzI3eGtNUHEtTFhpSDJkYnA4T3E4YUFoUjd2dDBVTW1CZHpES3lLQlRzWXVZTFBIaWtXYlZTVlR0QmZwU01LZnppZXY4MnI5V2Jwc1NiV19aTGRBV19rLUF4VkNSaS13WGV5cTZyakJpenpQZF9ISGpuazF4MDVLS21NU1R5MEQyX0s3eWo3cXgwMl9JdTREbGdkUWowOEU1c0xydU44MDllOHhZSnJYT3RHaGtvZnQyUkM5NUhSZWljdkdVWml2dFpMSG1XVXlubWo1NnJiNWdBNnBRUy1OREpoQnZSMjZ2WGw?oc=5",
+      "publishedAt": "2026-11-06T11:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "LendingTree",
+      "title": "Compare Mortgage Refinance Rates Today",
+      "summary": "LendingTree coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5KNUFuWmg3Rk5USi16MGRqQXhnTF9sS2pRSkEtLWxPeTMyT3hRQjd2NXZLSkhoUW9tMWdwTWExYktrUUU4SGkxTk1BdXAxMVYzeHRFSnR3?oc=5",
+      "publishedAt": "2026-11-06T08:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -151,19 +151,19 @@
     },
     {
       "category": "Small Business",
-      "source": "WSJ",
-      "title": "Best Short-Term Business Loans in November 2026",
-      "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOaTczQ0w0LTF1bnFWS2s3elBqYl9OdFFtTDdYMWMxXzNLSlA4azNOQTNDTW5ZZ3dNa0hkYkhuSmpnX3YtekdrckxNbUVmSG9KSXpCdnZCZUYyY2tmdlZ3T28zN2pQSDRpSmhCUHdvTjVqWU1QSGRqaTY0d3FZZWhLSFRiOGJqUWJ4UHZEU25zNy1oblRG?oc=5",
-      "publishedAt": "2026-11-02T08:00:00.000Z"
-    },
-    {
-      "category": "Small Business",
       "source": "NerdWallet",
       "title": "Average Business Loan Interest Rates: November 2026",
       "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE92M0xNeC1KdHRhQmo3dW8yMVZWYXJ3TV9HeS1JcFVPZXJta19kWThJVHN3SWgtMWI0ZWREVWVNMnc5RmhCeFpVNk9leTc1bDhyby1pTjdTU2d3dFFiY2VtN2JsMm1vRWFJTUE?oc=5",
       "publishedAt": "2026-11-02T08:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "U.S. Chamber of Commerce",
+      "title": "Free Grants and Programs for Small Business",
+      "summary": "U.S. Chamber of Commerce coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPd1JjTnpZT2h6QW9CVUR3R2hwUWdpSS1yZ3FNcDVxckl3em8tM0hBSHFqLVdlSVgyRVNRRGludWt4MzRZdHRPd0N2Uk9kNWIxcTdQaS1vT1J1TEpyTWcyMFFxaHNuQVQwTEdrQ0t6TVBxMlRsaWFDYzRoQ3lLZE1jS0ExQ1Y2OUNocXQzLVhnMA?oc=5",
+      "publishedAt": "2026-11-05T08:00:00.000Z"
     },
     {
       "category": "Small Business",
