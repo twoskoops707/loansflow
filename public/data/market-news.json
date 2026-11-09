@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T18:48:34.259Z",
+  "updatedAt": "2026-11-09T23:24:54.586Z",
   "rates": {
     "asOf": "11/5/2026",
     "source": "Freddie Mac PMMS",
@@ -25,7 +25,7 @@
   },
   "prime": {
     "value": 7,
-    "asOf": "2026-10-27",
+    "asOf": "2026-11-06",
     "source": "FRED (DPRIME)"
   },
   "articles": [
@@ -55,6 +55,14 @@
     },
     {
       "category": "Rates",
+      "source": "WSJ",
+      "title": "Mortgage Rates Today, November 9, 2026: 30-Year Rates Climb to 7.20%",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVTgyU3NXLWZTZ3RMWDVPUGg4SjF5cDNRcnRBOVJCQWhSa3o2ajh1UTY1ay1RM0tOa3JYZ2JLZkszSElLdGlxUUhoVzdIdEpJV1h1UHFOZXVvcnlXTlZTM3lMemd1ckNZV1M4UzdWbzlIMHVLTi1PSlBFNkd5anc2TnhhUnY0bVhodi1iTQ?oc=5",
+      "publishedAt": "2026-11-09T14:02:04.000Z"
+    },
+    {
+      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates drop for the third straight week, but homebuyers are still leaving the market",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
@@ -76,14 +84,6 @@
       "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRUV3Tmp0WnJiUmVRRVJHMlYwV0d6MW1xdmszbWE2RkVQbXo2bVZWV2NNRlp3MnliQy1iMHpBRmZKUmxqQldieVhfeG9UNFJoT0FiX2lfZmFpeDgyWUx6b25TbmZtV1VRU1M1NTM1cVRqU2dRcXhBWUpWalpSNlRXVU13TVJ5dGJXNUxFTXlMSlI5dDBpVnJZdmVYMkJVbExVV2d6MUt3WQ?oc=5",
       "publishedAt": "2026-11-05T12:00:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Mortgage and refinance interest rates today, Friday, November 6, 2026: 30-year rates drop below 7% for the first time since September",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxPTVczX3UzbHNINTE4NHl2Vi1HUVdodk1mY3R2VnJhdkJmYWxjbURyalk0TF83eDRLSVMzSGJEb0l0bC1ZZ1poMXdtRzI3eGtNUHEtTFhpSDJkYnA4T3E4YUFoUjd2dDBVTW1CZHpES3lLQlRzWXVZTFBIaWtXYlZTVlR0QmZwU01LZnppZXY4MnI5V2Jwc1NiV19aTGRBV19rLUF4VkNSaS13WGV5cTZyakJpenpQZF9ISGpuazF4MDVLS21NU1R5MEQyX0s3eWo3cXgwMl9JdTREbGdkUWowOEU1c0xydU44MDllOHhZSnJYT3RHaGtvZnQyUkM5NUhSZWljdkdVWml2dFpMSG1XVXlubWo1NnJiNWdBNnBRUy1OREpoQnZSMjZ2WGw?oc=5",
-      "publishedAt": "2026-11-06T11:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -120,18 +120,18 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+      "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
-      "publishedAt": "2026-11-05T16:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+      "publishedAt": "2026-11-09T21:00:00.000Z"
     },
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
-      "publishedAt": "2026-10-29T20:30:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+      "publishedAt": "2026-11-05T16:00:00.000Z"
     },
     {
       "category": "Small Business",
@@ -140,22 +140,6 @@
       "summary": "Forbes coverage of recent small business developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9vaDJXSjZzVGNQbTZCc3FQaEcxc1FsemdKMjkwb1NYSTFvMl8zdVdBVFJIOEt4d2lYYUJ5blZ1QkFIS0I1MDhKc04yd05SWlNTMFpsd0NyYmlvQnB2U2tVLWRoYUdUSTFta1JmZklRdy0xOXRYTk8w?oc=5",
       "publishedAt": "2026-11-03T08:26:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "MONEY",
-      "title": "6 Best Small Business Loans of November 2026",
-      "summary": "MONEY coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB1aFVYWmdRUmtsWHl0ZldnTjFTUEtINWxPMXdvQVZfeGlwTVFSZWwzeFR6TVd4ckJNM0N5MVFab2pkZ1FDR0drNVhSTVVkWFQxMHVGNFlDMA?oc=5",
-      "publishedAt": "2026-11-03T10:16:42.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "NerdWallet",
-      "title": "Average Business Loan Interest Rates: November 2026",
-      "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE92M0xNeC1KdHRhQmo3dW8yMVZWYXJ3TV9HeS1JcFVPZXJta19kWThJVHN3SWgtMWI0ZWREVWVNMnc5RmhCeFpVNk9leTc1bDhyby1pTjdTU2d3dFFiY2VtN2JsMm1vRWFJTUE?oc=5",
-      "publishedAt": "2026-11-02T08:00:00.000Z"
     },
     {
       "category": "Small Business",
@@ -174,6 +158,22 @@
       "publishedAt": "2026-11-05T13:52:38.000Z"
     },
     {
+      "category": "Small Business",
+      "source": "World Bank Blogs",
+      "title": "Why do small businesses still not have bank loans? Is it the firm, the loan price, or the bank? Guest post by Emma Zhang",
+      "summary": "World Bank Blogs coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZERYRGhWT1pIakFqMVEwVjdmVU82WlJESVQ2dXgxSDI4YkxzWUtFWElUT3lrNTFDSm1sZjFYQ2lhak5GbDNXTnVfdWgtMGVHV19oc2hsX3p1bFlJN1RZa2dZYUFoRzFjUm85NHA3SVJTMDZoek1jM1dkS0ktWm1MLTlGX2psOXp6WUJmWUJWN3lYLXBwZ2hXNHY1emFCRlBFUTl5cjdZc1JVVTA0SlJyMTZjRQ?oc=5",
+      "publishedAt": "2026-11-06T17:53:02.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "WSFA",
+      "title": "U.S. Small Business Administration offers disaster loans for drought-impacted Alabama small businesses",
+      "summary": "WSFA coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUHJITlMzeUo5d3ctYV9rN3N2ZnBaOUgwbHRLZVBUVjg4eDJRTEFURDB4ZDItRHVLNzZxU2VOUXZCVmpSeWc1XzlMYlhrcWxmVWd4SE5HVWV4SkI2QTJJM2h0SVl1dkRHVWZKdXcxZlFlY2lQTi0wcWtZVFFpZHBqcTVaZGEtUWR3Y0tqOXlxdzU4R09kakQ0U1BzeHFFVnlZV0RzemxqUGJfVW04N2JKVmRTX0gwTGNWRDExUTRrbC01ZVlFWWE5RQ?oc=5",
+      "publishedAt": "2026-11-02T23:58:00.000Z"
+    },
+    {
       "category": "Equipment Finance",
       "source": "ABF Journal",
       "title": "IREN and Wingspire Equipment Finance Complete $363MM Financing for High-Density AI Compute Assets",
@@ -187,31 +187,31 @@
       "title": "Equipment finance originations jump 17% YoY",
       "summary": "Equipment Finance News coverage of recent equipment finance developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQkJMTWpCSGpNcW5VYXZSRE5sNlE5T3B0MjhCN2lTcEtSdW14YjB1MWk2alhOd3RMOFJWNXB4TVRLTGhwU3R0TGlkTmNKMzNNcGNzbEE0b3Q1eS13X3dWNjRJSE9RNS1LV3dZN09ldUEtMXB5ZkhhOC1FYzc4OVdBeWFvWTZHeFZhSWVaR3lNVTE0RmZKallSOEJmUVNIbm5VT0lr?oc=5",
-      "publishedAt": "2026-10-27T21:59:42.000Z"
+      "publishedAt": "2026-10-27T07:00:00.000Z"
     },
     {
       "category": "Equipment Finance",
-      "source": "markets.businessinsider.com",
-      "title": "Industry Horizon Report Shows Equipment Finance Industry Expanded to $1.5 Trillion",
-      "summary": "markets.businessinsider.com coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWjBpOVhGLW5vcmJERHRZa3EtUzNLOEtzaVRvVGdBZUl6RUVhdDU3bFdnQlJJa3YyRnFKRkQzWUNDT0Y5ZDhQVnduVGQtR2syc0UwTmhISGVxMnZTamh2YTQyM294T0FsVVgzajhJNFRweVRzOFVBZjRpV1ItMHBOdlRYSUd5dDdKZWZrdHZYNi13OFFqdEs4YXh1UHNOc0Mwbjk2NTZma2dYQUVfUXRkWXlkcXVjb0tfa0FUM2F2SV9CWklLWXdXYmZhWDlza05hSkZqdURWVQ?oc=5",
-      "publishedAt": "2026-10-26T20:39:07.000Z"
+      "source": "Modern Materials Handling",
+      "title": "Industry Horizon Report shows equipment finance industry expanded to $1.5 trillion",
+      "summary": "Modern Materials Handling coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdi1acnBHZTlHeFNCQTZvRTFKYUxLYzQ1b2w1ejB0a2tMODBMWGYzZ0MtSXBLVDVUeUJqWlgtTG5lZXdmMzR1cTFaT1MxU3hQYXlNbWQ2NEtQMjBDalNxMnl6RkdQN0FTOWFsOFllbzBidVE4NG05bEVmQmMxRmltWHh1UnQ0UnhpR2k1SUxpTUZwRk96QmhyS0RfQS1FcnlQbVhSdF9pQWpZTzltMkE?oc=5",
+      "publishedAt": "2026-10-27T07:00:00.000Z"
     },
     {
       "category": "Commercial Real Estate",
-      "source": "AlleyWatch",
-      "title": "CarbonAI Raises $12M to Help CRE Lenders Cut Underwriting Time by Up to 90%",
-      "summary": "AlleyWatch coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNVEhHdHNsNnNxd2dEc051cUNQa0h6bVA2VE5OcjQyRDY0bGdCNGRCbkpZTDRDdlNyd1V6R0Q4OEFJYVlVeDZEdFNOd3FFNTdwOG5FWHdubXR3T0hRMUJ3dEFYV3hxc2lHSVgzZFJfb2RlV0xtZVJnaElPWXh3SVplWnNzaU1CMjl3MFlObnZWM3N1Uy1jY242RHdONXROeXdSQkVtYnpQWTBvLWtYODVlVHNDMWJRR1dQQTdaMXR5SjhRdWpfbnNPSFlCS0V3WjNyd24yY1dDNy1pRE1nYmsyOFFsdFB6cTA1UjdsRlBRd3ZNU1d5?oc=5",
-      "publishedAt": "2026-10-26T17:32:51.000Z"
+      "source": "Rochester Business Journal",
+      "title": "Commercial construction lending remains strong in Rochester despite rising costs",
+      "summary": "Rochester Business Journal coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPbVA0N21nYkpIb2prck5iUGk0SGQzV1NMWTBBdUZJVjJ1dEhMUUkwUDlkb0wwLURYcDVNOHJ1OERQakYwMnQ4blZ1OWR4T2twRFdpMmoyTmhiU3F2WGlKbmNNWlFBanhCbFd5T0JSSzZmYTdNTVA1dTlmZ2xpWmNTTk5TQUkyOV9QU0ZWMUtUcmlUa3M?oc=5",
+      "publishedAt": "2026-11-04T12:05:25.000Z"
     },
     {
       "category": "Commercial Real Estate",
-      "source": "BusinessWest",
-      "title": "Why Litigation Searches Matter in Commercial Real Estate Lending",
-      "summary": "BusinessWest coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbnVNQ1JoNnh2azVVLV90dTVIZW1kU01SNU12ZnptQUxRc1ZLVzJkY056WUhZc0N4OURVT2o2V01lZ3FZUy13ZUpoSHZ2ekZwNTQ2NFJ0T3AxZG00UTgwVG8tOHhDd2NzdTlmZV80TmlTRExpSHZLaTBmblRhQUF6SXM3YV9NLVFtMWZMTlhBLUhSOGh1QlZBWDRSNA?oc=5",
-      "publishedAt": "2026-10-26T07:00:00.000Z"
+      "source": "The Real Deal",
+      "title": "Ranking: New York real estate lending roars back for a second year",
+      "summary": "The Real Deal coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9HVWEycHJ0TS1PZjc0UE8wbTBjenFEU0Q5TldZRWI0MWFpckl1RWtIZlY1WS1NX3VCdkVRaGxHOWl6OXZSbW85OXFHNklsLW1zYjZrUWlJNzhJUks2YXFiSDB2N0RhbTVXNmw3SnJJZUlkaENSZEg4?oc=5",
+      "publishedAt": "2026-11-02T12:00:00.000Z"
     },
     {
       "category": "SBA Policy",
