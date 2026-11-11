@@ -232,6 +232,51 @@
     return { avg, monthly, total: monthly * months, available: limit - avg };
   };
 
+
+  /**
+   * Business acquisition with an SBA 7(a) loan. ILLUSTRATIVE planning model: sources and uses, SBA guarantee fee,
+   * debt service and DSCR. Cash flow available for debt service = seller's discretionary earnings minus a market
+   * salary for the owner-operator. A seller note is modeled as a separate amortizing loan and does NOT count toward equity.
+   */
+  LF.acquisition = function (o) {
+    const uses = o.price + o.workingCapital + o.closingCosts;
+    const equity = uses * o.equityPct / 100;
+    const sellerNote = Math.min(o.price * o.sellerNotePct / 100, uses - equity);
+    const base = Math.max(0, uses - equity - sellerNote);
+    const gp = LF.sba7aDefaultGuaranty(base);
+    // Fee tier depends on gross loan, which includes a financed fee: iterate to a stable value.
+    let loan = base, fee = LF.sba7aFee(loan, gp, false).fee;
+    if (o.financeFee) { for (let i = 0; i < 6; i++) { fee = LF.sba7aFee(loan, gp, false).fee; loan = base + fee; } }
+    else fee = LF.sba7aFee(loan, gp, false).fee;
+    const loanPmt = LF.pmt(loan, o.ratePct, o.years);
+    const notePmt = sellerNote > 0 ? LF.pmt(sellerNote, o.noteRatePct, o.noteYears) : 0;
+    const annualDS = (loanPmt + notePmt) * 12;
+    const cashFlow = o.sde - o.ownerSalary;
+    const dscr = LF.dscr(cashFlow, annualDS);
+    return {
+      uses, equity, sellerNote, loan, base, fee, guaranty: gp, loanPmt, notePmt, annualDS, cashFlow, dscr,
+      maxDebtService: cashFlow / 1.25, cashAtClosing: equity + (o.financeFee ? 0 : fee),
+      multiple: o.sde > 0 ? o.price / o.sde : 0
+    };
+  };
+
+  /** Estimated cash needed to close an SBA-financed purchase. ILLUSTRATIVE: fees and third-party costs vary by lender and deal. */
+  LF.cashToClose = function (o) {
+    const down = o.projectCost * o.downPct / 100;
+    const base = Math.max(0, o.projectCost - down);
+    const gp = LF.sba7aDefaultGuaranty(base);
+    let loan = base, fee = LF.sba7aFee(loan, gp, false).fee;
+    if (o.financeFee) { for (let i = 0; i < 6; i++) { fee = LF.sba7aFee(loan, gp, false).fee; loan = base + fee; } }
+    const lenderFee = loan * o.lenderFeePct / 100;
+    const items = [
+      ['Down payment', down], ['SBA guarantee fee' + (o.financeFee ? ' (financed, not paid in cash)' : ''), o.financeFee ? 0 : fee],
+      ['Lender / packaging fee', lenderFee], ['Third-party reports (appraisal, environmental, valuation)', o.thirdParty],
+      ['Legal and title', o.legal], ['Prepaid insurance and deposits', o.prepaid], ['Working capital reserve', o.reserve]
+    ];
+    const cash = items.reduce(function (a, x) { return a + x[1]; }, 0);
+    return { down, loan, fee, lenderFee, items, cash };
+  };
+
   if (typeof module !== 'undefined' && module.exports) module.exports = LF;
   else root.LF = LF;
 })(typeof window !== 'undefined' ? window : this);

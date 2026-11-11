@@ -36,6 +36,57 @@
       };
     },
 
+    acquire: function (d) {
+      return {
+        title: d.title || 'SBA business acquisition calculator',
+        fields: [
+          f('price', 'Purchase price', 750000, { prefix: '$', step: 10000 }), f('wc', 'Working capital to borrow', 50000, { prefix: '$', step: 5000 }),
+          f('closing', 'Closing costs and fees', 25000, { prefix: '$', step: 1000 }), f('equityPct', 'Your equity injection', 10, { suffix: '% of total', step: 1, hint: 'SBA minimum is 10% for a change of ownership' }),
+          f('notePct', 'Seller note', 0, { suffix: '% of price', step: 5, hint: 'Modeled as a separate loan; does not count as equity here' }),
+          f('rate', 'SBA loan rate', livePrime ? livePrime + 3 : 10, { suffix: '%', step: 0.05, hint: 'Prime + 3.00% shown; your rate will differ' }), f('years', 'SBA loan term', 10, { suffix: 'years', step: 1 }),
+          sel('finFee', 'Finance the SBA guarantee fee?', 'yes', YN),
+          f('sde', "Seller's discretionary earnings (SDE)", 260000, { prefix: '$', step: 5000, hint: 'Net income plus owner pay and one-time add-backs' }),
+          f('salary', 'Market salary for you as operator', 80000, { prefix: '$', step: 5000 })
+        ],
+        run: function (v) {
+          var a = LF.acquisition({ price: v.price, workingCapital: v.wc, closingCosts: v.closing, equityPct: Math.min(v.equityPct, 100), sellerNotePct: v.notePct, ratePct: v.rate,
+            years: v.years || 10, noteRatePct: 6, noteYears: 10, financeFee: v.finFee === 'yes', sde: v.sde, ownerSalary: v.salary }), notes = [];
+          notes.push(a.dscr >= 1.25 ? 'DSCR meets the 1.25x level many SBA lenders look for.' : 'DSCR is below the 1.25x level many SBA lenders look for. A lower price, more equity or a longer term would help.');
+          if (v.equityPct < 10) notes.push('The SBA requires at least 10% equity injection on a change of ownership.');
+          if (a.sellerNote > 0) notes.push('Seller note modeled at 6% over 10 years. SBA rules limit how a seller note can count toward equity, and it may need to be on standby; ask your lender.');
+          notes.push('Estimate only. Lenders also review the business valuation, add-backs, collateral and your experience.');
+          return {
+            head: ['Cash you bring to closing', money(a.cashAtClosing)],
+            rows: [['Total uses (price + capital + costs)', money(a.uses)], ['SBA 7(a) loan', money(a.loan)], ['Seller note', money(a.sellerNote)],
+              ['SBA guarantee fee (' + a.guaranty + '% guaranteed)', money(a.fee)], ['Monthly SBA payment', money(a.loanPmt, 2)], ['Monthly seller-note payment', money(a.notePmt, 2)],
+              ['Cash flow after your salary', money(a.cashFlow)], ['Annual debt service', money(a.annualDS)], ['DSCR', num(a.dscr, 2) + 'x'], ['Max debt service at 1.25x', money(a.maxDebtService)], ['Price as a multiple of SDE', num(a.multiple, 2) + 'x']],
+            notes: notes,
+            charts: [CH.stack('Funding the purchase', [{ label: 'SBA loan', value: a.loan }, { label: 'Your equity', value: a.equity }, { label: 'Seller note', value: a.sellerNote }]), CH.gauge('Debt service coverage', a.dscr)]
+          };
+        }
+      };
+    },
+
+    cashclose: function (d) {
+      return {
+        title: d.title || 'SBA cash-to-close estimator',
+        fields: [
+          f('cost', 'Total project cost', 700000, { prefix: '$', step: 10000 }), f('down', 'Down payment', 10, { suffix: '% of cost', step: 1 }),
+          sel('finFee', 'Finance the SBA guarantee fee?', 'no', YN), f('lenderPct', 'Lender / packaging fee', 1, { suffix: '% of loan', step: 0.25, hint: 'Varies widely; ask your lender' }),
+          f('third', 'Appraisal, environmental, valuation', 8000, { prefix: '$', step: 500 }), f('legal', 'Legal and title', 6000, { prefix: '$', step: 500 }),
+          f('prepaid', 'Prepaid insurance and deposits', 4000, { prefix: '$', step: 500 }), f('reserve', 'Working capital reserve', 25000, { prefix: '$', step: 1000 })
+        ],
+        run: function (v) {
+          var c = LF.cashToClose({ projectCost: v.cost, downPct: Math.min(v.down, 100), financeFee: v.finFee === 'yes', lenderFeePct: v.lenderPct, thirdParty: v.third, legal: v.legal, prepaid: v.prepaid, reserve: v.reserve });
+          return {
+            head: ['Estimated cash to close', money(c.cash)],
+            rows: c.items.map(function (x) { return [x[0], money(x[1])]; }).concat([['Loan amount', money(c.loan)]]),
+            notes: ['Planning estimate, not a quote. The SBA guarantee fee follows the FY 2027 schedule (3% of the guaranteed portion on loans of $150,001 to $700,000, 3.5% above that).', 'Ask your lender for a written estimate of every fee before you commit.']
+          };
+        }
+      };
+    },
+
     equity: function (d) {
       return {
         title: d.title || 'SBA down payment (equity injection) calculator',
