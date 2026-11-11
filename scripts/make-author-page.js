@@ -18,7 +18,7 @@ let head2 = head
 const ld = {
   '@context': 'https://schema.org', '@type': 'ProfilePage', url: 'https://loansflow.loan/author.html', name: T,
   mainEntity: { '@type': 'Person', '@id': 'https://loansflow.loan/author.html#person', name: 'Joshua Miller', honorificSuffix: 'CPA',
-    jobTitle: 'Certified Public Accountant', knowsAbout: ['SBA loans', 'Small business financing', 'Business valuation', 'Business acquisitions', 'Business succession planning', 'Tax planning for small businesses', 'S corporations', 'Multi-state taxation', 'Research and development tax credits'], worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
+    jobTitle: 'Certified Public Accountant', knowsAbout: ["SBA loans", "Small business financing", "Business valuation", "Business acquisitions", "Business succession planning", "Tax planning for small businesses", "S corporations", "C corporations", "Partnerships", "Nonprofit accounting", "Payroll tax", "Sales tax", "Business personal property tax valuation", "Payroll audits", "School audits", "Cash flow analysis", "Multi-state taxation", "Research and development tax credits"], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Cal Poly Humboldt', alternateName: 'Humboldt State University' }, worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
 };
 head2 = head2.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>\n</head>`);
 const photo = '<img class="author-icon" src="/img/author-icon.svg" alt="" width="96" height="96" decoding="async" style="border-radius:20px">';
@@ -26,7 +26,17 @@ const main = `<main class="legal-page">
     <h1>Joshua Miller, CPA</h1>
     ${photo}
     <p><strong>Founder and author, LoansFlow</strong></p>
-    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting. He works with owner-operated and closely held businesses on the money decisions that matter most: how to finance growth, how to buy or sell a company, what a business is worth, how it passes to the next owner, and what it all means for the tax return and the cash flow behind it. He founded LoansFlow to put that practical, numbers-first view in front of borrowers before they sit down with a lender.</p>
+    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting. He holds a Bachelor of Science from Cal Poly Humboldt (formerly Humboldt State University). He works with owner-operated and closely held businesses on the money decisions that matter most: how to finance growth, how to buy or sell a company, what a business is worth, how it passes to the next owner, and what it all means for the tax return and the cash flow behind it. He founded LoansFlow to put that practical, numbers-first view in front of borrowers before they sit down with a lender.</p>
+    <h2>Breadth of experience</h2>
+    <p>His practice has covered a wide range of clients and engagements, which is why the guides here look at a loan the way a lender, a buyer and a tax preparer each would.</p>
+    <ul>
+      <li><strong>Entity types:</strong> sole proprietors, partnerships, S corporations, C corporations and nonprofits</li>
+      <li><strong>Tax:</strong> business and individual tax returns, payroll tax returns, sales tax, and business property tax valuations</li>
+      <li><strong>Assurance and payroll:</strong> payroll audits and school audits</li>
+      <li><strong>Financial reporting:</strong> financial statements and cash flow worksheets for lenders and owners</li>
+      <li><strong>Valuations and transactions:</strong> business valuations, acquisitions, successions and divorces</li>
+      <li><strong>Financing and investments:</strong> loan preparation and financing, and investment help</li>
+    </ul>
     <h2>Where his experience sits</h2>
     <h3>Small business financing and cash flow</h3>
     <p>Lenders approve loans on cash flow, so much of his work is preparing the financial picture a lender will read: clean statements, a clear debt schedule, realistic projections and an honest debt service coverage ratio. See <a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a> and the <a href="/loans/sba-7a.html">SBA 7(a) guide</a>.</p>
