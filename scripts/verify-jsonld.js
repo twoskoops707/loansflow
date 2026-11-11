@@ -16,7 +16,7 @@ const files = [
 ];
 
 const FORBIDDEN = ['legalName', 'telephone', 'streetAddress', 'email',
-  'address', 'foundingDate', 'aggregateRating', 'reviewRating', 'author', 'sameAs'];
+  'address', 'foundingDate', 'aggregateRating', 'reviewRating', 'sameAs'];
 
 function extractBlocks(html) {
   const blocks = [];

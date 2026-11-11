@@ -43,48 +43,86 @@
   <meta name="google-adsense-account" content="ca-pub-6588738221262894">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6588738221262894" crossorigin="anonymous"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://loansflow.loan/#organization",
-        "name": "LoansFlow",
-        "url": "https://loansflow.loan/",
-        "logo": "https://loansflow.loan/img/logo.png",
-        "description": "Free SBA 7(a), SBA 504, and commercial loan calculators with DSCR and guaranty fee estimates — plus mortgage payment, amortization, refinance, and affordability tools."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://loansflow.loan/#organization",
+      "name": "LoansFlow",
+      "url": "https://loansflow.loan/",
+      "logo": "https://loansflow.loan/img/logo.png",
+      "description": "Free SBA 7(a), SBA 504, and commercial loan calculators with DSCR and guaranty fee estimates — plus mortgage payment, amortization, refinance, and affordability tools."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#webpage",
+      "url": "https://loansflow.loan/guides/sba-loan-eligibility.html",
+      "name": "SBA Loan Eligibility: Who Qualifies and Who Does Not — LoansFlow",
+      "isPartOf": {
+        "@id": "https://loansflow.loan/#website"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#webpage",
-        "url": "https://loansflow.loan/guides/sba-loan-eligibility.html",
-        "name": "SBA Loan Eligibility: Who Qualifies and Who Does Not — LoansFlow",
-        "isPartOf": { "@id": "https://loansflow.loan/#website" },
-        "breadcrumb": { "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#breadcrumb" },
-        "inLanguage": "en"
+      "breadcrumb": {
+        "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#breadcrumb"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loansflow.loan/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://loansflow.loan/guides/" },
-          { "@type": "ListItem", "position": 3, "name": "SBA Loan Eligibility: Who Qualifies and Who Does Not" }
-        ]
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://loansflow.loan/guides/sba-loan-eligibility.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://loansflow.loan/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://loansflow.loan/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SBA Loan Eligibility: Who Qualifies and Who Does Not"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "SBA Loan Eligibility: Who Qualifies and Who Does Not",
+      "description": "The requirements behind SBA 7(a) and 504 eligibility: for-profit status, size standards, owner equity, the credit-elsewhere test, ineligible business types, and personal guarantees.",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "publisher": {
+        "@id": "https://loansflow.loan/#organization"
       },
-      {
-        "@type": "Article",
-        "headline": "SBA Loan Eligibility: Who Qualifies and Who Does Not",
-        "description": "The requirements behind SBA 7(a) and 504 eligibility: for-profit status, size standards, owner equity, the credit-elsewhere test, ineligible business types, and personal guarantees.",
-        "datePublished": "2026-10-22",
-        "dateModified": "2026-10-22",
-        "publisher": { "@id": "https://loansflow.loan/#organization" },
-        "mainEntityOfPage": "https://loansflow.loan/guides/sba-loan-eligibility.html",
-        "inLanguage": "en"
+      "mainEntityOfPage": "https://loansflow.loan/guides/sba-loan-eligibility.html",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://loansflow.loan/author.html#person"
       }
-    ]
-  }
-  </script>
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://loansflow.loan/author.html#person",
+  "name": "Joshua Miller",
+  "honorificSuffix": "CPA",
+  "jobTitle": "Certified Public Accountant",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "LoansFlow"
+  },
+  "url": "https://loansflow.loan/author.html"
+}
+</script>
 </head>
 <body>
   <header class="site-nav" id="site-nav">
@@ -171,6 +209,14 @@
     <div class="disclaimer">
       <p>This guide is general information, not financial, tax, or legal advice, and LoansFlow is not a lender. Program rules, limits, and rates change; confirm current terms with your lender and the issuing agency before you act. Examples use round, illustrative numbers.</p>
     </div>
+  <section class="author-box">
+  <span class="author-avatar" aria-hidden="true">JM</span>
+  <p><strong>Authored by <a href="/author.html">Joshua Miller, CPA</a></strong><br>
+  Licensed CPA (California, 2009) and founder of LoansFlow. Nearly two decades
+  in public accounting advising small businesses on financing, tax, and cash
+  flow. QuickBooks Certified ProAdvisor. LoansFlow is educational and
+  independent &mdash; not a lender.</p>
+</section>
   </main>
   <footer class="site-footer">
     <div class="footer-grid">
