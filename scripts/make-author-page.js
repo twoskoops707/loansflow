@@ -18,7 +18,7 @@ let head2 = head
 const ld = {
   '@context': 'https://schema.org', '@type': 'ProfilePage', url: 'https://loansflow.loan/author.html', name: T,
   mainEntity: { '@type': 'Person', '@id': 'https://loansflow.loan/author.html#person', name: 'Joshua Miller', honorificSuffix: 'CPA',
-    jobTitle: 'Certified Public Accountant', knowsAbout: ["SBA loans", "Small business financing", "Business valuation", "Business acquisitions", "Business succession planning", "Tax planning for small businesses", "S corporations", "C corporations", "Partnerships", "Nonprofit accounting", "Payroll tax", "Sales tax", "Business personal property tax valuation", "Payroll audits", "School audits", "Cash flow analysis", "Multi-state taxation", "Research and development tax credits"], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Cal Poly Humboldt', alternateName: 'Humboldt State University' }, worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
+    jobTitle: 'Certified Public Accountant', knowsAbout: ["SBA loans", "Small business financing", "Business valuation", "Business acquisitions", "Business succession planning", "Tax planning for small businesses", "S corporations", "C corporations", "Partnerships", "Nonprofit accounting", "Payroll tax", "Sales tax", "Business personal property tax valuation", "Payroll audits", "School audits", "Cash flow analysis", "Interim CFO services", "Negotiations", "Permitting", "Multi-state taxation", "Research and development tax credits"], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Cal Poly Humboldt', alternateName: 'Humboldt State University' }, worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
 };
 head2 = head2.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>\n</head>`);
 const photo = '<img class="author-icon" src="/img/author-icon.svg" alt="" width="96" height="96" decoding="async" style="border-radius:20px">';
@@ -36,6 +36,7 @@ const main = `<main class="legal-page">
       <li><strong>Financial reporting:</strong> financial statements and cash flow worksheets for lenders and owners</li>
       <li><strong>Valuations and transactions:</strong> business valuations, acquisitions, successions and divorces</li>
       <li><strong>Financing and investments:</strong> loan preparation and financing, and investment help</li>
+      <li><strong>Management and advisory:</strong> temporary and interim CFO work, negotiations, and permitting work</li>
     </ul>
     <h2>Where his experience sits</h2>
     <h3>Small business financing and cash flow</h3>
