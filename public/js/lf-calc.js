@@ -7,7 +7,7 @@
   var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
   var livePrime = null, livePmms30 = null, liveNote = { prime: '', pmms30: '' };
 
-  function f(id, label, value, o) { return Object.assign({ id: id, label: label, value: value, type: 'number', step: 1 }, o || {}); }
+  function f(id, label, value, o) { return Object.assign({ id: id, label: label, value: value, type: 'number', step: 1, min: (o && o.suffix === 'years') ? 1 : 0, max: (o && o.suffix === 'years') ? 100 : undefined }, o || {}); }
   function sel(id, label, value, options) { return { id: id, label: label, value: value, type: 'select', options: options }; }
   var YN = [['no', 'No'], ['yes', 'Yes']];
 
@@ -51,7 +51,7 @@
         run: function (v) {
           var a = LF.acquisition({ price: v.price, workingCapital: v.wc, closingCosts: v.closing, equityPct: Math.min(v.equityPct, 100), sellerNotePct: v.notePct, ratePct: v.rate,
             years: v.years || 10, noteRatePct: 6, noteYears: 10, financeFee: v.finFee === 'yes', sde: v.sde, ownerSalary: v.salary }), notes = [];
-          notes.push(a.dscr >= 1.25 ? 'DSCR meets the 1.25x level many SBA lenders look for.' : 'DSCR is below the 1.25x level many SBA lenders look for. A lower price, more equity or a longer term would help.');
+          notes.push(a.dscr >= 1.25 ? 'DSCR is at or above 1.25x, the floor SBA lenders are reported to apply to first-time buyers under SOP 50 10 8.1.' : 'DSCR is below 1.25x, the floor SBA lenders are reported to apply to first-time buyers. A lower price, more equity or a longer term would help.');
           if (v.equityPct < 10) notes.push('The SBA requires at least 10% equity injection on a change of ownership.');
           if (a.sellerNote > 0) notes.push('Seller note modeled at 6% over 10 years. SBA rules limit how a seller note can count toward equity, and it may need to be on standby; ask your lender.');
           notes.push('Estimate only. Lenders also review the business valuation, add-backs, collateral and your experience.');
@@ -81,7 +81,7 @@
           return {
             head: ['Estimated cash to close', money(c.cash)],
             rows: c.items.map(function (x) { return [x[0], money(x[1])]; }).concat([['Loan amount', money(c.loan)]]),
-            notes: ['Planning estimate, not a quote. The SBA guarantee fee follows the FY 2027 schedule (3% of the guaranteed portion on loans of $150,001 to $700,000, 3.5% above that).', 'Ask your lender for a written estimate of every fee before you commit.']
+            notes: ['Planning estimate, not a quote. The SBA guarantee fee follows the FY 2027 schedule (3% of the guaranteed portion on loans of $150,001 to $700,000; 3.5% above that, up to $1 million guaranteed).', 'Ask your lender for a written estimate of every fee before you commit.']
           };
         }
       };
@@ -415,7 +415,7 @@
       var v = {};
       spec.fields.forEach(function (fd) {
         var node = el.querySelector('[data-f="' + fd.id + '"]');
-        v[fd.id] = fd.type === 'select' ? node.value : (isFinite(parseNum(node.value)) ? Math.min(Math.max(0, parseNum(node.value)), +node.dataset.max || Infinity) : 0);
+        v[fd.id] = fd.type === 'select' ? node.value : (isFinite(parseNum(node.value)) ? Math.min(Math.max(fd.min || 0, parseNum(node.value)), +node.dataset.max || 1e12) : (fd.min || 0));
       });
       return v;
     }
@@ -426,6 +426,7 @@
         '<dl class="lf-rows">' + r.rows.map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('') + '</dl>' +
         (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
         (r.sched ? schedHtml(r.sched) : '');
+      if (/NaN|Infinity|\u221e/.test(out.textContent)) out.innerHTML = '<p class="lf-notes" role="status">Enter an amount and a term greater than zero to see results.</p>';
     }
     el.addEventListener('input', function (e) {
       var t = e.target;

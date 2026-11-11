@@ -51,14 +51,14 @@ make('guides/sba-loan-interest-tax-treatment.html', 'Tax Treatment of SBA Loan I
     <h2>The business interest limitation (Section 163(j))</h2>
     <p>Larger businesses can face a cap on deductible business interest. Many small businesses are exempt based on average annual gross receipts, and the threshold is adjusted for inflation each year, so check the current figure in the instructions for {A('https://www.irs.gov/forms-pubs/about-form-8990','Form 8990')}.</p>
     <h2>The guarantee fee and closing costs</h2>
-    <p>The SBA upfront guarantee fee, lender fees and other costs of obtaining the loan are generally treated as debt issuance costs and deducted over the term of the loan, not in the year paid. If you finance the fee into the loan, it still follows that treatment. See the <a href="/loans/sba-7a.html#worked-example">$350,000 worked example</a> for how large these costs can be.</p>
+    <p>The SBA upfront guarantee fee, lender fees and other costs of obtaining the loan are generally treated as debt issuance costs and deducted over the term of the loan, not in the year paid. If you finance the fee into the loan, it still follows that treatment. See the <a href="/loans/sba-7a#worked-example">$350,000 worked example</a> for how large these costs can be.</p>
     <h2>Mixed-use proceeds and tracing</h2>
     <p>Interest is generally classified by how the loan proceeds are spent. If part of a loan funds personal use or a non-deductible purpose, the interest on that part may not be deductible. Keep clear records of where proceeds go, and keep business and personal funds separate.</p>
     <h2>S corporations and other pass-throughs</h2>
     <p>Whether a loan sits in the entity or with the owner affects where interest is reported and how basis is computed. Work through the structure with your CPA before closing, not after. In a multi-state business, state rules on interest deductions can differ from federal rules.</p>
     <h2>What to track</h2>
-    <ul><li>The closing statement showing every fee, and which were financed</li><li>An annual interest statement from the lender</li><li>The use of proceeds, by date and amount</li><li>The amortization schedule, so fee amortization and interest are posted correctly (use the <a href="/calculators/sba-7a.html">SBA 7(a) calculator</a>)</li></ul>
-    <p class="lf-disclaimer">General information, not tax advice. Tax rules change and depend on your facts; consult a CPA or tax professional. Related: <a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a>, <a href="/guides/sba-7a-step-by-step.html">SBA 7(a) step by step</a>.</p>''',
+    <ul><li>The closing statement showing every fee, and which were financed</li><li>An annual interest statement from the lender</li><li>The use of proceeds, by date and amount</li><li>The amortization schedule, so fee amortization and interest are posted correctly (use the <a href="/calculators/sba-7a">SBA 7(a) calculator</a>)</li></ul>
+    <p class="lf-disclaimer">General information, not tax advice. Tax rules change and depend on your facts; consult a CPA or tax professional. Related: <a href="/guides/dscr-cpa-view">DSCR from a CPA&rsquo;s view</a>, <a href="/guides/sba-7a-step-by-step">SBA 7(a) step by step</a>.</p>''',
   faq=[('Is SBA loan interest tax deductible?', 'Interest on a loan used for business purposes is generally deductible, subject to limits such as Section 163(j). Confirm with your CPA.'),
        ('Can I deduct the SBA guarantee fee in the year I pay it?', 'Generally no. It is usually treated as a debt issuance cost and deducted over the life of the loan.')], noindex=True)
 
@@ -67,14 +67,14 @@ make('guides/owner-add-backs-ebitda.html', 'Owner Add-Backs and EBITDA Normaliza
   'Owner Add-Backs and EBITDA Normalization',
   'Normalization adjusts reported profit for items that are not part of ongoing operations, such as owner pay above market, personal expenses, one-time costs, interest, depreciation and taxes, to show what a new owner or lender can expect the business to earn. Each add-back needs documentation that ties to the tax returns and books.',
   '''<h2>EBITDA and SDE</h2>
-    <p><strong>EBITDA</strong> is earnings before interest, taxes, depreciation and amortization. For owner-operated businesses, buyers and brokers often use <strong>seller&rsquo;s discretionary earnings (SDE)</strong>, which also adds back one owner&rsquo;s compensation and benefits. The <a href="/calculators/business-acquisition.html">business acquisition calculator</a> uses SDE minus a market salary for the operator, because a lender will want the new owner paid.</p>
+    <p><strong>EBITDA</strong> is earnings before interest, taxes, depreciation and amortization. For owner-operated businesses, buyers and brokers often use <strong>seller&rsquo;s discretionary earnings (SDE)</strong>, which also adds back one owner&rsquo;s compensation and benefits. The <a href="/calculators/business-acquisition">business acquisition calculator</a> uses SDE minus a market salary for the operator, because a lender will want the new owner paid.</p>
     <h2>Common add-backs</h2>
     <ul><li>Owner compensation above what it would cost to hire a manager (S corporations: compare officer wages to reasonable compensation)</li><li>Personal expenses run through the business, such as vehicles, travel and family members not working in the business</li><li>One-time or non-recurring costs, such as a lawsuit settlement or a move</li><li>Non-cash items such as depreciation and amortization, and interest</li><li>Above- or below-market rent paid to an owner-related landlord, restated to market</li></ul>
     <h2>What lenders accept</h2>
-    <p>Lenders start from the filed tax returns and financial statements. An add-back that cannot be tied to a return, invoice or bank record is often rejected. Aggressive add-backs raise the reported earnings and the price, but they also lower credibility; a valuation and the lender&rsquo;s own cash-flow analysis decide what counts. See <a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a> for how the adjusted number feeds the coverage test.</p>
+    <p>Lenders start from the filed tax returns and financial statements. An add-back that cannot be tied to a return, invoice or bank record is often rejected. Aggressive add-backs raise the reported earnings and the price, but they also lower credibility; a valuation and the lender&rsquo;s own cash-flow analysis decide what counts. See <a href="/guides/dscr-cpa-view">DSCR from a CPA&rsquo;s view</a> for how the adjusted number feeds the coverage test.</p>
     <h2>Multi-state and pass-through issues</h2>
     <p>For multi-state operators, confirm that payroll and state taxes are consistent across entities before adding anything back. For S corporations, reasonable-compensation rules and shareholder distributions affect what the &ldquo;owner pay&rdquo; adjustment should be.</p>
-    <p class="lf-disclaimer">General information, not valuation, tax or legal advice. Related: <a href="/loans/sba-7a.html">SBA 7(a) loan</a>, <a href="/calculators/cash-to-close.html">cash-to-close estimator</a>.</p>''',
+    <p class="lf-disclaimer">General information, not valuation, tax or legal advice. Related: <a href="/loans/sba-7a">SBA 7(a) loan</a>, <a href="/calculators/cash-to-close">cash-to-close estimator</a>.</p>''',
   faq=[('What is the difference between EBITDA and SDE?', 'EBITDA excludes interest, taxes, depreciation and amortization; SDE also adds back one owner&rsquo;s pay and benefits, and is common for owner-operated businesses.'),
        ('Do lenders accept all add-backs?', 'No. Lenders generally accept adjustments they can tie to tax returns, financial statements and other documents.')], noindex=True)
 
@@ -83,13 +83,13 @@ make('guides/dscr-cpa-view.html', 'DSCR From a CPA\'s View',
   'DSCR From a CPA&rsquo;s View',
   'DSCR is cash flow available for debt service divided by annual principal and interest payments; many lenders look for at least 1.25x, but the answer depends on which earnings number you use, how owner pay and taxes are treated, and whether the lender tests the business alone or all of your obligations together.',
   '''<h2>Pick the numerator carefully</h2>
-    <p>Business DSCR commonly uses net income plus interest, depreciation and amortization (and other non-cash items), then subtracts owner compensation that the business must pay. A number built from normalized earnings (see <a href="/guides/owner-add-backs-ebitda.html">owner add-backs</a>) can differ from one built from raw tax-return income.</p>
+    <p>Business DSCR commonly uses net income plus interest, depreciation and amortization (and other non-cash items), then subtracts owner compensation that the business must pay. A number built from normalized earnings (see <a href="/guides/owner-add-backs-ebitda">owner add-backs</a>) can differ from one built from raw tax-return income.</p>
     <h2>Owner pay and taxes</h2>
     <p>For pass-through entities, the owner&rsquo;s income tax on business profit is paid personally, so conservative lenders look at after-tax cash flow or a global view. For S corporations, reasonable compensation must be paid before distributions.</p>
     <h2>Global DSCR</h2>
     <p>Some lenders combine business cash flow with the owners&rsquo; personal income and add personal debt payments to the denominator. Gather personal tax returns and a debt schedule early.</p>
     <h2>A short example</h2>
-    <p>On the <a href="/loans/sba-7a.html#worked-example">$350,000 SBA 7(a) example</a>, annual debt service is about $55,503, so net operating income of about $69,400 gives a DSCR of 1.25x, and $85,000 gives about 1.53x. Use the <a href="/calculators/dscr.html">DSCR calculator</a> to test your own numbers, and read the general <a href="/guides/dscr-explained.html">DSCR explainer</a>.</p>
+    <p>On the <a href="/loans/sba-7a#worked-example">$350,000 SBA 7(a) example</a>, annual debt service is about $55,503, so net operating income of about $69,400 gives a DSCR of 1.25x, and $85,000 gives about 1.53x. Use the <a href="/calculators/dscr">DSCR calculator</a> to test your own numbers, and read the general <a href="/guides/dscr-explained">DSCR explainer</a>.</p>
     <h2>Common mistakes</h2>
     <ul><li>Using EBITDA while ignoring taxes the owner must pay</li><li>Forgetting existing debt payments, including equipment leases and owner loans</li><li>Using projected rather than historical cash flow without support</li><li>Ignoring seasonality, so a strong year hides a weak quarter</li></ul>
     <p class="lf-disclaimer">General information, not tax or financial advice. Lender minimums differ.</p>''',
@@ -117,8 +117,8 @@ make('compare/sba-7a-vs-504.html', 'SBA 7(a) vs 504 Loan: Which Fits Your Projec
     ['SBA fees (FY 2027)', f'2% to 3.75% of the guaranteed portion ({A(INFO,"Notice 5000-881797")})', '0.50% upfront and 0.203% annual on the debenture'],
   ], ['', 'SBA 7(a)', 'SBA 504']) + f'''
     <h2>How to decide</h2>
-    <ul><li>Need working capital, inventory or to buy a business? Look at the <a href="/loans/sba-7a.html">7(a)</a>.</li><li>Buying or building the building you operate from? Price a <a href="/loans/sba-504.html">504</a> too.</li><li>Run both through the <a href="/calculators/sba-7a.html">7(a) calculator</a> and <a href="/calculators/sba-504.html">504 calculator</a> before you talk to a lender.</li></ul>
-    <p>Related: <a href="/compare/sba-vs-conventional-term-loan.html">SBA vs conventional term loan</a>, <a href="/compare/">all comparisons</a>.</p>
+    <ul><li>Need working capital, inventory or to buy a business? Look at the <a href="/loans/sba-7a">7(a)</a>.</li><li>Buying or building the building you operate from? Price a <a href="/loans/sba-504">504</a> too.</li><li>Run both through the <a href="/calculators/sba-7a">7(a) calculator</a> and <a href="/calculators/sba-504">504 calculator</a> before you talk to a lender.</li></ul>
+    <p>Related: <a href="/compare/sba-vs-conventional-term-loan">SBA vs conventional term loan</a>, <a href="/compare/">all comparisons</a>.</p>
     {FOOT}''',
   faq=[('Is a 504 loan cheaper than a 7(a)?', 'It can be for real estate because of the fixed CDC rate and lower down payment, but fees, rates and your project decide; compare both with a lender.'),
        ('Can I use a 504 for working capital?', 'No. A 504 is for fixed assets such as real estate and long-life equipment.')])
@@ -135,7 +135,7 @@ make('compare/sba-vs-conventional-term-loan.html', 'SBA Loan vs Conventional Ter
     ['Fees', f'SBA guarantee fee, 2% to 3.75% of the guaranteed portion ({A(INFO,"FY 2027 notice")})', 'Lender fees only; no SBA fee'],
     ['Best for', 'Borrowers who fall just short of conventional standards, or who need longer terms', 'Strong borrowers, larger deals, speed'],
   ], ['', 'SBA loan', 'Conventional term loan']) + f'''
-    <p>Pages: <a href="/loans/sba-7a.html">SBA 7(a)</a>, <a href="/loans/commercial-term-loan.html">commercial term loan</a>. Related: <a href="/compare/sba-7a-vs-504.html">7(a) vs 504</a>, <a href="/compare/sba-vs-online-lender.html">SBA vs online lender</a>.</p>
+    <p>Pages: <a href="/loans/sba-7a">SBA 7(a)</a>, <a href="/loans/commercial-term-loan">commercial term loan</a>. Related: <a href="/compare/sba-7a-vs-504">7(a) vs 504</a>, <a href="/compare/sba-vs-online-lender">SBA vs online lender</a>.</p>
     {FOOT}''',
   faq=[('Do I need to be turned down by a bank to get an SBA loan?', 'SBA rules require that credit is not otherwise available on reasonable terms; ask your lender how it applies to you.'),
        ('Which is faster?', 'Conventional loans can be faster for strong borrowers, but timing depends on the lender and the file.')])
@@ -151,7 +151,7 @@ make('compare/sba-vs-online-lender.html', 'SBA Loan vs Online Lender',
     ['Cost', f'Rate capped by SBA rules; fee is a percentage of the guaranteed portion ({A(INFO,"FY 2027")})', 'Often higher; may be quoted as a factor rate, so convert to an APR to compare'],
     ['Best for', 'Larger, longer-term needs where cost matters', 'Short-term needs or borrowers who cannot yet qualify for bank or SBA credit'],
   ], ['', 'SBA loan', 'Online lender']) + f'''
-    <p>Check the total repayment, the APR, prepayment terms and whether payments are daily or weekly. Run numbers in the <a href="/calculators/loan-payment.html">loan payment calculator</a>, then read <a href="/guides/choosing-lender.html">how to choose a lender</a>. Related: <a href="/compare/sba-vs-conventional-term-loan.html">SBA vs conventional</a>, <a href="/loans/sba-7a.html">SBA 7(a)</a>.</p>
+    <p>Check the total repayment, the APR, prepayment terms and whether payments are daily or weekly. Run numbers in the <a href="/calculators/loan-payment">loan payment calculator</a>, then read <a href="/guides/choosing-lender">how to choose a lender</a>. Related: <a href="/compare/sba-vs-conventional-term-loan">SBA vs conventional</a>, <a href="/loans/sba-7a">SBA 7(a)</a>.</p>
     {FOOT}''',
   faq=[('Are online business loans always more expensive?', 'Not always, but they often cost more than SBA loans. Compare total repayment and APR.'),
        ('What is a factor rate?', 'A multiplier applied to the amount borrowed to set total repayment. It is not an APR, so convert before comparing.')])
@@ -161,12 +161,12 @@ make('compare/index.html', 'Compare Business Loans: SBA 7(a), 504, Conventional 
   'Compare Business Loans',
   'Use these side-by-side comparisons to narrow your choice: SBA 7(a) vs 504 for fixed assets versus flexibility, SBA vs conventional for qualification and cost, and SBA vs online lender for speed versus price.',
   '''<ul>
-      <li><a href="/compare/sba-7a-vs-504.html"><strong>SBA 7(a) vs 504</strong></a>: flexibility versus owner-occupied real estate and equipment.</li>
-      <li><a href="/compare/sba-vs-conventional-term-loan.html"><strong>SBA vs conventional term loan</strong></a>: qualification, down payment and fees.</li>
-      <li><a href="/compare/sba-vs-online-lender.html"><strong>SBA vs online lender</strong></a>: speed versus total cost.</li>
+      <li><a href="/compare/sba-7a-vs-504"><strong>SBA 7(a) vs 504</strong></a>: flexibility versus owner-occupied real estate and equipment.</li>
+      <li><a href="/compare/sba-vs-conventional-term-loan"><strong>SBA vs conventional term loan</strong></a>: qualification, down payment and fees.</li>
+      <li><a href="/compare/sba-vs-online-lender"><strong>SBA vs online lender</strong></a>: speed versus total cost.</li>
     </ul>
     <h2>The loan pages</h2>
-    <p><a href="/loans/sba-7a.html">SBA 7(a)</a>, <a href="/loans/sba-504.html">SBA 504</a>, <a href="/loans/sba-express.html">SBA Express</a>, <a href="/loans/sba-microloan.html">SBA Microloan</a>, <a href="/loans/line-of-credit.html">line of credit</a>, <a href="/loans/commercial-term-loan.html">commercial term loan</a> and <a href="/loans/equipment-financing.html">equipment financing</a>.</p>''' + FOOT)
+    <p><a href="/loans/sba-7a">SBA 7(a)</a>, <a href="/loans/sba-504">SBA 504</a>, <a href="/loans/sba-express">SBA Express</a>, <a href="/loans/sba-microloan">SBA Microloan</a>, <a href="/loans/line-of-credit">line of credit</a>, <a href="/loans/commercial-term-loan">commercial term loan</a> and <a href="/loans/equipment-financing">equipment financing</a>.</p>''' + FOOT)
 
 # ---------------- AEO answer blocks atop existing guides ----------------
 ANS = {

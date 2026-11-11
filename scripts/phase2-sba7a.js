@@ -39,7 +39,7 @@ const EX = `<h2 id="worked-example">Worked example: a $350,000 loan, all-in</h2>
     <h3>Amortization</h3>
     <p>In year one about $34,034 of the payments is interest and about $21,470 reduces principal. After 5 years the balance is about $217,690. Early payments are interest-heavy, which is why extra principal payments help most in the first years. The <a href="#calculators">calculator above</a> shows the full schedule.</p>
     <h3>DSCR check</h3>
-    <p>Annual debt service is about $55,503 ($4,625 &times; 12). Lenders commonly look for a debt service coverage ratio of at least 1.25, which here means net operating income of about $69,400 or more. A business with $85,000 of net operating income would show a DSCR of about 1.53. See <a href="/guides/dscr-explained.html">DSCR explained</a> for how lenders calculate it.</p>
+    <p>Annual debt service is about $55,503 ($4,625 &times; 12). Lenders commonly look for a debt service coverage ratio of at least 1.25, which here means net operating income of about $69,400 or more. A business with $85,000 of net operating income would show a DSCR of about 1.53. See <a href="/guides/dscr-explained">DSCR explained</a> for how lenders calculate it.</p>
     `;
 rep('<div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-7a-mid"', EX + '<div class="ad-slot" data-ad-format="rectangle" data-ad-name="sba-7a-mid"');
 

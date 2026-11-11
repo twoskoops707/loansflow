@@ -2,7 +2,7 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: interest-cohort=()
+  Permissions-Policy: browsing-topics=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 # Static assets: revalidate hourly, then serve stale for a day while the
@@ -32,4 +32,4 @@
 # Affiliate redirects: never index, never pass referrer details beyond origin
 /go/*
   X-Robots-Tag: noindex, nofollow
-  Referrer-Policy: no-referrer-when-downgrade
+  Referrer-Policy: no-referrer

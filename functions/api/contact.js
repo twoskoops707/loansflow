@@ -51,7 +51,9 @@ async function sendEmail(env, payload) {
 export async function onRequestPost({ request, env }) {
   // Same-origin only — the form lives on this site.
   const origin = request.headers.get('origin');
-  if (origin && new URL(origin).host !== new URL(request.url).host) {
+  let sameOrigin = true;
+  try { if (origin && new URL(origin).host !== new URL(request.url).host) sameOrigin = false; } catch (_) { sameOrigin = false; }
+  if (!sameOrigin) {
     return json({ ok: false, error: 'Forbidden' }, 403);
   }
 

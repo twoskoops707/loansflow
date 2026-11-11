@@ -10,15 +10,24 @@ export async function onRequestGet({ env }) {
 }
 
 export async function onRequestPost({ request, env }) {
+  // Same-origin only.
+  const origin = request.headers.get('origin');
+  try { if (origin && new URL(origin).host !== new URL(request.url).host) return json({ ok: false, error: 'forbidden' }, 403); } catch (_) { return json({ ok: false, error: 'forbidden' }, 403); }
+  if (Number(request.headers.get('content-length') || 0) > 2048) return json({ ok: false, error: 'too_large' }, 413);
   if (!env.SUBSCRIBE_WEBHOOK_URL) return json({ ok: false, error: 'not_configured' }, 503);
   let body;
   try { body = await request.json(); } catch (_) { return json({ ok: false, error: 'bad_request' }, 400); }
   const email = String(body.email || '').trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) return json({ ok: false, error: 'invalid_email' }, 400);
   if (body.website) return json({ ok: true }); // honeypot: pretend success to bots
-  const res = await fetch(env.SUBSCRIBE_WEBHOOK_URL, {
-    method: 'POST', headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ email, source: String(body.source || '').slice(0, 100), list: 'monthly-sba-rate-update' }),
-  });
-  return res.ok ? json({ ok: true }) : json({ ok: false, error: 'upstream' }, 502);
+  try {
+    const res = await fetch(env.SUBSCRIBE_WEBHOOK_URL, {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email, source: String(body.source || '').slice(0, 100), list: 'monthly-sba-rate-update' }),
+      signal: AbortSignal.timeout(8000),
+    });
+    return res.ok ? json({ ok: true }) : json({ ok: false, error: 'upstream' }, 502);
+  } catch (_) {
+    return json({ ok: false, error: 'upstream' }, 502);
+  }
 }

@@ -14,7 +14,7 @@ const avatar = hasPhoto
 
 const BOX = `<section class="author-box">
   ${avatar}
-  <p><strong>Authored by <a href="/author.html">Joshua Miller, CPA</a></strong><br>
+  <p><strong>Authored by <a href="/author">Joshua Miller, CPA</a></strong><br>
   Licensed CPA (California, 2009) with a B.S. from Cal Poly Humboldt and nearly two decades helping businesses and individuals secure loans, from private lenders to SBA and everywhere in between, for acquisitions and growth, plus tax, valuations and succession. LoansFlow is educational and independent &mdash; not a lender.</p>
 </section>`;
 
