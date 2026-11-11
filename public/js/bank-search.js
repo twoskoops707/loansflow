@@ -14,8 +14,8 @@
   var form = el.querySelector('form'), out = el.querySelector('.lfb-out');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var st = form.querySelector('#lfb-state').value, city = form.querySelector('#lfb-city').value.trim().replace(/[^A-Za-z .'-]/g, '');
-    var f = 'STALP:' + st + ' AND ACTIVE:1' + (city ? ' AND CITY:"' + city.toUpperCase() + '"' : '');
+    var st = form.querySelector('#lfb-state').value, city = form.querySelector('#lfb-city').value.trim().replace(/[^A-Za-z .'-]/g, '').toLowerCase().replace(/(^|[\s.'-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); });
+    var f = 'STALP:' + st + ' AND ACTIVE:1' + (city ? ' AND CITY:"' + city + '"' : '');
     var url = 'https://api.fdic.gov/banks/institutions?filters=' + encodeURIComponent(f) + '&fields=' + encodeURIComponent('NAME,CITY,STALP,ASSET,WEBADDR') + '&sort_by=ASSET&sort_order=DESC&limit=15';
     out.textContent = 'Searching...';
     fetch(url).then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); }).then(function (d) {

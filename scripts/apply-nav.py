@@ -42,8 +42,11 @@ about = menu('About', '/about.html', [
 cta = '        <a class="nav-cta" href="/loans/">Find your loan</a>\n      '
 NAV = '\n' + loan.strip('\n') + '\n' + calc.strip('\n') + '\n' + guides + '\n' + fund + '\n' + news + '\n' + about + '\n' + cta
 def col(title, links): return '<div><div class="foot-h">' + title + '</div>' + ''.join(f'<a href="{u}">{t}</a>' for u, t in links) + '</div>'
-LEARN = col('Learn', [('/guides/', 'Guides'), ('/compare/', 'Compare loans'), ('/guides/dscr-cpa-view', 'DSCR from a CPA&rsquo;s view'), ('/guides/owner-add-backs-ebitda', 'Add-backs and EBITDA'), ('/guides/sba-loan-interest-tax-treatment', 'SBA interest and taxes'), ('/directory/', 'Phone directory'), ('/alternative-financing/', 'Uncommon ways to finance'), ('/grants/', 'Search grants'), ('/news/', 'News and rates'), ('/guides/glossary', 'Glossary'), ('/wisdom/', 'Old-timer&rsquo;s guide')])
-SITE = col('Site', [('/site-index', 'Site directory'), ('/about', 'About'), ('/author', 'About the author'), ('/editorial-policy', 'Editorial policy'), ('/methodology', 'How our numbers work'), ('/contact', 'Contact')])
+LOANS = col('Loan types', [('/loans/sba-7a', 'SBA 7(a)'), ('/loans/sba-504', 'SBA 504'), ('/loans/sba-express', 'SBA Express'), ('/loans/sba-microloan', 'SBA Microloan'), ('/loans/line-of-credit', 'Line of credit'), ('/loans/commercial-term-loan', 'Commercial term loan'), ('/loans/equipment-financing', 'Equipment financing'), ('/loans/mortgage', 'Mortgage')])
+LEARN = col('Learn', [('/guides/', 'All guides'), ('/compare/', 'Compare loans'), ('/guides/dscr-cpa-view', 'DSCR from a CPA&rsquo;s view'), ('/guides/owner-add-backs-ebitda', 'Add-backs and EBITDA'), ('/guides/sba-loan-interest-tax-treatment', 'SBA interest and taxes'), ('/guides/glossary', 'Glossary'), ('/wisdom/', 'Old-timer&rsquo;s guide')])
+FUND = col('Funding and directories', [('/alternative-financing/', 'Uncommon ways to finance'), ('/grants/', 'Search grants'), ('/news/', 'News and rates'), ('/directory/', 'Phone directory'), ('/site-index', 'Site directory')])
+SITE = col('About', [('/about', 'About LoansFlow'), ('/author', 'About the author'), ('/editorial-policy', 'Editorial policy'), ('/methodology', 'How our numbers work'), ('/contact', 'Contact')])
+LEGAL = col('Legal', [('/privacy', 'Privacy'), ('/terms', 'Terms'), ('/disclaimer', 'Disclaimer'), ('/disclosure', 'Advertising and affiliate disclosure')])
 sections = [('/loans/', 'Loan types'), ('/calculators/', 'Calculators'), ('/guides/', 'Guides'), ('/compare/', 'Guides'), ('/alternative-financing/', 'Funding'), ('/grants/', 'Funding'), ('/directory/', 'Funding'), ('/news/', 'News &amp; rates'), ('/about', 'About'), ('/site-index', 'About'), ('/author', 'About'), ('/editorial', 'About'), ('/disclosure', 'About'), ('/contact', 'About')]
 n = 0
 for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
@@ -60,8 +63,10 @@ for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
     h = re.sub(r'<h4>(Loan types|Learn|Site|Legal)</h4>', r'<div class="foot-h">\1</div>', h)
     if 'class="skip-link"' not in h: h = re.sub(r'(<body[^>]*>)', r'\1\n  <a class="skip-link" href="#main">Skip to main content</a>', h, count=1)
     if not re.search(r'<main[^>]*\bid="main"', h): h = re.sub(r'<main(?![^>]*\bid=)', '<main id="main"', h, count=1)
-    # footer columns (rewritten wholesale so the result is the same every run)
-    h = re.sub(r'<div><(?:h4|div class="foot-h")>Learn</(?:h4|div)>[\s\S]*?</div>', LEARN, h, count=1)
-    h = re.sub(r'<div><(?:h4|div class="foot-h")>Site</(?:h4|div)>[\s\S]*?</div>', SITE, h, count=1)
+    # footer: rebuild all link columns, keep the brand block that is already on the page
+    bm = re.search(r'<div class="footer-grid">\s*(<div><a class="foot-brand"[\s\S]*?</p></div>)', h)
+    if bm:
+        gs = h.index('<div class="footer-grid">'); ge = h.index('<div class="footer-note">')
+        h = h[:gs] + '<div class="footer-grid">\n      ' + bm.group(1) + '\n      ' + '\n      '.join([LOANS, LEARN, FUND, SITE, LEGAL]) + '\n    </div>\n    ' + h[ge:]
     if h != o: p.write_text(h); n += 1
 print('pages updated', n)

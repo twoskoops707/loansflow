@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="LoansFlow ledger and cash-flow icon"><rect width="72" height="72" rx="16" fill="#071018"/><rect x="14" y="14" width="30" height="40" rx="4" fill="none" stroke="#fffcf7" stroke-width="2.5"/><path d="M20 24h18M20 31h18M20 38h10" stroke="#fffcf7" stroke-width="2.5" stroke-linecap="round" opacity=".65"/><path d="M10 56c10 0 12-10 22-10s12 8 20 8 6-12 12-20" fill="none" stroke="#34d59a" stroke-width="3.5" stroke-linecap="round"/><path d="M58 28l6-2-1 7" fill="none" stroke="#34d59a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="60" width="22" height="2.5" rx="1.2" fill="#c9a45c"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="Rising sun over stacked gold bars">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14263a"/><stop offset="1" stop-color="#071018"/></linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff1b8"/><stop offset=".6" stop-color="#ffd25e"/><stop offset="1" stop-color="#f2a93b"/></radialGradient>
+    <linearGradient id="gold1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a0"/><stop offset=".5" stop-color="#e8b94a"/><stop offset="1" stop-color="#b8892a"/></linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".55" stop-color="#f0c45a"/><stop offset="1" stop-color="#c9992f"/></linearGradient>
+    <clipPath id="clip"><rect width="72" height="72" rx="16"/></clipPath>
+  </defs>
+  <rect width="72" height="72" rx="16" fill="url(#bg)"/>
+  <g clip-path="url(#clip)">
+    <g stroke="#ffd25e" stroke-width="2.6" stroke-linecap="round" opacity=".9">
+      <line x1="36" y1="9" x2="36" y2="16"/>
+      <line x1="19.5" y1="15" x2="23.5" y2="20.5"/>
+      <line x1="52.5" y1="15" x2="48.5" y2="20.5"/>
+      <line x1="9" y1="28" x2="15.5" y2="30.5"/>
+      <line x1="63" y1="28" x2="56.5" y2="30.5"/>
+    </g>
+    <circle cx="36" cy="36" r="14" fill="url(#sun)"/>
+    <polygon points="8,64 64,64 57,50 15,50" fill="url(#gold1)" stroke="#8a6420" stroke-width="1"/>
+    <polygon points="15,50 57,50 55,46 17,46" fill="#fff0b8" opacity=".85"/>
+    <polygon points="20,50 52,50 47,38 25,38" fill="url(#gold2)" stroke="#8a6420" stroke-width="1"/>
+    <polygon points="25,38 47,38 46,35 26,35" fill="#fffbe0" opacity=".9"/>
+    <line x1="22" y1="58" x2="50" y2="58" stroke="#8a6420" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+  </g>
+</svg>
