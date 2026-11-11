@@ -21,8 +21,7 @@ const ld = {
     jobTitle: 'Certified Public Accountant', worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
 };
 head2 = head2.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>\n</head>`);
-const photo = fs.existsSync(path.join(PUB, 'img', 'joshua-miller.jpg'))
-  ? '<img src="/img/joshua-miller.jpg" alt="Joshua Miller, CPA" width="120" height="120" decoding="async">' : '';
+const photo = '<img class="author-icon" src="/img/author-icon.svg" alt="" width="96" height="96" decoding="async" style="border-radius:20px">';
 const main = `<main class="legal-page">
     <h1>Joshua Miller, CPA</h1>
     ${photo}

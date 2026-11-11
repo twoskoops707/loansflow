@@ -10,7 +10,7 @@ const hasPhoto = fs.existsSync(path.join(PUB, 'img', 'joshua-miller.jpg'));
 
 const avatar = hasPhoto
   ? '<img src="/img/joshua-miller.jpg" alt="Joshua Miller, CPA" width="72" height="72" loading="lazy" decoding="async">'
-  : '<span class="author-avatar" aria-hidden="true">JM</span>';
+  : '<img class="author-icon" src="/img/author-icon.svg" alt="" width="72" height="72" loading="lazy" decoding="async">';
 
 const BOX = `<section class="author-box">
   ${avatar}

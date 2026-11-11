@@ -227,7 +227,7 @@ html { scroll-padding-top: 90px; }
 
 /* Author box (E-E-A-T) */
 .author-box{display:flex;gap:1rem;align-items:flex-start;margin:2.5rem 0 1rem;padding:1.1rem 1.2rem;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.03)}
-.author-box img,.author-box .author-avatar{flex:0 0 72px;width:72px;height:72px;border-radius:50%;object-fit:cover}
+.author-box img{flex:0 0 72px;width:72px;height:72px;border-radius:16px;object-fit:cover}
 .author-box .author-avatar{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.4rem;background:var(--accent,#34d59a);color:#06140e}
 .author-box p{margin:0;font-size:.92rem;line-height:1.55}
 .author-box a{color:inherit;text-decoration:underline}
