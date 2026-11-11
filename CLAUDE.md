@@ -38,3 +38,10 @@ The site is organized by loan type. `public/index.html` is a loan finder; `publi
 These hold Playwright-style browser-automation scripts and generated artifacts for account/domain provisioning (AdSense/Ezoic signup, affiliate network onboarding, domain purchase) — operator tooling, not part of the deployed site.
 
 **Removed on 2026-10-22:** `sequences/` and `tools/sequences/` (a generator of scripted ad clicks and impressions for the site's own ads) were deleted at the owner's request. That is invalid traffic under AdSense policy and risks a permanent ban. Do not recreate or run anything like it.
+
+### Generated pieces (2026-11-11)
+- **Header and footer links are generated.** Edit `scripts/apply-nav.py` and run `python3 scripts/apply-nav.py`; it rewrites the nav and footer columns on every page. Do not hand-edit the nav on single pages.
+- **Rates are live-linked.** `data/market-news.json` (daily, FRED + Freddie Mac) feeds `js/live-rates.js` (`data-live` spans), the mortgage/affordability/line-of-credit/7(a) calculator defaults, and `scripts/sync-static-rates.js` (rewrites the static fallback text; run by the daily workflow).
+- **Affiliates:** `data/offers.json` -> `node scripts/build-affiliate-redirects.js` writes `/go/` rules into `_redirects`. Mortgage pages are affiliate-free (RESPA); `offers.js` enforces it.
+- **Site config:** `site.config.json` + `node scripts/apply-site-config.js` inject the Search Console tag and Cloudflare analytics beacon. See `docs/automation/SEARCH-CONSOLE.md`.
+- Other scripts: `build-sitemap.js`, `check-ld.js`, `check-internal-links.js`, `phase*.{js,py}` (one-time generators; idempotent).

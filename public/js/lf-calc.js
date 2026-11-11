@@ -5,7 +5,7 @@
   var money = function (n, d) { return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
   var num = function (n, d) { return n.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
   var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
-  var livePrime = null;
+  var livePrime = null, livePmms30 = null, liveNote = { prime: '', pmms30: '' };
 
   function f(id, label, value, o) { return Object.assign({ id: id, label: label, value: value, type: 'number', step: 1 }, o || {}); }
   function sel(id, label, value, options) { return { id: id, label: label, value: value, type: 'select', options: options }; }
@@ -17,7 +17,7 @@
         title: d.title || 'Commercial real estate loan calculator',
         fields: [
           f('price', 'Property price', 1500000, { prefix: '$', step: 25000 }), f('down', 'Down payment', 30, { suffix: '% of price', step: 1 }),
-          f('rate', 'Interest rate', 7.25, { suffix: '%', step: 0.05 }), f('amort', 'Amortization', 25, { suffix: 'years', step: 1 }),
+          f('rate', 'Interest rate', 7.25, { suffix: '%', step: 0.05, hint: 'Example rate; use your lender\'s quote' }), f('amort', 'Amortization', 25, { suffix: 'years', step: 1 }),
           f('term', 'Loan term', 10, { suffix: 'years', step: 1, hint: 'When the balance comes due' }), f('noi', 'Annual net operating income', 140000, { prefix: '$', step: 1000 })
         ],
         run: function (v) {
@@ -133,7 +133,7 @@
         title: d.title || 'Equipment lease versus loan',
         fields: [
           f('price', 'Equipment price', 120000, { prefix: '$', step: 1000 }), f('down', 'Cash due at the start', 12000, { prefix: '$', step: 500 }),
-          f('years', 'Term', 5, { suffix: 'years', step: 1 }), f('loanRate', 'Loan rate', 9.5, { suffix: '%', step: 0.05 }),
+          f('years', 'Term', 5, { suffix: 'years', step: 1 }), f('loanRate', 'Loan rate', 9.5, { suffix: '%', step: 0.05, hint: 'Example rate; use your lender\'s quote' }),
           f('leaseRate', 'Lease rate', 11, { suffix: '%', step: 0.05, hint: 'Leases often carry a higher effective rate' }), f('resid', 'Value of the equipment at the end', 20, { suffix: '% of price', step: 1 })
         ],
         run: function (v) {
@@ -154,7 +154,7 @@
         title: 'Loan payment calculator',
         fields: [
           f('amount', 'Loan amount', +d.amount || 100000, { prefix: '$', step: 1000, max: +d.maxAmount || 0 }),
-          f('rate', 'Interest rate', +d.rate || 9, { suffix: '%', step: 0.05 }),
+          f('rate', 'Interest rate', +d.rate || 9, { suffix: '%', step: 0.05, hint: 'Example rate; use your lender\'s quote' }),
           f('years', 'Term', +d.years || 10, { suffix: 'years', step: 1, max: +d.maxYears || 40 }),
           f('noi', 'Annual net operating income (optional)', +d.noi || 0, { prefix: '$', step: 1000 }),
           f('extra', 'Extra monthly payment (optional)', 0, { prefix: '$', step: 50, hint: 'See how much interest and time it saves' })
@@ -216,7 +216,7 @@
         title: 'SBA 504 loan calculator',
         fields: [
           f('cost', 'Total project cost', 2000000, { prefix: '$', step: 25000 }),
-          f('bankRate', 'Bank loan rate (50%)', 7.5, { suffix: '%', step: 0.05 }),
+          f('bankRate', 'Bank loan rate (50%)', 7.5, { suffix: '%', step: 0.05, hint: 'Example rate; set by the lender' }),
           f('cdcRate', 'CDC debenture rate (up to 40%)', 6.5, { suffix: '%', step: 0.05, hint: 'Fixed at closing; ask a CDC for today\'s rate' }),
           sel('years', 'Term', '25', [['25', '25 years (real estate)'], ['20', '20 years'], ['10', '10 years (equipment)']]),
           sel('newBiz', 'New business (under 2 years)?', 'no', YN),
@@ -297,7 +297,7 @@
         title: 'Mortgage payment calculator',
         fields: [
           f('price', 'Home price', 425000, { prefix: '$', step: 5000 }), f('down', 'Down payment', 85000, { prefix: '$', step: 1000 }),
-          f('rate', 'Interest rate', 7.0, { suffix: '%', step: 0.05 }), f('years', 'Term', 30, { suffix: 'years', step: 5 }),
+          f('rate', 'Interest rate', livePmms30 || 7.0, { suffix: '%', step: 0.05, live: 'pmms30', hint: 'Starts at the latest Freddie Mac 30-year average. Replace it with your quote.' }), f('years', 'Term', 30, { suffix: 'years', step: 5 }),
           f('tax', 'Property tax', 1.1, { suffix: '% of price', step: 0.05 }), f('ins', 'Homeowner\'s insurance', 1400, { prefix: '$', suffix: '/yr', step: 50 }),
           f('pmi', 'PMI rate (used when under 20% down)', 0.7, { suffix: '% of loan/yr', step: 0.05, hint: 'Typically 0.3% to 1.5% depending on credit and down payment' })
         ],
@@ -337,7 +337,7 @@
         title: 'Home affordability calculator',
         fields: [
           f('income', 'Annual household income', 95000, { prefix: '$', step: 1000 }), f('debts', 'Other monthly debt payments', 450, { prefix: '$', step: 25 }),
-          f('down', 'Available down payment', 60000, { prefix: '$', step: 1000 }), f('rate', 'Interest rate', 7.0, { suffix: '%', step: 0.05 }),
+          f('down', 'Available down payment', 60000, { prefix: '$', step: 1000 }), f('rate', 'Interest rate', livePmms30 || 7.0, { suffix: '%', step: 0.05, live: 'pmms30', hint: 'Starts at the latest Freddie Mac 30-year average. Replace it with your quote.' }),
           f('tax', 'Property tax', 1.1, { suffix: '% of price', step: 0.05 }), f('ins', 'Insurance', 1400, { prefix: '$', suffix: '/yr', step: 50 })
         ],
         run: function (v) {
@@ -386,7 +386,7 @@
     inner = (fd.prefix ? '<span class="lf-affix">' + esc(fd.prefix) + '</span>' : '') +
       '<input id="' + id + '" data-f="' + fd.id + '" type="text" inputmode="decimal" autocomplete="off" data-max="' + (fd.max || '') + '" value="' + commas(fd.value) + '">' +
       (fd.suffix ? '<span class="lf-affix">' + esc(fd.suffix) + '</span>' : '');
-    return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input">' + inner + '</div>' + (fd.hint ? '<small>' + esc(fd.hint) + '</small>' : '') + '</div>';
+    return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input">' + inner + '</div>' + (fd.hint || fd.live ? '<small' + (fd.live ? ' data-live-note="' + (fd.live === true ? 'prime' : fd.live) + '"' : '') + '>' + esc(fd.hint || '') + '</small>' : '') + '</div>';
   }
 
   var seq = 0;
@@ -446,7 +446,11 @@
     draw();
     el._lfSyncPrime = function () {
       spec.fields.forEach(function (fd) {
-        if (fd.live && livePrime && !touched[fd.id]) el.querySelector('[data-f="' + fd.id + '"]').value = commas(livePrime);
+        if (!fd.live) return;
+        var kind = fd.live === true ? 'prime' : fd.live, val = kind === 'prime' ? livePrime : livePmms30, node = el.querySelector('[data-f="' + fd.id + '"]');
+        if (val && !touched[fd.id]) node.value = commas(val);
+        var note = el.querySelector('[data-live-note="' + kind + '"]');
+        if (note && liveNote[kind] && val) note.textContent = liveNote[kind];
       });
       draw();
     };
@@ -457,7 +461,10 @@
     nodes.forEach(mount);
     fetch('/data/market-news.json').then(function (r) { return r.json(); }).then(function (d) {
       var p = d && d.prime && d.prime.value;
-      if (p > 0 && p < 30) { livePrime = p; nodes.forEach(function (n) { if (n._lfSyncPrime) n._lfSyncPrime(); }); }
+      var c = (d && d.rates && d.rates.cells || []).filter(function (x) { return x.label === '30-Yr Fixed'; })[0], m = c ? parseFloat(c.value) : 0;
+      if (p > 0 && p < 30) { livePrime = p; liveNote.prime = 'Latest prime rate (FRED DPRIME, ' + (d.prime.asOf || '') + '). Edit to use your own.'; }
+      if (m > 0 && m < 30) { livePmms30 = m; liveNote.pmms30 = 'Latest Freddie Mac 30-year average (' + (d.rates.asOf || '') + '). Replace it with your quote.'; }
+      if (livePrime || livePmms30) nodes.forEach(function (n) { if (n._lfSyncPrime) n._lfSyncPrime(); });
     }).catch(function () {});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();

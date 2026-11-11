@@ -25,15 +25,18 @@ jobs:
         with:
           node-version: '20'
       - name: Refresh market-news.json
-        run: node tools/news/refresh-market-news.mjs
+        run: |
+          node tools/news/refresh-market-news.mjs
+          node scripts/sync-static-rates.js
+          node scripts/build-sitemap.js
       - name: Commit if changed
         run: |
-          if git diff --quiet -- public/data/market-news.json; then
+          if git diff --quiet -- public; then
             echo "No news changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/market-news.json
+          git add public
           git commit -m "chore: refresh market news snapshot $(date -u +%Y-%m-%d)"
           git push

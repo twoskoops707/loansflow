@@ -1,0 +1,32 @@
+# Daily health snapshot of the live site; appends to monitoring/history.jsonl and fails (so GitHub emails you) on any problem.
+name: site-health
+on:
+  schedule:
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: site-health
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check site
+        id: check
+        run: node monitoring/check-site.mjs
+        continue-on-error: true
+      - name: Commit history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitoring/history.jsonl
+          git diff --cached --quiet || (git commit -m "chore: site health snapshot $(date -u +%Y-%m-%d)" && git pull --rebase -q && git push)
+      - name: Fail if problems were found
+        if: steps.check.outcome == 'failure'
+        run: exit 1

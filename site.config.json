@@ -1,0 +1,5 @@
+{
+  "_help": "Fill in after you create the accounts, then run: node scripts/apply-site-config.js && git commit. Leave a value empty to skip it.",
+  "gscVerificationToken": "",
+  "cloudflareBeaconToken": ""
+}
