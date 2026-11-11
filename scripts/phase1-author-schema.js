@@ -16,7 +16,7 @@ const BOX = `<section class="author-box">
   ${avatar}
   <p><strong>Authored by <a href="/author.html">Joshua Miller, CPA</a></strong><br>
   Licensed CPA (California, 2009) and founder of LoansFlow. Nearly two decades
-  in public accounting advising small businesses on financing, tax, cash flow, business valuations and acquisitions. LoansFlow is educational and
+  in public accounting advising small businesses on financing, tax, cash flow, business valuations, acquisitions, business succession and major life events. LoansFlow is educational and
   independent &mdash; not a lender.</p>
 </section>`;
 

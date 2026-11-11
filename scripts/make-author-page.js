@@ -18,7 +18,7 @@ let head2 = head
 const ld = {
   '@context': 'https://schema.org', '@type': 'ProfilePage', url: 'https://loansflow.loan/author.html', name: T,
   mainEntity: { '@type': 'Person', '@id': 'https://loansflow.loan/author.html#person', name: 'Joshua Miller', honorificSuffix: 'CPA',
-    jobTitle: 'Certified Public Accountant', knowsAbout: ['SBA loans', 'Small business financing', 'Business valuation', 'Business acquisitions', 'Tax planning for small businesses', 'S corporations', 'Multi-state taxation', 'Research and development tax credits'], worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
+    jobTitle: 'Certified Public Accountant', knowsAbout: ['SBA loans', 'Small business financing', 'Business valuation', 'Business acquisitions', 'Business succession planning', 'Tax planning for small businesses', 'S corporations', 'Multi-state taxation', 'Research and development tax credits'], worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author.html' },
 };
 head2 = head2.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>\n</head>`);
 const photo = '<img class="author-icon" src="/img/author-icon.svg" alt="" width="96" height="96" decoding="async" style="border-radius:20px">';
@@ -26,7 +26,7 @@ const main = `<main class="legal-page">
     <h1>Joshua Miller, CPA</h1>
     ${photo}
     <p><strong>Founder and author, LoansFlow</strong></p>
-    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting. He works with owner-operated and closely held businesses on the money decisions that matter most: how to finance growth, how to buy or sell a company, what a business is worth, and what it all means for the tax return and the cash flow behind it. He founded LoansFlow to put that practical, numbers-first view in front of borrowers before they sit down with a lender.</p>
+    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting. He works with owner-operated and closely held businesses on the money decisions that matter most: how to finance growth, how to buy or sell a company, what a business is worth, how it passes to the next owner, and what it all means for the tax return and the cash flow behind it. He founded LoansFlow to put that practical, numbers-first view in front of borrowers before they sit down with a lender.</p>
     <h2>Where his experience sits</h2>
     <h3>Small business financing and cash flow</h3>
     <p>Lenders approve loans on cash flow, so much of his work is preparing the financial picture a lender will read: clean statements, a clear debt schedule, realistic projections and an honest debt service coverage ratio. See <a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a> and the <a href="/loans/sba-7a.html">SBA 7(a) guide</a>.</p>
@@ -34,6 +34,8 @@ const main = `<main class="legal-page">
     <p>Whether a company is being bought, sold, financed or restructured, the starting point is a defensible earnings figure. That means adjusting reported profit for owner pay, personal expenses and one-time items, and documenting each adjustment so it holds up to a lender or a buyer. See <a href="/guides/owner-add-backs-ebitda.html">owner add-backs and EBITDA normalization</a>.</p>
     <h3>Acquisitions and deal structure</h3>
     <p>Buying a business adds questions a standard loan does not: how much equity the buyer must contribute, how a seller note is treated, how the purchase price is allocated, and how much cash is needed at closing. Try the <a href="/calculators/business-acquisition.html">business acquisition calculator</a> and the <a href="/calculators/cash-to-close.html">cash-to-close estimator</a>.</p>
+    <h3>Business succession and life events</h3>
+    <p>Businesses change hands for personal reasons as often as strategic ones: an owner retires, a partner leaves, a family member takes over, or a death, disability, divorce or estate plan forces a decision. He helps owners and families think through these transitions with the numbers in front of them: what the business is worth, how a buyout or transfer could be financed, what the tax result looks like, and how much cash flow remains to support the people involved. Financing a succession often looks like financing an acquisition, so the <a href="/calculators/business-acquisition.html">business acquisition calculator</a> and <a href="/loans/sba-7a.html">SBA 7(a) loans</a> apply here too.</p>
     <h3>Tax planning for owners</h3>
     <p>Entity choice and structure change the tax result of a loan or a deal. His experience includes S corporations, multi-state businesses and the research and development credit, and how those facts show up in a lender&rsquo;s view of earnings. See <a href="/guides/sba-loan-interest-tax-treatment.html">tax treatment of SBA loan interest and fees</a>.</p>
     <h2>How he works</h2>
