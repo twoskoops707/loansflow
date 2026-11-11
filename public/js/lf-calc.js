@@ -409,7 +409,7 @@
     var spec = make(el.dataset), uid = 'lf' + (++seq), touched = {};
     el.classList.add('lf-calc');
     el.innerHTML = '<h3 class="lf-title">' + esc(el.dataset.title || spec.title) + '</h3><div class="lf-grid">' + spec.fields.map(function (fd) { return fieldHtml(fd, uid); }).join('') +
-      '</div><div class="lf-result" aria-live="polite"></div>';
+      '</div><div class="lf-result"></div>';
     var out = el.querySelector('.lf-result');
     function read() {
       var v = {};
@@ -421,7 +421,7 @@
     }
     function draw() {
       var r = spec.run(read());
-      out.innerHTML = '<div class="lf-head"><span>' + esc(r.head[0]) + '</span><strong>' + esc(r.head[1]) + '</strong></div>' +
+      out.innerHTML = '<div class="lf-head" role="status"><span>' + esc(r.head[0]) + '</span><strong>' + esc(r.head[1]) + '</strong></div>' +
         (r.charts && r.charts.filter(Boolean).length ? '<div class="lf-charts">' + r.charts.join('') + '</div>' : '') +
         '<dl class="lf-rows">' + r.rows.map(function (x) { return '<div><dt>' + esc(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('') + '</dl>' +
         (r.notes && r.notes.length ? '<ul class="lf-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
