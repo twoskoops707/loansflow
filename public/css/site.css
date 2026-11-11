@@ -232,3 +232,11 @@ html { scroll-padding-top: 90px; }
 .author-box p{margin:0;font-size:.92rem;line-height:1.55}
 .author-box a{color:inherit;text-decoration:underline}
 @media (max-width:640px){.author-box{flex-direction:column}}
+
+/* Quotable answer block (AEO) and email sign-up */
+.lf-answer{margin:1rem 0 1.5rem;padding:.9rem 1.1rem;border-left:4px solid var(--accent,#34d59a);background:rgba(255,255,255,.04);border-radius:0 10px 10px 0;line-height:1.55}
+.lf-subscribe{margin:2rem 0;padding:1.1rem 1.2rem;border:1px solid rgba(255,255,255,.14);border-radius:12px;position:relative}
+.lf-subscribe h3{margin:0 0 .3rem}.lf-subscribe form{display:flex;gap:.6rem;flex-wrap:wrap;margin:.6rem 0}
+.lf-subscribe input[type=email]{flex:1 1 220px;padding:.6rem .8rem;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font:inherit}
+.lf-sub-msg{min-height:1.2em;margin:.2rem 0}.lf-sub-fine{font-size:.78rem;opacity:.7;margin:.2rem 0 0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

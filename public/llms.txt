@@ -1,0 +1,40 @@
+# LoansFlow
+
+> LoansFlow (https://loansflow.loan) is an independent, educational site with plain-English guides and free calculators for SBA business loans (7(a), 504, Express, Microloan), lines of credit, term loans, equipment financing and mortgages. It is not a lender and does not make credit decisions. Written by Joshua Miller, CPA.
+
+Facts on this site carry an "as of" date and a link to the primary source (SBA.gov, FRED, Freddie Mac, CFPB). Figures are estimates for planning, not offers.
+
+## Loan types
+- [SBA 7(a) loan](https://loansflow.loan/loans/sba-7a.html): requirements, maximum rates, fees, $350,000 worked example
+- [SBA 504 loan](https://loansflow.loan/loans/sba-504.html)
+- [SBA Express](https://loansflow.loan/loans/sba-express.html)
+- [SBA Microloan](https://loansflow.loan/loans/sba-microloan.html)
+- [Line of credit](https://loansflow.loan/loans/line-of-credit.html)
+- [Commercial term loan](https://loansflow.loan/loans/commercial-term-loan.html)
+- [Equipment financing](https://loansflow.loan/loans/equipment-financing.html)
+- [Mortgage](https://loansflow.loan/loans/mortgage.html)
+
+## Comparisons
+- [Compare business loans](https://loansflow.loan/compare/)
+- [SBA 7(a) vs 504](https://loansflow.loan/compare/sba-7a-vs-504.html)
+- [SBA vs conventional term loan](https://loansflow.loan/compare/sba-vs-conventional-term-loan.html)
+- [SBA vs online lender](https://loansflow.loan/compare/sba-vs-online-lender.html)
+
+## Calculators
+- [All calculators](https://loansflow.loan/calculators/)
+- [SBA business acquisition calculator](https://loansflow.loan/calculators/business-acquisition.html)
+- [SBA cash-to-close estimator](https://loansflow.loan/calculators/cash-to-close.html)
+- [SBA 7(a) loan calculator](https://loansflow.loan/calculators/sba-7a.html)
+- [DSCR calculator](https://loansflow.loan/calculators/dscr.html)
+
+## Guides
+- [All guides](https://loansflow.loan/guides/)
+- [DSCR explained](https://loansflow.loan/guides/dscr-explained.html)
+- [How to apply for an SBA 7(a) loan](https://loansflow.loan/guides/sba-7a-step-by-step.html)
+- [SBA loan eligibility](https://loansflow.loan/guides/sba-loan-eligibility.html)
+
+## About and policies
+- [Author: Joshua Miller, CPA](https://loansflow.loan/author.html)
+- [Methodology: how our numbers work](https://loansflow.loan/methodology.html)
+- [Editorial policy](https://loansflow.loan/editorial-policy.html)
+- [Advertising and affiliate disclosure](https://loansflow.loan/disclosure.html)
