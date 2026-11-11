@@ -26,7 +26,7 @@ const main = `<main class="legal-page">
     <h1>Joshua Miller, CPA</h1>
     ${photo}
     <p><strong>Founder and author, LoansFlow</strong></p>
-    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting, advising small businesses on financing, tax and cash flow. He is a QuickBooks Certified ProAdvisor and the founder of LoansFlow.</p>
+    <p>Joshua Miller is a licensed Certified Public Accountant (California, 2009) with nearly two decades in public accounting, advising small businesses on financing, tax and cash flow. He is the founder of LoansFlow.</p>
     <h2>What he writes about</h2>
     <ul>
       <li>SBA 7(a), 504, Express and Microloan programs, and how lenders read a borrower's cash flow</li>

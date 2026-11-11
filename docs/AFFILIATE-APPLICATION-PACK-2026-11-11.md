@@ -13,7 +13,7 @@ Prepared, not submitted. Every program below needs you to accept its terms, and 
 - **Audience:** Small business owners researching SBA loans, lines of credit, term loans, equipment financing and business banking in the U.S.
 - **Promotion methods:** Editorial placements beside calculator results and in loan-comparison pages, labeled "Sponsored" with rel="sponsored nofollow", plus an FTC affiliate disclosure page (https://loansflow.loan/disclosure). No paid search, no email blasts, no incentivized traffic, no coupon or toolbar methods.
 - **Traffic:** Early-stage site (launched 2026). Provide screenshots from Cloudflare Web Analytics or Search Console if asked; do not estimate.
-- **Content review:** Authored by a licensed California CPA (2009), QuickBooks Certified ProAdvisor; sources are cited inline (SBA, IRS, FRED).
+- **Content review:** Authored by a licensed California CPA (2009); sources are cited inline (SBA, IRS, FRED).
 
 ## Programs (priority order)
 | Program | Fits | Where to apply | Status |
