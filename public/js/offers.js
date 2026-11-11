@@ -5,9 +5,12 @@
  */
 (function () {
   const DATA_URL = '/data/offers.json';
+  const MORTGAGE_PAGE = /mortgage|refinanc|home-afford|closing-cost/i.test(location.pathname);
 
   function mount(el, offers) {
-    const live = offers.filter((o) => o.status === 'live' && o.url);
+    // RESPA Section 8: mortgage/refinance pages are affiliate-free. Never render these surfaces or pages.
+    if (MORTGAGE_PAGE) { el.hidden = true; el.innerHTML = ''; return; }
+    const live = offers.filter((o) => o.status === 'live' && o.url && !(o.surfaces || []).some((x) => /mortgage|refi/i.test(x)));
     if (!live.length) {
       el.hidden = true;
       el.innerHTML = '';
@@ -15,16 +18,16 @@
     }
     el.hidden = false;
     el.innerHTML =
-      '<div class="lf-offers-head">Sponsored partner options</div><ul class="lf-offers-list">' +
+      '<div class="lf-offers-head">Compare lenders (sponsored)</div><ul class="lf-offers-list">' +
       live
         .map(
           (o) =>
-            `<li><a href="${o.url}" rel="sponsored noopener noreferrer" target="_blank">${o.title}</a>` +
+            `<li><a href="${o.url}" rel="sponsored nofollow noopener" target="_blank">${o.title}</a>` +
             (o.blurb ? `<span>${o.blurb}</span>` : '') +
             '</li>'
         )
         .join('') +
-      '</ul><p class="lf-offers-note">We may earn a commission if you apply through these links. It does not change how we describe any loan.</p>';
+      '</ul><p class="lf-offers-note">Advertising disclosure: we may earn a commission if you apply or sign up through these links. It does not change how we describe any loan. <a href="/disclosure.html">Read our disclosure</a>.</p>';
   }
 
   function ensureStyle() {

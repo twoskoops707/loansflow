@@ -28,3 +28,8 @@
 /data/market-news.json
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=300, must-revalidate
+
+# Affiliate redirects: never index, never pass referrer details beyond origin
+/go/*
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer-when-downgrade

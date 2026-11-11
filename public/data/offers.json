@@ -1,7 +1,7 @@
 {
   "company": "LoansFlow",
-  "updated": "2026-08-10",
-  "note": "Only offers with status=live and a non-empty url render on the site. Pending apps stay here until Rakuten/network approval + tracking link.",
+  "updated": "2026-11-11",
+  "note": "Only offers with status=live render. Each offer's public link is /go/<slug>; the real affiliate tracking URL goes in 'target' (then run `node scripts/build-affiliate-redirects.js` and set status to live). NEVER add mortgage/refinance surfaces (RESPA Section 8): mortgage pages are affiliate-free and offers.js drops any offer with such a surface.",
   "offers": [
     {
       "id": "cleo-us-bank-connect",
@@ -13,7 +13,11 @@
       "blurb": "Compare banking options after you run the numbers.",
       "url": "",
       "status": "pending",
-      "surfaces": ["tools-footer", "sba", "loc"]
+      "surfaces": [
+        "tools-footer",
+        "sba",
+        "loc"
+      ]
     },
     {
       "id": "eq-bank-baseline",
@@ -22,22 +26,112 @@
       "mid": "48166",
       "offerId": "1115263",
       "title": "EQ Bank",
-      "blurb": "High-interest banking — partner link when approved.",
+      "blurb": "High-interest banking \u2014 partner link when approved.",
       "url": "",
       "status": "pending",
-      "surfaces": ["tools-footer", "sba", "mortgage"]
+      "surfaces": [
+        "tools-footer",
+        "sba"
+      ]
     },
     {
-      "id": "masseys-credit",
-      "network": "rakuten",
-      "advertiser": "Masseys",
-      "mid": "47388",
-      "offerId": "1457240",
-      "title": "Credit options",
-      "blurb": "Credit product offer — live link after approval.",
-      "url": "",
+      "id": "lendio",
+      "slug": "lendio",
+      "network": "direct/affiliate",
+      "advertiser": "Lendio",
+      "title": "Lendio",
+      "blurb": "Compare SBA, term and line-of-credit options through a lender marketplace.",
+      "program": "PartnerStack / FlexOffers (application pending)",
+      "target": "",
+      "url": "/go/lendio",
       "status": "pending",
-      "surfaces": ["tools-footer", "mortgage", "refi"]
+      "surfaces": [
+        "sba",
+        "term",
+        "loc",
+        "equipment"
+      ]
+    },
+    {
+      "id": "smartbiz",
+      "slug": "smartbiz",
+      "network": "direct/affiliate",
+      "advertiser": "SmartBiz",
+      "title": "SmartBiz",
+      "blurb": "Compare SBA loan options.",
+      "program": "https://smartbizbank.com/refer-a-friend",
+      "target": "",
+      "url": "/go/smartbiz",
+      "status": "pending",
+      "surfaces": [
+        "sba"
+      ]
+    },
+    {
+      "id": "national-funding",
+      "slug": "national-funding",
+      "network": "direct/affiliate",
+      "advertiser": "National Funding",
+      "title": "National Funding",
+      "blurb": "Equipment and term financing options.",
+      "program": "Impact (application pending)",
+      "target": "",
+      "url": "/go/national-funding",
+      "status": "pending",
+      "surfaces": [
+        "equipment",
+        "term"
+      ]
+    },
+    {
+      "id": "relay",
+      "slug": "relay",
+      "network": "direct/affiliate",
+      "advertiser": "Relay",
+      "title": "Relay",
+      "blurb": "Business banking for small businesses.",
+      "program": "https://relayfi.com/partners",
+      "target": "",
+      "url": "/go/relay",
+      "status": "pending",
+      "surfaces": [
+        "sba",
+        "term",
+        "loc",
+        "equipment"
+      ]
+    },
+    {
+      "id": "bluevine",
+      "slug": "bluevine",
+      "network": "direct/affiliate",
+      "advertiser": "Bluevine",
+      "title": "Bluevine",
+      "blurb": "Business banking and lines of credit.",
+      "program": "https://www.bluevine.com/partners",
+      "target": "",
+      "url": "/go/bluevine",
+      "status": "pending",
+      "surfaces": [
+        "loc",
+        "term"
+      ]
+    },
+    {
+      "id": "ramp",
+      "slug": "ramp",
+      "network": "direct/affiliate",
+      "advertiser": "Ramp",
+      "title": "Ramp",
+      "blurb": "Business banking and cards.",
+      "program": "https://ramp.com/partner-program",
+      "target": "",
+      "url": "/go/ramp",
+      "status": "pending",
+      "surfaces": [
+        "loc",
+        "term"
+      ]
     }
   ]
 }
