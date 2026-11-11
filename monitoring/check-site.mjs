@@ -31,6 +31,7 @@ const ads = await get(BASE + '/ads.txt'); if (!/google\.com, pub-\d+, DIRECT/.te
 const robots = await get(BASE + '/robots.txt'); if (/Disallow:\s*\/\s*$/m.test(robots.body)) problems.push('robots.txt blocks the whole site');
 const news = await get(BASE + '/data/market-news.json'); let newsAge = null;
 try { newsAge = Math.round((Date.now() - new Date(JSON.parse(news.body).updatedAt)) / 36e5); if (newsAge > 72) problems.push(`rate data is ${newsAge}h old`); } catch { problems.push('market-news.json unreadable'); }
+const rates = await get(BASE + '/data/rates.json'); try { const rj = JSON.parse(rates.body); const age = Math.round((Date.now() - new Date(rj.updatedAt)) / 36e5); if (age > 72) problems.push(`rates.json is ${age}h old`); } catch { problems.push('rates.json unreadable'); }
 const avg = pages.length ? Math.round(pages.reduce((a, p) => a + p.ms, 0) / pages.length) : null;
 const row = { date: new Date().toISOString(), urls: urls.length, ok: pages.length - bad, bad, noindex, noTitle, noCanonical, slow, avgMs: avg, rateDataAgeHours: newsAge, adsTxt: ads.status, problems: problems.slice(0, 20) };
 appendFileSync(OUT, JSON.stringify(row) + '\n');
