@@ -57,3 +57,6 @@ In-content moved to **after** the first calculator panel (no longer mid line-ite
 # WSL — apex project loansflow-live
 bash tools/browser/deploy-pages-wsl.sh
 ```
+
+## AdSense status note (2026-11-11)
+Dashboard shows "Needs attention": (1) verify site ownership, (2) policy: "Low value content". The meta tag `google-adsense-account` and `ads.txt` are live; click Verify in AdSense. Since the previous rejection the site gained: author identity (CPA), 3 full CPA guides, 3 comparison pages, 2 new calculators, citations with as-of dates, methodology and disclosure pages, and the off-topic quote block was removed from the loan pages. Wait for Google to recrawl (a few days), confirm pages in Search Console, then request review. The "consistent presence" and "user interest" criteria depend on time and real traffic, which content alone cannot supply.
