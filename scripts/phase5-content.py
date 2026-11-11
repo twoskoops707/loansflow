@@ -13,7 +13,7 @@ SUB = '<div data-lf-subscribe></div>'
 NOW = '2026-11-11'; NOWTXT = 'November 11, 2026'
 
 def make(path, title, desc, h1, answer, body, faq=None, noindex=False, crumbs=None):
-    url = f'{SITE}/{path[:-5]}'
+    url = f'{SITE}/{path[:-5]}' if not path.endswith('/index.html') else f'{SITE}/{path[:-10]}/'
     h = TEMPLATE
     h = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\s*', '', h)
     h = re.sub(r'<title>.*?</title>', f'<title>{H.escape(title)} | LoansFlow</title>', h, flags=re.S)
