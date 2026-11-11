@@ -12,7 +12,7 @@ icon = re.search(r'<a href="/grants/"><i class="mi">(<svg[\s\S]*?</svg>)</i>', i
 dscr_icon = re.search(r'<a href="/calculators/dscr.html"><i class="mi">(<svg[\s\S]*?</svg>)</i>', idx).group(1)
 def strip_cur(s): return s.replace(' aria-current="page"', '')
 loan, calc, fund = strip_cur(loan).strip('\n'), strip_cur(calc).strip('\n'), strip_cur(fund).strip('\n')
-fund = fund[:fund.index('</div></div>') + len('</div></div>')].replace('>Funding ideas<', '>Funding<')
+fund = fund[:fund.index('</div></div>') + len('</div></div>')].replace('>Funding ideas<', '>Funding<').replace('Lender and SBA office directory', 'SBA office and lender phone directory').replace('<span>Find help near you</span>', '<span>Phone numbers for SBA offices and lenders</span>')
 def entry(href, title, sub, ic=icon): return f'<a href="{href}"><i class="mi">{ic}</i><b><strong>{title}</strong><span>{sub}</span></b></a>'
 # add the two new calculators to the Business column of the Calculators mega menu
 new_calcs = entry('/calculators/business-acquisition.html', 'Business acquisition', 'Cash to close, loan and DSCR for a purchase', dscr_icon) + entry('/calculators/cash-to-close.html', 'SBA cash to close', 'Down payment plus fees and reserves', dscr_icon)
@@ -37,10 +37,11 @@ about = menu('About', '/about.html', [
   entry('/author.html', 'About the author', 'Joshua Miller, CPA'),
   entry('/editorial-policy.html', 'Editorial policy', 'How we check and date our facts'),
   entry('/disclosure.html', 'Advertising and affiliates', 'How the site is funded'),
+  entry('/site-index.html', 'Site directory', 'Every page on LoansFlow, grouped'),
   entry('/contact.html', 'Contact', 'Questions and corrections')])
 cta = '        <a class="nav-cta" href="/loans/">Find your loan</a>\n      '
 NAV = '\n' + loan.strip('\n') + '\n' + calc.strip('\n') + '\n' + guides + '\n' + fund + '\n' + news + '\n' + about + '\n' + cta
-sections = [('/loans/', 'Loan types'), ('/calculators/', 'Calculators'), ('/guides/', 'Guides'), ('/compare/', 'Guides'), ('/alternative-financing/', 'Funding'), ('/grants/', 'Funding'), ('/directory/', 'Funding'), ('/news/', 'News &amp; rates'), ('/about', 'About'), ('/author', 'About'), ('/editorial', 'About'), ('/disclosure', 'About'), ('/contact', 'About')]
+sections = [('/loans/', 'Loan types'), ('/calculators/', 'Calculators'), ('/guides/', 'Guides'), ('/compare/', 'Guides'), ('/alternative-financing/', 'Funding'), ('/grants/', 'Funding'), ('/directory/', 'Funding'), ('/news/', 'News &amp; rates'), ('/about', 'About'), ('/site-index', 'About'), ('/author', 'About'), ('/editorial', 'About'), ('/disclosure', 'About'), ('/contact', 'About')]
 n = 0
 for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
     p = pathlib.Path(f); rel = '/' + str(p.relative_to(PUB))
@@ -55,6 +56,8 @@ for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
     # footer columns
     if '/compare/">Compare loans' not in h and '<h4>Learn</h4>' in h:
         h = h.replace('<a href="/guides/">Guides</a>', '<a href="/guides/">Guides</a><a href="/compare/">Compare loans</a><a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a><a href="/guides/owner-add-backs-ebitda.html">Add-backs and EBITDA</a><a href="/guides/sba-loan-interest-tax-treatment.html">SBA interest and taxes</a>', 1)
+    if '/site-index.html">Site directory' not in h and '<a href="/directory/">Directory</a>' in h:
+        h = h.replace('<a href="/directory/">Directory</a>', '<a href="/directory/">Phone directory</a><a href="/site-index.html">Site directory</a>', 1)
     if '/author.html">About the author' not in h and '<a href="/about.html">About</a>' in h:
         h = h.replace('<a href="/about.html">About</a>', '<a href="/about.html">About</a><a href="/author.html">About the author</a>', 1)
     if h != o: p.write_text(h); n += 1
