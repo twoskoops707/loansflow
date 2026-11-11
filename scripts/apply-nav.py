@@ -41,6 +41,9 @@ about = menu('About', '/about.html', [
   entry('/contact.html', 'Contact', 'Questions and corrections')])
 cta = '        <a class="nav-cta" href="/loans/">Find your loan</a>\n      '
 NAV = '\n' + loan.strip('\n') + '\n' + calc.strip('\n') + '\n' + guides + '\n' + fund + '\n' + news + '\n' + about + '\n' + cta
+def col(title, links): return '<div><h4>' + title + '</h4>' + ''.join(f'<a href="{u}">{t}</a>' for u, t in links) + '</div>'
+LEARN = col('Learn', [('/guides/', 'Guides'), ('/compare/', 'Compare loans'), ('/guides/dscr-cpa-view.html', 'DSCR from a CPA&rsquo;s view'), ('/guides/owner-add-backs-ebitda.html', 'Add-backs and EBITDA'), ('/guides/sba-loan-interest-tax-treatment.html', 'SBA interest and taxes'), ('/directory/', 'Phone directory'), ('/alternative-financing/', 'Uncommon ways to finance'), ('/grants/', 'Search grants'), ('/news/', 'News and rates'), ('/guides/glossary.html', 'Glossary'), ('/wisdom/', 'Old-timer&rsquo;s guide')])
+SITE = col('Site', [('/site-index.html', 'Site directory'), ('/about.html', 'About'), ('/author.html', 'About the author'), ('/editorial-policy.html', 'Editorial policy'), ('/methodology.html', 'How our numbers work'), ('/contact.html', 'Contact')])
 sections = [('/loans/', 'Loan types'), ('/calculators/', 'Calculators'), ('/guides/', 'Guides'), ('/compare/', 'Guides'), ('/alternative-financing/', 'Funding'), ('/grants/', 'Funding'), ('/directory/', 'Funding'), ('/news/', 'News &amp; rates'), ('/about', 'About'), ('/site-index', 'About'), ('/author', 'About'), ('/editorial', 'About'), ('/disclosure', 'About'), ('/contact', 'About')]
 n = 0
 for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
@@ -53,12 +56,8 @@ for f in glob.glob(str(PUB / '**/*.html'), recursive=True):
         if rel.startswith(pre):
             body = re.sub(r'(<a class="nav-top" href="[^"]*")(>' + re.escape(label) + '</a>)', r'\1 aria-current="page"\2', body, count=1); break
     h = h[:m.start(2)] + body + h[m.end(2):]
-    # footer columns
-    if '/compare/">Compare loans' not in h and '<h4>Learn</h4>' in h:
-        h = h.replace('<a href="/guides/">Guides</a>', '<a href="/guides/">Guides</a><a href="/compare/">Compare loans</a><a href="/guides/dscr-cpa-view.html">DSCR from a CPA&rsquo;s view</a><a href="/guides/owner-add-backs-ebitda.html">Add-backs and EBITDA</a><a href="/guides/sba-loan-interest-tax-treatment.html">SBA interest and taxes</a>', 1)
-    if '/site-index.html">Site directory' not in h and '<a href="/directory/">Directory</a>' in h:
-        h = h.replace('<a href="/directory/">Directory</a>', '<a href="/directory/">Phone directory</a><a href="/site-index.html">Site directory</a>', 1)
-    if '/author.html">About the author' not in h and '<a href="/about.html">About</a>' in h:
-        h = h.replace('<a href="/about.html">About</a>', '<a href="/about.html">About</a><a href="/author.html">About the author</a>', 1)
+    # footer columns (rewritten wholesale so the result is the same every run)
+    h = re.sub(r'<div><h4>Learn</h4>[\s\S]*?</div>', LEARN, h, count=1)
+    h = re.sub(r'<div><h4>Site</h4>[\s\S]*?</div>', SITE, h, count=1)
     if h != o: p.write_text(h); n += 1
 print('pages updated', n)
