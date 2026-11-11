@@ -1,4 +1,5 @@
 {
+  "11": "phase1-author-schema.js",
   "14": "adsense-finish-verify.js",
   "15": "market-news.js",
   "16": "adsense-strict-verify-host.js",
@@ -48,5 +49,13 @@
   "60": "graft",
   "61": "Refero Styles design-system library",
   "62": "All slots unfilled: site approval and unit IDs",
-  "63": "deploy-pages-wsl.sh"
+  "63": "deploy-pages-wsl.sh",
+  "64": "build-affiliate-redirects.js",
+  "65": "make-author-page.js",
+  "66": "Content audit and open items (2026-11-11)",
+  "67": "grants.js",
+  "68": "phase2-sba7a.js",
+  "69": "Affiliate follow-up kit (2026-11-02)",
+  "70": "api/subscribe.js",
+  "71": "js/subscribe.js"
 }
