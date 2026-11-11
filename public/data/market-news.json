@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T20:47:00.148Z",
+  "updatedAt": "2026-11-11T21:21:00.254Z",
   "rates": {
     "asOf": "11/5/2026",
     "source": "Freddie Mac PMMS",
@@ -25,7 +25,7 @@
   },
   "prime": {
     "value": 7,
-    "asOf": "2026-11-06",
+    "asOf": "2026-11-09",
     "source": "FRED (DPRIME)"
   },
   "articles": [
@@ -55,19 +55,11 @@
     },
     {
       "category": "Rates",
-      "source": "WSJ",
-      "title": "Mortgage Rates Today, November 9, 2026: 30-Year Rates Climb to 7.20%",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVTgyU3NXLWZTZ3RMWDVPUGg4SjF5cDNRcnRBOVJCQWhSa3o2ajh1UTY1ay1RM0tOa3JYZ2JLZkszSElLdGlxUUhoVzdIdEpJV1h1UHFOZXVvcnlXTlZTM3lMemd1ckNZV1M4UzdWbzlIMHVLTi1PSlBFNkd5anc2TnhhUnY0bVhodi1iTQ?oc=5",
-      "publishedAt": "2026-11-09T14:02:04.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "CNBC",
-      "title": "Mortgage rates drop for the third straight week, but homebuyers are still leaving the market",
-      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQUxNdUxRMl9pTHVUOEk1UHRWS1pBcW9uRE1Hc1hKWHhNTkNLOGIyYnk0aGJJUTlmTUE0aENMSEhUWGpoN2Q0OHZsNWtaSUZkYjloWk9HT3hmekV6VUk4QjhkQjdNbFZueVNBNDVNM0otUTVtVDN3OU94YWhEN09Hci1YNnFwZDNCV0IzUg?oc=5",
-      "publishedAt": "2026-11-04T12:00:01.000Z"
+      "source": "Marketplace.org",
+      "title": "Mortgage rates are down sharply since mid-October",
+      "summary": "Marketplace.org coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeTd6SzFRV0VrVU4tbnpMcmJWQk03LXVfNlk5WkxGS3FrdGZrT1o3RGRCbGpwVkhYc21FSy1SN01NaVE4RV9HNjhsT1FucEQwZlJmTTQ2WEVyRXJmRG5GVmJCd0JUN0tUQmJpckxFRWtjOXJheFhiWXVGX0lpNVNEbWo2QTF0N2NPNnZ0cHYtR09EN0FxS2J1ZlhLRTNQTFRXSTFKYw?oc=5",
+      "publishedAt": "2026-11-09T22:20:00.000Z"
     },
     {
       "category": "Rates",
@@ -79,11 +71,19 @@
     },
     {
       "category": "Rates",
-      "source": "Marketplace.org",
-      "title": "Mortgage rates are down sharply since mid-October",
-      "summary": "Marketplace.org coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeTd6SzFRV0VrVU4tbnpMcmJWQk03LXVfNlk5WkxGS3FrdGZrT1o3RGRCbGpwVkhYc21FSy1SN01NaVE4RV9HNjhsT1FucEQwZlJmTTQ2WEVyRXJmRG5GVmJCd0JUN0tUQmJpckxFRWtjOXJheFhiWXVGX0lpNVNEbWo2QTF0N2NPNnZ0cHYtR09EN0FxS2J1ZlhLRTNQTFRXSTFKYw?oc=5",
-      "publishedAt": "2026-11-09T22:20:00.000Z"
+      "source": "NerdWallet",
+      "title": "What Does a ‘Blue Wave’ Mean for Mortgage Rates?",
+      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5VV0tIQXFaQU9CY2xsMlprbldWTG0zZV9QMF9EWEItanJ0THdQX2VrOGhuR1lUWVdfZW83N3BjNWUtSGtkZUNETkdHc0pPRGZQdmlSU1pNVzJtVThCOUhoLTJ4eDRENm5PWFp5Q001aVZBTlFXclFobnh4cw?oc=5",
+      "publishedAt": "2026-11-05T17:09:33.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "WSJ",
+      "title": "Mortgage Rates Today, November 9, 2026: 30-Year Rates Climb to 7.20%",
+      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVTgyU3NXLWZTZ3RMWDVPUGg4SjF5cDNRcnRBOVJCQWhSa3o2ajh1UTY1ay1RM0tOa3JYZ2JLZkszSElLdGlxUUhoVzdIdEpJV1h1UHFOZXVvcnlXTlZTM3lMemd1ckNZV1M4UzdWbzlIMHVLTi1PSlBFNkd5anc2TnhhUnY0bVhodi1iTQ?oc=5",
+      "publishedAt": "2026-11-09T14:02:04.000Z"
     },
     {
       "category": "Rates",
@@ -91,15 +91,15 @@
       "title": "Weekly survey of mortgage lenders with the lowest rates: 2 more lenders move below 7%",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObXVoZXp0ejZnZmxadXI4a21nRTNYODZOYTBOdy1RODc2cnpDVHFnVmc0bHJfdGZMWWpSeGYwaTN2X2VJT1g1T3pkOTVQWG1vZlhZLTV1eUZRSnJqRXNmU2xuQlJ4anBaVTFWYmVZN1hVY1llT2EzclQ5LTk3Zk5yWEhGZEkxS3pYZG03NHF5Ym81endtUDJCQ1VCOFJyZ1Z2VnJaTmFnVUhMNHctSUhlVTBNMEduT1M1dHVydnVnX0pZRmlYQmZ3MmdqV2tMRGJkcW5xQ1BIUDJ5bXUx?oc=5",
-      "publishedAt": "2026-11-09T17:51:58.000Z"
+      "publishedAt": "2026-11-11T01:40:45.000Z"
     },
     {
       "category": "Rates",
-      "source": "| Florida Realtors",
-      "title": "Mortgage rates fall for third straight week",
-      "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRUV3Tmp0WnJiUmVRRVJHMlYwV0d6MW1xdmszbWE2RkVQbXo2bVZWV2NNRlp3MnliQy1iMHpBRmZKUmxqQldieVhfeG9UNFJoT0FiX2lfZmFpeDgyWUx6b25TbmZtV1VRU1M1NTM1cVRqU2dRcXhBWUpWalpSNlRXVU13TVJ5dGJXNUxFTXlMSlI5dDBpVnJZdmVYMkJVbExVV2d6MUt3WQ?oc=5",
-      "publishedAt": "2026-11-05T12:00:00.000Z"
+      "source": "CNBC",
+      "title": "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
+      "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdUZxa3hUQnZocTljMEFidmJheXdlMVpXbnc5TEx2M1pBQ2VacWVDQU81REoyV0RjTmhaMFlMdkxPdnpkMVNOeGpfUGRpVUE5ejY3Y18xdFlHdXUtbEIwOXlkTmp2UkFsbTZhYUd4UUFSME93ckFtMkVIUHJfUFc0alhCUzdCbkRndTRfdFk5Y2lUZkpuTmZBLWpHOVV1clFvTzl4eUZFVWo?oc=5",
+      "publishedAt": "2026-11-11T12:38:32.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -151,6 +151,14 @@
     },
     {
       "category": "Small Business",
+      "source": "WSJ",
+      "title": "Best Long-Term Business Loans in November 2026",
+      "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMDc4VlB3R3BxRnY3eVNsQ0JiWDB5WHUtTDhMaF9DbTNveVdUak4wR2w4ZmJSb2lIeHdmTk53Q2h3akgweFFuS2lXdk1nNEFmMGpyTVBURGV6TEdkUXN0dVNLb00tbVZYemtFV0pDNldxUVJKX25QYXowd3hmMGVpTGhIWmtkOVlWSnQ1RA?oc=5",
+      "publishedAt": "2026-11-06T08:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
       "source": "CNBC",
       "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
       "summary": "CNBC coverage of recent small business developments. Open the full report for details.",
@@ -159,11 +167,11 @@
     },
     {
       "category": "Small Business",
-      "source": "WSJ",
-      "title": "Best Long-Term Business Loans in November 2026",
-      "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMDc4VlB3R3BxRnY3eVNsQ0JiWDB5WHUtTDhMaF9DbTNveVdUak4wR2w4ZmJSb2lIeHdmTk53Q2h3akgweFFuS2lXdk1nNEFmMGpyTVBURGV6TEdkUXN0dVNLb00tbVZYemtFV0pDNldxUVJKX25QYXowd3hmMGVpTGhIWmtkOVlWSnQ1RA?oc=5",
-      "publishedAt": "2026-11-06T08:00:00.000Z"
+      "source": "World Bank Blogs",
+      "title": "Why do small businesses still not have bank loans? Is it the firm, the loan price, or the bank? Guest post by Emma Zhang",
+      "summary": "World Bank Blogs coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZERYRGhWT1pIakFqMVEwVjdmVU82WlJESVQ2dXgxSDI4YkxzWUtFWElUT3lrNTFDSm1sZjFYQ2lhak5GbDNXTnVfdWgtMGVHV19oc2hsX3p1bFlJN1RZa2dZYUFoRzFjUm85NHA3SVJTMDZoek1jM1dkS0ktWm1MLTlGX2psOXp6WUJmWUJWN3lYLXBwZ2hXNHY1emFCRlBFUTl5cjdZc1JVVTA0SlJyMTZjRQ?oc=5",
+      "publishedAt": "2026-11-06T17:53:02.000Z"
     },
     {
       "category": "Small Business",
@@ -174,20 +182,12 @@
       "publishedAt": "2026-11-05T08:00:00.000Z"
     },
     {
-      "category": "Small Business",
-      "source": "Business.com",
-      "title": "Best Business Loan and Financing Option Reviews of 2026",
-      "summary": "Business.com coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNS2hnbDhNeDdZZUEtRzd4S0EzcTdOclhDbEV3MnB3bU5MUmZiTXVDY2R4RnIycDVUZFFUbjQzNlk3eDZDQlhkMDQzTEpJb050UmhrNUpPNFAwOFJnVm5idERyazYwYldaRFV5LXpwNXFYMV9KTk1MN2xFZU1rTExrQTFvOUk0UQ?oc=5",
-      "publishedAt": "2026-11-05T08:00:00.000Z"
-    },
-    {
       "category": "Equipment Finance",
       "source": "ABF Journal",
-      "title": "IREN and Wingspire Equipment Finance Complete $363MM Financing for High-Density AI Compute Assets",
+      "title": "APPROVE Partners with Revenued to Expand Access to Working Capital for Equipment Financing Customers",
       "summary": "ABF Journal coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSmpsR2JZQ2p2VkF6bnRaTGQxYVV2RmhXZFczUmkyZ1E0U202VzlRN2xCYldzU1Z6MGVKV1hHLVlQSlNpTkVEZ2txckFOOHdzRHpwbXNzOWdVZVcxMi1LaXlNXzZ5NWNla2Q4bU9DUlRZMUwwY1VmWFBqN3JTMHdEQ01QTDk2TGJSb21aVkZscHV2TmpfMy1qbWc3ZGV1dUhnRTVNNGU1dUlJUjl2QUFqdFBPTUF5MVU5dkVfb0JoVzJSUQ?oc=5",
-      "publishedAt": "2026-10-28T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNenpCdk96VDMyR0VTTzRBRkdkUWpXdEpJTkxJRjk1R3R3NXpqWGMzVjYtUXpoLTFBdEQ1S01IWUExNE1hVG95a1lsZ3RuUTVtSUEwX3ZaT1gwdVVjWVM0YzR5NjZxT0lZTWJTVzY1c083c09vd01yVUgzNEZyaHhGdUpTMHpDcGFqWUZQOGxuSVFFWFZsUUI3d0Q1dF95dFk1MDRhcVRPdUdZUVNUN0VxRXAxcFhTNnhRUHRHVVNRNlZ1WkRjaHJv?oc=5",
+      "publishedAt": "2026-11-11T06:56:22.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -199,27 +199,27 @@
     },
     {
       "category": "Equipment Finance",
-      "source": "Yahoo Finance",
-      "title": "BMO Completes Sale of Equipment Finance Units to Stonepeak",
-      "summary": "Yahoo Finance coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVFd1OURFRHlIVXpBajhyT2VGNW4xSUl0c1VlS1ZlQ29odW5sQVdnUFp2WllKQk1FLVd3YV9IU2ZKSk9ZZnhJOFhteU8zekNwNWVxWUdXZ3FzNmZGSFNoNVRnSk5EOENfZ0lZeFRkNUZrSVFJYUpxVGtVRlFEQVIxNzZ6ZVF3OTZrNEtNV29USUR6d3RnWk9ZdERhd1k3WGVYVWJv?oc=5",
-      "publishedAt": "2026-10-29T23:48:48.000Z"
+      "source": "Alternatives Watch",
+      "title": "Stonepeak closes BMO equipment finance carve-out, launches Longview",
+      "summary": "Alternatives Watch coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQY3BlMzdqYTVtWlVBYllvWUVOUmxwTzFzYmFiUWQ1R2VDZzExZzNuVU1qMVp1TWUxU1VfNFNBbTY0cGZtd2NUUmRPcFIyamRMZkZjQWlMUnNuQl93eW93U1R1b3ZHdFJyWUx6UDFVV2gzLWNPRFNrR013YXhVaV93bjBXMkRqaUY2OG9lblZpVQ?oc=5",
+      "publishedAt": "2026-10-30T07:00:00.000Z"
     },
     {
       "category": "Commercial Real Estate",
-      "source": "Rochester Business Journal",
-      "title": "Commercial construction lending remains strong in Rochester despite rising costs",
-      "summary": "Rochester Business Journal coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPbVA0N21nYkpIb2prck5iUGk0SGQzV1NMWTBBdUZJVjJ1dEhMUUkwUDlkb0wwLURYcDVNOHJ1OERQakYwMnQ4blZ1OWR4T2twRFdpMmoyTmhiU3F2WGlKbmNNWlFBanhCbFd5T0JSSzZmYTdNTVA1dTlmZ2xpWmNTTk5TQUkyOV9QU0ZWMUtUcmlUa3M?oc=5",
-      "publishedAt": "2026-11-04T12:05:25.000Z"
+      "source": "Florida Atlantic University",
+      "title": "3rd Annual Boca Finance and Real Estate Conference",
+      "summary": "Florida Atlantic University coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTzg1RG9OWW5RR0E3Y0xxRjRxU0JVbEhnOERjY3NkZEZ2c0Noc3BwZWpjSVB6VnlCcDZFbjJQWVFGZFc2bWdycmQ2YVVkRkpIdzU4YmRWT1FWNlpBY05sWlZ4RXA4NEw1cS1RT0pjSkNob2xuM1NTY005Z0FEZk5CSjF3TXBUdjU4?oc=5",
+      "publishedAt": "2026-11-03T03:42:54.000Z"
     },
     {
       "category": "Commercial Real Estate",
-      "source": "Yahoo Finance",
-      "title": "Banks Tighten CRE Lending as Loan Demand Weakens",
-      "summary": "Yahoo Finance coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcEItWlNOUzRveU1TR0VOd2JTQWVGMXl1WDF0V1lkR2g5UFpFUUhuckNlX1o5V2dQQXFpVFNsTlZwVWl5cUZ0MW9RQjVURDg0d2lGSzA1VlRQX1owTWJCQ0RBcUdLU1Z3ay13ZUc0bnVjeDEtaEVmMHd2WUdnMV9naWNURHRpbXV1V1Vmc2xabk1rUEwzR1pF?oc=5",
-      "publishedAt": "2026-11-03T16:43:42.000Z"
+      "source": "Green Street News",
+      "title": "Market Monitor – Commercial Mortgage Alert",
+      "summary": "Green Street News coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYUhlbHAtTEhVQndFYkEzem1OSVdjdnZpWVlVbmpUc2JFLW42OE9NXzF4QkcxMGdKN05DTjd3ODYwam5yNm1yQmp0RXJzRUd5S0dqZ0hjdVBmSmtPdVBCX19qc0czQUVJM210bnZ6emlCakRjbnduRFVDSWV0X1N4c2ttTQ?oc=5",
+      "publishedAt": "2026-11-05T08:00:00.000Z"
     }
   ]
 }
