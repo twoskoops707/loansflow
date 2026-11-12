@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-11T21:21:00.254Z",
+  "updatedAt": "2026-11-12T21:27:05.729Z",
   "rates": {
-    "asOf": "11/5/2026",
+    "asOf": "11/12/2026",
     "source": "Freddie Mac PMMS",
     "sourceUrl": "https://www.freddiemac.com/pmms",
     "cells": [
       {
         "label": "30-Yr Fixed",
-        "value": "7.18%",
-        "note": "-0.06 pts vs last week"
+        "value": "7.11%",
+        "note": "-0.07 pts vs last week"
       },
       {
         "label": "15-Yr Fixed",
-        "value": "6.57%",
-        "note": "-0.03 pts vs last week"
+        "value": "6.45%",
+        "note": "-0.12 pts vs last week"
       },
       {
         "label": "30-Yr Refinance",
-        "value": "7.23%",
+        "value": "7.16%",
         "note": "Approx. vs purchase avg."
       }
     ],
@@ -32,10 +32,18 @@
     {
       "category": "Rates",
       "source": "Freddie Mac",
-      "title": "Mortgage Rates Decline for Third Consecutive Week to 7.18%",
-      "summary": "Mortgage rates continued their downward trajectory this week, improving the environment for prospective homebuyers against a backdrop of strong economic growth.",
+      "title": "Mortgage Rates Decline for Fourth Consecutive Week to 7.11%",
+      "summary": "Mortgage rates dropped to their lowest level in seven weeks, a welcome development that gives borrowers greater flexibility as they navigate the current housing market.",
       "url": "https://www.freddiemac.com/pmms",
-      "publishedAt": "2026-11-05T00:00:00.000Z"
+      "publishedAt": "2026-11-12T00:00:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
+      "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "publishedAt": "2026-11-12T17:45:00.000Z"
     },
     {
       "category": "Fed Policy",
@@ -44,14 +52,6 @@
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "publishedAt": "2026-10-28T18:00:00.000Z"
-    },
-    {
-      "category": "Fed Policy",
-      "source": "Federal Reserve",
-      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
-      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
-      "publishedAt": "2026-10-13T18:00:00.000Z"
     },
     {
       "category": "Rates",
@@ -63,22 +63,6 @@
     },
     {
       "category": "Rates",
-      "source": "Bankrate",
-      "title": "Mortgage Rate History: 1970s To 2026",
-      "summary": "Bankrate coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1XMWNxSHJrSVpZUFdhcm1SN0FKbkpaYTR3V195dS1rTWhQY0dCWEhDT1ZlYkNlMi13aG5BdXpEN200UmhsRDZ2WDg1dEZyLTE3YjZuYi1HeWxSV0lvUkswbEM1bXRhN3dCeTBvU1Vn?oc=5",
-      "publishedAt": "2026-11-05T08:00:00.000Z"
-    },
-    {
-      "category": "Rates",
-      "source": "NerdWallet",
-      "title": "What Does a ‘Blue Wave’ Mean for Mortgage Rates?",
-      "summary": "NerdWallet coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5VV0tIQXFaQU9CY2xsMlprbldWTG0zZV9QMF9EWEItanJ0THdQX2VrOGhuR1lUWVdfZW83N3BjNWUtSGtkZUNETkdHc0pPRGZQdmlSU1pNVzJtVThCOUhoLTJ4eDRENm5PWFp5Q001aVZBTlFXclFobnh4cw?oc=5",
-      "publishedAt": "2026-11-05T17:09:33.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "WSJ",
       "title": "Mortgage Rates Today, November 9, 2026: 30-Year Rates Climb to 7.20%",
       "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
@@ -87,19 +71,35 @@
     },
     {
       "category": "Rates",
-      "source": "Yahoo Finance",
-      "title": "Weekly survey of mortgage lenders with the lowest rates: 2 more lenders move below 7%",
-      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObXVoZXp0ejZnZmxadXI4a21nRTNYODZOYTBOdy1RODc2cnpDVHFnVmc0bHJfdGZMWWpSeGYwaTN2X2VJT1g1T3pkOTVQWG1vZlhZLTV1eUZRSnJqRXNmU2xuQlJ4anBaVTFWYmVZN1hVY1llT2EzclQ5LTk3Zk5yWEhGZEkxS3pYZG03NHF5Ym81endtUDJCQ1VCOFJyZ1Z2VnJaTmFnVUhMNHctSUhlVTBNMEduT1M1dHVydnVnX0pZRmlYQmZ3MmdqV2tMRGJkcW5xQ1BIUDJ5bXUx?oc=5",
-      "publishedAt": "2026-11-11T01:40:45.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdUZxa3hUQnZocTljMEFidmJheXdlMVpXbnc5TEx2M1pBQ2VacWVDQU81REoyV0RjTmhaMFlMdkxPdnpkMVNOeGpfUGRpVUE5ejY3Y18xdFlHdXUtbEIwOXlkTmp2UkFsbTZhYUd4UUFSME93ckFtMkVIUHJfUFc0alhCUzdCbkRndTRfdFk5Y2lUZkpuTmZBLWpHOVV1clFvTzl4eUZFVWo?oc=5",
       "publishedAt": "2026-11-11T12:38:32.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "firsttuesday Journal",
+      "title": "Trending mortgage rates",
+      "summary": "firsttuesday Journal coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE02aTU2SUhEbk8xaDREWUk4cGZIRHAzLXZ4Q3Vuak5PZFpoNkF5V0lMR1F1UlJrNUZZMVhWcGxxMjVJLWpUczE3VVBUNm90YTdqbWg3cDdOdVA3bjZSUkhFZkFEZmEyWWZsbEE?oc=5",
+      "publishedAt": "2026-11-06T08:00:00.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Yahoo Finance",
+      "title": "Weekly survey of mortgage lenders with the lowest rates: 2 more lenders move below 7%",
+      "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObXVoZXp0ejZnZmxadXI4a21nRTNYODZOYTBOdy1RODc2cnpDVHFnVmc0bHJfdGZMWWpSeGYwaTN2X2VJT1g1T3pkOTVQWG1vZlhZLTV1eUZRSnJqRXNmU2xuQlJ4anBaVTFWYmVZN1hVY1llT2EzclQ5LTk3Zk5yWEhGZEkxS3pYZG03NHF5Ym81endtUDJCQ1VCOFJyZ1Z2VnJaTmFnVUhMNHctSUhlVTBNMEduT1M1dHVydnVnX0pZRmlYQmZ3MmdqV2tMRGJkcW5xQ1BIUDJ5bXUx?oc=5",
+      "publishedAt": "2026-11-09T17:49:36.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "LendingTree",
+      "title": "Mortgage Rate Predictions for June 2026",
+      "summary": "LendingTree coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPNXc4RUd5dmN5TTFBRkdwZlJlanJCNUxPdUU5UmFKU3hqQU5wRGhGTGpTY2hLUWVlOTJLS2djd2J1dlJfTzZpdVZmT2EtMHg2NWllbmJUR0htNTQyRlEzY3lBQkZWbVc3MmUwOVJwZ2szTmRqRVh5dUhJUDVrUThoVzFFZlZhQVVD?oc=5",
+      "publishedAt": "2026-11-06T08:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -128,42 +128,26 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
-      "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+      "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
-      "publishedAt": "2026-11-09T21:00:00.000Z"
-    },
-    {
-      "category": "Fed Policy",
-      "source": "Federal Reserve",
-      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
-      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
-      "publishedAt": "2026-11-05T16:00:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "U.S. Chamber of Commerce",
-      "title": "Free Grants and Programs for Small Business",
-      "summary": "U.S. Chamber of Commerce coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPd1JjTnpZT2h6QW9CVUR3R2hwUWdpSS1yZ3FNcDVxckl3em8tM0hBSHFqLVdlSVgyRVNRRGludWt4MzRZdHRPd0N2Uk9kNWIxcTdQaS1vT1J1TEpyTWcyMFFxaHNuQVQwTEdrQ0t6TVBxMlRsaWFDYzRoQ3lLZE1jS0ExQ1Y2OUNocXQzLVhnMA?oc=5",
-      "publishedAt": "2026-11-05T08:00:00.000Z"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+      "publishedAt": "2026-11-12T18:30:00.000Z"
     },
     {
       "category": "Small Business",
       "source": "WSJ",
-      "title": "Best Long-Term Business Loans in November 2026",
+      "title": "Best Low-Interest Business Loans in November 2026",
       "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMDc4VlB3R3BxRnY3eVNsQ0JiWDB5WHUtTDhMaF9DbTNveVdUak4wR2w4ZmJSb2lIeHdmTk53Q2h3akgweFFuS2lXdk1nNEFmMGpyTVBURGV6TEdkUXN0dVNLb00tbVZYemtFV0pDNldxUVJKX25QYXowd3hmMGVpTGhIWmtkOVlWSnQ1RA?oc=5",
-      "publishedAt": "2026-11-06T08:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUGd3SU03bnAxWW5hd1FnTlFxLWN6eTdxU2EzOUticUh4ME9DdEpGLVMyRUpOVW1oS09zMTV6aEx2dkljWFhQZFhteHZjWVhTeFBPSTNUVU9wZDhlbFphakt1MVpCelhkZ1lJd284N2FKTEMzMVRtMGpaczZlb01ieTNvX0c5OE9vbUFKV1NBMkc3Skg4am1V?oc=5",
+      "publishedAt": "2026-11-09T08:00:00.000Z"
     },
     {
       "category": "Small Business",
-      "source": "CNBC",
-      "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
-      "summary": "CNBC coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkTSAYoBQVVfeXFMT1JEUDZxV2h5LVBsVXBGa0ljQTBfZ19ZUTJLbmxyRWpIZkszZFJjZnBGOVl4bUh3VWZsMmxDbGF1amx2cjNCZVdWUUZDWTZURlQyY3NBLTVGUlBiNnJheXU5RHVrV2ZkTGVndEVfTWNNVnprbXZCaHpaRTdrRlVBeGY0eDBTVXhDY0ZR?oc=5",
-      "publishedAt": "2026-11-05T13:52:38.000Z"
+      "source": "NerdWallet",
+      "title": "SBA Commercial Real Estate Loans: Compare Your Options",
+      "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0x4NHRZclZsTTdjS2ZmWi1NWTRNVS05anBrcHVkRkdEYzJaWTR6WC10UHo3bDlXV2NXM0dneUtEN2dJY0NvVmR2SUc4YXJub1RCQmwxaGZxU1FGWG1NNUQ3MzVHTHhla2VSQVVsVDYyYUxVLW9LQw?oc=5",
+      "publishedAt": "2026-11-09T08:00:00.000Z"
     },
     {
       "category": "Small Business",
@@ -175,11 +159,19 @@
     },
     {
       "category": "Small Business",
-      "source": "Spokane Journal of Business",
-      "title": "RiverBank leads Spokane County in SBA lending",
-      "summary": "Spokane Journal of Business coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORi01cVh1QWNUVzFETkVfVTdVRXljUFNkWU1jbzFLd0s5ZGFDSVNKWnhVTlhJWHREdGpQbERnYTNOekNfTkJ1Uzh3azA5UHRhcVRjRms0TGY4WE1DbU5zRl9QQVdCQjdaankwQnVMVXNNSmplaFR1czRIRUNqMWtyOUZpalJLM0dYX1VXT3VENzNiUQ?oc=5",
-      "publishedAt": "2026-11-05T08:00:00.000Z"
+      "source": "PYMNTS.com",
+      "title": "Small-Business Lending Shifts to Fewer, Bigger Loans",
+      "summary": "PYMNTS.com coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQS3NNNjhNaGNrYzNRQTZSSUpJa3prYVlDRDZMVlpCU2dLeXhUQ1pUSVZudVZRQktoTUZJNVc3ODQzWXhzRTdfaEZKT2Jjckx5TlVmbWVSNHJFLVhtTF9WN1B3S3NLZ2thMjRTU3hhZ2dTX19hcXN2MlhqdTV3Q3pXNTlXVUU5b0N1Q2lIdGJR?oc=5",
+      "publishedAt": "2026-11-12T17:29:49.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Business.com",
+      "title": "Best Business Loan and Financing Option Reviews of 2026",
+      "summary": "Business.com coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNS2hnbDhNeDdZZUEtRzd4S0EzcTdOclhDbEV3MnB3bU5MUmZiTXVDY2R4RnIycDVUZFFUbjQzNlk3eDZDQlhkMDQzTEpJb050UmhrNUpPNFAwOFJnVm5idERyazYwYldaRFV5LXpwNXFYMV9KTk1MN2xFZU1rTExrQTFvOUk0UQ?oc=5",
+      "publishedAt": "2026-11-10T08:00:00.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -199,11 +191,19 @@
     },
     {
       "category": "Equipment Finance",
-      "source": "Alternatives Watch",
-      "title": "Stonepeak closes BMO equipment finance carve-out, launches Longview",
-      "summary": "Alternatives Watch coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQY3BlMzdqYTVtWlVBYllvWUVOUmxwTzFzYmFiUWQ1R2VDZzExZzNuVU1qMVp1TWUxU1VfNFNBbTY0cGZtd2NUUmRPcFIyamRMZkZjQWlMUnNuQl93eW93U1R1b3ZHdFJyWUx6UDFVV2gzLWNPRFNrR013YXhVaV93bjBXMkRqaUY2OG9lblZpVQ?oc=5",
+      "source": "AI Insider",
+      "title": "IREN and Wingspire Equipment Finance Complete $363M Financing for High-Density AI Compute Assets",
+      "summary": "AI Insider coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTHhjSHNjUFBXeXB1MTVoVkhxRllEUzRITkpBOVU2eHczRG83WFo0VHZYbzNvaDJra3hVTmRiNXRSeTFPT0d5UUZpZEhNdWxfRFhEemluREhXV1cwYW5CY2tNcW56U2VzSXoteU1zZ2h6T3FlQWVCR0ZibEtUNWV0c2JEWjJsQ21RMmVVSTQ3Yi1PQ1E2c3FCTU1fSUhzbUVlOHhFOVU0OEhnY3dxNjBGMWZNeE14Z0txQjg3SlAxWkN3S1gtTEEtLVN6VmNzQQ?oc=5",
       "publishedAt": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
+      "source": "CNBC",
+      "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
+      "summary": "CNBC coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkQ?oc=5",
+      "publishedAt": "2026-11-05T13:52:38.000Z"
     },
     {
       "category": "Commercial Real Estate",
@@ -215,11 +215,11 @@
     },
     {
       "category": "Commercial Real Estate",
-      "source": "Green Street News",
-      "title": "Market Monitor – Commercial Mortgage Alert",
-      "summary": "Green Street News coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPYUhlbHAtTEhVQndFYkEzem1OSVdjdnZpWVlVbmpUc2JFLW42OE9NXzF4QkcxMGdKN05DTjd3ODYwam5yNm1yQmp0RXJzRUd5S0dqZ0hjdVBmSmtPdVBCX19qc0czQUVJM210bnZ6emlCakRjbnduRFVDSWV0X1N4c2ttTQ?oc=5",
-      "publishedAt": "2026-11-05T08:00:00.000Z"
+      "source": "ATM Marketplace",
+      "title": "Omni Community Credit Union to improve commercial real estate loans through appointment",
+      "summary": "ATM Marketplace coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOEdnOFBpbDQ4UWVmNXdFX2RJY0JxSzgtVzg4N01iVjFoa1Rodm5Fck1FZ21jNFBvWWh0b1JrSTB6dmxudjFMRFRzekEtV0c1enZZc3RRekVnOGREdXNWcXo5ektlZVFXakdYOVktUFFZd3IzMUN6MkZlX0EzckNhOHZVODZEamg4MTZsUTY5QVB5dHczYkJlek1yR0RlU21ib2ExazFLREJwT1VUVlNMeXlTT1dEcnNYc051bksyNWtpUQ?oc=5",
+      "publishedAt": "2026-11-12T11:00:00.000Z"
     }
   ]
 }
