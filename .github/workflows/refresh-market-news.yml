@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Install openpyxl (for template workbooks)
+        run: pip install --no-input openpyxl
       - name: Install jsdom (for calculator pre-render)
         run: npm i --no-save --no-audit --no-fund jsdom
       - name: Refresh market-news.json
@@ -35,6 +37,7 @@ jobs:
           node scripts/sync-policy.js
           node scripts/make-new-calc-pages.js
           node scripts/build-rates-tracker.js
+          python3 scripts/build-resources.py
           node scripts/sync-asof.js
           node scripts/prerender-calcs.js
           node scripts/build-llms.js

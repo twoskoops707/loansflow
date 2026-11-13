@@ -67,6 +67,14 @@ Facts on this site carry an "as of" date and a link to the primary source (SBA.g
 - [Tax Treatment of SBA Loan Interest and Fees](https://loansflow.loan/guides/sba-loan-interest-tax-treatment): How interest, the SBA guarantee fee and closing costs on an SBA loan are generally treated for federal tax: the 163(j) limit, fee amortization and what to track.
 - [Term Loan vs. Business Line of Credit](https://loansflow.loan/guides/term-loan-vs-line-of-credit): Compare a business term loan with a line of credit: how interest is charged, worked cost examples, collateral and which fits equipment, expansion or cash-flow gaps.
 
+## Free templates
+- [Free loan templates and worksheets](https://loansflow.loan/resources/): Free downloadable loan templates: SBA application checklist, DSCR worksheet, acquisition due-diligence checklist and a loan offer comparison worksheet.
+- [business acquisition due diligence checklist](https://loansflow.loan/downloads/business-acquisition-due-diligence-checklist.xlsx): Downloadable xlsx file
+- [dscr worksheet](https://loansflow.loan/downloads/dscr-worksheet.xlsx): Downloadable xlsx file
+- [loan comparison worksheet](https://loansflow.loan/downloads/loan-comparison-worksheet.xlsx): Downloadable xlsx file
+- [loan document checklist](https://loansflow.loan/downloads/loan-document-checklist.txt): Downloadable txt file
+- [sba 7a application checklist](https://loansflow.loan/downloads/sba-7a-application-checklist.xlsx): Downloadable xlsx file
+
 ## Rates and data
 - [Rates and news](https://loansflow.loan/news/): Current headlines from the Federal Reserve, the CFPB and the lending press on mortgage rates, small business lending, equipment finance and commercial real estate.
 - [Rates data (JSON)](https://loansflow.loan/data/rates.json): Prime, SOFR, Treasury and mortgage rates with source and as-of dates
