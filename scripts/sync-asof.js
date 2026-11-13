@@ -24,4 +24,5 @@ for (const dir of ['loans', 'calculators']) for (const f of fs.readdirSync(path.
     .replace(/\(as of (<span (?:id="sr-asof"|data-live="(?:prime|pmms)-asof")>)/g, '(latest reading $1');
   if (o !== h) { fs.writeFileSync(p, o); changed++; }
 }
+{ const p = path.join(PUB, 'news', 'index.html'); const h = fs.readFileSync(p, 'utf8'); const o = h.replace(new RegExp('updated ' + D, 'g'), 'updated ' + LONG); if (o !== h) { fs.writeFileSync(p, o); changed++; } }
 console.log(`as-of ${LONG}: ${changed} files updated`);

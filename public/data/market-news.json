@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T21:27:05.729Z",
+  "updatedAt": "2026-11-13T08:09:17.031Z",
   "rates": {
     "asOf": "11/12/2026",
     "source": "Freddie Mac PMMS",
@@ -26,7 +26,73 @@
   "prime": {
     "value": 7,
     "asOf": "2026-11-09",
-    "source": "FRED (DPRIME)"
+    "source": "FRED (DPRIME)",
+    "history": [
+      {
+        "date": "2022-06-16",
+        "value": 4.75
+      },
+      {
+        "date": "2022-07-28",
+        "value": 5.5
+      },
+      {
+        "date": "2022-09-22",
+        "value": 6.25
+      },
+      {
+        "date": "2022-11-03",
+        "value": 7
+      },
+      {
+        "date": "2022-12-15",
+        "value": 7.5
+      },
+      {
+        "date": "2023-02-02",
+        "value": 7.75
+      },
+      {
+        "date": "2023-03-23",
+        "value": 8
+      },
+      {
+        "date": "2023-05-04",
+        "value": 8.25
+      },
+      {
+        "date": "2023-07-27",
+        "value": 8.5
+      },
+      {
+        "date": "2024-09-19",
+        "value": 8
+      },
+      {
+        "date": "2024-11-08",
+        "value": 7.75
+      },
+      {
+        "date": "2024-12-19",
+        "value": 7.5
+      },
+      {
+        "date": "2025-09-17",
+        "value": 7.25
+      },
+      {
+        "date": "2025-10-30",
+        "value": 7
+      },
+      {
+        "date": "2025-12-11",
+        "value": 6.75
+      },
+      {
+        "date": "2026-09-17",
+        "value": 7
+      }
+    ]
   },
   "articles": [
     {
@@ -74,32 +140,32 @@
       "source": "CNBC",
       "title": "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdUZxa3hUQnZocTljMEFidmJheXdlMVpXbnc5TEx2M1pBQ2VacWVDQU81REoyV0RjTmhaMFlMdkxPdnpkMVNOeGpfUGRpVUE5ejY3Y18xdFlHdXUtbEIwOXlkTmp2UkFsbTZhYUd4UUFSME93ckFtMkVIUHJfUFc0alhCUzdCbkRndTRfdFk5Y2lUZkpuTmZBLWpHOVV1clFvTzl4eUZFVWo?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdUZxa3hUQnZocTljMEFidmJheXdlMVpXbnc5TEx2M1pBQ2VacWVDQU81REoyV0RjTmhaMFlMdkxPdnpkMVNOeGpfUGRpVUE5ejY3Y18xdFlHdXUtbEIwOXlkTmp2UkFsbTZhYUd4UUFSME93ckFtMkVIUHJfUFc0alhCUzdCbkRndTRfdFk5Y2lUZkpuTmZBLWpHOVV1clFvTzl4eUZFVWrSAa4BQVVfeXFMT09VYnp4X1hJS2xCVmh6VHZTaTNHTHJDbURSR0VqRXlzbUR0SlRlM0lmcHdKOFRmZk53emNncEN0Z290ZkZkZ2VlQ1Q5Wkpmd2VkVl9ZZ0FzRVd5V0RBeFlfUm9jd0x5UzAwSFRTSUlTd0VobkotQzU3YWIwTjZGbXZVNENyRTFrU0lNZjQxbjloWFhGMnVDelZBazJtcVh6Z0NjSU9uRjRtTnVfZUp3?oc=5",
       "publishedAt": "2026-11-11T12:38:32.000Z"
     },
     {
       "category": "Rates",
-      "source": "firsttuesday Journal",
-      "title": "Trending mortgage rates",
-      "summary": "firsttuesday Journal coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE02aTU2SUhEbk8xaDREWUk4cGZIRHAzLXZ4Q3Vuak5PZFpoNkF5V0lMR1F1UlJrNUZZMVhWcGxxMjVJLWpUczE3VVBUNm90YTdqbWg3cDdOdVA3bjZSUkhFZkFEZmEyWWZsbEE?oc=5",
-      "publishedAt": "2026-11-06T08:00:00.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "Yahoo Finance",
-      "title": "Weekly survey of mortgage lenders with the lowest rates: 2 more lenders move below 7%",
+      "title": "Mortgage rates fell this week, but hot inflation data means they’re likely headed higher: Mortgage and refinance interest rates today, Thursday, November 12, 2026",
       "summary": "Yahoo Finance coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObXVoZXp0ejZnZmxadXI4a21nRTNYODZOYTBOdy1RODc2cnpDVHFnVmc0bHJfdGZMWWpSeGYwaTN2X2VJT1g1T3pkOTVQWG1vZlhZLTV1eUZRSnJqRXNmU2xuQlJ4anBaVTFWYmVZN1hVY1llT2EzclQ5LTk3Zk5yWEhGZEkxS3pYZG03NHF5Ym81endtUDJCQ1VCOFJyZ1Z2VnJaTmFnVUhMNHctSUhlVTBNMEduT1M1dHVydnVnX0pZRmlYQmZ3MmdqV2tMRGJkcW5xQ1BIUDJ5bXUx?oc=5",
-      "publishedAt": "2026-11-09T17:49:36.000Z"
+      "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOWWdHN3ZvMm83SjllVzQwTW1iTXBjNy0yX1daYzZBV3QyVVJxX3pTblJzR0RVSGJGdm9hM0dMUFcxMHpvd05WSEZfZW1WZC1hSEZnbkxZM19TTm1TemY2YXp6ZUQxNDdfRW95WVY4X1hLeFA2Z09jSVlnNDdEUmVMQlJVaXZsaEpxc0pEbGFZTUF5ckxxZGhTMUdwZ2Q0Nk9heU1mUXF2UEtrVE9LQWIyV1dkX0d4a1gwcjdKRGxZbTZ1SXJOcTB3Yi02X1pCaXcxYVJfSTVtSjdnV2VCaFhXT3FsbkFON3RNUHlBOXZvX1ZRbko5SXVmaVhmNE5JVlN0MldzQ0VKampTMjBXRWZ1bXAzbDFmTzQwTUNBdVMtam9Id21kRXgzUk4wakZnMlFGYVZqZ0F3?oc=5",
+      "publishedAt": "2026-11-12T17:38:37.000Z"
     },
     {
       "category": "Rates",
-      "source": "LendingTree",
-      "title": "Mortgage Rate Predictions for June 2026",
-      "summary": "LendingTree coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPNXc4RUd5dmN5TTFBRkdwZlJlanJCNUxPdUU5UmFKU3hqQU5wRGhGTGpTY2hLUWVlOTJLS2djd2J1dlJfTzZpdVZmT2EtMHg2NWllbmJUR0htNTQyRlEzY3lBQkZWbVc3MmUwOVJwZ2szTmRqRVh5dUhJUDVrUThoVzFFZlZhQVVD?oc=5",
-      "publishedAt": "2026-11-06T08:00:00.000Z"
+      "source": "SIU News",
+      "title": "SIU professors available to discuss mortgage rates and mortgage rate forecasts",
+      "summary": "SIU News coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSXN5V0ZycjNZLUNSOHFGbGxPZEcydFZhQXZWSEd4ZFkySjRhbWdHY3VJOGdqV2tsZ29wOEhvZnlDUDliQ0xSZ2dxcUNoQ3dLTkNMRjgxTjQxTk9XODQtVDduZmJkYVB3TnRqeXdrQmpvdmk0bHNHOUcxbktfZ2RjZHBOcEp4eTBSMm9rWEY0ckZyNE8xdnhBTzdQSUJ2aEZMR01Jc3pIM25pUXBJWUdGRUZ5SHBBNzRUWFE?oc=5",
+      "publishedAt": "2026-11-12T17:12:17.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "National Mortgage Professional",
+      "title": "Even at 6%, Mortgage Rates May Not Be Enough to Unlock Home Sales",
+      "summary": "National Mortgage Professional coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUnVKZGVQbTc3OHFKQy0zdV9tdDB4NXJIS1VoZ0tRYjZmdzJ6aVl3RXZoMHBuYzhoaE10dWo2ejRpdW4xbU5nTERXblZ1TmlMM0VKVTRWeUc0dk1yRXFibnZrbjlSVUd2N1dtYUNDUlBsZE9nODBRRTBMYWZYMXZqT1l6dHdWcm11emZ4dWRJc3JoVHk3c1g3WE5fSGFZTm5YM29BeXVB?oc=5",
+      "publishedAt": "2026-11-11T15:00:13.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -184,25 +250,25 @@
     {
       "category": "Equipment Finance",
       "source": "Equipment Finance News",
-      "title": "Wingspire, Iren close $363M equipment finance deal for AI infrastructure",
+      "title": "Equipment dealers seek investment support after election",
       "summary": "Equipment Finance News coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOcU9CNnY0OWtodVMzU1JfSmtSWXFGeDlfOVdwaTc1LTlod1RoMjcweE54VXk4OFlUc25yUFNkY3pOZGwybUZGWnBBR3F4ZW1Wb3JETUVkSGxwNklMWm9aNU9rbFlGaGpRdDEzX1JKTFhEQzR0ZjRGY3RodlFZZkprcENTajFJdDNRSS1wdE04bzJnRmdFM3d1Q0otekRicmdfLTRWTmk3NEhYNnZKQzZFNERlUE92YWRSOVd0bWhIMUxUTGVVdVE?oc=5",
-      "publishedAt": "2026-10-30T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZWI5UF9PV2xPSDY3cVpuX3JKSUFTRXFKcGdwQ1l2UXhzdXlUREJXN1NPTW0wazhXckI1dFlLTmFqbjgzMThsMGtKbnJEYkhIX19fekJzR1UxY2prcFItRmI4QTRKZmpKZFFLeVdscWJQTjIxUVlWR3J3NDBVWkNJMy1BZVk1TGo5WnFWNG9hdTYxOGw1NVo0blNDUFN1UmZiUldVT0pSV1Z1MGl2ZV95emlQYw?oc=5",
+      "publishedAt": "2026-11-04T08:00:00.000Z"
     },
     {
       "category": "Equipment Finance",
-      "source": "AI Insider",
-      "title": "IREN and Wingspire Equipment Finance Complete $363M Financing for High-Density AI Compute Assets",
-      "summary": "AI Insider coverage of recent equipment finance developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTHhjSHNjUFBXeXB1MTVoVkhxRllEUzRITkpBOVU2eHczRG83WFo0VHZYbzNvaDJra3hVTmRiNXRSeTFPT0d5UUZpZEhNdWxfRFhEemluREhXV1cwYW5CY2tNcW56U2VzSXoteU1zZ2h6T3FlQWVCR0ZibEtUNWV0c2JEWjJsQ21RMmVVSTQ3Yi1PQ1E2c3FCTU1fSUhzbUVlOHhFOVU0OEhnY3dxNjBGMWZNeE14Z0txQjg3SlAxWkN3S1gtTEEtLVN6VmNzQQ?oc=5",
-      "publishedAt": "2026-10-30T07:00:00.000Z"
+      "source": "WSJ",
+      "title": "Farm Equipment Financing: Best Lenders in November 2026",
+      "summary": "WSJ coverage of recent equipment finance developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOTJCMTd3ZWRGT0lHMVpLZnZYV3NWalVyR3g3Um1hNWtXVDY4UWk3Uy00WUdxTHNPc1l1anQ0dFg3RkVSWWw3WFV6M3puQnhKS2hSMGZ1NGE4MEVvc0pnUTc0QkxCaFF2ekVoTjVCQjQ4OWthZU5LRzlxd19XRkUwaEltZFpzd3pqZk1acg?oc=5",
+      "publishedAt": "2026-11-13T04:19:35.000Z"
     },
     {
       "category": "Commercial Real Estate",
       "source": "CNBC",
       "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
       "summary": "CNBC coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkTSAYoBQVVfeXFMT1JEUDZxV2h5LVBsVXBGa0ljQTBfZ19ZUTJLbmxyRWpIZkszZFJjZnBGOVl4bUh3VWZsMmxDbGF1amx2cjNCZVdWUUZDWTZURlQyY3NBLTVGUlBiNnJheXU5RHVrV2ZkTGVndEVfTWNNVnprbXZCaHpaRTdrRlVBeGY0eDBTVXhDY0ZR?oc=5",
       "publishedAt": "2026-11-05T13:52:38.000Z"
     },
     {
@@ -211,7 +277,7 @@
       "title": "3rd Annual Boca Finance and Real Estate Conference",
       "summary": "Florida Atlantic University coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTzg1RG9OWW5RR0E3Y0xxRjRxU0JVbEhnOERjY3NkZEZ2c0Noc3BwZWpjSVB6VnlCcDZFbjJQWVFGZFc2bWdycmQ2YVVkRkpIdzU4YmRWT1FWNlpBY05sWlZ4RXA4NEw1cS1RT0pjSkNob2xuM1NTY005Z0FEZk5CSjF3TXBUdjU4?oc=5",
-      "publishedAt": "2026-11-03T03:42:54.000Z"
+      "publishedAt": "2026-11-10T08:00:00.000Z"
     },
     {
       "category": "Commercial Real Estate",

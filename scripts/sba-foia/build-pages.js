@@ -68,7 +68,8 @@ const table = (cap, head, rows) => `<table class="doc-table"><caption>${cap}</ca
 /* ---------- shell: reuse the header, footer and head of an existing article page ---------- */
 const shell = fs.readFileSync(path.join(PUB, 'guides', 'sba-504.html'), 'utf8').replace(/(href|src)="\.\.\//g, '$1="/');
 const headRaw = shell.slice(0, shell.indexOf('</head>')), mid = shell.slice(shell.indexOf('</head>'), shell.indexOf('<main')), tail = shell.slice(shell.indexOf('</main>'));
-const authorBox = shell.match(/<section class="author-box">[\s\S]*?<\/section>/)[0];
+/* These pages are computed from SBA data, not written by an individual: attribute them to LoansFlow, not to the author. */
+const authorBox = '<section class="author-box"><p><strong>Prepared by LoansFlow</strong><br>Original analysis of the SBA&rsquo;s public 7(a) loan data, rebuilt automatically when SBA publishes a new quarterly file. See <a href="/methodology">how our numbers work</a> and our <a href="/editorial-policy">editorial policy</a>. LoansFlow is educational and independent, not a lender.</p></section>';
 const CSS = `<style>.dv{margin:1.5rem 0;max-width:90ch}.dv svg{width:100%;height:auto;display:block}.dv text{fill:var(--muted);font:12px Inter,system-ui,sans-serif}.dv .gr{stroke:var(--line)}.dv .ax{stroke:var(--line-strong)}.dv .bar{fill:var(--accent)}.dv .l1{stroke:var(--accent);fill:none;stroke-width:2.5}.dv .l2{stroke:#7aa2ff;fill:none;stroke-width:2.5}.dv .lg1{fill:var(--accent)}.dv .lg2{fill:#7aa2ff}.dv figcaption{color:var(--muted);font-size:.85rem;margin-top:.4rem}.tbl-wrap{overflow-x:auto}.legal-page .doc-table td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}.legal-page .doc-table th:nth-child(n+2){text-align:right}.legal-page .doc-table td:first-child a{color:var(--accent)}</style>`;
 
 function page({ url, title, desc, crumbs, body, ld }) {
@@ -82,7 +83,7 @@ function page({ url, title, desc, crumbs, body, ld }) {
   return `${head}\n${CSS}\n${blocks}${mid}<main id="main" class="legal-page">\n<p class="lf-crumbs">${trail}</p>\n${body}\n${authorBox}\n</main>\n  ${tail.slice(tail.indexOf('<footer'))}`;
 }
 const article = (url, headline, desc) => ({ '@type': 'Article', headline, description: desc, mainEntityOfPage: url, datePublished: published, dateModified: D.meta.generated,
-  author: { '@id': 'https://loansflow.loan/author#person' }, publisher: { '@type': 'Organization', name: 'LoansFlow', url: 'https://loansflow.loan/' } });
+  author: { '@type': 'Organization', name: 'LoansFlow', url: 'https://loansflow.loan/' }, publisher: { '@type': 'Organization', name: 'LoansFlow', url: 'https://loansflow.loan/' } });
 const write = (rel, html) => { const p = path.join(PUB, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, html); };
 
 const secName = (c) => D.sectors[c], stName = (s) => D.stateNames[s];
