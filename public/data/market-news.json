@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T08:09:17.031Z",
+  "updatedAt": "2026-11-13T20:53:05.432Z",
   "rates": {
     "asOf": "11/12/2026",
     "source": "Freddie Mac PMMS",
@@ -161,11 +161,11 @@
     },
     {
       "category": "Rates",
-      "source": "National Mortgage Professional",
-      "title": "Even at 6%, Mortgage Rates May Not Be Enough to Unlock Home Sales",
-      "summary": "National Mortgage Professional coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUnVKZGVQbTc3OHFKQy0zdV9tdDB4NXJIS1VoZ0tRYjZmdzJ6aVl3RXZoMHBuYzhoaE10dWo2ejRpdW4xbU5nTERXblZ1TmlMM0VKVTRWeUc0dk1yRXFibnZrbjlSVUd2N1dtYUNDUlBsZE9nODBRRTBMYWZYMXZqT1l6dHdWcm11emZ4dWRJc3JoVHk3c1g3WE5fSGFZTm5YM29BeXVB?oc=5",
-      "publishedAt": "2026-11-11T15:00:13.000Z"
+      "source": "| Florida Realtors",
+      "title": "Mortgage rates fall for fourth straight week",
+      "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTUszLTlveTRabFljZ1JfX2lIbHJwNUl1Nl85VDF6Z0xfekJHRmlsWVJzVmlveVg2WHN1dm10Vy05cS1LbjFQWmlncjZtSmZtS0ZhRHhhOU1JOS1DSjhCeWRIOXpiYVd1cWZ6TFpnTEJOdlZkb2s0YTNLelk4RUxwQnQtUFFDcXJqb2d0TlJoMWN6VzcySkZwLU9zQzFnM21BU3NsYlVmZ3Y?oc=5",
+      "publishedAt": "2026-11-12T12:00:00.000Z"
     },
     {
       "category": "Consumer Protection",
@@ -202,10 +202,10 @@
     {
       "category": "Small Business",
       "source": "WSJ",
-      "title": "Best Low-Interest Business Loans in November 2026",
+      "title": "Best Startup Business Loans in November 2026",
       "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUGd3SU03bnAxWW5hd1FnTlFxLWN6eTdxU2EzOUticUh4ME9DdEpGLVMyRUpOVW1oS09zMTV6aEx2dkljWFhQZFhteHZjWVhTeFBPSTNUVU9wZDhlbFphakt1MVpCelhkZ1lJd284N2FKTEMzMVRtMGpaczZlb01ieTNvX0c5OE9vbUFKV1NBMkc3Skg4am1V?oc=5",
-      "publishedAt": "2026-11-09T08:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ2Z5Y0NWRHJfaEZGUzZSdkFvV3VMSUpxd2tYczh4RGlGYWJSbXJ6bkRWN0s1bUo3UWZ5Zk5IWE0zSXZOV0ZITzZkeUtXelJTbWstWVlaVFVGRXdBa2FESi1PcG9IM0VPd3VDZ2kxM0xpWFFiQmt5aUtmeGY2bElXRjQzbE84RW95aXc?oc=5",
+      "publishedAt": "2026-11-11T08:00:00.000Z"
     },
     {
       "category": "Small Business",
@@ -214,14 +214,6 @@
       "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0x4NHRZclZsTTdjS2ZmWi1NWTRNVS05anBrcHVkRkdEYzJaWTR6WC10UHo3bDlXV2NXM0dneUtEN2dJY0NvVmR2SUc4YXJub1RCQmwxaGZxU1FGWG1NNUQ3MzVHTHhla2VSQVVsVDYyYUxVLW9LQw?oc=5",
       "publishedAt": "2026-11-09T08:00:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "World Bank Blogs",
-      "title": "Why do small businesses still not have bank loans? Is it the firm, the loan price, or the bank? Guest post by Emma Zhang",
-      "summary": "World Bank Blogs coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZERYRGhWT1pIakFqMVEwVjdmVU82WlJESVQ2dXgxSDI4YkxzWUtFWElUT3lrNTFDSm1sZjFYQ2lhak5GbDNXTnVfdWgtMGVHV19oc2hsX3p1bFlJN1RZa2dZYUFoRzFjUm85NHA3SVJTMDZoek1jM1dkS0ktWm1MLTlGX2psOXp6WUJmWUJWN3lYLXBwZ2hXNHY1emFCRlBFUTl5cjdZc1JVVTA0SlJyMTZjRQ?oc=5",
-      "publishedAt": "2026-11-06T17:53:02.000Z"
     },
     {
       "category": "Small Business",
@@ -238,6 +230,14 @@
       "summary": "Business.com coverage of recent small business developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNS2hnbDhNeDdZZUEtRzd4S0EzcTdOclhDbEV3MnB3bU5MUmZiTXVDY2R4RnIycDVUZFFUbjQzNlk3eDZDQlhkMDQzTEpJb050UmhrNUpPNFAwOFJnVm5idERyazYwYldaRFV5LXpwNXFYMV9KTk1MN2xFZU1rTExrQTFvOUk0UQ?oc=5",
       "publishedAt": "2026-11-10T08:00:00.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "consumerbankers.com",
+      "title": "nCino Small Business Lending Demo (StoryLane)",
+      "summary": "consumerbankers.com coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVkFZeWZGR3FQUmpjbXpYQ2N0VHktalBhaW1wV0NFZUtOVzZUM0xvUzBSSWhxNHhlTlh6cmtIazdKaXVacWxNSHVhZ2lXelNGcE1fS3l5cDhNa2FFaDFrLTBoYjI4WHpJRFV1Tkk5OHFrOVRGWHBaQ0tiejdmc0NZckZQTkw3Mk9iVERnag?oc=5",
+      "publishedAt": "2026-11-10T21:14:26.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -265,19 +265,19 @@
     },
     {
       "category": "Commercial Real Estate",
-      "source": "CNBC",
-      "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
-      "summary": "CNBC coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkTSAYoBQVVfeXFMT1JEUDZxV2h5LVBsVXBGa0ljQTBfZ19ZUTJLbmxyRWpIZkszZFJjZnBGOVl4bUh3VWZsMmxDbGF1amx2cjNCZVdWUUZDWTZURlQyY3NBLTVGUlBiNnJheXU5RHVrV2ZkTGVndEVfTWNNVnprbXZCaHpaRTdrRlVBeGY0eDBTVXhDY0ZR?oc=5",
-      "publishedAt": "2026-11-05T13:52:38.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
       "source": "Florida Atlantic University",
       "title": "3rd Annual Boca Finance and Real Estate Conference",
       "summary": "Florida Atlantic University coverage of recent commercial real estate developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTzg1RG9OWW5RR0E3Y0xxRjRxU0JVbEhnOERjY3NkZEZ2c0Noc3BwZWpjSVB6VnlCcDZFbjJQWVFGZFc2bWdycmQ2YVVkRkpIdzU4YmRWT1FWNlpBY05sWlZ4RXA4NEw1cS1RT0pjSkNob2xuM1NTY005Z0FEZk5CSjF3TXBUdjU4?oc=5",
       "publishedAt": "2026-11-10T08:00:00.000Z"
+    },
+    {
+      "category": "Commercial Real Estate",
+      "source": "CNBC",
+      "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
+      "summary": "CNBC coverage of recent commercial real estate developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkTSAYoBQVVfeXFMT1JEUDZxV2h5LVBsVXBGa0ljQTBfZ19ZUTJLbmxyRWpIZkszZFJjZnBGOVl4bUh3VWZsMmxDbGF1amx2cjNCZVdWUUZDWTZURlQyY3NBLTVGUlBiNnJheXU5RHVrV2ZkTGVndEVfTWNNVnprbXZCaHpaRTdrRlVBeGY0eDBTVXhDY0ZR?oc=5",
+      "publishedAt": "2026-11-05T13:52:38.000Z"
     },
     {
       "category": "Commercial Real Estate",
