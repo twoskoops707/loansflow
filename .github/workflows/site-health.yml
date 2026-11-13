@@ -26,6 +26,7 @@ jobs:
         run: |
           node scripts/check-external-links.js
           node scripts/check-anchors.js
+          npm i --no-save --no-audit --no-fund jsdom && node scripts/check-js-errors.js
         continue-on-error: true
       - name: Commit history
         run: |
