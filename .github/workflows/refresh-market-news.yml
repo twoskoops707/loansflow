@@ -34,6 +34,7 @@ jobs:
           node scripts/sync-static-rates.js
           node scripts/sync-policy.js
           node scripts/make-new-calc-pages.js
+          node scripts/build-rates-tracker.js
           node scripts/sync-asof.js
           node scripts/prerender-calcs.js
           node scripts/build-llms.js

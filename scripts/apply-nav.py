@@ -39,7 +39,7 @@ guides = menu('Guides', '/guides/', [
   entry('/guides/sba-7a-step-by-step', 'SBA 7(a) 10-step playbook', 'From eligibility to funding')])
 news = menu('News &amp; rates', '/news/', [
   entry('/news/', 'Rates and headlines', 'Prime, mortgage averages, daily news'),
-  entry('/loans/sba-7a#rates', 'SBA maximum rates', 'Prime plus the SBA spread, by loan size'),
+  entry('/loans/sba-7a-rates', 'SBA 7(a) current rates', 'Prime plus the SBA spread, with history'),
   entry('/calculators/mortgage-payment', 'Mortgage payment calculator', 'Starts from the latest weekly average'),
   entry('/methodology', 'How we source rates', 'FRED, Freddie Mac and SBA notices')])
 about = menu('About', '/about', [

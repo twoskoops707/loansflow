@@ -266,7 +266,10 @@ async function buildPayload() {
       .filter(([, v]) => { const n = parseFloat(v); return n > 0 && n < 30; });
     if (!rows.length) throw new Error('no valid DPRIME rows');
     const [asOf, v] = rows[rows.length - 1];
-    prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)' };
+    // Change points only (date the rate first took its new value), most recent 16, for the SBA rates tracker page.
+    const history = []; let last = null;
+    for (const [d, val] of rows) { const x = parseFloat(val); if (x !== last) { history.push({ date: d, value: x }); last = x; } }
+    prime = { value: parseFloat(v), asOf, source: 'FRED (DPRIME)', history: history.slice(-16) };
   } catch (err) {
     errors.push(`prime: ${err.message}`);
   }
