@@ -62,27 +62,36 @@
    * 504: SBA Information Notice 5000-881796. 0.50% upfront and 0.203% annual on the debenture.
    * Manufacturers, listed food-supply-chain NAICS codes and rural businesses: 0% upfront on 7(a) loans of $700,000 or less.
    */
+  /* SBA rules come from data/sba-policy.json (window.LF_POLICY in the browser, the JSON file in Node). Defaults below match FY 2027. */
+  const POLICY = (function () {
+    let p = null;
+    if (typeof window !== 'undefined' && window.LF_POLICY) p = window.LF_POLICY;
+    else if (typeof require !== 'undefined') { try { p = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'sba-policy.json'), 'utf8')); } catch (e) { p = null; } }
+    return p || { sba7a: { guaranty: { smallLoanMax: 150000, smallLoanPct: 85, largeLoanPct: 75 }, upfrontFee: { tiers: [{ upToLoan: 150000, pctOfGuaranteed: 2 }, { upToLoan: 700000, pctOfGuaranteed: 3 }], above: { firstGuaranteed: 1000000, pctFirst: 3.5, pctRest: 3.75 }, waiver: { maxLoan: 700000 } }, lenderAnnualServiceFeePct: 0.55, maxSpreadOverBase: [{ upToLoan: 50000, pct: 6.5 }, { upToLoan: 250000, pct: 6 }, { upToLoan: 350000, pct: 4.5 }, { upToLoan: null, pct: 3 }] }, sba504: { upfrontPct: 0.5, annualPct: 0.203, bankPct: 50, equityPct: 10, newBusinessExtraPct: 5, specialPurposeExtraPct: 5 } };
+  })();
+  LF.policy = POLICY;
   LF.sba7aFee = function (loanAmount, guarantyPct, waived) {
-    const guaranteed = loanAmount * guarantyPct / 100;
+    const f = POLICY.sba7a.upfrontFee, guaranteed = loanAmount * guarantyPct / 100;
     let fee;
-    if (waived && loanAmount <= 700000) fee = 0;
-    else if (loanAmount <= 150000) fee = guaranteed * 0.02;
-    else if (loanAmount <= 700000) fee = guaranteed * 0.03;
-    else fee = Math.min(guaranteed, 1e6) * 0.035 + Math.max(0, guaranteed - 1e6) * 0.0375;
-    return { guaranteed, fee, annualLenderFee: guaranteed * 0.0055 };
+    if (waived && loanAmount <= f.waiver.maxLoan) fee = 0;
+    else {
+      const tier = f.tiers.find(function (x) { return loanAmount <= x.upToLoan; });
+      fee = tier ? guaranteed * tier.pctOfGuaranteed / 100
+        : Math.min(guaranteed, f.above.firstGuaranteed) * f.above.pctFirst / 100 + Math.max(0, guaranteed - f.above.firstGuaranteed) * f.above.pctRest / 100;
+    }
+    return { guaranteed, fee, annualLenderFee: guaranteed * POLICY.sba7a.lenderAnnualServiceFeePct / 100 };
   };
 
   /** Maximum spread over the base rate for variable-rate 7(a) loans (sba.gov). */
   LF.sba7aMaxSpread = function (loanAmount) {
-    if (loanAmount <= 50000) return 6.5;
-    if (loanAmount <= 250000) return 6.0;
-    if (loanAmount <= 350000) return 4.5;
-    return 3.0;
+    const row = POLICY.sba7a.maxSpreadOverBase.find(function (x) { return x.upToLoan === null || loanAmount <= x.upToLoan; });
+    return row.pct;
   };
 
   /** Standard 7(a) guarantee: 85% up to $150,000, otherwise 75%. */
   LF.sba7aDefaultGuaranty = function (loanAmount) {
-    return loanAmount <= 150000 ? 85 : 75;
+    const g = POLICY.sba7a.guaranty;
+    return loanAmount <= g.smallLoanMax ? g.smallLoanPct : g.largeLoanPct;
   };
 
   /*
@@ -90,8 +99,9 @@
    * +5% for a new business, +5% for a special-purpose property). Extra equity reduces the CDC share.
    */
   LF.sba504Structure = function (projectCost, newBusiness, specialPurpose) {
-    const equityPct = 10 + (newBusiness ? 5 : 0) + (specialPurpose ? 5 : 0);
-    const bankPct = 50;
+    const k = POLICY.sba504;
+    const equityPct = k.equityPct + (newBusiness ? k.newBusinessExtraPct : 0) + (specialPurpose ? k.specialPurposeExtraPct : 0);
+    const bankPct = k.bankPct;
     const cdcPct = 100 - bankPct - equityPct;
     return {
       equityPct, bankPct, cdcPct,
@@ -101,7 +111,7 @@
     };
   };
   LF.sba504Fee = function (debenture, waived) {
-    return { upfront: waived ? 0 : debenture * 0.005, annual: waived ? 0 : debenture * 0.00203 };
+    return { upfront: waived ? 0 : debenture * POLICY.sba504.upfrontPct / 100, annual: waived ? 0 : debenture * POLICY.sba504.annualPct / 100 };
   };
 
   /*

@@ -1,0 +1,33 @@
+{
+  "_help": "Single source of truth for SBA program rules used by the calculators and generated pages. Update here when SBA publishes new notices (fee notices are annual, effective Oct 1), then run: node scripts/sync-policy.js. tests/verify-policy.js fails if a calculator or page disagrees with this file.",
+  "fiscalYear": 2027,
+  "effective": "2026-10-01",
+  "sources": {
+    "fees7a": "https://www.sba.gov/document/information-notice-5000-881797-fy-2027-7a-program-fees",
+    "fees504": "https://www.sba.gov/document/information-notice-5000-881796-fy-2027-504-program-fees",
+    "terms7a": "https://www.sba.gov/partners/lenders/7a-loan-program/terms-conditions-eligibility"
+  },
+  "sba7a": {
+    "maxLoan": 5000000,
+    "guaranty": { "smallLoanMax": 150000, "smallLoanPct": 85, "largeLoanPct": 75 },
+    "upfrontFee": {
+      "tiers": [
+        { "upToLoan": 150000, "pctOfGuaranteed": 2 },
+        { "upToLoan": 700000, "pctOfGuaranteed": 3 }
+      ],
+      "above": { "firstGuaranteed": 1000000, "pctFirst": 3.5, "pctRest": 3.75 },
+      "waiver": { "maxLoan": 700000 }
+    },
+    "lenderAnnualServiceFeePct": 0.55,
+    "maxSpreadOverBase": [
+      { "upToLoan": 50000, "pct": 6.5 },
+      { "upToLoan": 250000, "pct": 6.0 },
+      { "upToLoan": 350000, "pct": 4.5 },
+      { "upToLoan": null, "pct": 3.0 }
+    ],
+    "equityInjectionMinPct": 10
+  },
+  "express": { "maxLoan": 500000, "guarantyPct": 50 },
+  "microloan": { "maxLoan": 50000 },
+  "sba504": { "upfrontPct": 0.5, "annualPct": 0.203, "bankPct": 50, "equityPct": 10, "newBusinessExtraPct": 5, "specialPurposeExtraPct": 5 }
+}
