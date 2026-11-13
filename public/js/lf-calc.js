@@ -520,16 +520,99 @@
   }
   function parseNum(str) { return parseFloat(String(str).replace(/,/g, '')); }
 
+
+  /* Plain-English explanations for jargon inputs. First label match wins. A "?" button opens the card next to the label.
+     Policy numbers come from LF.policy (data/sba-policy.json) so they update with it. */
+  var GLOSS = [
+    [/main use of proceeds/i, 'Use of proceeds', function () { return 'What the loan money will be spent on. The use sets the maximum term (real estate loans can run longer than working capital or equipment loans), and the SBA only allows eligible uses.'; }],
+    [/^annual fee$/i, 'Annual fee', function () { return 'A yearly fee some lines of credit charge whether or not you borrow. It adds to the true cost of the line.'; }],
+    [/months of use/i, 'Months of use', function () { return 'How many months you expect to keep the line in use. Fees and interest are added up over this period.'; }],
+    [/net operating income/i, 'Net operating income (NOI)', function () { return 'Income left after the business pays its everyday operating costs, but before loan payments, income taxes and usually depreciation. Lenders compare it to your yearly loan payments to see whether the business can carry the debt.'; }],
+    [/debt service|existing yearly debt/i, 'Debt service', function () { return 'The total principal and interest you pay on loans in a year. It is the figure lenders set your cash flow against. Include the new loan and any loans you already have.'; }],
+    [/other monthly debt|personal debt payments/i, 'Monthly debt payments', function () { return 'The minimum payments you owe each period on loans and cards, such as a car loan, student loan or mortgage. Lenders count them when judging how much more debt you can carry.'; }],
+    [/coverage lenders want|^DSCR/i, 'DSCR (debt service coverage ratio)', function () { return 'Cash flow divided by yearly debt payments. A DSCR of 1.25x means the business earns $1.25 for every $1.00 of loan payments. Many lenders look for 1.25x or more; the exact level depends on the lender and loan.'; }],
+    [/depreciation and amortization/i, 'Depreciation and amortization (D&A)', function () { return 'Accounting costs that spread the price of equipment or other long-lived assets over several years. They lower reported profit but are not cash leaving the business, so lenders usually add them back when measuring cash flow.'; }],
+    [/interest expense/i, 'Interest expense', function () { return 'Interest the business paid on its existing debt. It is added back to profit when measuring cash flow available for debt, because loan payments are counted separately.'; }],
+    [/add-backs/i, 'Add-backs', function () { return 'Expenses that lowered reported profit but will not continue, or are personal to the owner, such as a one-time legal bill or a personal vehicle. Lenders and buyers accept only add-backs you can document.'; }],
+    [/one-time expenses/i, 'One-time expenses', function () { return 'Costs unlikely to happen again, such as a lawsuit settlement or a move. Count only documented, non-recurring items; routine costs that merely look unusual do not qualify.'; }],
+    [/owner perks/i, 'Owner perks', function () { return 'Personal benefits the owner runs through the business, such as a vehicle, phone or travel. A buyer would not necessarily keep paying them, so they are added back to find the true earnings.'; }],
+    [/owner (salary|pay)/i, 'Owner pay', function () { return 'The salary the owner takes from the business. In seller-discretionary-earnings it is added back; in a global DSCR it is counted as personal income because it pays the owner’s household.'; }],
+    [/market salary/i, 'Market salary for the operator', function () { return 'What it would cost to hire someone to run the business in your place. Lenders subtract it from the earnings so the business still covers the loan after paying a fair wage.'; }],
+    [/discretionary|\bSDE\b/i, 'SDE (seller discretionary earnings)', function () { return 'Net profit plus the owner’s salary and perks, interest, depreciation and amortization, and documented one-time costs. It shows what one owner-operator earns from the business before paying themselves. Small business prices are usually quoted as a multiple of SDE.'; }],
+    [/multiple/i, 'Valuation multiple', function () { return 'A number you multiply by SDE to estimate a price (price = SDE x multiple). Multiples vary by industry, size and risk, so use multiples from comparable sales rather than a rule of thumb. The defaults here are placeholders.'; }],
+    [/equity injection|your equity|available down payment/i, 'Equity injection', function () { return 'Your own cash put into the deal. For an SBA change-of-ownership purchase the minimum is ' + LF.policy.sba7a.equityInjectionMinPct + '% of the project; your lender may require more.'; }],
+    [/^SBA guarantee$/i, 'SBA guarantee', function () { var g = LF.policy.sba7a.guaranty; return 'The share of the loan the SBA promises to repay the lender if you default: ' + g.smallLoanPct + '% on standard 7(a) loans up to $' + g.smallLoanMax.toLocaleString('en-US') + ' and ' + g.largeLoanPct + '% above that (Express loans are ' + LF.policy.express.guarantyPct + '%). You still owe the whole loan.'; }],
+    [/guarantee fee|roll the fee/i, 'Upfront guarantee fee', function () { return 'A one-time fee charged on the SBA-guaranteed part of the loan. The lender pays it to the SBA and usually passes it to you. Rolling it into the loan avoids cash at closing, but you pay interest on it.'; }],
+    [/fee waiver|manufacturer, food supply/i, 'Fee waiver', function () { return 'The SBA waives the upfront fee on qualifying 7(a) loans of $' + LF.policy.sba7a.upfrontFee.waiver.maxLoan.toLocaleString('en-US') + ' or less for certain borrowers, such as manufacturers, listed food-supply-chain businesses and rural businesses. Ask your lender whether you qualify.'; }],
+    [/base \(prime\)/i, 'Base (prime) rate', function () { return 'The benchmark rate that variable-rate loans are priced from. Your rate is the base rate plus the lender’s spread, so it moves when prime moves.'; }],
+    [/spread/i, 'Spread', function () { return 'Percentage points the lender adds to the base rate. Your rate = base rate + spread. For variable-rate SBA 7(a) loans the SBA caps the maximum spread by loan size.'; }],
+    [/^amortization$/i, 'Amortization', function () { return 'The schedule length used to figure the monthly payment, for example 25 years. It can be longer than the loan term, which leaves a balloon payment due at the end of the term.'; }],
+    [/^loan term$/i, 'Loan term', function () { return 'How long until the loan comes due. If the term is shorter than the amortization, the unpaid balance (a balloon) is due when the term ends, and you must pay it or refinance.'; }],
+    [/lease rate/i, 'Lease rate', function () { return 'The financing cost built into lease payments, shown as a yearly rate. Leases often state a payment but not a rate, so ask the lessor for the implied rate.'; }],
+    [/value of the equipment at the end|residual/i, 'Residual value', function () { return 'What the equipment is expected to be worth at the end of the term. With a loan you own it; with many leases you return it or pay to buy it.'; }],
+    [/credit profile/i, 'Credit profile', function () { return 'A rough tier based on credit scores and history. Better credit usually means a lower rate. These tiers are planning estimates, not lender quotes.'; }],
+    [/special-purpose/i, 'Special-purpose property', function () { return 'A building suited to one use, such as a hotel, car wash or medical facility, that is hard to repurpose. SBA 504 lenders ask for ' + LF.policy.sba504.specialPurposeExtraPct + ' extra points of equity on these.'; }],
+    [/new business/i, 'New business', function () { return 'A business under two years old. SBA 504 asks for ' + LF.policy.sba504.newBusinessExtraPct + ' extra points of equity from new businesses.'; }],
+    [/total project cost/i, 'Total project cost', function () { return 'The all-in cost of the project: purchase or construction, equipment and related costs. The 504 structure splits it among the bank, the CDC and you.'; }],
+    [/cdc debenture/i, 'CDC debenture', function () { return 'The SBA-backed loan from a Certified Development Company, up to 40% of an SBA 504 project. Its rate is fixed for the full term once the debenture is sold.'; }],
+    [/bank loan rate/i, 'Bank first-lien loan', function () { return 'In an SBA 504 project the bank lends about ' + LF.policy.sba504.bankPct + '% and holds the first claim on the property (first lien).'; }],
+    [/working capital reserve|working capital/i, 'Working capital', function () { return 'Money for day-to-day operations, such as inventory, payroll and receivables, rather than for buying a building or equipment.'; }],
+    [/seller note/i, 'Seller note', function () { return 'Part of the price the seller finances and you repay to the seller over time. Lenders may require it to be on standby and may limit how it counts toward your equity.'; }],
+    [/lender \/ packaging fee/i, 'Lender or packaging fee', function () { return 'A fee for preparing and processing the loan application, charged by the lender or a packager.'; }],
+    [/appraisal, environmental/i, 'Third-party reports', function () { return 'Independent reports lenders order before closing, such as a property appraisal, an environmental review and a business valuation.'; }],
+    [/legal and title/i, 'Legal and title', function () { return 'Attorney fees plus title insurance, which protects against defects in who owns the property.'; }],
+    [/prepaid insurance/i, 'Prepaid items', function () { return 'Insurance and escrow deposits paid at closing ahead of time, so the lender can pay those bills for you later.'; }],
+    [/^closing costs/i, 'Closing costs', function () { return 'Fees and expenses due when the loan closes: lender and packaging fees, title, appraisal, legal and similar items.'; }],
+    [/pmi rate/i, 'PMI (private mortgage insurance)', function () { return 'Insurance you pay on a conventional mortgage when you put down less than 20%. It protects the lender, not you, and usually ends once you reach about 20% equity.'; }],
+    [/property tax|homeowner|^insurance$/i, 'Taxes and insurance (PITI)', function () { return 'Property tax and homeowner’s insurance are usually collected monthly with your loan payment and held in escrow. Together with principal and interest they make up PITI.'; }],
+    [/credit limit/i, 'Credit limit', function () { return 'The most you can borrow on the line at one time. You pay interest only on the amount you have actually drawn.'; }],
+    [/average amount drawn/i, 'Average amount drawn', function () { return 'The typical balance you carry on the line over the year. Interest is charged on this amount, not on the full limit.'; }],
+    [/factor rate/i, 'Factor rate', function () { return 'A flat multiplier, such as 1.35, used by merchant cash advances. You repay the advance times the factor. It is not an annual rate: because you repay a little each payment, the true annual cost is much higher.'; }],
+    [/advance amount/i, 'Advance amount', function () { return 'The money you receive up front from a merchant cash advance, which is repaid from your daily or weekly receipts or payments.'; }],
+    [/fees taken from the advance/i, 'Fees taken from the advance', function () { return 'Fees deducted when you are funded. You receive less cash than the advance but still repay the full payback amount.'; }],
+    [/penalty for other loans|prepay/i, 'Prepayment penalty', function () { return 'A fee some loans charge when you pay off part or all of the balance early, usually a percentage of the amount prepaid. Check your note for its terms.'; }],
+    [/cash due at the start/i, 'Cash due at the start', function () { return 'What you pay when you sign: a down payment or, for a lease, the first payment, fees and any deposit.'; }],
+    [/net profit|^net income/i, 'Net profit (net income)', function () { return 'Profit after all expenses on the income statement (P&L). Take it from your tax return or your accountant’s statement for the period.'; }],
+    [/personal income taxes/i, 'Personal income taxes', function () { return 'The income taxes you pay personally on the business and other income. A global cash-flow analysis subtracts them before measuring coverage.'; }],
+    [/living expenses/i, 'Living expenses', function () { return 'Your household’s everyday costs. Lenders subtract an amount for them in a global cash-flow analysis because that money is not available for loan payments.'; }],
+    [/other personal income/i, 'Other personal income', function () { return 'Income from outside the business, such as a spouse’s wages, rent or investment income, if you can document it.'; }]
+  ];
+  function glossFor(label) {
+    for (var i = 0; i < GLOSS.length; i++) if (GLOSS[i][0].test(label)) return { term: GLOSS[i][1], text: GLOSS[i][2]() };
+    return null;
+  }
+
+
+  function labelHtml(fd, id) {
+    var g = fd.help ? { term: fd.label, text: fd.help } : glossFor(fd.label), lab = '<label for="' + id + '">' + esc(fd.label) + '</label>';
+    if (!g) return lab;
+    return '<div class="lf-labelrow">' + lab + '<button type="button" class="lf-help" aria-expanded="false" aria-controls="' + id + '-help" aria-label="What is ' + esc(g.term) + '?">?</button></div>' +
+      '<div class="lf-help-card" id="' + id + '-help" role="region" aria-label="' + esc(g.term) + '" hidden><strong>' + esc(g.term) + '</strong><p>' + esc(g.text) + '</p></div>';
+  }
+  /* One document-level handler: open/close help cards, close on outside click or Escape. */
+  if (!window.__lfHelpBound) {
+    window.__lfHelpBound = true;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.lf-help'), open = document.querySelectorAll('.lf-help[aria-expanded="true"]');
+      [].forEach.call(open, function (x) { if (x !== b) { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; } });
+      if (b) { var card = document.getElementById(b.getAttribute('aria-controls')), on = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', on ? 'true' : 'false'); card.hidden = !on; }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      [].forEach.call(document.querySelectorAll('.lf-help[aria-expanded="true"]'), function (x) { x.setAttribute('aria-expanded', 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = true; x.focus(); });
+    });
+  }
+
   function fieldHtml(fd, uid) {
     var id = uid + '-' + fd.id, inner;
     if (fd.type === 'select') {
       inner = '<select id="' + id + '" data-f="' + fd.id + '">' + fd.options.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === fd.value ? ' selected' : '') + '>' + esc(o[1]) + '</option>'; }).join('') + '</select>';
-      return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input lf-select">' + inner + '</div></div>';
+      return '<div class="lf-field">' + labelHtml(fd, id) + '<div class="lf-input lf-select">' + inner + '</div></div>';
     }
     inner = (fd.prefix ? '<span class="lf-affix">' + esc(fd.prefix) + '</span>' : '') +
       '<input id="' + id + '" data-f="' + fd.id + '" type="text" inputmode="decimal" autocomplete="off" data-max="' + (fd.max || '') + '" value="' + commas(fd.value) + '">' +
       (fd.suffix ? '<span class="lf-affix">' + esc(fd.suffix) + '</span>' : '');
-    return '<div class="lf-field"><label for="' + id + '">' + esc(fd.label) + '</label><div class="lf-input">' + inner + '</div>' + (fd.hint || fd.live ? '<small' + (fd.live ? ' data-live-note="' + (fd.live === true ? 'prime' : fd.live) + '"' : '') + '>' + esc(fd.hint || '') + '</small>' : '') + '</div>';
+    return '<div class="lf-field">' + labelHtml(fd, id) + '<div class="lf-input">' + inner + '</div>' + (fd.hint || fd.live ? '<small' + (fd.live ? ' data-live-note="' + (fd.live === true ? 'prime' : fd.live) + '"' : '') + '>' + esc(fd.hint || '') + '</small>' : '') + '</div>';
   }
 
   var seq = 0;
