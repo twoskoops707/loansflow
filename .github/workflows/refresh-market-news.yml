@@ -25,26 +25,24 @@ jobs:
         with:
           node-version: '20'
       - name: Install openpyxl (for template workbooks)
+        continue-on-error: true
         run: pip install --no-input openpyxl
       - name: Install jsdom (for calculator pre-render)
+        continue-on-error: true
         run: npm i --no-save --no-audit --no-fund jsdom
-      - name: Refresh market-news.json
+      - name: Refresh market-news.json and rates (critical)
         run: |
           node tools/news/refresh-market-news.mjs
           node scripts/prune-dead-news.js
           node tools/rates/refresh-rates.mjs
           node scripts/sync-static-rates.js
-          node scripts/sync-policy.js
-          node scripts/make-new-calc-pages.js
-          node scripts/build-rates-tracker.js
-          python3 scripts/build-resources.py
-          node scripts/sync-asof.js
-          node scripts/prerender-calcs.js
-          node scripts/build-clusters.js
-          python3 scripts/apply-nav.py
-          python3 scripts/make-site-index.py
-          node scripts/build-llms.js
-          node scripts/build-sitemap.js
+      - name: Rebuild pages that depend on the data (a failure here must not stop the data refresh)
+        run: |
+          for cmd in "node scripts/sync-policy.js" "node scripts/make-new-calc-pages.js" "node scripts/build-rates-tracker.js" "python3 scripts/build-resources.py" \
+                     "node scripts/sync-asof.js" "node scripts/prerender-calcs.js" "node scripts/build-clusters.js" "python3 scripts/apply-nav.py" \
+                     "python3 scripts/make-site-index.py" "node scripts/build-llms.js" "node scripts/build-sitemap.js"; do
+            echo "::group::$cmd"; $cmd || echo "::warning::$cmd failed; continuing"; echo "::endgroup::"
+          done
       - name: Check SBA policy and page figures agree (warns on drift)
         continue-on-error: true
         run: node tests/verify-policy.js
