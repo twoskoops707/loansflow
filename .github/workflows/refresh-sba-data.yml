@@ -33,6 +33,7 @@ jobs:
           python3 -I scripts/sba-foia/aggregate.py
           node scripts/sba-foia/build-pages.js
           python3 scripts/apply-nav.py
+          node scripts/build-llms.js
           node scripts/build-sitemap.js
           node scripts/check-internal-links.js
       - name: Commit if changed

@@ -19,6 +19,16 @@ new_calcs = entry('/calculators/business-acquisition', 'Business acquisition', '
 if 'business-acquisition' not in calc:
     anchor = '<a href="/calculators/dscr">'
     calc = calc.replace(anchor, new_calcs + anchor, 1)
+
+# third column with the newer business tools, and a live calculator count
+if 'sba-guarantee-fee' not in calc:
+    tools = [('/calculators/sba-guarantee-fee', 'SBA guarantee fee', 'Upfront fee by loan size'), ('/calculators/global-dscr', 'Global DSCR', 'Business plus personal cash flow'),
+             ('/calculators/how-much-can-i-borrow', 'How much can I borrow', 'Loan size from your P&amp;L'), ('/calculators/business-valuation-sde', 'Business valuation (SDE)', 'Price from seller earnings'),
+             ('/calculators/merchant-cash-advance-cost', 'Merchant cash advance cost', 'Factor rate to APR'), ('/calculators/prepayment-penalty', 'Prepayment penalty', 'Fee versus interest saved')]
+    col = '<div class="mega-col"><div class="mega-h">More business tools</div>' + ''.join(entry(h, a, b, dscr_icon) for h, a, b in tools) + '</div>'
+    calc = calc.replace('<a class="mega-all"', col + '<a class="mega-all"', 1)
+ncalc = len(list((PUB / 'calculators').glob('*.html'))) - 1
+calc = re.sub(r'All \d+ calculators', f'All {ncalc} calculators', calc)
 def menu(label, href, entries): return f'        <div class="nav-item has-menu"><a class="nav-top" href="{href}">{label}</a>\n          <div class="nav-menu">' + ''.join(entries) + '</div></div>'
 guides = menu('Guides', '/guides/', [
   entry('/guides/', 'All guides', 'Playbooks, checklists and the glossary'),

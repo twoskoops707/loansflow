@@ -35,7 +35,8 @@ async function render(file) {
   const head = res.querySelector('.lf-head');
   const rows = q(res, '.lf-rows > div').map((d) => [d.children[0].textContent, d.children[1].textContent]);
   const notes = q(res, '.lf-notes li').map((n) => n.textContent);
-  return { title: el.querySelector('.lf-title').textContent, inputs, head: head ? [head.children[0].textContent, head.children[1].textContent] : null, rows, notes, text: res.textContent };
+  const terms = q(el, '.lf-help-card').map((c) => [c.querySelector('strong').textContent, c.querySelector('p').textContent]);
+  return { title: el.querySelector('.lf-title').textContent, inputs, terms, head: head ? [head.children[0].textContent, head.children[1].textContent] : null, rows, notes, text: res.textContent };
 }
 
 function block(r) {
@@ -44,6 +45,7 @@ function block(r) {
     '<noscript><p class="lf-calc-nojs">JavaScript is off, so the interactive calculator is hidden. The worked result below uses the calculator&rsquo;s default inputs.</p></noscript>' +
     `<h3 class="lf-title">${esc(r.title)}: default example</h3>` +
     '<table class="lf-table"><caption>Default inputs</caption><tbody>' + r.inputs.map((i) => `<tr><th scope="row">${esc(i[0])}</th><td>${esc(i[1])}</td></tr>`).join('') + '</tbody></table>' +
+    (r.terms.length ? '<h4>Terms used in this calculator</h4><dl class="lf-terms">' + r.terms.map((x) => `<dt>${esc(x[0])}</dt><dd>${esc(x[1])}</dd>`).join('') + '</dl>' : '') +
     (r.head ? `<p class="lf-head"><span>${esc(r.head[0])}</span> <strong>${esc(r.head[1])}</strong></p>` : '') +
     '<table class="lf-table"><caption>Results at those inputs</caption><tbody>' + r.rows.map((i) => `<tr><th scope="row">${esc(i[0])}</th><td>${esc(i[1])}</td></tr>`).join('') + '</tbody></table>' +
     (r.notes.length ? '<ul class="lf-notes">' + r.notes.map((n) => `<li>${esc(n)}</li>`).join('') + '</ul>' : '') +

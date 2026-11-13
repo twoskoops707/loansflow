@@ -5,36 +5,79 @@
 Facts on this site carry an "as of" date and a link to the primary source (SBA.gov, FRED, Freddie Mac, CFPB). Figures are estimates for planning, not offers.
 
 ## Loan types
-- [SBA 7(a) loan](https://loansflow.loan/loans/sba-7a): requirements, maximum rates, fees, $350,000 worked example
-- [SBA 504 loan](https://loansflow.loan/loans/sba-504)
-- [SBA Express](https://loansflow.loan/loans/sba-express)
-- [SBA Microloan](https://loansflow.loan/loans/sba-microloan)
-- [Line of credit](https://loansflow.loan/loans/line-of-credit)
-- [Commercial term loan](https://loansflow.loan/loans/commercial-term-loan)
-- [Equipment financing](https://loansflow.loan/loans/equipment-financing)
-- [Mortgage](https://loansflow.loan/loans/mortgage)
+- [All loan types](https://loansflow.loan/loans/): Compare SBA 7(a), 504, Express, Microloans, lines of credit, commercial term loans, equipment financing and mortgages. Pick a loan type, then run its calculators.
+- [Commercial Term Loan: Rates and Requirements](https://loansflow.loan/loans/commercial-term-loan): A conventional bank loan for property, expansion or acquisitions, with no SBA guarantee. Facts, requirements, free calculators and step-by-step application help.
+- [Equipment Financing: Rates and Requirements](https://loansflow.loan/loans/equipment-financing): Loans and leases for machinery, vehicles and technology, secured by the equipment itself. Facts, requirements, free calculators and step-by-step application help.
+- [Business Line of Credit: Rates and Requirements](https://loansflow.loan/loans/line-of-credit): A revolving credit limit you draw on, repay, and draw on again. Facts, requirements, free calculators and step-by-step application help.
+- [Mortgage: Rates and Requirements](https://loansflow.loan/loans/mortgage): Home purchase and refinance loans, with payment, affordability and refinance tools. Facts, requirements, free calculators and step-by-step application help.
+- [SBA 504 Loan: Rates and Requirements](https://loansflow.loan/loans/sba-504): Long-term, fixed-rate financing for buildings and heavy equipment. Facts, requirements, free calculators and step-by-step application help.
+- [SBA 7(a) Loan: Rates and Requirements](https://loansflow.loan/loans/sba-7a): The most flexible SBA loan, for almost any business purpose. Facts, requirements, free calculators and step-by-step application help.
+- [SBA Express Loan: Rates and Requirements](https://loansflow.loan/loans/sba-express): A faster, lender-processed SBA loan up to $500,000, including lines of credit. Facts, requirements, free calculators and step-by-step application help.
+- [SBA Microloan: Rates and Requirements](https://loansflow.loan/loans/sba-microloan): Small loans up to $50,000 from nonprofit lenders, with help for newer businesses. Facts, requirements, free calculators and step-by-step application help.
 
 ## Comparisons
-- [Compare business loans](https://loansflow.loan/compare/)
-- [SBA 7(a) vs 504](https://loansflow.loan/compare/sba-7a-vs-504)
-- [SBA vs conventional term loan](https://loansflow.loan/compare/sba-vs-conventional-term-loan)
-- [SBA vs online lender](https://loansflow.loan/compare/sba-vs-online-lender)
+- [Compare business loans](https://loansflow.loan/compare/): Side-by-side comparisons of SBA 7(a), SBA 504, conventional term loans and online lenders.
+- [SBA 7(a) vs 504 Loan: Which Fits Your Project?](https://loansflow.loan/compare/sba-7a-vs-504): Compare SBA 7(a) and 504 loans side by side: size, terms, structure, rates, fees, down payment and what each is best for.
+- [SBA Loan vs Conventional Term Loan](https://loansflow.loan/compare/sba-vs-conventional-term-loan): Compare an SBA-guaranteed loan with a conventional bank term loan: qualification, down payment, terms, speed and cost.
+- [SBA Loan vs Online Lender](https://loansflow.loan/compare/sba-vs-online-lender): Compare SBA loans with online business lenders: speed, cost, terms, qualification and what to check before you borrow.
 
 ## Calculators
-- [All calculators](https://loansflow.loan/calculators/)
-- [SBA business acquisition calculator](https://loansflow.loan/calculators/business-acquisition)
-- [SBA cash-to-close estimator](https://loansflow.loan/calculators/cash-to-close)
-- [SBA 7(a) loan calculator](https://loansflow.loan/calculators/sba-7a)
-- [DSCR calculator](https://loansflow.loan/calculators/dscr)
+- [All calculators](https://loansflow.loan/calculators/): Every LoansFlow calculator in one list: SBA 7(a), 504 and Express, equipment, line of credit, commercial real estate, DSCR, mortgage, refinance and affordability.
+- [SBA business acquisition calculator](https://loansflow.loan/calculators/business-acquisition): Model buying a business with an SBA 7(a) loan: sources and uses, equity injection, guarantee fee, payments and DSCR from seller earnings.
+- [Business valuation calculator (SDE multiple)](https://loansflow.loan/calculators/business-valuation-sde): Estimate a small business price from seller discretionary earnings (SDE) and low, middle and high valuation multiples.
+- [SBA cash-to-close estimator](https://loansflow.loan/calculators/cash-to-close): Estimate the total cash needed to close an SBA-financed purchase: down payment, SBA guarantee fee, lender fees, third-party reports, legal and reserves.
+- [Commercial real estate loan calculator](https://loansflow.loan/calculators/commercial-real-estate): Model a commercial property loan with a long amortization, a shorter balloon term and the loan-to-value ratio.
+- [Debt service coverage (DSCR) calculator](https://loansflow.loan/calculators/dscr): Divide net operating income by yearly debt payments to see the coverage ratio lenders look at, usually 1.25 or higher.
+- [Equipment financing estimator](https://loansflow.loan/calculators/equipment-payment): Estimate the payment on equipment financing, including your down payment, rate and term.
+- [Equipment financing payment by term](https://loansflow.loan/calculators/equipment-term-comparison): See how payment and total interest change across terms and typical equipment rates side by side.
+- [Global and add-back DSCR calculator](https://loansflow.loan/calculators/global-dscr): Calculate business DSCR with add-backs and global DSCR that includes owner income, taxes, living costs and personal debt.
+- [Home affordability calculator](https://loansflow.loan/calculators/home-affordability): Turn income, debts and down payment into an estimated home price using the common 28/36 guideline.
+- [How much business loan can I afford?](https://loansflow.loan/calculators/how-much-can-i-borrow): Estimate the largest business loan your profit and loss statement can support at the coverage ratio lenders want.
+- [Equipment lease versus loan](https://loansflow.loan/calculators/lease-vs-loan): Compare leasing with borrowing for the same equipment, including what you own at the end.
+- [Business line of credit cost calculator](https://loansflow.loan/calculators/line-of-credit): Estimate monthly interest and fees on a line of credit based on how much you draw and how long you carry the balance.
+- [Loan payment calculator](https://loansflow.loan/calculators/loan-payment): Enter an amount, rate and term to see the monthly payment, total interest and a payoff chart for any fixed-rate loan.
+- [Merchant cash advance true cost calculator](https://loansflow.loan/calculators/merchant-cash-advance-cost): Convert a merchant cash advance factor rate into an estimated APR and total cost, with the payment per day or week.
+- [Mortgage payment calculator](https://loansflow.loan/calculators/mortgage-payment): Estimate a full monthly housing payment with principal, interest, property tax, insurance and PMI.
+- [Prepayment penalty estimator](https://loansflow.loan/calculators/prepayment-penalty): Estimate the SBA 7(a) prepayment fee or a custom penalty, and compare it with the interest you save by paying early.
+- [Refinance break-even calculator](https://loansflow.loan/calculators/refinance-break-even): Find the month when monthly savings overtake closing costs, so you know if a refinance is worth it.
+- [SBA 504 loan calculator](https://loansflow.loan/calculators/sba-504): Split a project into the bank loan, the CDC debenture and your down payment, then see the blended payment.
+- [SBA 7(a) loan calculator](https://loansflow.loan/calculators/sba-7a): Estimate the monthly payment, SBA guarantee fee and total cost of an SBA 7(a) loan, using the current maximum-rate rules.
+- [SBA down payment (equity injection) calculator](https://loansflow.loan/calculators/sba-equity-injection): Work out the down payment an SBA lender will expect for a purchase or expansion, and what the SBA minimum is for each type of deal.
+- [SBA Express loan calculator](https://loansflow.loan/calculators/sba-express): Model an SBA Express loan, which is capped at $500,000, with its payment, fee and total interest.
+- [SBA 7(a) guarantee fee calculator](https://loansflow.loan/calculators/sba-guarantee-fee): Estimate the SBA 7(a) upfront guarantee fee for FY 2027: guaranteed portion, fee tiers, waiver and whether to roll it into the loan.
 
 ## Guides
-- [All guides](https://loansflow.loan/guides/)
-- [DSCR explained](https://loansflow.loan/guides/dscr-explained)
-- [How to apply for an SBA 7(a) loan](https://loansflow.loan/guides/sba-7a-step-by-step)
-- [SBA loan eligibility](https://loansflow.loan/guides/sba-loan-eligibility)
+- [All guides](https://loansflow.loan/guides/): Free SBA loan guides, document checklists, lender selection tips, and a glossary — all written in plain language to cut through the jargon.
+- [Business Plan and Projections Lenders Want](https://loansflow.loan/guides/business-plan-for-a-loan): How to write a loan-ready business plan: required sections, projections with clear assumptions, sources and uses of funds, and mistakes that get applications declined.
+- [Calculator Help: What Each Input Means](https://loansflow.loan/guides/calculator-help): What to enter in each LoansFlow calculator, how to read the results, and why your lender's numbers may differ.
+- [The loan document checklist](https://loansflow.loan/guides/checklist): Interactive loan document checklist — check items off as you collect them, track your progress, and download a personalized list.
+- [How to Choose a Lender (or Broker)](https://loansflow.loan/guides/choosing-lender): What to compare when you shop for a business or mortgage loan — APR, fees, term, collateral, covenants, speed, and SBA preferred lender status.
+- [DSCR From a CPA&#x27;s View](https://loansflow.loan/guides/dscr-cpa-view): How a CPA reads debt service coverage: which earnings number to use, owner pay and taxes, business versus global DSCR, worked examples and common mistakes.
+- [DSCR Explained, With Worked Examples](https://loansflow.loan/guides/dscr-explained): What DSCR is, how lenders calculate it, what a good ratio looks like, a worked example with real loan math, and practical ways to improve your ratio before applying.
+- [Loan Glossary](https://loansflow.loan/guides/glossary): Definitions for common business and mortgage loan terms — APR, DSCR, SBA 7(a), SBA 504, UCC filing, and more.
+- [Loan Documents Lenders Ask For, by Loan Type](https://loansflow.loan/guides/loan-documents): The documents lenders request for SBA 7(a), SBA 504, conventional commercial, microloans, lines of credit and mortgages, with a printable checklist.
+- [Mortgage Closing Costs: What You Pay and When](https://loansflow.loan/guides/mortgage-closing-costs): A line-by-line guide to mortgage closing costs: lender and third-party fees, prepaids, escrow, the Loan Estimate and Closing Disclosure, and ways to lower the total.
+- [Owner Add-Backs and EBITDA Normalization](https://loansflow.loan/guides/owner-add-backs-ebitda): How lenders and buyers adjust a small business income statement: EBITDA, seller discretionary earnings, common add-backs, a worked example and documentation.
+- [Is Refinancing Worth It? Break-Even Math](https://loansflow.loan/guides/refinance-break-even): How to decide whether to refinance a mortgage or commercial loan: the break-even formula, a worked example and what a simple calculation misses.
+- [SBA 504 Loans Explained](https://loansflow.loan/guides/sba-504): What an SBA 504 loan is, how the CDC structure works, eligible uses, terms, the 7(a) vs 504 comparison, and a short FAQ.
+- [How to Apply for an SBA 7(a) Loan: 10 Steps](https://loansflow.loan/guides/sba-7a-step-by-step): A 10-step playbook for applying for an SBA 7(a) loan — from confirming eligibility through closing, with common pitfalls and a variant comparison table.
+- [SBA Express, Microloans and CAPLines Compared](https://loansflow.loan/guides/sba-express-microloans-caplines): A plain-English comparison of SBA Express loans, SBA Microloans, and CAPLines working-capital lines: limits, guarantees, what each can fund, and who they fit best.
+- [SBA Loan Eligibility: Who Qualifies](https://loansflow.loan/guides/sba-loan-eligibility): What SBA 7(a) and 504 eligibility requires: for-profit status, size standards, owner equity, the credit-elsewhere test, ineligible businesses and guarantees.
+- [Tax Treatment of SBA Loan Interest and Fees](https://loansflow.loan/guides/sba-loan-interest-tax-treatment): How interest, the SBA guarantee fee and closing costs on an SBA loan are generally treated for federal tax: the 163(j) limit, fee amortization and what to track.
+- [Term Loan vs. Business Line of Credit](https://loansflow.loan/guides/term-loan-vs-line-of-credit): Compare a business term loan with a line of credit: how interest is charged, worked cost examples, collateral and which fits equipment, expansion or cash-flow gaps.
+
+## Rates and data
+- [Rates and news](https://loansflow.loan/news/): Current headlines from the Federal Reserve, the CFPB and the lending press on mortgage rates, small business lending, equipment finance and commercial real estate.
+- [Rates data (JSON)](https://loansflow.loan/data/rates.json): Prime, SOFR, Treasury and mortgage rates with source and as-of dates
+- [SBA policy data (JSON)](https://loansflow.loan/data/sba-policy.json): SBA 7(a) fees, guarantee percentages and caps, with effective date and source links
 
 ## About and policies
-- [Author: Joshua Miller, CPA](https://loansflow.loan/author)
-- [Methodology: how our numbers work](https://loansflow.loan/methodology)
-- [Editorial policy](https://loansflow.loan/editorial-policy)
-- [Advertising and affiliate disclosure](https://loansflow.loan/disclosure)
+- [Author: Joshua Miller, CPA](https://loansflow.loan/author): Joshua Miller is a licensed California CPA and the founder and author of LoansFlow, an independent educational site about SBA and small business financing.
+- [About LoansFlow](https://loansflow.loan/about): About LoansFlow — free SBA, commercial, and mortgage calculators, step-by-step guides, a national SBA office directory, and a downloadable loan document checklist.
+- [Methodology: how our numbers work](https://loansflow.loan/methodology): The formulas, SBA fee schedules, equipment-rate model and data sources behind every LoansFlow calculator.
+- [Editorial policy](https://loansflow.loan/editorial-policy): How LoansFlow researches, writes, reviews, and updates its loan guides and calculators, including sourcing, corrections, and independence standards.
+- [Advertising and affiliate disclosure](https://loansflow.loan/disclosure): How LoansFlow is funded: display advertising and, on some business-loan pages, affiliate links. Mortgage pages carry no affiliate links.
+- [Privacy policy](https://loansflow.loan/privacy): Privacy Policy for LoansFlow - how we collect, use, and protect your information.
+- [Terms of use](https://loansflow.loan/terms): The terms of use for LoansFlow, including governing law, limits of liability and how third-party links and advertising are handled.
+- [Disclaimer](https://loansflow.loan/disclaimer): Disclaimer for LoansFlow - important legal information about our calculators and content.
+- [Contact](https://loansflow.loan/contact): Contact LoansFlow with questions, corrections or feedback about our SBA and small business loan guides and calculators.
