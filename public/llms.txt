@@ -75,10 +75,16 @@ Facts on this site carry an "as of" date and a link to the primary source (SBA.g
 - [loan document checklist](https://loansflow.loan/downloads/loan-document-checklist.txt): Downloadable txt file
 - [sba 7a application checklist](https://loansflow.loan/downloads/sba-7a-application-checklist.xlsx): Downloadable xlsx file
 
+## Research (original analysis of SBA public data)
+- [Research hub](https://loansflow.loan/research/): Original analysis of SBA 7(a) loan data by year, state, industry and lender, rebuilt from SBA public files as they update.
+- [SBA 7(a) Loan Data: FY2026 Size, Rates, Industries](https://loansflow.loan/research/sba-7a-loan-data): 56,130 SBA 7(a) approvals worth $32.4 billion in FY2026: median loan $220,000, rates, industries, states and lenders, from SBA public data.
+- [SBA 7(a) loans by state](https://loansflow.loan/research/sba-7a-by-state/): SBA 7(a) loan approvals in FY2026 for 52 states and territories: loans, dollars and median loan size, from SBA public data.
+
 ## Rates and data
 - [Rates and news](https://loansflow.loan/news/): Current headlines from the Federal Reserve, the CFPB and the lending press on mortgage rates, small business lending, equipment finance and commercial real estate.
 - [Rates data (JSON)](https://loansflow.loan/data/rates.json): Prime, SOFR, Treasury and mortgage rates with source and as-of dates
 - [SBA policy data (JSON)](https://loansflow.loan/data/sba-policy.json): SBA 7(a) fees, guarantee percentages and caps, with effective date and source links
+- [SBA 7(a) loan summary data (JSON)](https://loansflow.loan/data/sba-7a-foia.json): Approvals by year, state and industry from SBA FOIA data
 
 ## About and policies
 - [Author: Joshua Miller, CPA](https://loansflow.loan/author): Joshua Miller is a licensed California CPA and the founder and author of LoansFlow, an independent educational site about SBA and small business financing.

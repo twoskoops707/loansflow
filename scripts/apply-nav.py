@@ -37,6 +37,7 @@ guides = menu('Guides', '/guides/', [
   entry('/guides/owner-add-backs-ebitda', 'Add-backs and EBITDA', 'Normalizing earnings for a lender'),
   entry('/guides/sba-loan-interest-tax-treatment', 'SBA interest and taxes', 'What is deductible and what is amortized'),
   entry('/guides/sba-7a-step-by-step', 'SBA 7(a) 10-step playbook', 'From eligibility to funding'),
+  entry('/research/', 'SBA loan data', 'Original analysis of SBA 7(a) approvals'),
   entry('/resources/', 'Free templates', 'Checklists and worksheets to download')])
 news = menu('News &amp; rates', '/news/', [
   entry('/news/', 'Rates and headlines', 'Prime, mortgage averages, daily news'),
@@ -55,7 +56,7 @@ NAV = '\n' + loan.strip('\n') + '\n' + calc.strip('\n') + '\n' + guides + '\n' +
 def col(title, links): return '<div><div class="foot-h">' + title + '</div>' + ''.join(f'<a href="{u}">{t}</a>' for u, t in links) + '</div>'
 LOANS = col('Loan types', [('/loans/sba-7a', 'SBA 7(a)'), ('/loans/sba-504', 'SBA 504'), ('/loans/sba-express', 'SBA Express'), ('/loans/sba-microloan', 'SBA Microloan'), ('/loans/line-of-credit', 'Line of credit'), ('/loans/commercial-term-loan', 'Commercial term loan'), ('/loans/equipment-financing', 'Equipment financing'), ('/loans/mortgage', 'Mortgage')])
 LEARN = col('Learn', [('/guides/', 'All guides'), ('/compare/', 'Compare loans'), ('/guides/dscr-cpa-view', 'DSCR from a CPA&rsquo;s view'), ('/guides/owner-add-backs-ebitda', 'Add-backs and EBITDA'), ('/guides/sba-loan-interest-tax-treatment', 'SBA interest and taxes'), ('/guides/glossary', 'Glossary'), ('/wisdom/', 'Old-timer&rsquo;s guide')])
-FUND = col('Resources', [('/resources/', 'Free templates'), ('/alternative-financing/', 'Uncommon ways to finance'), ('/grants/', 'Search grants'), ('/news/', 'News and rates'), ('/directory/', 'Phone directory'), ('/site-index', 'Site directory')])
+FUND = col('Resources', [('/research/', 'SBA loan data'), ('/resources/', 'Free templates'), ('/alternative-financing/', 'Uncommon ways to finance'), ('/grants/', 'Search grants'), ('/news/', 'News and rates'), ('/directory/', 'Phone directory'), ('/site-index', 'Site directory')])
 SITE = col('About', [('/about', 'About LoansFlow'), ('/author', 'About the author'), ('/editorial-policy', 'Editorial policy'), ('/methodology', 'How our numbers work'), ('/contact', 'Contact')])
 LEGAL = col('Legal', [('/privacy', 'Privacy'), ('/terms', 'Terms'), ('/disclaimer', 'Disclaimer'), ('/disclosure', 'Advertising and affiliate disclosure')])
 sections = [('/loans/', 'Loan types'), ('/calculators/', 'Calculators'), ('/guides/', 'Guides'), ('/compare/', 'Guides'), ('/alternative-financing/', 'Funding'), ('/grants/', 'Funding'), ('/directory/', 'Funding'), ('/news/', 'News &amp; rates'), ('/about', 'About'), ('/site-index', 'About'), ('/author', 'About'), ('/editorial', 'About'), ('/disclosure', 'About'), ('/contact', 'About')]

@@ -2,5 +2,5 @@
   "_help": "Fill in after you create the accounts, then run: node scripts/apply-site-config.js && git commit. Leave a value empty to skip it. publishSbaDataStudy: set true only after the owner reviews the SBA data study; until then the research pages are noindex and unlinked.",
   "gscVerificationToken": "",
   "cloudflareBeaconToken": "",
-  "publishSbaDataStudy": false
+  "publishSbaDataStudy": true
 }
