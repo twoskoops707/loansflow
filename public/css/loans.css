@@ -357,3 +357,10 @@
 
 .lf-field > label, .lf-labelrow { min-height: 1.25rem; }
 .lf-field > label { display: flex; align-items: center; }
+
+/* Avoid layout shift: browsers that run scripts replace the static pre-rendered block with the interactive calculator, so hide the static block
+   and reserve roughly the calculator's height. Crawlers and readers without JavaScript still get the full static content. */
+@media (scripting: enabled) {
+  .lf-static { display: none; }
+  [data-calc]:not(.lf-calc) { min-height: 620px; }
+}
