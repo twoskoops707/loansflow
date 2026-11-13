@@ -52,7 +52,16 @@ about = menu('About', '/about', [
   entry('/site-index', 'Site directory', 'Every page on LoansFlow, grouped'),
   entry('/contact', 'Contact', 'Questions and corrections')])
 cta = '        <a class="nav-cta" href="/loans/">Find your loan</a>\n      '
+import json
+_IM = json.loads((pathlib.Path(__file__).resolve().parent / 'icon-map.json').read_text())
+def reicon(html):
+    # give every menu entry its own icon from scripts/icon-map.json (rebuilt by build-icons.js)
+    def sub(m):
+        name = _IM['map'].get(m.group(1))
+        return m.group(0) if not name else f'<a href="{m.group(1)}"><i class="mi"><svg class="ico" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">{_IM["icons"][name]}</svg></i>'
+    return re.sub(r'<a href="([^"#]+)"><i class="mi"><svg[\s\S]*?</svg></i>', sub, html)
 NAV = '\n' + loan.strip('\n') + '\n' + calc.strip('\n') + '\n' + guides + '\n' + fund + '\n' + news + '\n' + about + '\n' + cta
+NAV = reicon(NAV)
 def col(title, links): return '<div><div class="foot-h">' + title + '</div>' + ''.join(f'<a href="{u}">{t}</a>' for u, t in links) + '</div>'
 LOANS = col('Loan types', [('/loans/sba-7a', 'SBA 7(a)'), ('/loans/sba-504', 'SBA 504'), ('/loans/sba-express', 'SBA Express'), ('/loans/sba-microloan', 'SBA Microloan'), ('/loans/line-of-credit', 'Line of credit'), ('/loans/commercial-term-loan', 'Commercial term loan'), ('/loans/equipment-financing', 'Equipment financing'), ('/loans/mortgage', 'Mortgage')])
 LEARN = col('Learn', [('/guides/', 'All guides'), ('/compare/', 'Compare loans'), ('/guides/dscr-cpa-view', 'DSCR from a CPA&rsquo;s view'), ('/guides/owner-add-backs-ebitda', 'Add-backs and EBITDA'), ('/guides/sba-loan-interest-tax-treatment', 'SBA interest and taxes'), ('/guides/glossary', 'Glossary'), ('/wisdom/', 'Old-timer&rsquo;s guide')])

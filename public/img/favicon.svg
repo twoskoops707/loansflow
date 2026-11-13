@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#071018"/><text x="6" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="29" fill="#fffcf7">L</text><text x="22" y="34" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="27" font-weight="600" fill="#1a8f7c">F</text><rect x="8" y="39" width="17" height="2.5" rx="1.2" fill="#c9a45c"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LoansFlow"><defs>
+  <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="20" y1="13" x2="34" y2="52"><stop offset="0" stop-color="#46e6ad"/><stop offset="1" stop-color="#22a687"/></linearGradient>
+  <linearGradient id="gd" gradientUnits="userSpaceOnUse" x1="34" y1="52" x2="50" y2="26"><stop offset="0" stop-color="#c99b4e"/><stop offset="1" stop-color="#ecd297"/></linearGradient>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#11271f"/><stop offset="1" stop-color="#071018"/></linearGradient>
+</defs><rect x="1" y="1" width="62" height="62" rx="15" fill="url(#bg)" stroke="#34d59a" stroke-opacity=".3" stroke-width="1.5"/><path d="M20 13 V43 A7 7 0 0 0 27 50 H35" fill="none" stroke="url(#lg)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 50 C42.5 50 46 45.5 46 38.5 V31" fill="none" stroke="url(#gd)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M40.2 34 L46 27.2 L51.8 34" fill="none" stroke="url(#gd)" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
