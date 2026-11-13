@@ -200,8 +200,16 @@ ${dataNote}`;
 function hub() {
   const url = 'https://loansflow.loan/research/', title = 'LoansFlow Research: SBA Loan Data';
   const desc = 'Original analysis of SBA 7(a) loan data by year, state, industry and lender, rebuilt from SBA public files as they update.';
-  const body = `<h1>${title}</h1>${disclaimer}<p>Original analysis built from the SBA&rsquo;s public loan-level data, rebuilt whenever SBA posts a new quarterly file. The current data is as of <strong>${asOf}</strong>.</p>
-<ul><li><a href="/research/sba-7a-loan-data">SBA 7(a) loan data study</a>: volume, loan size, rates, industries and lenders, FY${Y10[0].fy}&ndash;FY${L.fy}</li><li><a href="/research/sba-7a-by-state/">SBA 7(a) loans by state</a>: ${eligible.length} states and territories</li></ul>`;
+  const topState = eligible.slice().sort((x, y) => stateTotals[y].latest.usd - stateTotals[x].latest.usd)[0], ts = stateTotals[topState].latest;
+  const body = `<h1>${title}</h1>${disclaimer}
+<div class="lf-answer"><strong>Short answer:</strong> LoansFlow turns the SBA&rsquo;s public loan-level data into plain-English pages: how many 7(a) loans are approved, how large they are, which industries and states get them and which lenders make them. In fiscal year ${L.fy} the data shows ${int(L.n)} approvals totaling ${usdL(L.usd)}, with a median loan of ${usdS(L.med)} (data as of ${asOf}).</div>
+<p>Everything here is rebuilt automatically from the SBA&rsquo;s own files whenever SBA posts a new quarterly update, so the numbers do not go stale. Each page states its source, its definitions and its date.</p>
+<h2>What is here</h2>
+<ul><li><a href="/research/sba-7a-loan-data">SBA 7(a) loan data study</a>: volume, loan size, interest rates, industries and the most active lenders, FY${Y10[0].fy}&ndash;FY${L.fy}.</li><li><a href="/research/sba-7a-by-state/">SBA 7(a) loans by state</a>: ${eligible.length} states and territories, each with its own trend, industry mix and top lenders. ${esc(stName(topState))} had the most dollars approved in FY${L.fy} (${usdL(ts.usd)} across ${int(ts.n)} loans).</li><li><a href="/data/sba-7a-foia.json">The summary data as JSON</a>, free to reuse with attribution. It contains only totals, with no borrower names or individual loans.</li></ul>
+<h2>Questions this data helps answer</h2>
+<ul><li>How big is a typical 7(a) loan, and how much does the average overstate it? See the <a href="/research/sba-7a-loan-data">study</a>.</li><li>Where does my state rank, and which industries get funded there? Start with the <a href="/research/sba-7a-by-state/">state pages</a>.</li><li>What do borrowers actually pay compared with the SBA maximum? Compare the study with the <a href="/loans/sba-7a-rates">current maximum rates</a>.</li><li>Which lenders are active for my kind of project? The state pages list the most active ones; then read <a href="/guides/choosing-lender">how to choose a lender</a>.</li></ul>
+<h2>How to use it and what it cannot tell you</h2>
+<p>Use these pages to set expectations and to see how your request compares with others. Approvals are not a forecast of whether a particular application will be approved, the rates shown are initial rates recorded at approval and not quotes, and dollar amounts are not adjusted for inflation. To test your own numbers, use the <a href="/calculators/sba-7a">SBA 7(a) calculator</a> and the <a href="/calculators/dscr">DSCR calculator</a>.</p>`;
   write('research/index.html', page({ url, title: `${title} | LoansFlow`, desc, crumbs: [['Home', '/'], ['Research']], body, ld: [{ '@type': 'CollectionPage', name: title, description: desc, url }] }));
 }
 
