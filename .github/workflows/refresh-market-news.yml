@@ -40,6 +40,8 @@ jobs:
           python3 scripts/build-resources.py
           node scripts/sync-asof.js
           node scripts/prerender-calcs.js
+          node scripts/build-clusters.js
+          python3 scripts/make-site-index.py
           node scripts/build-llms.js
           node scripts/build-sitemap.js
       - name: Check SBA policy and page figures agree (warns on drift)
