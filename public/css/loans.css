@@ -321,7 +321,7 @@
 .lf-cc[hidden] { display: none; }
 .lf-cc:hover, .lf-cc:focus-visible { background: var(--surface-hover); }
 .lf-cc-ico { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: 12px; background: rgba(52, 213, 154, 0.06); }
-.lf-cc-ico .ico { width: 26px; height: 26px; }
+.lf-cc-ico .ico { width: 31px; height: 31px; }
 .lf-cc-tag { position: absolute; top: 1.5rem; right: 1.4rem; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .lf-cc h3 { margin: 0.5rem 0 0; font-size: 1.1rem; line-height: 1.3; }
 .lf-cc p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; flex: 1; }

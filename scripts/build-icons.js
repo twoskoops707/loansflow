@@ -69,8 +69,8 @@ const svgOf = (n) => `<svg class="ico" viewBox="0 0 48 48" xmlns="http://www.w3.
 const ip = path.join(PUB, 'calculators', 'index.html'); let h = fs.readFileSync(ip, 'utf8'), n = 0;
 h = h.replace(/(<a class="lf-cc" href="(\/calculators\/[a-z0-9-]+)"[^>]*><span class="lf-cc-ico">)<svg[\s\S]*?<\/svg>(<\/span>)/g, (m, a, href, z) => MAP[href] ? (n++, a + svgOf(MAP[href]) + z) : m);
 const cards = [...h.matchAll(/<a class="lf-cc" href="[^"]+" data-cat="([a-z]+)"/g)].map((m) => m[1]), total = cards.length, by = (c) => cards.filter((x) => x === c).length;
-h = h.replace(/(<button type="button" class="lf-chipbtn is-on" data-f="all">All\s*<span[^>]*>)\d+(<\/span>)/, `$1${total}$2`).replace(/(data-f="sba">SBA and business\s*<span[^>]*>)\d+(<\/span>)/, `$1${by('sba')}$2`)
-  .replace(/(data-f="credit">Credit and equipment\s*<span[^>]*>)\d+(<\/span>)/, `$1${by('credit')}$2`).replace(/(data-f="home">Property and home\s*<span[^>]*>)\d+(<\/span>)/, `$1${by('home')}$2`)
+h = h.replace(/(<button type="button" class="lf-chipbtn is-on" data-f="all">All\s*<b>)\d+(<\/b>)/, `$1${total}$2`).replace(/(data-f="sba">SBA and business\s*<b>)\d+(<\/b>)/, `$1${by('sba')}$2`)
+  .replace(/(data-f="credit">Credit and equipment\s*<b>)\d+(<\/b>)/, `$1${by('credit')}$2`).replace(/(data-f="home">Property and home\s*<b>)\d+(<\/b>)/, `$1${by('home')}$2`)
   .replace(/\b\d+ free tools for SBA/, `${total} free tools for SBA`);
 fs.writeFileSync(ip, h);
 console.log(`icon map written (${Object.keys(I).length} icons, ${Object.keys(MAP).length} mapped pages); ${n} calculator cards re-iconed; counts: all ${total}, sba ${by('sba')}, credit ${by('credit')}, home ${by('home')}`);
