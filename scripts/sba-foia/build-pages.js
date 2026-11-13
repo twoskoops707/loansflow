@@ -33,7 +33,7 @@ const published = (() => { // first build date, kept so datePublished never move
 })();
 
 /* ---------- charts (static inline SVG, theme variables, with a data table next to each) ---------- */
-function niceMax(v) { const p = Math.pow(10, Math.floor(Math.log10(v))); const f = v / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p; }
+function niceMax(v) { const raw = v / 4, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p; return [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find((x) => x >= f - 1e-9) * p * 4; }
 function axisFmt(v, kind) { return kind === 'usd' ? (v >= 1e9 ? `$${+(v / 1e9).toFixed(1)}B` : v >= 1e6 ? `$${+(v / 1e6).toFixed(1)}M` : v >= 1e3 ? `$${+(v / 1e3).toFixed(0)}K` : '$' + v) : kind === 'pct' ? v + '%' : int(v); }
 function barChart(id, title, desc, rows, kind) {
   const w = 720, h = 300, l = 62, r = 10, t = 14, b = 38, pw = w - l - r, ph = h - t - b;

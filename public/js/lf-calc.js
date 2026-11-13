@@ -401,7 +401,7 @@
         fields: [
           f('advance', 'Advance amount', 50000, { prefix: '$', step: 1000 }), f('factor', 'Factor rate', 1.35, { step: 0.01, hint: 'Payback = advance x factor. Example only; use the rate in your offer' }),
           f('n', 'Number of payments', 130, { step: 1, hint: 'About 125 to 130 business days is roughly six months of daily payments' }),
-          sel('freq', 'Payment frequency', 'daily', [['daily', 'Daily (business days, 250 a year)'], ['weekly', 'Weekly (52 a year)']]),
+          sel('freq', 'Payment frequency', 'daily', [['daily', 'Daily (business days)'], ['weekly', 'Weekly']]),
           f('fees', 'Fees taken from the advance', 0, { suffix: '% of advance', step: 0.5, hint: 'Origination or underwriting fees, if any' })
         ],
         run: function (v) {
