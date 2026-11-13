@@ -67,7 +67,7 @@
     let p = null;
     if (typeof window !== 'undefined' && window.LF_POLICY) p = window.LF_POLICY;
     else if (typeof require !== 'undefined') { try { p = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'sba-policy.json'), 'utf8')); } catch (e) { p = null; } }
-    return p || { sba7a: { guaranty: { smallLoanMax: 150000, smallLoanPct: 85, largeLoanPct: 75 }, upfrontFee: { tiers: [{ upToLoan: 150000, pctOfGuaranteed: 2 }, { upToLoan: 700000, pctOfGuaranteed: 3 }], above: { firstGuaranteed: 1000000, pctFirst: 3.5, pctRest: 3.75 }, waiver: { maxLoan: 700000 } }, lenderAnnualServiceFeePct: 0.55, maxSpreadOverBase: [{ upToLoan: 50000, pct: 6.5 }, { upToLoan: 250000, pct: 6 }, { upToLoan: 350000, pct: 4.5 }, { upToLoan: null, pct: 3 }] }, sba504: { upfrontPct: 0.5, annualPct: 0.203, bankPct: 50, equityPct: 10, newBusinessExtraPct: 5, specialPurposeExtraPct: 5 } };
+    return p || { fiscalYear: 2027, effective: '2026-10-01', sba7a: { guaranty: { smallLoanMax: 150000, smallLoanPct: 85, largeLoanPct: 75 }, upfrontFee: { tiers: [{ upToLoan: 150000, pctOfGuaranteed: 2 }, { upToLoan: 700000, pctOfGuaranteed: 3 }], above: { firstGuaranteed: 1000000, pctFirst: 3.5, pctRest: 3.75 }, waiver: { maxLoan: 700000 } }, lenderAnnualServiceFeePct: 0.55, prepayment: { minMaturityYears: 15, windowYears: 3, thresholdPctOfBalance: 25, pctOfAmountPrepaidByYear: [5, 3, 1] }, maxSpreadOverBase: [{ upToLoan: 50000, pct: 6.5 }, { upToLoan: 250000, pct: 6 }, { upToLoan: 350000, pct: 4.5 }, { upToLoan: null, pct: 3 }] }, sba504: { upfrontPct: 0.5, annualPct: 0.203, bankPct: 50, equityPct: 10, newBusinessExtraPct: 5, specialPurposeExtraPct: 5 } };
   })();
   LF.policy = POLICY;
   LF.sba7aFee = function (loanAmount, guarantyPct, waived) {
@@ -80,6 +80,33 @@
         : Math.min(guaranteed, f.above.firstGuaranteed) * f.above.pctFirst / 100 + Math.max(0, guaranteed - f.above.firstGuaranteed) * f.above.pctRest / 100;
     }
     return { guaranteed, fee, annualLenderFee: guaranteed * POLICY.sba7a.lenderAnnualServiceFeePct / 100 };
+  };
+
+
+  /** Merchant cash advance: factor-rate cost and an estimated APR. net = advance minus fees; n equal payments of payback/n; r solves PV(payments) = net. */
+  LF.mcaCost = function (advance, factor, n, perYear, feePct) {
+    const payback = advance * factor, fees = advance * (feePct || 0) / 100, net = advance - fees, pay = n > 0 ? payback / n : 0;
+    let lo = 0, hi = 5;
+    for (let i = 0; i < 200; i++) { const mid = (lo + hi) / 2, pv = mid === 0 ? pay * n : pay * (1 - Math.pow(1 + mid, -n)) / mid; if (pv > net) lo = mid; else hi = mid; }
+    const r = (lo + hi) / 2;
+    return { payback, fees, net, payment: pay, cost: payback - net, periodicRate: r, apr: r * perYear * 100, effectiveApr: (Math.pow(1 + r, perYear) - 1) * 100 };
+  };
+  /** Largest loan whose level payments fit inside an annual debt-service budget. */
+  LF.maxLoan = function (annualDebtService, ratePct, years) {
+    const r = ratePct / 1200, n = Math.round(years * 12), p = annualDebtService / 12;
+    return n <= 0 || p <= 0 ? 0 : r === 0 ? p * n : p * (1 - Math.pow(1 + r, -n)) / r;
+  };
+  /** SBA 7(a) prepayment fee (policy: sba7a.prepayment): loans with maturity >= 15 years, prepaid in years 1-3, when the prepayment is >= 25% of the balance. */
+  LF.sba7aPrepayFee = function (prepay, balance, maturityYears, loanYear) {
+    const q = POLICY.sba7a.prepayment, share = balance > 0 ? prepay / balance * 100 : 0;
+    const applies = maturityYears >= q.minMaturityYears && loanYear >= 1 && loanYear <= q.windowYears && share >= q.thresholdPctOfBalance;
+    const pct = applies ? q.pctOfAmountPrepaidByYear[Math.floor(loanYear) - 1] : 0;
+    return { applies, share, pct, fee: prepay * pct / 100 };
+  };
+  /** Months to repay `balance` at `ratePct` with a fixed monthly payment (Infinity if the payment never covers interest). */
+  LF.monthsToPayOff = function (balance, ratePct, payment) {
+    const r = ratePct / 1200; if (balance <= 0) return 0; if (payment <= balance * r) return Infinity;
+    return r === 0 ? Math.ceil(balance / payment) : Math.ceil(-Math.log(1 - balance * r / payment) / Math.log(1 + r));
   };
 
   /** Maximum spread over the base rate for variable-rate 7(a) loans (sba.gov). */

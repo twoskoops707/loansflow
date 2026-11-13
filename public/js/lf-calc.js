@@ -364,7 +364,150 @@
             charts: [CH.gauge('Debt service coverage', c)] };
         }
       };
-    }
+    },
+
+    sbafee: function () {
+      return {
+        title: 'SBA 7(a) guarantee fee calculator',
+        fields: [
+          f('amount', 'Loan amount', 350000, { prefix: '$', step: 10000 }),
+          f('gp', 'SBA guarantee', LF.sba7aDefaultGuaranty(350000), { suffix: '%', step: 1, hint: 'Standard 7(a) guarantee for this size; Express loans are 50%' }),
+          sel('waived', 'Qualifies for the fee waiver?', 'no', YN),
+          sel('finFee', 'Roll the fee into the loan?', 'no', YN)
+        ],
+        run: function (v) {
+          var P = LF.policy.sba7a, w = v.waived === 'yes', r = LF.sba7aFee(v.amount, Math.min(v.gp, 100), w), notes = [];
+          var tier = P.upfrontFee.tiers.filter(function (x) { return v.amount <= x.upToLoan; })[0];
+          notes.push(w && v.amount <= P.upfrontFee.waiver.maxLoan ? 'The upfront fee is waived for qualifying loans of ' + money(P.upfrontFee.waiver.maxLoan) + ' or less (for example some manufacturers and rural businesses); confirm eligibility with your lender.' :
+            tier ? 'The upfront fee is ' + num(tier.pctOfGuaranteed, 2) + '% of the guaranteed portion for loans up to ' + money(tier.upToLoan) + '.' :
+            'Above ' + money(P.upfrontFee.tiers[P.upfrontFee.tiers.length - 1].upToLoan) + ' the fee is ' + num(P.upfrontFee.above.pctFirst, 2) + '% of the guaranteed portion up to ' + money(P.upfrontFee.above.firstGuaranteed) + ' plus ' + num(P.upfrontFee.above.pctRest, 2) + '% of any guaranteed amount above that.');
+          notes.push('The lender pays the SBA annual service fee (' + num(P.lenderAnnualServiceFeePct, 2) + '% of the guaranteed balance) and may not pass it on to you.');
+          notes.push('Fee schedule: SBA fiscal year ' + LF.policy.fiscalYear + ', effective ' + LF.policy.effective + '. Estimate only.');
+          var total = v.finFee === 'yes' ? v.amount + r.fee : v.amount;
+          return {
+            head: ['Upfront guarantee fee', money(r.fee, 2)],
+            rows: [['Guaranteed portion', money(r.guaranteed)], ['Fee as a share of the loan', num(v.amount ? r.fee / v.amount * 100 : 0, 2) + '%'], ['Lender annual service fee (not charged to you)', money(r.annualLenderFee, 2)],
+              ['Loan balance including the fee', money(total, 2)], ['Cash due at closing for the fee', v.finFee === 'yes' ? '$0' : money(r.fee, 2)]],
+            notes: notes,
+            charts: [CH.stack('Loan and fee', [{ label: 'Loan amount', value: v.amount }, { label: 'Upfront fee', value: r.fee }])]
+          };
+        }
+      };
+    },
+
+    mca: function () {
+      return {
+        title: 'True cost of a merchant cash advance (factor rate to APR)',
+        fields: [
+          f('advance', 'Advance amount', 50000, { prefix: '$', step: 1000 }), f('factor', 'Factor rate', 1.35, { step: 0.01, hint: 'Payback = advance x factor. Example only; use the rate in your offer' }),
+          f('n', 'Number of payments', 130, { step: 1, hint: 'About 125 to 130 business days is roughly six months of daily payments' }),
+          sel('freq', 'Payment frequency', 'daily', [['daily', 'Daily (business days, 250 a year)'], ['weekly', 'Weekly (52 a year)']]),
+          f('fees', 'Fees taken from the advance', 0, { suffix: '% of advance', step: 0.5, hint: 'Origination or underwriting fees, if any' })
+        ],
+        run: function (v) {
+          var py = v.freq === 'weekly' ? 52 : 250, c = LF.mcaCost(v.advance, v.factor, v.n, py, v.fees);
+          return {
+            head: ['Estimated APR', num(c.apr, 0) + '%'],
+            rows: [['Total you repay', money(c.payback)], ['Total cost of the advance', money(c.cost)], ['Cost as a share of the advance', num(v.advance ? c.cost / v.advance * 100 : 0, 1) + '%'],
+              ['Payment each ' + (v.freq === 'weekly' ? 'week' : 'business day'), money(c.payment, 2)], ['Cash you actually receive', money(c.net)], ['Same rate compounded for a year', num(c.effectiveApr, 0) + '%']],
+            notes: ['A factor rate is a flat multiple, not an interest rate. Because you repay a little every payment, the money is outstanding for only part of the term, so the annualized rate is much higher than the factor suggests.',
+              'APR here is the periodic rate that makes the payments equal the cash received, times payments per year. Paying early usually does not reduce the amount owed.', 'Estimate for comparison with other financing, not an offer or a legal APR disclosure.'],
+            charts: [CH.stack('Where each repaid dollar goes', [{ label: 'Cash received', value: c.net }, { label: 'Cost', value: c.cost }])]
+          };
+        }
+      };
+    },
+
+    gdscr: function () {
+      return {
+        title: 'Global and add-back DSCR calculator',
+        fields: [
+          f('ni', 'Business net income (after owner pay)', 150000, { prefix: '$', step: 1000 }), f('int', 'Interest expense', 20000, { prefix: '$', step: 1000 }),
+          f('da', 'Depreciation and amortization', 25000, { prefix: '$', step: 1000 }), f('addb', 'Other add-backs (one-time or personal expenses)', 15000, { prefix: '$', step: 1000, hint: 'Only items you can document' }),
+          f('bds', 'Business debt service (existing + proposed)', 110000, { prefix: '$', step: 1000 }),
+          f('wage', 'Owner pay taken from the business', 90000, { prefix: '$', step: 1000 }), f('other', 'Other personal income', 40000, { prefix: '$', step: 1000 }),
+          f('tax', 'Personal income taxes', 30000, { prefix: '$', step: 1000 }), f('live', 'Living expenses', 60000, { prefix: '$', step: 1000 }),
+          f('pds', 'Personal debt payments (mortgage, loans)', 24000, { prefix: '$', step: 1000 })
+        ],
+        run: function (v) {
+          var bcf = v.ni + v.int + v.da + v.addb, bd = LF.dscr(bcf, v.bds), gcf = bcf + v.wage + v.other - v.tax - v.live, gds = v.bds + v.pds, gd = LF.dscr(gcf, gds);
+          return {
+            head: ['Global DSCR', num(gd, 2) + 'x'],
+            rows: [['Business cash flow (adjusted)', money(bcf)], ['Business DSCR', num(bd, 2) + 'x'], ['Global cash flow after taxes and living costs', money(gcf)], ['Total debt service (business + personal)', money(gds)], ['Cushion above debt service', money(gcf - gds)]],
+            notes: [gd >= 1.25 ? 'Global DSCR meets the 1.25x level many lenders look for.' : 'Global DSCR is below the 1.25x level many lenders look for.',
+              'Add-backs only help if you can document them. Owner pay is added back in the global view because it is also personal income.', 'Lender methods differ; some use a different treatment of taxes and living expenses.'],
+            charts: [CH.gauge('Global DSCR', gd)]
+          };
+        }
+      };
+    },
+
+    affordloan: function () {
+      return {
+        title: 'How much business loan can I afford? (from your P&L)',
+        fields: [
+          f('ni', 'Net income', 120000, { prefix: '$', step: 1000 }), f('int', 'Interest expense', 10000, { prefix: '$', step: 1000 }), f('da', 'Depreciation and amortization', 15000, { prefix: '$', step: 1000 }),
+          f('addb', 'Documented add-backs', 10000, { prefix: '$', step: 1000 }), f('exist', 'Existing yearly debt payments', 36000, { prefix: '$', step: 1000, hint: 'Principal and interest on loans you already have' }),
+          f('dscr', 'Coverage lenders want', 1.25, { suffix: 'x', step: 0.05 }), f('rate', 'Interest rate', livePrime ? livePrime + 2.75 : 9.75, { suffix: '%', step: 0.05, hint: 'Example rate; use your lender\'s quote' }), f('years', 'Term', 10, { suffix: 'years', step: 1 })
+        ],
+        run: function (v) {
+          var cf = v.ni + v.int + v.da + v.addb, room = function (d) { return Math.max(0, cf / d - v.exist); }, ds = room(v.dscr), loan = LF.maxLoan(ds, v.rate, v.years);
+          var rows = [['Cash flow before debt payments', money(cf)], ['Yearly payment room for a new loan', money(ds)], ['Monthly payment at that size', money(ds / 12, 2)]];
+          [1.15, 1.35, 1.5].forEach(function (d) { rows.push(['Largest loan at ' + num(d, 2) + 'x coverage', money(LF.maxLoan(room(d), v.rate, v.years))]); });
+          return {
+            head: ['Largest loan at ' + num(v.dscr, 2) + 'x', money(loan)], rows: rows,
+            notes: ['Cash flow = net income + interest + depreciation and amortization + add-backs. Existing debt payments reduce how much room is left.', 'Lenders also weigh collateral, credit and your industry, so treat this as a ceiling to discuss, not an approval.'],
+            charts: [CH.stack('Cash flow split at the target coverage', [{ label: 'Existing debt', value: Math.min(v.exist, cf / v.dscr) }, { label: 'Room for new loan', value: ds }, { label: 'Cushion', value: Math.max(0, cf - cf / v.dscr) }])]
+          };
+        }
+      };
+    },
+
+    prepay: function () {
+      return {
+        title: 'Prepayment penalty estimator',
+        fields: [
+          sel('mode', 'Loan type', 'sba7a', [['sba7a', 'SBA 7(a) (SBA rule)'], ['custom', 'Other loan (enter the penalty %)']]),
+          f('balance', 'Current balance', 400000, { prefix: '$', step: 5000 }), f('pay', 'Amount you want to prepay', 150000, { prefix: '$', step: 5000 }),
+          f('mat', 'Original loan term', 25, { suffix: 'years', step: 1 }), f('yr', 'Year of the loan you prepay in', 2, { step: 1, hint: '1 = first 12 months' }),
+          f('cust', 'Penalty for other loans', 3, { suffix: '% of amount prepaid', step: 0.5 }), f('rate', 'Interest rate', 9.5, { suffix: '%', step: 0.05 }), f('left', 'Years left before prepaying', 24, { suffix: 'years', step: 1 })
+        ],
+        run: function (v) {
+          var s = LF.sba7aPrepayFee(v.pay, v.balance, v.mat, v.yr), fee = v.mode === 'sba7a' ? s.fee : v.pay * v.cust / 100, q = LF.policy.sba7a.prepayment;
+          var pmt = LF.pmt(v.balance, v.rate, v.left), m0 = Math.round(v.left * 12), m1 = LF.monthsToPayOff(Math.max(0, v.balance - v.pay), v.rate, pmt);
+          var saved = isFinite(m1) ? pmt * m0 - pmt * Math.min(m1, m0) - v.pay : 0, notes = [];
+          if (v.mode === 'sba7a') notes.push(s.applies ? 'The SBA rule applies: the loan term is ' + q.minMaturityYears + ' years or more, you prepay within the first ' + q.windowYears + ' years, and the prepayment is ' + q.thresholdPctOfBalance + '% or more of the balance. The fee is ' + q.pctOfAmountPrepaidByYear.join('%, ') + '% of the amount prepaid in years 1, 2 and 3.' :
+            'The SBA fee does not apply here: it needs a term of ' + q.minMaturityYears + '+ years, a prepayment in the first ' + q.windowYears + ' years, and at least ' + q.thresholdPctOfBalance + '% of the balance prepaid. Your note may still have its own terms.');
+          notes.push('Interest saved assumes you keep the same payment and finish early. Check your note for the actual prepayment terms.');
+          return {
+            head: ['Estimated prepayment fee', money(fee, 2)],
+            rows: [['Prepayment as a share of the balance', num(v.balance ? v.pay / v.balance * 100 : 0, 1) + '%'], ['Fee as a share of the amount prepaid', num(v.pay ? fee / v.pay * 100 : 0, 1) + '%'],
+              ['Interest saved by finishing early', money(Math.max(0, saved))], ['Savings after the fee', money(saved - fee)], ['Months left after prepaying', isFinite(m1) ? num(Math.min(m1, m0), 0) : 'n/a']],
+            notes: notes
+          };
+        }
+      };
+    },
+
+    sde: function () {
+      return {
+        title: 'Business valuation from seller discretionary earnings (SDE)',
+        fields: [
+          f('ni', 'Net profit', 110000, { prefix: '$', step: 1000 }), f('sal', 'Owner salary', 70000, { prefix: '$', step: 1000 }), f('perk', 'Owner perks run through the business', 12000, { prefix: '$', step: 500 }),
+          f('int', 'Interest expense', 8000, { prefix: '$', step: 500 }), f('da', 'Depreciation and amortization', 14000, { prefix: '$', step: 500 }), f('one', 'One-time expenses', 6000, { prefix: '$', step: 500, hint: 'Documented, non-recurring only' }),
+          f('lo', 'Low multiple', 2, { suffix: 'x SDE', step: 0.1, hint: 'Illustrative. Use multiples from comparable sales' }), f('mid', 'Middle multiple', 2.5, { suffix: 'x SDE', step: 0.1 }), f('hi', 'High multiple', 3, { suffix: 'x SDE', step: 0.1 })
+        ],
+        run: function (v) {
+          var sde = v.ni + v.sal + v.perk + v.int + v.da + v.one;
+          return {
+            head: ['Seller discretionary earnings', money(sde)],
+            rows: [['Value at ' + num(v.lo, 1) + 'x', money(sde * v.lo)], ['Value at ' + num(v.mid, 1) + 'x', money(sde * v.mid)], ['Value at ' + num(v.hi, 1) + 'x', money(sde * v.hi)], ['Add-backs on top of net profit', money(sde - v.ni)]],
+            notes: ['SDE = net profit + owner salary + owner perks + interest + depreciation and amortization + one-time expenses. It shows what one owner-operator earns before paying themselves.', 'Multiples vary by industry, size and risk. The defaults are placeholders, not market data. A lender will test the price against cash flow after a market salary for the operator.'],
+            charts: [CH.stack('Where SDE comes from', [{ label: 'Net profit', value: Math.max(0, v.ni) }, { label: 'Owner salary and perks', value: v.sal + v.perk }, { label: 'Interest, D&A, one-time', value: v.int + v.da + v.one }])]
+          };
+        }
+      };
+    },
   };
 
   /* Thousands separators: "1234567.5" -> "1,234,567.5" (digits and one decimal point only). */

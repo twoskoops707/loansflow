@@ -20,7 +20,7 @@ for (const loan of [50000, 150000, 150001, 350000, 700000, 700001, 1200000, 5000
 const ctx = { module: { exports: {} }, console }; ctx.window = undefined;
 vm.runInNewContext(fs.readFileSync(path.join(PUB, 'js', 'lf-math.js'), 'utf8').replace(/typeof require !== 'undefined'/g, 'false'), ctx);
 const D = (ctx.module.exports.policy || (ctx.LF && ctx.LF.policy) || {});
-if (D.sba7a) { for (const k of ['guaranty', 'upfrontFee', 'lenderAnnualServiceFeePct', 'maxSpreadOverBase']) eq('fallback ' + k, D.sba7a[k], P.sba7a[k]); eq('fallback 504', D.sba504, P.sba504); }
+if (D.sba7a) { eq('fallback fiscalYear', D.fiscalYear, P.fiscalYear); eq('fallback effective', D.effective, P.effective); for (const k of ['guaranty', 'upfrontFee', 'lenderAnnualServiceFeePct', 'maxSpreadOverBase']) eq('fallback ' + k, D.sba7a[k], P.sba7a[k]); eq('fallback 504', D.sba504, P.sba504); }
 else { checks++; fails++; console.log('FAIL could not read fallback policy from lf-math.js'); }
 // 3. prose on the site
 const money = (n) => '$' + n.toLocaleString('en-US');
