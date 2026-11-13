@@ -32,7 +32,7 @@ news = menu('News &amp; rates', '/news/', [
   entry('/loans/sba-7a#rates', 'SBA maximum rates', 'Prime plus the SBA spread, by loan size'),
   entry('/calculators/mortgage-payment', 'Mortgage payment calculator', 'Starts from the latest weekly average'),
   entry('/methodology', 'How we source rates', 'FRED, Freddie Mac and SBA notices')])
-about = menu('About', '/about.html', [
+about = menu('About', '/about', [
   entry('/about', 'About LoansFlow', 'What we do and what we are not'),
   entry('/author', 'About the author', 'Joshua Miller, CPA'),
   entry('/editorial-policy', 'Editorial policy', 'How we check and date our facts'),
