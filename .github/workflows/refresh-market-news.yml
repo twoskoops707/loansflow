@@ -34,6 +34,9 @@ jobs:
           node scripts/sync-asof.js
           node scripts/prerender-calcs.js
           node scripts/build-sitemap.js
+      - name: Check SBA policy and page figures agree (warns on drift)
+        continue-on-error: true
+        run: node tests/verify-policy.js
       - name: Commit if changed
         run: |
           if git diff --quiet -- public; then
