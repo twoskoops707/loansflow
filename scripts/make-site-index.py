@@ -39,7 +39,7 @@ head = re.sub(r'(<meta property="og:title" content=")[^"]*"', lambda m: m.group(
 head = re.sub(r'(<meta property="og:description" content=")[^"]*"', lambda m: m.group(1) + D + '"', head)
 head = re.sub(r'(<meta property="og:url" content=")[^"]*"', r'\1https://loansflow.loan/site-index"', head)
 head = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>\s*', '', head)
-main = ('<main class="legal-page">\n    <h1>Site directory</h1>\n    <p>Every page on LoansFlow, grouped by topic. Looking for a phone number or an office near you? Use the '
+main = ('<main id="main" class="legal-page">\n    <h1>Site directory</h1>\n    <p>Every page on LoansFlow, grouped by topic. Looking for a phone number or an office near you? Use the '
         '<a href="/directory/">SBA office and lender phone directory</a>, which is a separate page.</p>\n    <p><a href="/">Home</a></p>\n    ' + '\n    '.join(out) + '\n  </main>')
 (PUB / 'site-index.html').write_text(head + main + tail)
 print('site-index.html:', len(pages), 'pages')
