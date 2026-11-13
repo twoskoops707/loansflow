@@ -1,27 +1,27 @@
-# Graph Report - site-redesign  (2026-11-11)
+# Graph Report - site-redesign  (2026-11-13)
 
 ## Corpus Check
-- 110 files · ~287,924 words
+- 149 files · ~625,950 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 10 file(s) not represented in the graph (top: (none) 5, .css 2, .ico 1)
+- Unclassified: 11 file(s) not represented in the graph (top: (none) 5, .css 2, .jsonl 1)
 
 ## Summary
-- 836 nodes · 1263 edges · 72 communities (62 shown, 10 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.84)
+- 1152 nodes · 1757 edges · 92 communities (75 shown, 17 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 64 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ab6bb4c5`
+- Built from commit: `cd4a5f92`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Guides and Calculator Help
 - Ad and Affiliate Legal Terms
-- Browser Automation Utilities
+- decrypt_chrome_pw.py
 - Site Architecture and Ops Docs
 - AdSense Check Scripts
-- Tools Wizard Engine (app.js)
+- build-pages.js
 - Graft Hooks
 - Embeddable Calculators (lf-calc)
 - Mortgage and Amortization Math
@@ -49,7 +49,7 @@
 - ezoic-signup.js
 - ads.js
 - porkbun-create-account.js
-- playwright
+- google-session.js
 - adsense-push-ads-now.js
 - ezoic-export-snippet.js
 - ezoic-setup.js
@@ -68,7 +68,7 @@
 - adsense-verify.js
 - buy-domain.js
 - buy-domain-checkout.js
-- buy-domain-finish.js
+- playwright
 - extract-adsense-snippets.js
 - map-loansflow.js
 - offers.js
@@ -78,26 +78,45 @@
 - All slots unfilled: site approval and unit IDs
 - deploy-pages-wsl.sh
 - build-affiliate-redirects.js
-- make-author-page.js
+- verify-policy.js
 - Content audit and open items (2026-11-11)
 - grants.js
 - phase2-sba7a.js
 - Affiliate follow-up kit (2026-11-02)
 - api/subscribe.js
+- prerender-calcs.js
+- build-rates-tracker.js
+- build-resources.py
+- html
+- pathlib
+- make-new-calc-pages.js
+- verify-ui.js
+- build-clusters.js
+- build-llms.js
+- aggregate.py
+- serve-preview.py
+- json
+- Affiliate application pack (2026-11-11)
+- _make_logo_assets.py
+- rates-widget.js
+- apply-site-config.js
+- fetch.py
 
 ## God Nodes (most connected - your core abstractions)
 1. `playwright` - 40 edges
-2. `LF` - 22 edges
-3. `Guides Index` - 15 edges
-4. `Calculator Help: Using Every LoansFlow Tool` - 14 edges
-5. `LoansFlow homepage` - 14 edges
-6. `Loan Glossary` - 13 edges
-7. `How our numbers work (methodology)` - 13 edges
-8. `Loan Documents: What Lenders Ask For, by Loan Type` - 12 edges
-9. `SBA 7(a) 10-Step Playbook` - 11 edges
-10. `LoansFlow Calculators Page (wizard shell)` - 11 edges
+2. `LF` - 26 edges
+3. `study()` - 20 edges
+4. `statePage()` - 17 edges
+5. `Guides Index` - 14 edges
+6. `LoansFlow homepage` - 14 edges
+7. `Loan Glossary` - 13 edges
+8. `How our numbers work (methodology)` - 13 edges
+9. `Calculator Help: Using Every LoansFlow Tool` - 11 edges
+10. `Loan Documents: What Lenders Ask For, by Loan Type` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `clickText()` --indirect_call--> `page()`  [INFERRED]
+  tools/browser/ezoic-capture-snippet.js → scripts/sba-foia/build-pages.js
 - `graft skill (ask, grep, skeleton, callers, map)` --semantically_similar_to--> `graft skill (agents copy)`  [INFERRED] [semantically similar]
   .claude/skills/graft/SKILL.md → .agents/skills/graft/SKILL.md
 - `Static multi-page plus tools SPA architecture` --references--> `ads.txt (AdSense pub-6588738221262894)`  [EXTRACTED]
@@ -106,8 +125,6 @@
   AGENTS.md → .claude/skills/graft/SKILL.md
 - `params()` --indirect_call--> `start()`  [INFERRED]
   public/js/grants.js → public/js/lf-calc.js
-- `Marketplace and Broker Directory (Lendio, Fundera, Nav, etc.)` --semantically_similar_to--> `offers.js affiliate offers renderer`  [INFERRED] [semantically similar]
-  public/guides/choosing-lender.html → public/tools/index.html
 
 ## Import Cycles
 - None detected.
@@ -122,47 +139,47 @@
 - **Monetization documents** — docs_legal_rate_card, docs_legal_publisher_terms_short_form, public_ads, docs_superpowers_specs_2026_07_29_loansflow_design_monetization_path [INFERRED 0.85]
 - **AdSense plus affiliate monetization** — claude_md_public_js_ads, claude_md_public_js_offers, docs_ads_adsense_unit_map, docs_monetize_hold_policy, readme_ads_txt [INFERRED 0.85]
 
-## Communities (72 total, 10 thin omitted)
+## Communities (92 total, 17 thin omitted)
 
 ### Community 0 - "Guides and Calculator Help"
 Cohesion: 0.05
-Nodes (74): Business Plan and Projections Lenders Want to See, Financial Projections with Stated Assumptions, Sources and Uses of Funds table, Calculator Help: Using Every LoansFlow Tool, Calculator Step 0: SBA and Commercial Loan, Calculator Step 1: Commercial Amortization, Calculator Step 2: Line of Credit, Calculator Step 3: Mortgage Loan Details (+66 more)
+Nodes (69): Business Plan and Projections Lenders Want to See, Financial Projections with Stated Assumptions, Sources and Uses of Funds table, Calculator Help: Using Every LoansFlow Tool, Calculator Step 0: SBA and Commercial Loan, Calculator Step 1: Commercial Amortization, Calculator Step 2: Line of Credit, Calculator Step 3: Mortgage Loan Details (+61 more)
 
 ### Community 1 - "Ad and Affiliate Legal Terms"
 Cohesion: 0.08
 Nodes (38): LoansFlow Publisher Terms (Short-Form), FTC Endorsement Guides disclosures, LoansFlow Media / Affiliate Rate Card (placeholder), Affiliate performance models (CPL/CPA/rev share), Direct display ad units (CPM placeholders), LoansFlow Logo Options, Brand palette (ink #071018, teal #1a8f7c, brass #c9a45c), Logo Option D (editorial hybrid, shipped) (+30 more)
 
-### Community 2 - "Browser Automation Utilities"
-Cohesion: 0.07
-Nodes (14): fix(), ld(), make(), decrypt(), get_key(), main(), decrypt(), decrypt() (+6 more)
+### Community 2 - "decrypt_chrome_pw.py"
+Cohesion: 0.27
+Nodes (5): decrypt(), get_key(), main(), decrypt(), decrypt()
 
 ### Community 3 - "Site Architecture and Ops Docs"
 Cohesion: 0.07
 Nodes (34): LoansFlow static Cloudflare Pages site, functions/api/market-news.js Pages Function, public/data/market-news.json static fallback, public/js/ads.js AdSense slot loader, public/js/app.js calculator wizard, public/js/home.js homepage quick-estimate, public/js/offers.js affiliate renderer, Legacy Pages project loansflow (loansflow.pages.dev) (+26 more)
 
 ### Community 4 - "AdSense Check Scripts"
-Cohesion: 0.11
-Nodes (18): { chromium }, fs, https, OUT, path, TAG, checkPlaced(), { chromium } (+10 more)
+Cohesion: 0.06
+Nodes (32): { chromium }, fs, https, OUT, path, TAG, checkPlaced(), { chromium } (+24 more)
 
-### Community 5 - "Tools Wizard Engine (app.js)"
-Cohesion: 0.16
-Nodes (14): { chromium }, fs, https, INTERVAL_MS, loop, NOTIFIED, ntfy(), OUT (+6 more)
+### Community 5 - "build-pages.js"
+Cohesion: 0.08
+Nodes (48): article(), asOf, axisFmt(), barChart(), cfg, chg(), D, eligible (+40 more)
 
 ### Community 6 - "Graft Hooks"
 Cohesion: 0.09
 Nodes (25): best(), entry(), { execFileSync }, fromPkg(), fs, globalRoot(), newer(), path (+17 more)
 
 ### Community 7 - "Embeddable Calculators (lf-calc)"
-Cohesion: 0.10
-Nodes (15): commas(), f(), fieldHtml(), mount(), draw(), read(), parseNum(), schedHtml() (+7 more)
+Cohesion: 0.09
+Nodes (15): commas(), fieldHtml(), glossFor(), labelHtml(), mount(), draw(), read(), parseNum() (+7 more)
 
 ### Community 8 - "Mortgage and Amortization Math"
 Cohesion: 0.40
 Nodes (9): el(), initSearch(), close(), paint(), run(), loadIndex(), rates(), search() (+1 more)
 
 ### Community 9 - "Market News Refresh Pipeline"
-Cohesion: 0.17
-Nodes (16): refresh-market-news workflow (daily cron), articleFromItem(), buildPayload(), cleanSummary(), decodeXml(), deltaLabel(), __dirname, FEEDS (+8 more)
+Cohesion: 0.09
+Nodes (26): refresh-market-news workflow (daily cron), get(), OUT, pages, problems, row, urls, worker() (+18 more)
 
 ### Community 10 - "Ad and Affiliate Signup Automation"
 Cohesion: 0.21
@@ -173,8 +190,8 @@ Cohesion: 0.24
 Nodes (11): faqFrom(), fs, hasPhoto, iso(), ld(), path, PERSON, processFile() (+3 more)
 
 ### Community 13 - "JSON-LD Verification"
-Cohesion: 0.11
-Nodes (16): allDefined, allFiles, collectIds(), collectRefs(), everyId, files, FORBIDDEN, fs (+8 more)
+Cohesion: 0.07
+Nodes (24): fs, h, head, head2, ld, path, PUB, tail (+16 more)
 
 ### Community 14 - "adsense-finish-verify.js"
 Cohesion: 0.22
@@ -206,11 +223,11 @@ Nodes (10): esc(), loadData(), matches(), render(), renderItem(), renderLenderCa
 
 ### Community 21 - "ref_fs"
 Cohesion: 0.18
-Nodes (8): { chromium }, fs, OUT, path, { chromium }, fs, OUT, path
+Nodes (7): F, fs, path, { chromium }, fs, OUT, path
 
 ### Community 22 - "ref_path"
-Cohesion: 0.22
-Nodes (6): fs, path, { chromium }, fs, OUT, path
+Cohesion: 0.14
+Nodes (10): fs, path, { chromium }, fs, OUT, path, { chromium }, fs (+2 more)
 
 ### Community 23 - "news.js"
 Cohesion: 0.57
@@ -234,7 +251,7 @@ Nodes (7): { chromium }, fs, loginIfNeeded(), OUT, PASS, path, sleep()
 
 ### Community 30 - "ezoic-capture-snippet.js"
 Cohesion: 0.22
-Nodes (4): { chromium }, fs, OUT, path
+Nodes (5): { chromium }, clickText(), fs, OUT, path
 
 ### Community 31 - "ezoic-signup.js"
 Cohesion: 0.25
@@ -248,9 +265,9 @@ Nodes (7): boot(), ensureLabel(), fillPlaceholders(), loadAdSense(), markEmpty()
 Cohesion: 0.25
 Nodes (5): { chromium }, crypto, fs, OUT, path
 
-### Community 34 - "playwright"
-Cohesion: 0.15
-Nodes (10): playwright, { chromium }, fs, OUT, path, { chromium }, fs, OUT (+2 more)
+### Community 34 - "google-session.js"
+Cohesion: 0.40
+Nodes (4): { chromium }, fs, OUT, path
 
 ### Community 35 - "adsense-push-ads-now.js"
 Cohesion: 0.29
@@ -324,9 +341,9 @@ Nodes (4): { chromium }, fs, OUT, path
 Cohesion: 0.33
 Nodes (4): { chromium }, fs, OUT, path
 
-### Community 55 - "buy-domain-finish.js"
-Cohesion: 0.33
-Nodes (4): { chromium }, fs, OUT, path
+### Community 55 - "playwright"
+Cohesion: 0.14
+Nodes (10): playwright, { chromium }, fs, OUT, path, { chromium }, fs, OUT (+2 more)
 
 ### Community 56 - "extract-adsense-snippets.js"
 Cohesion: 0.33
@@ -345,12 +362,12 @@ Cohesion: 0.67
 Nodes (3): Graft repo context graph, graft skill (agents copy), graft skill (ask, grep, skeleton, callers, map)
 
 ### Community 64 - "build-affiliate-redirects.js"
-Cohesion: 0.22
-Nodes (8): cur, fp, fs, lines, offers, path, PUB, re
+Cohesion: 0.05
+Nodes (23): badLive, cur, fp, fs, lines, offers, path, PUB (+15 more)
 
-### Community 65 - "make-author-page.js"
-Cohesion: 0.22
-Nodes (8): fs, h, head, head2, ld, path, PUB, tail
+### Community 65 - "verify-policy.js"
+Cohesion: 0.06
+Nodes (23): f(), ext, files(), fs, path, PUB, fs, M (+15 more)
 
 ### Community 66 - "Content audit and open items (2026-11-11)"
 Cohesion: 0.25
@@ -372,25 +389,77 @@ Nodes (5): Affiliate follow-up kit (2026-11-02), Send to, Status as of the last 
 Cohesion: 0.83
 Nodes (3): json(), onRequestGet(), onRequestPost()
 
+### Community 72 - "prerender-calcs.js"
+Cohesion: 0.07
+Nodes (21): block(), esc(), fs, { JSDOM }, long(), M, news, path (+13 more)
+
+### Community 73 - "build-rates-tracker.js"
+Cohesion: 0.10
+Nodes (18): fs, head, headRaw, hist, label(), ld, M, mid (+10 more)
+
+### Community 74 - "build-resources.py"
+Cohesion: 0.25
+Nodes (11): application_checklist(), dscr_worksheet(), due_diligence(), fsize(), header(), hub(), loan_comparison(), normalize_zip() (+3 more)
+
+### Community 75 - "html"
+Cohesion: 0.16
+Nodes (6): info(), li(), ld(), make(), ld(), make()
+
+### Community 77 - "make-new-calc-pages.js"
+Cohesion: 0.15
+Nodes (8): fs, idx, LF, P, path, PUB, shell, titleOf
+
+### Community 78 - "verify-ui.js"
+Cohesion: 0.21
+Nodes (8): bal(), endBal(), fs, num(), path, pmt(), PUB, setAndRead()
+
+### Community 79 - "build-clusters.js"
+Cohesion: 0.25
+Nodes (10): C, fs, group(), li(), path, PUB, read(), spokeOf (+2 more)
+
+### Community 80 - "build-llms.js"
+Cohesion: 0.24
+Nodes (10): fs, head, info(), line(), list(), one(), out, path (+2 more)
+
+### Community 81 - "aggregate.py"
+Cohesion: 0.36
+Nodes (5): load(), main(), grouped(), sector(), stats()
+
+### Community 83 - "json"
+Cohesion: 0.39
+Nodes (4): fix(), api(), gql(), main()
+
+### Community 84 - "Affiliate application pack (2026-11-11)"
+Cohesion: 0.29
+Nodes (6): Affiliate application pack (2026-11-11), Copy-paste answers, Fastest path, Only you can do, Programs (priority order), Rules that apply to every application
+
+### Community 86 - "rates-widget.js"
+Cohesion: 0.52
+Nodes (6): card(), esc(), fmtDate(), pct(), render(), spark()
+
+### Community 87 - "apply-site-config.js"
+Cohesion: 0.29
+Nodes (5): cfg, fs, parts, path, PUB
+
 ## Knowledge Gaps
-- **37 isolated node(s):** `graft`, `checklist.js (progress and download script)`, `ads.js AdSense slot loader`, `Sources and Uses of Funds table`, `Calculator Step 7: Mortgage Affordability` (+32 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 407 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **37 isolated node(s):** `graft`, `checklist.js (progress and download script)`, `Sources and Uses of Funds table`, `Calculator Step 7: Mortgage Affordability`, `Calculator Step 8: Market News and Rates` (+32 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 595 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `playwright` connect `playwright` to `AdSense Check Scripts`, `Tools Wizard Engine (app.js)`, `Ad and Affiliate Signup Automation`, `adsense-finish-verify.js`, `adsense-strict-verify-host.js`, `browser/package.json`, `ref_fs`, `ref_path`, `adsense-go-live.js`, `ezoic-join.js`, `adsense-add-loan-domain.js`, `adsense-go-now.js`, `ezoic-capture-snippet.js`, `ezoic-signup.js`, `porkbun-create-account.js`, `adsense-push-ads-now.js`, `ezoic-export-snippet.js`, `ezoic-setup.js`, `adsense-gapfix-status.js`, `adsense-onboard.js`, `adsense-remove-unused-sites.js`, `adsense-retry-tld.js`, `adsense-start.js`, `complete-adsense.js`, `ezoic-capture-v2.js`, `ezoic-connect.js`, `ezoic-fill.js`, `ezoic-robust.js`, `adsense-accept.js`, `adsense-verify.js`, `buy-domain.js`, `buy-domain-checkout.js`, `buy-domain-finish.js`, `extract-adsense-snippets.js`, `map-loansflow.js`?**
-  _High betweenness centrality (0.065) - this node is a cross-community bridge._
-- **What connects `graft`, `checklist.js (progress and download script)`, `ads.js AdSense slot loader` to the rest of the system?**
+- **Why does `f()` connect `verify-policy.js` to `Embeddable Calculators (lf-calc)`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **What connects `graft`, `checklist.js (progress and download script)`, `Sources and Uses of Funds table` to the rest of the system?**
   _37 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Guides and Calculator Help` be split into smaller, more focused modules?**
-  _Cohesion score 0.05081081081081081 - nodes in this community are weakly interconnected._
-- **Why does `start()` connect `Embeddable Calculators (lf-calc)` to `grants.js`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _Cohesion score 0.05217391304347826 - nodes in this community are weakly interconnected._
+- **Why does `playwright` connect `playwright` to `AdSense Check Scripts`, `Ad and Affiliate Signup Automation`, `adsense-finish-verify.js`, `adsense-strict-verify-host.js`, `browser/package.json`, `ref_fs`, `ref_path`, `adsense-go-live.js`, `ezoic-join.js`, `adsense-add-loan-domain.js`, `adsense-go-now.js`, `ezoic-capture-snippet.js`, `ezoic-signup.js`, `porkbun-create-account.js`, `google-session.js`, `adsense-push-ads-now.js`, `ezoic-export-snippet.js`, `ezoic-setup.js`, `adsense-gapfix-status.js`, `adsense-onboard.js`, `adsense-remove-unused-sites.js`, `adsense-retry-tld.js`, `adsense-start.js`, `complete-adsense.js`, `ezoic-capture-v2.js`, `ezoic-connect.js`, `ezoic-fill.js`, `ezoic-robust.js`, `adsense-accept.js`, `adsense-verify.js`, `buy-domain.js`, `buy-domain-checkout.js`, `extract-adsense-snippets.js`, `map-loansflow.js`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Should `Ad and Affiliate Legal Terms` be split into smaller, more focused modules?**
   _Cohesion score 0.07575757575757576 - nodes in this community are weakly interconnected._
-- **Should `Browser Automation Utilities` be split into smaller, more focused modules?**
-  _Cohesion score 0.06568832983927324 - nodes in this community are weakly interconnected._
+- **Why does `start()` connect `Embeddable Calculators (lf-calc)` to `grants.js`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Should `Site Architecture and Ops Docs` be split into smaller, more focused modules?**
   _Cohesion score 0.07017543859649122 - nodes in this community are weakly interconnected._
