@@ -364,3 +364,12 @@
   .lf-static { display: none; }
   [data-calc]:not(.lf-calc) { min-height: 620px; }
 }
+
+/* Data tables used on generated pages */
+.doc-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.92rem; }
+.doc-table caption { text-align: left; font-weight: 600; margin-bottom: 0.5rem; color: var(--ink-secondary); }
+.doc-table th, .doc-table td { border: 1px solid var(--line); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+.doc-table thead th { background: var(--surface); color: var(--ink-secondary); font-weight: 600; }
+.doc-table tbody th { font-weight: 500; color: var(--ink); background: transparent; }
+.doc-table td { color: var(--muted); }
+.lf-box details summary { cursor: pointer; color: var(--accent); margin: .6rem 0; }
