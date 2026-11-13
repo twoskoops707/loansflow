@@ -31,6 +31,7 @@ jobs:
           node tools/news/refresh-market-news.mjs
           node tools/rates/refresh-rates.mjs
           node scripts/sync-static-rates.js
+          node scripts/sync-asof.js
           node scripts/prerender-calcs.js
           node scripts/build-sitemap.js
       - name: Commit if changed

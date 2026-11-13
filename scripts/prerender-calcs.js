@@ -47,7 +47,7 @@ function block(r) {
     (r.head ? `<p class="lf-head"><span>${esc(r.head[0])}</span> <strong>${esc(r.head[1])}</strong></p>` : '') +
     '<table class="lf-table"><caption>Results at those inputs</caption><tbody>' + r.rows.map((i) => `<tr><th scope="row">${esc(i[0])}</th><td>${esc(i[1])}</td></tr>`).join('') + '</tbody></table>' +
     (r.notes.length ? '<ul class="lf-notes">' + r.notes.map((n) => `<li>${esc(n)}</li>`).join('') + '</ul>' : '') +
-    `<p class="lf-figcap">Computed from the formulas on our <a href="/methodology">methodology</a> page${asof ? `, using the prime rate as of ${asof} (FRED DPRIME) where a rate is pre-filled` : ''}. Estimates, not offers.</p>` +
+    `<p class="lf-figcap">Computed from the formulas on our <a href="/methodology">methodology</a> page${asof ? `, with the latest FRED DPRIME prime reading (${asof}) where a rate is pre-filled` : ''}. Estimates, not offers.</p>` +
     '</div>' + END;
 }
 
