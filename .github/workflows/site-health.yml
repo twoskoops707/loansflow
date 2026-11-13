@@ -21,6 +21,12 @@ jobs:
         id: check
         run: node monitoring/check-site.mjs
         continue-on-error: true
+      - name: Check every external link on the site
+        id: links
+        run: |
+          node scripts/check-external-links.js
+          node scripts/check-anchors.js
+        continue-on-error: true
       - name: Commit history
         run: |
           git config user.name "github-actions[bot]"
@@ -28,5 +34,5 @@ jobs:
           git add monitoring/history.jsonl
           git diff --cached --quiet || (git commit -m "chore: site health snapshot $(date -u +%Y-%m-%d)" && git pull --rebase -q && git push)
       - name: Fail if problems were found
-        if: steps.check.outcome == 'failure'
+        if: steps.check.outcome == 'failure' || steps.links.outcome == 'failure'
         run: exit 1

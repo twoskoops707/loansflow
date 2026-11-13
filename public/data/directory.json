@@ -1479,8 +1479,8 @@
     {
       "name": "SCORE",
       "category": "resource-partner",
-      "url": "https://www.score.org",
-      "note": "Free business mentoring and workshops. 300+ local chapters across the U.S."
+      "url": "https://www.sba.gov/local-assistance/resource-partners",
+      "note": "Free business mentoring and workshops through SCORE chapters, listed with SBA's other resource partners (SBDCs, Women's Business Centers and Veterans Business Outreach Centers)."
     },
     {
       "name": "America's SBDC",
@@ -1565,10 +1565,10 @@
     },
     {
       "name": "SmartBiz",
-      "category": "marketplace",
-      "url": "https://www.smartbiz.com",
-      "products": "SBA and non-SBA small business loans",
-      "details": "SBA-focused marketplace packaging SBA and non-SBA submissions."
+      "category": "direct-lender",
+      "url": "https://smartbizbank.com/",
+      "products": "SBA loans for small business",
+      "details": "SmartBiz Bank, an SBA lender (formerly the SmartBiz Loans marketplace)."
     },
     {
       "name": "BlueVine",

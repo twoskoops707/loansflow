@@ -29,6 +29,7 @@ jobs:
       - name: Refresh market-news.json
         run: |
           node tools/news/refresh-market-news.mjs
+          node scripts/prune-dead-news.js
           node tools/rates/refresh-rates.mjs
           node scripts/sync-static-rates.js
           node scripts/sync-asof.js
