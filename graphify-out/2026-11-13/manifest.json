@@ -30,10 +30,10 @@
     "semantic_hash": "df63b697b115ae149786d799dad81098"
   },
   "functions/api/contact.js": {
-    "mtime": 1792644779.8933504,
-    "seen": 1792645623.6379497,
-    "ast_hash": "d622042d7ff1e7b2d780e18a73c2235a",
-    "semantic_hash": "d622042d7ff1e7b2d780e18a73c2235a"
+    "mtime": 1794376755.2205992,
+    "seen": 1794557236.4249148,
+    "ast_hash": "d7bde5adcda394767270b5e0e5079827",
+    "semantic_hash": ""
   },
   "functions/api/market-news.js": {
     "mtime": 1792644893.321356,
@@ -48,21 +48,21 @@
     "semantic_hash": "dbe6bb9c0a54d6958a07f931518a4cb0"
   },
   "public/data/directory.json": {
-    "mtime": 1794360781.6018615,
-    "seen": 1794360836.6076632,
-    "ast_hash": "d719800afd2984552bc5d359fcac6026",
+    "mtime": 1794554291.219952,
+    "seen": 1794557236.4249837,
+    "ast_hash": "d5e2b45d1784351f707ada1bd79748af",
     "semantic_hash": ""
   },
   "public/data/market-news.json": {
-    "mtime": 1794360777.4978611,
-    "seen": 1794360836.6076708,
-    "ast_hash": "3ef0b2be1fd7f333ba5c8cbe02d69487",
+    "mtime": 1794554369.631956,
+    "seen": 1794557236.4249933,
+    "ast_hash": "2e91102b70754f1c88cbf63515d1eea5",
     "semantic_hash": ""
   },
   "public/data/offers.json": {
-    "mtime": 1794360780.3698614,
-    "seen": 1794360836.6076796,
-    "ast_hash": "2c86d4369f084c61c1dc758ccba78fe0",
+    "mtime": 1794376755.2125993,
+    "seen": 1794557236.4250023,
+    "ast_hash": "807561d3feb2fe30f704b20bfaa8c936",
     "semantic_hash": ""
   },
   "public/js/ads.js": {
@@ -84,21 +84,21 @@
     "semantic_hash": "58ae98a68de306d5c9924e307f87381e"
   },
   "public/js/lf-calc.js": {
-    "mtime": 1794360780.9138615,
-    "seen": 1794360836.607761,
-    "ast_hash": "bdb65aeba74714358f85ec70257cc013",
+    "mtime": 1794556098.264042,
+    "seen": 1794557236.4251366,
+    "ast_hash": "995f16ff6624944d5a3743fd75d7f49a",
     "semantic_hash": ""
   },
   "public/js/lf-math.js": {
-    "mtime": 1794360780.9178615,
-    "seen": 1794360836.6077774,
-    "ast_hash": "9c5ab1a3d0a1512a620308705676be4d",
+    "mtime": 1794554834.8919792,
+    "seen": 1794557236.425156,
+    "ast_hash": "27758e568c263f58eb9d0a668efdd759",
     "semantic_hash": ""
   },
   "public/js/offers.js": {
-    "mtime": 1794360780.4938614,
-    "seen": 1794360836.6078,
-    "ast_hash": "c9b1c659b193a56da98a6158b50a73dd",
+    "mtime": 1794376755.2125993,
+    "seen": 1794557236.4251935,
+    "ast_hash": "3ce9557edb669f8ce5cbbd8ab6bca688",
     "semantic_hash": ""
   },
   "scripts/verify-jsonld.js": {
@@ -390,10 +390,10 @@
     "semantic_hash": "ac5a575b2c0e30bac9106c37ee23a501"
   },
   "tools/news/refresh-market-news.mjs": {
-    "mtime": 1792644914.0693572,
-    "seen": 1792645623.6380577,
-    "ast_hash": "614e6ace099c4133ec9ff86cdd523fd0",
-    "semantic_hash": "614e6ace099c4133ec9ff86cdd523fd0"
+    "mtime": 1794555318.6600032,
+    "seen": 1794557236.426066,
+    "ast_hash": "1844b182f2770326667f8537769d494d",
+    "semantic_hash": ""
   },
   "tools/serve-preview.py": {
     "mtime": 1792644779.9893503,
@@ -426,10 +426,10 @@
     "semantic_hash": "00dda26352e17b83be0f0f82b0e91278"
   },
   ".github/workflows/refresh-market-news.yml": {
-    "mtime": 1792644779.5413504,
-    "seen": 1792645623.6380734,
-    "ast_hash": "aa3c6e7ceeffa5042e527d6f18a84743",
-    "semantic_hash": "aa3c6e7ceeffa5042e527d6f18a84743"
+    "mtime": 1794557196.2200966,
+    "seen": 1794557236.4261212,
+    "ast_hash": "0dd2ec03c777e85b49020833007e3b6c",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
     "mtime": 1792644779.5453503,
@@ -438,9 +438,9 @@
     "semantic_hash": "a15cfb2bfb4dbdf912eaf1b14f62f756"
   },
   "CLAUDE.md": {
-    "mtime": 1792653325.0137753,
-    "seen": 1793575387.7282221,
-    "ast_hash": "4404e589d9dad4194199ab4083f41dd4",
+    "mtime": 1794375130.7325184,
+    "seen": 1794557236.4261518,
+    "ast_hash": "64e5cd0afa3dfb71c165a524663185a0",
     "semantic_hash": ""
   },
   "README.md": {
@@ -450,9 +450,9 @@
     "semantic_hash": ""
   },
   "docs/ADS.md": {
-    "mtime": 1792650259.9376228,
-    "seen": 1793575387.728246,
-    "ast_hash": "d00f8d879ce69169685a21810a6fa597",
+    "mtime": 1794373698.8044474,
+    "seen": 1794557236.4261677,
+    "ast_hash": "217acc0620fa3440ebacb0e173fbec58",
     "semantic_hash": ""
   },
   "docs/DOMAIN.md": {
@@ -528,15 +528,15 @@
     "semantic_hash": "924c75918c4105d37f4b8bd4e44361d7"
   },
   "public/404.html": {
-    "mtime": 1794360780.8098614,
-    "seen": 1794360836.6094277,
-    "ast_hash": "9a2ccaefbeb1117126e613cb7f30542b",
+    "mtime": 1794555820.9960282,
+    "seen": 1794557236.42629,
+    "ast_hash": "26ea07bf1112cdbc51e0a3f25315fba2",
     "semantic_hash": ""
   },
   "public/about.html": {
-    "mtime": 1794360780.2698615,
-    "seen": 1794360836.6094382,
-    "ast_hash": "cd64e595a236804c3b04e0da77375537",
+    "mtime": 1794555821.0040283,
+    "seen": 1794557236.4262977,
+    "ast_hash": "50a309ef28b9dfdc1c73394b19567416",
     "semantic_hash": ""
   },
   "public/ads.txt": {
@@ -546,21 +546,21 @@
     "semantic_hash": "b76065294313bd4f15d83dca577f1310"
   },
   "public/contact.html": {
-    "mtime": 1794360780.3618615,
-    "seen": 1794360836.609685,
-    "ast_hash": "d06ee47b1b99041a83bb90754780e155",
+    "mtime": 1794555821.0120282,
+    "seen": 1794557236.4265149,
+    "ast_hash": "356000e242eb181c4f05b920184d00fd",
     "semantic_hash": ""
   },
   "public/directory/index.html": {
-    "mtime": 1794360780.8618615,
-    "seen": 1794360836.6096954,
-    "ast_hash": "374a326d91f7ccd89a449c1604babfc1",
+    "mtime": 1794555821.0800283,
+    "seen": 1794557236.4265218,
+    "ast_hash": "7df1493c8022245004ce7f6d9b98f51e",
     "semantic_hash": ""
   },
   "public/disclaimer.html": {
-    "mtime": 1794360780.3778613,
-    "seen": 1794360836.6097057,
-    "ast_hash": "bb5282553316e6f68970572882af8b7d",
+    "mtime": 1794555821.0160282,
+    "seen": 1794557236.426529,
+    "ast_hash": "8f257e88d5b0342d95911bfeccb1d645",
     "semantic_hash": ""
   },
   "public/downloads/loan-document-checklist.md": {
@@ -576,111 +576,111 @@
     "semantic_hash": "b366f7aec316d3c1ec8f576c356c7554"
   },
   "public/guides/business-plan-for-a-loan.html": {
-    "mtime": 1794360781.1698613,
-    "seen": 1794360836.6097634,
-    "ast_hash": "faac04f43ee30427444c75f2bd95089e",
+    "mtime": 1794556299.872052,
+    "seen": 1794557236.4265702,
+    "ast_hash": "a9854c4ddca398b4d8ccd0d07b7f4c2a",
     "semantic_hash": ""
   },
   "public/guides/calculator-help.html": {
-    "mtime": 1794360780.8698614,
-    "seen": 1794360836.6097722,
-    "ast_hash": "b4cd9671cc9b9fd5b07e42641787760c",
+    "mtime": 1794556098.5800421,
+    "seen": 1794557236.426577,
+    "ast_hash": "7c26f5b02ebb1d14798524eb8d1ad44e",
     "semantic_hash": ""
   },
   "public/guides/checklist.html": {
-    "mtime": 1794360781.1818614,
-    "seen": 1794360836.6097822,
-    "ast_hash": "81de19456dd8606c1d213a185da3ccb5",
+    "mtime": 1794556299.848052,
+    "seen": 1794557236.4265842,
+    "ast_hash": "2787e35f49d5048277226ecf60b8843c",
     "semantic_hash": ""
   },
   "public/guides/choosing-lender.html": {
-    "mtime": 1794360781.6098614,
-    "seen": 1794360836.6097913,
-    "ast_hash": "067f58bdfc4c60f5c0828346da73bf78",
+    "mtime": 1794556299.980052,
+    "seen": 1794557236.426591,
+    "ast_hash": "a8241cea90c5f5261fb5773884538508",
     "semantic_hash": ""
   },
   "public/guides/dscr-explained.html": {
-    "mtime": 1794360781.1978614,
-    "seen": 1794360836.6098104,
-    "ast_hash": "2f004a3676218a41ab0b63f41b8288a6",
+    "mtime": 1794556299.904052,
+    "seen": 1794557236.4266045,
+    "ast_hash": "7c247674cf4c1256cece4b5adadcce8c",
     "semantic_hash": ""
   },
   "public/guides/glossary.html": {
-    "mtime": 1794360780.8818614,
-    "seen": 1794360836.6098192,
-    "ast_hash": "ba30d0fa1e2bb19e23385b1dea2b4680",
+    "mtime": 1794555821.1280282,
+    "seen": 1794557236.4266114,
+    "ast_hash": "95f4b972f4b5e0cb9a0f725fd54fc66c",
     "semantic_hash": ""
   },
   "public/guides/index.html": {
-    "mtime": 1794360781.2018614,
-    "seen": 1794360836.609829,
-    "ast_hash": "a04a1c320303df583267dca8e8100469",
+    "mtime": 1794555821.1320283,
+    "seen": 1794557236.4266183,
+    "ast_hash": "af85add9b0af53f7a94f4889b8dcb78c",
     "semantic_hash": ""
   },
   "public/guides/loan-documents.html": {
-    "mtime": 1794360781.2098615,
-    "seen": 1794360836.609838,
-    "ast_hash": "c8748ddc5afce4e1f23d17e7d9c47d68",
+    "mtime": 1794556299.828052,
+    "seen": 1794557236.426625,
+    "ast_hash": "a41921cae60122ad85ed361d1d42f934",
     "semantic_hash": ""
   },
   "public/guides/mortgage-closing-costs.html": {
-    "mtime": 1794360781.2138615,
-    "seen": 1794360836.6098473,
-    "ast_hash": "e6b01c2b05f2f7fd191544bc34206fb2",
+    "mtime": 1794556300.628052,
+    "seen": 1794557236.4266322,
+    "ast_hash": "a188702c338089f6eabe2de4d668ae91",
     "semantic_hash": ""
   },
   "public/guides/refinance-break-even.html": {
-    "mtime": 1794360781.2218614,
-    "seen": 1794360836.6098669,
-    "ast_hash": "51429f3531e530761b2558b8013963b2",
+    "mtime": 1794556300.648052,
+    "seen": 1794557236.4266458,
+    "ast_hash": "b83ca0f450d922530dd7f7786173ddba",
     "semantic_hash": ""
   },
   "public/guides/sba-504.html": {
-    "mtime": 1794360781.2298615,
-    "seen": 1794360836.6098778,
-    "ast_hash": "c8d67d4957f4bdab45e487a2617ab981",
+    "mtime": 1794556300.268052,
+    "seen": 1794557236.426653,
+    "ast_hash": "da9aa8f29921efe7b0657e4b1f79471a",
     "semantic_hash": ""
   },
   "public/guides/sba-7a-step-by-step.html": {
-    "mtime": 1794360781.2378614,
-    "seen": 1794360836.609888,
-    "ast_hash": "5ad5b93f6993bfffc915c7de0fcbd67c",
+    "mtime": 1794556299.788052,
+    "seen": 1794557236.4266596,
+    "ast_hash": "8b1cca581cfab2ac1d9eda723daede7d",
     "semantic_hash": ""
   },
   "public/guides/sba-express-microloans-caplines.html": {
-    "mtime": 1794360781.2418613,
-    "seen": 1794360836.6098986,
-    "ast_hash": "6ca654f00cd1442ba50bd16912fb3e69",
+    "mtime": 1794556300.372052,
+    "seen": 1794557236.4266663,
+    "ast_hash": "974d73ebe6370079a1183aec9a2ab683",
     "semantic_hash": ""
   },
   "public/guides/sba-loan-eligibility.html": {
-    "mtime": 1794360781.2498615,
-    "seen": 1794360836.6099076,
-    "ast_hash": "17a9dffec39a1f5963b883f514c17270",
+    "mtime": 1794556299.804052,
+    "seen": 1794557236.4266741,
+    "ast_hash": "bc39ec7c2b44c0cb20508baec7b565e1",
     "semantic_hash": ""
   },
   "public/guides/term-loan-vs-line-of-credit.html": {
-    "mtime": 1794360781.2578614,
-    "seen": 1794360836.6099267,
-    "ast_hash": "961808dd0dc5a4c9a0b97ab3f6ceb7ed",
+    "mtime": 1794556300.520052,
+    "seen": 1794557236.426688,
+    "ast_hash": "8173a20725815818fedb2327b7e2adb9",
     "semantic_hash": ""
   },
   "public/index.html": {
-    "mtime": 1794360780.9058614,
-    "seen": 1794360836.6099358,
-    "ast_hash": "8b59cac505e4221ec71e8c74e112c17e",
+    "mtime": 1794556098.552042,
+    "seen": 1794557236.4266949,
+    "ast_hash": "99ecfd6076ad749c5d05d6fbcdb4064b",
     "semantic_hash": ""
   },
   "public/methodology.html": {
-    "mtime": 1794360780.9498615,
-    "seen": 1794360836.610041,
-    "ast_hash": "0c987b5e9189197621447d0293ecca57",
+    "mtime": 1794556098.568042,
+    "seen": 1794557236.4267788,
+    "ast_hash": "60280efeaf878fa026aa64726a218bd3",
     "semantic_hash": ""
   },
   "public/privacy.html": {
-    "mtime": 1794360780.5658615,
-    "seen": 1794360836.6100593,
-    "ast_hash": "108c4f998d90fa5567aaca44c7b0fe43",
+    "mtime": 1794555821.0360281,
+    "seen": 1794557236.4267936,
+    "ast_hash": "deedbc9ad7c265b516091f31fa6ed2ba",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -690,21 +690,15 @@
     "semantic_hash": ""
   },
   "public/terms.html": {
-    "mtime": 1794360780.5778613,
-    "seen": 1794360836.6101499,
-    "ast_hash": "9c4a723357601637ac76245de1cc1c8b",
-    "semantic_hash": ""
-  },
-  "public/tools/index.html": {
-    "mtime": 1792647494.5214853,
-    "seen": 1793575387.7292104,
-    "ast_hash": "0c8330e0120f3c7bcf45edcceef18d29",
+    "mtime": 1794555821.0480282,
+    "seen": 1794557236.4271774,
+    "ast_hash": "16c42d973b4d297e2deeec5585359b42",
     "semantic_hash": ""
   },
   "public/data/search-index.json": {
-    "mtime": 1792653787.8617983,
-    "seen": 1793575387.7268717,
-    "ast_hash": "49aa388fd48436f7988d94292a79cd25",
+    "mtime": 1794376626.2285929,
+    "seen": 1794557236.4250429,
+    "ast_hash": "f3994f4399724231d7fae9b08e0b6d5e",
     "semantic_hash": ""
   },
   "public/data/social.json": {
@@ -774,171 +768,171 @@
     "semantic_hash": ""
   },
   "public/alternative-financing/index.html": {
-    "mtime": 1794360780.8178613,
-    "seen": 1794360836.6094582,
-    "ast_hash": "c31b9b00a51246b00b497d87e1fb7aa8",
+    "mtime": 1794556098.880042,
+    "seen": 1794557236.4263113,
+    "ast_hash": "108a4ec06e558fcf42a04726a512f5e4",
     "semantic_hash": ""
   },
   "public/calculators/commercial-real-estate.html": {
-    "mtime": 1794360780.8258615,
-    "seen": 1794360836.6094995,
-    "ast_hash": "96f2ff689a0f16d5bab752aeee4697b7",
+    "mtime": 1794556300.3200521,
+    "seen": 1794557236.4263473,
+    "ast_hash": "7ad6550dbc492e0ba2e34bc831d0f2ab",
     "semantic_hash": ""
   },
   "public/calculators/dscr.html": {
-    "mtime": 1794360780.8258615,
-    "seen": 1794360836.60951,
-    "ast_hash": "e8cc8f4b907e82636c49dd0056b32329",
+    "mtime": 1794556300.3560522,
+    "seen": 1794557236.4263544,
+    "ast_hash": "7f0d4e5459008d431174d73650dc227e",
     "semantic_hash": ""
   },
   "public/calculators/equipment-payment.html": {
-    "mtime": 1794360780.8298614,
-    "seen": 1794360836.6095204,
-    "ast_hash": "35babed2d119c16c5328fd532bb9de21",
+    "mtime": 1794556300.572052,
+    "seen": 1794557236.4263618,
+    "ast_hash": "ee4d813613f0527b97ce26a48451f2f2",
     "semantic_hash": ""
   },
   "public/calculators/equipment-term-comparison.html": {
-    "mtime": 1794360780.8298614,
-    "seen": 1794360836.6095307,
-    "ast_hash": "45212697666e579e44abefb5a1070cdb",
+    "mtime": 1794556300.588052,
+    "seen": 1794557236.426369,
+    "ast_hash": "d77d85591846c1390115a32b0e65e30c",
     "semantic_hash": ""
   },
   "public/calculators/home-affordability.html": {
-    "mtime": 1794360780.8338614,
-    "seen": 1794360836.6095397,
-    "ast_hash": "61a67720f74fc9baacf2c2c169ed30a6",
+    "mtime": 1794556300.6920521,
+    "seen": 1794557236.4263833,
+    "ast_hash": "47e68ec86e96cd96afdfab0b75ec50c1",
     "semantic_hash": ""
   },
   "public/calculators/index.html": {
-    "mtime": 1794360781.1418614,
-    "seen": 1794360836.6095495,
-    "ast_hash": "7f3e3be5bf50ca2c6aed8e0e7877b80a",
+    "mtime": 1794556098.8000422,
+    "seen": 1794557236.4263966,
+    "ast_hash": "0a43e783e30f819c05f9f5aa819c43d4",
     "semantic_hash": ""
   },
   "public/calculators/lease-vs-loan.html": {
-    "mtime": 1794360780.8338614,
-    "seen": 1794360836.6095598,
-    "ast_hash": "f629737334d4e47ae629dc3f8d8e960b",
+    "mtime": 1794556300.604052,
+    "seen": 1794557236.4264047,
+    "ast_hash": "d7ae5c20c9445e4e84d0aa30316f1316",
     "semantic_hash": ""
   },
   "public/calculators/line-of-credit.html": {
-    "mtime": 1794360780.8378613,
-    "seen": 1794360836.6095698,
-    "ast_hash": "f97935116032bcb8ebf544bb0856e9f0",
+    "mtime": 1794556300.4280522,
+    "seen": 1794557236.4264116,
+    "ast_hash": "d4aca23e7a640d347196a1b59dc328ee",
     "semantic_hash": ""
   },
   "public/calculators/loan-payment.html": {
-    "mtime": 1794360780.8418615,
-    "seen": 1794360836.609579,
-    "ast_hash": "16bf8c623ea2dbbdc4d6fc9e4035dc64",
+    "mtime": 1794556300.456052,
+    "seen": 1794557236.4264185,
+    "ast_hash": "a75345e3f39a22540de08834e15e4d17",
     "semantic_hash": ""
   },
   "public/calculators/mortgage-payment.html": {
-    "mtime": 1794360780.8458614,
-    "seen": 1794360836.6095886,
-    "ast_hash": "5e9da93329d4594b61da92812bdebd3e",
+    "mtime": 1794556300.6720521,
+    "seen": 1794557236.4264317,
+    "ast_hash": "903a3cd352f9bc1ada04cb646d176061",
     "semantic_hash": ""
   },
   "public/calculators/refinance-break-even.html": {
-    "mtime": 1794360780.8498614,
-    "seen": 1794360836.6095982,
-    "ast_hash": "2b9254498c75d37608be65c434c5cf5e",
+    "mtime": 1794556300.7080522,
+    "seen": 1794557236.4264455,
+    "ast_hash": "f977ee7131e5d5719fa12b69b44ecb69",
     "semantic_hash": ""
   },
   "public/calculators/sba-504.html": {
-    "mtime": 1794360780.8538613,
-    "seen": 1794360836.6096072,
-    "ast_hash": "2ec298582c0496b57775c1f72d8d7586",
+    "mtime": 1794556300.3000522,
+    "seen": 1794557236.4264524,
+    "ast_hash": "9078a107a3026cd7f4a848be2cf0d2b2",
     "semantic_hash": ""
   },
   "public/calculators/sba-7a.html": {
-    "mtime": 1794360780.8538613,
-    "seen": 1794360836.6096172,
-    "ast_hash": "723f0ce9d2350bd4b89963b13d7cba69",
+    "mtime": 1794556300.000052,
+    "seen": 1794557236.426459,
+    "ast_hash": "bb034819da0e2a50b9b98626e0e79f30",
     "semantic_hash": ""
   },
   "public/calculators/sba-equity-injection.html": {
-    "mtime": 1794360780.8578615,
-    "seen": 1794360836.609626,
-    "ast_hash": "268df798574aff55bb2ac592696ebe6b",
+    "mtime": 1794556300.040052,
+    "seen": 1794557236.426466,
+    "ast_hash": "b7a58c4fb7fc5a9797bd708ef9e14af7",
     "semantic_hash": ""
   },
   "public/calculators/sba-express.html": {
-    "mtime": 1794360780.8618615,
-    "seen": 1794360836.6096365,
-    "ast_hash": "28cb0e3ea79e27ea3e399194acab6806",
+    "mtime": 1794556300.3960521,
+    "seen": 1794557236.4264727,
+    "ast_hash": "e6144c1c5e89e0f66ad1b0038f597cbf",
     "semantic_hash": ""
   },
   "public/grants/index.html": {
-    "mtime": 1794360780.8658614,
-    "seen": 1794360836.609754,
-    "ast_hash": "f22f890326d5d2aad129ba34bcf258f1",
+    "mtime": 1794556098.888042,
+    "seen": 1794557236.426563,
+    "ast_hash": "dccecd6760f2c16c76cb6b1d80498705",
     "semantic_hash": ""
   },
   "public/loans/commercial-term-loan.html": {
-    "mtime": 1794360781.2698615,
-    "seen": 1794360836.609954,
-    "ast_hash": "f038aa10f03ad04f4b1fdb5b0ba9e735",
+    "mtime": 1794556299.708052,
+    "seen": 1794557236.426709,
+    "ast_hash": "7209a8518baca04f9944b8fe686558ea",
     "semantic_hash": ""
   },
   "public/loans/equipment-financing.html": {
-    "mtime": 1794360780.9258614,
-    "seen": 1794360836.6099634,
-    "ast_hash": "0e4f70eaa90d65c146c2865109afa18f",
+    "mtime": 1794556299.732052,
+    "seen": 1794557236.4267156,
+    "ast_hash": "81926fb6d2bab50ee607c3f93bfd9e3c",
     "semantic_hash": ""
   },
   "public/loans/index.html": {
-    "mtime": 1794360780.9258614,
-    "seen": 1794360836.6099727,
-    "ast_hash": "cb74bb83ff8d0acffd0297d3e129c369",
+    "mtime": 1794556098.832042,
+    "seen": 1794557236.4267223,
+    "ast_hash": "37bd5a1660cd3185055bdbe831af9b0c",
     "semantic_hash": ""
   },
   "public/loans/line-of-credit.html": {
-    "mtime": 1794360780.9298613,
-    "seen": 1794360836.6099832,
-    "ast_hash": "3c3dd0284a8f6c7c323b35585a2a75f2",
+    "mtime": 1794556299.680052,
+    "seen": 1794557236.4267292,
+    "ast_hash": "aba1b5446b48f670bed6e1e73a0a61c9",
     "semantic_hash": ""
   },
   "public/loans/mortgage.html": {
-    "mtime": 1794360780.9338615,
-    "seen": 1794360836.6099927,
-    "ast_hash": "cbd6ca9a3794ad38450a1018ba80008d",
+    "mtime": 1794556299.756052,
+    "seen": 1794557236.4267359,
+    "ast_hash": "b0f0708ebdc3a25a4e8cf9a21af00f48",
     "semantic_hash": ""
   },
   "public/loans/sba-504.html": {
-    "mtime": 1794360781.2738614,
-    "seen": 1794360836.6100025,
-    "ast_hash": "1bb5db0d18ed76f29a2111b84d0f8f97",
+    "mtime": 1794556299.608052,
+    "seen": 1794557236.426744,
+    "ast_hash": "29f5a45830bbd740626f4cc220c72283",
     "semantic_hash": ""
   },
   "public/loans/sba-7a.html": {
-    "mtime": 1794360781.2818615,
-    "seen": 1794360836.6100118,
-    "ast_hash": "1cf7de15d1107ae170510f51d57c6a2e",
+    "mtime": 1794556299.584052,
+    "seen": 1794557236.426758,
+    "ast_hash": "7e6b7fab6279615c452c007d10019e23",
     "semantic_hash": ""
   },
   "public/loans/sba-express.html": {
-    "mtime": 1794360781.2858615,
-    "seen": 1794360836.6100216,
-    "ast_hash": "0724b53a25b4d8dcf88d3f904b80c835",
+    "mtime": 1794556299.632052,
+    "seen": 1794557236.4267647,
+    "ast_hash": "2e6cc44ec43ee05002b6bbc6f05581ce",
     "semantic_hash": ""
   },
   "public/loans/sba-microloan.html": {
-    "mtime": 1794360781.2938614,
-    "seen": 1794360836.6100316,
-    "ast_hash": "f50cde8ced14dd5b2f5952266fa4135e",
+    "mtime": 1794556299.656052,
+    "seen": 1794557236.4267714,
+    "ast_hash": "7e71dd689f2c1664fe11bd6a0670e243",
     "semantic_hash": ""
   },
   "public/news/index.html": {
-    "mtime": 1794360780.9498615,
-    "seen": 1794360836.6100497,
-    "ast_hash": "d59d53dbcbf7c45264f1d886897b81c3",
+    "mtime": 1794556098.8560421,
+    "seen": 1794557236.426786,
+    "ast_hash": "2a86160277492edeef70359167ed3773",
     "semantic_hash": ""
   },
   "public/wisdom/index.html": {
-    "mtime": 1794360780.9538615,
-    "seen": 1794360836.6101675,
-    "ast_hash": "5a59e5a56d7c7829afa4d4ee3bcdcb16",
+    "mtime": 1794556098.844042,
+    "seen": 1794557236.4271843,
+    "ast_hash": "75d1372d9d456bd94264192bb9ed51f2",
     "semantic_hash": ""
   },
   "docs/logo-options/option-d.png": {
@@ -1008,9 +1002,9 @@
     "semantic_hash": ""
   },
   "functions/api/subscribe.js": {
-    "mtime": 1794360781.1338613,
-    "seen": 1794360836.6076415,
-    "ast_hash": "05cede2c1885d0489e9d66eb6faed93a",
+    "mtime": 1794376755.2165992,
+    "seen": 1794557236.4249444,
+    "ast_hash": "377b9cd80ae081db1351f1e459f0d16f",
     "semantic_hash": ""
   },
   "public/js/subscribe.js": {
@@ -1020,9 +1014,9 @@
     "semantic_hash": ""
   },
   "scripts/build-affiliate-redirects.js": {
-    "mtime": 1794360780.5938613,
-    "seen": 1794360836.6078298,
-    "ast_hash": "0c189cb3dbaa5c664bc4be580d3348e3",
+    "mtime": 1794376755.2165992,
+    "seen": 1794557236.4253294,
+    "ast_hash": "67efb9d70d462181d656aef1686886c4",
     "semantic_hash": ""
   },
   "scripts/build-sitemap.js": {
@@ -1044,33 +1038,33 @@
     "semantic_hash": ""
   },
   "scripts/make-author-page.js": {
-    "mtime": 1794360779.2098613,
-    "seen": 1794360836.6078677,
-    "ast_hash": "604c8af07ebc09aa53c8645a44d5bdb5",
+    "mtime": 1794377173.2406201,
+    "seen": 1794557236.4254136,
+    "ast_hash": "4150aeea8687b9d663392f64c82f0579",
     "semantic_hash": ""
   },
   "scripts/make-calc-pages.py": {
-    "mtime": 1794360780.9578614,
-    "seen": 1794360836.6078744,
-    "ast_hash": "b432c515e086fd1c838bd3e5df5d88d2",
+    "mtime": 1794376626.2285929,
+    "seen": 1794557236.4254231,
+    "ast_hash": "bae3e7b6ea40df603028b7dbe5c93bad",
     "semantic_hash": ""
   },
   "scripts/phase1-author-schema.js": {
-    "mtime": 1794360779.2138612,
-    "seen": 1794360836.607882,
-    "ast_hash": "cbfe32524b46b514a5991bcdfba279d3",
+    "mtime": 1794377173.2206202,
+    "seen": 1794557236.4254525,
+    "ast_hash": "05df47de0dff2d528ebb6cb198b86cdb",
     "semantic_hash": ""
   },
   "scripts/phase2-sba7a.js": {
-    "mtime": 1794360779.4978614,
-    "seen": 1794360836.6078887,
-    "ast_hash": "7ea5138c511dbd4dc18679165e28de66",
+    "mtime": 1794376626.244593,
+    "seen": 1794557236.4254615,
+    "ast_hash": "bf23873d5e664cb0218d0bc6a1affc58",
     "semantic_hash": ""
   },
   "scripts/phase5-content.py": {
-    "mtime": 1794360781.6258614,
-    "seen": 1794360836.6078951,
-    "ast_hash": "f486994191ef8b4c7115277e15044775",
+    "mtime": 1794376626.2325928,
+    "seen": 1794557236.4254694,
+    "ast_hash": "38802313b1bebc70222e610fce319446",
     "semantic_hash": ""
   },
   "docs/AFFILIATE-OUTREACH-2026-11.md": {
@@ -1086,81 +1080,717 @@
     "semantic_hash": ""
   },
   "public/author.html": {
-    "mtime": 1794360781.5898614,
-    "seen": 1794360836.6094677,
-    "ast_hash": "68d7d1f82017cf5ee5cc1184403a92d8",
+    "mtime": 1794555821.0520282,
+    "seen": 1794557236.4263186,
+    "ast_hash": "9cdcbeb932b7566dd32e1c676b578077",
     "semantic_hash": ""
   },
   "public/calculators/business-acquisition.html": {
-    "mtime": 1794360780.8218615,
-    "seen": 1794360836.6094775,
-    "ast_hash": "182c6eccd3c42fe72f6e56726e22b85f",
+    "mtime": 1794556300.056052,
+    "seen": 1794557236.4263256,
+    "ast_hash": "b109fde47bf59314c5163d9e29d054d2",
     "semantic_hash": ""
   },
   "public/calculators/cash-to-close.html": {
-    "mtime": 1794360780.8258615,
-    "seen": 1794360836.609487,
-    "ast_hash": "025eba468159cedb1a5c50c884e72f42",
+    "mtime": 1794556300.084052,
+    "seen": 1794557236.4263399,
+    "ast_hash": "ca7984bad8bc9d85c54ddca4dc83c945",
     "semantic_hash": ""
   },
   "public/compare/index.html": {
-    "mtime": 1794360781.5978615,
-    "seen": 1794360836.6096458,
-    "ast_hash": "24ea5e13debca6d0089d5dba46d5f4b4",
+    "mtime": 1794555821.4240282,
+    "seen": 1794557236.4264865,
+    "ast_hash": "4e4fbbc83cdc0b5cdc340d8a776223c8",
     "semantic_hash": ""
   },
   "public/compare/sba-7a-vs-504.html": {
-    "mtime": 1794360781.1458614,
-    "seen": 1794360836.6096556,
-    "ast_hash": "83aa73e506fcbe464fc1a82b33692bb7",
+    "mtime": 1794556300.180052,
+    "seen": 1794557236.426494,
+    "ast_hash": "022387787da7feb958e9221bd3a829ef",
     "semantic_hash": ""
   },
   "public/compare/sba-vs-conventional-term-loan.html": {
-    "mtime": 1794360781.1498613,
-    "seen": 1794360836.6096642,
-    "ast_hash": "5fdbdaccd588265a8328a95f11585710",
+    "mtime": 1794556300.212052,
+    "seen": 1794557236.4265003,
+    "ast_hash": "f6fb2a744ec039c6b9c36571c6e72dcb",
     "semantic_hash": ""
   },
   "public/compare/sba-vs-online-lender.html": {
-    "mtime": 1794360781.1538615,
-    "seen": 1794360836.6096735,
-    "ast_hash": "d7b07f0644dd80f00cf11136b4a49b74",
+    "mtime": 1794556300.2440522,
+    "seen": 1794557236.4265072,
+    "ast_hash": "43f825b36938a001c325faa46b6bc1e2",
     "semantic_hash": ""
   },
   "public/disclosure.html": {
-    "mtime": 1794360781.6058614,
-    "seen": 1794360836.6097147,
-    "ast_hash": "65aea7d74090e05ebda88b36833e41e8",
+    "mtime": 1794555821.0640283,
+    "seen": 1794557236.426536,
+    "ast_hash": "b34b9ec7c586e8d655e3e97adba5f576",
     "semantic_hash": ""
   },
   "public/editorial-policy.html": {
-    "mtime": 1794360780.8658614,
-    "seen": 1794360836.6097438,
-    "ast_hash": "05fbf899f40ec9deaef5ea28fad36532",
+    "mtime": 1794556098.5600421,
+    "seen": 1794557236.426556,
+    "ast_hash": "c2fe2bf188c5722575b1b94b1c2443d4",
     "semantic_hash": ""
   },
   "public/guides/dscr-cpa-view.html": {
-    "mtime": 1794360781.1938615,
-    "seen": 1794360836.6098003,
-    "ast_hash": "818f8a3023c32f0f5550a8f9bdcd9b83",
+    "mtime": 1794556299.920052,
+    "seen": 1794557236.4265978,
+    "ast_hash": "a84d454df144c6511af8c76519e4fb5d",
     "semantic_hash": ""
   },
   "public/guides/owner-add-backs-ebitda.html": {
-    "mtime": 1794360781.2178614,
-    "seen": 1794360836.6098566,
-    "ast_hash": "f009c064d840a7edcad16c50e6b4e255",
+    "mtime": 1794556299.940052,
+    "seen": 1794557236.4266388,
+    "ast_hash": "b6fc6915b462507665cb54a4c0b037f6",
     "semantic_hash": ""
   },
   "public/guides/sba-loan-interest-tax-treatment.html": {
-    "mtime": 1794360781.2498615,
-    "seen": 1794360836.6099164,
-    "ast_hash": "8ac589ee3198d4eb582ba238077b0122",
+    "mtime": 1794556299.956052,
+    "seen": 1794557236.426681,
+    "ast_hash": "cd437c9a437bb25c34ca73d19d561437",
     "semantic_hash": ""
   },
   "public/llms.txt": {
-    "mtime": 1794360781.2658615,
-    "seen": 1794360836.6099448,
-    "ast_hash": "8ad0afa9cd31d5d17a6880bea06c99d8",
+    "mtime": 1794556332.8880537,
+    "seen": 1794557236.4267018,
+    "ast_hash": "c8ddb48ea77a257f6a0bba0d7d05de69",
+    "semantic_hash": ""
+  },
+  "monitoring/check-site.mjs": {
+    "mtime": 1794377058.7206144,
+    "seen": 1794557236.4249563,
+    "ast_hash": "c2e333e3f3721e74fa87d2966e96f28c",
+    "semantic_hash": ""
+  },
+  "public/data/rates.json": {
+    "mtime": 1794553750.5279253,
+    "seen": 1794557236.4250112,
+    "ast_hash": "3208972b664f5b17e8a51ac962a6b844",
+    "semantic_hash": ""
+  },
+  "public/data/sba-7a-foia.json": {
+    "mtime": 1794553765.3679261,
+    "seen": 1794557236.4250216,
+    "ast_hash": "0d7085ac8704c6b864f6269b93ecea82",
+    "semantic_hash": ""
+  },
+  "public/data/sba-policy.json": {
+    "mtime": 1794554477.5559614,
+    "seen": 1794557236.425029,
+    "ast_hash": "fd24187d2e4bfb8ab2d12c0e93d73056",
+    "semantic_hash": ""
+  },
+  "public/js/bank-search.js": {
+    "mtime": 1794377138.6006184,
+    "seen": 1794557236.4250803,
+    "ast_hash": "ccb4ec28f93fd3bf6feafcd180ca57fd",
+    "semantic_hash": ""
+  },
+  "public/js/live-rates.js": {
+    "mtime": 1794375046.8845143,
+    "seen": 1794557236.425164,
+    "ast_hash": "45bb526f6f363a5861df3248495144cb",
+    "semantic_hash": ""
+  },
+  "public/js/rates-widget.js": {
+    "mtime": 1794377039.7926135,
+    "seen": 1794557236.4252086,
+    "ast_hash": "9db31f141b57d44f1909aa9bcd87263f",
+    "semantic_hash": ""
+  },
+  "public/js/sba-policy.js": {
+    "mtime": 1794554477.6479614,
+    "seen": 1794557236.4252157,
+    "ast_hash": "107296958f630767a43308eb18746d0f",
+    "semantic_hash": ""
+  },
+  "scripts/add-adsense-meta.py": {
+    "mtime": 1794554417.5159585,
+    "seen": 1794557236.4252405,
+    "ast_hash": "2187a29289518c63c47621b1384115ed",
+    "semantic_hash": ""
+  },
+  "scripts/apply-nav.py": {
+    "mtime": 1794555820.4160283,
+    "seen": 1794557236.4252474,
+    "ast_hash": "2a12986b5d4364862ed98d5ec3199a07",
+    "semantic_hash": ""
+  },
+  "scripts/apply-site-config.js": {
+    "mtime": 1794375111.1885176,
+    "seen": 1794557236.425318,
+    "ast_hash": "39bd96c9c8b8a4c4137e8b0b972505fc",
+    "semantic_hash": ""
+  },
+  "scripts/build-clusters.js": {
+    "mtime": 1794556299.3400521,
+    "seen": 1794557236.425339,
+    "ast_hash": "88832b3929f049f183f0b0b42c3f1e9c",
+    "semantic_hash": ""
+  },
+  "scripts/build-llms.js": {
+    "mtime": 1794555859.29203,
+    "seen": 1794557236.425348,
+    "ast_hash": "ed5d119d8bc6be65da0fef7e428af0f5",
+    "semantic_hash": ""
+  },
+  "scripts/build-rates-tracker.js": {
+    "mtime": 1794555347.6760046,
+    "seen": 1794557236.4253557,
+    "ast_hash": "155776ab92ad941282ce3bc31e3a476e",
+    "semantic_hash": ""
+  },
+  "scripts/build-resources.py": {
+    "mtime": 1794556615.1960678,
+    "seen": 1794557236.4253633,
+    "ast_hash": "f2bc0a86d318a552d2774fb364e43ead",
+    "semantic_hash": ""
+  },
+  "scripts/check-anchors.js": {
+    "mtime": 1794554291.2559521,
+    "seen": 1794557236.42538,
+    "ast_hash": "dbbafae0ca7205d054cffd113b744121",
+    "semantic_hash": ""
+  },
+  "scripts/check-external-links.js": {
+    "mtime": 1794554188.671947,
+    "seen": 1794557236.4253876,
+    "ast_hash": "64f04580c1991b2cebc87006f22c080e",
+    "semantic_hash": ""
+  },
+  "scripts/make-new-calc-pages.js": {
+    "mtime": 1794555010.435988,
+    "seen": 1794557236.42543,
+    "ast_hash": "0a23b1678745f39ba599549eceabc82d",
+    "semantic_hash": ""
+  },
+  "scripts/make-site-index.py": {
+    "mtime": 1794375560.62054,
+    "seen": 1794557236.4254372,
+    "ast_hash": "4bababc9ca33e70914c5d7e266ff7f8a",
+    "semantic_hash": ""
+  },
+  "scripts/normalize-urls.py": {
+    "mtime": 1794376626.2365928,
+    "seen": 1794557236.425444,
+    "ast_hash": "669aff3247c40ac702058642199282c5",
+    "semantic_hash": ""
+  },
+  "scripts/phase7-cpa-guides.py": {
+    "mtime": 1794376626.2325928,
+    "seen": 1794557236.4254777,
+    "ast_hash": "657e4603350b74dcbec9ef84f008f9fd",
+    "semantic_hash": ""
+  },
+  "scripts/prerender-calcs.js": {
+    "mtime": 1794554926.7599838,
+    "seen": 1794557236.4254851,
+    "ast_hash": "76d46535bc55d04ef2b08b1941ed6f63",
+    "semantic_hash": ""
+  },
+  "scripts/prune-dead-news.js": {
+    "mtime": 1794554357.1239555,
+    "seen": 1794557236.4254928,
+    "ast_hash": "c8562da1e1a579d3ee9039e08626de27",
+    "semantic_hash": ""
+  },
+  "scripts/review-copy-fixes.py": {
+    "mtime": 1794376847.536604,
+    "seen": 1794557236.4254994,
+    "ast_hash": "885c10230debabaa828cfdc1b627b0aa",
+    "semantic_hash": ""
+  },
+  "scripts/sba-foia/aggregate.py": {
+    "mtime": 1794553765.371926,
+    "seen": 1794557236.425507,
+    "ast_hash": "d4ca77d139031299ef7b731022b7d703",
+    "semantic_hash": ""
+  },
+  "scripts/sba-foia/build-pages.js": {
+    "mtime": 1794556238.144049,
+    "seen": 1794557236.4255137,
+    "ast_hash": "f9940512462b64c03f0f381452a91eaf",
+    "semantic_hash": ""
+  },
+  "scripts/sba-foia/fetch.py": {
+    "mtime": 1794553765.375926,
+    "seen": 1794557236.4255211,
+    "ast_hash": "794dc0b3f2335b681c513d1dad8adc0f",
+    "semantic_hash": ""
+  },
+  "scripts/sba-foia/published.json": {
+    "mtime": 1794554128.8759441,
+    "seen": 1794557236.4255283,
+    "ast_hash": "f0eb221fe69c6cc1bec45d25ebc6c871",
+    "semantic_hash": ""
+  },
+  "scripts/sync-asof.js": {
+    "mtime": 1794553751.2319252,
+    "seen": 1794557236.4255357,
+    "ast_hash": "669ba8f590bd8bc4f87d584b875a1fd1",
+    "semantic_hash": ""
+  },
+  "scripts/sync-policy.js": {
+    "mtime": 1794554002.6239378,
+    "seen": 1794557236.4255445,
+    "ast_hash": "d9513378acf9ee65d0c86d91370817b8",
+    "semantic_hash": ""
+  },
+  "scripts/sync-static-rates.js": {
+    "mtime": 1794375046.9045143,
+    "seen": 1794557236.4255517,
+    "ast_hash": "1738296ee25a12405faaff3def5e3623",
+    "semantic_hash": ""
+  },
+  "site.config.json": {
+    "mtime": 1794554128.731944,
+    "seen": 1794557236.4255662,
+    "ast_hash": "67e7868fbd353fa8418237fd0c8db14d",
+    "semantic_hash": ""
+  },
+  "tests/verify-help.js": {
+    "mtime": 1794554834.9759793,
+    "seen": 1794557236.4255729,
+    "ast_hash": "7e8ec568472e2d57b350f6709e907753",
+    "semantic_hash": ""
+  },
+  "tests/verify-math.js": {
+    "mtime": 1794377497.4806361,
+    "seen": 1794557236.4255807,
+    "ast_hash": "89668f5576bad1e340b5594872532d4b",
+    "semantic_hash": ""
+  },
+  "tests/verify-new-calcs.js": {
+    "mtime": 1794554557.5239654,
+    "seen": 1794557236.425588,
+    "ast_hash": "4cab2fde109b726936ad754d129d6ed8",
+    "semantic_hash": ""
+  },
+  "tests/verify-policy.js": {
+    "mtime": 1794554834.8919792,
+    "seen": 1794557236.4255943,
+    "ast_hash": "6ae0e3eb97b5cf8bc83d68c6dc7127ff",
+    "semantic_hash": ""
+  },
+  "tests/verify-ui.js": {
+    "mtime": 1794377574.62864,
+    "seen": 1794557236.425601,
+    "ast_hash": "d230222340f7b3b1904f0272dc6ba4d3",
+    "semantic_hash": ""
+  },
+  "tools/rates/refresh-rates.mjs": {
+    "mtime": 1794376990.240611,
+    "seen": 1794557236.4260733,
+    "ast_hash": "c65b585783036a62125c3f8c992444a5",
+    "semantic_hash": ""
+  },
+  ".github/workflows/refresh-sba-data.yml": {
+    "mtime": 1794555171.127996,
+    "seen": 1794557236.426128,
+    "ast_hash": "0858e0c73ccab823a730af813ca35ac7",
+    "semantic_hash": ""
+  },
+  ".github/workflows/site-health.yml": {
+    "mtime": 1794554375.9119563,
+    "seen": 1794557236.4261355,
+    "ast_hash": "e4ef723c4a94213a44491e83b8970f47",
+    "semantic_hash": ""
+  },
+  "docs/AFFILIATE-APPLICATION-PACK-2026-11-11.md": {
+    "mtime": 1794375643.8485441,
+    "seen": 1794557236.4261749,
+    "ast_hash": "d5e3ca15827b14dc5e83605011928d69",
+    "semantic_hash": ""
+  },
+  "public/calculators/business-valuation-sde.html": {
+    "mtime": 1794556300.1360521,
+    "seen": 1794557236.4263325,
+    "ast_hash": "da6345a87f241eff1626f81137e0dae1",
+    "semantic_hash": ""
+  },
+  "public/calculators/global-dscr.html": {
+    "mtime": 1794556300.156052,
+    "seen": 1794557236.4263759,
+    "ast_hash": "5800ed2e1c2004ad8061001b6bff39ba",
+    "semantic_hash": ""
+  },
+  "public/calculators/how-much-can-i-borrow.html": {
+    "mtime": 1794556300.4840522,
+    "seen": 1794557236.4263897,
+    "ast_hash": "ef20c6e20ac866d70adfd8c6d042c950",
+    "semantic_hash": ""
+  },
+  "public/calculators/merchant-cash-advance-cost.html": {
+    "mtime": 1794556300.548052,
+    "seen": 1794557236.426425,
+    "ast_hash": "3a21debe6942abfb077c21a660540f37",
+    "semantic_hash": ""
+  },
+  "public/calculators/prepayment-penalty.html": {
+    "mtime": 1794556300.120052,
+    "seen": 1794557236.426438,
+    "ast_hash": "e7faeb74fc91d8eab1c185a4127f7ea3",
+    "semantic_hash": ""
+  },
+  "public/calculators/sba-guarantee-fee.html": {
+    "mtime": 1794556300.0240521,
+    "seen": 1794557236.4264789,
+    "ast_hash": "d2d81442d489551fabac7968a7b75b4f",
+    "semantic_hash": ""
+  },
+  "public/loans/sba-7a-rates.html": {
+    "mtime": 1794555821.3960283,
+    "seen": 1794557236.4267504,
+    "ast_hash": "fe419dde916a8e3e39a1421cc20e7ddc",
+    "semantic_hash": ""
+  },
+  "public/research/index.html": {
+    "mtime": 1794556239.9600492,
+    "seen": 1794557236.4268,
+    "ast_hash": "dc421374e52825791750c4b4c9a77424",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/alabama.html": {
+    "mtime": 1794556239.972049,
+    "seen": 1794557236.4268079,
+    "ast_hash": "b4e475998d9626e1ff952e3c9fa4fac1",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/alaska.html": {
+    "mtime": 1794556239.976049,
+    "seen": 1794557236.4268148,
+    "ast_hash": "05cdae662c2cd6d249c83f3fbf4dee39",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/arizona.html": {
+    "mtime": 1794556239.9800491,
+    "seen": 1794557236.4268217,
+    "ast_hash": "fe2f9071ae8b8447191f2c6e4eaa0d7e",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/arkansas.html": {
+    "mtime": 1794556239.984049,
+    "seen": 1794557236.4268284,
+    "ast_hash": "40bd86ae531860cb46460c2f594763b9",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/california.html": {
+    "mtime": 1794556239.988049,
+    "seen": 1794557236.4268353,
+    "ast_hash": "0f71bfb9cb7b557e588759fe12c22674",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/colorado.html": {
+    "mtime": 1794556239.992049,
+    "seen": 1794557236.4268422,
+    "ast_hash": "7f73d58ab6097e70c22270f78ab4aefa",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/connecticut.html": {
+    "mtime": 1794556239.9960492,
+    "seen": 1794557236.4268484,
+    "ast_hash": "500d131f6e1d5af9c595eeeb5012ce98",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/delaware.html": {
+    "mtime": 1794556240.004049,
+    "seen": 1794557236.426855,
+    "ast_hash": "d42a1aa60850d6306f16ad0eb7b8de17",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/district-of-columbia.html": {
+    "mtime": 1794556240.008049,
+    "seen": 1794557236.4268615,
+    "ast_hash": "2d65334d0244dbed358b435526276b21",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/florida.html": {
+    "mtime": 1794556240.012049,
+    "seen": 1794557236.4268692,
+    "ast_hash": "183db44660b6026d0d6ae96702d400e8",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/georgia.html": {
+    "mtime": 1794556240.020049,
+    "seen": 1794557236.4268768,
+    "ast_hash": "599ed7a8a9b7c382dc3c2dbcc149b270",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/hawaii.html": {
+    "mtime": 1794556240.024049,
+    "seen": 1794557236.426883,
+    "ast_hash": "e082474088fa93c7f257e771788da627",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/idaho.html": {
+    "mtime": 1794556240.028049,
+    "seen": 1794557236.4268892,
+    "ast_hash": "23f718ef006fb1a8e5e5de511fb6d45f",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/illinois.html": {
+    "mtime": 1794556240.0320492,
+    "seen": 1794557236.4268956,
+    "ast_hash": "91d8699baf01bf33ea050ec7b005c56b",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/index.html": {
+    "mtime": 1794556239.964049,
+    "seen": 1794557236.4269018,
+    "ast_hash": "b5f7f29f7a9746e44d9e80f181169620",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/indiana.html": {
+    "mtime": 1794556240.0360491,
+    "seen": 1794557236.4269075,
+    "ast_hash": "93d092b320d058d27ba44328cc8719d6",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/iowa.html": {
+    "mtime": 1794556240.040049,
+    "seen": 1794557236.4269137,
+    "ast_hash": "4f7635efef314ac60ebee73225f9a303",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/kansas.html": {
+    "mtime": 1794556240.048049,
+    "seen": 1794557236.4269202,
+    "ast_hash": "19d2aa183f195436c3f347c4fe5c6e45",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/kentucky.html": {
+    "mtime": 1794556240.0520492,
+    "seen": 1794557236.4269269,
+    "ast_hash": "9cbd61c46f2c5bd0feab45f4828b297c",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/louisiana.html": {
+    "mtime": 1794556240.056049,
+    "seen": 1794557236.4269335,
+    "ast_hash": "2dab7ebab9f1f60599297ee17ba19d31",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/maine.html": {
+    "mtime": 1794556240.060049,
+    "seen": 1794557236.4269395,
+    "ast_hash": "7652a4bb31249ff8a09365eb8fd41735",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/maryland.html": {
+    "mtime": 1794556240.064049,
+    "seen": 1794557236.4269457,
+    "ast_hash": "6d2e6ddf2f6c00a1065903aab5ef6e09",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/massachusetts.html": {
+    "mtime": 1794556240.068049,
+    "seen": 1794557236.4269516,
+    "ast_hash": "8ca3a9e9bf51216732a9fc66fc336881",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/michigan.html": {
+    "mtime": 1794556240.076049,
+    "seen": 1794557236.4269583,
+    "ast_hash": "814ee0ac00de45942dd46b3ccf1b929b",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/minnesota.html": {
+    "mtime": 1794556240.084049,
+    "seen": 1794557236.4269645,
+    "ast_hash": "51ad0e185c38514cd187d55732b049a9",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/mississippi.html": {
+    "mtime": 1794556240.0880492,
+    "seen": 1794557236.4269712,
+    "ast_hash": "bb3ce533cad5d23443645f42c8eefdf3",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/missouri.html": {
+    "mtime": 1794556240.0920491,
+    "seen": 1794557236.4269779,
+    "ast_hash": "bcebc322566f8c2f024060d1e800fc2d",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/montana.html": {
+    "mtime": 1794556240.096049,
+    "seen": 1794557236.4269843,
+    "ast_hash": "2757e1df1baa6400ac599228460c3010",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/nebraska.html": {
+    "mtime": 1794556240.100049,
+    "seen": 1794557236.4269905,
+    "ast_hash": "0a3529bc2f9f91e3ebad4bb02c72fd2b",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/nevada.html": {
+    "mtime": 1794556240.104049,
+    "seen": 1794557236.4269972,
+    "ast_hash": "9fdb2b5e2c9f236f8cc18840e45f52b8",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/new-hampshire.html": {
+    "mtime": 1794556240.1080492,
+    "seen": 1794557236.427004,
+    "ast_hash": "bb43f4ccf2c9a7f9eb2b95feeaea94cc",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/new-jersey.html": {
+    "mtime": 1794556240.116049,
+    "seen": 1794557236.4270105,
+    "ast_hash": "45f35844b3d78408a042163683d7c8fc",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/new-mexico.html": {
+    "mtime": 1794556240.1240492,
+    "seen": 1794557236.427017,
+    "ast_hash": "e82a03b9436b79de490246e3df78b498",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/new-york.html": {
+    "mtime": 1794556240.1280491,
+    "seen": 1794557236.4270234,
+    "ast_hash": "33a61c42f13d1c094d6efa5e7fda884b",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/north-carolina.html": {
+    "mtime": 1794556240.136049,
+    "seen": 1794557236.4270291,
+    "ast_hash": "884aa2be4b7f23016a8f82616435ac07",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/north-dakota.html": {
+    "mtime": 1794556240.140049,
+    "seen": 1794557236.4270358,
+    "ast_hash": "5d6cdb02d0c96e18e861111e8e2d42b7",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/ohio.html": {
+    "mtime": 1794556240.1440492,
+    "seen": 1794557236.427042,
+    "ast_hash": "a8311c7a12a7dc535c73f39c2b41b308",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/oklahoma.html": {
+    "mtime": 1794556240.148049,
+    "seen": 1794557236.4270484,
+    "ast_hash": "db1fea9f06875b521aeb8fc9f416e40f",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/oregon.html": {
+    "mtime": 1794556240.156049,
+    "seen": 1794557236.427055,
+    "ast_hash": "ae2c368679872deb7058381f5e7b7b8d",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/pennsylvania.html": {
+    "mtime": 1794556240.1640491,
+    "seen": 1794557236.4270616,
+    "ast_hash": "5cbc5a99f47ec2569cb8ac7e5b96075e",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/puerto-rico.html": {
+    "mtime": 1794556240.172049,
+    "seen": 1794557236.4270678,
+    "ast_hash": "4a2d9087d853b89963ab297136785cde",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/rhode-island.html": {
+    "mtime": 1794556240.1800492,
+    "seen": 1794557236.4270737,
+    "ast_hash": "22c1562308655dfb59a0cc8429fd0f59",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/south-carolina.html": {
+    "mtime": 1794556240.1840491,
+    "seen": 1794557236.4270802,
+    "ast_hash": "f6a8c939a3804aa52aae3a3744533aa2",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/south-dakota.html": {
+    "mtime": 1794556240.1840491,
+    "seen": 1794557236.4270866,
+    "ast_hash": "7adef4611a2ea546fe591cc1bd2d334b",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/tennessee.html": {
+    "mtime": 1794556240.188049,
+    "seen": 1794557236.427093,
+    "ast_hash": "ac7e992ffbea875f5a31a6f0f0f34b25",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/texas.html": {
+    "mtime": 1794556240.192049,
+    "seen": 1794557236.4270992,
+    "ast_hash": "12c900af745879249eac7a87b21ef594",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/utah.html": {
+    "mtime": 1794556240.196049,
+    "seen": 1794557236.427106,
+    "ast_hash": "7c65002be179638be53fe03a6f50cf44",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/vermont.html": {
+    "mtime": 1794556240.204049,
+    "seen": 1794557236.4271116,
+    "ast_hash": "7fd987e21ac1d4ec030a7a363dd3463a",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/virginia.html": {
+    "mtime": 1794556240.208049,
+    "seen": 1794557236.427118,
+    "ast_hash": "07f34d73319d51113a37317c866291ad",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/washington.html": {
+    "mtime": 1794556240.212049,
+    "seen": 1794557236.4271243,
+    "ast_hash": "976bba7c14be898581eeea525afad6a1",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/west-virginia.html": {
+    "mtime": 1794556240.216049,
+    "seen": 1794557236.427131,
+    "ast_hash": "dfc68b87430c9fc4e1da215f8f485870",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/wisconsin.html": {
+    "mtime": 1794556240.224049,
+    "seen": 1794557236.4271371,
+    "ast_hash": "3f118301ceeb17485fa93dc52bb84bbf",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-by-state/wyoming.html": {
+    "mtime": 1794556240.232049,
+    "seen": 1794557236.4271433,
+    "ast_hash": "6eb0ffdfe4952110b8b94cdf24bdf911",
+    "semantic_hash": ""
+  },
+  "public/research/sba-7a-loan-data.html": {
+    "mtime": 1794556239.956049,
+    "seen": 1794557236.4271495,
+    "ast_hash": "55d4a0600204c20636ea97e1edfab66e",
+    "semantic_hash": ""
+  },
+  "public/resources/index.html": {
+    "mtime": 1794556691.9560716,
+    "seen": 1794557236.427156,
+    "ast_hash": "6052cdd9b813e131050f8265a7016c54",
+    "semantic_hash": ""
+  },
+  "public/site-index.html": {
+    "mtime": 1794556691.6840715,
+    "seen": 1794557236.42717,
+    "ast_hash": "8c1dbbb74c3bcb106f366f89eb64b9dd",
+    "semantic_hash": ""
+  },
+  "public/img/author-icon.svg": {
+    "mtime": 1794377138.3286183,
+    "seen": 1794557236.4272187,
+    "ast_hash": "55d713968f8102bf1aa3dce1e977e518",
     "semantic_hash": ""
   }
 }
