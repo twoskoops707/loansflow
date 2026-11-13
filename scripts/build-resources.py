@@ -7,7 +7,7 @@
   * Acquisition due-diligence checklist: general-purpose request list.
 Run: python3 scripts/build-resources.py   (idempotent)
 """
-import re, json, pathlib, html
+import re, json, pathlib, html, datetime
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -39,6 +39,23 @@ def header(ws, row, labels):
 
 def widths(ws, ws_widths):
     for i, w in enumerate(ws_widths, 1): ws.column_dimensions[chr(64 + i)].width = w
+
+def normalize_zip(path):
+    # fixed timestamps on every zip entry so rebuilding unchanged content gives byte-identical files (no daily commit noise)
+    import zipfile, io
+    d = (int(asof[:4]), int(asof[5:7]), int(asof[8:10]), 0, 0, 0)
+    with zipfile.ZipFile(path) as z: items = [(i.filename, z.read(i.filename)) for i in z.infolist()]
+    fixed = f'{asof}T00:00:00Z'.encode()
+    items = [(n, re.sub(rb'(<dcterms:modified[^>]*>)[^<]*', lambda m: m.group(1) + fixed, d) if n == 'docProps/core.xml' else d) for n, d in items]
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as z:
+        for name, data in sorted(items):
+            zi = zipfile.ZipInfo(name, d); zi.compress_type = zipfile.ZIP_DEFLATED; zi.external_attr = 0o644 << 16; z.writestr(zi, data)
+    pathlib.Path(path).write_bytes(buf.getvalue())
+
+def stamp(wb):
+    d = datetime.datetime(int(asof[:4]), int(asof[5:7]), int(asof[8:10]))
+    wb.properties.created = d; wb.properties.modified = d; wb.properties.creator = 'LoansFlow'; wb.properties.lastModifiedBy = 'LoansFlow'
 
 FOOT = f'Free template from LoansFlow ({SITE}/resources/), version {asof_long}. Educational only, not advice. LoansFlow is not a lender.'
 
@@ -76,7 +93,7 @@ def application_checklist():
     for a in ('I5', 'I6', 'I7'): ws[a].fill = OUT
     widths(ws, [44, 52, 16, 14, 16, 34, 3, 18, 12]); ws.freeze_panes = 'A5'
     ws.cell(row=last + 2, column=1, value=FOOT).font = Font(italic=True, size=9, color='666666')
-    wb.save(DL / 'sba-7a-application-checklist.xlsx')
+    stamp(wb); wb.save(DL / 'sba-7a-application-checklist.xlsx'); normalize_zip(DL / 'sba-7a-application-checklist.xlsx')
     return sum(len(i) for _, i in sections)
 
 # ---------------------------------------------------------------- 2. DSCR worksheet
@@ -128,7 +145,7 @@ def dscr_worksheet():
         r += 1
     widths(ws, [50, 18, 56]); ws.freeze_panes = 'A4'
     ws.cell(row=r + 1, column=1, value=FOOT).font = Font(italic=True, size=9, color='666666')
-    wb.save(DL / 'dscr-worksheet.xlsx')
+    stamp(wb); wb.save(DL / 'dscr-worksheet.xlsx'); normalize_zip(DL / 'dscr-worksheet.xlsx')
 
 # ---------------------------------------------------------------- 3. Due diligence checklist
 DD = [
@@ -201,7 +218,7 @@ def due_diligence():
     for a in ('J5', 'J6', 'J7'): ws[a].fill = OUT
     widths(ws, [52, 54, 16, 14, 16, 12, 30, 3, 20, 10]); ws.freeze_panes = 'A5'
     ws.cell(row=last + 2, column=1, value=FOOT).font = Font(italic=True, size=9, color='666666')
-    wb.save(DL / 'business-acquisition-due-diligence-checklist.xlsx')
+    stamp(wb); wb.save(DL / 'business-acquisition-due-diligence-checklist.xlsx'); normalize_zip(DL / 'business-acquisition-due-diligence-checklist.xlsx')
     return n
 
 # ---------------------------------------------------------------- 4. Loan comparison worksheet
@@ -242,7 +259,7 @@ def loan_comparison():
     ws.merge_cells(start_row=r + 3, start_column=1, end_row=r + 3, end_column=5); ws.row_dimensions[r + 3].height = 62
     ws.cell(row=r + 5, column=1, value=FOOT).font = Font(italic=True, size=9, color='666666')
     widths(ws, [44, 20, 20, 20, 20]); ws.freeze_panes = 'B5'
-    wb.save(DL / 'loan-comparison-worksheet.xlsx')
+    stamp(wb); wb.save(DL / 'loan-comparison-worksheet.xlsx'); normalize_zip(DL / 'loan-comparison-worksheet.xlsx')
 
 
 # ---------------------------------------------------------------- hub page

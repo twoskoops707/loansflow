@@ -41,6 +41,7 @@ jobs:
           node scripts/sync-asof.js
           node scripts/prerender-calcs.js
           node scripts/build-clusters.js
+          python3 scripts/apply-nav.py
           python3 scripts/make-site-index.py
           node scripts/build-llms.js
           node scripts/build-sitemap.js
