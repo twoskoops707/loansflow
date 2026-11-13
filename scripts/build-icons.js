@@ -12,8 +12,9 @@ const tile = {}; for (const m of home.matchAll(/<a class="tile" href="\/loans\/(
 const navIcon = (href) => { const m = home.match(new RegExp('<a href="' + href.replace(/[/#]/g, '\\$&') + '"><i class="mi">(<svg[\\s\\S]*?</svg>)</i>')); return m ? inner(m[1]) : null; };
 
 const I = {
-  shield: tile['sba-7a'], building: tile['sba-504'], bolt: tile['sba-express'], sprout: tile['sba-microloan'], tap: tile['line-of-credit'], bank: tile['commercial-term-loan'], gear: tile['equipment-financing'], house: tile['mortgage'],
+  shield: tile['sba-7a'], building: tile['sba-504'], bolt: tile['sba-express'], sprout: tile['sba-microloan'], bank: tile['commercial-term-loan'], gear: tile['equipment-financing'], house: tile['mortgage'],
   compass: navIcon('/alternative-financing/'), pin: navIcon('/directory/'),
+  revolve: '<circle class="ln fg" cx="24" cy="24" r="7"/><path class="ln" d="M39 22 A15 15 0 0 0 13.5 12.5 M12.5 6.5 V13.5 H19.5"/><path class="ln2" d="M9 26 A15 15 0 0 0 34.5 35.5 M35.5 41.5 V34.5 H28.5"/>',
   card: '<rect class="ln fg" x="6" y="12" width="36" height="24" rx="4"/><path class="ln2" d="M6 20h36M13 29h8"/>',
   gauge: '<path class="ln fg" d="M7 34 A17 17 0 0 1 41 34 Z"/><path class="ln2" d="M24 34 L33 21"/><circle class="ln" cx="24" cy="34" r="2"/><path class="ln" d="M12 26 l2 1.2 M24 16.5 v3 M36 26 l-2 1.2"/>',
   scale: '<path class="ln" d="M24 8 V40 M14 40 H34 M10 14 H38"/><path class="ln2 fa" d="M10 14 L5 27 H15 Z M38 14 L33 27 H43 Z"/>',
@@ -52,7 +53,7 @@ const I = {
 };
 
 const MAP = {
-  '/calculators/sba-7a': 'shield', '/calculators/sba-504': 'building', '/calculators/sba-express': 'bolt', '/calculators/sba-guarantee-fee': 'shieldpct', '/calculators/sba-equity-injection': 'coinsin',
+  '/loans/line-of-credit': 'revolve', '/calculators/sba-7a': 'shield', '/calculators/sba-504': 'building', '/calculators/sba-express': 'bolt', '/calculators/sba-guarantee-fee': 'shieldpct', '/calculators/sba-equity-injection': 'coinsin',
   '/calculators/business-acquisition': 'storefront', '/calculators/cash-to-close': 'banknote', '/calculators/dscr': 'gauge', '/calculators/global-dscr': 'scale', '/calculators/how-much-can-i-borrow': 'limit',
   '/calculators/line-of-credit': 'card', '/calculators/loan-payment': 'calendar', '/calculators/mortgage-payment': 'house', '/calculators/home-affordability': 'housecheck', '/calculators/refinance-break-even': 'swap',
   '/calculators/commercial-real-estate': 'buildings', '/calculators/equipment-payment': 'gear', '/calculators/equipment-term-comparison': 'barscompare', '/calculators/lease-vs-loan': 'splitdoc',
@@ -64,6 +65,13 @@ const MAP = {
 const missing = Object.entries(I).filter(([, v]) => !v).map(([k]) => k); if (missing.length) { console.error('missing base icons:', missing); process.exit(1); }
 fs.writeFileSync(path.join(__dirname, 'icon-map.json'), JSON.stringify({ icons: I, map: MAP }, null, 1) + '\n');
 
+/* ---- loan-type tiles: the line-of-credit tile uses the revolving-credit icon (the old faucet looked like a plumbing ad) ---- */
+const svgTile = (n) => `<svg class="ico" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">${I[n]}</svg>`;
+for (const rel of ['index.html', 'loans/index.html']) {
+  const fp = path.join(PUB, rel); let t = fs.readFileSync(fp, 'utf8');
+  const o = t; t = t.replace(/(<a class="(?:tile|lf-card)" href="\/loans\/line-of-credit">\s*<span class="(?:tile-ico|lf-cardico)">)<svg[\s\S]*?<\/svg>/, (m, a) => a + svgTile('revolve'));
+  if (t !== o) fs.writeFileSync(fp, t);
+}
 /* ---- calculators index: per-card icon and live counts ---- */
 const svgOf = (n) => `<svg class="ico" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">${I[n]}</svg>`;
 const ip = path.join(PUB, 'calculators', 'index.html'); let h = fs.readFileSync(ip, 'utf8'), n = 0;
