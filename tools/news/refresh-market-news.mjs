@@ -116,7 +116,7 @@ function parseRssItems(xml) {
     );
     const source =
       decodeXml((chunk.match(/<source[^>]*>([\s\S]*?)<\/source>/i) || [])[1]) || null;
-    if (!title || !link) continue;
+    if (!title || !/^https?:\/\//i.test(link)) continue; // only real web links ever reach the page
     items.push({ title, link, pubDate, description, source });
   }
   return items;

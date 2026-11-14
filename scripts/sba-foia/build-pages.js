@@ -73,10 +73,16 @@ const authorBox = '<section class="author-box"><p><strong>Prepared by LoansFlow<
 const CSS = `<style>.dv{margin:1.5rem 0;max-width:90ch}.dv svg{width:100%;height:auto;display:block}.dv text{fill:var(--muted);font:12px Inter,system-ui,sans-serif}.dv .gr{stroke:var(--line)}.dv .ax{stroke:var(--line-strong)}.dv .bar{fill:var(--accent)}.dv .l1{stroke:var(--accent);fill:none;stroke-width:2.5}.dv .l2{stroke:#7aa2ff;fill:none;stroke-width:2.5}.dv .lg1{fill:var(--accent)}.dv .lg2{fill:#7aa2ff}.dv figcaption{color:var(--muted);font-size:.85rem;margin-top:.4rem}.tbl-wrap{overflow-x:auto}.legal-page .doc-table td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}.legal-page .doc-table th:nth-child(n+2){text-align:right}.legal-page .doc-table td:first-child a{color:var(--accent)}</style>`;
 
 function page({ url, title, desc, crumbs, body, ld }) {
-  let head = headRaw.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`)
-    .replace(/(<meta name="description" content=")[^"]*"/, `$1${esc(desc)}"`).replace(/(<link rel="canonical" href=")[^"]*"/, `$1${url}"`)
-    .replace(/(<meta property="og:title" content=")[^"]*"/, `$1${esc(title)}"`).replace(/(<meta property="og:description" content=")[^"]*"/, `$1${esc(desc)}"`)
-    .replace(/(<meta property="og:url" content=")[^"]*"/, `$1${url}"`).replace(/(<meta name="robots" content=")[^"]*"/, `$1${PUBLISH ? 'index, follow' : 'noindex, nofollow'}"`);
+  // Replacement FUNCTIONS, not strings: descriptions contain dollar amounts ("$1.2 billion"), and in a replacement string "$1"
+  // means "capture group 1", which silently corrupted every description that mentioned a $1.x figure.
+  const setAttr = (h, re, value) => h.replace(re, (m, open) => open + value + '"');
+  let head = headRaw.replace(/<title>[\s\S]*?<\/title>/, () => `<title>${esc(title)}</title>`);
+  head = setAttr(head, /(<meta name="description" content=")[^"]*"/, esc(desc));
+  head = setAttr(head, /(<link rel="canonical" href=")[^"]*"/, url);
+  head = setAttr(head, /(<meta property="og:title" content=")[^"]*"/, esc(title));
+  head = setAttr(head, /(<meta property="og:description" content=")[^"]*"/, esc(desc));
+  head = setAttr(head, /(<meta property="og:url" content=")[^"]*"/, url);
+  head = setAttr(head, /(<meta name="robots" content=")[^"]*"/, PUBLISH ? 'index, follow' : 'noindex, nofollow');
   const bc = { '@type': 'BreadcrumbList', itemListElement: crumbs.map((c, i) => Object.assign({ '@type': 'ListItem', position: i + 1, name: c[0] }, c[1] ? { item: 'https://loansflow.loan' + c[1] } : {})) };
   const blocks = [].concat(ld, bc).map((o) => `<script type="application/ld+json">${JSON.stringify(Object.assign({ '@context': 'https://schema.org' }, o))}</script>`).join('\n');
   const trail = crumbs.map((c, i) => c[1] && i < crumbs.length - 1 ? `<a href="${c[1]}">${esc(c[0])}</a>` : esc(c[0])).join(' / ');
