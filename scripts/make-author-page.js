@@ -21,7 +21,7 @@ const ld = {
     jobTitle: 'Certified Public Accountant', knowsAbout: ["SBA loans", "Small business financing", "Business valuation", "Business acquisitions", "Business succession planning", "Tax planning for small businesses", "S corporations", "C corporations", "Partnerships", "Nonprofit accounting", "Payroll tax", "Sales tax", "Business personal property tax valuation", "Payroll audits", "School audits", "Cash flow analysis", "Interim CFO services", "Negotiations", "Permitting", "Multi-state taxation", "Research and development tax credits"], alumniOf: { '@type': 'CollegeOrUniversity', name: 'Cal Poly Humboldt', alternateName: 'Humboldt State University' }, worksFor: { '@type': 'Organization', name: 'LoansFlow' }, url: 'https://loansflow.loan/author' },
 };
 head2 = head2.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>\n</head>`);
-const photo = '<img class="author-icon ap-icon" src="/img/author-icon.svg?v=2" alt="Joshua Miller, CPA" width="112" height="112" decoding="async">';
+const photo = '<img class="author-icon ap-icon" src="/img/author-icon.svg?v=3" alt="Joshua Miller, CPA" width="112" height="112" decoding="async">';
 const main = `<main class="legal-page author-page">
     <section class="ap-hero">
       ${photo}
