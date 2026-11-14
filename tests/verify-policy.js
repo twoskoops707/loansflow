@@ -33,4 +33,7 @@ for (const f of files) {
   for (const m of t.matchAll(/([\d.]+)% on the first \$1M guaranteed, ([\d.]+)% above/g)) { eq(rel + ': fee first $1M', +m[1], u.above.pctFirst); eq(rel + ': fee above $1M', +m[2], u.above.pctRest); }
   for (const m of t.matchAll(/up to (\$[\d,]+|\$\d+ million)(?= for 7\(a\)| 7\(a\)|\. SBA 7\(a\)| on a 7\(a\))/g)) { const v = m[1].includes('million') ? +m[1].match(/\d+/)[0] * 1e6 : +m[1].replace(/[$,]/g, ''); eq(rel + ': 7(a) max', v, P.sba7a.maxLoan); }
 }
+// 4. the SBA 7(a) loan page's rate-cap table (static rows that the daily job fills with prime + spread) must list the policy spreads
+{ const h = fs.readFileSync(path.join(PUB, 'loans', 'sba-7a.html'), 'utf8');
+  eq('loans/sba-7a.html: maximum spread rows', [...h.matchAll(/<tr data-spread="([\d.]+)">/g)].map((m) => +m[1]), P.sba7a.maxSpreadOverBase.map((x) => x.pct)); }
 console.log(`${checks} policy checks, ${fails} failures`); process.exit(fails ? 1 : 0);
