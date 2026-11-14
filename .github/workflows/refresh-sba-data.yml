@@ -33,6 +33,7 @@ jobs:
           python3 -I scripts/sba-foia/aggregate.py
           node scripts/sba-foia/build-pages.js
           python3 scripts/apply-nav.py
+          python3 scripts/add-adsense-script.py
           node scripts/build-llms.js
           node scripts/build-sitemap.js
           node scripts/check-internal-links.js
