@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T20:53:05.432Z",
+  "updatedAt": "2026-11-14T11:58:39.570Z",
   "rates": {
     "asOf": "11/12/2026",
     "source": "Freddie Mac PMMS",
@@ -14,11 +14,6 @@
         "label": "15-Yr Fixed",
         "value": "6.45%",
         "note": "-0.12 pts vs last week"
-      },
-      {
-        "label": "30-Yr Refinance",
-        "value": "7.16%",
-        "note": "Approx. vs purchase avg."
       }
     ],
     "disclaimer": "National averages from Freddie Mac Primary Mortgage Market Survey®. Individual rates vary by credit profile, down payment, and lender. Not a rate quote."
@@ -129,19 +124,19 @@
     },
     {
       "category": "Rates",
-      "source": "WSJ",
-      "title": "Mortgage Rates Today, November 9, 2026: 30-Year Rates Climb to 7.20%",
-      "summary": "WSJ coverage of recent rates developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVTgyU3NXLWZTZ3RMWDVPUGg4SjF5cDNRcnRBOVJCQWhSa3o2ajh1UTY1ay1RM0tOa3JYZ2JLZkszSElLdGlxUUhoVzdIdEpJV1h1UHFOZXVvcnlXTlZTM3lMemd1ckNZV1M4UzdWbzlIMHVLTi1PSlBFNkd5anc2TnhhUnY0bVhodi1iTQ?oc=5",
-      "publishedAt": "2026-11-09T14:02:04.000Z"
-    },
-    {
-      "category": "Rates",
       "source": "CNBC",
       "title": "Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why",
       "summary": "CNBC coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdUZxa3hUQnZocTljMEFidmJheXdlMVpXbnc5TEx2M1pBQ2VacWVDQU81REoyV0RjTmhaMFlMdkxPdnpkMVNOeGpfUGRpVUE5ejY3Y18xdFlHdXUtbEIwOXlkTmp2UkFsbTZhYUd4UUFSME93ckFtMkVIUHJfUFc0alhCUzdCbkRndTRfdFk5Y2lUZkpuTmZBLWpHOVV1clFvTzl4eUZFVWrSAa4BQVVfeXFMT09VYnp4X1hJS2xCVmh6VHZTaTNHTHJDbURSR0VqRXlzbUR0SlRlM0lmcHdKOFRmZk53emNncEN0Z290ZkZkZ2VlQ1Q5Wkpmd2VkVl9ZZ0FzRVd5V0RBeFlfUm9jd0x5UzAwSFRTSUlTd0VobkotQzU3YWIwTjZGbXZVNENyRTFrU0lNZjQxbjloWFhGMnVDelZBazJtcVh6Z0NjSU9uRjRtTnVfZUp3?oc=5",
       "publishedAt": "2026-11-11T12:38:32.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "The New York Times",
+      "title": "Mortgage Rates Remain High as Affordability Challenges Persist",
+      "summary": "The New York Times coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQM2RDTlVOTFB5RkdlOEp2YlozS2J5Z2M2UUliOXhLcXR2Vm51S2Rtbm5Wdmh0bmZHUXVPNG54TjN3MU5FNmZyNGdScnBDVmI3ZXVBM2owc3BJV1BYdTZ4T2pBYmRiUHdLanhYZFQ4MEdJVGdZNUppclF3M2IyVks5akg5UGpqY2NUdU0tcUhmWkpHMVE?oc=5",
+      "publishedAt": "2026-11-13T14:28:00.000Z"
     },
     {
       "category": "Rates",
@@ -161,9 +156,25 @@
     },
     {
       "category": "Rates",
-      "source": "| Florida Realtors",
+      "source": "National Mortgage Professional",
+      "title": "Even at 6%, Mortgage Rates May Not Be Enough to Unlock Home Sales",
+      "summary": "National Mortgage Professional coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNUnVKZGVQbTc3OHFKQy0zdV9tdDB4NXJIS1VoZ0tRYjZmdzJ6aVl3RXZoMHBuYzhoaE10dWo2ejRpdW4xbU5nTERXblZ1TmlMM0VKVTRWeUc0dk1yRXFibnZrbjlSVUd2N1dtYUNDUlBsZE9nODBRRTBMYWZYMXZqT1l6dHdWcm11emZ4dWRJc3JoVHk3c1g3WE5fSGFZTm5YM29BeXVB?oc=5",
+      "publishedAt": "2026-11-11T15:00:13.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Mortgage News Daily",
+      "title": "Mortgage Rates Have Given Back Almost All of October's Gains",
+      "summary": "Mortgage News Daily coverage of recent rates developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9pR2V6R1UzZEZhUGtRbmIxdnJTRjVZNEMyNXBkaDVneVhJQUZvTlFWX3pxWVBMN3d4QndGV2t1cnVpeXkxRmJZQllEdWlEZExtS2tYSVZRSnFoTkpuWGNWbFRERWhyb3BFNTAzMEJ2MTRRaE3SAXRBVV95cUxQY1pub3NCSWpxWVdsakZBMEZpZk5QNTFlLVBsaFEyZEFVRDhJWU9SNHVwSjNRVGxEb0JidHk5aG5pTmVMY3BxN3ItSW5ESzBXR01aQUNteC1lN2p1ZENpZ2JSY2ZadUNPdjh3Ny1xcmhxU0tCdw?oc=5",
+      "publishedAt": "2026-11-13T20:59:40.000Z"
+    },
+    {
+      "category": "Rates",
+      "source": "Florida Realtors",
       "title": "Mortgage rates fall for fourth straight week",
-      "summary": "| Florida Realtors coverage of recent rates developments. Open the full report for details.",
+      "summary": "Florida Realtors coverage of recent rates developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTUszLTlveTRabFljZ1JfX2lIbHJwNUl1Nl85VDF6Z0xfekJHRmlsWVJzVmlveVg2WHN1dm10Vy05cS1LbjFQWmlncjZtSmZtS0ZhRHhhOU1JOS1DSjhCeWRIOXpiYVd1cWZ6TFpnTEJOdlZkb2s0YTNLelk4RUxwQnQtUFFDcXJqb2d0TlJoMWN6VzcySkZwLU9zQzFnM21BU3NsYlVmZ3Y?oc=5",
       "publishedAt": "2026-11-12T12:00:00.000Z"
     },
@@ -194,26 +205,18 @@
     {
       "category": "Fed Policy",
       "source": "Federal Reserve",
+      "title": "Agencies extend comment period for proposed third-party risk management guidance",
+      "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm",
+      "publishedAt": "2026-11-13T21:15:00.000Z"
+    },
+    {
+      "category": "Fed Policy",
+      "source": "Federal Reserve",
       "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
       "summary": "Federal Reserve coverage of recent fed policy developments. Open the full report for details.",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
       "publishedAt": "2026-11-12T18:30:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "WSJ",
-      "title": "Best Startup Business Loans in November 2026",
-      "summary": "WSJ coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ2Z5Y0NWRHJfaEZGUzZSdkFvV3VMSUpxd2tYczh4RGlGYWJSbXJ6bkRWN0s1bUo3UWZ5Zk5IWE0zSXZOV0ZITzZkeUtXelJTbWstWVlaVFVGRXdBa2FESi1PcG9IM0VPd3VDZ2kxM0xpWFFiQmt5aUtmeGY2bElXRjQzbE84RW95aXc?oc=5",
-      "publishedAt": "2026-11-11T08:00:00.000Z"
-    },
-    {
-      "category": "Small Business",
-      "source": "NerdWallet",
-      "title": "SBA Commercial Real Estate Loans: Compare Your Options",
-      "summary": "NerdWallet coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0x4NHRZclZsTTdjS2ZmWi1NWTRNVS05anBrcHVkRkdEYzJaWTR6WC10UHo3bDlXV2NXM0dneUtEN2dJY0NvVmR2SUc4YXJub1RCQmwxaGZxU1FGWG1NNUQ3MzVHTHhla2VSQVVsVDYyYUxVLW9LQw?oc=5",
-      "publishedAt": "2026-11-09T08:00:00.000Z"
     },
     {
       "category": "Small Business",
@@ -225,19 +228,35 @@
     },
     {
       "category": "Small Business",
-      "source": "Business.com",
-      "title": "Best Business Loan and Financing Option Reviews of 2026",
-      "summary": "Business.com coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNS2hnbDhNeDdZZUEtRzd4S0EzcTdOclhDbEV3MnB3bU5MUmZiTXVDY2R4RnIycDVUZFFUbjQzNlk3eDZDQlhkMDQzTEpJb050UmhrNUpPNFAwOFJnVm5idERyazYwYldaRFV5LXpwNXFYMV9KTk1MN2xFZU1rTExrQTFvOUk0UQ?oc=5",
-      "publishedAt": "2026-11-10T08:00:00.000Z"
+      "source": "The Mighty 790 KFGO",
+      "title": "14 Minnesota counties now eligible for small business loans due to drought",
+      "summary": "The Mighty 790 KFGO coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSEt4bllHLTB3V2hFYlZTQkxOekE1Q1lBdm05YVJneXU0MDdocVFiSDJHYUlGUlpJZXJXTXlwWDJYMllIbVF6SGJGTEk4Nm9kdG9ZM0o0UVgySUFaYnNyOW84UUdqcDNLaGZFaXJPblhwdXljQVBVdG5GNktSNW9RVU5iQW9tS2xmbk9hM0l3a3FZeFlsOXpfSkg4QXJKeC1PNlJ0Rm93?oc=5",
+      "publishedAt": "2026-11-10T18:37:28.000Z"
     },
     {
       "category": "Small Business",
-      "source": "consumerbankers.com",
-      "title": "nCino Small Business Lending Demo (StoryLane)",
-      "summary": "consumerbankers.com coverage of recent small business developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVkFZeWZGR3FQUmpjbXpYQ2N0VHktalBhaW1wV0NFZUtOVzZUM0xvUzBSSWhxNHhlTlh6cmtIazdKaXVacWxNSHVhZ2lXelNGcE1fS3l5cDhNa2FFaDFrLTBoYjI4WHpJRFV1Tkk5OHFrOVRGWHBaQ0tiejdmc0NZckZQTkw3Mk9iVERnag?oc=5",
-      "publishedAt": "2026-11-10T21:14:26.000Z"
+      "source": "ExecutiveGov",
+      "title": "SBA Unveils iCAP Platform to Speed 7(a) Loan Delivery for Small Businesses",
+      "summary": "ExecutiveGov coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb2tRdEZUQUl3dTZValB5clVxaDBXUWxFZWFBeHpkcnRVOW1QajlqdERhV1k0dEV2ZUZ2MjBqZnNlaXdsWTZnVzF1WXJ6QTZDQjNmUGhXNXdQWnVQQ0dmZjFSTkh4ZV9QVkpXUTVWNTVTN214UUtTRXVQNjZPdkJEd1pXQWRkeHli?oc=5",
+      "publishedAt": "2026-11-09T21:38:34.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "Office of Advocacy (.gov)",
+      "title": "Industries That Built America: Defense",
+      "summary": "Office of Advocacy (.gov) coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5KelhOTU5hTy1oczY3UHp2V3U1aDhKRzZMeGkwbTNmdExnUTk5NG14NFV6VzBRTHNqVWRHRmF3OXF6V3drYWgteUp1azdtWlpmQlNXNXVqRVJtbmtBRzBnNVRkR3BsQ19PSDBFRmtOU1FVTEwteVB3d25ONEFjekk?oc=5",
+      "publishedAt": "2026-11-12T17:33:30.000Z"
+    },
+    {
+      "category": "Small Business",
+      "source": "The Business Journals",
+      "title": "Many SBA borrowers will feel the squeeze of rising rates",
+      "summary": "The Business Journals coverage of recent small business developments. Open the full report for details.",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWlBvQUlNNkdQQUhMNjlGdTBfZ0h0MHZxQWNXSzB3dERUM2RNUXNGX3otOE9iTDJJR0FrMWRGTW9BZzdfLUtZaU5RMG80VXo2bDJLclRHOWo0VTJrVU9TX0NTWGJLSXV0bW1seHN6R0xzQTVpUFM3Z3JKRGJOMHJfTHNrNnRRMlF4YUxfaUlNaWNNZnRtclBUcVRwdV9PLUVEMnF5eHg1OA?oc=5",
+      "publishedAt": "2026-11-09T19:15:00.000Z"
     },
     {
       "category": "Equipment Finance",
@@ -262,30 +281,6 @@
       "summary": "WSJ coverage of recent equipment finance developments. Open the full report for details.",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOTJCMTd3ZWRGT0lHMVpLZnZYV3NWalVyR3g3Um1hNWtXVDY4UWk3Uy00WUdxTHNPc1l1anQ0dFg3RkVSWWw3WFV6M3puQnhKS2hSMGZ1NGE4MEVvc0pnUTc0QkxCaFF2ekVoTjVCQjQ4OWthZU5LRzlxd19XRkUwaEltZFpzd3pqZk1acg?oc=5",
       "publishedAt": "2026-11-13T04:19:35.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "Florida Atlantic University",
-      "title": "3rd Annual Boca Finance and Real Estate Conference",
-      "summary": "Florida Atlantic University coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTzg1RG9OWW5RR0E3Y0xxRjRxU0JVbEhnOERjY3NkZEZ2c0Noc3BwZWpjSVB6VnlCcDZFbjJQWVFGZFc2bWdycmQ2YVVkRkpIdzU4YmRWT1FWNlpBY05sWlZ4RXA4NEw1cS1RT0pjSkNob2xuM1NTY005Z0FEZk5CSjF3TXBUdjU4?oc=5",
-      "publishedAt": "2026-11-10T08:00:00.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "CNBC",
-      "title": "Banks are turning cautious on lending, according to the Fed. What it means for the economy",
-      "summary": "CNBC coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRGpTLVg5S2lhMGV5RkhjX0s3Uk51T1EyMk9kU2IyZ3BhZ1JFTEVmYnU1bmhjdjJfU25uVlJNTjhTNHdOc0wzTjk1ZTRDR3F5YnBIMWcxS1ZqUF9Pcjc4Q2R4SVdSVkwtZkRJd0ppdk8xWEFoUzQ2NkpQQ3YxeldsYjBXWkTSAYoBQVVfeXFMT1JEUDZxV2h5LVBsVXBGa0ljQTBfZ19ZUTJLbmxyRWpIZkszZFJjZnBGOVl4bUh3VWZsMmxDbGF1amx2cjNCZVdWUUZDWTZURlQyY3NBLTVGUlBiNnJheXU5RHVrV2ZkTGVndEVfTWNNVnprbXZCaHpaRTdrRlVBeGY0eDBTVXhDY0ZR?oc=5",
-      "publishedAt": "2026-11-05T13:52:38.000Z"
-    },
-    {
-      "category": "Commercial Real Estate",
-      "source": "ATM Marketplace",
-      "title": "Omni Community Credit Union to improve commercial real estate loans through appointment",
-      "summary": "ATM Marketplace coverage of recent commercial real estate developments. Open the full report for details.",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPOEdnOFBpbDQ4UWVmNXdFX2RJY0JxSzgtVzg4N01iVjFoa1Rodm5Fck1FZ21jNFBvWWh0b1JrSTB6dmxudjFMRFRzekEtV0c1enZZc3RRekVnOGREdXNWcXo5ektlZVFXakdYOVktUFFZd3IzMUN6MkZlX0EzckNhOHZVODZEamg4MTZsUTY5QVB5dHczYkJlek1yR0RlU21ib2ExazFLREJwT1VUVlNMeXlTT1dEcnNYc051bksyNWtpUQ?oc=5",
-      "publishedAt": "2026-11-12T11:00:00.000Z"
     }
   ]
 }

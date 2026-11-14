@@ -44,12 +44,13 @@
   }
 
   function social() {
-    var box = document.getElementById('lf-social-posts');
+    var box = document.getElementById('lf-social-posts'), wrap = document.getElementById('lf-social');
     if (!box) return;
     fetch('/data/social.json').then(function (r) { return r.json(); }).then(function (d) {
       var posts = (d.posts || []).filter(function (u) { return /^https:\/\/www\.instagram\.com\/(p|reel)\//.test(u); });
       var status = document.getElementById('lf-social-status');
-      if (!posts.length) { status.textContent = 'No posts have been selected yet. Add Instagram post URLs to data/social.json to show them here.'; return; }
+      if (!posts.length) return; // nothing selected: the section stays hidden
+      if (wrap) wrap.hidden = false;
       var btn = el('button', 'lf-btn', 'Load ' + posts.length + ' Instagram post' + (posts.length > 1 ? 's' : ''));
       btn.type = 'button';
       status.textContent = 'Instagram content loads only when you click, because Instagram’s embed code sets its own cookies.';

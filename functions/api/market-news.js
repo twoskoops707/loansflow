@@ -168,7 +168,7 @@ function articleFromItem(item, category, fallbackSource) {
     title,
     summary: cleanSummary(item.description, item.title, source, category),
     url: item.link,
-    publishedAt: item.pubDate ? new Date(item.pubDate).toISOString() : null,
+    publishedAt: item.pubDate && !Number.isNaN(new Date(item.pubDate).getTime()) ? new Date(item.pubDate).toISOString() : null,
   };
 }
 
@@ -210,11 +210,6 @@ async function buildPayload() {
             label: '15-Yr Fixed',
             value: fmtPct(latest.fixed15),
             note: deltaLabel(latest.fixed15, prev?.fixed15),
-          },
-          {
-            label: '30-Yr Refinance',
-            value: latest.fixed30 != null ? fmtPct(latest.fixed30 + 0.05) : null,
-            note: 'Approx. vs purchase avg.',
           },
           {
             label: '5/1 ARM',
@@ -286,7 +281,7 @@ async function buildPayload() {
           const key = article.title.toLowerCase();
           if (seen.has(key)) continue;
           if (
-            /australia|westpac|canada|uk\b|britain/i.test(article.title) &&
+            /australia|westpac|canada|\buk\b|britain/i.test(article.title) &&
             feed.id !== 'fed-monetary'
           ) {
             continue;

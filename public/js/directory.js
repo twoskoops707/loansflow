@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const DATA_URL = "../data/directory.json";
+  const DATA_URL = "/data/directory.json";
   const grid = document.getElementById("dirGrid");
   const countEl = document.getElementById("resultCount");
   const searchInput = document.getElementById("searchInput");
@@ -147,7 +147,7 @@
         render();
       })
       .catch(function (err) {
-        grid.innerHTML = '<div style="color:var(--muted);padding:1.5rem 0;">Could not load directory data. If you are opening this file directly, try serving it over HTTP. (' + esc(err.message) + ')</div>';
+        grid.innerHTML = '<div style="color:var(--muted);padding:1.5rem 0;">The directory could not be loaded right now. Please refresh the page or try again in a few minutes.</div>';
         countEl.textContent = "";
       });
   }

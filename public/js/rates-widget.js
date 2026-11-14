@@ -16,12 +16,12 @@
   }
   function card(label, value, asOf, src, note, extra) {
     return '<div class="lfr-card"><div class="lfr-label">' + esc(label) + '</div><div class="lfr-value">' + esc(value) + '</div>' + (extra || '') +
-      '<div class="lfr-meta">' + (asOf ? 'as of ' + esc(fmtDate(asOf)) + ' &middot; ' : '') + '<a href="' + esc(src) + '" target="_blank" rel="noopener noreferrer">source</a></div>' + (note ? '<div class="lfr-note">' + esc(note) + '</div>' : '') + '</div>';
+      '<div class="lfr-meta">' + (asOf ? 'as of ' + esc(fmtDate(asOf)) + ' &middot; ' : '') + (src ? '<a href="' + esc(src) + '" target="_blank" rel="noopener noreferrer">source</a>' : '') + '</div>' + (note ? '<div class="lfr-note">' + esc(note) + '</div>' : '') + '</div>';
   }
   function render(d, compact) {
     var S = d.sources || {}, c = [];
     if (d.prime) c.push(card('Prime rate', pct(d.prime.value), d.prime.asOf, S.prime, 'Base for many lines of credit and variable SBA loans'));
-    if (d.fedFunds && !compact) c.push(card('Fed funds target', d.fedFunds.targetFrom.toFixed(2) + '% to ' + d.fedFunds.targetTo.toFixed(2) + '%', d.fedFunds.asOf, S.fedFunds, 'Effective rate ' + pct(d.fedFunds.effr)));
+    if (d.fedFunds && typeof d.fedFunds.targetFrom === 'number' && typeof d.fedFunds.targetTo === 'number' && !compact) c.push(card('Fed funds target', d.fedFunds.targetFrom.toFixed(2) + '% to ' + d.fedFunds.targetTo.toFixed(2) + '%', d.fedFunds.asOf, S.fedFunds, 'Effective rate ' + pct(d.fedFunds.effr)));
     if (d.sofr) c.push(card('SOFR', pct(d.sofr.value), d.sofr.asOf, S.sofr, 'Overnight secured financing rate'));
     if (d.treasury) { if (!compact) c.push(card('5-year Treasury', pct(d.treasury.y5), d.treasury.asOf, S.treasury, 'Equipment and 504 pricing context')); c.push(card('10-year Treasury', pct(d.treasury.y10), d.treasury.asOf, S.treasury, 'Long-term benchmark')); }
     if (d.mortgage) { c.push(card('30-yr fixed mortgage', pct(d.mortgage.m30), d.mortgage.asOf, S.mortgage, 'National weekly average, not a quote', spark(d.mortgage.history30))); if (!compact) c.push(card('15-yr fixed mortgage', pct(d.mortgage.m15), d.mortgage.asOf, S.mortgage, 'National weekly average, not a quote')); }
@@ -31,6 +31,7 @@
   fetch('/data/rates.json').then(function (r) { return r.json(); }).then(function (d) {
     hosts.forEach(function (el) { el.classList.add('lfr'); el.innerHTML = render(d, el.getAttribute('data-lf-rates') === 'compact'); });
   }).catch(function () {
-    hosts.forEach(function (el) { el.hidden = true; });
+    // The page ships the cards already rendered (scripts/prerender-rates.js). Keep them if the refresh fails; hide only an empty box.
+    hosts.forEach(function (el) { if (!el.querySelector('.lfr-card')) el.hidden = true; });
   });
 })();

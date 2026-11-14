@@ -67,7 +67,7 @@
     let p = null;
     if (typeof window !== 'undefined' && window.LF_POLICY) p = window.LF_POLICY;
     else if (typeof require !== 'undefined') { try { p = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'sba-policy.json'), 'utf8')); } catch (e) { p = null; } }
-    return p || { fiscalYear: 2027, effective: '2026-10-01', express: { maxLoan: 500000, guarantyPct: 50 }, microloan: { maxLoan: 50000 }, sba7a: { guaranty: { smallLoanMax: 150000, smallLoanPct: 85, largeLoanPct: 75 }, upfrontFee: { tiers: [{ upToLoan: 150000, pctOfGuaranteed: 2 }, { upToLoan: 700000, pctOfGuaranteed: 3 }], above: { firstGuaranteed: 1000000, pctFirst: 3.5, pctRest: 3.75 }, waiver: { maxLoan: 700000 } }, lenderAnnualServiceFeePct: 0.55, prepayment: { minMaturityYears: 15, windowYears: 3, thresholdPctOfBalance: 25, pctOfAmountPrepaidByYear: [5, 3, 1] }, maxSpreadOverBase: [{ upToLoan: 50000, pct: 6.5 }, { upToLoan: 250000, pct: 6 }, { upToLoan: 350000, pct: 4.5 }, { upToLoan: null, pct: 3 }] }, sba504: { upfrontPct: 0.5, annualPct: 0.203, bankPct: 50, equityPct: 10, newBusinessExtraPct: 5, specialPurposeExtraPct: 5 } };
+    return p || { fiscalYear: 2027, effective: '2026-10-01', express: { maxLoan: 500000, guarantyPct: 50 }, microloan: { maxLoan: 50000 }, sba7a: { maxLoan: 5000000, equityInjectionMinPct: 10, guaranty: { smallLoanMax: 150000, smallLoanPct: 85, largeLoanPct: 75 }, upfrontFee: { tiers: [{ upToLoan: 150000, pctOfGuaranteed: 2 }, { upToLoan: 700000, pctOfGuaranteed: 3 }], above: { firstGuaranteed: 1000000, pctFirst: 3.5, pctRest: 3.75 }, waiver: { maxLoan: 700000 } }, lenderAnnualServiceFeePct: 0.55, prepayment: { minMaturityYears: 15, windowYears: 3, thresholdPctOfBalance: 25, pctOfAmountPrepaidByYear: [5, 3, 1] }, maxSpreadOverBase: [{ upToLoan: 50000, pct: 6.5 }, { upToLoan: 250000, pct: 6 }, { upToLoan: 350000, pct: 4.5 }, { upToLoan: null, pct: 3 }] }, sba504: { upfrontPct: 0.5, annualPct: 0.203, bankPct: 50, equityPct: 10, newBusinessExtraPct: 5, specialPurposeExtraPct: 5 } };
   })();
   LF.policy = POLICY;
   LF.sba7aFee = function (loanAmount, guarantyPct, waived) {
@@ -191,15 +191,17 @@
    * 504: borrower equity 10%, plus 5% for a new business and 5% for a special-purpose property.
    */
   LF.equityInjection = function (cost, mode) {
+    // Percentages come from the policy file (sba7a.equityInjectionMinPct and the sba504 equity figures).
+    const a = POLICY.sba7a.equityInjectionMinPct, k = POLICY.sba504, e = k.equityPct, nb = k.newBusinessExtraPct, sp = k.specialPurposeExtraPct;
     const m = {
-      startup: { pct: 10, rule: 'SBA minimum for a 7(a) startup' },
-      acquire: { pct: 10, rule: 'SBA minimum for buying a business (change of ownership)' },
-      expand: { pct: 10, rule: 'Lender decides; 10% shown as a planning figure' },
-      '504': { pct: 10, rule: 'Standard 504 borrower equity' },
-      '504new': { pct: 15, rule: '504: 10% plus 5% for a new business' },
-      '504special': { pct: 15, rule: '504: 10% plus 5% for a special-purpose property' },
-      '504both': { pct: 20, rule: '504: 10% plus 5% new business plus 5% special-purpose property' }
-    }[mode] || { pct: 10, rule: '' };
+      startup: { pct: a, rule: 'SBA minimum for a 7(a) startup' },
+      acquire: { pct: a, rule: 'SBA minimum for buying a business (change of ownership)' },
+      expand: { pct: a, rule: 'Lender decides; ' + a + '% shown as a planning figure' },
+      '504': { pct: e, rule: 'Standard 504 borrower equity' },
+      '504new': { pct: e + nb, rule: '504: ' + e + '% plus ' + nb + '% for a new business' },
+      '504special': { pct: e + sp, rule: '504: ' + e + '% plus ' + sp + '% for a special-purpose property' },
+      '504both': { pct: e + nb + sp, rule: '504: ' + e + '% plus ' + nb + '% new business plus ' + sp + '% special-purpose property' }
+    }[mode] || { pct: a, rule: '' };
     return { pct: m.pct, rule: m.rule, equity: cost * m.pct / 100, loan: cost - cost * m.pct / 100 };
   };
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LoansFlow AdSense loader — high-intent finance placements, reasonable density.
  * Client: ca-pub-6588738221262894
  *

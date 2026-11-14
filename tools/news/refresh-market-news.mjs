@@ -3,7 +3,7 @@
  * Refresh public/data/market-news.json from public rate + news sources.
  * Used by CI (scheduled) and local: node tools/news/refresh-market-news.mjs
  */
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -79,6 +79,7 @@ async function fetchText(url) {
       Accept: 'application/xml,text/xml,text/csv,text/html,*/*',
     },
     redirect: 'follow',
+    signal: AbortSignal.timeout(25000), // a stalled source must not hang the daily job
   });
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   return res.text();
@@ -198,21 +199,24 @@ function cleanSummary(raw, title, source, category) {
 }
 
 function isLowSignalHeadline(title) {
-  return /compare (today|current)|current mortgage rates:|mortgage rates this week|best .* rates today|save thousands in interest/i.test(
+  // Rate-table roundups, "best of" shopping lists, product demos and event notices are not lending news.
+  return /compare (today|current)|compare your options|current mortgage rates:|mortgage rates this week|mortgage rates today|best .* rates today|save thousands in interest|^best\b|\breviews? of\b|\bdemo\b|\b(annual|virtual) (conference|summit|webinar)\b|\bconference$/i.test(
     title
   );
 }
 
 function articleFromItem(item, category, fallbackSource) {
-  const source = item.source || fallbackSource || 'News';
+  // Some feeds prefix the publisher with a separator ("| Florida Realtors"); keep only the name.
+  const source = String(item.source || fallbackSource || 'News').replace(/^[\s|:\-]+/, '').trim() || 'News';
   const title = stripSourceSuffix(item.title);
+  const published = item.pubDate ? new Date(item.pubDate) : null;
   return {
     category,
     source,
     title,
     summary: cleanSummary(item.description, item.title, source, category),
     url: item.link,
-    publishedAt: item.pubDate ? new Date(item.pubDate).toISOString() : null,
+    publishedAt: published && !Number.isNaN(published.getTime()) ? published.toISOString() : null,
   };
 }
 
@@ -238,11 +242,6 @@ async function buildPayload() {
           label: '15-Yr Fixed',
           value: fmtPct(latest.fixed15),
           note: deltaLabel(latest.fixed15, prev?.fixed15),
-        },
-        {
-          label: '30-Yr Refinance',
-          value: latest.fixed30 != null ? fmtPct(latest.fixed30 + 0.05) : null,
-          note: 'Approx. vs purchase avg.',
         },
         {
           label: '5/1 ARM',
@@ -299,18 +298,20 @@ async function buildPayload() {
   for (const feed of FEEDS) {
     try {
       const xml = await fetchText(feed.url);
-      const items = parseRssItems(xml).slice(0, feed.limit);
-      for (const item of items) {
+      let taken = 0;
+      for (const item of parseRssItems(xml)) {
+        if (taken >= feed.limit) break;
         const article = articleFromItem(item, feed.category, feed.source);
         const key = article.title.toLowerCase();
         if (seen.has(key)) continue;
         // Prefer US-relevant / skip clearly off-topic international noise
-        if (/australia|westpac|canada|uk\b|britain/i.test(article.title) && feed.id !== 'fed-monetary') {
+        if (/australia|westpac|canada|\buk\b|britain/i.test(article.title) && feed.id !== 'fed-monetary') {
           continue;
         }
         if (isLowSignalHeadline(article.title)) continue;
         seen.add(key);
         articles.push(article);
+        taken++;
       }
     } catch (err) {
       errors.push(`${feed.id}: ${err.message}`);
@@ -320,6 +321,13 @@ async function buildPayload() {
   if (!articles.length) {
     throw new Error(`No articles assembled. Errors: ${errors.join('; ') || 'none'}`);
   }
+
+  // A source outage must never blank a published figure. Keep the last good reading (it carries its own
+  // as-of date, so the page stays truthful) and report the outage in `errors`.
+  let previous = {};
+  try { if (existsSync(OUT)) previous = JSON.parse(readFileSync(OUT, 'utf8')); } catch { previous = {}; }
+  if (!rates && previous.rates) { rates = previous.rates; errors.push('pmms: kept previous reading'); }
+  if (!prime && previous.prime) { prime = previous.prime; errors.push('prime: kept previous reading'); }
 
   return {
     updatedAt: new Date().toISOString(),

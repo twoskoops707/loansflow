@@ -77,7 +77,7 @@
       loadIndex().then(function () {
         var r = search(q);
         if (r.length) location.href = (active > -1 && items[active]) ? items[active].u : r[0].u; else { items = []; paint(); }
-      });
+      }).catch(function () { location.href = '/site-index'; });
     });
     document.addEventListener('click', function (e) { if (!form.contains(e.target)) close(); });
     document.querySelectorAll('.home-chips button').forEach(function (b) {

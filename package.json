@@ -2,13 +2,15 @@
   "name": "loansflow",
   "private": true,
   "version": "1.0.0",
-  "description": "LoansFlow — SBA, commercial, and mortgage calculators",
+  "description": "LoansFlow \u2014 SBA, commercial, and mortgage calculators",
   "scripts": {
     "dev": "npx --yes serve public -p 4173",
     "start": "npm run dev",
     "news:refresh": "node tools/news/refresh-market-news.mjs",
-    "deploy": "node -e \"console.error('Deploy from WSL: wsl -d kali-linux -- bash -lc \\\"cd ~/loansflow-cf && rm -rf public && cp -a /mnt/c/Users/jsmil/.cursor/loansflow/public . && cp /mnt/c/Users/jsmil/.cursor/loansflow/wrangler.toml . && npx wrangler pages deploy ./public --project-name=loansflow --branch=main --commit-dirty=true\\\"')\"",
-    "pages:deploy": "npm run deploy"
+    "deploy": "node -e \"console.log('Production (loansflow.loan, Cloudflare Pages project loansflow-live) deploys automatically when main is pushed to GitHub. Run the tests, then: git push origin HEAD:main')\"",
+    "pages:deploy": "npm run deploy",
+    "rates:refresh": "node tools/rates/refresh-rates.mjs",
+    "test": "node tests/verify-math.js && node tests/verify-ui.js && node tests/verify-policy.js && node tests/verify-new-calcs.js && node tests/verify-help.js && node scripts/check-internal-links.js && node scripts/check-anchors.js"
   },
   "engines": {
     "node": ">=18"

@@ -10,6 +10,12 @@
   function f(id, label, value, o) { return Object.assign({ id: id, label: label, value: value, type: 'number', step: 1, min: (o && o.suffix === 'years') ? 1 : 0, max: (o && o.suffix === 'years') ? 100 : undefined }, o || {}); }
   function sel(id, label, value, options) { return { id: id, label: label, value: value, type: 'select', options: options }; }
   var YN = [['no', 'No'], ['yes', 'Yes']];
+  /* SBA program figures used in hints and notes. They come from data/sba-policy.json (LF.policy), so the text updates with the policy file. */
+  var POL = LF.policy, P7 = POL.sba7a, P504 = POL.sba504, UF = P7.upfrontFee;
+  var pc = function (n) { return String(+(+n).toFixed(3)); };                       // 3 -> "3", 3.5 -> "3.5", 0.203 -> "0.203"
+  var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var effDate = function () { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(POL.effective || ''); return m ? MON[+m[2] - 1] + ' ' + +m[3] + ', ' + m[1] : POL.effective; };
+  var cdcMaxPct = 100 - P504.bankPct - P504.equityPct;
 
   var CALCS = {
     cre: function (d) {
@@ -41,7 +47,7 @@
         title: d.title || 'SBA business acquisition calculator',
         fields: [
           f('price', 'Purchase price', 750000, { prefix: '$', step: 10000 }), f('wc', 'Working capital to borrow', 50000, { prefix: '$', step: 5000 }),
-          f('closing', 'Closing costs and fees', 25000, { prefix: '$', step: 1000 }), f('equityPct', 'Your equity injection', 10, { suffix: '% of total', step: 1, hint: 'SBA minimum is 10% for a change of ownership' }),
+          f('closing', 'Closing costs and fees', 25000, { prefix: '$', step: 1000 }), f('equityPct', 'Your equity injection', P7.equityInjectionMinPct, { suffix: '% of total', step: 1, hint: 'SBA minimum is ' + P7.equityInjectionMinPct + '% for a change of ownership' }),
           f('notePct', 'Seller note', 0, { suffix: '% of price', step: 5, hint: 'Modeled as a separate loan; does not count as equity here' }),
           f('rate', 'SBA loan rate', livePrime ? livePrime + 3 : 10, { suffix: '%', step: 0.05, hint: 'Prime + 3.00% shown; your rate will differ' }), f('years', 'SBA loan term', 10, { suffix: 'years', step: 1 }),
           sel('finFee', 'Finance the SBA guarantee fee?', 'yes', YN),
@@ -52,7 +58,7 @@
           var a = LF.acquisition({ price: v.price, workingCapital: v.wc, closingCosts: v.closing, equityPct: Math.min(v.equityPct, 100), sellerNotePct: v.notePct, ratePct: v.rate,
             years: v.years || 10, noteRatePct: 6, noteYears: 10, financeFee: v.finFee === 'yes', sde: v.sde, ownerSalary: v.salary }), notes = [];
           notes.push(a.dscr >= 1.25 ? 'DSCR is at or above 1.25x, the floor SBA lenders are reported to apply to first-time buyers under SOP 50 10 8.1.' : 'DSCR is below 1.25x, the floor SBA lenders are reported to apply to first-time buyers. A lower price, more equity or a longer term would help.');
-          if (v.equityPct < 10) notes.push('The SBA requires at least 10% equity injection on a change of ownership.');
+          if (v.equityPct < P7.equityInjectionMinPct) notes.push('The SBA requires at least ' + P7.equityInjectionMinPct + '% equity injection on a change of ownership.');
           if (a.sellerNote > 0) notes.push('Seller note modeled at 6% over 10 years. SBA rules limit how a seller note can count toward equity, and it may need to be on standby; ask your lender.');
           notes.push('Estimate only. Lenders also review the business valuation, add-backs, collateral and your experience.');
           return {
@@ -71,7 +77,7 @@
       return {
         title: d.title || 'SBA cash-to-close estimator',
         fields: [
-          f('cost', 'Total project cost', 700000, { prefix: '$', step: 10000 }), f('down', 'Down payment', 10, { suffix: '% of cost', step: 1 }),
+          f('cost', 'Total project cost', 700000, { prefix: '$', step: 10000 }), f('down', 'Down payment', P7.equityInjectionMinPct, { suffix: '% of cost', step: 1 }),
           sel('finFee', 'Finance the SBA guarantee fee?', 'no', YN), f('lenderPct', 'Lender / packaging fee', 1, { suffix: '% of loan', step: 0.25, hint: 'Varies widely; ask your lender' }),
           f('third', 'Appraisal, environmental, valuation', 8000, { prefix: '$', step: 500 }), f('legal', 'Legal and title', 6000, { prefix: '$', step: 500 }),
           f('prepaid', 'Prepaid insurance and deposits', 4000, { prefix: '$', step: 500 }), f('reserve', 'Working capital reserve', 25000, { prefix: '$', step: 1000 })
@@ -81,7 +87,7 @@
           return {
             head: ['Estimated cash to close', money(c.cash)],
             rows: c.items.map(function (x) { return [x[0], money(x[1])]; }).concat([['Loan amount', money(c.loan)]]),
-            notes: ['Planning estimate, not a quote. The SBA guarantee fee follows the FY 2027 schedule (3% of the guaranteed portion on loans of $150,001 to $700,000; 3.5% above that, up to $1 million guaranteed).', 'Ask your lender for a written estimate of every fee before you commit.']
+            notes: ['Planning estimate, not a quote. The SBA guarantee fee follows the FY ' + POL.fiscalYear + ' schedule (' + UF.tiers.map(function (t, i) { return pc(t.pctOfGuaranteed) + '% of the guaranteed portion on loans ' + (i ? 'of ' + money(UF.tiers[i - 1].upToLoan + 1) + ' to ' + money(t.upToLoan) : 'up to ' + money(t.upToLoan)); }).join('; ') + '; ' + pc(UF.above.pctFirst) + '% above that on the first ' + money(UF.above.firstGuaranteed) + ' guaranteed and ' + pc(UF.above.pctRest) + '% on the rest).', 'Ask your lender for a written estimate of every fee before you commit.']
           };
         }
       };
@@ -185,7 +191,7 @@
           f('base', 'Base (prime) rate', livePrime || 7.0, { suffix: '%', step: 0.05, live: true }),
           f('spread', 'Lender spread over base', 3.0, { suffix: '%', step: 0.05 }),
           f('years', 'Term', 10, { suffix: 'years', step: 1 }),
-          f('guar', 'SBA guarantee', express ? 50 : 0, { suffix: '%', step: 1, hint: express ? 'Express: 50%' : '0 = standard (85% up to $150,000, else 75%)' }),
+          f('guar', 'SBA guarantee', express ? POL.express.guarantyPct : 0, { suffix: '%', step: 1, hint: express ? 'Express: ' + POL.express.guarantyPct + '%' : '0 = standard (' + P7.guaranty.smallLoanPct + '% up to ' + money(P7.guaranty.smallLoanMax) + ', else ' + P7.guaranty.largeLoanPct + '%)' }),
           sel('waived', 'Manufacturer, food supply chain or rural business?', 'no', YN),
           f('noi', 'Annual net operating income', 120000, { prefix: '$', step: 1000 })
         ],
@@ -196,9 +202,10 @@
           if (v.spread > cap) notes.push('SBA caps the spread on a variable-rate 7(a) loan of this size at base + ' + cap + '%.');
           var maxY = v.use === 'realestate' ? 25 : 10;
           if (v.years > maxY) notes.push('Typical maximum term for this use is ' + maxY + ' years.');
-          if (v.amount > (express ? 500000 : 5000000)) notes.push('Maximum loan size is ' + money(express ? 500000 : 5000000) + '.');
+          var maxLoan = express ? POL.express.maxLoan : P7.maxLoan;
+          if (v.amount > maxLoan) notes.push('Maximum loan size is ' + money(maxLoan) + '.');
           notes.push(c >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.');
-          notes.push('Fees follow SBA\'s FY 2027 schedule (effective Oct 1, 2026). The lender\'s ' + money(fee.annualLenderFee) + ' first-year service fee is paid by the lender, not billed to you.');
+          notes.push('Fees follow SBA\'s FY ' + POL.fiscalYear + ' schedule (effective ' + effDate() + '). The lender\'s ' + money(fee.annualLenderFee) + ' first-year service fee is paid by the lender, not billed to you.');
           return {
             head: ['Monthly payment', money(pay, 2)],
             sched: { amount: v.amount, rate: rate, years: v.years },
@@ -216,8 +223,8 @@
         title: 'SBA 504 loan calculator',
         fields: [
           f('cost', 'Total project cost', 2000000, { prefix: '$', step: 25000 }),
-          f('bankRate', 'Bank loan rate (50%)', 7.5, { suffix: '%', step: 0.05, hint: 'Example rate; set by the lender' }),
-          f('cdcRate', 'CDC debenture rate (up to 40%)', 6.5, { suffix: '%', step: 0.05, hint: 'Fixed at closing; ask a CDC for today\'s rate' }),
+          f('bankRate', 'Bank loan rate (' + P504.bankPct + '%)', 7.5, { suffix: '%', step: 0.05, hint: 'Example rate; set by the lender' }),
+          f('cdcRate', 'CDC debenture rate (up to ' + cdcMaxPct + '%)', 6.5, { suffix: '%', step: 0.05, hint: 'Fixed at closing; ask a CDC for today\'s rate' }),
           sel('years', 'Term', '25', [['25', '25 years (real estate)'], ['20', '20 years'], ['10', '10 years (equipment)']]),
           sel('newBiz', 'New business (under 2 years)?', 'no', YN),
           sel('special', 'Special-purpose property?', 'no', YN),
@@ -232,8 +239,8 @@
             head: ['Combined monthly payment', money(total, 2)],
             rows: [['Bank loan (' + s.bankPct + '%)', money(s.bank) + ' / ' + money(bank, 2) + ' mo'], ['CDC debenture (' + s.cdcPct + '%)', money(s.cdc) + ' / ' + money(cdc, 2) + ' mo'],
               ['Your equity (' + s.equityPct + '%)', money(s.equity)], ['Blended rate on financed amount', num(blended, 2) + '%'],
-              ['Upfront SBA guaranty fee (0.50%)', money(fee.upfront)], ['Annual SBA service fee (0.203%)', money(fee.annual) + ' in year 1'], ['DSCR', num(c, 2) + 'x']],
-            notes: ['Structure: bank first lien 50%, CDC second lien up to 40%, borrower at least 10%. Extra equity is required for new businesses and special-purpose property.',
+              ['Upfront SBA guaranty fee (' + P504.upfrontPct.toFixed(2) + '%)', money(fee.upfront)], ['Annual SBA service fee (' + pc(P504.annualPct) + '%)', money(fee.annual) + ' in year 1'], ['DSCR', num(c, 2) + 'x']],
+            notes: ['Structure: bank first lien ' + P504.bankPct + '%, CDC second lien up to ' + cdcMaxPct + '%, borrower at least ' + P504.equityPct + '%. Extra equity is required for new businesses and special-purpose property.',
               'CDC processing fees, bank fees and closing costs are additional and vary by lender.', c >= 1.25 ? 'DSCR meets the 1.25x level many lenders look for.' : 'DSCR is below the 1.25x level many lenders look for.'],
             charts: [CH.stack('Where the project money comes from', [{ label: 'Bank loan', value: s.bank }, { label: 'CDC debenture', value: s.cdc }, { label: 'Your equity', value: s.equity }]), CH.gauge('Debt service coverage', c)]
           };
@@ -358,9 +365,8 @@
         ],
         run: function (v) {
           var ds = LF.pmt(v.amount, v.rate, v.years) * 12, c = LF.dscr(v.noi, ds);
-          var max = LF.dscr(1, 1) && v.noi / 1.25;
           return { head: ['DSCR', num(c, 2) + 'x'], rows: [['Annual debt service', money(ds)], ['Income needed for 1.25x', money(ds * 1.25)], ['Cushion above debt service', money(v.noi - ds)]],
-            notes: [c >= 1.25 ? 'Meets the 1.25x level many lenders look for.' : c >= 1 ? 'Covers the payment but with less cushion than many lenders want.' : 'Income does not cover the payment as structured.', max ? '' : ''].filter(Boolean),
+            notes: [c >= 1.25 ? 'Meets the 1.25x level many lenders look for.' : c >= 1 ? 'Covers the payment but with less cushion than many lenders want.' : 'Income does not cover the payment as structured.'],
             charts: [CH.gauge('Debt service coverage', c)] };
         }
       };
@@ -371,7 +377,7 @@
         title: 'SBA 7(a) guarantee fee calculator',
         fields: [
           f('amount', 'Loan amount', 350000, { prefix: '$', step: 10000 }),
-          f('gp', 'SBA guarantee', LF.sba7aDefaultGuaranty(350000), { suffix: '%', step: 1, hint: 'Standard 7(a) guarantee for this size; Express loans are 50%' }),
+          f('gp', 'SBA guarantee', LF.sba7aDefaultGuaranty(350000), { suffix: '%', step: 1, hint: 'Standard 7(a) guarantee for this size; Express loans are ' + POL.express.guarantyPct + '%' }),
           sel('waived', 'Qualifies for the fee waiver?', 'no', YN),
           sel('finFee', 'Roll the fee into the loan?', 'no', YN)
         ],
@@ -554,7 +560,7 @@
     [/special-purpose/i, 'Special-purpose property', function () { return 'A building suited to one use, such as a hotel, car wash or medical facility, that is hard to repurpose. SBA 504 lenders ask for ' + LF.policy.sba504.specialPurposeExtraPct + ' extra points of equity on these.'; }],
     [/new business/i, 'New business', function () { return 'A business under two years old. SBA 504 asks for ' + LF.policy.sba504.newBusinessExtraPct + ' extra points of equity from new businesses.'; }],
     [/total project cost/i, 'Total project cost', function () { return 'The all-in cost of the project: purchase or construction, equipment and related costs. The 504 structure splits it among the bank, the CDC and you.'; }],
-    [/cdc debenture/i, 'CDC debenture', function () { return 'The SBA-backed loan from a Certified Development Company, up to 40% of an SBA 504 project. Its rate is fixed for the full term once the debenture is sold.'; }],
+    [/cdc debenture/i, 'CDC debenture', function () { return 'The SBA-backed loan from a Certified Development Company, up to ' + cdcMaxPct + '% of an SBA 504 project. Its rate is fixed for the full term once the debenture is sold.'; }],
     [/bank loan rate/i, 'Bank first-lien loan', function () { return 'In an SBA 504 project the bank lends about ' + LF.policy.sba504.bankPct + '% and holds the first claim on the property (first lien).'; }],
     [/working capital reserve|working capital/i, 'Working capital', function () { return 'Money for day-to-day operations, such as inventory, payroll and receivables, rather than for buying a building or equipment.'; }],
     [/seller note/i, 'Seller note', function () { return 'Part of the price the seller finances and you repay to the seller over time. Lenders may require it to be on standby and may limit how it counts toward your equity.'; }],
